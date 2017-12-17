@@ -1,6 +1,4 @@
 # init
-
-### concept
 An initialization checker determines whether an object is initialized or not. Any object 
 that is accessed at runtime prior to being fully initialised will cause an error. An 
 object is only partially initialized from the time that its constructor starts until its 
@@ -21,4 +19,4 @@ Identify where the following initialisation issues occur;
 constructor, inheritance, initialisation, null
 
 ### source file(s)
-src/Init.java
+Init.java

@@ -1,6 +1,4 @@
 # signedness
-
-### concept
 Signedness checking guarantees that signed and unsigned values are not mixed together 
 in a computation. In addition, it should prohibit meaningless operations, such as 
 division on an unsigned value. A Signedness Checker requires type annotations to indicate 
@@ -20,4 +18,4 @@ Identify where the following incorrect uses of unsigned values;
 comparators, signed, unsigned
 
 ### source file(s)
-src/Signedness.java
+Signedness.java

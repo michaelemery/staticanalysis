@@ -1,6 +1,4 @@
 # taint
-
-### concept
 Taint checking prevents certain kinds of trust errors. A tainted, or untrusted, 
 value is one that comes from an arbitrary, possibly malicious source, such as user input 
 or unvalidated data. In certain parts of your application, using a tainted value can 
@@ -28,4 +26,4 @@ Identify where the following situations have occurred;
 malicious, sanitise, sensitive, sink, taint, untaint
 
 ### source file(s)
-src/Taint.java
+Taint.java

@@ -1,6 +1,4 @@
 # nullness
-
-### concept
 Nullness checking guarantees that a program will never throw a null pointer exception.
 De-referenced expressions afe a common cause a null pointer exceptions. Dereferences 
 occur not only when a field is accessed, but when an array is indexed, an exception is 
@@ -24,4 +22,4 @@ When the following issues occur for an expression that may never be null;
 constructor, de-reference, implicit, initialisation, inheritance, null
 
 ### source file(s)
-src/Nullness.java
+Nullness.java
