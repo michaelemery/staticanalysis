@@ -10,11 +10,11 @@ sensitive sink. This may be done by either a) checking that it is innocuous/lega
 transforming the value to be legal. Taint checking verifies this, but does not guarantee 
 that a program is free from all trust errors.
 
-### description
+## description
 Provide a template to test the effectiveness of static analysis tools in identifying 
 where values that are required to be untainted may be vulnerable to tainting. 
 
-### test objectives
+## test objectives
 Identify where the following situations have occurred;
 1) taint of an untainted string with a tainted string,
 2) taint of an untainted string with a tainted method return,
@@ -22,8 +22,8 @@ Identify where the following situations have occurred;
 4) taint of an untainted reference, or
 5) wrapping an untainted object.
 
-### tags
+## tags
 malicious, sanitise, sensitive, sink, taint, untaint
 
-### source file(s)
+## source file(s)
 Taint.java

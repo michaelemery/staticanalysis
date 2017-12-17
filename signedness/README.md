@@ -4,18 +4,18 @@ in a computation. In addition, it should prohibit meaningless operations, such a
 division on an unsigned value. A Signedness Checker requires type annotations to indicate 
 the signedness that the programmer intends an expression to have.
 
-### description
+## description
 Provide a template to test the effectiveness of static analysis tools in identifying 
 unsigned expressions that have been used incorrectly.
 
-### test objectives
+## test objectives
 Identify where the following incorrect uses of unsigned values;
-1. signed and unsigned may not be mixed,
-2. unsigned may not use / or mod operators, or
-3. unsigned may not use comparators (<, >, <=, >=).
+1) signed and unsigned may not be mixed,
+2) unsigned may not use / or mod operators, or
+3) unsigned may not use comparators (<, >, <=, >=).
 
-### tags
+## tags
 comparators, signed, unsigned
 
-### source file(s)
+## source file(s)
 Signedness.java

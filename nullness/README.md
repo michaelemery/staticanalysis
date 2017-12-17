@@ -5,21 +5,21 @@ occur not only when a field is accessed, but when an array is indexed, an except
 thrown, and more. Such exceptions may also occur simply as a result of a field not being 
 initialised by its constructor.
 
-### description
+## description
 Provide a template to test the effectiveness of static analysis tools in identifying 
 potential causes of null-pointer exceptions.
 
-### test objectives
+## test objectives
 When the following issues occur for an expression that may never be null;
-    1) assignment to an uninitialised object,
-    2) directly de-referenced with null,
-    3) assignment to a null reference,
-    4) assignment to null via a method return value,
-    5) assignment to an uninitialised object of an under-initialised class, or
-    6) assignment to an uninitialised object of an under-initialised extended class.
+1) assignment to an uninitialised object,
+2) directly de-referenced with null,
+3) assignment to a null reference,
+4) assignment to null via a method return value,
+5) assignment to an uninitialised object of an under-initialised class, or
+6) assignment to an uninitialised object of an under-initialised extended class.
 
-### tags
+## tags
 constructor, de-reference, implicit, initialisation, inheritance, null
 
-### source file(s)
+## source file(s)
 Nullness.java
