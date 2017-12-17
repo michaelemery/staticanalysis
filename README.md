@@ -8,6 +8,6 @@ code, and in the other cases, some form of the object code.
 The sophistication of the analysis performed by tools varies from those that only 
 consider the behaviour of individual statements and declarations, to those that include 
 the complete source code of a program in their analysis. The uses of the information 
-obtained from the analysis vary from highlighting possible coding errors (e.g., the lint 
-tool) to formal methods that mathematically prove properties about a given program 
-(e.g., its behaviour matches that of its specification).
+obtained from the analysis vary from highlighting possible coding errors to formal 
+methods that mathematically prove properties about a given program (e.g., its behaviour 
+matches that of its specification).
