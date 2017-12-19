@@ -19,7 +19,7 @@ When the following issues occur for an expression that may never be null;
 6) assignment to an uninitialised object of an under-initialised extended class.
 
 ## annotations
-@NonNull (default), @Nullable, @RequiresNonNull, @EnsuresNonNull, @EnsuresNonNullIf
+@NonNull *(default)*, @Nullable, @RequiresNonNull, @EnsuresNonNull, @EnsuresNonNullIf
 
 ### checkerframework
 The nullness hierarchy contains these qualifiers:

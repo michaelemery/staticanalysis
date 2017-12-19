@@ -23,7 +23,7 @@ Identify where the following situations have occurred;
 5) wrapping an untainted object.
 
 ## annotations
-@Tainted (default), @Untainted, @PolyTainted
+@Tainted *(default)*, @Untainted, @PolyTainted
 
 ### checkerframework
 The Tainting type system uses the following annotations:
