@@ -14,6 +14,28 @@ Identify where objects that are intended to be unique may become mutable by;
 3) pseudo assignment of an alias to method parameters, or
 4) leakage to an alias via method return value.
 
+## annotations
+@MaybeAliased *(default)*, @Unique, @NonLeaked, @LeakedToResult
+
+### checkerframework
+There are two possible types for an expression:
+* **@MaybeAliased** is the type of an expression that might have an alias. This is the 
+default, so every unannotated type is @MaybeAliased. Includes the type of null.
+* **@Unique** is the type of an expression that has no aliases. The @Unique annotation is 
+only allowed at local variables, method parameters, constructor results, and method 
+returns. A constructor’s result should be annotated with @Unique only 
+if the constructor’s body does not creates an alias to the constructed object.
+
+There are also two annotations, which are currently trusted instead of verified, that can 
+be used on formal parameters (including the receiver parameter, this):
+* **@NonLeaked** identifies a formal parameter that is not leaked nor returned by the method 
+body. For example, the formal parameter of the String copy constructor, String(String s), 
+is @NonLeaked because the body of the method only makes a copy of the parameter.
+* **@LeakedToResult** is used when the parameter may be returned, but it is not otherwise 
+leaked. For example, the receiver parameter of StringBuffer.append(StringBuffer this, 
+String s) is @LeakedToResult, because the method returns the updated receiver.
+
+
 ## tags
 alias, mutability, leak
 
