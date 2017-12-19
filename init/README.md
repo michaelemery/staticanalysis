@@ -25,7 +25,7 @@ Initialized is the default, so there is little need for a programmer to write th
 explicitly.
 2. **@UnknownInitialization** indicates a type that may contain a partially-initialized 
 object. In a partially-initialized object, fields that are annotated as @NonNull may be 
-null because the field has not yet been assigned. @UnknownInitialization** takes a 
+null because the field has not yet been assigned. @UnknownInitialization takes a 
 parameter that is the class the object is definitely initialized up to. For instance, the 
 type @UnknownInitialization(Foo.class) denotes an object in which every fields declared 
 in Foo or its superclasses is initialized, but other fields might not be. Just 
