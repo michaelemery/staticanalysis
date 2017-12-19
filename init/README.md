@@ -28,7 +28,7 @@ object. In a partially-initialized object, fields that are annotated as @NonNull
 null because the field has not yet been assigned. @UnknownInitialization takes a 
 parameter that is the class the object is definitely initialized up to. For instance, the 
 type @UnknownInitialization(Foo.class) denotes an object in which every fields declared 
-in Foo or its superclasses is initialized, but other fields might not be. Just 
+in Foo or its superclasses is initialized, but other fields might not be. 
 @UnknownInitialization is equivalent to @UnknownInitialization(Object.class).
 3. **@UnderInitialization** indicates a type that contains a partially-initialized object 
 that is under initialization — that is, its constructor is currently executing. It is 

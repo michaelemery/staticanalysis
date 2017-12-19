@@ -15,7 +15,7 @@ Identify where the following incorrect uses of unsigned values;
 3) unsigned may not use comparators (<, >, <=, >=).
 
 ## annotations
-@Unsigned, @Signed, @Constant, @UnknownSignedness, @SignednessBottom
+@Unsigned, @Signed, @Constant, @UnknownSignedness
 
 ### checkerframework
 These are the qualifiers in the signedness type system:
@@ -30,8 +30,6 @@ interpreted as unsigned or signed. This annotation is used internally, and shoul
 written by the programmer.
 4. **@UnknownSignedness** indicates that a value’s type is not relevant or known to this 
 checker. This annotation is used internally, and should not be written by the programmer.
-5. **@SignednessBottom** indicates that the value is null. This annotation is used 
-internally, and should not be written by the programmer.
 
 **Default qualifiers:** The only type qualifier that the programmer should need to 
 specify is @Unsigned. When an expression is unannotated, the Signedness Checker treats it 

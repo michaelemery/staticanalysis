@@ -23,13 +23,13 @@ Identify where the following situations have occurred;
 5) wrapping an untainted object.
 
 ## annotations
-@Untainted, @Tainted, @PolyTainted
+@Tainted (default), @Untainted, @PolyTainted
 
 ### checkerframework
 The Tainting type system uses the following annotations:
-1. **@Untainted** indicates a type that includes only untainted (trusted) values.
-2. **@Tainted** indicates a type that may include tainted (untrusted) or untainted 
+1. **@Tainted** indicates a type that may include tainted (untrusted) or untainted 
 (trusted) values. @Tainted is a supertype of @Untainted. It is the default qualifier.
+2. **@Untainted** indicates a type that includes only untainted (trusted) values.
 3. **@PolyTainted** is a qualifier that is polymorphic over tainting.
 
 ## tags
