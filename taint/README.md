@@ -27,13 +27,16 @@ Identify where the following situations have occurred;
 
 ### checkerframework
 The Tainting type system uses the following annotations:
-1. **@Tainted** indicates a type that may include tainted (untrusted) or untainted 
+1) **@Tainted** indicates a type that may include tainted (untrusted) or untainted 
 (trusted) values. @Tainted is a supertype of @Untainted. It is the default qualifier.
-2. **@Untainted** indicates a type that includes only untainted (trusted) values.
-3. **@PolyTainted** is a qualifier that is polymorphic over tainting.
+2) **@Untainted** indicates a type that includes only untainted (trusted) values.
+3) **@PolyTainted** is a qualifier that is polymorphic over tainting.
+
+Fully qualified name(s):
+1) org.checkerframework.checker.tainting.TaintingChecker
 
 ## tags
 malicious, sanitise, sensitive, sink, taint, untaint
 
 ## source file(s)
-Taint.java
+Taint.java, Taint_CF.java _(Checker Framework)_

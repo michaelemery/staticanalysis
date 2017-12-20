@@ -26,12 +26,15 @@ computation, and meaningless operations occur such as division on an unsigned va
 compromise the application’s integrity, causing it to crash, corrupt data, leak private 
 data, etc.
 
-Each folder contains slightly modified different versions of the same code. The base 
-version is raw unannotated code. Other versions, indentified with an underbar suffix, 
-contain annotations for various static analysis tools such as _Checkerframework_. 
-Versions include;
-1) **Checkerframework** _(suffix: \_cf)_
+Some programs require annotated versions of the same source code in order for checking
+tools to work. In such cases, the category will contain multiple versions of the same 
+code. Additional versions are identified with underbar ("_") extensions to the filename, 
+e.g. _Alias.java_ has an annotated version named _Alias_CF.java_, to indicate that it 
+includes annoations for _Checker Framework_. Not all programs require annotations for the 
+tools to work, so they do not require additional versions. Included versions and their 
+suffixes are indicated as follows;
+1) **Checker Framework** _(suffix: \_CF)_
 
 ### libraries
-The library folder contains JAR files for additional tools and frameworks such as _JUnit_,
-and _Checkerframework_.
+The library folder (lib) contains JAR files for additional tools and frameworks such as 
+_JUnit_, annotated javac distributions, and checker tools.

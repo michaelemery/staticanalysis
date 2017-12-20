@@ -35,6 +35,9 @@ that is under initialization — that is, its constructor is currently executing
 otherwise the same as @UnknownInitialization. Within the constructor, this has 
 @UnderInitialization type until all the @NonNull fields have been assigned.
 
+Fully qualified name(s):
+1) org.checkerframework.checker.nullness.NullnessChecker
+
 ## tags
 constructor, inheritance, initialisation, null
 

@@ -44,6 +44,9 @@ given expressions are non-null after the method returns; this is useful for a me
 initializes a field, for example. With @EnsuresNonNullIf, if the annotated method returns 
 the given boolean value (true or false), then the given expressions are non-null.
 
+Fully qualified name(s):
+1) org.checkerframework.checker.nullness.NullnessChecker
+
 ## tags
 constructor, de-reference, implicit, initialisation, inheritance, null
 

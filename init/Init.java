@@ -12,8 +12,7 @@ public class Init {
     Object o;
 
     // constructor fails to initialise field before exit
-    Init() {
-    }
+    Init() { }
 
     // constructor accesses uninitialised field
     Init(int x) {

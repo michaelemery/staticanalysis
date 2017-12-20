@@ -1,5 +1,7 @@
+import org.checkerframework.checker.signedness.qual.Unsigned;
+
 /**
- * Signedness.java
+ * Signedness_CF.java
  *
  * Provide a template to test the effectiveness of static analysis tools in identifying
  * potential causes of null-pointer exceptions.
@@ -7,15 +9,15 @@
  * Created by Michael Emery on 30/11/17.
  */
 
-public class Signedness {
+public class Signedness_CF {
 
     public static void main(String[] args) {
 
         int s1 = -1;
 
         // signed ints used where unsigned ints were intended
-        int uInt1 = 0xFFFFFFFF;  // as signed = -1
-        int uInt2 = 0xFFFFFFFE;  // as signed = -2
+        @Unsigned int uInt1 = 0xFFFFFFFF;  // as signed = -1
+        @Unsigned int uInt2 = 0xFFFFFFFE;  // as signed = -2
 
         /*
          * The following operations yield unexpected results and would

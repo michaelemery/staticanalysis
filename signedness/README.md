@@ -38,8 +38,11 @@ in one of the following ways:
 * All byte, short, int, and long variables default to @Signed.
 * All other expressions default to @UnknownSignedness.
 
+Fully qualified name(s):
+1) org.checkerframework.checker.signedness.SignednessChecker
+
 ## tags
 comparators, signed, unsigned
 
 ## source file(s)
-Signedness.java
+Signedness.java, Signedness_CF.java _(Checker Framework)_
