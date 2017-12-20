@@ -1,7 +1,7 @@
 # taint
 Taint checking prevents certain kinds of trust errors. A tainted, or untrusted, 
 value is one that comes from an arbitrary, possibly malicious source, such as user input 
-or unvalidated data. In certain parts of your application, using a tainted value can 
+or unvalidated data. In certain parts of an application, using a tainted value can 
 compromise the application’s integrity, causing it to crash, corrupt data, leak private 
 data, etc.
 
