@@ -19,7 +19,7 @@ initialised will cause an error.
 exceptions.
 4) **Signedness**, where signed and unsigned values are incorrectly mixed together in a
 computation, and meaningless operations occur such as division on an unsigned value. 
-5. **Taint**, where certain parts of an application, using a tainted value can 
+5) **Taint**, where certain parts of an application, using a tainted value can 
 compromise the application’s integrity, causing it to crash, corrupt data, leak private 
 data, etc.
 
