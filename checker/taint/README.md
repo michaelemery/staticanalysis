@@ -78,6 +78,7 @@ type in compound assignment.
 
 ```
 $ pmd -d taint/ -f text -R category/java/errorprone.xml
+
 Taint.java:13: Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
