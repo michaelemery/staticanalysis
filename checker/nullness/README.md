@@ -97,7 +97,7 @@ Nullness.java:51: Found non-transient, non-static member. Please mark as transie
 Nullness.java:60: Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-*Note: output has been simplified.*
+*Output has been simplified.*
 
 ## metadata
 
