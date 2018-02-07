@@ -7,19 +7,21 @@ Folders at this level contain sample code for common categories of Java programm
 errors. Some code has been annotated specifically for Checker Framework.
 
 ### categories
-1) **Alias**: where errors may occur when an object is referenced, without consideration 
+1) **alias**: where errors may occur when an object is referenced, without consideration 
 for mutations caused by an alias to the same object.
-2) **Init**: where any object that is accessed at runtime prior to being fully 
+2) **init**: where any object that is accessed at runtime prior to being fully 
 initialised will cause an error.
-3) **InvokeDynamic**: where type-checking is usually performed at runtime and therefore
+3) **invokedynamic**: where type-checking is usually performed at runtime and therefore
 prone to misuse of type errors.
-4) **Nullness**: where dereferenced expressions are a common cause a null pointer 
+4) **nullness**: where dereferenced expressions are a common cause a null pointer 
 exceptions.
-5) **Signedness**: where signed and unsigned values are incorrectly mixed together in a
+5) **signedness**: where signed and unsigned values are incorrectly mixed together in a
 computation, and meaningless operations occur such as division on an unsigned value. 
-6) **Taint**: where certain parts of an application, using a tainted value can 
+6) **taint**: where certain parts of an application, using a tainted value can 
 compromise the application’s integrity, causing it to crash, corrupt data, leak private 
 data, etc.
+
+## tools
 
 ### checkerframework
 The Checker Framework enhances Java’s type system by detecting and preventing specific 
@@ -35,3 +37,11 @@ tools to work, so they do not require additional versions. Included versions and
 suffixes are indicated as follows;
 
 1) **Checker Framework** _(suffix: \_CF)_
+
+### findbugs
+FindBugs™ is a program to find bugs in Java programs. It looks for instances of "bug patterns" — 
+code instances that are likely to be errors.
+
+### pmd
+PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch 
+blocks, unnecessary object creation, and so forth. 
