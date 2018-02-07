@@ -100,8 +100,7 @@ Init.java:26: Overridable method 'm' called during object construction
 Init.java:36: Found 'DU'-anomaly for variable 'a2' (lines '36'-'38').
 Init.java:37: Found 'DU'-anomaly for variable 'a3' (lines '37'-'38').
 ```
-
-Output has been simplified.
+*Output has been simplified.*
 
 ## metadata
 
