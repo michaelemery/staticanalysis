@@ -25,7 +25,6 @@ constructor, de-reference, implicit, initialisation, inheritance, null
 Nullness.java
 
 ## checker framework
-
 The nullness hierarchy contains these qualifiers:
 1. **@Nullable** indicates a type that includes the null value. For example, the type 
 Boolean is nullable: a variable of type Boolean always has one of the values TRUE, FALSE, 
@@ -35,7 +34,6 @@ is non-null; a variable of type boolean always has one of the values true or fal
 type @NonNull Boolean is also non-null: a variable of type @NonNull Boolean always has 
 one of the values TRUE or FALSE — never null. Dereferencing an expression of non-null 
 type can never cause a null pointer exception.
-
 The Nullness Checker supports several annotations that specify method behavior. These are 
 declaration annotations, not type annotations as they apply to the method itself rather 
 than to some particular type:
@@ -47,13 +45,12 @@ invoked.
 given expressions are non-null after the method returns; this is useful for a method that 
 initializes a field, for example. With @EnsuresNonNullIf, if the annotated method returns 
 the given boolean value (true or false), then the given expressions are non-null.
-
-*Fully qualified name(s):*
+**Checker FQName(s):**
 1) org.checkerframework.checker.nullness.NullnessChecker
 
 ### results
 
-`$ javac -processor nullness Nullness.java`
+`$ javac -processor org.checkerframework.checker.nullness.NullnessChecker Nullness.java`
 
 ```
 Nullness.java:11: error: [initialization.fields.uninitialized] the constructor does not 
