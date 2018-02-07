@@ -9,10 +9,10 @@ unintentional mutations of objects that were intended to be unique.
 
 ### test objectives
 Identify where objects that are intended to be unique may become mutable by;
-1) direct assignment of an alias, 
-2) referencing an existing alias, 
-3) pseudo assignment of an alias to method parameters, or
-4) leakage to an alias via method return value.
+1. direct assignment of an alias, 
+2. referencing an existing alias, 
+3. pseudo assignment of an alias to method parameters, or
+4. leakage to an alias via method return value.
 
 ### tags
 alias, mutability, leak
@@ -22,29 +22,32 @@ Alias.java, Alias_CF.java _(Checker Framework)_
 
 ## checker framework
 There are two possible types for an expression:
-1) **@MaybeAliased** is the type of an expression that might have an alias. This is the 
+1. **@MaybeAliased** is the type of an expression that might have an alias. This is the 
 default, so every unannotated type is @MaybeAliased. Includes the type of null.
-2) **@Unique** is the type of an expression that has no aliases. The @Unique annotation is 
+2. **@Unique** is the type of an expression that has no aliases. The @Unique annotation is 
 only allowed at local variables, method parameters, constructor results, and method 
 returns. It is not allowed on fields, array elements, and type parameters. A 
 constructor’s result should be annotated with @Unique only if the constructor’s body does 
 not create an alias to the constructed object.
+
 There are also two annotations, which are currently trusted instead of verified, that can 
 be used on formal parameters (including the receiver parameter, this):
-1) **@NonLeaked** identifies a formal parameter that is not leaked nor returned by the 
+1. **@NonLeaked** identifies a formal parameter that is not leaked nor returned by the 
 method body. For example, the formal parameter of the String copy constructor, 
 String(String s), is @NonLeaked because the body of the method only makes a copy of the 
 parameter.
-2) **@LeakedToResult** is used when the parameter may be returned, but it is not 
+2. **@LeakedToResult** is used when the parameter may be returned, but it is not 
 otherwise leaked. For example, the receiver parameter of StringBuffer.append(StringBuffer 
 this, String s) is @LeakedToResult, because the method returns the updated receiver.
-**Checker FQName(s):**
-1) org.checkerframework.common.aliasing.AliasingChecker
+
+**checker fq name:**
+1. org.checkerframework.common.aliasing.AliasingChecker
 
 ### results
-`javac -processor org.checkerframework.common.aliasing.AliasingChecker Alias_CF.java`
 
 ```
+$ javac -processor org.checkerframework.common.aliasing.AliasingChecker Alias_CF.java
+
 checker/alias/Alias_CF.java:19: error: [assignment.type.incompatible] incompatible types 
 in assignment.
         @Unique Object a1 = new Object();

@@ -10,12 +10,12 @@ causes of null-pointer exceptions.
 
 ### test objectives
 When the following issues occur for an expression that may never be null;
-1) assignment to an uninitialised object,
-2) directly de-referenced with null,
-3) assignment to a null reference,
-4) assignment to null via a method return value,
-5) assignment to an uninitialised object of an under-initialised class, or
-6) assignment to an uninitialised object of an under-initialised extended class.
+1. assignment to an uninitialised object,
+2. directly de-referenced with null,
+3. assignment to a null reference,
+4. assignment to null via a method return value,
+5. assignment to an uninitialised object of an under-initialised class, or
+6. assignment to an uninitialised object of an under-initialised extended class.
 
 ### tags
 constructor, de-reference, implicit, initialisation, inheritance, null
@@ -45,7 +45,7 @@ field, for example. With @EnsuresNonNullIf, if the annotated method returns the 
 (true or false), then the given expressions are non-null.
 
 **checker fq names:**
-1) org.checkerframework.checker.nullness.NullnessChecker
+1. org.checkerframework.checker.nullness.NullnessChecker
 
 ### results
 
