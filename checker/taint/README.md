@@ -14,29 +14,55 @@ that a program is free from all trust errors.
 Provide a template to test the effectiveness of static analysis tools in identifying 
 where values that are required to be untainted may be vulnerable to tainting. 
 
-## test objectives
+### test objectives
 Identify where the following situations have occurred;
-1) taint of an untainted string with a tainted string,
-2) taint of an untainted string with a tainted method return,
-3) taint of an untainted reference,
-4) taint of an untainted reference, or
-5) wrapping an untainted object.
+1. taint of an untainted string with a tainted string,
+2. taint of an untainted string with a tainted method return,
+3. taint of an untainted reference,
+4. taint of an untainted reference, or
+5. wrapping an untainted object.
 
-## annotations
-@Tainted *(default)*, @Untainted, @PolyTainted
-
-### checkerframework
+## checkerframework
 The Tainting type system uses the following annotations:
-1) **@Tainted** indicates a type that may include tainted (untrusted) or untainted 
+1. **@Tainted** indicates a type that may include tainted (untrusted) or untainted 
 (trusted) values. @Tainted is a supertype of @Untainted. It is the default qualifier.
-2) **@Untainted** indicates a type that includes only untainted (trusted) values.
-3) **@PolyTainted** is a qualifier that is polymorphic over tainting.
+2. **@Untainted** indicates a type that includes only untainted (trusted) values.
+3. **@PolyTainted** is a qualifier that is polymorphic over tainting.
 
-Fully qualified name(s):
-1) org.checkerframework.checker.tainting.TaintingChecker
+**checker fq names:**
+1. org.checkerframework.checker.tainting.TaintingChecker
 
-## tags
+### results
+
+```
+$ javac -processor org.checkerframework.checker.tainting.TaintingChecker Taint_CF.java 
+checker/taint/Taint_CF.java:28: error: [compound.assignment.type.incompatible] incompatible result type in compound assignment.
+        u2 += taint(t);
+           ^
+  found   : @Tainted String
+  required: @Untainted String
+checker/taint/Taint_CF.java:32: error: [assignment.type.incompatible] incompatible types in assignment.
+        @Untainted Taint_CF u3 = new Taint_CF();
+                                 ^
+  found   : @Tainted Taint_CF
+  required: @Untainted Taint_CF
+checker/taint/Taint_CF.java:37: error: [assignment.type.incompatible] incompatible types in assignment.
+        @Untainted Taint_CF u4 = new Taint_CF();
+                                 ^
+  found   : @Tainted Taint_CF
+  required: @Untainted Taint_CF
+checker/taint/Taint_CF.java:52: error: [compound.assignment.type.incompatible] incompatible result type in compound assignment.
+        this.u += " -> " + t;
+               ^
+  found   : @Tainted String
+  required: @Untainted String
+4 errors
+```
+
+## metadata
+
+### tags
 malicious, sanitise, sensitive, sink, taint, untaint
 
-## source file(s)
+### source files
 Taint.java, Taint_CF.java _(Checker Framework)_
