@@ -17,12 +17,6 @@ When the following issues occur for an expression that may never be null;
 5. assignment to an uninitialised object of an under-initialised class, or
 6. assignment to an uninitialised object of an under-initialised extended class.
 
-### tags
-constructor, de-reference, implicit, initialisation, inheritance, null
-
-### source file(s)
-Nullness.java
-
 ## checker framework
 The nullness hierarchy contains these qualifiers:
 1. **@Nullable** indicates a type that includes the null value. For example, the type Boolean is 
@@ -68,4 +62,11 @@ fields: o2
 3 errors
 ```
 
+## metadata
+
+### tags
+constructor, de-reference, implicit, initialisation, inheritance, null
+
+### source file(s)
+Nullness.java
 
