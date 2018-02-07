@@ -81,6 +81,18 @@ leaked.
 7 errors
 ```
 
+## findbugs
+
+### results
+
+```
+$ findbugs -textui Alias.class 
+
+H C SA: Self comparison of $L1 with itself alias.Alias.main(String[])  At Alias.java:[line 19]
+H C SA: Self comparison of $L3 with itself alias.Alias.main(String[])  At Alias.java:[line 25]
+Warnings generated: 2
+```
+
 ## metadata
 
 ### tags
