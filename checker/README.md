@@ -49,10 +49,9 @@ code instances that are likely to be errors.
 
 ### pmd
 PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch 
-blocks, unnecessary object creation, and so forth. It supports Java, JavaScript, Salesforce.com 
-Apex and Visualforce, PLSQL, Apache Velocity, XML, XSL.
+blocks, unnecessary object creation, and so forth. Additionally it includes CPD, the 
+copy-paste-detector. CPD finds duplicated code in multiple languages. The CDP feature is not used 
+in this project.
 
-Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code in Java, C, C++, 
-C#, Groovy, PHP, Ruby, Fortran, JavaScript, PLSQL, Apache Velocity, Scala, Objective C, Matlab, 
-Python, Go, Swift and Salesforce.com Apex and Visualforce. The CDP feature is not used in this 
-project.
+PMD has numerous categories of checking options, however this project only uses the errorprone.xml
+ruleset. Other checking options relate more to style.
