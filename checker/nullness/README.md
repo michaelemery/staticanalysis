@@ -51,6 +51,7 @@ field, for example. With @EnsuresNonNullIf, if the annotated method returns the 
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker Nullness.java
+
 Nullness.java:11: error: [initialization.fields.uninitialized] the constructor does not initialize 
 fields: o
 public class Nullness {
