@@ -9,7 +9,7 @@ initialised by its constructor.
 Provide a template to test the effectiveness of static analysis tools in identifying 
 potential causes of null-pointer exceptions.
 
-## test objectives
+### test objectives
 When the following issues occur for an expression that may never be null;
 1) assignment to an uninitialised object,
 2) directly de-referenced with null,
@@ -18,10 +18,8 @@ When the following issues occur for an expression that may never be null;
 5) assignment to an uninitialised object of an under-initialised class, or
 6) assignment to an uninitialised object of an under-initialised extended class.
 
-## annotations
-@NonNull *(default)*, @Nullable, @RequiresNonNull, @EnsuresNonNull, @EnsuresNonNullIf
+### Checker Framework
 
-### checkerframework
 The nullness hierarchy contains these qualifiers:
 1. **@Nullable** indicates a type that includes the null value. For example, the type 
 Boolean is nullable: a variable of type Boolean always has one of the values TRUE, FALSE, 
@@ -44,8 +42,27 @@ given expressions are non-null after the method returns; this is useful for a me
 initializes a field, for example. With @EnsuresNonNullIf, if the annotated method returns 
 the given boolean value (true or false), then the given expressions are non-null.
 
-Fully qualified name(s):
+*Fully qualified name(s):*
 1) org.checkerframework.checker.nullness.NullnessChecker
+
+## Results
+
+### Checker Framework
+
+**$ javac -processor nullness Nullness.java**
+
+Nullness.java:11: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
+public class Nullness {
+       ^
+Nullness.java:44: error: [return.type.incompatible] incompatible types in return.
+        return null;
+               ^
+  found   : null
+  required: @Initialized @NonNull Object
+Nullness.java:53: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o2
+    C1() {
+    ^
+3 errors
 
 ## tags
 constructor, de-reference, implicit, initialisation, inheritance, null
