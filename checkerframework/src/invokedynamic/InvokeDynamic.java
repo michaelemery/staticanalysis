@@ -1,3 +1,5 @@
+package invokedynamic;
+
 import java.lang.reflect.*;
 
 public class InvokeDynamic {

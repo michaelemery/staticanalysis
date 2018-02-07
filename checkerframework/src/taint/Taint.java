@@ -1,39 +1,39 @@
-import org.checkerframework.checker.tainting.qual.Untainted;
+package taint;
 
 /**
- * Taint_CF.java
+ * Taint.java
  *
  * Provide a template to test the effectiveness of static analysis tools in identifying
  * certain kinds of trust errors.
  *
  * Created by Michael Emery on 30/11/17.
  */
-public class Taint_CF {
+public class Taint {
 
-    public @Untainted String u = "untainted";
+    public String u = "untainted";
 
     public static void main(String[] args) {
 
         String t = "tainted";
 
         // taint an untainted string with a tainted string
-        @Untainted String u1 = "untainted";
+        String u1 = "untainted";
         u1 += " -> " + t;
         System.out.println(u1);  // untainted -> tainted
 
         // taint an untainted string with a tainted method return
-        @Untainted String u2 = "untainted";
+        String u2 = "untainted";
         u2 += taint(t);
         System.out.println(u2);  // untainted -> tainted
 
         // taint an untainted reference
-        @Untainted Taint_CF u3 = new Taint_CF();
+        Taint u3 = new Taint();
         u3.taintInstance(t);
         System.out.println(u3.u);  // untainted -> tainted
 
         // taint an untainted reference
-        @Untainted Taint_CF u4 = new Taint_CF();
-        Taint_CF t4 = u4;
+        Taint u4 = new Taint();
+        Taint t4 = u4;
         t4.taintInstance(t);
         System.out.println(u4.u);  // untainted -> tainted
 

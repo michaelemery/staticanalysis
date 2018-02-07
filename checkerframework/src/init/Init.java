@@ -1,3 +1,5 @@
+package init;
+
 /**
  * Init.java
  *
