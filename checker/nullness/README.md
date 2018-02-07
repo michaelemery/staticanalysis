@@ -86,6 +86,8 @@ Warnings generated: 4
 
 ## pmd
 
+Results output has been simplified.
+
 ### results
 
 ```
