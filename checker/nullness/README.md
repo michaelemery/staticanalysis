@@ -64,16 +64,13 @@ fields: o2
 
 ## findbugs
 
-**Unwritten field**
+**Unwritten field (UwF - UWF_UNWRITTEN_FIELD)**
 
-This field is never written.  All reads of it will return the default value. Check for errors (should it have been initialized?), or remove it if it is useless.<br />
-*Bug kind and pattern: UwF - UWF_UNWRITTEN_FIELD*
+This field is never written.  All reads of it will return the default value. Check for errors (should it have been initialized?), or remove it if it is useless.
 
-**Unread field**<
+**Unread field (UrF - URF_UNREAD_FIELD)**
 
-This field is never read.  Consider removing it from the class.<br />
-*Bug kind and pattern: UrF - URF_UNREAD_FIELD*
-
+This field is never read.  Consider removing it from the class.
 
 ### results
 
