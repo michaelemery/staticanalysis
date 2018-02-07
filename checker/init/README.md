@@ -11,14 +11,11 @@ to full initialisation.
 
 ## test objectives
 Identify where the following initialisation issues occur;
-1) constructor fails to initialise field before exit,
-2) constructor accesses uninitialised field, or
-3) constructor calls method that accesses an uninitialised field.
+1. constructor fails to initialise field before exit,
+2. constructor accesses uninitialised field, or
+3. constructor calls method that accesses an uninitialised field.
 
-## annotations
-@Initialized *(default)*, @UnknownInitialization, @UnderInitialization
-
-### checkerframework
+### checker framework
 The initialization hierarchy contains these qualifiers:
 1. **@Initialized** indicates a type that contains a fully-initialized object. 
 Initialized is the default, so there is little need for a programmer to write this 
@@ -35,11 +32,40 @@ that is under initialization — that is, its constructor is currently executing
 otherwise the same as @UnknownInitialization. Within the constructor, this has 
 @UnderInitialization type until all the @NonNull fields have been assigned.
 
-Fully qualified name(s):
-1) org.checkerframework.checker.nullness.NullnessChecker
+**checker fq names:**
+1. org.checkerframework.checker.nullness.NullnessChecker
 
-## tags
+### results
+
+```
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/Init.java 
+
+checker/init/Init.java:17: error: [initialization.fields.uninitialized] the constructor does not 
+initialize fields: o
+    Init() { }
+    ^
+checker/init/Init.java:20: error: [initialization.fields.uninitialized] the constructor does not 
+initialize fields: o
+    Init(int x) {
+    ^
+checker/init/Init.java:25: error: [initialization.fields.uninitialized] the constructor does not 
+initialize fields: o
+    Init(int x, int y) {
+    ^
+checker/init/Init.java:26: error: [method.invocation.invalid] call to m() not allowed on the given 
+receiver.
+        m();
+         ^
+  found   : @UnderInitialization(java.lang.Object.class) @NonNull Init
+  required: @Initialized @NonNull Init
+4 errors
+MacBook-Emery:statica
+```
+
+## metadata
+
+### tags
 constructor, inheritance, initialisation, null
 
-## source file(s)
+### source files
 Init.java
