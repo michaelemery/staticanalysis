@@ -76,6 +76,7 @@ This field is never read.  Consider removing it from the class.
 
 ```
 $ findbugs Nullness.class C1.class C2.class
+
 M C UwF: Unwritten field: nullness.C1.o2  At Nullness.java:[line 36]
 M C UwF: Unwritten field: nullness.Nullness.o  At Nullness.java:[line 19]
 M P UrF: Unread field: nullness.C2.o3  At Nullness.java:[line 64]

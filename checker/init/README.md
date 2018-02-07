@@ -64,24 +64,18 @@ receiver.
 
 ## findbugs
 
-**Uninitialized read of field in constructor**
+**Uninitialized read of field in constructor (UR - UR_UNINIT_READ)**
 
 This constructor reads a field which has not yet been assigned a value.  This is often caused when the programmer mistakenly uses the field instead of one of the constructor's parameters.
- 
-*Bug kind and pattern: UR - UR_UNINIT_READ*
 
-**Dead store to local variable**
+**Dead store to local variable O(DLS - DLS_DEAD_LOCAL_STORE)**
 
 This instruction assigns a value to a local variable, but the value is not read or used in any subsequent instruction. Often, this indicates an error, because the value computed is never used.
 Note that Sun's javac compiler often generates dead stores for final local variables. Because FindBugs is a bytecode-based tool, there is no easy way to eliminate these false positives.
- 
-*Bug kind and pattern: DLS - DLS_DEAD_LOCAL_STORE*
 
-**Unwritten field**
+**Unwritten field (UwF - UWF_UNWRITTEN_FIELD)**
 
 This field is never written.  All reads of it will return the default value. Check for errors (should it have been initialized?), or remove it if it is useless.
- 
-*Bug kind and pattern: UwF - UWF_UNWRITTEN_FIELD*
 
 ## results
 
