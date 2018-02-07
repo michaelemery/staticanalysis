@@ -2,7 +2,7 @@
 Libraries.
 
 ## description
-Additional libraries for checkjer specific tools and comppliers. 
+Additional libraries for checker specific tools and compilers. 
 
 ### files
 1) **checker.jar**: Checker Framework jar.
