@@ -14,12 +14,6 @@ Identify where objects that are intended to be unique may become mutable by;
 3. pseudo assignment of an alias to method parameters, or
 4. leakage to an alias via method return value.
 
-### tags
-alias, mutability, leak
-
-### source file(s)
-Alias.java, Alias_CF.java _(Checker Framework)_
-
 ## checker framework
 There are two possible types for an expression:
 1. **@MaybeAliased** is the type of an expression that might have an alias. This is the 
@@ -86,3 +80,11 @@ leaked.
                        ^
 7 errors
 ```
+
+## metadata
+
+### tags
+alias, mutability, leak
+
+### source files
+Alias.java, Alias_CF.java _(Checker Framework)_
