@@ -87,6 +87,7 @@ This field is never written.  All reads of it will return the default value. Ch
 
 ```
 $ findbugs Init.class 
+
 M C UR: Uninitialized read of o in new init.Init(int)  At Init.java:[line 21]
 H D DLS: Dead store to $L2 in init.Init.main(String[])  At Init.java:[line 36]
 M C UwF: Unwritten field: init.Init.o  At Init.java:[line 21]
