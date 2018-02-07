@@ -52,9 +52,10 @@ the given boolean value (true or false), then the given expressions are non-null
 1) org.checkerframework.checker.nullness.NullnessChecker
 
 ### results
-```bash
-**$ javac -processor nullness Nullness.java**
 
+`$ javac -processor nullness Nullness.java`
+
+```
 Nullness.java:11: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
 public class Nullness {
        ^
