@@ -4,7 +4,9 @@ those errors do not occur.
 
 ## description
 Folders at this level contain sample code for common categories of Java programming 
-errors. Some code has been annotated specifically for Checker Framework.
+errors. Some source files have annotated versions specifically for Checker Framework. Other tools 
+used in this project such as FindBugs and PMD do not require any code modifications in order to
+work correctly.
 
 ### categories
 1) **alias**: where errors may occur when an object is referenced, without consideration 
