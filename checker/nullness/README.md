@@ -86,8 +86,6 @@ Warnings generated: 4
 
 ## pmd
 
-Results output has been simplified.
-
 ### results
 
 ```
@@ -98,6 +96,8 @@ Nullness.java:50: Found non-transient, non-static member. Please mark as transie
 Nullness.java:51: Found non-transient, non-static member. Please mark as transient or provide accessors.
 Nullness.java:60: Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
+
+*Note: output has been simplified.*
 
 ## metadata
 
