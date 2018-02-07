@@ -83,6 +83,11 @@ leaked.
 
 ## findbugs
 
+**Self comparison of value with itself:**
+This method compares a local variable with itself, and may indicate a typo or a logic error. Make sure that you are comparing the right things.
+
+*Bug kind and pattern: SA - SA_LOCAL_SELF_COMPARISON*
+
 ### results
 
 ```
@@ -92,13 +97,6 @@ H C SA: Self comparison of $L1 with itself alias.Alias.main(String[])  At Alias.
 H C SA: Self comparison of $L3 with itself alias.Alias.main(String[])  At Alias.java:[line 25]
 Warnings generated: 2
 ```
-
-### detail
-
-**Self comparison of value with itself:**
-This method compares a local variable with itself, and may indicate a typo or a logic error. Make sure that you are comparing the right things.
-
-*Bug kind and pattern: SA - SA_LOCAL_SELF_COMPARISON*
 
 ## metadata
 
