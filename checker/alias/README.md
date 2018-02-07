@@ -86,7 +86,7 @@ leaked.
 ### results
 
 ```
-$ findbugs -textui Alias.class 
+$ findbugs Alias.class 
 
 H C SA: Self comparison of $L1 with itself alias.Alias.main(String[])  At Alias.java:[line 19]
 H C SA: Self comparison of $L3 with itself alias.Alias.main(String[])  At Alias.java:[line 25]
