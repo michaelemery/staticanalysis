@@ -12,9 +12,8 @@ errors, as well as additional libraries _(lib)_ for resources required by variou
 demonstrations. 
 
 ### categories
-1) **Checker Tests**: Checker Framework annotated test cases.
-for mutations caused by an alias to the same object.
-2) **Annotated Checker Tests**: Checker Framework annotated test cases.
+1) **checker**: Code for testing the effectiveness of static analysis tools in detecting errors.
+2) **refactor**: Code for testing refactoring effectivness of various IDE(s).
 
 ### libraries
 The library folder (lib) contains JAR files for additional tools and frameworks such as 
