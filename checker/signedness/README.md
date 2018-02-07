@@ -8,16 +8,13 @@ the signedness that the programmer intends an expression to have.
 Provide a template to test the effectiveness of static analysis tools in identifying 
 unsigned expressions that have been used incorrectly.
 
-## test objectives
+### test objectives
 Identify where the following incorrect uses of unsigned values;
-1) signed and unsigned may not be mixed,
-2) unsigned may not use / or mod operators, or
-3) unsigned may not use comparators (<, >, <=, >=).
+1. signed and unsigned may not be mixed,
+2. unsigned may not use / or mod operators, or
+3. unsigned may not use comparators (<, >, <=, >=).
 
-## annotations
-@Unsigned, @Signed, @Constant, @UnknownSignedness
-
-### checkerframework
+## checkerframework
 These are the qualifiers in the signedness type system:
 1. **@Unsigned** indicates that the programmer intends the value to be interpreted as 
 unsigned. That is, if the most significant bit in the bitwise representation is set, then 
@@ -38,11 +35,21 @@ in one of the following ways:
 * All byte, short, int, and long variables default to @Signed.
 * All other expressions default to @UnknownSignedness.
 
-Fully qualified name(s):
-1) org.checkerframework.checker.signedness.SignednessChecker
+**checker fq names:**
+1. org.checkerframework.checker.signedness.SignednessChecker
 
-## tags
+### results
+
+```
+$ javac -processor org.checkerframework.checker.signedness.SignednessChecker Signedness_CF.java 
+
+[NO RESULTS]
+```
+
+## metadata
+
+### tags
 comparators, signed, unsigned
 
-## source file(s)
+### source files
 Signedness.java, Signedness_CF.java _(Checker Framework)_
