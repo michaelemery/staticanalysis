@@ -50,11 +50,8 @@ the given boolean value (true or false), then the given expressions are non-null
 
 ### results
 
-`$ javac -processor org.checkerframework.checker.nullness.NullnessChecker Nullness.java`
-
-**output**
-
 ```
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker Nullness.java
 Nullness.java:11: error: [initialization.fields.uninitialized] the constructor does not 
 initialize fields: o
 public class Nullness {
