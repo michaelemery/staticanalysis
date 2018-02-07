@@ -62,6 +62,29 @@ fields: o2
 3 errors
 ```
 
+## findbugs
+
+**Unwritten field**<br />
+This field is never written.  All reads of it will return the default value. Check for errors (should it have been initialized?), or remove it if it is useless.<br />
+*Bug kind and pattern: UwF - UWF_UNWRITTEN_FIELD*
+
+**Unread field**<br />
+This field is never read.  Consider removing it from the class.<br />
+*Bug kind and pattern: UrF - URF_UNREAD_FIELD*
+
+
+### results
+
+```
+$ findbugs Nullness.class C1.class C2.class
+M C UwF: Unwritten field: nullness.C1.o2  At Nullness.java:[line 36]
+M C UwF: Unwritten field: nullness.Nullness.o  At Nullness.java:[line 19]
+M P UrF: Unread field: nullness.C2.o3  At Nullness.java:[line 64]
+M P UrF: Unread field: nullness.C1.o1  At Nullness.java:[line 54]
+Warnings generated: 4
+```
+
+
 ## metadata
 
 ### tags
