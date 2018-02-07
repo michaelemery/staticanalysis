@@ -97,6 +97,20 @@ H C SA: Self comparison of $L3 with itself alias.Alias.main(String[])  At Alias.
 Warnings generated: 2
 ```
 
+## pmd
+
+### results
+
+```
+$ pmd -d alias/ -f text -R category/java/errorprone.xml
+
+Alias.java:19: Use equals() to compare object references.
+Alias.java:25: Use equals() to compare object references.
+Alias.java:36: Use equals() to compare object references.
+```
+
+*Output has been simplified.*
+
 ## metadata
 
 ### tags
