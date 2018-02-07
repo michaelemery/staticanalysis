@@ -91,10 +91,10 @@ Warnings generated: 4
 ```
 $ pmd -d nullness/ -f text -R category/java/errorprone.xml
 
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Nullness.java:13: Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Nullness.java:50: Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Nullness.java:51: Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Nullness.java:60: Found non-transient, non-static member. Please mark as transient or provide accessors.
+Nullness.java:13: Found non-transient, non-static member. Please mark as transient or provide accessors.
+Nullness.java:50: Found non-transient, non-static member. Please mark as transient or provide accessors.
+Nullness.java:51: Found non-transient, non-static member. Please mark as transient or provide accessors.
+Nullness.java:60: Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 ## metadata
