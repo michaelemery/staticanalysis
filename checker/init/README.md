@@ -38,21 +38,21 @@ otherwise the same as @UnknownInitialization. Within the constructor, this has
 ### results
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/Init.java 
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker Init.java 
 
-checker/init/Init.java:17: error: [initialization.fields.uninitialized] the constructor does not 
-initialize fields: o
+Init.java:17: error: [initialization.fields.uninitialized] the constructor does not initialize 
+fields: o
     Init() { }
     ^
-checker/init/Init.java:20: error: [initialization.fields.uninitialized] the constructor does not 
+Init.java:20: error: [initialization.fields.uninitialized] the constructor does not 
 initialize fields: o
     Init(int x) {
     ^
-checker/init/Init.java:25: error: [initialization.fields.uninitialized] the constructor does not 
+Init.java:25: error: [initialization.fields.uninitialized] the constructor does not 
 initialize fields: o
     Init(int x, int y) {
     ^
-checker/init/Init.java:26: error: [method.invocation.invalid] call to m() not allowed on the given 
+Init.java:26: error: [method.invocation.invalid] call to m() not allowed on the given 
 receiver.
         m();
          ^
