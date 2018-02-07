@@ -84,6 +84,18 @@ M P UrF: Unread field: nullness.C1.o1  At Nullness.java:[line 54]
 Warnings generated: 4
 ```
 
+## pmd
+
+### results
+
+```
+$ pmd -d nullness/ -f text -R category/java/errorprone.xml
+
+/Users/michaelemery/Developer/staticanalysis/checker/nullness/Nullness.java:13: Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/michaelemery/Developer/staticanalysis/checker/nullness/Nullness.java:50: Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/michaelemery/Developer/staticanalysis/checker/nullness/Nullness.java:51: Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/michaelemery/Developer/staticanalysis/checker/nullness/Nullness.java:60: Found non-transient, non-static member. Please mark as transient or provide accessors.
+```
 
 ## metadata
 
