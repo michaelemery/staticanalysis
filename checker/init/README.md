@@ -59,7 +59,6 @@ receiver.
   found   : @UnderInitialization(java.lang.Object.class) @NonNull Init
   required: @Initialized @NonNull Init
 4 errors
-MacBook-Emery:statica
 ```
 
 ## metadata
