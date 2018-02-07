@@ -35,7 +35,7 @@ in one of the following ways:
 * All byte, short, int, and long variables default to @Signed.
 * All other expressions default to @UnknownSignedness.
 
-**checker fq names:**
+Checker fully qualified names:
 1. org.checkerframework.checker.signedness.SignednessChecker
 
 ### results

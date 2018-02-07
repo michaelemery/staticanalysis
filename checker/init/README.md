@@ -32,7 +32,7 @@ that is under initialization — that is, its constructor is currently executing
 otherwise the same as @UnknownInitialization. Within the constructor, this has 
 @UnderInitialization type until all the @NonNull fields have been assigned.
 
-**checker fq names:**
+Checker fully qualified names:
 1. org.checkerframework.checker.nullness.NullnessChecker
 
 ### results

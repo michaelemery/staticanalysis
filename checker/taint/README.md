@@ -29,7 +29,7 @@ The Tainting type system uses the following annotations:
 2. **@Untainted** indicates a type that includes only untainted (trusted) values.
 3. **@PolyTainted** is a qualifier that is polymorphic over tainting.
 
-**checker fq names:**
+Checker fully qualified names:
 1. org.checkerframework.checker.tainting.TaintingChecker
 
 ### results

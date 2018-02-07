@@ -38,7 +38,7 @@ expressions are non-null after the method returns; this is useful for a method t
 field, for example. With @EnsuresNonNullIf, if the annotated method returns the given boolean value 
 (true or false), then the given expressions are non-null.
 
-**checker fq names:**
+Checker fully qualified names:
 1. org.checkerframework.checker.nullness.NullnessChecker
 
 ### results

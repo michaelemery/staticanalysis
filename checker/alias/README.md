@@ -34,7 +34,7 @@ parameter.
 otherwise leaked. For example, the receiver parameter of StringBuffer.append(StringBuffer 
 this, String s) is @LeakedToResult, because the method returns the updated receiver.
 
-**checker fq name:**
+Checker fully qualified names:
 1. org.checkerframework.common.aliasing.AliasingChecker
 
 ### results
