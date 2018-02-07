@@ -55,8 +55,9 @@ the given boolean value (true or false), then the given expressions are non-null
 
 `$ javac -processor nullness Nullness.java`
 
-```bash
-Nullness.java:11: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
+```
+Nullness.java:11: error: [initialization.fields.uninitialized] the constructor does not 
+initialize fields: o
 public class Nullness {
        ^
 Nullness.java:44: error: [return.type.incompatible] incompatible types in return.
@@ -64,7 +65,8 @@ Nullness.java:44: error: [return.type.incompatible] incompatible types in return
                ^
   found   : null
   required: @Initialized @NonNull Object
-Nullness.java:53: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o2
+Nullness.java:53: error: [initialization.fields.uninitialized] the constructor does not 
+initialize fields: o2
     C1() {
     ^
 3 errors
