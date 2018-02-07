@@ -24,6 +24,9 @@ compromise the application’s integrity, causing it to crash, corrupt data, lea
 data, etc.
 
 ## tools
+Source code in the checker section will be analysed by multiple static analysis tools. The results 
+of each tool are compared in order to assess overall and relative effectiveness.
+
 
 ### checkerframework
 The Checker Framework enhances Java’s type system by detecting and preventing specific 
