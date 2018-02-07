@@ -51,7 +51,7 @@ $ javac -processor org.checkerframework.checker.signedness.SignednessChecker Sig
 ### results
 
 ```
-[NO RESULTS]
+[NO ISSUES FOUND]
 ```
 
 ## metadata
