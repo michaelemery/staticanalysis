@@ -43,7 +43,7 @@ Checker fully qualified names:
 ```
 $ javac -processor org.checkerframework.checker.signedness.SignednessChecker Signedness_CF.java 
 
-[NO RESULTS]
+[NO ISSUES FOUND]
 ```
 
 ## findbugs

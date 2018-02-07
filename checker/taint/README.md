@@ -69,7 +69,7 @@ type in compound assignment.
 ### results
 
 ```
-[NO RESULTS]
+[NO ISSUES FOUND]
 ```
 
 ## metadata
