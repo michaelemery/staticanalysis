@@ -36,22 +36,27 @@ The Tainting type system uses the following annotations:
 
 ```
 $ javac -processor org.checkerframework.checker.tainting.TaintingChecker Taint_CF.java 
-checker/taint/Taint_CF.java:28: error: [compound.assignment.type.incompatible] incompatible result type in compound assignment.
+
+checker/taint/Taint_CF.java:28: error: [compound.assignment.type.incompatible] incompatible result 
+type in compound assignment.
         u2 += taint(t);
            ^
   found   : @Tainted String
   required: @Untainted String
-checker/taint/Taint_CF.java:32: error: [assignment.type.incompatible] incompatible types in assignment.
+checker/taint/Taint_CF.java:32: error: [assignment.type.incompatible] incompatible types in 
+assignment.
         @Untainted Taint_CF u3 = new Taint_CF();
                                  ^
   found   : @Tainted Taint_CF
   required: @Untainted Taint_CF
-checker/taint/Taint_CF.java:37: error: [assignment.type.incompatible] incompatible types in assignment.
+checker/taint/Taint_CF.java:37: error: [assignment.type.incompatible] incompatible types in 
+assignment.
         @Untainted Taint_CF u4 = new Taint_CF();
                                  ^
   found   : @Tainted Taint_CF
   required: @Untainted Taint_CF
-checker/taint/Taint_CF.java:52: error: [compound.assignment.type.incompatible] incompatible result type in compound assignment.
+checker/taint/Taint_CF.java:52: error: [compound.assignment.type.incompatible] incompatible result 
+type in compound assignment.
         this.u += " -> " + t;
                ^
   found   : @Tainted String
