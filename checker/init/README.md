@@ -77,7 +77,7 @@ Note that Sun's javac compiler often generates dead stores for final local varia
 
 This field is never written.  All reads of it will return the default value. Check for errors (should it have been initialized?), or remove it if it is useless.
 
-## results
+### results
 
 ```
 $ findbugs Init.class 
@@ -87,6 +87,21 @@ H D DLS: Dead store to $L2 in init.Init.main(String[])  At Init.java:[line 36]
 M C UwF: Unwritten field: init.Init.o  At Init.java:[line 21]
 Warnings generated: 3
 ```
+
+## pmd
+
+### results
+
+```
+$ pmd -d init/ -f text -R category/java/errorprone.xml
+
+Init.java:14: Found non-transient, non-static member. Please mark as transient or provide accessors.
+Init.java:26: Overridable method 'm' called during object construction
+Init.java:36: Found 'DU'-anomaly for variable 'a2' (lines '36'-'38').
+Init.java:37: Found 'DU'-anomaly for variable 'a3' (lines '37'-'38').
+```
+
+Output has been simplified.
 
 ## metadata
 
