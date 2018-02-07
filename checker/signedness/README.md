@@ -54,6 +54,14 @@ $ javac -processor org.checkerframework.checker.signedness.SignednessChecker Sig
 [NO ISSUES FOUND]
 ```
 
+## pmd
+
+### results
+
+```
+[NO ISSUES FOUND]
+```
+
 ## metadata
 
 ### tags
