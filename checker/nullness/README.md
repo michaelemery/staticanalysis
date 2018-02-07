@@ -18,7 +18,13 @@ When the following issues occur for an expression that may never be null;
 5) assignment to an uninitialised object of an under-initialised class, or
 6) assignment to an uninitialised object of an under-initialised extended class.
 
-### checker framework
+### tags
+constructor, de-reference, implicit, initialisation, inheritance, null
+
+### source file(s)
+Nullness.java
+
+## checker framework
 
 The nullness hierarchy contains these qualifiers:
 1. **@Nullable** indicates a type that includes the null value. For example, the type 
@@ -45,10 +51,8 @@ the given boolean value (true or false), then the given expressions are non-null
 *Fully qualified name(s):*
 1) org.checkerframework.checker.nullness.NullnessChecker
 
-## results
-
-### checker framework
-
+### results
+```bash
 **$ javac -processor nullness Nullness.java**
 
 Nullness.java:11: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
@@ -63,11 +67,6 @@ Nullness.java:53: error: [initialization.fields.uninitialized] the constructor d
     C1() {
     ^
 3 errors
+```
 
-## Meta
 
-### tags
-constructor, de-reference, implicit, initialisation, inheritance, null
-
-### source file(s)
-Nullness.java
