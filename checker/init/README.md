@@ -9,13 +9,13 @@ Provide a template to test the effectiveness of static analysis tools in identif
 whether or not potential errors could occur as a result of fields being accesses prior
 to full initialisation.
 
-## test objectives
+### test objectives
 Identify where the following initialisation issues occur;
 1. constructor fails to initialise field before exit,
 2. constructor accesses uninitialised field, or
 3. constructor calls method that accesses an uninitialised field.
 
-### checker framework
+## checker framework
 The initialization hierarchy contains these qualifiers:
 1. **@Initialized** indicates a type that contains a fully-initialized object. 
 Initialized is the default, so there is little need for a programmer to write this 
