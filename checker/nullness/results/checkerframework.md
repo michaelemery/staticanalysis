@@ -10,6 +10,7 @@ The nullness hierarchy contains these qualifiers:
 
 > **Important:** The default state of any object in Checker Framework is ***@NonNull***.
 
+
 The Nullness Checker supports several annotations that specify method behavior. These are 
 declaration annotations, not type annotations as they apply to the method itself rather than to 
 some particular type:
