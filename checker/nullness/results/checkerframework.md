@@ -98,7 +98,7 @@ public class Alias {
 }
 ```
 
-### results:
+**results:**
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Alias.java
@@ -145,7 +145,7 @@ public class Call {
 }
 ```
 
-### results:
+**results:**
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Call.java
@@ -210,7 +210,7 @@ public class Reflection {
 }
 ```
 
-### results:
+**results:**
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflection.java
