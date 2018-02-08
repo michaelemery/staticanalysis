@@ -4,7 +4,7 @@ De-referenced expressions are a common cause a null pointer exceptions. Derefere
 when a field is accessed, but when an array is indexed, an exception is thrown, and more. Such 
 exceptions may also occur simply as a result of a field not being initialised by its constructor.
 
-## tests
+## testing
 Inidividual tests provide a template to test the effectiveness of static analysis tools in 
 identifying potential causes of null-pointer exceptions.
 
