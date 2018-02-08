@@ -22,5 +22,7 @@ Each test represents different techniques for invoking potential error condition
 constructor, de-reference, implicit, initialisation, inheritance, null
 
 ### source files
-Nullness.java
-
+[Direct.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Direct.java), 
+[Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java), 
+[Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java), 
+[Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java).
