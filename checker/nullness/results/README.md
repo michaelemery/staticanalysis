@@ -16,8 +16,9 @@ side of caution when encountering reflective code.
 
 | | CFW | FindBugs | PMD |
 | --- | --- | --- | --- |
-| Direct | 1:TP | 1:TP | |
-| Alias | 1:TP | | |
-| Method Call | 1:TP | | |
-| Reflection | 1:TP 3:FP | | |
+| Direct | 1:TP | 1:TP | 1:TP |
+| Alias | 1:TP | 1:TP | 1:TP |
+| Method Call | 1:TP | 1:FN | 1:FN |
+| Reflection | 1:TP 3:FP | 1:FN | 1:FN|
 
+> **Note:** Errors or warnings identified that are irrelevanrt to the test are not assessed.
