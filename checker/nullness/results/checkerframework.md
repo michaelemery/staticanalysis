@@ -54,7 +54,7 @@ public class Direct {
 }
 ```
 
-### results:
+**results:**
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Direct.java
