@@ -1,6 +1,8 @@
 
 # checker framework
 
+Version: checker-framework-2.3.0
+
 The nullness hierarchy contains these qualifiers:
 
 | qualifier | description |

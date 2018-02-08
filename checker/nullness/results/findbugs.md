@@ -3,10 +3,6 @@
 
 Version: findbugs-3.0.1
 
-> **Note:**
->
-> The `pmd` command shown in the following results is a bash alias created as follows; <br />
-> `alias pmd='$PMD_HOME/bin/run.sh pmd'`
 
 ## direct
 
