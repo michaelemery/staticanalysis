@@ -11,8 +11,15 @@ Detailed results available in the links.
 ## Summary
 
 Checker Framework (CFW) is consistently sound and precise in non-reflective cases. However, it 
-handles reflection in a very rudimentry way that causes excessive false positives. CFW errs on the 
-side of caution when encountering reflective code.  
+handles reflection in a very rudimentary way that causes excessive false positives. CFW errs on the 
+side of caution when encountering reflective code. 
+
+Both FindBugs and PMD are less likely to generate FP results are are more precise than CFW. 
+However, their lack of caution in complex situations compromises soundness compared to CFW.
+
+Overall, CFW is recommended as the most reliable tool for nullness testing given that the FP 
+weakness in reflection is offset by the FN results of other tools that were less sound.
+
 
 | | CFW | FindBugs | PMD |
 | --- | --- | --- | --- |
@@ -21,4 +28,4 @@ side of caution when encountering reflective code.
 | Method Call | 1:TP | 1:FN | 1:FN |
 | Reflection | 1:TP 3:FP | 1:FN | 1:FN|
 
-> **Note:** Errors or warnings identified that are irrelevanrt to the test are not assessed.
+> **Note:** Irrelevant errors or warnings that are justifiably identified are not assessed.
