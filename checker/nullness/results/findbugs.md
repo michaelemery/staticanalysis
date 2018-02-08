@@ -37,7 +37,8 @@ public class Direct {
 ```
 $ findbugs nullness/Direct.class 
 
-H C NP: Null pointer dereference of ? in nullness.Direct.main(String[])  Dereferenced at Direct.java:[line 22]
+H C NP: Null pointer dereference of ? in nullness.Direct.main(String[])  
+Dereferenced at Direct.java:[line 22]
 Warnings generated: 1
 ```
 
@@ -79,7 +80,8 @@ public class Alias {
 ```
 $ findbugs nullness/Alias.class 
 
-H C NP: Null pointer dereference of ? in nullness.Alias.main(String[])  Dereferenced at Alias.java:[line 24]
+H C NP: Null pointer dereference of ? in nullness.Alias.main(String[])  
+Dereferenced at Alias.java:[line 24]
 Warnings generated: 1
 
 ```
