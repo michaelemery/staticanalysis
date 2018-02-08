@@ -12,8 +12,11 @@ errors, as well as additional libraries _(lib)_ for resources required by variou
 demonstrations. 
 
 ### categories
-1) **checker**: Code for testing the effectiveness of static analysis tools in detecting errors.
-2) **refactor**: Code for testing refactoring effectivness of various IDE(s).
+
+| category | description |
+| --- | --- |
+| [checker](https://github.com/michaelemery/staticanalysis/tree/master/checker) | Code for testing the effectiveness of static analysis tools in detecting errors. |
+| [refactor](https://github.com/michaelemery/staticanalysis/tree/master/refactor) | Code for testing refactoring effectivness of various IDE(s).|
 
 ### libraries
 The library folder (lib) contains JAR files for additional tools and frameworks such as 
