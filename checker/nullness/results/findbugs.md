@@ -1,7 +1,7 @@
 
 # findbugs
 
-Version: 3.0.1 (findbugs-3.0.1)
+Version: findbugs-3.0.1
 
 > **Note:**
 >
