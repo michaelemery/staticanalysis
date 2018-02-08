@@ -1,15 +1,5 @@
 # Results
 
-Nullness tests for conducted for the following tools;
-
-1. Checker Framework
-2. FindBugs
-3. PMD
-
-Detailed results available in the links.
-
-## Summary
-
 | | CFW | FindBugs | PMD |
 | --- | --- | --- | --- |
 | Direct | 1:TP | 1:TP | 1:TP |
