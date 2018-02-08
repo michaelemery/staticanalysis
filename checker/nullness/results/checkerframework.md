@@ -25,7 +25,7 @@ some particular type:
 
 ## direct
 
-```java class:"lineNo"
+```java
 package nullness;
 
 /**
