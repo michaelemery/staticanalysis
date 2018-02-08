@@ -5,6 +5,8 @@ Version: findbugs-3.0.1
 
 ## direct
 
+[nullness/Direct.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Direct.java)
+
 ```java
 package nullness;
 
@@ -44,7 +46,9 @@ Dereferenced at Direct.java:[line 22]
 Warnings generated: 1
 ```
 
-## alias
+## 
+
+[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 ```java
 package nullness;
@@ -90,6 +94,8 @@ Warnings generated: 1
 
 ## call
 
+[nullness/Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
+
 ```java
 package nullness;
 
@@ -132,6 +138,8 @@ $ findbugs nullness/Call.class
 ```
 
 ## reflection
+
+[nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 ```java
 package nullness;
