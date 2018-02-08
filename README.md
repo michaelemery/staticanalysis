@@ -21,12 +21,12 @@ situations.
 | --- | --- |
 | [checker](https://github.com/michaelemery/staticanalysis/tree/master/checker) | Code for testing the effectiveness of static analysis tools in detecting errors. |
 | [refactor](https://github.com/michaelemery/staticanalysis/tree/master/refactor) | Scenarios for testing refactoring effectiveness of various IDE(s).|
-| [auto-complete](https://github.com/michaelemery/staticanalysis/tree/master/autocomplete) | Testing the propensity of IDE auto-complete to recommend bad code options.|
+| [autocomplete](https://github.com/michaelemery/staticanalysis/tree/master/autocomplete) | Testing the propensity of IDE auto-complete to recommend bad code options.|
 | [generator](https://github.com/michaelemery/staticanalysis/tree/master/generator) | Testing the correctness of generated code.|
 
 ## libraries
-The library folder (lib) contains JAR files for additional tools and frameworks such as 
+The library folder ([lib](https://github.com/michaelemery/staticanalysis/tree/master/lib)) contains JAR files for additional tools and frameworks such as 
 _JUnit_, annotated javac distributions, and checker tools.
 
 ## misc
-A doc folder is provided for project documentation.
+A documents folder ([doc](https://github.com/michaelemery/staticanalysis/tree/master/doc)) is provided for project documentation.
