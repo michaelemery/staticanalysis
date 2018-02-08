@@ -14,6 +14,8 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 
 ## direct
 
+[nullness/Direct.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Direct.java)
+
 ```java
 package nullness;
 
@@ -57,6 +59,8 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 *Output has been simplified.*
 
 ## alias
+
+[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 ```java
 package nullness;
@@ -104,6 +108,8 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 
 ## call
 
+[nullness/Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
+
 ```java
 package nullness;
 
@@ -149,6 +155,8 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 *Output has been simplified.*
 
 ## reflection
+
+[nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 ```java
 package nullness;

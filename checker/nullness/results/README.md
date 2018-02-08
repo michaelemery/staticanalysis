@@ -9,4 +9,15 @@ Nullness tests for conducted for the following tools;
 Detailed results available in the links.
 
 ## Summary
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+
+Checker Framework (CFW) is consistently sound and precise in non-reflective cases. However, it 
+handles reflection in a very rudimentry way that causes excessive false positives. CFW errs on the 
+side of caution when encountering reflective code.  
+
+| | CFW | FindBugs | PMD |
+| --- | --- | --- | --- |
+| Direct | 1:TP | 1:TP | |
+| Alias | 1:TP | | |
+| Method Call | 1:TP | | |
+| Reflection | 1:TP 3:FP | | |
+
