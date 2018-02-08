@@ -27,6 +27,8 @@ some particular type:
 
 ## direct
 
+[nullness/Direct.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Direct.java)
+
 ```java
 package nullness;
 
@@ -68,6 +70,8 @@ nullness/Direct.java:22: error: [dereference.of.nullable] dereference of possibl
 ```
 
 ## alias
+
+[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 ```java
 package nullness;
@@ -113,6 +117,8 @@ nullness/Alias.java:24: error: [dereference.of.nullable] dereference of possibly
 ```
 
 ## call
+
+[nullness/Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
 
 ```java
 package nullness;
@@ -161,6 +167,8 @@ nullness/Call.java:21: error: [argument.type.incompatible] incompatible types in
 ```
 
 ## reflection
+
+[nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 ```java
 package nullness;
