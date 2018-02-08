@@ -3,7 +3,6 @@
 
 Version: findbugs-3.0.1
 
-
 ## direct
 
 ```java
