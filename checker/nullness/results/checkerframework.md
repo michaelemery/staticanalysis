@@ -20,14 +20,8 @@ some particular type:
 | **@EnsuresNonNull** | |
 | **@EnsuresNonNullIf** | Indicates a method postcondition. With @EnsuresNonNull, the given expressions are non-null after the method returns; this is useful for a method that initializes a field, for example. With @EnsuresNonNullIf, if the annotated method returns the given boolean value (true or false), then the given expressions are non-null. |
 
-Checker fully qualified names:
+**Checker fully qualified names:**
 1. org.checkerframework.checker.nullness.NullnessChecker
-
-Conditions tested:
-1. direct
-2. alias
-3. call (assignment from a method return)
-4. reflection
 
 ## direct
 
@@ -60,7 +54,7 @@ public class Direct {
 }
 ```
 
-### results
+### results:
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Direct.java
@@ -104,7 +98,7 @@ public class Alias {
 }
 ```
 
-### results
+### results:
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Alias.java
@@ -151,7 +145,7 @@ public class Call {
 }
 ```
 
-### results
+### results:
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Call.java
@@ -216,7 +210,7 @@ public class Reflection {
 }
 ```
 
-### results
+### results:
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflection.java
