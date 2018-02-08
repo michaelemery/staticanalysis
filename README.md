@@ -12,15 +12,21 @@ demonstrations.
 
 ## categories
 
-This project conducts muplitple categories of testing that include; dedicated static analysis tools 
-that check for certain types of errors, and tests for IDE effectiveness at refactoring code in complex 
-situations. 
+This project conducts multiple categories of testing that include; dedicated static analysis tools 
+that check for certain types of errors, tests for IDE effectiveness at refactoring code in complex 
+situations, the and correctness of auto-completed and auto-generated code snippets in certain 
+situations.
 
 | category | description |
 | --- | --- |
 | [checker](https://github.com/michaelemery/staticanalysis/tree/master/checker) | Code for testing the effectiveness of static analysis tools in detecting errors. |
-| [refactor](https://github.com/michaelemery/staticanalysis/tree/master/refactor) | Code for testing refactoring effectivness of various IDE(s).|
+| [refactor](https://github.com/michaelemery/staticanalysis/tree/master/refactor) | Scenarios for testing refactoring effectiveness of various IDE(s).|
+| [auto-complete](https://github.com/michaelemery/staticanalysis/tree/master/autocomplete) | Testing the propensity of IDE auto-complete to recommend bad code options.|
+| [generator](https://github.com/michaelemery/staticanalysis/tree/master/generator) | Testing the correctness of generated code.|
 
-### libraries
+## libraries
 The library folder (lib) contains JAR files for additional tools and frameworks such as 
 _JUnit_, annotated javac distributions, and checker tools.
+
+## misc
+A doc folder is provided for project documentation.
