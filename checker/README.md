@@ -2,13 +2,10 @@
 A “checker” is a tool that warns you about certain errors or gives you a guarantee that 
 those errors do not occur.
 
-## description
 Folders at this level contain sample code for common categories of Java programming 
-errors. Some source files have annotated versions specifically for Checker Framework. Other tools 
-used in this project such as FindBugs and PMD do not require any code modifications in order to
-work correctly.
+errors. Some source files have annotated versions for certain tools that require them.
 
-### categories
+## categories
 1) **alias**: where errors may occur when an object is referenced, without consideration 
 for mutations caused by an alias to the same object.
 2) **init**: where any object that is accessed at runtime prior to being fully 
@@ -26,7 +23,6 @@ data, etc.
 ## tools
 Source code in the checker section will be analysed by multiple static analysis tools. The results 
 of each tool are compared in order to assess overall and relative effectiveness.
-
 
 ### checkerframework
 The Checker Framework enhances Java’s type system by detecting and preventing specific 
