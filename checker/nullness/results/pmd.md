@@ -10,6 +10,8 @@ Version: pmd-bin-6.0.1
 >
 > JDK must be set to 1.8 or lower.
 
+PMD checkers belonging to the "error prone" category are the only ones required for these tests.
+
 ## direct
 
 ```java
