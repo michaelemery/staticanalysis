@@ -23,7 +23,7 @@ Checker Framework (CFW) is consistently sound and precise in non-reflective case
 handles reflection in a very rudimentary way that causes excessive false positives. CFW errs on the 
 side of caution when encountering reflective code. 
 
-Both FindBugs and PMD are less likely to generate FP results are are more precise than CFW. 
+Both FindBugs and PMD are less likely to generate FP results so are more precise than CFW. 
 However, their lack of caution in complex situations compromises soundness compared to CFW.
 
 Overall, CFW is recommended as the most reliable tool for nullness testing given that the FP 
