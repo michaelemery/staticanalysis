@@ -6,6 +6,8 @@ Folders at this level contain sample code for common categories of Java programm
 errors. Some source files have annotated versions for certain tools that require them.
 
 ## categories
+A "checker" generally tests for a variety of conditions that are organised by category. This 
+project tests for potential program errors within the following categories:
 1) **alias**: where errors may occur when an object is referenced, without consideration 
 for mutations caused by an alias to the same object.
 2) **init**: where any object that is accessed at runtime prior to being fully 
