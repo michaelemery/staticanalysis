@@ -1,5 +1,13 @@
 # Results
 
+Results were assessment using outputs from the following tools;
+
+1. [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/results/checkerframework.md)
+2. [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/results/findbugs.md)
+3. [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/results/pmd.md)
+
+## Summary
+
 | | CFW | FindBugs | PMD |
 | --- | --- | --- | --- |
 | Direct | 1:TP | 1:TP | 1:TP |
