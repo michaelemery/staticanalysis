@@ -149,6 +149,7 @@ public class Call {
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Call.java
+
 nullness/Call.java:21: error: [argument.type.incompatible] incompatible types in argument.
         Call bar = new Call(returnReceivedString(null));
                                                  ^
@@ -214,6 +215,7 @@ public class Reflection {
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflection.java
+
 nullness/Reflection.java:24: error: [argument.type.incompatible] incompatible types in argument.
             Reflection foo = new Reflection((String) m.invoke(null));
                                             ^
