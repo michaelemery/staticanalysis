@@ -8,19 +8,14 @@ errors. Some source files have annotated versions for certain tools that require
 ## categories
 A "checker" generally tests for a variety of conditions that are organised by category. This 
 project tests for potential program errors within the following categories:
-1) **alias**: where errors may occur when an object is referenced, without consideration 
-for mutations caused by an alias to the same object.
-2) **init**: where any object that is accessed at runtime prior to being fully 
-initialised will cause an error.
-3) **invokedynamic**: where type-checking is usually performed at runtime and therefore
-prone to misuse of type errors.
-4) **nullness**: where dereferenced expressions are a common cause a null pointer 
-exceptions.
-5) **signedness**: where signed and unsigned values are incorrectly mixed together in a
-computation, and meaningless operations occur such as division on an unsigned value. 
-6) **taint**: where certain parts of an application, using a tainted value can 
-compromise the application’s integrity, causing it to crash, corrupt data, leak private 
-data, etc.
+
+| category | description |
+| --- | --- |
+| [alias](https://github.com/michaelemery/staticanalysis/tree/master/checker/alias) | Errors may occur when an object is referenced without consideration for mutations caused by an alias to the same object. |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | Objects accessed at runtime prior to being fully initialised will cause an error. |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | Dereferenced expressions are a common cause a null pointer exceptions. |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
 
 ## tools
 Source code in the checker section will be analysed by multiple static analysis tools. The results 
