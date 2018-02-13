@@ -11,9 +11,9 @@ identifying potential causes of null-pointer exceptions.
 ### objectives 
 Each test represents different techniques for invoking potential error conditions as follows;
 
-1. Direct assignment to a null reference ([Direct.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Direct.java)).
+1. IntraProcedural assignment to a null reference ([IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)).
 2. Assignment to a null reference by alias ([Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)).
-3. Assignment to a null reference from method call ([Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)).
+3. InterProcedural assignment to a null reference ([Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)).
 4. Assignment to a null reference by reflection ([Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)).
 
 ## metadata
@@ -22,7 +22,7 @@ Each test represents different techniques for invoking potential error condition
 constructor, de-reference, implicit, initialisation, inheritance, null
 
 ### source files
-[Direct.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Direct.java), 
+[IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java), 
 [Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java), 
-[Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java), 
+[InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java), 
 [Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java).
