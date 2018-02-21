@@ -25,31 +25,31 @@ some particular type:
 **Checker fully qualified names:**
 1. org.checkerframework.checker.nullness.NullnessChecker
 
-## direct
+## intra-procedural
 
-[nullness/Direct.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Direct.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
 
 ```java
 package nullness;
 
 /**
- * Direct assignment to a null reference.
+ * Intra-procedural assignment of a null reference.
  */
-public class Direct {
+public class IntraProcedural {
 
     String s;
 
-    public Direct(String s) {
+    public IntraProcedural(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) throws NullPointerException {
 
-        // direct assignment to non-null (correct)
-        Direct foo = new Direct("text");
+        // intra-procedural assignment of a non-null reference (correct)
+        IntraProcedural foo = new IntraProcedural("text");
         System.out.println(foo.s.toString());  // "text"
 
-        // direct assignment to null (fail)
+        // intra-procedural assignment of a null reference (fail)
         foo = null;
         System.out.println(foo.s.toString());  // NullPointerException
 
@@ -61,13 +61,18 @@ public class Direct {
 **results:**
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Direct.java
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraProcedural.java
 
-nullness/Direct.java:22: error: [dereference.of.nullable] dereference of possibly-null reference foo
+nullness/IntraProcedural.java:22: 
+error: [dereference.of.nullable] dereference of possibly-null reference foo
         System.out.println(foo.s.toString());  // NullPointerException
                            ^
 1 error
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 0 | 0 |
 
 ## alias
 
@@ -116,32 +121,36 @@ nullness/Alias.java:24: error: [dereference.of.nullable] dereference of possibly
 
 ```
 
-## call
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 0 | 0 |
 
-[nullness/Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
+## inter-procedural
+
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
 
 ```java
 package nullness;
 
 /**
- * Assignment to a null reference from method call.
+ * Inter-procedural assignment to a null reference.
  */
-public class Call {
+public class InterProcedural {
 
     String s;
 
-    public Call(String s) {
+    public InterProcedural(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) throws NullPointerException {
 
-        // assignment to a non-null reference from method call (correct)
-        Call foo = new Call(returnReceivedString("text"));
+        // inter-procedural assignment of a non-null reference (correct)
+        InterProcedural foo = new InterProcedural(returnReceivedString("text"));
         System.out.println(foo.s.toString());  // "text"
 
-        // assignment to a null reference from method call (fail)
-        Call bar = new Call(returnReceivedString(null));
+        // inter-procedural assignment of a null reference (fail)
+        InterProcedural bar = new InterProcedural(returnReceivedString(null));
         System.out.println(bar.s.toString());  // NullPointerException
 
     }
@@ -156,15 +165,20 @@ public class Call {
 **results:**
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Call.java
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedural.java
 
-nullness/Call.java:21: error: [argument.type.incompatible] incompatible types in argument.
-        Call bar = new Call(returnReceivedString(null));
+nullness/InterProcedural.java:21: 
+error: [argument.type.incompatible] incompatible types in argument.
+        InterProcedural bar = new InterProcedural(returnReceivedString(null));
                                                  ^
   found   : null
   required: @Initialized @NonNull String
 1 error
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 0 | 0 |
 
 ## reflection
 
@@ -253,3 +267,7 @@ nullness/Reflection.java:45: error: [return.type.incompatible] incompatible type
   required: @Initialized @NonNull String
 5 errors
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 3 | 0 |
