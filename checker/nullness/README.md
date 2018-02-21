@@ -37,5 +37,5 @@ weakness in reflection is offset by the FN results of other tools that were less
 | Reflection | 1:TP 3:FP | 1:FN | 1:FN|
 
 > **Notes:** </br>
-> 1. Select tools (column heading) for results of individual tools.
+> 1. Select column headings for indivdual results of each tool.
 > 2. Irrelevant errors or warnings that are justifiably identified are not assessed.
