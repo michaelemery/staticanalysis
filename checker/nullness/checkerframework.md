@@ -128,7 +128,7 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
 
 ## inter-procedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
 ```java
 package nullness;
