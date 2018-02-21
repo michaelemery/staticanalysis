@@ -54,7 +54,7 @@ nullness/IntraProcedural.java:21:
 Assigning an Object to null is a code smell. Consider refactoring.
 ```
 
-| True Pos| False Pos | False Neg |
+| True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
@@ -95,8 +95,6 @@ public class Alias {
 
 **results:**
 
-1 x TP (True Positive)
-
 ```
 $ pmd -d Alias.java -f text -R category/java/errorprone.xml
 
@@ -105,6 +103,10 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 nullness/Alias.java:22:    
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 0 | 0 |
 
 ## inter-procedural
 
@@ -145,14 +147,16 @@ public class InterProcedural {
 
 **results:**
 
-1 x False Negative (FN)
-
 ```
 $ pmd -d Call.java -f text -R category/java/errorprone.xml
 
 nullness/Call.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
 
 ## reflection
 
@@ -211,11 +215,13 @@ public class Reflection {
 
 **results:**
 
-1 x False Negative (FN)
-
 ```
 $ pmd -d Reflection.java -f text -R category/java/errorprone.xml
 
 nullness/Reflection.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
