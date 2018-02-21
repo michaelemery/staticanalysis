@@ -34,6 +34,7 @@ public class Alias {
         Object a4 = new Object();
         Object b4 = m2(a4);
         System.out.println(a4 == b4);  // true
+
     }
 
     // pseudo assignment of alias to method parameter
@@ -45,4 +46,5 @@ public class Alias {
     static Object m2(Object o) {
         return o;
     }
+
 }
