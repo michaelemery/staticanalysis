@@ -246,22 +246,26 @@ nullness/Reflection.java:24: error: [argument.type.incompatible] incompatible ty
                                             ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
-nullness/Reflection.java:24: error: [argument.type.incompatible] incompatible types in argument.
+nullness/Reflection.java:24: 
+error: [argument.type.incompatible] incompatible types in argument.
             Reflection foo = new Reflection((String) m.invoke(null));
                                                               ^
   found   : null
   required: @Initialized @NonNull Object
-nullness/Reflection.java:29: error: [argument.type.incompatible] incompatible types in argument.
+nullness/Reflection.java:29: 
+error: [argument.type.incompatible] incompatible types in argument.
             Reflection bar = new Reflection((String) m.invoke(null));
                                             ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
-nullness/Reflection.java:29: error: [argument.type.incompatible] incompatible types in argument.
+nullness/Reflection.java:29: 
+error: [argument.type.incompatible] incompatible types in argument.
             Reflection bar = new Reflection((String) m.invoke(null));
                                                               ^
   found   : null
   required: @Initialized @NonNull Object
-nullness/Reflection.java:45: error: [return.type.incompatible] incompatible types in return.
+nullness/Reflection.java:45: 
+error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
   found   : null
