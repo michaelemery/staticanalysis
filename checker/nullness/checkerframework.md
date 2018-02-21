@@ -3,8 +3,6 @@
 
 Version: checker-framework-2.3.0
 
-> Outputs have been simplified for brevity.
-
 The nullness hierarchy contains these qualifiers:
 
 | qualifier | description |
@@ -26,6 +24,8 @@ some particular type:
 
 **Checker fully qualified names:**
 1. org.checkerframework.checker.nullness.NullnessChecker
+
+> Outputs have been simplified for brevity.
 
 ## intra-procedural
 
