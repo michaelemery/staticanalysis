@@ -5,8 +5,6 @@ Version: pmd-bin-6.0.1
 
 PMD checkers belonging to the "error prone" category are the only ones required for these tests.
 
-> **Note:**
->
 > The `pmd` command shown in the following results is a bash alias created as follows; <br />
 > `alias pmd='$PMD_HOME/bin/run.sh pmd'`
 >
@@ -56,7 +54,7 @@ nullness/IntraProcedural.java:21:
 Assigning an Object to null is a code smell. Consider refactoring.
 ```
 
-*Output has been simplified.*
+> Output has been simplified.
 
 ## alias
 
@@ -104,7 +102,7 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-> Output has been simplified
+> Output has been simplified.
 
 ## call
 
@@ -152,7 +150,7 @@ $ pmd -d Call.java -f text -R category/java/errorprone.xml
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-*Output has been simplified.*
+> Output has been simplified.*
 
 ## reflection
 
@@ -218,4 +216,4 @@ $ pmd -d Reflection.java -f text -R category/java/errorprone.xml
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-*Output has been simplified.*
+> Output has been simplified.
