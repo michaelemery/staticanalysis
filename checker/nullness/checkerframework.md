@@ -3,6 +3,9 @@
 
 Version: checker-framework-2.3.0
 
+**Checker fully qualified names:**
+1. org.checkerframework.checker.nullness.NullnessChecker
+
 The nullness hierarchy contains these qualifiers:
 
 | qualifier | description |
@@ -21,9 +24,6 @@ some particular type:
 | **@RequiresNonNull** | Indicates a method precondition: The annotated method expects the specified variables (typically field references) to be non-null when the method is invoked. |
 | **@EnsuresNonNull** | |
 | **@EnsuresNonNullIf** | Indicates a method postcondition. With @EnsuresNonNull, the given expressions are non-null after the method returns; this is useful for a method that initializes a field, for example. With @EnsuresNonNullIf, if the annotated method returns the given boolean value (true or false), then the given expressions are non-null. |
-
-**Checker fully qualified names:**
-1. org.checkerframework.checker.nullness.NullnessChecker
 
 > Outputs have been simplified for brevity.
 
