@@ -54,8 +54,6 @@ nullness/IntraProcedural.java:21:
 Assigning an Object to null is a code smell. Consider refactoring.
 ```
 
-> Output has been simplified.
-
 ## alias
 
 [nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
@@ -102,8 +100,6 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-> Output has been simplified.
-
 ## call
 
 [nullness/Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
@@ -149,8 +145,6 @@ $ pmd -d Call.java -f text -R category/java/errorprone.xml
 /Users/michaelemery/Developer/staticanalysis/checker/nullness/Call.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
-
-> Output has been simplified.
 
 ## reflection
 
@@ -215,5 +209,3 @@ $ pmd -d Reflection.java -f text -R category/java/errorprone.xml
 /Users/michaelemery/Developer/staticanalysis/checker/nullness/Reflection.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
-
-> Output has been simplified.
