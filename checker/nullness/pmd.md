@@ -18,7 +18,7 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 package nullness;
 
 /**
- * IntraProcedural assignment to a null reference.
+ * Intra-Procedural assignment of a null reference.
  */
 public class IntraProcedural {
 
@@ -30,11 +30,11 @@ public class IntraProcedural {
 
     public static void main(String[] args) throws NullPointerException {
 
-        // IntraProcedural assignment to non-null (correct)
+        // intra-procedural assignment of a non-null reference (correct)
         IntraProcedural foo = new IntraProcedural("text");
         System.out.println(foo.s.toString());  // "text"
 
-        // IntraProcedural assignment to null (fail)
+        // intra-procedural assignment of a null reference (fail)
         foo = null;
         System.out.println(foo.s.toString());  // NullPointerException
 
@@ -94,38 +94,38 @@ public class Alias {
 ```
 $ pmd -d Alias.java -f text -R category/java/errorprone.xml
 
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Alias.java:8: 
+nullness/Alias.java:8: 
 Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Alias.java:22:    
+nullness/Alias.java:22:    
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-## call
+## inter-procedural
 
-[nullness/Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
 
 ```java
 package nullness;
 
 /**
- * Assignment to a null reference from method call.
+ * Inter-Procedural assignment to a null reference.
  */
-public class Call {
+public class InterProcedural {
 
     String s;
 
-    public Call(String s) {
+    public InterProcedural(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) throws NullPointerException {
 
-        // assignment to a non-null reference from method call (correct)
-        Call foo = new Call(returnReceivedString("text"));
+        // inter-procedural assignment of a non-null reference (correct)
+        InterProcedural foo = new InterProcedural(returnReceivedString("text"));
         System.out.println(foo.s.toString());  // "text"
 
-        // assignment to a null reference from method call (fail)
-        Call bar = new Call(returnReceivedString(null));
+        // inter-procedural assignment of a null reference (fail)
+        InterProcedural bar = new InterProcedural(returnReceivedString(null));
         System.out.println(bar.s.toString());  // NullPointerException
 
     }
@@ -142,7 +142,7 @@ public class Call {
 ```
 $ pmd -d Call.java -f text -R category/java/errorprone.xml
 
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Call.java:8:  
+nullness/Call.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
@@ -206,6 +206,6 @@ public class Reflection {
 ```
 $ pmd -d Reflection.java -f text -R category/java/errorprone.xml
 
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Reflection.java:11:   
+nullness/Reflection.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```

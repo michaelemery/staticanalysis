@@ -1,7 +1,7 @@
 package nullness;
 
 /**
- * IntraProcedural assignment to a null reference.
+ * Intra-Procedural assignment of a null reference.
  */
 public class IntraProcedural {
 
@@ -13,11 +13,11 @@ public class IntraProcedural {
 
     public static void main(String[] args) throws NullPointerException {
 
-        // IntraProcedural assignment to non-null (correct)
+        // intra-procedural assignment of a non-null reference (correct)
         IntraProcedural foo = new IntraProcedural("text");
         System.out.println(foo.s.toString());  // "text"
 
-        // IntraProcedural assignment to null (fail)
+        // intra-procedural assignment of a null reference (fail)
         foo = null;
         System.out.println(foo.s.toString());  // NullPointerException
 
