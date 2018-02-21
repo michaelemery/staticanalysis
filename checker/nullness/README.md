@@ -36,14 +36,6 @@ weakness in reflection is offset by the FN results of other tools that were less
 | Method Call | 1:TP | 1:FN | 1:FN |
 | Reflection | 1:TP 3:FP | 1:FN | 1:FN|
 
-> **Notes** 
-> Select tools (column heading) for results of individual tools.
-> Irrelevant errors or warnings that are justifiably identified are not assessed.
-
-### results by tool
-
-Results for individual tools available as follows;
-
-1. [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md)
-2. [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md)
-3. [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md)
+> **Notes** </br>
+> Select tools (column heading) for results of individual tools. </br>
+> Irrelevant errors or warnings that are justifiably identified are not assessed. </br>
