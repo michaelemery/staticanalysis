@@ -39,10 +39,10 @@ public class IntraProcedural {
 **results:**
 
 ```
-$ findbugs nullness/Direct.class 
+$ findbugs nullness/IntraProcedural.class 
 
-H C NP: Null pointer dereference of ? in nullness.Direct.main(String[])  
-Dereferenced at Direct.java:[line 22]
+H C NP: Null pointer dereference of ? in nullness.IntraProcedural.main(String[])  
+Dereferenced at IntraProcedural.java:[line 22]
 Warnings generated: 1
 ```
 
