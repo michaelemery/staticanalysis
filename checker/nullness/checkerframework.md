@@ -5,11 +5,11 @@ Version: checker-framework-2.3.0
 
 > Outputs have been simplified for brevity.
 
-### checkers used (fqn)
+**checkers used (fqn)**
 
 1. org.checkerframework.checker.nullness.NullnessChecker
 
-### qualifiers
+**qualifiers**
 
 The nullness hierarchy contains these qualifiers:
 
@@ -20,7 +20,7 @@ The nullness hierarchy contains these qualifiers:
 
 > **Important:** The default state of any object in Checker Framework is ***@NonNull***.
 
-### annotations
+**annotations**
 
 The Nullness Checker supports several annotations that specify method behavior. These are 
 declaration annotations, not type annotations as they apply to the method itself rather than to 
