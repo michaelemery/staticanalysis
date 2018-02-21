@@ -18,7 +18,7 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 package nullness;
 
 /**
- * Intra-Procedural assignment of a null reference.
+ * Intra-procedural assignment of a null reference.
  */
 public class IntraProcedural {
 
@@ -44,6 +44,10 @@ public class IntraProcedural {
 ```
 
 **results:**
+
+| True Positive (TP) | False Positive (FP)  | False Positive (FN) |
+| --- | --- | --- |
+| 1 | 0 | 0 |
 
 ```
 $ pmd -d nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
@@ -91,6 +95,8 @@ public class Alias {
 
 **results:**
 
+1 x TP (True Positive)
+
 ```
 $ pmd -d Alias.java -f text -R category/java/errorprone.xml
 
@@ -108,7 +114,7 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 package nullness;
 
 /**
- * Inter-Procedural assignment to a null reference.
+ * Inter-procedural assignment to a null reference.
  */
 public class InterProcedural {
 
@@ -138,6 +144,8 @@ public class InterProcedural {
 ```
 
 **results:**
+
+1 x False Negative (FN)
 
 ```
 $ pmd -d Call.java -f text -R category/java/errorprone.xml
@@ -202,6 +210,8 @@ public class Reflection {
 ```
 
 **results:**
+
+1 x False Negative (FN)
 
 ```
 $ pmd -d Reflection.java -f text -R category/java/errorprone.xml
