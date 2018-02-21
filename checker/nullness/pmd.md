@@ -53,7 +53,7 @@ $ pmd -d nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
 nullness/IntraProcedural.java:8:
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 nullness/IntraProcedural.java:21:
-Assigning an Object to null is a code smell.  Consider refactoring.
+Assigning an Object to null is a code smell. Consider refactoring.
 ```
 
 *Output has been simplified.*
@@ -104,7 +104,7 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-*Output has been simplified.*
+> Output has been simplified
 
 ## call
 
