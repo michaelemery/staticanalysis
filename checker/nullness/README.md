@@ -30,16 +30,7 @@ Results for individual tools available as follows;
 2. [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md)
 3. [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md)
 
-### Summary
-
-| | CFW | FindBugs | PMD |
-| --- | --- | --- | --- |
-| Direct | 1:TP | 1:TP | 1:TP |
-| Alias | 1:TP | 1:TP | 1:TP |
-| Method Call | 1:TP | 1:FN | 1:FN |
-| Reflection | 1:TP 3:FP | 1:FN | 1:FN|
-
-> **Note:** Irrelevant errors or warnings that are justifiably identified are not assessed.
+### summary
 
 Checker Framework (CFW) is consistently sound and precise in non-reflective cases. However, it 
 handles reflection in a very rudimentary way that causes excessive false positives. CFW errs on the 
@@ -50,3 +41,12 @@ However, their lack of caution in complex situations compromises soundness compa
 
 Overall, CFW is recommended as the most reliable tool for nullness testing given that the FP 
 weakness in reflection is offset by the FN results of other tools that were less sound.
+
+| | CFW | FindBugs | PMD |
+| --- | --- | --- | --- |
+| Direct | 1:TP | 1:TP | 1:TP |
+| Alias | 1:TP | 1:TP | 1:TP |
+| Method Call | 1:TP | 1:FN | 1:FN |
+| Reflection | 1:TP 3:FP | 1:FN | 1:FN|
+
+> **Note:** Irrelevant errors or warnings that are justifiably identified are not assessed.
