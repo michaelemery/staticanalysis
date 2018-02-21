@@ -5,7 +5,7 @@ Version: pmd-bin-6.0.1
 
 PMD checkers belonging to the "error prone" category are the only ones required for these tests.
 
-> 1. The `pmd` command shown in the following results is a bash alias created as follows; <br />
+> 1. The `pmd` command used in the following output is a bash alias; <br />
 > `alias pmd='$PMD_HOME/bin/run.sh pmd'`
 > 2. JDK must be set to 1.8 or lower.
 > 3. Outputs have been simplified.
