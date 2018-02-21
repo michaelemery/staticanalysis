@@ -45,10 +45,6 @@ public class IntraProcedural {
 
 **results:**
 
-| True Pos| False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
-
 ```
 $ pmd -d nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
 
@@ -57,6 +53,10 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 nullness/IntraProcedural.java:21:
 Assigning an Object to null is a code smell. Consider refactoring.
 ```
+
+| True Pos| False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 0 | 0 |
 
 ## alias
 
