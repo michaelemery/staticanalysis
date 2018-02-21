@@ -121,7 +121,6 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
                            ^
 
 1 error
-
 ```
 
 | True Pos | False Pos | False Neg |
