@@ -3,7 +3,8 @@
 
 Version: checker-framework-2.3.0
 
-**Checker fully qualified names:**
+Nullness Checker Framework tests use the following checkers (fully qualifed names);
+
 1. org.checkerframework.checker.nullness.NullnessChecker
 
 The nullness hierarchy contains these qualifiers:
