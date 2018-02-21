@@ -31,11 +31,11 @@ weakness in reflection is offset by the FN results of other tools that were less
 
 ### summary
 
-| | [CFW](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md) |
+| | [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md) |
 | --- | --- | --- | --- |
-| Direct | 1:TP | 1:TP | 1:TP |
+| Intra-Procedural | 1:TP | 1:TP | 1:TP |
 | Alias | 1:TP | 1:TP | 1:TP |
-| Method Call | 1:TP | 1:FN | 1:FN |
+| Inter-Procedural | 1:TP | 1:FN | 1:FN |
 | Reflection | 1:TP 3:FP | 1:FN | 1:FN|
 
 > **Notes:** </br>
