@@ -114,7 +114,8 @@ public class Alias {
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Alias.java
 
-nullness/Alias.java:24: error: [dereference.of.nullable] dereference of possibly-null reference bar
+nullness/Alias.java:24: 
+error: [dereference.of.nullable] dereference of possibly-null reference bar
         System.out.println(bar.s.toString());  // NullPointerException
                            ^
 1 error
