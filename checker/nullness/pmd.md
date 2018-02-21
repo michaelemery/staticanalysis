@@ -8,7 +8,7 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 > 1. The `pmd` command shown in all results is an alias; <br />
 > `alias pmd='$PMD_HOME/bin/run.sh pmd'`
 > 2. JDK must be set to 1.8 or lower.
-> 3. Outputs have been simplified.
+> 3. Outputs have been simplified for brevity.
 
 ## intra-procedural
 
