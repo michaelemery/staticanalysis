@@ -5,10 +5,10 @@ Version: pmd-bin-6.0.1
 
 PMD checkers belonging to the "error prone" category are the only ones required for these tests.
 
-> The `pmd` command shown in the following results is a bash alias created as follows; <br />
+> 1. The `pmd` command shown in the following results is a bash alias created as follows; <br />
 > `alias pmd='$PMD_HOME/bin/run.sh pmd'`
->
-> JDK must be set to 1.8 or lower.
+> 2. JDK must be set to 1.8 or lower.
+> 3. Outputs have been simplified.
 
 ## intra-procedural
 
@@ -150,7 +150,7 @@ $ pmd -d Call.java -f text -R category/java/errorprone.xml
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-> Output has been simplified.*
+> Output has been simplified.
 
 ## reflection
 
