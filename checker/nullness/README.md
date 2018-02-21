@@ -24,14 +24,6 @@ Each test represents different techniques for invoking potential error condition
 
 ## results
 
-Results for individual tools available as follows;
-
-1. [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md)
-2. [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md)
-3. [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md)
-
-### summary
-
 Checker Framework (CFW) is consistently sound and precise in non-reflective cases. However, it 
 handles reflection in a very rudimentary way that causes excessive false positives. CFW errs on the 
 side of caution when encountering reflective code. 
@@ -50,3 +42,11 @@ weakness in reflection is offset by the FN results of other tools that were less
 | Reflection | 1:TP 3:FP | 1:FN | 1:FN|
 
 > **Note:** Irrelevant errors or warnings that are justifiably identified are not assessed.
+
+### results by tool
+
+Results for individual tools available as follows;
+
+1. [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md)
+2. [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md)
+3. [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md)
