@@ -148,9 +148,9 @@ public class InterProcedural {
 **results:**
 
 ```
-$ pmd -d Call.java -f text -R category/java/errorprone.xml
+$ pmd -d InterProcedural.java -f text -R category/java/errorprone.xml
 
-nullness/Call.java:8:  
+nullness/InterProcedural.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
