@@ -24,7 +24,7 @@ Each test represents different techniques for invoking potential error condition
 
 ## results
 
-Results were assessment using outputs from the following tools;
+Results for individual tools available as follows;
 
 1. [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md)
 2. [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md)
