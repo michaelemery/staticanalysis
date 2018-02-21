@@ -3,31 +3,31 @@
 
 Version: findbugs-3.0.1
 
-## direct
+## intra-procedural
 
-[nullness/Direct.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Direct.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
 
 ```java
 package nullness;
 
 /**
- * Direct assignment to a null reference.
+ * Intra-procedural assignment of a null reference.
  */
-public class Direct {
+public class IntraProcedural {
 
     String s;
 
-    public Direct(String s) {
+    public IntraProcedural(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) throws NullPointerException {
 
-        // direct assignment to non-null (correct)
-        Direct foo = new Direct("text");
+        // intra-procedural assignment of a non-null reference (correct)
+        IntraProcedural foo = new IntraProcedural("text");
         System.out.println(foo.s.toString());  // "text"
 
-        // direct assignment to null (fail)
+        // intra-procedural assignment of a null reference (fail)
         foo = null;
         System.out.println(foo.s.toString());  // NullPointerException
 
@@ -45,6 +45,10 @@ H C NP: Null pointer dereference of ? in nullness.Direct.main(String[])
 Dereferenced at Direct.java:[line 22]
 Warnings generated: 1
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 0 | 0 |
 
 ## 
 
@@ -89,35 +93,38 @@ $ findbugs nullness/Alias.class
 H C NP: Null pointer dereference of ? in nullness.Alias.main(String[])  
 Dereferenced at Alias.java:[line 24]
 Warnings generated: 1
-
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 0 | 0 |
 
 ## call
 
-[nullness/Call.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
 ```java
 package nullness;
 
 /**
- * Assignment to a null reference from method call.
+ * Inter-procedural assignment to a null reference.
  */
-public class Call {
+public class InterProcedural {
 
     String s;
 
-    public Call(String s) {
+    public InterProcedural(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) throws NullPointerException {
 
-        // assignment to a non-null reference from method call (correct)
-        Call foo = new Call(returnReceivedString("text"));
+        // inter-procedural assignment of a non-null reference (correct)
+        InterProcedural foo = new InterProcedural(returnReceivedString("text"));
         System.out.println(foo.s.toString());  // "text"
 
-        // assignment to a null reference from method call (fail)
-        Call bar = new Call(returnReceivedString(null));
+        // inter-procedural assignment of a null reference (fail)
+        InterProcedural bar = new InterProcedural(returnReceivedString(null));
         System.out.println(bar.s.toString());  // NullPointerException
 
     }
@@ -126,8 +133,7 @@ public class Call {
         return s;
     }
 
-}
-```
+}```
 
 **results:**
 
@@ -136,6 +142,10 @@ $ findbugs nullness/Call.class
 
 [NO ISSUES IDENTIFIED]
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
 
 ## reflection
 
@@ -199,3 +209,7 @@ $ findbugs nullness/Reflection.class
 
 [NO ISSUES IDENTIFIED]
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
