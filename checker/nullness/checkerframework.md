@@ -67,6 +67,7 @@ nullness/IntraProcedural.java:22:
 error: [dereference.of.nullable] dereference of possibly-null reference foo
         System.out.println(foo.s.toString());  // NullPointerException
                            ^
+
 1 error
 ```
 
@@ -118,6 +119,7 @@ nullness/Alias.java:24:
 error: [dereference.of.nullable] dereference of possibly-null reference bar
         System.out.println(bar.s.toString());  // NullPointerException
                            ^
+
 1 error
 
 ```
@@ -174,6 +176,7 @@ error: [argument.type.incompatible] incompatible types in argument.
                                                  ^
   found   : null
   required: @Initialized @NonNull String
+
 1 error
 ```
 
@@ -246,30 +249,35 @@ nullness/Reflection.java:24: error: [argument.type.incompatible] incompatible ty
                                             ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
+
 nullness/Reflection.java:24: 
 error: [argument.type.incompatible] incompatible types in argument.
             Reflection foo = new Reflection((String) m.invoke(null));
                                                               ^
   found   : null
   required: @Initialized @NonNull Object
+
 nullness/Reflection.java:29: 
 error: [argument.type.incompatible] incompatible types in argument.
             Reflection bar = new Reflection((String) m.invoke(null));
                                             ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
+
 nullness/Reflection.java:29: 
 error: [argument.type.incompatible] incompatible types in argument.
             Reflection bar = new Reflection((String) m.invoke(null));
                                                               ^
   found   : null
   required: @Initialized @NonNull Object
+
 nullness/Reflection.java:45: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
   found   : null
   required: @Initialized @NonNull String
+
 5 errors
 ```
 
