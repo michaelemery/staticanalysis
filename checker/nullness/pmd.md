@@ -12,9 +12,9 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 >
 > JDK must be set to 1.8 or lower.
 
-## direct
+## intra-procedural
 
-[nullness/Direct.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Direct.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
 
 ```java
 package nullness;
@@ -48,12 +48,10 @@ public class IntraProcedural {
 **results:**
 
 ```
-$ pmd -d Direct.java -f text -R category/java/errorprone.xml
+$ pmd -d nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
 
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Direct.java:8:    
-Found non-transient, non-static member. Please mark as transient or provide accessors.
-/Users/michaelemery/Developer/staticanalysis/checker/nullness/Direct.java:21:   
-Assigning an Object to null is a code smell.  Consider refactoring.
+nullness/IntraProcedural.java:8:   Found non-transient, non-static member. Please mark as transient or provide accessors.
+nullness/IntraProcedural.java:21:  Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
 *Output has been simplified.*
