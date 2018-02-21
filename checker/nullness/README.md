@@ -19,19 +19,19 @@ Each test represents different techniques for invoking potential error condition
 
 ## results
 
-Checker Framework (CFW) is consistently sound and precise in non-reflective cases. However, it 
-handles reflection in a very rudimentary way that causes excessive false positives. CFW errs on the 
+Checker Framework (CF) is consistently sound and precise in non-reflective cases. However, it 
+handles reflection in a very rudimentary way that causes excessive false positives. CF errs on the 
 side of caution when encountering reflective code. 
 
-Both FindBugs and PMD are less likely to generate FP results so are more precise than CFW. 
-However, their lack of caution in complex situations compromises soundness compared to CFW.
+Both FindBugs and PMD are less likely to generate FP results so are more precise than CF. 
+However, their lack of caution in complex situations compromises soundness compared to CF.
 
-Overall, CFW is recommended as the most reliable tool for nullness testing given that the FP 
+Overall, CF is recommended as the most reliable tool for nullness testing given that the FP 
 weakness in reflection is offset by the FN results of other tools that were less sound.
 
 ### summary
 
-| | [CFW](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md) |
+| | [CF](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md) |
 | --- | --- | --- | --- |
 | Intra-Procedural | 1:TP | 1:TP | 1:TP |
 | Alias | 1:TP | 1:TP | 1:TP |
