@@ -29,8 +29,7 @@ However, their lack of caution in complex situations compromises soundness compa
 Overall, CFW is recommended as the most reliable tool for nullness testing given that the FP 
 weakness in reflection is offset by the FN results of other tools that were less sound.
 
-| | 
-1. [CFW](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md) | FindBugs | PMD |
+| | [CFW](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md) | FindBugs | PMD |
 | --- | --- | --- | --- |
 | Direct | 1:TP | 1:TP | 1:TP |
 | Alias | 1:TP | 1:TP | 1:TP |
