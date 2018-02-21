@@ -45,7 +45,7 @@ public class IntraProcedural {
 
 **results:**
 
-| True+ (TP) | False+ (FP)  | False- (FN) |
+| True Pos| False Pos | False Neg |
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
