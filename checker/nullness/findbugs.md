@@ -138,7 +138,7 @@ public class InterProcedural {
 **results:**
 
 ```
-$ findbugs nullness/Call.class 
+$ findbugs nullness/InterProcedural.class 
 
 [NO ISSUES IDENTIFIED]
 ```
