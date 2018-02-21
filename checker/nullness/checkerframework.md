@@ -3,11 +3,13 @@
 
 Version: checker-framework-2.3.0
 
-Checker Framework tests in this module use the following checkers (fully qualifed names);
+### checkers used (fqn)
 
 1. org.checkerframework.checker.nullness.NullnessChecker
 
 ### qualifiers
+
+The nullness hierarchy contains these qualifiers:
 
 | qualifier | description |
 | --- | --- |
