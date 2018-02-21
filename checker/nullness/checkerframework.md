@@ -7,7 +7,7 @@ Checker Framework tests in this module use the following checkers (fully qualife
 
 1. org.checkerframework.checker.nullness.NullnessChecker
 
-The nullness hierarchy contains these qualifiers:
+### qualifiers
 
 | qualifier | description |
 | --- | --- |
@@ -15,6 +15,8 @@ The nullness hierarchy contains these qualifiers:
 | **@NonNull** | Indicates a type that does not include the null value. The type boolean is non-null; a variable of type boolean always has one of the values true or false. The type @NonNull Boolean is also non-null: a variable of type @NonNull Boolean always has one of the values TRUE or FALSE — never null. Dereferencing an expression of non-null type can never cause a null pointer exception. |
 
 > **Important:** The default state of any object in Checker Framework is ***@NonNull***.
+
+### annotations
 
 The Nullness Checker supports several annotations that specify method behavior. These are 
 declaration annotations, not type annotations as they apply to the method itself rather than to 
