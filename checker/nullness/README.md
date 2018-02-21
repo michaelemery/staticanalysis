@@ -16,11 +16,6 @@ Each test represents different techniques for invoking potential error condition
 3. InterProcedural assignment to a null reference ([InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)).
 4. Assignment to a null reference by reflection ([Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)).
 
-### source files
-[IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java), 
-[Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java), 
-[InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java), 
-[Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java).
 
 ## results
 
