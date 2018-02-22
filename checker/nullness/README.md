@@ -38,6 +38,6 @@ weakness in reflection is offset by the FN results of other tools that were less
 | Inter-Procedural | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#inter-procedural) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#inter-procedural) |
 | Reflection | [1:TP 3:FP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflection) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflection)|
 
-> **Notes:** </br>
+> **Notes:** <br>
 > 1. Select column heading for results of each tool, or select cell for individual test results.
 > 2. Irrelevant errors or warnings that are justifiably identified are not assessed.
