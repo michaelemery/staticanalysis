@@ -99,7 +99,7 @@ Warnings generated: 1
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## call
+## inter-procedural
 
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
