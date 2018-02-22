@@ -32,7 +32,7 @@ weakness in reflection is offset by the FN results of other tools that were less
 ### summary
 
 | | [CF](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md) |
-| --- | --- | --- | --- |
+| --- | :---: | :---: | :---: |
 | Intra-Procedural | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intra-procedural) | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intra-procedural) | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intra-procedural) |
 | Alias | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#alias) | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#alias) | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#alias) |
 | Inter-Procedural | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#inter-procedural) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#inter-procedural) |
