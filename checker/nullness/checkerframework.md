@@ -1,4 +1,3 @@
-
 # checker framework
 
 Version: checker-framework-2.3.0
@@ -32,40 +31,11 @@ some particular type:
 | **@EnsuresNonNull** | |
 | **@EnsuresNonNullIf** | Indicates a method postcondition. With @EnsuresNonNull, the given expressions are non-null after the method returns; this is useful for a method that initializes a field, for example. With @EnsuresNonNullIf, if the annotated method returns the given boolean value (true or false), then the given expressions are non-null. |
 
-## intra-procedural
+## results
+
+### intra-procedural
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
-
-```java
-package nullness;
-
-/**
- * Intra-procedural assignment of a null reference.
- */
-public class IntraProcedural {
-
-    String s;
-
-    public IntraProcedural(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) throws NullPointerException {
-
-        // intra-procedural assignment of a non-null reference (correct)
-        IntraProcedural foo = new IntraProcedural("text");
-        System.out.println(foo.s.toString());  // "text"
-
-        // intra-procedural assignment of a null reference (fail)
-        foo = null;
-        System.out.println(foo.s.toString());  // NullPointerException
-
-    }
-
-}
-```
-
-**results:**
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraProcedural.java
@@ -82,42 +52,9 @@ error: [dereference.of.nullable] dereference of possibly-null reference foo
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## alias
+### alias
 
 [nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
-
-```java
-package nullness;
-
-/**
- * Assignment to a null reference by alias.
- */
-public class Alias {
-
-    String s;
-
-    public Alias(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) throws NullPointerException {
-
-        // assignment to non-null by alias (correct)
-        Alias foo = new Alias("text");
-        Alias bar = foo;
-        System.out.println(bar.s.toString());  // "text"
-
-        // assignment to null by alias (fail)
-        foo = null;
-        bar = foo;
-        System.out.println(bar.s.toString());  // NullPointerException
-
-    }
-
-}
-```
-
-**results:**
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Alias.java
@@ -134,44 +71,9 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## inter-procedural
+### inter-procedural
 
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
-
-```java
-package nullness;
-
-/**
- * Inter-procedural assignment to a null reference.
- */
-public class InterProcedural {
-
-    String s;
-
-    public InterProcedural(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) throws NullPointerException {
-
-        // inter-procedural assignment of a non-null reference (correct)
-        InterProcedural foo = new InterProcedural(returnReceivedString("text"));
-        System.out.println(foo.s.toString());  // "text"
-
-        // inter-procedural assignment of a null reference (fail)
-        InterProcedural bar = new InterProcedural(returnReceivedString(null));
-        System.out.println(bar.s.toString());  // NullPointerException
-
-    }
-
-    public static String returnReceivedString(String s) {
-        return s;
-    }
-
-}
-```
-
-**results:**
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedural.java
@@ -190,62 +92,9 @@ error: [argument.type.incompatible] incompatible types in argument.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## reflection
+### reflection
 
 [nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
-
-```java
-package nullness;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/**
- * Assignment to a null reference by reflection.
- */
-public class Reflection {
-
-    String s;
-
-    public Reflection(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) {
-
-        Method m;
-
-        try {
-            // assignment to a non-null reference by reflection (correct)
-            m = nullness.Reflection.class.getDeclaredMethod("returnText");
-            Reflection foo = new Reflection((String) m.invoke(null));
-            System.out.println(foo.s.toString());  // "text"
-
-            // assignment to a null reference by reflection (fail)
-            m = nullness.Reflection.class.getDeclaredMethod("returnNull");
-            Reflection bar = new Reflection((String) m.invoke(null));
-            System.out.println(bar.s.toString());  // NullPointerException
-            
-        } catch (NoSuchMethodException |
-                IllegalAccessException |
-                InvocationTargetException x) {
-            x.printStackTrace();
-        }
-
-    }
-
-    public static String returnText() {
-        return "text";
-    }
-
-    public static String returnNull() {
-        return null;
-    }
-
-}
-```
-
-**results:**
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflection.java

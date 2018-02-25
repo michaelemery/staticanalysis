@@ -9,10 +9,10 @@ unintentional mutations of objects that were intended to be unique.
 
 ### objectives
 Identify where objects that are intended to be unique may become mutable by;
-1. direct assignment of an alias, 
-2. referencing an existing alias, 
-3. pseudo assignment of an alias to method parameters, or
-4. leakage to an alias via method return value.
+1. Intra-procedural assignment of an alias.
+2. Referencing an existing alias.
+3. Pseudo assignment of an alias to method parameters.
+4. Leakage to an alias via method return value.
 
 ## checker framework
 There are two possible types for an expression:
