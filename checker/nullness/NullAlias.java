@@ -3,19 +3,19 @@ package nullness;
 /**
  * Assignment to a null reference by alias.
  */
-public class Alias {
+public class NullAlias {
 
     String s;
 
-    public Alias(String s) {
+    public NullAlias(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) throws NullPointerException {
 
         // assignment to non-null by alias (correct)
-        Alias foo = new Alias("text");
-        Alias bar = foo;
+        NullAlias foo = new NullAlias("text");
+        NullAlias bar = foo;
         System.out.println(bar.s.toString());  // "text"
 
         // assignment to null by alias (fail)
