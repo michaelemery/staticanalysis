@@ -26,9 +26,7 @@ be used on formal parameters (including the receiver parameter, this):
 | annotation | description |
 | --- | --- |
 | **@NonLeaked** | Identifies a formal parameter that is not leaked nor returned by the method body. For example, the formal parameter of the String copy constructor, String(String s), is @NonLeaked because the body of the method only makes a copy of the parameter. |
-| **@LeakedToResult** | Indicates when the parameter may be returned, but it is not 
-otherwise leaked. For example, the receiver parameter of StringBuffer.append(StringBuffer 
-this, String s) is @LeakedToResult, because the method returns the updated receiver. |
+| **@LeakedToResult** | Indicates when the parameter may be returned, but it is not otherwise leaked. For example, the receiver parameter of StringBuffer.append(StringBuffer this, String s) is @LeakedToResult, because the method returns the updated receiver. |
 
 ## results
 
