@@ -82,7 +82,7 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 
 ### reflection
 
-[aliasing/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/reflection_CF.java)
+[aliasing/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/IntraProcedural_CF_old.javaaliasing/reflection_CF.java)
 
 ```
 $ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflection_CF.java 
