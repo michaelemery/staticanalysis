@@ -56,28 +56,28 @@ ruleset. Other checking options relate more to style.
 | | intra-proc | inter-proc | &nbsp; &nbsp; alias &nbsp; &nbsp; | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | Pass | Fail | n/a | Pass | ? |
-| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | ? | ? | ? | ? | ? |
 | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | Pass | Pass | Pass | Pass | ? |
-| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | | | | | |
-| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | | | | | |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | ? | ? | ? | ? | ? |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | ? | ? | ? | ? | ? |
 
 ### findbugs
 
 | | intra-proc | inter-proc | &nbsp; &nbsp; alias &nbsp; &nbsp; | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
-| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | ? | ? | ? | ? | ? |
 | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | | | | | |
-| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | | | | | |
-| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | | | | | |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | ? | ? | ? | ? | ? |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | ? | ? | ? | ? | ? |
 
 ### pmd
 
 | | intra-proc | inter-proc | &nbsp; &nbsp; alias &nbsp; &nbsp; | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
-| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | ? | ? | ? | ? | ? |
 | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | | | | | |
-| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | | | | | |
-| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | | | | | |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | ? | ? | ? | ? | ? |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | ? | ? | ? | ? | ? |
 
