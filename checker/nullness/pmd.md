@@ -110,7 +110,7 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 
 ## inter-procedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
+[nullness/InterProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
 
 ```java
 package nullness;
@@ -118,22 +118,22 @@ package nullness;
 /**
  * Inter-procedural assignment to a null reference.
  */
-public class InterProcedural {
+public class InterProcedure {
 
     String s;
 
-    public InterProcedural(String s) {
+    public InterProcedure(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) throws NullPointerException {
 
         // inter-procedural assignment of a non-null reference (correct)
-        InterProcedural foo = new InterProcedural(returnReceivedString("text"));
+        InterProcedure foo = new InterProcedure(returnReceivedString("text"));
         System.out.println(foo.s.toString());  // "text"
 
         // inter-procedural assignment of a null reference (fail)
-        InterProcedural bar = new InterProcedural(returnReceivedString(null));
+        InterProcedure bar = new InterProcedure(returnReceivedString(null));
         System.out.println(bar.s.toString());  // NullPointerException
 
     }
@@ -148,9 +148,9 @@ public class InterProcedural {
 **results:**
 
 ```
-$ pmd -d InterProcedural.java -f text -R category/java/errorprone.xml
+$ pmd -d InterProcedure.java -f text -R category/java/errorprone.xml
 
-nullness/InterProcedural.java:8:  
+nullness/InterProcedure.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 

@@ -73,14 +73,14 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
 
 ### inter-procedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+[nullness/InterProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedure.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedural.java
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedure.java
 
-nullness/InterProcedural.java:21: 
+nullness/InterProcedure.java:21: 
 error: [argument.type.incompatible] incompatible types in argument.
-        InterProcedural bar = new InterProcedural(returnReceivedString(null));
+        InterProcedure bar = new InterProcedure(returnReceivedString(null));
                                                  ^
   found   : null
   required: @Initialized @NonNull String

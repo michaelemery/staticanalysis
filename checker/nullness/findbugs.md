@@ -101,7 +101,7 @@ Warnings generated: 1
 
 ## inter-procedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+[nullness/InterProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedure.java)
 
 ```java
 package nullness;
@@ -109,22 +109,22 @@ package nullness;
 /**
  * Inter-procedural assignment to a null reference.
  */
-public class InterProcedural {
+public class InterProcedure {
 
     String s;
 
-    public InterProcedural(String s) {
+    public InterProcedure(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) throws NullPointerException {
 
         // inter-procedural assignment of a non-null reference (correct)
-        InterProcedural foo = new InterProcedural(returnReceivedString("text"));
+        InterProcedure foo = new InterProcedure(returnReceivedString("text"));
         System.out.println(foo.s.toString());  // "text"
 
         // inter-procedural assignment of a null reference (fail)
-        InterProcedural bar = new InterProcedural(returnReceivedString(null));
+        InterProcedure bar = new InterProcedure(returnReceivedString(null));
         System.out.println(bar.s.toString());  // NullPointerException
 
     }
@@ -139,7 +139,7 @@ public class InterProcedural {
 **results:**
 
 ```
-$ findbugs nullness/InterProcedural.class 
+$ findbugs nullness/InterProcedure.class 
 
 [NO ISSUES IDENTIFIED]
 ```
