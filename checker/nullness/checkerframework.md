@@ -33,7 +33,7 @@ some particular type:
 
 ## results
 
-### intra-procedural
+### intra-procedure
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
 

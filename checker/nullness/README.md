@@ -11,9 +11,9 @@ identifying potential causes of null-pointer exceptions.
 ### objectives 
 Each test represents different techniques for invoking potential error conditions as follows;
 
-1. Intra-procedural assignment to a null reference ([NullIntraProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullIntraProcedure.java)).
+1. intra-procedure assignment to a null reference ([NullIntraProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullIntraProcedure.java)).
 2. Assignment to a null reference by alias ([NullAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullAlias.java)).
-3. Inter-procedural assignment to a null reference ([NullInterProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullInterProcedure.java)).
+3. inter-procedure assignment to a null reference ([NullInterProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullInterProcedure.java)).
 4. Assignment to a null reference by reflection ([NullReflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullReflection.java)).
 
 
@@ -35,7 +35,7 @@ weakness in reflection is offset by the FN results of other tools that were less
 | --- | :---: | :---: | :---: |
 | Intra-Procedure | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intra-procedure) | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intra-procedure) | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intra-procedure) |
 | Alias | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#alias) | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#alias) | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#alias) |
-| Inter-Procedure | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#inter-procedure) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#inter-procedural) |
+| Inter-Procedure | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#inter-procedure) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedure) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#inter-procedure) |
 | Reflection | [1:TP 3:FP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflection) | [1:FN](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflection)|
 
 > **Notes:** <br>

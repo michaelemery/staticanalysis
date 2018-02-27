@@ -10,7 +10,7 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 > 2. JDK must be set to 1.8 or lower.
 > 3. Outputs have been simplified for brevity.
 
-## intra-procedural
+## intra-procedure
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
 
@@ -18,7 +18,7 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 package nullness;
 
 /**
- * Intra-procedural assignment of a null reference.
+ * intra-procedure assignment of a null reference.
  */
 public class IntraProcedural {
 
@@ -30,11 +30,11 @@ public class IntraProcedural {
 
     public static void main(String[] args) throws NullPointerException {
 
-        // intra-procedural assignment of a non-null reference (correct)
+        // intra-procedure assignment of a non-null reference (correct)
         IntraProcedural foo = new IntraProcedural("text");
         System.out.println(foo.s.toString());  // "text"
 
-        // intra-procedural assignment of a null reference (fail)
+        // intra-procedure assignment of a null reference (fail)
         foo = null;
         System.out.println(foo.s.toString());  // NullPointerException
 
