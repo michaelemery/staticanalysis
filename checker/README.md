@@ -53,7 +53,7 @@ ruleset. Other checking options relate more to style.
 
 ### checker framework
 
-| | intra-proc | inter-proc | alias | reflection | invoke dyn |
+| | intra-proc | inter-proc | &nbsp alias &nbsp | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | Pass | Fail | N/A | Pass | ? |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
