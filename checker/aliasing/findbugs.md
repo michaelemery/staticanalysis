@@ -41,7 +41,7 @@ $ findbugs aliasing/InterProcedural.class
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 0 | 0 | 1 |
+| 0 | 0 | 0 |
 
 ## reflection
 
@@ -57,4 +57,4 @@ $ findbugs aliasing/Reflection.class
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 0 | 0 | 1 |
+| 0 | 0 | 0 |

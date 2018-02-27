@@ -19,9 +19,9 @@ Word picture of results.
 
 | | [CF](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md) |
 | --- | :---: | :---: | :---: |
-| Intra-procedural | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#intra-procedural) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#intra-procedural) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#intra-procedural) |
+| Intra-procedural | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#intra-procedural) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#intra-procedural) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#intra-procedural) |
 | Inter-procedural | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#inter-procedural) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#inter-procedural) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#inter-procedural) |
-| Reflection | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#reflection) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#reflection)|
+| Reflection | [1:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#reflection) | [0:TP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#reflection)|
 
 > **Notes:** <br>
 > 1. Select column heading for results of each tool, or select cell for individual test results.
