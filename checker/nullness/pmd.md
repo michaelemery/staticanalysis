@@ -5,52 +5,23 @@ Version: pmd-bin-6.0.1
 
 PMD checkers belonging to the "error prone" category are the only ones required for these tests.
 
-> 1. The `pmd` command shown in all results is an alias; <br />
+> 1. The `pmd` command shown in all results is an alias; <br>
 > `alias pmd='$PMD_HOME/bin/run.sh pmd'`
 > 2. JDK must be set to 1.8 or lower.
 > 3. Outputs have been simplified for brevity.
 
-## intra-procedure
+## intra-procedural
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
-
-```java
-package nullness;
-
-/**
- * intra-procedure assignment of a null reference.
- */
-public class IntraProcedural {
-
-    String s;
-
-    public IntraProcedural(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) throws NullPointerException {
-
-        // intra-procedure assignment of a non-null reference (correct)
-        IntraProcedural foo = new IntraProcedural("text");
-        System.out.println(foo.s.toString());  // "text"
-
-        // intra-procedure assignment of a null reference (fail)
-        foo = null;
-        System.out.println(foo.s.toString());  // NullPointerException
-
-    }
-
-}
-```
+[nullness/NullIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullIntraProcedural.java)
 
 **results:**
 
 ```
-$ pmd -d nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
+$ pmd -d nullness/NullIntraProcedural.java -f text -R category/java/errorprone.xml
 
-nullness/IntraProcedural.java:8:
+nullness/NullIntraProcedural.java:8:
 Found non-transient, non-static member. Please mark as transient or provide accessors.
-nullness/IntraProcedural.java:21:
+nullness/NullIntraProcedural.java:21:
 Assigning an Object to null is a code smell. Consider refactoring.
 ```
 
@@ -60,47 +31,16 @@ Assigning an Object to null is a code smell. Consider refactoring.
 
 ## alias
 
-[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
-
-```java
-package nullness;
-
-/**
- * Assignment to a null reference by alias.
- */
-public class Alias {
-
-    String s;
-
-    public Alias(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) throws NullPointerException {
-
-        // assignment to non-null by alias (correct)
-        Alias foo = new Alias("text");
-        Alias bar = foo;
-        System.out.println(bar.s.toString());  // "text"
-
-        // assignment to null by alias (fail)
-        foo = null;
-        bar = foo;
-        System.out.println(bar.s.toString());  // NullPointerException
-
-    }
-
-}
-```
+[nullness/NullAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullAlias.java)
 
 **results:**
 
 ```
-$ pmd -d Alias.java -f text -R category/java/errorprone.xml
+$ pmd -d NullAlias.java -f text -R category/java/errorprone.xml
 
-nullness/Alias.java:8: 
+nullness/NullAlias.java:8: 
 Found non-transient, non-static member. Please mark as transient or provide accessors.
-nullness/Alias.java:22:    
+nullness/NullAlias.java:22:    
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
@@ -108,49 +48,16 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## inter-procedure
+## inter-procedural
 
-[nullness/InterProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
-
-```java
-package nullness;
-
-/**
- * inter-procedure assignment to a null reference.
- */
-public class InterProcedure {
-
-    String s;
-
-    public InterProcedure(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) throws NullPointerException {
-
-        // inter-procedure assignment of a non-null reference (correct)
-        InterProcedure foo = new InterProcedure(returnReceivedString("text"));
-        System.out.println(foo.s.toString());  // "text"
-
-        // inter-procedure assignment of a null reference (fail)
-        InterProcedure bar = new InterProcedure(returnReceivedString(null));
-        System.out.println(bar.s.toString());  // NullPointerException
-
-    }
-
-    public static String returnReceivedString(String s) {
-        return s;
-    }
-
-}
-```
+[nullness/NullInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullInterProcedural.java)
 
 **results:**
 
 ```
-$ pmd -d InterProcedure.java -f text -R category/java/errorprone.xml
+$ pmd -d NullInterProcedural.java -f text -R category/java/errorprone.xml
 
-nullness/InterProcedure.java:8:  
+nullness/NullInterProcedural.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
@@ -160,65 +67,14 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 
 ## reflection
 
-[nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
-
-```java
-package nullness;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/**
- * Assignment to a null reference by reflection.
- */
-public class Reflection {
-
-    String s;
-
-    public Reflection(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) {
-
-        Method m;
-
-        try {
-            // assignment to a non-null reference by reflection (correct)
-            m = nullness.Reflection.class.getDeclaredMethod("returnText");
-            Reflection foo = new Reflection((String) m.invoke(null));
-            System.out.println(foo.s.toString());  // "text"
-
-            // assignment to a null reference by reflection (fail)
-            m = nullness.Reflection.class.getDeclaredMethod("returnNull");
-            Reflection bar = new Reflection((String) m.invoke(null));
-            System.out.println(bar.s.toString());  // NullPointerException
-            
-        } catch (NoSuchMethodException |
-                IllegalAccessException |
-                InvocationTargetException x) {
-            x.printStackTrace();
-        }
-
-    }
-
-    public static String returnText() {
-        return "text";
-    }
-
-    public static String returnNull() {
-        return null;
-    }
-
-}
-```
+[nullness/NullReflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullReflection.java)
 
 **results:**
 
 ```
-$ pmd -d Reflection.java -f text -R category/java/errorprone.xml
+$ pmd -d NullReflection.java -f text -R category/java/errorprone.xml
 
-nullness/Reflection.java:11:   
+nullness/NullReflection.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 

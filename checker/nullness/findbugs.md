@@ -3,46 +3,17 @@
 
 Version: findbugs-3.0.1
 
-## intra-procedure
+## intra-procedurual
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
-
-```java
-package nullness;
-
-/**
- * intra-procedure assignment of a null reference.
- */
-public class IntraProcedural {
-
-    String s;
-
-    public IntraProcedural(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) throws NullPointerException {
-
-        // intra-procedure assignment of a non-null reference (correct)
-        IntraProcedural foo = new IntraProcedural("text");
-        System.out.println(foo.s.toString());  // "text"
-
-        // intra-procedure assignment of a null reference (fail)
-        foo = null;
-        System.out.println(foo.s.toString());  // NullPointerException
-
-    }
-
-}
-```
+[nullness/NullIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullIntraProcedural.java)
 
 **results:**
 
 ```
-$ findbugs nullness/IntraProcedural.class 
+$ findbugs nullness/NullIntraProcedural.class 
 
 H C NP: Null pointer dereference of ? in nullness.IntraProcedural.main(String[])  
-Dereferenced at IntraProcedural.java:[line 22]
+Dereferenced at NullIntraProcedural.java:[line 22]
 Warnings generated: 1
 ```
 
@@ -52,46 +23,15 @@ Warnings generated: 1
 
 ## 
 
-[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
-
-```java
-package nullness;
-
-/**
- * Assignment to a null reference by alias.
- */
-public class Alias {
-
-    String s;
-
-    public Alias(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) throws NullPointerException {
-
-        // assignment to non-null by alias (correct)
-        Alias foo = new Alias("text");
-        Alias bar = foo;
-        System.out.println(bar.s.toString());  // "text"
-
-        // assignment to null by alias (fail)
-        foo = null;
-        bar = foo;
-        System.out.println(bar.s.toString());  // NullPointerException
-
-    }
-
-}
-```
+[nullness/NullAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullAlias.java)
 
 **results:**
 
 ```
-$ findbugs nullness/Alias.class 
+$ findbugs nullness/NullAlias.class 
 
-H C NP: Null pointer dereference of ? in nullness.Alias.main(String[])  
-Dereferenced at Alias.java:[line 24]
+H C NP: Null pointer dereference of ? in nullness.NullAlias.main(String[])  
+Dereferenced at NullAlias.java:[line 24]
 Warnings generated: 1
 ```
 
@@ -99,47 +39,14 @@ Warnings generated: 1
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## inter-procedure
+## inter-procedural
 
-[nullness/InterProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedure.java)
-
-```java
-package nullness;
-
-/**
- * inter-procedure assignment to a null reference.
- */
-public class InterProcedure {
-
-    String s;
-
-    public InterProcedure(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) throws NullPointerException {
-
-        // inter-procedure assignment of a non-null reference (correct)
-        InterProcedure foo = new InterProcedure(returnReceivedString("text"));
-        System.out.println(foo.s.toString());  // "text"
-
-        // inter-procedure assignment of a null reference (fail)
-        InterProcedure bar = new InterProcedure(returnReceivedString(null));
-        System.out.println(bar.s.toString());  // NullPointerException
-
-    }
-
-    public static String returnReceivedString(String s) {
-        return s;
-    }
-
-}
-```
+[nullness/NullInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullInterProcedural.java)
 
 **results:**
 
 ```
-$ findbugs nullness/InterProcedure.class 
+$ findbugs nullness/NullInterProcedural.class 
 
 [NO ISSUES IDENTIFIED]
 ```
@@ -150,63 +57,12 @@ $ findbugs nullness/InterProcedure.class
 
 ## reflection
 
-[nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
-
-```java
-package nullness;
-
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-
-/**
- * Assignment to a null reference by reflection.
- */
-public class Reflection {
-
-    String s;
-
-    public Reflection(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) {
-
-        Method m;
-
-        try {
-            // assignment to a non-null reference by reflection (correct)
-            m = nullness.Reflection.class.getDeclaredMethod("returnText");
-            Reflection foo = new Reflection((String) m.invoke(null));
-            System.out.println(foo.s.toString());  // "text"
-
-            // assignment to a null reference by reflection (fail)
-            m = nullness.Reflection.class.getDeclaredMethod("returnNull");
-            Reflection bar = new Reflection((String) m.invoke(null));
-            System.out.println(bar.s.toString());  // NullPointerException
-            
-        } catch (NoSuchMethodException |
-                IllegalAccessException |
-                InvocationTargetException x) {
-            x.printStackTrace();
-        }
-
-    }
-
-    public static String returnText() {
-        return "text";
-    }
-
-    public static String returnNull() {
-        return null;
-    }
-
-}
-```
+[nullness/NullReflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullReflection.java)
 
 **results:**
 
 ```
-$ findbugs nullness/Reflection.class 
+$ findbugs nullness/NullReflection.class 
 
 [NO ISSUES IDENTIFIED]
 ```
