@@ -19,6 +19,7 @@ public class Reflection {
         Method m;
 
         try {
+            
             // assignment to a non-null reference by reflection (correct)
             m = nullness.Reflection.class.getDeclaredMethod("returnText");
             Reflection foo = new Reflection((String) m.invoke(null));

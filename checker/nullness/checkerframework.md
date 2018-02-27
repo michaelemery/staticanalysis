@@ -99,34 +99,34 @@ error: [argument.type.incompatible] incompatible types in argument.
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflection.java
 
-nullness/Reflection.java:24: error: [argument.type.incompatible] incompatible types in argument.
+nullness/Reflection.java:25: error: [argument.type.incompatible] incompatible types in argument.
             Reflection foo = new Reflection((String) m.invoke(null));
                                             ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
 
-nullness/Reflection.java:24: 
+nullness/Reflection.java:25: 
 error: [argument.type.incompatible] incompatible types in argument.
             Reflection foo = new Reflection((String) m.invoke(null));
                                                               ^
   found   : null
   required: @Initialized @NonNull Object
 
-nullness/Reflection.java:29: 
+nullness/Reflection.java:30: 
 error: [argument.type.incompatible] incompatible types in argument.
             Reflection bar = new Reflection((String) m.invoke(null));
                                             ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
 
-nullness/Reflection.java:29: 
+nullness/Reflection.java:30: 
 error: [argument.type.incompatible] incompatible types in argument.
             Reflection bar = new Reflection((String) m.invoke(null));
                                                               ^
   found   : null
   required: @Initialized @NonNull Object
 
-nullness/Reflection.java:45: 
+nullness/Reflection.java:46: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
