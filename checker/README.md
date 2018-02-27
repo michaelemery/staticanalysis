@@ -55,11 +55,11 @@ ruleset. Other checking options relate more to style.
 
 | | inter-proc | intra-proc | aliasing | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| nullness | | | | | |
-| aliasing | | | | | |
-| init | | | | | |
-| signedness | | | | | |
-| taint | | | | | |
+| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | | | | | |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | | | | | |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | | | | | |
 
 ### findbugs
 
