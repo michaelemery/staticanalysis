@@ -11,9 +11,12 @@ Version: findbugs-3.0.1
 
 ```
 $ findbugs aliasing/IntraProcedural.class 
-H C NP: Null pointer dereference of IntraProcedural.s in aliasing.IntraProcedural.main(String[])  Dereferenced at IntraProcedural.java:[line 30]
 
-M D UC: Useless object stored in variable var$2 of method aliasing.IntraProcedural.main(String[])  At IntraProcedural.java:[line 23]
+H C NP: Null pointer dereference of IntraProcedural.s in aliasing.IntraProcedural.main(String[]) 
+Dereferenced at IntraProcedural.java:[line 30]
+
+M D UC: Useless object stored in variable var$2 of method aliasing.IntraProcedural.main(String[]) 
+At IntraProcedural.java:[line 23]
 
 Warnings generated: 2
 
