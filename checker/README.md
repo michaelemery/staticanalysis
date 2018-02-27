@@ -53,7 +53,7 @@ ruleset. Other checking options relate more to style.
 
 ### checker framework
 
-| | inter-proc | intra-proc | aliasing | reflection | invoke dyn |
+| | alias | inter-proc | intra-proc | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
@@ -63,7 +63,7 @@ ruleset. Other checking options relate more to style.
 
 ### findbugs
 
-| | inter-proc | intra-proc | aliasing | reflection | invoke dyn |
+| | alias | inter-proc | intra-proc | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
@@ -73,7 +73,7 @@ ruleset. Other checking options relate more to style.
 
 ### pmd
 
-| | inter-proc | intra-proc | aliasing | reflection | invoke dyn |
+| | alias | inter-proc | intra-proc | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
