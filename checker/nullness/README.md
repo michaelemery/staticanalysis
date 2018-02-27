@@ -7,7 +7,7 @@ Individual tests provide a template to test the effectiveness of static analysis
 ### objectives 
 Each test represents different techniques for invoking potential error conditions as follows;
 
-1. Intra-procedural assignment to a null reference. ([IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)).
+1. Intra-procedural assignment of a null reference. ([IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)).
 2. Inter-Procedural assignment of a null reference. ([InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)).
 3. Assignment to a null reference by alias. ([Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)).
 4. Inter-procedural (reflection) assignment to a null reference. ([Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)).
