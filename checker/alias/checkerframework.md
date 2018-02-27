@@ -8,7 +8,7 @@ Version: checker-framework-2.3.0
 
 1. org.checkerframework.common.aliasing.AliasingChecker
 
-**qualifiers**
+**annotations**
 
 There are two possible types for an expression:
 
@@ -18,8 +18,6 @@ There are two possible types for an expression:
 | **@Unique** | is the type of an expression that has no aliases. The @Unique annotation is only allowed at local variables, method parameters, constructor results, and method returns. It is not allowed on fields, array elements, and type parameters. A constructor’s result should be annotated with @Unique only if the constructor’s body does not create an alias to the constructed object. |
 
 > **Important:** The default state of any object in Checker Framework is ***@MaybeAliased***.
-
-**annotations**
 
 There are also two annotations, which are currently trusted instead of verified, that can 
 be used on formal parameters (including the receiver parameter, this):
