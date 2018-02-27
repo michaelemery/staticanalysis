@@ -11,10 +11,10 @@ identifying potential causes of null-pointer exceptions.
 ### objectives 
 Each test represents different techniques for invoking potential error conditions as follows;
 
-1. intra-procedure assignment to a null reference ([NullIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullIntraProcedural.java)).
-2. Assignment to a null reference by alias ([NullAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullAlias.java)).
-3. inter-procedure assignment to a null reference ([NullInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullInterProcedural.java)).
-4. Assignment to a null reference by reflection ([NullReflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullReflection.java)).
+1. intra-procedure assignment to a null reference ([IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)).
+2. Assignment to a null reference by alias ([Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)).
+3. inter-procedure assignment to a null reference ([InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)).
+4. Assignment to a null reference by reflection ([Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)).
 
 
 ## results

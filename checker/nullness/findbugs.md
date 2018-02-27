@@ -5,12 +5,12 @@ Version: findbugs-3.0.1
 
 ## intra-procedurual
 
-[nullness/NullIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullIntraProcedural.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
 
 **results:**
 
 ```
-$ findbugs nullness/NullIntraProcedural.class 
+$ findbugs nullness/IntraProcedural.class 
 
 H C NP: Null pointer dereference of ? in nullness.IntraProcedural.main(String[])  
 Dereferenced at NullIntraProcedural.java:[line 22]
@@ -23,12 +23,12 @@ Warnings generated: 1
 
 ## 
 
-[nullness/NullAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullAlias.java)
+[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 **results:**
 
 ```
-$ findbugs nullness/NullAlias.class 
+$ findbugs nullness/Alias.class 
 
 H C NP: Null pointer dereference of ? in nullness.NullAlias.main(String[])  
 Dereferenced at NullAlias.java:[line 24]
@@ -41,12 +41,12 @@ Warnings generated: 1
 
 ## inter-procedural
 
-[nullness/NullInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullInterProcedural.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
 **results:**
 
 ```
-$ findbugs nullness/NullInterProcedural.class 
+$ findbugs nullness/InterProcedural.class 
 
 [NO ISSUES IDENTIFIED]
 ```
@@ -57,12 +57,12 @@ $ findbugs nullness/NullInterProcedural.class
 
 ## reflection
 
-[nullness/NullReflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullReflection.java)
+[nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 **results:**
 
 ```
-$ findbugs nullness/NullReflection.class 
+$ findbugs nullness/Reflection.class 
 
 [NO ISSUES IDENTIFIED]
 ```

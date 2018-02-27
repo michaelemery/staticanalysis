@@ -12,16 +12,16 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 
 ## intra-procedural
 
-[nullness/NullIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullIntraProcedural.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
 
 **results:**
 
 ```
-$ pmd -d nullness/NullIntraProcedural.java -f text -R category/java/errorprone.xml
+$ pmd -d nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
 
-nullness/NullIntraProcedural.java:8:
+nullness/IntraProcedural.java:8:
 Found non-transient, non-static member. Please mark as transient or provide accessors.
-nullness/NullIntraProcedural.java:21:
+nullness/IntraProcedural.java:21:
 Assigning an Object to null is a code smell. Consider refactoring.
 ```
 
@@ -31,16 +31,16 @@ Assigning an Object to null is a code smell. Consider refactoring.
 
 ## alias
 
-[nullness/NullAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullAlias.java)
+[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 **results:**
 
 ```
 $ pmd -d NullAlias.java -f text -R category/java/errorprone.xml
 
-nullness/NullAlias.java:8: 
+nullness/Alias.java:8: 
 Found non-transient, non-static member. Please mark as transient or provide accessors.
-nullness/NullAlias.java:22:    
+nullness/Alias.java:22:    
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
@@ -50,14 +50,14 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 
 ## inter-procedural
 
-[nullness/NullInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullInterProcedural.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
 **results:**
 
 ```
 $ pmd -d NullInterProcedural.java -f text -R category/java/errorprone.xml
 
-nullness/NullInterProcedural.java:8:  
+nullness/InterProcedural.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
@@ -67,14 +67,14 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 
 ## reflection
 
-[nullness/NullReflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/NullReflection.java)
+[nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 **results:**
 
 ```
 $ pmd -d NullReflection.java -f text -R category/java/errorprone.xml
 
-nullness/NullReflection.java:11:   
+nullness/Reflection.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
