@@ -54,6 +54,7 @@ ruleset. Other checking options relate more to style.
 ### checker framework
 
 | | inter-proc | intra-proc | aliasing | reflection | invoke dyn |
+| --- | :---: | :---: | :---: | :---: | :---: |
 | nullness | | | | | |
 | aliasing | | | | | |
 | init | | | | | |
