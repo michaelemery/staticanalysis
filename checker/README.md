@@ -77,7 +77,7 @@ ruleset. Other checking options relate more to style.
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | pass | pass | n/a | pass | ? |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | ? | ? | ? | ? | ? |
-| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | pass | fail | n/a | fail | ? |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | pass | fail | pass | fail | ? |
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | ? | ? | ? | ? | ? |
 | [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | ? | ? | ? | ? | ? |
 
