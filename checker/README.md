@@ -63,5 +63,21 @@ ruleset. Other checking options relate more to style.
 
 ### findbugs
 
+| | inter-proc | intra-proc | aliasing | reflection | invoke dyn |
+| --- | :---: | :---: | :---: | :---: | :---: |
+| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | | | | | |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | | | | | |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | | | | | |
+
 ### pmd
+
+| | inter-proc | intra-proc | aliasing | reflection | invoke dyn |
+| --- | :---: | :---: | :---: | :---: | :---: |
+| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | | | | | |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | | | | | |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | | | | | |
 
