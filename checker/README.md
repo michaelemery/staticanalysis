@@ -28,7 +28,7 @@ in order for checkingtools to work. In such cases, the category will contain mul
 versions of the same code. Additional versions are identified with underbar ("\_") 
 extensions to the filename.
 
-**Example**
+**Example** <br>
 _InterProcedural.java_ has an annotated version named _InterProcedural_CF.java_, to indicate that 
 it includes annotaions for _Checker Framework_. Not all programs require annotations for the 
 tools to work, so they do not require additional versions. Included versions and their 
