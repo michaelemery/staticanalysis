@@ -1,4 +1,4 @@
-# alias
+# aliasing
 Two expressions are aliased when they have the same non-primitive value; that is, they are references to the identical Java object in the heap. Errors may occur when an object is referenced, without consideration for mutations caused by an alias to the same object.
 
 ## testing
