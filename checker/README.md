@@ -63,7 +63,7 @@ ruleset. Other checking options relate more to style.
 
 ### findbugs
 
-| | intra-proc | inter-proc | alias | reflection | invoke dyn |
+| | intra-proc | inter-proc | &nbsp; &nbsp; alias &nbsp; &nbsp; | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
@@ -73,7 +73,7 @@ ruleset. Other checking options relate more to style.
 
 ### pmd
 
-| | intra-proc | inter-proc | alias | reflection | invoke dyn |
+| | intra-proc | inter-proc | &nbsp; &nbsp; alias &nbsp; &nbsp; | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
