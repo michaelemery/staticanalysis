@@ -55,9 +55,9 @@ ruleset. Other checking options relate more to style.
 
 | | intra-proc | inter-proc | alias | reflection | invoke dyn |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | | | | | |
+| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | OK | Fail | N/A | OK | ? |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | | | | | |
-| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | | | | | |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | OK | OK | OK | OK | ? |
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | | | | | |
 | [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | | | | | |
 
