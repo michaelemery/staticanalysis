@@ -1,4 +1,4 @@
-package alias;
+package aliasing;
 
 /**
  * Inter-procedural corruption of an object via an alias.
