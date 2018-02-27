@@ -12,9 +12,6 @@ Version: checker-framework-2.3.0
 
 There are two possible types for an expression:
 
-
-There are two possible types for an expression:
-
 | annotation | description |
 | --- | --- |
 | **@MaybeAliased** *(default)*| Indicates the type of an expression that might have an alias. This is the default, so every unannotated type is @MaybeAliased. Includes the type of null. |
