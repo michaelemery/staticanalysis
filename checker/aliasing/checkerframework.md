@@ -30,7 +30,7 @@ There are also two annotations, which are currently trusted instead of verified,
 
 ### intra-procedural
 
-[alias/IntraProcedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/IntraProcedural_CF.java)
+[aliasing/IntraProcedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/IntraProcedural_CF.java)
 
 ```
 $ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/IntraProcedural_CF.java 
@@ -61,7 +61,7 @@ error: [unique.leaked] Reference annotated as @Unique is leaked.
 
 ### inter-procedural
 
-[alias/InterProcedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/InterProcedural_CF.java)
+[aliasing/InterProcedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/InterProcedural_CF.java)
 
 
 ```
@@ -82,7 +82,7 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 
 ### reflection
 
-[alias/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/reflection_CF.java)
+[aliasing/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/reflection_CF.java)
 
 ```
 $ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflection_CF.java 
