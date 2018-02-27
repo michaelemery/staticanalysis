@@ -45,7 +45,9 @@ aliasing/IntraProcedural_CF.java:25:
 error: [unique.leaked] Reference annotated as @Unique is leaked.
         bar = new IntraProcedural_CF(foo);
                                      ^
-aliasing/IntraProcedural_CF.java:30: error: [unique.leaked] Reference annotated as @Unique is leaked.
+
+aliasing/IntraProcedural_CF.java:30: 
+error: [unique.leaked] Reference annotated as @Unique is leaked.
         bar = foo;
               ^
 
