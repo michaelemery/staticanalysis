@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Assignment to a null reference by reflection.
+ * Inter-procedural (reflection) assignment to a null reference.
  */
 public class Reflection {
 

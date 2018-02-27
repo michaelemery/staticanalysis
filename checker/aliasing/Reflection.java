@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Inter-procedural (using reflection) corruption of an object via an alias.
+ * Inter-procedural (reflection) corruption of an object via an alias.
  */
 public class Reflection {
 

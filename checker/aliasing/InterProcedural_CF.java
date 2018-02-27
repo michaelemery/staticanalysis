@@ -1,5 +1,7 @@
 package aliasing;
 
+import org.checkerframework.common.aliasing.qual.Unique;
+
 /**
  * Inter-procedural corruption of an object via an alias.
  */

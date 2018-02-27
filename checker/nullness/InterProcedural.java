@@ -1,7 +1,7 @@
 package nullness;
 
 /**
- * Inter-Procedural assignment to a null reference.
+ * Inter-procedural assignment to a null reference.
  */
 public class InterProcedural {
 
