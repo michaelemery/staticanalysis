@@ -71,7 +71,7 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### inter-procedural
+### inter-procedure
 
 [nullness/InterProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedure.java)
 

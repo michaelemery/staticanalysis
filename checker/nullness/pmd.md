@@ -108,7 +108,7 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## inter-procedural
+## inter-procedure
 
 [nullness/InterProcedure.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Call.java)
 
@@ -116,7 +116,7 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 package nullness;
 
 /**
- * Inter-procedural assignment to a null reference.
+ * inter-procedure assignment to a null reference.
  */
 public class InterProcedure {
 
@@ -128,11 +128,11 @@ public class InterProcedure {
 
     public static void main(String[] args) throws NullPointerException {
 
-        // inter-procedural assignment of a non-null reference (correct)
+        // inter-procedure assignment of a non-null reference (correct)
         InterProcedure foo = new InterProcedure(returnReceivedString("text"));
         System.out.println(foo.s.toString());  // "text"
 
-        // inter-procedural assignment of a null reference (fail)
+        // inter-procedure assignment of a null reference (fail)
         InterProcedure bar = new InterProcedure(returnReceivedString(null));
         System.out.println(bar.s.toString());  // NullPointerException
 
