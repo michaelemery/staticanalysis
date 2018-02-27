@@ -6,7 +6,7 @@ Provide a template to test the effectiveness of static analysis tools in identif
 
 ### objectives
 Identify where objects that are intended to be unique may become mutable by;
-1. Intra-procedural corruption of an object via an alias. ([IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/IntreProcedural.java))
+1. Intra-procedural corruption of an object via an alias. ([IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/InterProcedural.java))
 2. Inter-procedural corruption of an object via an alias. ([InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/InterProcedural.java))
 3. Inter-procedural (reflection) corruption of an object via an alias. ([Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection.java))
 
