@@ -33,12 +33,28 @@ There are also two annotations, which are currently trusted instead of verified,
 [alias/IntraProcedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/IntraProcedural_CF.java)
 
 ```
+$ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/IntraProcedural_CF.java 
+aliasing/IntraProcedural_CF.java:21: 
+error: [assignment.type.incompatible] incompatible types in assignment.
+        @Unique IntraProcedural_CF foo = new IntraProcedural_CF("text");
+                                         ^
+  found   : @MaybeAliased IntraProcedural_CF
+  required: @NonLeaked @Unique IntraProcedural_CF
 
+aliasing/IntraProcedural_CF.java:25: 
+error: [unique.leaked] Reference annotated as @Unique is leaked.
+        bar = new IntraProcedural_CF(foo);
+                                     ^
+aliasing/IntraProcedural_CF.java:30: error: [unique.leaked] Reference annotated as @Unique is leaked.
+        bar = foo;
+              ^
+
+3 errors
 ```
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 0 | 0 | 0 |
+| 1 | 1 | 0 |
 
 
 ### inter-procedural
@@ -47,21 +63,47 @@ There are also two annotations, which are currently trusted instead of verified,
 
 
 ```
+$ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/InterProcedural_CF.java 
+aliasing/InterProcedural_CF.java:17: 
+error: [assignment.type.incompatible] incompatible types in assignment.
+        @Unique InterProcedural_CF foo = new InterProcedural_CF("text");
+                                         ^
+  found   : @MaybeAliased InterProcedural_CF
+  required: @NonLeaked @Unique InterProcedural_CF
 
+1 error
 ```
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 0 | 0 | 0 |
+| 0 | 1 | 1 |
 
 ### reflection
 
 [alias/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/reflection_CF.java)
 
 ```
+$ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflection_CF.java 
+aliasing/Reflection_CF.java:19: 
+error: [assignment.type.incompatible] incompatible types in assignment.
+        @Unique Reflection_CF foo = new Reflection_CF("text");
+                                    ^
+  found   : @MaybeAliased Reflection_CF
+  required: @NonLeaked @Unique Reflection_CF
 
+aliasing/Reflection_CF.java:27: 
+error: [unique.leaked] Reference annotated as @Unique is leaked.
+            bar = (Reflection_CF) m.invoke(foo);
+                                           ^
+
+aliasing/Reflection_CF.java:33: 
+error: [unique.leaked] Reference annotated as @Unique is leaked.
+            bar = (Reflection_CF) m.invoke(foo);
+                                           ^
+
+3 errors
 ```
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 0 | 0 | 0 |
+| 1 | 1 | 1 |
