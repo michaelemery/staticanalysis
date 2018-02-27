@@ -11,7 +11,7 @@ project tests for potential program errors within the following categories:
 
 | category | description |
 | --- | --- |
-| [alias](https://github.com/michaelemery/staticanalysis/tree/master/checker/alias) | Errors may occur when an object is referenced without consideration for mutations caused by an alias to the same object. |
+| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | Errors may occur when an object is referenced without consideration for mutations caused by an aliasing to the same object. |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | Objects accessed at runtime prior to being fully initialised will cause an error. |
 | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | Dereferenced expressions are a common cause a null pointer exceptions. |
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
@@ -29,8 +29,8 @@ versions of the same code. Additional versions are identified with underbar ("\_
 extensions to the filename.
 
 **Example**
- _Alias.java_ has an annotated version named _Alias_CF.java_, to indicate that it 
-includes annoations for _Checker Framework_. Not all programs require annotations for the 
+_InterProcedural.java_ has an annotated version named _InterProcedural_CF.java_, to indicate that 
+it includes annotaions for _Checker Framework_. Not all programs require annotations for the 
 tools to work, so they do not require additional versions. Included versions and their 
 suffixes are indicated as follows;
 

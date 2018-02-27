@@ -1,12 +1,8 @@
 # nullness
-Nullness checking guarantees that a program will never throw a null pointer exception. 
-De-referenced expressions are a common cause a null pointer exceptions. Dereferences occur not only 
-when a field is accessed, but when an array is indexed, an exception is thrown, and more. Such 
-exceptions may also occur simply as a result of a field not being initialised by its constructor.
+Nullness checking guarantees that a program will never throw a null pointer exception. De-referenced expressions are a common cause a null pointer exceptions. Dereferences occur not only when a field is accessed, but when an array is indexed, an exception is thrown, and more. Such exceptions may also occur simply as a result of a field not being initialised by its constructor.
 
 ## testing
-Individual tests provide a template to test the effectiveness of static analysis tools in 
-identifying potential causes of null-pointer exceptions.
+Individual tests provide a template to test the effectiveness of static analysis tools in identifying potential causes of null-pointer exceptions.
 
 ### objectives 
 Each test represents different techniques for invoking potential error conditions as follows;
@@ -19,15 +15,11 @@ Each test represents different techniques for invoking potential error condition
 
 ## results
 
-Checker Framework (CF) is consistently sound and precise in non-reflective cases. However, it 
-handles reflection in a very rudimentary way that causes excessive false positives. CF errs on the 
-side of caution when encountering reflective code. 
+Checker Framework (CF) is consistently sound and precise in non-reflective cases. However, it handles reflection in a very rudimentary way that causes excessive false positives. CF errs on the side of caution when encountering reflective code. 
 
-Both FindBugs and PMD are less likely to generate FP results so are more precise than CF. 
-However, their lack of caution in complex situations compromises soundness compared to CF.
+Both FindBugs and PMD are less likely to generate FP results so are more precise than CF. However, their lack of caution in complex situations compromises soundness compared to CF.
 
-Overall, CF is recommended as the most reliable tool for nullness testing given that the FP 
-weakness in reflection is offset by the FN results of other tools that were less sound.
+Overall, CF is recommended as the most reliable tool for nullness testing given that the FP weakness in reflection is offset by the FN results of other tools that were less sound.
 
 ### summary
 
