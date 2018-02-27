@@ -48,3 +48,19 @@ in this project.
 
 PMD has numerous categories of checking options, however this project only uses the errorprone.xml
 ruleset. Other checking options relate more to style.
+
+## results
+
+### checker framework
+
+| | inter-proc | intra-proc | aliasing | reflection | invoke dyn |
+| nullness | | | | | |
+| aliasing | | | | | |
+| init | | | | | |
+| signedness | | | | | |
+| taint | | | | | |
+
+### findbugs
+
+### pmd
+
