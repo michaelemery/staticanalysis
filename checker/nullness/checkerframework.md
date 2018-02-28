@@ -35,7 +35,7 @@ some particular type:
 
 ### intra-procedural
 
-#### Vanilla
+#### vanilla
 [nullness/IntraVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraVanilla.java)
 
 ```
@@ -53,7 +53,7 @@ error: [dereference.of.nullable] dereference of possibly-null reference foo
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-#### Alias
+#### alias
 [nullness/IntraAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraAlias.java)
 
 ```
@@ -73,7 +73,7 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
 
 ### inter-procedural
 
-**Vanilla**
+#### vanilla
 [nullness/InterVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterVanilla.java)
 
 ```
@@ -93,7 +93,7 @@ error: [argument.type.incompatible] incompatible types in argument.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-**Reflection**
+#### reflection
 [nullness/InterReflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterReflect.java)
 
 ```
