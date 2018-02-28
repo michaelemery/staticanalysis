@@ -30,6 +30,30 @@ Overall, CF is recommended as the most reliable tool for nullness testing given 
 | Alias | [pass](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#alias) | [pass](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#alias) | [pass](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#alias) |
 | Reflection | [pass +3FP](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) | [fail](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflection) | [fail](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflection)|
 
+
+### checkerframework
+
+|  | vanilla | reflection | invoke dyn | proxy |
+| --- | :---: | :---: | :---: | :---: |
+| intra-procedural |  |  |  |  |
+| inter-procedural |  |  |  |  |
+
+### findbugs
+
+|  | vanilla | reflection | invoke dyn | proxy |
+| --- | :---: | :---: | :---: | :---: |
+| intra-procedural |  |  |  |  |
+| inter-procedural |  |  |  |  |
+
+
+### pmd 
+
+|  | vanilla | reflection | invoke dyn | proxy |
+| --- | :---: | :---: | :---: | :---: |
+| intra-procedural |  |  |  |  |
+| inter-procedural |  |  |  |  |
+
+
 > **Notes:** <br>
 > 1. Select column heading for results of each tool, or select cell for individual test results.
 > 2. Irrelevant errors or warnings that are justifiably identified are not assessed.

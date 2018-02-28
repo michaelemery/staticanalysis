@@ -3,22 +3,22 @@ package nullness;
 /**
  * Inter-procedural assignment to a null reference.
  */
-public class InterProcedural {
+public class InterVanilla {
 
     String s;
 
-    public InterProcedural(String s) {
+    public InterVanilla(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) throws NullPointerException {
 
         // inter-procedural assignment of a non-null reference (correct)
-        InterProcedural foo = new InterProcedural(returnReceivedString("text"));
+        InterVanilla foo = new InterVanilla(returnReceivedString("text"));
         System.out.println(foo.s.toString());  // "text"
 
         // inter-procedural assignment of a null reference (fail)
-        InterProcedural bar = new InterProcedural(returnReceivedString(null));
+        InterVanilla bar = new InterVanilla(returnReceivedString(null));
         System.out.println(bar.s.toString());  // NullPointerException
 
     }
