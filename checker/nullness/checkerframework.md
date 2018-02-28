@@ -35,7 +35,8 @@ some particular type:
 
 ### intra-procedural
 
-**Vanilla:** [nullness/IntraVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraVanilla.java)
+#### Vanilla
+[nullness/IntraVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraVanilla.java)
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraVanilla.java
@@ -52,7 +53,8 @@ error: [dereference.of.nullable] dereference of possibly-null reference foo
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-**Alias:** [nullness/IntraAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraAlias.java)
+#### Alias
+[nullness/IntraAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraAlias.java)
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraAlias.java
@@ -71,7 +73,8 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
 
 ### inter-procedural
 
-**Vanilla:** [nullness/InterVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterVanilla.java)
+**Vanilla**
+[nullness/InterVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterVanilla.java)
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterVanilla.java
@@ -90,7 +93,8 @@ error: [argument.type.incompatible] incompatible types in argument.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-**Reflection:** [nullness/InterReflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterReflect.java)
+**Reflection**
+[nullness/InterReflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterReflect.java)
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterReflect.java
