@@ -35,12 +35,12 @@ some particular type:
 
 ### intra-procedural
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
+**Vanilla:** [nullness/IntraVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraVanilla.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraProcedural.java
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraVanilla.java
 
-nullness/IntraProcedural.java:22: 
+nullness/IntraVanilla.java:22: 
 error: [dereference.of.nullable] dereference of possibly-null reference foo
         System.out.println(foo.s.toString());  // NullPointerException
                            ^
@@ -52,14 +52,12 @@ error: [dereference.of.nullable] dereference of possibly-null reference foo
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### alias
-
-[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
+**Alias:** [nullness/IntraAlias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraAlias.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Alias.java
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraAlias.java
 
-nullness/Alias.java:24: 
+nullness/IntraAlias.java:24: 
 error: [dereference.of.nullable] dereference of possibly-null reference bar
         System.out.println(bar.s.toString());  // NullPointerException
                            ^
@@ -73,14 +71,14 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
 
 ### inter-procedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+**Vanilla:** [nullness/InterVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterVanilla.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedural.java
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterVanilla.java
 
-nullness/InterProcedural.java:21: 
+nullness/InterVanilla.java:21: 
 error: [argument.type.incompatible] incompatible types in argument.
-        InterProcedural bar = new InterProcedural(returnReceivedString(null));
+        InterVanilla bar = new InterVanilla(returnReceivedString(null));
                                                  ^
   found   : null
   required: @Initialized @NonNull String
@@ -92,41 +90,39 @@ error: [argument.type.incompatible] incompatible types in argument.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### reflection
-
-[nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
+**Reflection:** [nullness/InterReflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterReflect.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflection.java
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterReflect.java
 
-nullness/Reflection.java:25: error: [argument.type.incompatible] incompatible types in argument.
+nullness/InterReflect.java:25: error: [argument.type.incompatible] incompatible types in argument.
             Reflection foo = new Reflection((String) m.invoke(null));
                                             ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
 
-nullness/Reflection.java:25: 
+nullness/InterReflect.java:25: 
 error: [argument.type.incompatible] incompatible types in argument.
             Reflection foo = new Reflection((String) m.invoke(null));
                                                               ^
   found   : null
   required: @Initialized @NonNull Object
 
-nullness/Reflection.java:30: 
+nullness/InterReflect.java:30: 
 error: [argument.type.incompatible] incompatible types in argument.
             Reflection bar = new Reflection((String) m.invoke(null));
                                             ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
 
-nullness/Reflection.java:30: 
+nullness/InterReflect.java:30: 
 error: [argument.type.incompatible] incompatible types in argument.
             Reflection bar = new Reflection((String) m.invoke(null));
                                                               ^
   found   : null
   required: @Initialized @NonNull Object
 
-nullness/Reflection.java:46: 
+nullness/InterReflect.java:46: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^

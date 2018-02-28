@@ -4,7 +4,7 @@ Nullness checking guarantees that a program will never throw a null pointer exce
 ## testing
 Individual tests provide a template to test the effectiveness of static analysis tools in identifying potential causes of null-pointer exceptions.
 
-| test | objective |
+| test | description |
 | --- | --- |
 | [IntraVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraVanilla.java) | Intra-procedural assignment of a null reference. |
 | [InterVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterVanilla.java) | Inter-procedural assignment of a null reference. |
@@ -42,7 +42,6 @@ Overall, CF is recommended as the most reliable tool for nullness testing given 
 | --- | :---: | :---: | :---: | :---: |
 | intra-procedural |  |  |  |  |
 | inter-procedural |  |  |  |  |
-
 
 > **Note:** <br />
 > Irrelevant errors or warnings that are justifiably identified are not assessed.
