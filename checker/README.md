@@ -25,11 +25,11 @@ of each tool are compared in order to assess overall and relative effectiveness.
 | **Invoke Dynamic** |  |
 | **Proxy** |  |
 
-### conditions
+### category
 A "checker" generally tests for a variety of conditions that are organised by category. This 
 project tests for potential program errors within the following categories:
 
-| checker | description |
+| category | description |
 | --- | --- |
 | **Aliasing** | Errors may occur when an object is referenced without consideration for mutations caused by an aliasing to the same object. |
 | **Inititialisation** | Objects accessed at runtime prior to being fully initialised will cause an error. |
