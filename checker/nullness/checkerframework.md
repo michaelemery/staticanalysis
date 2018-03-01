@@ -58,7 +58,7 @@ error: [dereference.of.nullable] dereference of possibly-null reference foo
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
-| <td colspan=3> accurate
+| <td colspan=3>accurate |
 
 #### inter-procedural
 
