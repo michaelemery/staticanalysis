@@ -38,6 +38,8 @@ Checkers are generally organised by category. This project tests for potential p
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness)|Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
 | [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint)  | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
 
+> Select category links to see results buy category.
+
 ## results
 
 ### checker framework
