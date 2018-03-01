@@ -39,7 +39,7 @@ some particular type:
 | :---: | :---: | :---: | :---: | :---: |
 | accurate | accurate | imprecise |  |  |
 
-### individual
+### dynamic features
 
 #### vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
