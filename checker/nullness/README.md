@@ -20,8 +20,8 @@ Both FindBugs and PMD are less likely to generate FP results so are more precise
 
 Overall, CF is recommended as the most reliable tool for nullness testing given that the FP weakness in reflection is offset by the FN results of other tools that were less sound.
 
-|  | vanilla | intra-proc | reflection | invoke dyn | proxy |
+|  | vanilla | inter-proc | reflection | invoke dyn | proxy |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [checker framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#checker-framework) |  |  |  |  |  |
+| [checker framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#checker-framework) | accurate | accurate | imprecise |  |  |
 | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#findbugs) |  |  |  |  |  |
 | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#pmd) |  |  |  |  |  |
