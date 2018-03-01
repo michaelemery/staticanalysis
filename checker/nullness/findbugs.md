@@ -5,7 +5,7 @@ Version: findbugs-3.0.1
 
 ## results
 
-FindBugs tested as "accurate" using intra-procedural (vanilla) anlysis, but failed when using any form of inter-procedural anaylsis. 
+FindBugs correctly identified nulness issues at the intra-procedural (vanilla) level only.
 
 | Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
