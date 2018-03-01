@@ -12,7 +12,7 @@ Individual tests provide a template to test the effectiveness of static analysis
 | [InvokeDynamic.java]() | Assignment of a null reference via dynamic invocation. |
 | [Proxy.java]() | Assignment of a null reference via proxy. |
 
-## results summary
+## results (by tool)
 
 Checker Framework (CF) is consistently sound and precise in non-reflective cases. However, it handles reflection in a very rudimentary way that causes excessive false positives. CF errs on the side of caution when encountering reflective code. 
 
