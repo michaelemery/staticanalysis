@@ -12,8 +12,7 @@ Individual tests provide a template to test the effectiveness of static analysis
 | [InterInvoke.java]() | Inter-procedural assignment of a null reference via invoke dynamic. |
 | [InterProxy.java]() | Inter-procedural assignment of a null reference via proxy. |
 
-
-## results
+## results summary
 
 Checker Framework (CF) is consistently sound and precise in non-reflective cases. However, it handles reflection in a very rudimentary way that causes excessive false positives. CF errs on the side of caution when encountering reflective code. 
 
@@ -21,27 +20,8 @@ Both FindBugs and PMD are less likely to generate FP results so are more precise
 
 Overall, CF is recommended as the most reliable tool for nullness testing given that the FP weakness in reflection is offset by the FN results of other tools that were less sound.
 
-### checkerframework
-
-|  | vanilla | reflection | invoke dyn | proxy |
-| --- | :---: | :---: | :---: | :---: |
-| intra-procedural |  |  |  |  |
-| inter-procedural |  |  |  |  |
-
-### findbugs
-
-|  | vanilla | reflection | invoke dyn | proxy |
-| --- | :---: | :---: | :---: | :---: |
-| intra-procedural |  |  |  |  |
-| inter-procedural |  |  |  |  |
-
-
-### pmd 
-
-|  | vanilla | reflection | invoke dyn | proxy |
-| --- | :---: | :---: | :---: | :---: |
-| intra-procedural |  |  |  |  |
-| inter-procedural |  |  |  |  |
-
-> **Note:** <br />
-> Irrelevant errors or warnings that are justifiably identified are not assessed.
+|  | vanilla | intra-proc | reflection | invoke dyn | proxy |
+| --- | :---: | :---: | :---: | :---: | :---: |
+| [checker framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#checker-framework) |  |  |  |  |  |
+| [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#findbugs) |  |  |  |  |  |
+| [pmd](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#pmd) |  |  |  |  |  |

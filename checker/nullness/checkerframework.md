@@ -33,9 +33,7 @@ some particular type:
 
 ## results
 
-### intra-procedural
-
-#### vanilla
+### vanilla
 [nullness/IntraVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraVanilla.java)
 
 ```
@@ -45,6 +43,23 @@ nullness/IntraVanilla.java:22:
 error: [dereference.of.nullable] dereference of possibly-null reference foo
         System.out.println(foo.s.toString());  // NullPointerException
                            ^
+
+1 error
+```
+
+#### inter-procedural
+
+[nullness/InterVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterVanilla.java)
+
+```
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterVanilla.java
+
+nullness/InterVanilla.java:21: 
+error: [argument.type.incompatible] incompatible types in argument.
+        InterVanilla bar = new InterVanilla(returnReceivedString(null));
+                                                 ^
+  found   : null
+  required: @Initialized @NonNull String
 
 1 error
 ```
@@ -63,28 +78,6 @@ nullness/IntraAlias.java:24:
 error: [dereference.of.nullable] dereference of possibly-null reference bar
         System.out.println(bar.s.toString());  // NullPointerException
                            ^
-
-1 error
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
-
-### inter-procedural
-
-#### vanilla
-[nullness/InterVanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterVanilla.java)
-
-```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterVanilla.java
-
-nullness/InterVanilla.java:21: 
-error: [argument.type.incompatible] incompatible types in argument.
-        InterVanilla bar = new InterVanilla(returnReceivedString(null));
-                                                 ^
-  found   : null
-  required: @Initialized @NonNull String
 
 1 error
 ```
