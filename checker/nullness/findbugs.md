@@ -11,9 +11,7 @@ Version: findbugs-3.0.1
 | :---: | :---: | :---: | :---: | :---: |
 | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) | - | - | - |
 
-### dynamic features
-
-#### vanilla
+### vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
 
 ```
@@ -28,7 +26,7 @@ Warnings generated: 1
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## 
+### alias
 
 [nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
