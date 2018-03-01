@@ -41,7 +41,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 > Select category links for results by category.
 
-## results
+## results (by tool)
 
 ### checker framework
 |  | vanilla | inter-procedural | reflection | invoke dynamic | proxy |
