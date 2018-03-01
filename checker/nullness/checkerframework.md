@@ -33,7 +33,7 @@ some particular type:
 
 ## results
 
-Checker Framework accurately identified nullness issues up to the inter-procedural level. Results were imprecise when using dynamic language features.
+Checker Framework accurately identified nullness issues up to the inter-procedural level. Results were imprecise when using reflection.
 
 | Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
