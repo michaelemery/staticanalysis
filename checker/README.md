@@ -10,17 +10,12 @@ Source code in the checker section will be analysed by multiple static analysis 
 of each tool are compared in order to assess overall and relative effectiveness.
 
 | tool | description |
-| :---: | :---: |
+| --- | :---: |
 | Checker Framework | The Checker Framework enhances Java’s type system by detecting and preventing specific errors in Java programs. |
-| FindBugs | FindBugs™ is a program to find bugs in Java programs. It looks for instances of "bug patterns" — 
-code instances that are likely to be errors. |
-| PMMD | PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch 
-blocks, unnecessary object creation, and so forth. Additionally it includes CPD, the 
+| FindBugs | FindBugs™ is a program to find bugs in Java programs. It looks for instances of "bug patterns" — code instances that are likely to be errors. |
+| PMMD | PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. Additionally it includes CPD, the 
 copy-paste-detector. CPD finds duplicated code in multiple languages. The CDP feature is not used 
-in this project.
-
-PMD has numerous categories of checking options, however this project only uses the errorprone.xml
-ruleset. Other checking options relate more to style. |
+in this project. PMD has numerous categories of checking options, however this project only uses the errorprone.xmlruleset. Other checking options relate more to style. |
 
 ## tests
 A "checker" generally tests for a variety of conditions that are organised by category. This 
