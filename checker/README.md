@@ -39,7 +39,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness)|Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
 | [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint)  | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
 
-> Select category links to see results by category.
+> Select category links for results by category.
 
 ## results
 
@@ -51,7 +51,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | **nullness** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#inter-procedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) |  |  |
 | **signedness** |  |  |  |  |  |
 | **taint** |  |  |  |  |  |
-> Select individual results to see detail.
+> Select individual results for detail.
 
 ### findbugs
 |  | vanilla | inter-procedural | reflection | invoke dynamic | proxy |
@@ -61,7 +61,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | **nullness** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) | - | - | - |
 | **signedness** |  |  |  |  |  |
 | **taint** |  |  |  |  |  |
-> Select individual results to see detail.
+> Select individual results for detail.
 
 
 ### pmd
@@ -72,4 +72,4 @@ Dynamic programming languages are a class of high-level programming languages wh
 | **nullness** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#inter-procedural) | - | - | - |
 | **signedness** |  |  |  |  |  |
 | **taint** |  |  |  |  |  |
-> Select individual results to see detail.
+> Select individual results for detail.
