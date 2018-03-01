@@ -45,7 +45,7 @@ Checkers are generally organised by category. This project tests for potential p
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) |  |  |  |  |  |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) |  |  |  |  |  |
-| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) |  |  |  |  |  |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#inter-procedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) |  |  |
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) |  |  |  |  |  |
 | [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) |  |  |  |  |  |
 
@@ -54,7 +54,7 @@ Checkers are generally organised by category. This project tests for potential p
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) |  |  |  |  |  |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) |  |  |  |  |  |
-| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) |  |  |  |  |  |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) | - | - | - |
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) |  |  |  |  |  |
 | [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) |  |  |  |  |  |
 
@@ -64,6 +64,6 @@ Checkers are generally organised by category. This project tests for potential p
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) |  |  |  |  |  |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) |  |  |  |  |  |
-| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) |  |  |  |  |  |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#inter-procedural) | - | - | - |
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) |  |  |  |  |  |
 | [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) |  |  |  |  |  |
