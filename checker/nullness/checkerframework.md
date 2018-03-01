@@ -35,7 +35,7 @@ some particular type:
 
 ### summary
 
-| vanilla | inter-proedural | reflection | invoke dynamic | proxy |
+| Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
 | accurate | accurate | imprecise |  |  |
 
