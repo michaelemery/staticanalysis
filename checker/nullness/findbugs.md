@@ -3,17 +3,26 @@
 
 Version: findbugs-3.0.1
 
-## intra-procedurual
+## results
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
+### summary
+
+| Vanilla | Inter<br />Procedural | Reflection | Invoke<br />Dynamic | Proxy |
+| :---: | :---: | :---: | :---: | :---: |
+| accurate | unsound | - | - | - |
+
+### dynamic features
+
+#### vanilla
+[nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
 
 **results:**
 
 ```
-$ findbugs nullness/IntraProcedural.class 
+$ findbugs nullness/Vanilla.class 
 
-H C NP: Null pointer dereference of ? in nullness.IntraProcedural.main(String[])  
-Dereferenced at NullIntraProcedural.java:[line 22]
+H C NP: Null pointer dereference of ? in nullness.Vanilla.main(String[])  
+Dereferenced at nullness.Vanilla.java:[line 22]
 Warnings generated: 1
 ```
 
