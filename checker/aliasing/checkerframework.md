@@ -32,7 +32,7 @@ Word picture of results.
 
 | Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
-| [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#inter-procedural) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#reflection) |  |  |
+| [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#inter-procedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#reflection) |  |  |
 
 ### vanilla
 
@@ -85,7 +85,7 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 0 | 1 | 1 |
+| 1 | 1 | 1 |
 
 ### reflection
 
@@ -116,4 +116,4 @@ error: [unique.leaked] Reference annotated as @Unique is leaked.
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 1 | 1 | 1 |
+| 0 | 1 | 1 |
