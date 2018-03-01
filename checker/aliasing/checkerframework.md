@@ -89,7 +89,7 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 
 ### reflection
 
-[aliasing/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/Vanilla_CF_old.java/aliasing/reflection_CF.java)
+[aliasing/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection_CF.java)
 
 ```
 $ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflection_CF.java 
