@@ -7,7 +7,7 @@ Version: findbugs-3.0.1
 
 ### summary
 
-| Vanilla | Inter<br />Procedural | Reflection | Invoke<br />Dynamic | Proxy |
+| Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
 | accurate | unsound | - | - | - |
 
