@@ -22,6 +22,6 @@ Overall, CF is recommended as the most reliable tool for nullness testing given 
 
 |  | vanilla | inter-proc | reflection | invoke dyn | proxy |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| [checker framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#checker-framework) | accurate | accurate | imprecise |  |  |
+| [checker framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#checker-framework) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#inter-procedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) |  |  |
 | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#findbugs) |  |  |  |  |  |
 | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#pmd) |  |  |  |  |  |
