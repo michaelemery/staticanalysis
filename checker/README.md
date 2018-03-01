@@ -42,6 +42,8 @@ Checkers are generally organised by category. This project tests for potential p
 
 ## results
 
+> Select individual results to see source code and output.
+
 ### checker framework
 |  | vanilla | inter-procedural | reflection | invoke dynamic | proxy |
 | --- | :---: | :---: | :---: | :---: | :---: |
