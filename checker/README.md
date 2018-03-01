@@ -17,17 +17,18 @@ of each tool are compared in order to assess overall and relative effectiveness.
 | **PMD** | PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code in multiple languages. The CDP feature is not used in this project. PMD has numerous categories of checking options, however this project only uses the errorprone.xmlruleset. Other checking options relate more to style. |
 
 ### dynamic language features
+Dynamic programming languages are a class of high-level programming languages which, at runtime, execute many common programming behaviors that static programming languages perform during compilation. These behaviors could include extension of the program, by adding new code, by extending objects and definitions, or by modifying the type system. 
+
 | feature | description |
 | --- | --- |
-| **Vanilla** |  |
-| **Inter-procedural** |  |
-| **Reflection** |  |
-| **Invoke Dynamic** |  |
-| **Proxy** |  |
+| **Vanilla** | No dynmaic features. Test renains within a single method. |
+| **Inter-procedural** | Test occurs across mutliple methods. |
+| **Reflection** | The ability to examine or modify the runtime behavior of applications running in the Java virtual machine. |
+| **Invoke Dynamic** | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
+| **Proxy** | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 
 ### category
-A "checker" generally tests for a variety of conditions that are organised by category. This 
-project tests for potential program errors within the following categories:
+Checkers are generally organised by category. This project tests for potential program errors within the following categories:
 
 | category | description |
 | --- | --- |
