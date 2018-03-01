@@ -5,17 +5,17 @@ import org.checkerframework.common.aliasing.qual.Unique;
 /**
  * Inter-procedural corruption of an object via an alias.
  */
-public class InterProcedural_CF {
+public class Vanilla_CF {
 
     String s;
 
-    public InterProcedural_CF(String s) {
+    public Vanilla_CF(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) {
-        @Unique InterProcedural_CF foo = new InterProcedural_CF("text");
-        InterProcedural_CF bar;
+        @Unique Vanilla_CF foo = new Vanilla_CF("text");
+        Vanilla_CF bar;
 
         // protect an object through cloning (correct)
         bar = foo.makeCopy();
@@ -29,12 +29,12 @@ public class InterProcedural_CF {
 
     }
 
-    public InterProcedural_CF makeCopy() {
-        InterProcedural_CF copy = new InterProcedural_CF(this.s);
+    public Vanilla_CF makeCopy() {
+        Vanilla_CF copy = new Vanilla_CF(this.s);
         return copy;
     }
 
-    public InterProcedural_CF alias() {
+    public Vanilla_CF alias() {
         return this;
     }
 
