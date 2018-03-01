@@ -28,7 +28,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | **Proxy** | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 
 ### categories
-Checkers are generally organised by category. This project tests for potential program errors within the following categories:
+> Select category links (above) to see results by category.
 
 | category | description |
 | --- | --- |
@@ -38,10 +38,7 @@ Checkers are generally organised by category. This project tests for potential p
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness)|Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
 | [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint)  | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
 
-> Select category links (above) to see results by category.
-
 ## results
-
 > Select individual results (below) to see source code and output.
 
 ### checker framework
