@@ -9,14 +9,12 @@ Version: findbugs-3.0.1
 
 | Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
-| accurate | unsound | - | - | - |
+| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) | - | - | - |
 
 ### dynamic features
 
 #### vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
-
-**results:**
 
 ```
 $ findbugs nullness/Vanilla.class 
@@ -34,8 +32,6 @@ Warnings generated: 1
 
 [nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
-**results:**
-
 ```
 $ findbugs nullness/Alias.class 
 
@@ -48,11 +44,9 @@ Warnings generated: 1
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## inter-procedural
+#### inter-procedural
 
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
-
-**results:**
 
 ```
 $ findbugs nullness/InterProcedural.class 
@@ -64,11 +58,9 @@ $ findbugs nullness/InterProcedural.class
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-## reflection
+#### reflection
 
 [nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
-
-**results:**
 
 ```
 $ findbugs nullness/Reflection.class 
