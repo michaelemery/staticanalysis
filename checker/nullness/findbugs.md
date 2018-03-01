@@ -5,7 +5,7 @@ Version: findbugs-3.0.1
 
 ## results
 
-### summary
+FindBugs failed to identify nullness issues using any form of inter-procedural anaylsis. 
 
 | Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
