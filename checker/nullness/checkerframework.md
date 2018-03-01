@@ -33,13 +33,15 @@ some particular type:
 
 ## results
 
-### sunmary
+### summary
 
-|  | vanilla | inter-proc | reflection | invoke dyn | proxy |
-| :---: | :---: | :---: | :---: | :---: | :---: |
-| **result** | accurate | accurate | imprecise |  |  |
+| vanilla | inter-proc | reflection | invoke dyn | proxy |
+| :---: | :---: | :---: | :---: | :---: |
+| accurate | accurate | imprecise |  |  |
 
-### vanilla
+### individual
+
+#### vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
 
 ```
@@ -57,7 +59,7 @@ error: [dereference.of.nullable] dereference of possibly-null reference foo
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### inter-procedural
+#### inter-procedural
 
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
@@ -78,7 +80,7 @@ error: [argument.type.incompatible] incompatible types in argument.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### alias
+#### alias
 [nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 ```
@@ -96,7 +98,7 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### reflection
+#### reflection
 [nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 ```
