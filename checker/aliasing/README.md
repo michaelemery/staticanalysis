@@ -4,25 +4,21 @@ Two expressions are aliased when they have the same non-primitive value; that is
 ## testing
 Provide a template to test the effectiveness of static analysis tools in identifying unintentional mutations of objects that were intended to be unique.
 
-### objectives
-Identify where objects that are intended to be unique may become mutable by;
-1. Intra-procedural corruption of an object via an alias. ([IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/IntraProcedural.java))
-2. Inter-procedural corruption of an object via an alias. ([InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/InterProcedural.java))
-3. Inter-procedural (reflection) corruption of an object via an alias. ([Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection.java))
+| source | description |
+| --- | --- |
+| [Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/Vanilla.java) | Basic assignment of a null reference. |
+| [InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/InterProcedural.java) | Inter-procedural assignment of a null reference. |
+| [Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/Reflection.java) | Assignment of a null reference via reflection. |
+| [InvokeDynamic.java]() | Assignment of a null reference via dynamic invocation. |
+| [Proxy.java]() | Assignment of a null reference via proxy. |
 
 
 ## results
 
 Word picture of results.
 
-### summary
-
-| | [CF](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md) |
-| --- | :---: | :---: | :---: |
-| Intra-procedural | [pass](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#intra-procedural) | [pass](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#intra-procedural) | [pass +1FP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#intra-procedural) |
-| Inter-procedural | [fail](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#inter-procedural) | [fail](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#inter-procedural) | [pass +1FP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#inter-procedural) |
-| Reflection | [pass](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) | [fail](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#reflection) | [pass +1FP](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#reflection)|
-
-> **Notes:** <br>
-> 1. Select column heading for results of each tool, or select cell for individual test results.
-> 2. Irrelevant errors or warnings that are justifiably identified are not assessed.
+|  | Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
+| --- | :---: | :---: | :---: | :---: | :---: |
+| [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#checker-framework) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#inter-procedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#reflection) |  |  |
+| [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/findbugs.md#findbugs) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/findbugs.md#inter-procedural) | - | - | - |
+| [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/pmd.md#pmd) |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/pmd.md#inter-procedural) | - | - | - |
