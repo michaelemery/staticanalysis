@@ -32,7 +32,7 @@ Word picture of results.
 
 | Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
-| [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#inter-procedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/alias/checkerframework.md#reflection) |  |  |
+| [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#inter-procedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) |  |  |
 
 ### vanilla
 
@@ -89,7 +89,7 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 
 ### reflection
 
-[aliasing/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/Vanilla_CF_old.javaaliasing/reflection_CF.java)
+[aliasing/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/Vanilla_CF_old.java/aliasing/reflection_CF.java)
 
 ```
 $ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflection_CF.java 
