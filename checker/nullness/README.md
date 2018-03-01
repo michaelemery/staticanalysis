@@ -6,11 +6,11 @@ Individual tests provide a template to test the effectiveness of static analysis
 
 | test | description |
 | --- | --- |
-| [Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java) | Intra-procedural assignment of a null reference. |
+| [Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java) | Basic assignment of a null reference. |
 | [InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/IntraVanillachecker/nullness/InterProcedural.java) | Inter-procedural assignment of a null reference. |
-| [Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java) | Inter-procedural assignment of a null reference via reflection. |
-| [InvokeDynamic.java]() | Inter-procedural assignment of a null reference via invoke dynamic. |
-| [Proxy.java]() | Inter-procedural assignment of a null reference via proxy. |
+| [Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java) | Assignment of a null reference via reflection. |
+| [InvokeDynamic.java]() | Aassignment of a null reference via dynamic invokation. |
+| [Proxy.java]() | Aassignment of a null reference via proxy. |
 
 ## results summary
 
