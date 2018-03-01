@@ -5,7 +5,7 @@ Version: findbugs-3.0.1
 
 ## results
 
-FindBugs correctly identified nulness issues at the intra-procedural (vanilla) level only.
+FindBugs correctly identified nulness issues at the intra-procedural (vanilla) level only. Results were unsound when using reflection.
 
 | Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
