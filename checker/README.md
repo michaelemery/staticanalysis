@@ -4,7 +4,9 @@ those errors do not occur.
 
 This project combines checking tools and dynamic language features in order assess the checkers effectiveness in identifying common causes of incorrect programs.
 
-## tools
+## test components
+
+### tools
 Source code in the checker section will be analysed by multiple static analysis tools. The results 
 of each tool are compared in order to assess overall and relative effectiveness.
 
@@ -14,7 +16,7 @@ of each tool are compared in order to assess overall and relative effectiveness.
 | **FindBugs** | FindBugs™ is a program to find bugs in Java programs. It looks for instances of "bug patterns" — code instances that are likely to be errors. |
 | **PMD** | PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code in multiple languages. The CDP feature is not used in this project. PMD has numerous categories of checking options, however this project only uses the errorprone.xmlruleset. Other checking options relate more to style. |
 
-## dynamic language features
+### dynamic language features
 
 | feature | description |
 | --- | --- |
@@ -24,7 +26,7 @@ of each tool are compared in order to assess overall and relative effectiveness.
 | **Invoke Dynamic** |  |
 | **Proxy** |  |
 
-## tests
+### tests
 A "checker" generally tests for a variety of conditions that are organised by category. This 
 project tests for potential program errors within the following categories:
 
