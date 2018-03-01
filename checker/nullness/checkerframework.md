@@ -35,7 +35,7 @@ some particular type:
 
 |  | vanilla | inter-proc | reflection | invoke dyn | proxy |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| sumnmary | accurate | accurate | imprecise |  |  |
+| **sumnmary** | accurate | accurate | imprecise |  |  |
 
 ### vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
