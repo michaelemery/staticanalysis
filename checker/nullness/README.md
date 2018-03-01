@@ -4,7 +4,7 @@ Nullness checking guarantees that a program will never throw a null pointer exce
 ## testing
 Individual tests provide a template to test the effectiveness of static analysis tools in identifying potential causes of null-pointer exceptions.
 
-| test | description |
+| source | description |
 | --- | --- |
 | [Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java) | Basic assignment of a null reference. |
 | [InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/IntraVanillachecker/nullness/InterProcedural.java) | Inter-procedural assignment of a null reference. |
@@ -23,5 +23,5 @@ Overall, CF is recommended as the most reliable tool for nullness testing given 
 |  | Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#checker-framework) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#inter-procedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) |  |  |
-| [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#findbugs) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) |  |  |  |
+| [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#findbugs) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) | - | - | - |
 | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#pmd) |  |  |  |  |  |
