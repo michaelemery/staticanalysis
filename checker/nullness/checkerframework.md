@@ -33,9 +33,11 @@ some particular type:
 
 ## results
 
+### sunmary
+
 |  | vanilla | inter-proc | reflection | invoke dyn | proxy |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| **sumnmary** | accurate | accurate | imprecise |  |  |
+| **result** | accurate | accurate | imprecise |  |  |
 
 ### vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
