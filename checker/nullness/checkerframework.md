@@ -55,8 +55,6 @@ error: [dereference.of.nullable] dereference of possibly-null reference foo
 1 error
 ```
 
-accurate:
-
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
