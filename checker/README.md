@@ -17,7 +17,7 @@ of each tool are compared in order to assess overall and relative effectiveness.
 ## dynamic language features
 
 | feature | description |
-| :---: | :---: | :---: |
+| --- | --- |
 | **Vanilla** |  |
 | **Inter-procedural** |  |
 | **Reflection** |  |
