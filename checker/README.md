@@ -19,10 +19,47 @@ of each tool are compared in order to assess overall and relative effectiveness.
 A "checker" generally tests for a variety of conditions that are organised by category. This 
 project tests for potential program errors within the following categories:
 
-| test | description |
-| --- | --- |
-| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) | Errors may occur when an object is referenced without consideration for mutations caused by an aliasing to the same object. |
-| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) | Objects accessed at runtime prior to being fully initialised will cause an error. |
-| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) | Dereferenced expressions are a common cause a null pointer exceptions. |
-| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) | Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
-| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
+### Aliasing
+Errors may occur when an object is referenced without consideration for mutations caused by an aliasing to the same object.
+
+### Init
+Objects accessed at runtime prior to being fully initialised will cause an error.
+
+### Nullness
+Dereferenced expressions are a common cause a null pointer exceptions. |
+
+### Signedness
+Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value.
+
+### Taint
+Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc.
+
+## results
+
+### checker framework
+
+|  | vanilla | inter-procedural | reflection | invoke dynamic | proxy |
+| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) |  |  |  |  |  |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) |  |  |  |  |  |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) |  |  |  |  |  |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) |  |  |  |  |  |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) |  |  |  |  |  |
+
+### findbugs
+
+|  | vanilla | inter-procedural | reflection | invoke dynamic | proxy |
+| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) |  |  |  |  |  |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) |  |  |  |  |  |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) |  |  |  |  |  |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) |  |  |  |  |  |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) |  |  |  |  |  |
+
+
+### pmd
+
+|  | vanilla | inter-procedural | reflection | invoke dynamic | proxy |
+| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/checker/aliasing) |  |  |  |  |  |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init) |  |  |  |  |  |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness) |  |  |  |  |  |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness) |  |  |  |  |  |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) |  |  |  |  |  |
