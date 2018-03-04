@@ -1,0 +1,110 @@
+<project name="Checker" basedir=".">
+  <description>
+    run checkerframework static checks on subject source files
+  </description>
+
+  <property name="build" value="bin" />
+  <property name="src" value="src" />
+
+  <!-- set the jsr308javac property -->
+  <property environment="env"/>
+  <property name="checkerframework" value="${env.CHECKERFRAMEWORK_HOME}" />
+  <property name="cfJavac" value="javac" />
+  <presetdef name="jsr308.javac">
+    <javac fork="yes" executable="${checkerframework}/checker/bin/${cfJavac}" >
+      <!-- JSR-308-related compiler arguments -->
+      <compilerarg value="-version"/>
+      <compilerarg value="-implicit:class"/>
+    </javac>
+  </presetdef>
+
+  <target name="prepare"
+          description="PREPARING">
+    <!-- Create the time stamp -->
+    <tstamp/>
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="clean"
+          description="CLEAN-UP">
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+
+  <!-- CHECKERS -->
+
+  <target name="alias"
+          description="ALIAS: Checks expressions definitely have no aliases"
+          depends="clean,prepare">
+    <!-- use jsr308.javac instead of javac -->
+  <jsr308.javac 
+      srcdir="${src}/alias"
+      includeantruntime="false">
+      <compilerarg line="-processor org.checkerframework.common.aliasing.AliasingChecker"/>
+      <compilerarg line="-Xmaxerrs 10000"/>
+    </jsr308.javac>
+  </target>
+
+  <target name="init"
+          description="INIT: Check for initialisation"
+          depends="clean,prepare">
+    <!-- use jsr308.javac instead of javac -->
+    <jsr308.javac
+          srcdir="${src}/init"
+          includeantruntime="false">
+      <compilerarg line="-processor org.checkerframework.checker.nullness.NullnessChecker"/>
+      <compilerarg line="-Xmaxerrs 10000"/>
+    </jsr308.javac>
+  </target>
+
+  <target name="intern"
+          description="INTERN: Check all reference equality tests are proper"
+          depends="clean,prepare">
+    <!-- use jsr308.javac instead of javac -->
+    <jsr308.javac
+          srcdir="${src}/intern"
+          includeantruntime="false">
+      <compilerarg line="-processor org.checkerframework.checker.interning.InterningChecker"/>
+      <compilerarg line="-Xmaxerrs 10000"/>
+    </jsr308.javac>
+  </target>
+
+  <target name="nullness"
+          description="NULLNESS: Check for null pointer dereferences"
+          depends="clean,prepare">
+    <!-- use jsr308.javac instead of javac -->
+    <jsr308.javac
+          srcdir="${src}/nullness"
+          includeantruntime="false">
+      <compilerarg line="-processor org.checkerframework.checker.nullness.NullnessChecker"/>
+      <compilerarg line="-Xmaxerrs 10000"/>
+    </jsr308.javac>
+  </target>
+
+  <target name="signedness"
+          description="SIGNEDNESS: Check signed and unsigned are not mixed"
+          depends="clean,prepare">
+    <!-- use jsr308.javac instead of javac -->
+    <jsr308.javac
+          srcdir="${src}/signedness"
+          includeantruntime="false">
+      <compilerarg line="-processor org.checkerframework.checker.signedness.SignednessChecker"/>
+      <compilerarg line="-Xmaxerrs 10000"/>
+    </jsr308.javac>
+  </target>
+
+  <target name="taint"
+          description="TAINT: Check for trust errors"
+          depends="clean,prepare">
+    <!-- use jsr308.javac instead of javac -->
+    <jsr308.javac
+          srcdir="${src}/taint"
+          includeantruntime="false">
+      <compilerarg line="-processor TaintingChecker"/>
+      <compilerarg line="-Xmaxerrs 10000"/>
+    </jsr308.javac>
+  </target>
+
+</project>
