@@ -82,7 +82,7 @@ error: [argument.type.incompatible] incompatible types in argument.
 [nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IAlias.java
+$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Alias.java
 
 nullness/Alias.java:24: 
 error: [dereference.of.nullable] dereference of possibly-null reference bar
