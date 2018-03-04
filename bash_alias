@@ -1,2 +1,0 @@
-alias pmd="$PMD_HOME/bin/run.sh pmd"
-

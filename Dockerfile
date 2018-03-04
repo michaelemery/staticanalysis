@@ -4,13 +4,6 @@
 FROM openjdk:8u121-jdk
 
 
-# --- CONFIGURE BASH ALIASES
-
-ADD ./bash_alias .
-#RUN shopt -s expand_aliases
-RUN source /bash_alias
-
-
 # --- CREATE APP FOLDER
 
 RUN mkdir /app
@@ -60,11 +53,12 @@ RUN unzip pmd-bin-6.1.0.zip
 # ccnfigure pmd home
 ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
 
-# important: pmd alias configured in bash_alias (see CONFIGURE BASH ALIASES) 
+# configure pmd alias
+RUN echo 'alias pmd="$PMD_HOME/bin/run.sh pmd"'
 
 # configure default parameters
 # -d = source root, -R = ruleset, -f output format
-# RUN pmd -d /checker -f text -R category/java/errorprone.xml
+RUN pmd -d /checker -f text -R category/java/errorprone.xml
 
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
