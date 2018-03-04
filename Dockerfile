@@ -54,7 +54,7 @@ RUN unzip pmd-bin-6.1.0.zip
 ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
 
 # configure pmd alias
-RUN echo 'alias pmd="$PMD_HOME/bin/run.sh pmd"'
+RUN echo 'alias pmd="$PMD_HOME/bin/run.sh pmd"' >> ~/.bashrc
 
 # configure default parameters
 # -d = source root, -R = ruleset, -f output format
