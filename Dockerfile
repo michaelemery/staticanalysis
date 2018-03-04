@@ -56,7 +56,7 @@ RUN alias pmd="${PMD_HOME}/bin/run.sh pmd"
 
 # configure default parameters
 # -d = source root, -R = ruleset, -f output format
-RUN pmd -d /checker -R java-basic -f text
+# RUN pmd -d /checker -R java-basic -f text
 
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
