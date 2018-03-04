@@ -16,7 +16,7 @@ RUN sudo apt-get install maven
 
 # create directory
 #RUN mkdir /app/checkerframework
-$WORKDIR /app/checkerframework
+#WORKDIR /app/checkerframework
 
 # copy install files
 #ADD ./checker-framework-2.1.11.zip .
