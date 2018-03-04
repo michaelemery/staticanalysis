@@ -53,12 +53,12 @@ RUN unzip pmd-bin-6.1.0.zip
 # ccnfigure pmd home
 ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
 
-# configure pmd alias
-RUN echo 'alias pmd="$PMD_HOME/bin/run.sh pmd"' >> ~/.bashrc
+# configure pmd alias (not working)
+# RUN alias pmd='$PMD_HOME/bin/run.sh pmd'
 
-# configure default parameters
+# default parameters
 # -d = source root, -R = ruleset, -f output format
-RUN pmd -d /checker -f text -R category/java/errorprone.xml
+# RUN pmd -d <path/source_file> -f text -R category/java/errorprone.xml
 
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
