@@ -50,7 +50,7 @@ RUN unzip pmd-bin-6.1.0.zip
 
 # add to path
 ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
-ENV PATH ${PMD_HOME}/checker/bin:${PATH}
+ENV PATH ${PMD_HOME}/bin:${PATH}
 
 # configure alias
 RUN alias pmd="$PMD_HOME/pmd-bin-6.1.0/bin/run.sh pmd"
