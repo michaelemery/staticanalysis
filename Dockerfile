@@ -46,18 +46,18 @@ WORKDIR /app/pmd
 
 # copy install files
 ADD ./archive/pmd-bin-6.1.0.zip .
-RUN UNZIP pmd-bin-6.1.0.zip
+RUN unzip pmd-bin-6.1.0.zip
 
 # add to path
 ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
 ENV PATH ${PMD_HOME}/checker/bin:${PATH}
 
 # configure alias
-alias pmd="$HOME/pmd-bin-6.1.0/bin/run.sh pmd"
+RUN alias pmd="$HOME/pmd-bin-6.1.0/bin/run.sh pmd"
 
-# configure default parameeters
+# configure default parameters
 # -d = source root, -R = ruleset, -f output format
-pmd -d /checker -R java-basic -f text
+RUN pmd -d /checker -R java-basic -f text
 
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
