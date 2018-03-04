@@ -31,7 +31,7 @@ RUN apt-get update -y && apt-get install maven -y
 # --- COPY SOURCE FILES FOR CHECKER TESTS
 
 RUN mkdir /checker
-ADD pom.xml
+ADD pom.xml ./pom.xml
 RUN mkdir /checker/bin
 ADD /checker/src ./src
 WORKDIR /checker
