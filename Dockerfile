@@ -2,7 +2,6 @@
 
 # use openjdk runtime as a base image
 FROM openjdk:8u121-jdk
-RUN echo 'alias pmd="$PMD_HOME/bin/run.sh pmd"'
 
 # --- CREATE APP FOLDER
 
