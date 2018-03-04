@@ -41,5 +41,5 @@ ENV PATH ${CHECKERFRAMEWORK_HOME}/checker/bin:${PATH}
 # --- COPY SOURCE FILES FOR CHECKER TESTS
 
 RUN mkdir /checker
-ADD /checker ./checker
 WORKDIR /checker
+ADD /checker /checker
