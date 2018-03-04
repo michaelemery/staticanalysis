@@ -23,6 +23,7 @@ RUN mkdir /app
 
 
 # --- CONFIGURE BASH ALIASES
+
 ADD /bash_alias
 RUN shopt -s expand_aliases
 RUN source /bash_alias
