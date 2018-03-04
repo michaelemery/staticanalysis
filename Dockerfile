@@ -53,7 +53,7 @@ ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
 ENV PATH ${PMD_HOME}/bin:${PATH}
 
 # configure alias
-RUN alias pmd="$PMD_HOME/pmd-bin-6.1.0/bin/run.sh pmd"
+RUN alias pmd="$PMD_HOME/run.sh pmd"
 
 # configure default parameters
 # -d = source root, -R = ruleset, -f output format
