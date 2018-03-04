@@ -34,7 +34,7 @@ RUN mkdir /checker
 RUN mkdir /checker/bin
 RUN mkdir /checker/src
 ADD pom.xml ./pom.xml
-ADD /checker/src ./src
+ADD /checker/src ./checker/src
 WORKDIR /checker
 
 #ADD build.xml .
