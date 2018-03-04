@@ -7,7 +7,7 @@ FROM openjdk:8u121-jdk
 RUN mkdir /app
 
 
-# --- MAVEBN SETUP
+# --- MAVEN SETUP
 
 RUN apt-get update -y && apt-get install maven -y
 
@@ -30,7 +30,11 @@ RUN apt-get update -y && apt-get install maven -y
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
 
-#WORKDIR /checker
-#ADD src ./src
+RUN mkdir /checker
+ADD pom.xml
+RUN mkdir /checker/bin
+ADD /checker/src ./src
+WORKDIR /checker
+
 #ADD build.xml .
 #ADD readme.md .
