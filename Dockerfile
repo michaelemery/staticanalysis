@@ -22,6 +22,12 @@ RUN mkdir /app
 #ENV PATH ${PATH}:${ANT_HOME}/bin
 
 
+# --- CONFIGURE BASH ALIASES
+ADD /bash_alias
+RUN shopt -s expand_aliases
+RUN source /bash_alias
+
+
 # --- CHECKERFRAMEWORK SETUP
 
 # create directory
@@ -51,8 +57,7 @@ RUN unzip pmd-bin-6.1.0.zip
 # ccnfigure pmd home
 ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
 
-# configure alias
-RUN alias pmd="${PMD_HOME}/bin/run.sh pmd"
+# important: pmd alias configured in bash_alias (see CONFIGURE BASH ALIASES) 
 
 # configure default parameters
 # -d = source root, -R = ruleset, -f output format
