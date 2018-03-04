@@ -72,7 +72,7 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 [nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 ```
-$ pmd -d nullness/Reflection.java -f text -R category/java/errorprone.xml
+$ $PMD_HOME/bin/run.sh pmd -d nullness/Reflection.java -f text -R category/java/errorprone.xml
 
 nullness/Reflection.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
