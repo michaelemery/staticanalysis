@@ -9,7 +9,7 @@ RUN mkdir /app
 
 # --- MAVEBN SETUP
 
-RUN sudo apt-get install maven
+RUN apt-get install maven
 
 
 # --- CHECKERFRAMEWORK SETUP
