@@ -20,14 +20,14 @@ PMD correctly identified nulness issues at the intra-procedural (vanilla) level 
 
 ### vanilla
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
+[nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
 
 ```
-$ pmd -d nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
+$ pmd -d nullness/Vanilla.java -f text -R category/java/errorprone.xml
 
-nullness/IntraProcedural.java:8:
+nullness/Vanilla.java:8:
 Found non-transient, non-static member. Please mark as transient or provide accessors.
-nullness/IntraProcedural.java:21:
+nullness/Vanilla.java:21:
 Assigning an Object to null is a code smell. Consider refactoring.
 ```
 
