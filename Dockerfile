@@ -2,7 +2,7 @@
 
 # use openjdk runtime as a base image
 FROM openjdk:8u121-jdk
-
+RUN echo 'alias pmd="$PMD_HOME/bin/run.sh pmd"'
 
 # --- CREATE APP FOLDER
 
@@ -38,7 +38,6 @@ RUN unzip checker-framework-2.1.11.zip
 ENV CHECKERFRAMEWORK_HOME /app/checkerframework/checker-framework-2.1.11
 # note that ${CHECKERFRAMEWORK_HOME} must come first
 ENV PATH ${CHECKERFRAMEWORK_HOME}/checker/bin:${PATH}
-
 
 # --- PMD SETUP
 
