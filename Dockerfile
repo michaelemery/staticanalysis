@@ -7,33 +7,39 @@ FROM openjdk:8u121-jdk
 RUN mkdir /app
 
 
-# --- MAVEN SETUP
+# --- ANT SETUP
 
-RUN apt-get update -y && apt-get install maven -y
+# create directory
+RUN mkdir /app/ant
+WORKDIR /app/ant
+
+# copy install files
+ADD ./archive/apache-ant-1.10.1-bin.zip .
+RUN unzip apache-ant-1.10.1-bin.zip
+
+# add to path
+ENV ANT_HOME /app/ant/apache-ant-1.10.1
+ENV PATH ${PATH}:${ANT_HOME}/bin
 
 
 # --- CHECKERFRAMEWORK SETUP
 
 # create directory
-#RUN mkdir /app/checkerframework
-#WORKDIR /app/checkerframework
+RUN mkdir /app/checkerframework
+WORKDIR /app/checkerframework
 
 # copy install files
-#ADD ./checker-framework-2.1.11.zip .
-#RUN unzip checker-framework-2.1.11.zip
+ADD ./archive/checker-framework-2.1.11.zip .
+RUN unzip checker-framework-2.1.11.zip
 
 # add to path
-#ENV CHECKERFRAMEWORK_HOME /app/checkerframework/checker-framework-2.1.11
+ENV CHECKERFRAMEWORK_HOME /app/checkerframework/checker-framework-2.1.11
 # note that ${CHECKERFRAMEWORK_HOME} must come first
-#ENV PATH ${CHECKERFRAMEWORK_HOME}/checker/bin:${PATH}
+ENV PATH ${CHECKERFRAMEWORK_HOME}/checker/bin:${PATH}
 
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
 
 RUN mkdir /checker
-ADD pom.xml ./pom.xml
 ADD /checker ./checker
 WORKDIR /checker
-
-#ADD build.xml .
-#ADD readme.md .
