@@ -7,7 +7,7 @@ FROM openjdk:8u121-jdk
 # --- CONFIGURE BASH ALIASES
 
 ADD ./bash_alias .
-RUN shopt -s expand_aliases
+#RUN shopt -s expand_aliases
 RUN source /bash_alias
 
 
