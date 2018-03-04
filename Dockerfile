@@ -48,12 +48,11 @@ WORKDIR /app/pmd
 ADD ./archive/pmd-bin-6.1.0.zip .
 RUN unzip pmd-bin-6.1.0.zip
 
-# add to path
+# ccnfigure pmd home
 ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
-ENV PATH ${PMD_HOME}/bin:${PATH}
 
 # configure alias
-RUN alias pmd="$PMD_HOME/run.sh pmd"
+RUN alias pmd="${PMD_HOME}/bin/run.sh pmd"
 
 # configure default parameters
 # -d = source root, -R = ruleset, -f output format
