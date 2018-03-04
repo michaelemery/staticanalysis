@@ -3,7 +3,16 @@
 # use openjdk runtime as a base image
 FROM openjdk:8u121-jdk
 
-# make app and set as working directory
+
+# --- CONFIGURE BASH ALIASES
+
+ADD ./bash_alias .
+RUN shopt -s expand_aliases
+RUN source /bash_alias
+
+
+# --- CREATE APP FOLDER
+
 RUN mkdir /app
 
 
@@ -20,13 +29,6 @@ RUN mkdir /app
 # add to path
 #ENV ANT_HOME /app/ant/apache-ant-1.10.1
 #ENV PATH ${PATH}:${ANT_HOME}/bin
-
-
-# --- CONFIGURE BASH ALIASES
-
-ADD /bash_alias
-RUN shopt -s expand_aliases
-RUN source /bash_alias
 
 
 # --- CHECKERFRAMEWORK SETUP
