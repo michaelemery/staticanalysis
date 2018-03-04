@@ -9,6 +9,7 @@ RUN mkdir /app
 
 # --- MAVEBN SETUP
 
+RUN apt-cache search maven
 RUN apt-get install maven
 
 
