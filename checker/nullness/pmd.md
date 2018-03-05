@@ -25,7 +25,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 > Select results for detail.
 
-### vanilla
+### Vanilla
 
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
 
@@ -44,7 +44,7 @@ Assigning an Object to null is a code smell. Consider refactoring.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### interprocedural
+### Interprocedural
 
 [nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
 
