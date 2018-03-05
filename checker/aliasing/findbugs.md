@@ -15,7 +15,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 [aliasing/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java)
 
 ```
-$ findbugs aliasing/Vanilla.class 
+findbugs aliasing/Vanilla.class 
 ```
 
 #### output
@@ -38,7 +38,7 @@ Warnings generated: 2
 [aliasing/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java)
 
 ```
-$ findbugs aliasing/Interprocedural.class 
+findbugs aliasing/Interprocedural.class 
 ```
 
 #### output
@@ -55,7 +55,7 @@ $ findbugs aliasing/Interprocedural.class
 [aliasing/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection.java)
 
 ```
-$ findbugs aliasing/Reflection.class 
+findbugs aliasing/Reflection.class 
 ```
 
 #### output

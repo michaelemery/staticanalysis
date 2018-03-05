@@ -39,7 +39,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 [aliasing/Vanilla_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla_CF.java)
 
 ```
-$ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Vanilla_CF.java 
+javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Vanilla_CF.java 
 ```
 
 #### output
@@ -74,7 +74,7 @@ error: [unique.leaked] Reference annotated as @Unique is leaked.
 [aliasing/Interprocedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural_CF.java)
 
 ```
-$ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Interprocedural_CF.java 
+javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Interprocedural_CF.java 
 ```
 
 #### output
@@ -98,7 +98,7 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 [aliasing/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection_CF.java)
 
 ```
-$ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflection_CF.java 
+javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflection_CF.java 
 ```
 
 #### output
