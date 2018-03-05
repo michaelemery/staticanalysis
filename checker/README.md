@@ -49,38 +49,38 @@ Dynamic programming languages are a class of high-level programming languages wh
 | --- | :---: | :---: | :---: | :---: | :---: |
 | **Vanilla** | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla)  |  |  |
 | **Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |  |  |
-| **Reflect** |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect)  |  |  |
+| **Reflect** | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect)  |  |  |
 | **ReflectInterprocedural** |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |  |  |
-| **ReflectOverload** |  |  |  |  |  |
-| **InvokeDynamic** |  |  |  |  |  |
-| **Proxy** |  |  |  |  |  |
+| **ReflectOverload** | - |  |  |  |  |
+| **InvokeDynamic** | - |  |  |  |  |
+| **Proxy** | - |  |  |  |  |
 
-|  | Vanilla | Interprocedural | Reflect | Reflect-<br />Interprocedural | Reflect-<br />Overload | Invoke-<br />Dynamic | Proxy |
-| --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **aliasing** |  | [imprecise/unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) | - | - | - | - |
-| **init** |  |  |  |  |  |  |  |
-| **nullness** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |  |  |  |
-| **signedness** |  |  |  |  |  |  |
-| **taint** |  |  |  |  |  |  |
 > Select individual results for detail.
 
 ### findbugs
-|  | Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
+
+|  | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| **aliasing** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) | - | - | - | - | - |
-| **init** |  |  |  |  |  |
-| **nullness** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) | - | - | - | - | - |
-| **signedness** |  |  |  |  |  |  |  |
-| **taint** |  |  |  |  |  |  |  |
+| **Vanilla** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla)  |  |  |
+| **Interprocedural** | unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
+| **Reflect** | - |  | - |  |  |
+| **ReflectInterprocedural** |  |  |  |  |  |
+| **ReflectOverload** | - |  | - |  |  |
+| **InvokeDynamic** | - |  | - |  |  |
+| **Proxy** | - |  | - |  |  |
+
 > Select individual results for detail.
 
-
 ### pmd
-|  | Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
+
+|  | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| **aliasing** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) | - | - | - | - | - |
-| **init** |  |  |  |  |  |  |  |
-| **nullness** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) | - | - | - | - | - |
-| **signedness** |  |  |  |  |  |  |
-| **taint** |  |  |  |  |  |  |
+| **Vanilla** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |  |  |
+| **Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
+| **Reflect** | - |  | - |  |  |
+| **ReflectInterprocedural** | - |  | - |  |  |
+| **ReflectOverload** | - |  | - |  |  |
+| **InvokeDynamic** | - |  | - |  |  |
+| **Proxy** | - |  | - |  |  |
+
 > Select individual results for detail.
