@@ -28,6 +28,8 @@ There are also two annotations, which are currently trusted instead of verified,
 
 ## results
 
+Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
+
 | Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
 | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) |  |  |
@@ -38,7 +40,10 @@ There are also two annotations, which are currently trusted instead of verified,
 
 ```
 $ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Vanilla_CF.java 
+```
 
+#### output
+```
 aliasing/Vanilla_CF.java:21: 
 error: [assignment.type.incompatible] incompatible types in assignment.
         @Unique Vanilla_CF foo = new Vanilla_CF("text");
@@ -70,7 +75,10 @@ error: [unique.leaked] Reference annotated as @Unique is leaked.
 
 ```
 $ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Interprocedural_CF.java 
+```
 
+#### output
+```
 aliasing/Interprocedural_CF.java:17: 
 error: [assignment.type.incompatible] incompatible types in assignment.
         @Unique Interprocedural_CF foo = new Interprocedural_CF("text");
@@ -91,7 +99,10 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 
 ```
 $ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflection_CF.java 
+```
 
+#### output
+```
 aliasing/Reflection_CF.java:19: 
 error: [assignment.type.incompatible] incompatible types in assignment.
         @Unique Reflection_CF foo = new Reflection_CF("text");

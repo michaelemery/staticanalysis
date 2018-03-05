@@ -4,6 +4,8 @@ Version: findbugs-3.0.1
 
 ## results
 
+Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
+
 | Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
 | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) | - | - | - |

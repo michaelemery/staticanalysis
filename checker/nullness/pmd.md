@@ -11,6 +11,8 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 
 ## results
 
+Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
+
 | Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
 | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) | - | - | - |
