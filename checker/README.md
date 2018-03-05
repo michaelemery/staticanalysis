@@ -36,8 +36,10 @@ Dynamic programming languages are a class of high-level programming languages wh
 | feature | description |
 | --- | --- |
 | Vanilla | No dynmaic features. Test renains within a single method. |
-| Interprocedural** | No dynmaic features. Test occurs across mutliple methods. |
+| Interprocedural | No dynmaic features. Test occurs across mutliple methods. |
 | Reflect | The ability to examine or modify the runtime behavior of applications running in the Java virtual machine. |
+| ReflectInterprocedural | The samne as Reflect, but called interprocedurally. |
+| ReflectOverload | The samne as ReflectInterprocedural, but overloaded. |
 | InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
 | Proxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 
@@ -62,7 +64,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla)  |  |  |
-| Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
+| Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
 | Reflect | - |  | - |  |  |
 | ReflectInterprocedural | - |  | - |  |  |
 | ReflectOverload | - |  | - |  |  |
