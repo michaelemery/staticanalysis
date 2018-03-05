@@ -1,4 +1,3 @@
-
 # pmd
 
 Version: pmd-bin-6.0.1
@@ -10,22 +9,25 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 > 2. JDK must be set to 1.8 or lower.
 > 3. Outputs have been simplified for brevity.
 
-## intra-procedural
+### vanilla
 
-[aliasing/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/IntraProcedural.java)
+[aliasing/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java)
 
 **results:**
 
 ```
-$ pmd -d aliasing/IntraProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d aliasing/Vanilla.java -f text -R category/java/errorprone.xml
+```
 
-aliasing/IntraProcedural.java:8:  
+#### output
+```
+aliasing/Vanilla.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 
-aliasing/IntraProcedural.java:24:  
+aliasing/Vanilla.java:24:  
 Assigning an Object to null is a code smell.  Consider refactoring.
 
-aliasing/IntraProcedural.java:29:  
+aliasing/Vanilla.java:29:  
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
@@ -33,22 +35,25 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 | :---: | :---: | :---: |
 | 1 | 1 | 0 |
 
-## inter-procedural
+### interprocedural
 
-[aliasing/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/InterProcedural.java)
+[aliasing/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java)
 
 **results:**
 
 ```
-$ pmd -d NullInterProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d Interprocedural.java -f text -R category/java/errorprone.xml
+```
 
-aliasing/InterProcedural.java:8:   
+#### output
+```
+aliasing/Interprocedural.java:8:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 
-aliasing/InterProcedural.java:20:  
+aliasing/Interprocedural.java:20:  
 Assigning an Object to null is a code smell.  Consider refactoring.
 
-aliasing/InterProcedural.java:25:  
+aliasing/Interprocedural.java:25:  
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
@@ -56,15 +61,18 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 | :---: | :---: | :---: |
 | 1 | 1 | 0 |
 
-## reflection
+### reflection
 
 [aliasing/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection.java)
 
 **results:**
 
 ```
-$ pmd -d NullReflection.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d NullReflection.java -f text -R category/java/errorprone.xml
+```
 
+#### output
+```
 /Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflection.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 

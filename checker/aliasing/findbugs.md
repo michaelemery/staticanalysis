@@ -1,22 +1,21 @@
-
 # findbugs
 
 Version: findbugs-3.0.1
 
-## intra-procedurual
+## Vanilla
 
-[aliasing/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/IntraProcedural.java)
+[aliasing/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java)
 
 **results:**
 
 ```
-$ findbugs aliasing/IntraProcedural.class 
+$ findbugs aliasing/Vanilla.class 
 
-H C NP: Null pointer dereference of IntraProcedural.s in aliasing.IntraProcedural.main(String[]) 
-Dereferenced at IntraProcedural.java:[line 30]
+H C NP: Null pointer dereference of Vanilla.s in aliasing.Vanilla.main(String[]) 
+Dereferenced at Vanilla.java:[line 30]
 
-M D UC: Useless object stored in variable var$2 of method aliasing.IntraProcedural.main(String[]) 
-At IntraProcedural.java:[line 23]
+M D UC: Useless object stored in variable var$2 of method aliasing.Vanilla.main(String[]) 
+At Vanilla.java:[line 23]
 
 Warnings generated: 2
 
@@ -27,14 +26,14 @@ Warnings generated: 2
 | 1 | 0 | 0 |
 
 
-## inter-procedural
+## interprocedural
 
-[aliasing/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/InterProcedural.java)
+[aliasing/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java)
 
 **results:**
 
 ```
-$ findbugs aliasing/InterProcedural.class 
+$ findbugs aliasing/Interprocedural.class 
 
 [NO ISSUES IDENTIFIED]
 ```

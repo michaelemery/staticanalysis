@@ -30,9 +30,9 @@ There are also two annotations, which are currently trusted instead of verified,
 
 Word picture of results.
 
-| Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
+| Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
-| [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#inter-procedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) |  |  |
+| [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) |  |  |
 
 ### vanilla
 
@@ -66,19 +66,19 @@ error: [unique.leaked] Reference annotated as @Unique is leaked.
 | 1 | 1 | 0 |
 
 
-### inter-procedural
+### interprocedural
 
-[aliasing/InterProcedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/InterProcedural_CF.java)
+[aliasing/Interprocedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural_CF.java)
 
 ```
-$ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/InterProcedural_CF.java 
+$ javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Interprocedural_CF.java 
 
-aliasing/InterProcedural_CF.java:17: 
+aliasing/Interprocedural_CF.java:17: 
 error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique InterProcedural_CF foo = new InterProcedural_CF("text");
+        @Unique Interprocedural_CF foo = new Interprocedural_CF("text");
                                          ^
-  found   : @MaybeAliased InterProcedural_CF
-  required: @NonLeaked @Unique InterProcedural_CF
+  found   : @MaybeAliased Interprocedural_CF
+  required: @NonLeaked @Unique Interprocedural_CF
 
 1 error
 ```

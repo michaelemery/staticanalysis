@@ -1,4 +1,3 @@
-
 # findbugs
 
 Version: findbugs-3.0.1
