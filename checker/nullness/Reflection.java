@@ -8,33 +8,20 @@ import java.lang.reflect.Method;
  */
 public class Reflection {
 
-    String s;
-
-    public Reflection(String s) {
-        this.s = s;
-    }
-
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
 
         Method m;
+        String s;
 
-        try {
-            
-            // assignment to a non-null reference by reflection (correct)
-            m = nullness.Reflection.class.getDeclaredMethod("returnText");
-            Reflection foo = new Reflection((String) m.invoke(null));
-            System.out.println(foo.s.toString());  // "text"
+        // assignment to a non-null reference by reflection (correct)
+        m = nullness.Reflection.class.getDeclaredMethod("returnText");
+        s = (String) m.invoke(null);
+        System.out.println(s.toString());  // "text"
 
-            // assignment to a null reference by reflection (fail)
-            m = nullness.Reflection.class.getDeclaredMethod("returnNull");
-            Reflection bar = new Reflection((String) m.invoke(null));
-            System.out.println(bar.s.toString());  // NullPointerException
-            
-        } catch (NoSuchMethodException |
-                IllegalAccessException |
-                InvocationTargetException x) {
-            x.printStackTrace();
-        }
+        // assignment to a null reference by reflection (fail)
+        m = nullness.Reflection.class.getDeclaredMethod("returnNull");
+        s = (String) m.invoke(null);
+        System.out.println(bar.s.toString());  // NullPointerException
 
     }
 
