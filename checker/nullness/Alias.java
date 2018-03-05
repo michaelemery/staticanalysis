@@ -14,8 +14,8 @@ public class Alias {
     public static void main(String[] args) throws NullPointerException {
 
         // assignment to non-null by alias (correct)
-        IntraAlias foo = new IntraAlias("text");
-        IntraAlias bar = foo;
+        Alias foo = new Alias("text");
+        Alias bar = foo;
         System.out.println(bar.s.toString());  // "text"
 
         // assignment to null by alias (fail)
