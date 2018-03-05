@@ -30,18 +30,6 @@ Warnings generated: 1
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-#### output
-```
-H C NP: Null pointer dereference of ? in nullness.NullAlias.main(String[])  
-Dereferenced at NullAlias.java:[line 24]
-
-Warnings generated: 1
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
-
 ### interprocedural
 
 [nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
