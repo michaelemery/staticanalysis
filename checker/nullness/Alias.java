@@ -3,11 +3,11 @@ package nullness;
 /**
  * Assignment to a null reference by alias.
  */
-public class IntraAlias {
+public class Alias {
 
     String s;
 
-    public IntraAlias(String s) {
+    public Alias(String s) {
         this.s = s;
     }
 
