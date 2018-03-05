@@ -58,12 +58,14 @@ error: [dereference.of.nullable] dereference of possibly-null reference foo
 | 1 | 0 | 0 |
 
 ### inter-procedural
-
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedural.java
+```
 
+#### output
+```
 nullness/InterProcedural.java:21: 
 error: [argument.type.incompatible] incompatible types in argument.
         InterProcedural bar = new InterProcedural(returnReceivedString(null));
@@ -82,8 +84,11 @@ error: [argument.type.incompatible] incompatible types in argument.
 [nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Alias.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Alias.java
+```
 
+#### output
+```
 nullness/Alias.java:24: 
 error: [dereference.of.nullable] dereference of possibly-null reference bar
         System.out.println(bar.s.toString());  // NullPointerException
@@ -100,8 +105,11 @@ error: [dereference.of.nullable] dereference of possibly-null reference bar
 [nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflection.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflection.java
+```
 
+#### output
+````
 nullness/Reflection.java:25: error: [argument.type.incompatible] incompatible types in argument.
             Reflection foo = new Reflection((String) m.invoke(null));
                                             ^
