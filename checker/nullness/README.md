@@ -16,7 +16,7 @@ Test the effectiveness of static analysis tools in identifying potential causes 
 
 ## results
 
-Checker Framework (CheckerFW) is consistently sound and precise in non-reflective cases. However, it handles reflection in a very rudimentary way that causes excessive false positives. Checker Framework errs on the side of caution when encountering reflective code. 
+Checker Framework is consistently sound and precise in non-reflective cases. However, it handles reflection in a very rudimentary way that causes excessive false positives. Checker Framework errs on the side of caution when encountering reflective code. 
 
 Both FindBugs and PMD are less likely to generate FP results so are more precise than Checker Framework. However, their lack of caution in complex situations compromises soundness compared to Checker Framework.
 
