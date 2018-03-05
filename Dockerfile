@@ -3,9 +3,23 @@
 # use openjdk runtime as a base image
 FROM openjdk:8u121-jdk
 
+
 # --- CREATE APP FOLDER
 
 RUN mkdir /app
+
+
+# --- INSTALL VIM
+
+# create directory
+RUN mkdir /app/vim
+WORKDIR /app/vim
+
+# copy install files
+ADD ./archive/vim-8.0.zip
+RUN unzip vim-8.0.zip
+WORKDIR /src
+RUN make
 
 
 # --- CHECKERFRAMEWORK SETUP
