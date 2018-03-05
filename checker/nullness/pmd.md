@@ -1,4 +1,3 @@
-
 # pmd
 
 Version: pmd-bin-6.0.1
@@ -12,11 +11,11 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 
 ## results
 
-PMD correctly identified nulness issues at the intra-procedural (vanilla) level only. Results were unsound when using inter-procedural analysis or reflection.
+PMD correctly identified nulness issues at the intra-procedural (vanilla) level only. Results were unsound when using interprocedural analysis or reflection.
 
-| Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
+| Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
-| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#inter-procedural) | - | - | - |
+| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) | - | - | - |
 
 ### vanilla
 
@@ -58,17 +57,17 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### inter-procedural
+### interprocedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/InterProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/Interprocedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 ```
-nullness/InterProcedural.java:8:  
+nullness/Interprocedural.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 

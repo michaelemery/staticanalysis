@@ -33,11 +33,11 @@ some particular type:
 
 ## results
 
-Checker Framework accurately identified nullness issues up to the inter-procedural level. Results were imprecise when using reflection.
+Checker Framework accurately identified nullness issues up to the interprocedural level. Results were imprecise when using reflection.
 
-| Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
+| Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
-| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#inter-procedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) |  |  |
+| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) |  |  |
 
 ### vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
@@ -60,18 +60,18 @@ error: [dereference.of.nullable] dereference of possibly-null reference foo
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### inter-procedural
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+### interprocedural
+[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Interprocedural.java
 ```
 
 #### output
 ```
-nullness/InterProcedural.java:21: 
+nullness/Interprocedural.java:21: 
 error: [argument.type.incompatible] incompatible types in argument.
-        InterProcedural bar = new InterProcedural(returnReceivedString(null));
+        Interprocedural bar = new Interprocedural(returnReceivedString(null));
                                                  ^
   found   : null
   required: @Initialized @NonNull String

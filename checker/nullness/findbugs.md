@@ -5,11 +5,11 @@ Version: findbugs-3.0.1
 
 ## results
 
-FindBugs correctly identified nulness issues at the intra-procedural (vanilla) level only. Results were unsound when using inter-procedural analysis or reflection.
+FindBugs correctly identified nulness issues at the intra-procedural (vanilla) level only. Results were unsound when using interprocedural analysis or reflection.
 
-| Vanilla | InterProcedural | Reflection | InvokeDynamic | Proxy |
+| Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
-| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#inter-procedural) | - | - | - |
+| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) | - | - | - |
 
 ### vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
@@ -50,13 +50,13 @@ Warnings generated: 1
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### inter-procedural
+### interprocedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
 
 ```
-javac nullness/InterProcedural.java
-findbugs nullness/InterProcedural.class
+javac nullness/Interprocedural.java
+findbugs nullness/Interprocedural.class
 ```
 
 #### output
