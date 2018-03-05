@@ -11,8 +11,6 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 
 ## results
 
-PMD correctly identified nulness issues at the intra-procedural (vanilla) level only. Results were unsound when using interprocedural analysis or reflection.
-
 | Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
 | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) | - | - | - |
