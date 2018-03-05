@@ -43,7 +43,7 @@ Checker Framework accurately identified nullness issues up to the inter-procedur
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
 
 ```
-$ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Vanilla.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Vanilla.java
 ```
 
 #### output
