@@ -62,7 +62,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 |  | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | **Vanilla** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla)  |  |  |
-| **Interprocedural** | unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
+| **Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
 | **Reflect** | - |  | - |  |  |
 | **ReflectInterprocedural** |  |  |  |  |  |
 | **ReflectOverload** | - |  | - |  |  |
