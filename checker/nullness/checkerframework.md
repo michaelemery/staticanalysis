@@ -166,3 +166,29 @@ error: [return.type.incompatible] incompatible types in return.
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 1 | 2 | 0 |
+
+## redundant test commands
+
+### ReflectOverload
+
+[nullness/ReflectOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverload.java)
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectOverload.java
+```
+
+### InvokeDynamic
+
+[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InvokeDynamic.java
+```
+
+### Proxy
+
+[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java)
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Proxy.java
+```
