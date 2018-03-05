@@ -33,7 +33,7 @@ some particular type:
 
 ## results
 
-Results can be replicated at [Docker](www.docker.com) repository `michaelemery/staticanalysis`.
+Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`.
 
 | Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
