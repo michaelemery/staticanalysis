@@ -92,31 +92,31 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 
 #### output
 ```
-nullness/Reflect.java:18: 
+nullness/Reflect.java:17: 
 error: [argument.type.incompatible] incompatible types in argument.
         s = (String) m.invoke(null);
                               ^
   found   : null
   required: @Initialized @NonNull Object
 
-nullness/Reflect.java:19: 
+nullness/Reflect.java:18: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // "text"
                            ^
 
-nullness/Reflect.java:23: 
+nullness/Reflect.java:22: 
 error: [argument.type.incompatible] incompatible types in argument.
         s = (String) m.invoke(null);
                               ^
   found   : null
   required: @Initialized @NonNull Object
 
-nullness/Reflect.java:24: 
+nullness/Reflect.java:23: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
 
-nullness/Reflect.java:33: 
+nullness/Reflect.java:32: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
