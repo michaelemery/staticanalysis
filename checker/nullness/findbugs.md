@@ -34,6 +34,7 @@ Warnings generated: 1
 ```
 H C NP: Null pointer dereference of ? in nullness.NullAlias.main(String[])  
 Dereferenced at NullAlias.java:[line 24]
+
 Warnings generated: 1
 ```
 
