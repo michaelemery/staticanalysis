@@ -48,6 +48,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 > Select results for detail.
 
 ### Vanilla
+
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
 
 ```
@@ -55,6 +56,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 ```
 
 #### output
+
 ```
 nullness/Vanilla.java:18: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
@@ -69,6 +71,7 @@ error: [dereference.of.nullable] dereference of possibly-null reference s
 | 1 | 0 | 0 |
 
 ### Interprocedural
+
 [nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
 
 ```
@@ -76,6 +79,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 ```
 
 #### output
+
 ```
 nullness/Interprocedural.java:17: 
 error: [argument.type.incompatible] incompatible types in argument.
@@ -92,6 +96,7 @@ error: [argument.type.incompatible] incompatible types in argument.
 | 1 | 0 | 0 |
 
 ### Reflect
+
 [nullness/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflect.java)
 
 ```
@@ -99,6 +104,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 ```
 
 #### output
+
 ```
 nullness/Reflect.java:17: 
 error: [argument.type.incompatible] incompatible types in argument.
@@ -139,6 +145,7 @@ error: [return.type.incompatible] incompatible types in return.
 | 1 | 3 | 0 |
 
 ### ReflectInterprocedural
+
 [nullness/ReflectInterprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectInterprocedural.java)
 
 ```
@@ -146,6 +153,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 ```
 
 #### output
+
 ```
 nullness/ReflectInterprocedural.java:26: 
 error: [argument.type.incompatible] incompatible types in argument.
@@ -184,6 +192,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 ```
 
 #### output
+
 ````
 nullness/ReflectOverload.java:17: 
 error: [argument.type.incompatible] incompatible types in argument.

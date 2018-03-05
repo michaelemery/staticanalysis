@@ -16,7 +16,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | feature | result |
 | --- | :---: |
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |
-| Interprocedural | unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |
+| Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |
 | Reflect | - |
 | ReflectInterprocedural | - |
 | ReflectOverload | - |
