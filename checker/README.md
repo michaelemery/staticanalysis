@@ -22,7 +22,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | feature | description |
 | --- | --- |
 | **Vanilla** | No dynmaic features. Test renains within a single method. |
-| **Inter-procedural** | Test occurs across mutliple methods. |
+| **Interprocedural** | Test occurs across mutliple methods. |
 | **Reflection** | The ability to examine or modify the runtime behavior of applications running in the Java virtual machine. |
 | **Invoke Dynamic** | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
 | **Proxy** | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
