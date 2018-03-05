@@ -2,13 +2,13 @@
 
 Version: checker-framework-2.3.0
 
-> Outputs have been simplified for brevity.
+## usage
 
-**checkers used (fqn)**
+### checkers used (fqn)
 
 1. org.checkerframework.checker.nullness.NullnessChecker
 
-**qualifiers**
+### qualifiers
 
 The nullness hierarchy contains these qualifiers:
 
@@ -17,9 +17,9 @@ The nullness hierarchy contains these qualifiers:
 | @Nullable | Indicates a type that includes the null value. For example, the type Boolean is nullable: a variable of type Boolean always has one of the values TRUE, FALSE, or null. |
 | @NonNull *(default)*| Indicates a type that does not include the null value. The type boolean is non-null; a variable of type boolean always has one of the values true or false. The type @NonNull Boolean is also non-null: a variable of type @NonNull Boolean always has one of the values TRUE or FALSE — never null. Dereferencing an expression of non-null type can never cause a null pointer exception. |
 
-> **Important:** The default state of any object in Checker Framework is ***@NonNull***.
+> The default state of any object in Checker Framework is *@NonNull*.
 
-**annotations**
+### annotations
 
 The Nullness Checker supports several annotations that specify method behavior. These are 
 declaration annotations, not type annotations as they apply to the method itself rather than to 
