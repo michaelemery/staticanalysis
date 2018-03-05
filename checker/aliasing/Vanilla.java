@@ -1,7 +1,7 @@
 package aliasing;
 
 /**
- * Intra-procedural corruption of an object via an alias.
+ * Intraprocedural corruption of an object via an alias.
  */
 public class Vanilla {
 
