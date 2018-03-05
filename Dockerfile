@@ -42,6 +42,22 @@ ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
 # (-d = source root, -R = ruleset, -f output format)
 
 
+# --- FINDBUGS SETUP
+
+# create directory
+RUN mkdir /app/findbugs
+WORKDIR /app/findbugs
+
+# copy install files
+ADD ./archive/findbugs-3.0.1.zip .
+RUN unzip findbugs-3.0.1.zip
+
+# add to path
+ENV FINDBUGS_HOME /app/findbugs/findbugs-3.0.1
+# note that ${FINDBUGS_HOME}
+ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
+
+
 # --- COPY SOURCE FILES FOR CHECKER TESTS
 
 RUN mkdir /checker
