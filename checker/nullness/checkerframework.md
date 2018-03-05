@@ -41,7 +41,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | Interprocedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |
 | Reflect | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect) |
 | ReflectInterprocedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |
-| ReflectOverload |  |
+| ReflectOverload | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectoverload) |
 | InvokeDynamic |  |
 | Proxy |  |
 
@@ -175,10 +175,6 @@ error: [return.type.incompatible] incompatible types in return.
 | :---: | :---: | :---: |
 | 1 | 2 | 0 |
 
-## redundant tests
-
-Tests are considered redundant when the results of previous tests at lower dynamic levels were unsound.
-
 ### ReflectOverload
 
 [nullness/ReflectOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverload.java)
@@ -186,6 +182,51 @@ Tests are considered redundant when the results of previous tests at lower dynam
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectOverload.java
 ```
+
+#### output
+````
+nullness/ReflectOverload.java:17: 
+error: [argument.type.incompatible] incompatible types in argument.
+        s = (String) m.invoke(null, 42);
+                              ^
+  found   : null
+  required: @Initialized @NonNull Object
+
+nullness/ReflectOverload.java:18: 
+error: [dereference.of.nullable] dereference of possibly-null reference s
+        System.out.println(s.toString());  // "text"
+                           ^
+
+nullness/ReflectOverload.java:22: 
+error: [argument.type.incompatible] incompatible types in argument.
+        s = (String) m.invoke(null, true);
+                              ^
+  found   : null
+  required: @Initialized @NonNull Object
+
+nullness/ReflectOverload.java:23: 
+error: [dereference.of.nullable] dereference of possibly-null reference s
+        System.out.println(s.toString());  // NullPointerException
+                           ^
+
+nullness/ReflectOverload.java:32: 
+error: [return.type.incompatible] incompatible types in return.
+        return null;
+               ^
+  found   : null
+  required: @Initialized @NonNull String
+
+5 errors
+````
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 3 | 0 |
+
+
+## redundant tests
+
+Tests are considered redundant when the results of previous tests at lower dynamic levels were unsound.
 
 ### InvokeDynamic
 
