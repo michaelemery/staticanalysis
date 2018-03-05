@@ -50,7 +50,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | **Vanilla** | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla)  |  |  |
 | **Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |  |  |
 | **Reflect** | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect)  |  |  |
-| **ReflectInterprocedural** |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |  |  |
+| **ReflectInterprocedural** | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |  |  |
 | **ReflectOverload** | - |  |  |  |  |
 | **InvokeDynamic** | - |  |  |  |  |
 | **Proxy** | - |  |  |  |  |
@@ -64,7 +64,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | **Vanilla** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla)  |  |  |
 | **Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
 | **Reflect** | - |  | - |  |  |
-| **ReflectInterprocedural** |  |  |  |  |  |
+| **ReflectInterprocedural** | - |  | - |  |  |
 | **ReflectOverload** | - |  | - |  |  |
 | **InvokeDynamic** | - |  | - |  |  |
 | **Proxy** | - |  | - |  |  |
