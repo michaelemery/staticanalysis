@@ -38,7 +38,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | Feature | Result |
 | :---: | :---: |
 | **Vanilla** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) |
-| **Interprocedural** | accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |
+| **Interprocedural** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |
 | **Reflect** | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect) |
 | **ReflectInterprocedural** | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |
 | **ReflectOverload** |  |
