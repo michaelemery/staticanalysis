@@ -27,7 +27,6 @@ M D UC: Useless object stored in variable var$2 of method aliasing.Vanilla.main(
 At Vanilla.java:[line 23]
 
 Warnings generated: 2
-
 ```
 
 | True Pos | False Pos | False Neg |
