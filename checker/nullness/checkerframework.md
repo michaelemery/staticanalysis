@@ -44,7 +44,10 @@ Checker Framework accurately identified nullness issues up to the inter-procedur
 
 ```
 $ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Vanilla.java
+```
 
+#### output
+````
 nullness/Vanilla.java:22: 
 error: [dereference.of.nullable] dereference of possibly-null reference foo
         System.out.println(foo.s.toString());  // NullPointerException
