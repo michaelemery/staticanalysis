@@ -27,30 +27,8 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Vanilla.java -f text -R category/java/error
 
 #### output
 ```
-nullness/Vanilla.java:8:
-Found non-transient, non-static member. Please mark as transient or provide accessors.
-nullness/Vanilla.java:21:
+nullness/Vanilla.java:17: 
 Assigning an Object to null is a code smell. Consider refactoring.
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
-
-### alias
-
-[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
-
-```
-$PMD_HOME/bin/run.sh pmd -d nullness/Alias.java -f text -R category/java/errorprone.xml
-```
-
-#### output
-```
-nullness/Alias.java:8: 
-Found non-transient, non-static member. Please mark as transient or provide accessors.
-nullness/Alias.java:22:    
-Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
 | True Pos | False Pos | False Neg |
@@ -67,8 +45,7 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Interprocedural.java -f text -R category/ja
 
 #### output
 ```
-nullness/Interprocedural.java:8:  
-Found non-transient, non-static member. Please mark as transient or provide accessors.
+[NO ISSUES IDENTIFIED]
 ```
 
 | True Pos | False Pos | False Neg |
@@ -85,8 +62,7 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Reflection.java -f text -R category/java/er
 
 #### output
 ```
-nullness/Reflection.java:11:   
-Found non-transient, non-static member. Please mark as transient or provide accessors.
+[NO ISSUES IDENTIFIED]
 ```
 
 | True Pos | False Pos | False Neg |

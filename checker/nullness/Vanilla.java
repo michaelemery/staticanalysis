@@ -1,25 +1,21 @@
 package nullness;
 
 /**
- * Intra-procedural assignment of a null reference.
+ * Intraprocedural assignment of a null reference.
  */
 public class Vanilla {
 
-    String s;
-
-    public Vanilla(String s) {
-        this.s = s;
-    }
-
     public static void main(String[] args) throws NullPointerException {
 
-        // intra-procedural assignment of a non-null reference (correct)
-        Vanilla foo = new Vanilla("text");
-        System.out.println(foo.s.toString());  // "text"
+        String s;
 
-        // intra-procedural assignment of a null reference (fail)
-        foo = null;
-        System.out.println(foo.s.toString());  // NullPointerException
+        // intraprocedural assignment of a non-null reference (correct)
+        s = "text";
+        System.out.println(s.toString());  // "text"
+
+        // intraprocedural assignment of a null reference (fail)
+        s = null;
+        System.out.println(s.toString());  // NullPointerException
 
     }
 

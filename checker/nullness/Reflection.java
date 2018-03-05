@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Inter-procedural assignment of a null reference via reflection. 
+ * Interprocedural assignment of a null reference via reflection. 
  */
 public class Reflection {
 
@@ -21,7 +21,7 @@ public class Reflection {
         // assignment to a null reference by reflection (fail)
         m = nullness.Reflection.class.getDeclaredMethod("returnNull");
         s = (String) m.invoke(null);
-        System.out.println(bar.s.toString());  // NullPointerException
+        System.out.println(s.toString());  // NullPointerException
 
     }
 

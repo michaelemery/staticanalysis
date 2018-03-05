@@ -21,22 +21,14 @@ findbugs nullness/Vanilla.class
 #### output
 ```
 H C NP: Null pointer dereference of ? in nullness.Vanilla.main(String[])  
-Dereferenced at nullness.Vanilla.java:[line 22]
+Dereferenced at Vanilla.java:[line 18]
+
 Warnings generated: 1
 ```
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
-
-### alias
-
-[nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
-
-```
-javac nullness/Alias.java
-findbugs nullness/Alias.class 
-```
 
 #### output
 ```
