@@ -1,19 +1,19 @@
 package aliasing;
 
 /**
- * Inter-procedural corruption of an object via an alias.
+ * Interprocedural corruption of an object via an alias.
  */
-public class InterProcedural {
+public class Interprocedural {
 
     String s;
 
-    public InterProcedural(String s) {
+    public Interprocedural(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) {
-        InterProcedural foo = new InterProcedural("text");
-        InterProcedural bar;
+        Interprocedural foo = new Interprocedural("text");
+        Interprocedural bar;
 
         // protect an object through cloning (correct)
         bar = foo.makeCopy();
@@ -27,12 +27,12 @@ public class InterProcedural {
 
     }
 
-    public InterProcedural makeCopy() {
-        InterProcedural copy = new InterProcedural(this.s);
+    public Interprocedural makeCopy() {
+        Interprocedural copy = new Interprocedural(this.s);
         return copy;
     }
 
-    public InterProcedural alias() {
+    public Interprocedural alias() {
         return this;
     }
 
