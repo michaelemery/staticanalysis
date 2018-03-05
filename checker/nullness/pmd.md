@@ -51,20 +51,3 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Interprocedural.java -f text -R category/ja
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
-
-### reflect
-
-[nullness/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflect.java)
-
-```
-$PMD_HOME/bin/run.sh pmd -d nullness/Reflect.java -f text -R category/java/errorprone.xml
-```
-
-#### output
-```
-[NO ISSUES IDENTIFIED]
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 0 | 0 | 1 |

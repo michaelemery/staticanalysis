@@ -47,21 +47,3 @@ findbugs nullness/Interprocedural.class
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
-
-### reflect
-
-[nullness/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflect.java)
-
-```
-javac nullness/Reflect.java
-findbugs nullness/Reflect.class
-```
-
-#### output
-```
-[NO ISSUES IDENTIFIED]
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 0 | 0 | 1 |
