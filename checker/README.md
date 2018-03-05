@@ -38,8 +38,8 @@ Dynamic programming languages are a class of high-level programming languages wh
 | Vanilla | No dynmaic features. Test renains within a single method. |
 | Interprocedural | No dynmaic features. Test occurs across mutliple methods. |
 | Reflect | The ability to examine or modify the runtime behavior of applications running in the Java virtual machine. |
-| ReflectInterprocedural | The samne as Reflect, but called interprocedurally. |
-| ReflectOverload | The samne as ReflectInterprocedural, but overloaded. |
+| ReflectInterprocedural | The same as *Reflect*, but called interprocedurally. |
+| ReflectOverload | The same as *ReflectInterprocedural*, but overloaded. |
 | InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
 | Proxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 
