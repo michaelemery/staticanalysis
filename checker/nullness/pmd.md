@@ -63,7 +63,7 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
 ```
-$ $PMD_HOME/bin/run.sh pmd -d nullness/InterProcedural.java -f text -R category/java/errorprone.xml
+PMD_HOME/bin/run.sh pmd -d nullness/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
