@@ -16,7 +16,7 @@ RUN mkdir /app/vim
 WORKDIR /app/vim
 
 # copy install files
-ADD ./archive/vim-8.0.zip
+ADD ./archive/vim-8.0.zip .
 RUN unzip vim-8.0.zip
 WORKDIR /src
 RUN make
