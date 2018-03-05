@@ -9,19 +9,6 @@ FROM openjdk:8u121-jdk
 RUN mkdir /app
 
 
-# --- INSTALL VIM
-
-# create directory
-RUN mkdir /app/vim
-WORKDIR /app/vim
-
-# copy install files
-ADD ./archive/vim-8.0.zip .
-RUN unzip vim-8.0.zip
-WORKDIR /src
-RUN make
-
-
 # --- CHECKERFRAMEWORK SETUP
 
 # create directory
@@ -77,3 +64,9 @@ ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
 RUN mkdir /checker
 WORKDIR /checker
 ADD /checker /checker
+
+
+# --- DISPLAY DOCKER INFO FILE
+
+WORKDIR /checker
+RUN cat Docker_Info.txt
