@@ -23,7 +23,7 @@ PMD correctly identified nulness issues at the intra-procedural (vanilla) level 
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
 
 ```
-$ $PMD_HOME/bin/run.sh pmd -d nullness/Vanilla.java -f text -R category/java/errorprone.xml
+PMD_HOME/bin/run.sh pmd -d nullness/Vanilla.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -43,7 +43,7 @@ Assigning an Object to null is a code smell. Consider refactoring.
 [nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 ```
-$ $PMD_HOME/bin/run.sh pmd -d nullness/Alias.java -f text -R category/java/errorprone.xml
+PMD_HOME/bin/run.sh pmd -d nullness/Alias.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -81,7 +81,7 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 [nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 ```
-$ $PMD_HOME/bin/run.sh pmd -d nullness/Reflection.java -f text -R category/java/errorprone.xml
+PMD_HOME/bin/run.sh pmd -d nullness/Reflection.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
