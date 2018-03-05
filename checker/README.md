@@ -12,9 +12,9 @@ of each tool are compared in order to assess overall and relative effectiveness.
 
 | tool | description |
 | --- | --- |
-| **Checker Framework** | The Checker Framework enhances Java’s type system by detecting and preventing specific errors in Java programs. |
-| **FindBugs** | FindBugs™ is a program to find bugs in Java programs. It looks for instances of "bug patterns" — code instances that are likely to be errors. |
-| **PMD** | PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code in multiple languages. The CDP feature is not used in this project. PMD has numerous categories of checking options, however this project only uses the errorprone.xmlruleset. Other checking options relate more to style. |
+| Checker Framework** | The Checker Framework enhances Java’s type system by detecting and preventing specific errors in Java programs. |
+| FindBugs | FindBugs™ is a program to find bugs in Java programs. It looks for instances of "bug patterns" — code instances that are likely to be errors. |
+| PMD | PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code in multiple languages. The CDP feature is not used in this project. PMD has numerous categories of checking options, however this project only uses the errorprone.xmlruleset. Other checking options relate more to style. |
 
 ### categories
 
@@ -35,52 +35,52 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 | feature | description |
 | --- | --- |
-| **Vanilla** | No dynmaic features. Test renains within a single method. |
-| **Interprocedural** | No dynmaic features. Test occurs across mutliple methods. |
-| **Reflect** | The ability to examine or modify the runtime behavior of applications running in the Java virtual machine. |
-| **InvokeDynamic** | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
-| **Proxy** | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
+| Vanilla | No dynmaic features. Test renains within a single method. |
+| Interprocedural** | No dynmaic features. Test occurs across mutliple methods. |
+| Reflect | The ability to examine or modify the runtime behavior of applications running in the Java virtual machine. |
+| InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
+| Proxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 
 ## results (by tool)
 
 ### checker framework
 
-|  | aliasing | init | nullness | signedness | taint |
+| feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| **Vanilla** | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla)  |  |  |
-| **Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |  |  |
-| **Reflect** | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect)  |  |  |
-| **ReflectInterprocedural** | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |  |  |
-| **ReflectOverload** | - |  |  |  |  |
-| **InvokeDynamic** | - |  |  |  |  |
-| **Proxy** | - |  |  |  |  |
+| Vanilla | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla)  |  |  |
+| Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |  |  |
+| Reflect | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect)  |  |  |
+| ReflectInterprocedural | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |  |  |
+| ReflectOverload | - |  |  |  |  |
+| InvokeDynamic | - |  |  |  |  |
+| Proxy | - |  |  |  |  |
 
 > Select individual results for detail.
 
 ### findbugs
 
-|  | aliasing | init | nullness | signedness | taint |
+| feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| **Vanilla** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla)  |  |  |
-| **Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
-| **Reflect** | - |  | - |  |  |
-| **ReflectInterprocedural** | - |  | - |  |  |
-| **ReflectOverload** | - |  | - |  |  |
-| **InvokeDynamic** | - |  | - |  |  |
-| **Proxy** | - |  | - |  |  |
+| Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla)  |  |  |
+| Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
+| Reflect | - |  | - |  |  |
+| ReflectInterprocedural | - |  | - |  |  |
+| ReflectOverload | - |  | - |  |  |
+| InvokeDynamic | - |  | - |  |  |
+| Proxy | - |  | - |  |  |
 
 > Select individual results for detail.
 
 ### pmd
 
-|  | aliasing | init | nullness | signedness | taint |
+| feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| **Vanilla** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |  |  |
-| **Interprocedural** | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
-| **Reflect** | - |  | - |  |  |
-| **ReflectInterprocedural** | - |  | - |  |  |
-| **ReflectOverload** | - |  | - |  |  |
-| **InvokeDynamic** | - |  | - |  |  |
-| **Proxy** | - |  | - |  |  |
+| Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |  |  |
+| Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
+| Reflect | - |  | - |  |  |
+| ReflectInterprocedural | - |  | - |  |  |
+| ReflectOverload | - |  | - |  |  |
+| InvokeDynamic | - |  | - |  |  |
+| Proxy | - |  | - |  |  |
 
 > Select individual results for detail.
