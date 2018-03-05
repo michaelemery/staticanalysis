@@ -75,13 +75,13 @@ $PMD_HOME/bin/run.sh pmd -d NullReflect.java -f text -R category/java/errorprone
 
 #### output
 ```
-/Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflect.java:11:   
+aliasing/Reflect.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 
-/Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflect.java:27:   
+aliasing/Reflect.java:27:   
 Assigning an Object to null is a code smell.  Consider refactoring.
 
-/Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflect.java:33:   
+aliasing/Reflect.java:33:   
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
