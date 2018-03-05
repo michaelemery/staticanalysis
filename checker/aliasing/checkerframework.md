@@ -32,7 +32,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 | Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
-| [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) |  |  |
+| [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) |  |  |
 
 ### vanilla
 
@@ -93,7 +93,7 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 | :---: | :---: | :---: |
 | 1 | 1 | 1 |
 
-### reflection
+### reflect
 
 [aliasing/Reflect_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect_CF.java)
 

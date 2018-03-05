@@ -52,7 +52,7 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Interprocedural.java -f text -R category/ja
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-### reflection
+### reflect
 
 [nullness/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflect.java)
 

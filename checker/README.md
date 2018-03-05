@@ -23,7 +23,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | --- | --- |
 | **Vanilla** | No dynmaic features. Test renains within a single method. |
 | **Interprocedural** | Test occurs across mutliple methods. |
-| **Reflection** | The ability to examine or modify the runtime behavior of applications running in the Java virtual machine. |
+| **Reflect** | The ability to examine or modify the runtime behavior of applications running in the Java virtual machine. |
 | **InvokeDynamic** | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
 | **Proxy** | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 
@@ -44,17 +44,17 @@ Dynamic programming languages are a class of high-level programming languages wh
 ## results (by tool)
 
 ### checker framework
-|  | Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
+|  | Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| **aliasing** | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) | - | - |
+| **aliasing** | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) | - | - |
 | **init** |  |  |  |  |  |
-| **nullness** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) |  |  |
+| **nullness** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect) |  |  |
 | **signedness** |  |  |  |  |  |
 | **taint** |  |  |  |  |  |
 > Select individual results for detail.
 
 ### findbugs
-|  | Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
+|  | Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | **aliasing** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) | - | - | - |
 | **init** |  |  |  |  |  |
@@ -65,7 +65,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 
 ### pmd
-|  | Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
+|  | Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | **aliasing** |  [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) | - | - | - |
 | **init** |  |  |  |  |  |

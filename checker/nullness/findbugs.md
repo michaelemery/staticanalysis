@@ -48,7 +48,7 @@ findbugs nullness/Interprocedural.class
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-### reflection
+### reflect
 
 [nullness/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflect.java)
 

@@ -50,7 +50,7 @@ findbugs aliasing/Interprocedural.class
 | :---: | :---: | :---: |
 | 0 | 0 | 0 |
 
-### reflection
+### reflect
 
 [aliasing/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect.java)
 
