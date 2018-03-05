@@ -167,7 +167,9 @@ error: [return.type.incompatible] incompatible types in return.
 | :---: | :---: | :---: |
 | 1 | 2 | 0 |
 
-## redundant test commands
+## redundant tests
+
+Tests are considered redundant when the results of previous tests at lower dynamic levels were unsound.
 
 ### ReflectOverload
 
