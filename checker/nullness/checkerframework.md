@@ -37,7 +37,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 | Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
-| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect) |  |  |
+| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |  |
 
 ### Vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
@@ -129,3 +129,40 @@ error: [return.type.incompatible] incompatible types in return.
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 1 | 3 | 0 |
+
+### ReflectInterprocedural
+[nullness/ReflectInterprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectInterprocedural.java)
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectInterprocedural.java
+```
+
+#### output
+```
+nullness/ReflectInterprocedural.java:26: 
+error: [argument.type.incompatible] incompatible types in argument.
+        String s = (String) m.invoke(null);
+                                     ^
+  found   : null
+  required: @Initialized @NonNull Object
+
+nullness/ReflectInterprocedural.java:27: 
+error: [return.type.incompatible] incompatible types in return.
+        return s;
+               ^
+  found   : @Initialized @Nullable String
+  required: @Initialized @NonNull String
+
+nullness/ReflectInterprocedural.java:35: 
+error: [return.type.incompatible] incompatible types in return.
+        return null;
+               ^
+  found   : null
+  required: @Initialized @NonNull String
+
+3 errors
+```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 1 | 2 | 0 |
