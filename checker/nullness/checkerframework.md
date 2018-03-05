@@ -35,7 +35,7 @@ some particular type:
 
 Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
 
-| Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
+| Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
 | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflection) |  |  |
 
@@ -84,39 +84,39 @@ error: [argument.type.incompatible] incompatible types in argument.
 | 1 | 0 | 0 |
 
 ### reflection
-[nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
+[nullness/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflect.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflection.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Reflect.java
 ```
 
 #### output
 ```
-nullness/Reflection.java:18: 
+nullness/Reflect.java:18: 
 error: [argument.type.incompatible] incompatible types in argument.
         s = (String) m.invoke(null);
                               ^
   found   : null
   required: @Initialized @NonNull Object
 
-nullness/Reflection.java:19: 
+nullness/Reflect.java:19: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // "text"
                            ^
 
-nullness/Reflection.java:23: 
+nullness/Reflect.java:23: 
 error: [argument.type.incompatible] incompatible types in argument.
         s = (String) m.invoke(null);
                               ^
   found   : null
   required: @Initialized @NonNull Object
 
-nullness/Reflection.java:24: 
+nullness/Reflect.java:24: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
 
-nullness/Reflection.java:33: 
+nullness/Reflect.java:33: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^

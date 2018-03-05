@@ -8,7 +8,7 @@ Test the effectiveness of static analysis tools in identifying unintentional mut
 | --- | --- |
 | [Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java) | Basic assignment of a null reference. |
 | [Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java) | Inter-procedural assignment of a null reference. |
-| [Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection.java) | Assignment of a null reference via reflection. |
+| [Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect.java) | Assignment of a null reference via reflection. |
 | [InvokeDynamic.java]() | Assignment of a null reference via dynamic invocation. |
 | [Proxy.java]() | Assignment of a null reference via proxy. |
 
@@ -16,7 +16,7 @@ Test the effectiveness of static analysis tools in identifying unintentional mut
 
 Word picture of results.
 
-|  | Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
+|  | Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#checker-framework) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) |  |  |
 | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#findbugs) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) | - | - | - |

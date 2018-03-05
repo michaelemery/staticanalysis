@@ -13,7 +13,7 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 
 Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
 
-| Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
+| Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
 | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#vanilla) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) |[imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#reflection) | - | - |
 
@@ -67,21 +67,21 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 
 ### reflection
 
-[aliasing/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection.java)
+[aliasing/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d NullReflection.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d NullReflect.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 ```
-/Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflection.java:11:   
+/Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflect.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 
-/Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflection.java:27:   
+/Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflect.java:27:   
 Assigning an Object to null is a code smell.  Consider refactoring.
 
-/Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflection.java:33:   
+/Users/michaelemery/Developer/staticanalysis/checker/aliasing/Reflect.java:33:   
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 

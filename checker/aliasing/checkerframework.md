@@ -30,7 +30,7 @@ There are also two annotations, which are currently trusted instead of verified,
 
 Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
 
-| Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
+| Vanilla | Interprocedural | Reflect | InvokeDynamic | Proxy |
 | :---: | :---: | :---: | :---: | :---: |
 | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) | [imprecise & unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflection) |  |  |
 
@@ -95,29 +95,29 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 
 ### reflection
 
-[aliasing/reflection_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection_CF.java)
+[aliasing/Reflect_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect_CF.java)
 
 ```
-javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflection_CF.java 
+javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflect_CF.java 
 ```
 
 #### output
 ```
-aliasing/Reflection_CF.java:19: 
+aliasing/Reflect_CF.java:19: 
 error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique Reflection_CF foo = new Reflection_CF("text");
+        @Unique Reflect_CF foo = new Reflect_CF("text");
                                     ^
-  found   : @MaybeAliased Reflection_CF
-  required: @NonLeaked @Unique Reflection_CF
+  found   : @MaybeAliased Reflect_CF
+  required: @NonLeaked @Unique Reflect_CF
 
-aliasing/Reflection_CF.java:27: 
+aliasing/Reflect_CF.java:27: 
 error: [unique.leaked] Reference annotated as @Unique is leaked.
-            bar = (Reflection_CF) m.invoke(foo);
+            bar = (Reflect_CF) m.invoke(foo);
                                            ^
 
-aliasing/Reflection_CF.java:33: 
+aliasing/Reflect_CF.java:33: 
 error: [unique.leaked] Reference annotated as @Unique is leaked.
-            bar = (Reflection_CF) m.invoke(foo);
+            bar = (Reflect_CF) m.invoke(foo);
                                            ^
 
 3 errors
