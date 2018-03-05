@@ -35,9 +35,17 @@ some particular type:
 
 Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
 
-| Vanilla | Interprocedural | Reflect | Reflect-<br />Interprocedural | Reflect-<br />Overload | Invoke-<br />Dynamic | Proxy |
-| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |  |  |  |
+| Feature | Result |
+| :---: | :---: |
+| **Vanilla** | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) |
+| **Interprocedural** | accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |
+| **Reflect** | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflect) |
+| **ReflectInterprocedural** | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectinterprocedural) |
+| **ReflectOverload** |  |
+| **InvokeDynamic** |  |
+| **Proxy** |  |
+
+> Select results for detail.
 
 ### Vanilla
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
