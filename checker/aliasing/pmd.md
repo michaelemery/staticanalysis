@@ -9,11 +9,15 @@ PMD checkers belonging to the "error prone" category are the only ones required 
 > 2. JDK must be set to 1.8 or lower.
 > 3. Outputs have been simplified for brevity.
 
+## results
+
+| Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
+| :---: | :---: | :---: | :---: | :---: |
+| [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#vanilla) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) |[imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#reflection) | - | - |
+
 ### vanilla
 
 [aliasing/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java)
-
-**results:**
 
 ```
 $PMD_HOME/bin/run.sh pmd -d aliasing/Vanilla.java -f text -R category/java/errorprone.xml
@@ -39,8 +43,6 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 
 [aliasing/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java)
 
-**results:**
-
 ```
 $PMD_HOME/bin/run.sh pmd -d Interprocedural.java -f text -R category/java/errorprone.xml
 ```
@@ -64,8 +66,6 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 ### reflection
 
 [aliasing/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection.java)
-
-**results:**
 
 ```
 $PMD_HOME/bin/run.sh pmd -d NullReflection.java -f text -R category/java/errorprone.xml

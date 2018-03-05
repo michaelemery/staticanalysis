@@ -2,15 +2,22 @@
 
 Version: findbugs-3.0.1
 
-## Vanilla
+## results
+
+| Vanilla | Interprocedural | Reflection | InvokeDynamic | Proxy |
+| :---: | :---: | :---: | :---: | :---: |
+| [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) | - | - | - |
+
+### vanilla
 
 [aliasing/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java)
 
-**results:**
-
 ```
 $ findbugs aliasing/Vanilla.class 
+```
 
+#### output
+```
 H C NP: Null pointer dereference of Vanilla.s in aliasing.Vanilla.main(String[]) 
 Dereferenced at Vanilla.java:[line 30]
 
@@ -25,16 +32,16 @@ Warnings generated: 2
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-
-## interprocedural
+### interprocedural
 
 [aliasing/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java)
 
-**results:**
-
 ```
 $ findbugs aliasing/Interprocedural.class 
+```
 
+#### output
+```
 [NO ISSUES IDENTIFIED]
 ```
 
@@ -42,15 +49,16 @@ $ findbugs aliasing/Interprocedural.class
 | :---: | :---: | :---: |
 | 0 | 0 | 0 |
 
-## reflection
+### reflection
 
 [aliasing/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflection.java)
 
-**results:**
-
 ```
 $ findbugs aliasing/Reflection.class 
+```
 
+#### output
+```
 [NO ISSUES IDENTIFIED]
 ```
 
