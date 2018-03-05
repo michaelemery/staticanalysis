@@ -15,7 +15,8 @@ FindBugs correctly identified nulness issues at the intra-procedural (vanilla) l
 [nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
 
 ```
-findbugs nullness/Vanilla.class 
+javac nullness/Vanilla.java
+findbugs nullness/Vanilla.class
 ```
 
 #### output
@@ -34,6 +35,7 @@ Warnings generated: 1
 [nullness/Alias.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Alias.java)
 
 ```
+javac nullness/Alias.java
 findbugs nullness/Alias.class 
 ```
 
@@ -53,7 +55,8 @@ Warnings generated: 1
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
 ```
-findbugs nullness/InterProcedural.class 
+javac nullness/InterProcedural.java
+findbugs nullness/InterProcedural.class
 ```
 
 #### output
@@ -70,7 +73,8 @@ findbugs nullness/InterProcedural.class
 [nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
 ```
-findbugs nullness/Reflection.class 
+javac nullness/Reflection.java
+findbugs nullness/Reflection.class
 ```
 
 #### output
