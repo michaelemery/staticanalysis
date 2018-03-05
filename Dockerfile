@@ -66,7 +66,6 @@ WORKDIR /checker
 ADD /checker /checker
 
 
-# --- DISPLAY DOCKER INFO FILE
+# --- SET DIRECTORY TO /checker
 
 WORKDIR /checker
-RUN cat Docker_Info.txt

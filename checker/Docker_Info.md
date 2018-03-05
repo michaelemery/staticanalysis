@@ -1,22 +1,16 @@
-Welcome to Static Analysis
---------------------------
+# Static Analysis Docker Information
 
+## docker location
+michaelemery/staticanalysis
+
+## about
 This project is part of M.Sc(Computer Science) thesis for Michael Emery, Massey University (2018).
 
 All README.md files in this project are GitHub integrations. For usage help, please visit:
 https://github.com/michaelemery/staticanalysis
 
+## pmd
 All checkers except PMD only require source files, however PMD requires class files to work. You must therefore compile the source files before using PMD to check that program. 
 
-To edit files, run apt-get update, then install vim or nano;
-
-apt-get update
-
-followed by;
-
-apt-get install vim
-or
-apt-get install nano
-
-<<EOF>>
-
+## editing source files
+To edit files, run `apt-get update`, then install vim `apt-get install vim` or nano `apt-get install nano`.
