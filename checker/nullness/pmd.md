@@ -58,7 +58,7 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-## inter-procedural
+### inter-procedural
 
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
@@ -76,7 +76,7 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-## reflection
+### reflection
 
 [nullness/Reflection.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflection.java)
 
