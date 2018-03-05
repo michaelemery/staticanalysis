@@ -78,8 +78,8 @@ Dynamic programming languages are a class of high-level programming languages wh
 | feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |  |  |
-| Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
-| Reflect | - |  | - |  |  |
+| Interprocedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
+| Reflect | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#reflection) |  | - |  |  |
 | ReflectInterprocedural | - |  | - |  |  |
 | ReflectOverload | - |  | - |  |  |
 | InvokeDynamic | - |  | - |  |  |
