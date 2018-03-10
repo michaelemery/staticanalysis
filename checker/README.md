@@ -38,8 +38,8 @@ Dynamic programming languages are a class of high-level programming languages wh
 | Vanilla | No dynmaic features. Intraprocedural. |
 | Interprocedural | No dynmaic features. Test occurs across mutliple methods. |
 | IntraproceduralMethodInvocation | Method invoked *intraprocedurally* via reflection. |
-| InterproceduralMethodInvocation | Method invoked *interprocedurally* via reflection. |
 | IntraproceduralFieldAccess | Field accessed *intraprocedurally* via reflection. |
+| InterproceduralMethodInvocation | Method invoked *interprocedurally* via reflection. |
 | InterproceduralFieldAccess | Field accessed *interprocedurally* via reflection. |
 | InterproceduralMethodInvocationOverload | Overloaded method invoked *interprocedurally* via reflection. |
 | InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
@@ -70,8 +70,10 @@ Dynamic programming languages are a class of high-level programming languages wh
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla)  |  |  |
 | Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
 | IntraproceduralMethodInvocation | - |  | - |  |  |
+| IntraproceduralFieldAccess | - |  | - |  |  |
 | InterproceduralMethodInvocation | - |  | - |  |  |
-| ReflectOverload | - |  | - |  |  |
+| InterproceduralFieldAccess | - |  | - |  |  |
+| InterproceduralMethodInvocationOverload | - |  | - |  |  |
 | InvokeDynamic | - |  | - |  |  |
 | Proxy | - |  | - |  |  |
 
@@ -84,8 +86,11 @@ Dynamic programming languages are a class of high-level programming languages wh
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |  |  |
 | Interprocedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
 | IntraproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#reflection) |  | - |  |  |
+| IntraproceduralMethodInvocation | - |  | - |  |  |
+| IntraproceduralFieldAccess | - |  | - |  |  |
 | InterproceduralMethodInvocation | - |  | - |  |  |
-| ReflectOverload | - |  | - |  |  |
+| InterproceduralFieldAccess | - |  | - |  |  |
+| InterproceduralMethodInvocationOverload | - |  | - |  |  |
 | InvokeDynamic | - |  | - |  |  |
 | Proxy | - |  | - |  |  |
 
