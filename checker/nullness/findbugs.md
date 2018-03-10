@@ -11,8 +11,8 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) |
 | Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |
 | Reflect | - |
-| ReflectInterprocedural | - |
-| ReflectOverload | - |
+| InterproceduralMethodInvocation | - |
+| InterproceduralOverloadInvocation | - |
 | InvokeDynamic | - |
 | Proxy | - |
 
@@ -63,31 +63,62 @@ findbugs nullness/Interprocedural.class
 
 Tests are considered redundant when the results of previous tests at lower dynamic levels were unsound.
 
-### Reflect
+### IntraproceduralMethodInvocation
 
-[nullness/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflect.java)
-
-```
-javac nullness/Reflect.java
-findbugs nullness/Reflect.class
-```
-
-### ReflectInterprocedural
-
-[nullness/ReflectInterprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectInterprocedural.java)
+[nullness/IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodInvocation.java)
 
 ```
-javac nullness/ReflectInterprocedural.java
-findbugs nullness/ReflectInterprocedural.class
+javac nullness/IntraproceduralMethodInvocation.java
+findbugs nullness/IntraproceduralMethodInvocation.class
 ```
 
-### ReflectOverload
+### IntraproceduralFieldAccess
 
-[nullness/ReflectOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverload.java)
+[nullness/IntraproceduralFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralFieldAccess.java)
 
 ```
-javac nullness/ReflectOverload.java
-findbugs nullness/ReflectOverload.class
+javac nullness/IntraproceduralFieldAccess.java
+findbugs nullness/IntraproceduralFieldAccess.class
+```
+
+#### output
+
+```
+
+```
+
+
+### InterproceduralMethodInvocation
+
+[nullness/InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java)
+
+```
+javac nullness/InterproceduralMethodInvocation.java
+findbugs nullness/InterproceduralMethodInvocation.class
+```
+
+### InterproceduralFieldAccess
+
+[nullness/InterproceduralFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralFieldAccess.java)
+
+```
+javac nullness/InterproceduralFieldAccess.java
+findbugs nullness/InterproceduralFieldAccess.class
+```
+
+#### output
+
+```
+
+```
+
+### InterproceduralOverloadInvocation
+
+[nullness/InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java)
+
+```
+javac nullness/InterproceduralOverloadInvocation.java
+findbugs nullness/InterproceduralOverloadInvocation.class
 ```
 
 ### InvokeDynamic

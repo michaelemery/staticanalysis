@@ -66,28 +66,36 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Interprocedural.java -f text -R category/ja
 
 Tests are considered redundant when the results of previous tests at lower dynamic levels were unsound.
 
-### Reflect
+### IntraproceduralMethodInvocation
 
-[nullness/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Reflect.java)
-
-```
-$PMD_HOME/bin/run.sh pmd -d nullness/Reflect.java -f text -R category/java/errorprone.xml
-```
-
-### ReflectInterprocedural
-
-[nullness/ReflectInterprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectInterprocedural.java)
+[nullness/IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodInvocation.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/ReflectInterprocedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralMethodInvocation.java -f text -R category/java/errorprone.xml
 ```
 
-### ReflectOverload
+### IntraproceduralFieldAccess
 
-[nullness/ReflectOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverload.java)
+[nullness/IntraproceduralFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralFieldAccess.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/ReflectOverload.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralFieldAccess.java -f text -R category/java/errorprone.xml
+```
+
+### InterproceduralMethodInvocation
+
+[nullness/InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralMethodInvocation.java -f text -R category/java/errorprone.xml
+```
+
+### InterproceduralFieldAccess
+
+[nullness/InterproceduralFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralFieldAccess.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralFieldAccess.java -f text -R category/java/errorprone.xml
 ```
 
 ### InvokeDynamic
