@@ -41,7 +41,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | IntraproceduralReflectiveFieldAcces | Field accessed *intraprocedurally* via reflection. |
 | InterproceduralMethodInvocation | Method invoked *interprocedurally* via reflection. |
 | InterproceduralReflectiveFieldAcces | Field accessed *interprocedurally* via reflection. |
-| InterproceduralMethodInvocationOverload | Overloaded method invoked *interprocedurally* via reflection. |
+| InterproceduralOverloadInvocation | Overloaded method invoked *interprocedurally* via reflection. |
 | InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
 | Proxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 
@@ -57,7 +57,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | IntraproceduralReflectiveFieldAcces | - |  |  |  |  |
 | InterproceduralMethodInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |  |  |
 | InterproceduralReflectiveFieldAcces | - |  |  |  |  |
-| InterproceduralMethodInvocationOverload | - |  |  |  |  |
+| InterproceduralOverloadInvocation | - |  |  |  |  |
 | InvokeDynamic | - |  |  |  |  |
 | Proxy | - |  |  |  |  |
 
@@ -73,7 +73,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | IntraproceduralReflectiveFieldAcces | - |  | - |  |  |
 | InterproceduralMethodInvocation | - |  | - |  |  |
 | InterproceduralReflectiveFieldAcces | - |  | - |  |  |
-| InterproceduralMethodInvocationOverload | - |  | - |  |  |
+| InterproceduralOverloadInvocation | - |  | - |  |  |
 | InvokeDynamic | - |  | - |  |  |
 | Proxy | - |  | - |  |  |
 
@@ -90,7 +90,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | IntraproceduralReflectiveFieldAcces | - |  | - |  |  |
 | InterproceduralMethodInvocation | - |  | - |  |  |
 | InterproceduralReflectiveFieldAcces | - |  | - |  |  |
-| InterproceduralMethodInvocationOverload | - |  | - |  |  |
+| InterproceduralOverloadInvocation | - |  | - |  |  |
 | InvokeDynamic | - |  | - |  |  |
 | Proxy | - |  | - |  |  |
 

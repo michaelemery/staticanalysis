@@ -8,9 +8,9 @@ Test the effectiveness of static analysis tools in identifying potential causes 
 | --- | --- |
 | [Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java) | Intraprocedural assignment of a null reference. |
 | [Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java) | Interprocedural assignment of a null reference. |
-| [IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodInvocation.java) | Assignment of a null reference using Method invoked *intraprocedurally* via reflection. |
+| [IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java) | Assignment of a null reference using method invoked *intraprocedurally* via reflection. |
 | [IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java) | Assignment of a null reference to a field accessed *intraprocedurally* via reflection. |
-| [InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java) | Assignment of a null reference using Method invoked *interprocedurally* via reflection. |
+| [InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java) | Assignment of a null reference using method invoked *interprocedurally* via reflection. |
 | [InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java) | Assignment of a null reference to a field accessed *interprocedurally* via reflection. |
 | [InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java) | Assignment of a null reference to overloaded method invoked *interprocedurally* via reflection. |
 | [InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java) | Assignment of a null reference via dynamic invocation. |
@@ -26,13 +26,13 @@ Overall, Checker Framework is recommended as the most reliable tool for nullness
 
 | feature | [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#checker-framework) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#findbugs) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#pmd) |
 | --- | :---: |:---: |:---: |
-| Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#Vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#Vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#Vanilla) |
-| Interprocedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#Interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#Interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#Interprocedural) |
-| IntraproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraproceduralMethodInvocation) | - | - |
+| Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |
+| Interprocedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |
+| IntraproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation) | - | - |
 | IntraproceduralReflectiveFieldAccess |  |  |  |
-| InterproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterproceduralMethodInvocation) | - | - |
+| InterproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) | - | - |
 | InterproceduralReflectiveFieldAccess |  |  |  |
-| InterproceduralOverloadInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterproceduralOverloadInvocation) | - | - |
+| InterproceduralOverloadInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) | - | - |
 | InvokeDynamic |  | - | - |
 | Proxy |  | - | - |
 
