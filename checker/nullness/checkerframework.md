@@ -213,7 +213,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 
 ```
 
-### InterproceduralOverloadInvocation
+### InterproceduralMethodInvocation
 
 [nullness/InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java)
 
