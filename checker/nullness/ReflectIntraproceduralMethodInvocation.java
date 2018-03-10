@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 /**
  * Interprocedural assignment of a null reference via reflection. 
  */
-public class Reflect {
+public class ReflectIntraproceduralMethodInvocation {
 
     public static void main(String[] args) throws Exception {
 
@@ -13,12 +13,12 @@ public class Reflect {
         String s;
 
         // assignment to a non-null reference by reflection (correct)
-        m = nullness.Reflect.class.getDeclaredMethod("returnText");
+        m = nullness.ReflectIntraproceduralMethodInvocation.class.getDeclaredMethod("returnText");
         s = (String) m.invoke(null);
         System.out.println(s.toString());  // "text"
 
         // assignment to a null reference by reflection (fail)
-        m = nullness.Reflect.class.getDeclaredMethod("returnNull");
+        m = nullness.ReflectIntraproceduralMethodInvocation.class.getDeclaredMethod("returnNull");
         s = (String) m.invoke(null);
         System.out.println(s.toString());  // NullPointerException
 
