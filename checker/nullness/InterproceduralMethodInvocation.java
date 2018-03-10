@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 /**
  * Interprocedural assignment of a null reference via reflection.
  */
-public class ReflectInterprocedural {
+public class InterproceduralMethodInvocation {
 
     public static void main(String[] args) throws Exception {
 
@@ -22,7 +22,7 @@ public class ReflectInterprocedural {
     }
 
     public static String getStringFromMethod(String methodName) throws Exception {
-        Method m = ReflectInterprocedural.class.getDeclaredMethod(methodName);
+        Method m = InterproceduralMethodInvocation.class.getDeclaredMethod(methodName);
         String s = (String) m.invoke(null);
         return s;
     }
