@@ -3,7 +3,7 @@ package nullness;
 import java.lang.reflect.Method;
 
 /**
- * Interprocedural assignment of a null reference via reflection.
+ * Assignment of a null reference using method invoked *interprocedurally* via reflection. 
  */
 public class InterproceduralMethodInvocation {
 
