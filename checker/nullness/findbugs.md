@@ -10,11 +10,11 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | --- | :---: |
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) |
 | Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |
-| IntraproceduralMethodInvocation | [-](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralmethodinvocation) |
-| InterproceduralMethodInvocation | [-](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralmethodinvocation) |
-| InterproceduralOverloadInvocation | [-](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduraloverloadinvocation) |
+| IntraproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralmethodinvocation) |
+| InterproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralmethodinvocation) |
+| InterproceduralOverloadInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduraloverloadinvocation) |
 | IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralreflectivefieldaccess) |
-| InterproceduralReflectiveFieldAccess | [-](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralreflectivefieldaccess) |
+| InterproceduralReflectiveFieldAccess | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralreflectivefieldaccess) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#invokedynamic) |
 | Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#proxy) |
 > Select results for detail.
