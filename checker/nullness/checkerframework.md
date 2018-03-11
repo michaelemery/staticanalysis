@@ -40,10 +40,10 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) |
 | Interprocedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |
 | IntraproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation) |
-| IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |
 | InterproceduralMethodInvocation | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |
-| InterproceduralReflectiveFieldAccess | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralreflectivefieldaccess) |
 | InterproceduralOverloadInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |
+| IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |
+| InterproceduralReflectiveFieldAccess | [-](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralreflectivefieldaccess) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#invokedynamic) |
 | Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#proxy) |
 
@@ -132,29 +132,6 @@ error: [return.type.incompatible] incompatible types in return.
 | :---: | :---: | :---: |
 | 1 | 1 | 0 |
 
-### IntraproceduralReflectiveFieldAccess
-
-[nullness/IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java)
-
-```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraproceduralReflectiveFieldAccess.java
-```
-
-#### output
-
-```
-nullness/IntraproceduralReflectiveFieldAccess.java:8: 
-error: [initialization.fields.uninitialized] the constructor does not initialize fields: bar
-public class IntraproceduralReflectiveFieldAccess {
-       ^
-
-1 error
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 0 | 0 | 0 |
-
 ### InterproceduralMethodInvocation
 
 [nullness/InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java)
@@ -186,20 +163,6 @@ error: [return.type.incompatible] incompatible types in return.
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
-
-### InterproceduralReflectiveFieldAccess
-
-[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
-
-```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterproceduralReflectiveFieldAccess.java
-```
-
-#### output
-
-```
-
-```
 
 ### InterproceduralOverloadInvocation
 
@@ -235,9 +198,40 @@ nullness/InterproceduralOverloadInvocation.java:31: error: [return.type.incompat
 | :---: | :---: | :---: |
 | 1 | 1 | 0 |
 
+### IntraproceduralReflectiveFieldAccess
+
+[nullness/IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java)
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraproceduralReflectiveFieldAccess.java
+```
+
+#### output
+
+```
+nullness/IntraproceduralReflectiveFieldAccess.java:8: 
+error: [initialization.fields.uninitialized] the constructor does not initialize fields: bar
+public class IntraproceduralReflectiveFieldAccess {
+       ^
+
+1 error
+```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 0 |
+
 ## redundant tests
 
 Tests are considered redundant when the results of previous tests at lower dynamic levels were unsound.
+
+### InterproceduralReflectiveFieldAccess
+
+[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterproceduralReflectiveFieldAccess.java
+```
 
 ### InvokeDynamic
 

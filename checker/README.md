@@ -27,7 +27,7 @@ of each tool are compared in order to assess overall and relative effectiveness.
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/checker/init)| Objects accessed at runtime prior to being fully initialised will cause an error. |
 | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/checker/nullness)| Dereferenced expressions are a common cause a null pointer exceptions. |
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/checker/signedness)|Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
-| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint)  | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/checker/taint) | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
 
 > Select category links for results by category.
 
@@ -60,10 +60,10 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | Vanilla | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla)  |  |  |
 | Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |  |  |
 | IntraproceduralMethodInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation)  |  |  |
-| IntraproceduralReflectiveFieldAcces | - |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |  |  |
 | InterproceduralMethodInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |  |  |
-| InterproceduralReflectiveFieldAcces | - |  |  |  |  |
 | InterproceduralOverloadInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |  |  |
+| IntraproceduralReflectiveFieldAcces | - |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |  |  |
+| InterproceduralReflectiveFieldAcces | - |  | - |  |  |
 | InvokeDynamic | - |  |  |  |  |
 | Proxy | - |  |  |  |  |
 
@@ -76,10 +76,10 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla)  |  |  |
 | Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |  |  |
 | IntraproceduralMethodInvocation | - |  | - |  |  |
-| IntraproceduralReflectiveFieldAcces | - |  | - |  |  |
 | InterproceduralMethodInvocation | - |  | - |  |  |
-| InterproceduralReflectiveFieldAcces | - |  | - |  |  |
 | InterproceduralOverloadInvocation | - |  | - |  |  |
+| IntraproceduralReflectiveFieldAcces | - |  | - |  |  |
+| InterproceduralReflectiveFieldAcces | - |  | - |  |  |
 | InvokeDynamic | - |  | - |  |  |
 | Proxy | - |  | - |  |  |
 
@@ -93,10 +93,10 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | Interprocedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interprocedural) |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
 | IntraproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#reflection) |  | - |  |  |
 | IntraproceduralMethodInvocation | - |  | - |  |  |
-| IntraproceduralReflectiveFieldAcces | - |  | - |  |  |
 | InterproceduralMethodInvocation | - |  | - |  |  |
-| InterproceduralReflectiveFieldAcces | - |  | - |  |  |
 | InterproceduralOverloadInvocation | - |  | - |  |  |
+| IntraproceduralReflectiveFieldAcces | - |  | - |  |  |
+| InterproceduralReflectiveFieldAcces | - |  | - |  |  |
 | InvokeDynamic | - |  | - |  |  |
 | Proxy | - |  | - |  |  |
 
