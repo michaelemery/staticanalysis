@@ -59,11 +59,11 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | --- | :---: | :---: | :---: | :---: | :---: |
 | Vanilla | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla)  |  |  |
 | Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |  |  |
-| IntraproceduralMethodInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation)  |  |  |
-| InterproceduralMethodInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |  |  |
-| InterproceduralOverloadInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |  |  |
-| IntraproceduralReflectiveFieldAcces | - |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |  |  |
-| InterproceduralReflectiveFieldAcces | - |  | - |  |  |
+| IntraproceduralMethodInvocation |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation)  |  |  |
+| InterproceduralMethodInvocation |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |  |  |
+| InterproceduralOverloadInvocation |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |  |  |
+| IntraproceduralReflectiveFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |  |  |
+| InterproceduralReflectiveFieldAccess |  |  | - |  |  |
 | InvokeDynamic |  |  |  |  |  |
 | Proxy |  |  |  |  |  |
 
@@ -78,8 +78,8 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | IntraproceduralMethodInvocation |  |  | - |  |  |
 | InterproceduralMethodInvocation |  |  | - |  |  |
 | InterproceduralOverloadInvocation |  |  | - |  |  |
-| IntraproceduralReflectiveFieldAcces |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralreflectivefieldacces) |  |  |
-| InterproceduralReflectiveFieldAcces |   |  | - |  |  |
+| IntraproceduralReflectiveFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralreflectivefieldacces) |  |  |
+| InterproceduralReflectiveFieldAccess |   |  | - |  |  |
 | InvokeDynamic |  |  |  |  |  |
 | Proxy |  |  |  |  |  |
 
@@ -95,8 +95,8 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | IntraproceduralMethodInvocation |  |  | - |  |  |
 | InterproceduralMethodInvocation |  |  | - |  |  |
 | InterproceduralOverloadInvocation |  |  | - |  |  |
-| IntraproceduralReflectiveFieldAcces |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
-| InterproceduralReflectiveFieldAcces |  |  | - |  |  |
+| IntraproceduralReflectiveFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
+| InterproceduralReflectiveFieldAccess |  |  | - |  |  |
 | InvokeDynamic |  |  |  |  |  |
 | Proxy |  |  |  |  |  |
 
