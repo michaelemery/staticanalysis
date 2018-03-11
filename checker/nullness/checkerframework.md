@@ -149,7 +149,6 @@ public class IntraproceduralReflectiveFieldAccess {
        ^
 
 1 error
-
 ```
 
 | True Pos | False Pos | False Neg |
