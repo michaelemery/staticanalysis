@@ -221,6 +221,42 @@ public class IntraproceduralReflectiveFieldAccess {
 | :---: | :---: | :---: |
 | 0 | 0 | 0 |
 
+### InvokeDynamic
+
+[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InvokeDynamic.java
+```
+
+#### output
+
+```
+
+```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+|  |  |  |
+
+### Proxy
+
+[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java)
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Proxy.java
+```
+
+#### output
+
+```
+
+```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+|  |  |  |
+
 ## redundant tests
 
 Tests are considered redundant when prerequisite tests are unsound.
@@ -231,20 +267,4 @@ Tests are considered redundant when prerequisite tests are unsound.
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterproceduralReflectiveFieldAccess.java
-```
-
-### InvokeDynamic
-
-[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
-
-```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InvokeDynamic.java
-```
-
-### Proxy
-
-[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java)
-
-```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Proxy.java
 ```
