@@ -7,6 +7,7 @@ This project combines checking tools and dynamic language features in order asse
 ## test components
 
 ### tools
+
 Source code in the checker section will be analysed by multiple static analysis tools. The results 
 of each tool are compared in order to assess overall and relative effectiveness.
 
@@ -31,6 +32,7 @@ of each tool are compared in order to assess overall and relative effectiveness.
 > Select category links for results by category.
 
 ### dynamic language features
+
 Dynamic programming languages are a class of high-level programming languages which, at runtime, execute many common programming behaviors that static programming languages perform during compilation. These behaviors could include extension of the program, by adding new code, by extending objects and definitions, or by modifying the type system. 
 
 | feature | description |
@@ -44,6 +46,10 @@ Dynamic programming languages are a class of high-level programming languages wh
 | InterproceduralOverloadInvocation | Overloaded method invoked *interprocedurally* via reflection. |
 | InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
 | Proxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
+
+### reflection syntax
+
+TYhe first argument of java.lang.reflect.Method.invoke() is the object instance on which a particular method to be invoked. If the method is static, the first argument should be null. This *null* syntax is a common cause of false positives when testing for nullness, therefore instance variables are prefered where static variables may otherwise seem preferable. 
 
 ## results (by tool)
 

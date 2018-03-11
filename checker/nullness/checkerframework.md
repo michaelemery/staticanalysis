@@ -40,9 +40,9 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) |
 | Interprocedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |
 | IntraproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraproceduralMethodInvocation) |
-| IntraproceduralFieldAccess | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraproceduralFieldAccess) |
+| IntraproceduralReflectiveFieldAccess | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraproceduralReflectiveFieldAccess) |
 | InterproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterproceduralMethodInvocation) |
-| InterproceduralFieldAccess | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterproceduralFieldAccess) |
+| InterproceduralReflectiveFieldAccess | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterproceduralReflectiveFieldAccess) |
 | InterproceduralOverloadInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterproceduralOverloadInvocation) |
 | InvokeDynamic |  |
 | Proxy |  |
@@ -60,7 +60,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 #### output
 
 ```
-nullness/Vanilla.java:18: 
+nullness/Vanilla.java:17: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
@@ -83,7 +83,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 #### output
 
 ```
-nullness/Interprocedural.java:17: 
+nullness/Interprocedural.java:16: 
 error: [argument.type.incompatible] incompatible types in argument.
         s = returnReceivedString(null);
                                  ^
@@ -108,57 +108,53 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 #### output
 
 ```
-nullness/IntraproceduralMethodInvocation.java:17: 
-error: [argument.type.incompatible] incompatible types in argument.
-        s = (String) m.invoke(null);
-                              ^
-  found   : null
-  required: @Initialized @NonNull Object
-
 nullness/IntraproceduralMethodInvocation.java:18: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // "text"
                            ^
-
-nullness/IntraproceduralMethodInvocation.java:22: 
-error: [argument.type.incompatible] incompatible types in argument.
-        s = (String) m.invoke(null);
-                              ^
-  found   : null
-  required: @Initialized @NonNull Object
 
 nullness/IntraproceduralMethodInvocation.java:23: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
 
-nullness/IntraproceduralMethodInvocation.java:32: 
+nullness/IntraproceduralMethodInvocation.java:31: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
   found   : null
   required: @Initialized @NonNull String
 
-5 errors
+3 errors
 ```
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 1 | 3 | 0 |
+| 1 | 1 | 0 |
 
-### IntraproceduralFieldAccess
+### IntraproceduralReflectiveFieldAccess
 
-[nullness/IntraproceduralFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralFieldAccess.java)
+[nullness/IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraproceduralFieldAccess.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraproceduralReflectiveFieldAccess.java
 ```
 
 #### output
 
 ```
+nullness/IntraproceduralReflectiveFieldAccess.java:8: 
+error: [initialization.fields.uninitialized] the constructor does not initialize fields: bar
+public class IntraproceduralReflectiveFieldAccess {
+       ^
+
+1 error
 
 ```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 0 |
 
 ### InterproceduralMethodInvocation
 
@@ -172,39 +168,32 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 
 ```
 nullness/InterproceduralMethodInvocation.java:26: 
-error: [argument.type.incompatible] incompatible types in argument.
-        String s = (String) m.invoke(null);
-                                     ^
-  found   : null
-  required: @Initialized @NonNull Object
-
-nullness/InterproceduralMethodInvocation.java:27: 
 error: [return.type.incompatible] incompatible types in return.
         return s;
                ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
 
-nullness/InterproceduralMethodInvocation.java:35: 
+nullness/InterproceduralMethodInvocation.java:34: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
   found   : null
   required: @Initialized @NonNull String
 
-3 errors
+2 errors
 ```
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 1 | 2 | 0 |
+| 1 | 0 | 0 |
 
-### InterproceduralFieldAccess
+### InterproceduralReflectiveFieldAccess
 
-[nullness/InterproceduralFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralFieldAccess.java)
+[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterproceduralFieldAccess.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterproceduralReflectiveFieldAccess.java
 ```
 
 #### output
@@ -213,7 +202,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 
 ```
 
-### InterproceduralMethodInvocation
+### InterproceduralOverloadInvocation
 
 [nullness/InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java)
 
@@ -224,44 +213,28 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 #### output
 
 ````
-nullness/InterproceduralOverloadInvocation.java:17: 
-error: [argument.type.incompatible] incompatible types in argument.
-        s = (String) m.invoke(null, 42);
-                              ^
-  found   : null
-  required: @Initialized @NonNull Object
-
 nullness/InterproceduralOverloadInvocation.java:18: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // "text"
                            ^
-
-nullness/InterproceduralOverloadInvocation.java:22: 
-error: [argument.type.incompatible] incompatible types in argument.
-        s = (String) m.invoke(null, true);
-                              ^
-  found   : null
-  required: @Initialized @NonNull Object
 
 nullness/InterproceduralOverloadInvocation.java:23: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
 
-nullness/InterproceduralOverloadInvocation.java:32: 
-error: [return.type.incompatible] incompatible types in return.
+nullness/InterproceduralOverloadInvocation.java:31: error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
   found   : null
   required: @Initialized @NonNull String
 
-5 errors
+3 errors
 ````
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 1 | 3 | 0 |
-
+| 1 | 1 | 0 |
 
 ## redundant tests
 

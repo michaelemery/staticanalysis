@@ -8,22 +8,21 @@ import java.lang.reflect.Method;
 public class InterproceduralMethodInvocation {
 
     public static void main(String[] args) throws Exception {
-
         String s;
+        InterproceduralMethodInvocation foo = new InterproceduralMethodInvocation();
 
         // assignment to a non-null reference by reflection (correct)
-        s = getStringFromMethod("returnText");
+        s = foo.getStringFromMethod("returnText");
         System.out.println(s.toString());  // "text"
 
         // assignment to a null reference by reflection (fail)
-        s = getStringFromMethod("returnNull");
+        s = foo.getStringFromMethod("returnNull");
         System.out.println(s.toString());  // NullPointerException
-
     }
 
-    public static String getStringFromMethod(String methodName) throws Exception {
+    public String getStringFromMethod(String methodName) throws Exception {
         Method m = InterproceduralMethodInvocation.class.getDeclaredMethod(methodName);
-        String s = (String) m.invoke(null);
+        String s = (String) m.invoke(this);
         return s;
     }
 
@@ -34,5 +33,4 @@ public class InterproceduralMethodInvocation {
     public static String returnNull() {
         return null;
     }
-
 }

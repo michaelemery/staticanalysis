@@ -6,7 +6,6 @@ package nullness;
 public class Interprocedural {
 
     public static void main(String[] args) throws NullPointerException {
-
         String s;
 
         // interprocedural assignment of a non-null reference (correct)
@@ -22,5 +21,4 @@ public class Interprocedural {
     public static String returnReceivedString(String s) {
         return s;
     }
-
 }

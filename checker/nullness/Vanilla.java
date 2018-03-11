@@ -6,7 +6,6 @@ package nullness;
 public class Vanilla {
 
     public static void main(String[] args) throws NullPointerException {
-
         String s;
 
         // intraprocedural assignment of a non-null reference (correct)
@@ -16,7 +15,5 @@ public class Vanilla {
         // intraprocedural assignment of a null reference (fail)
         s = null;
         System.out.println(s.toString());  // NullPointerException
-
     }
-
 }

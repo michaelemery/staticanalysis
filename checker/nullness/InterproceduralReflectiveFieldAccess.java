@@ -10,5 +10,4 @@ public class InterproceduralReflectiveFieldAccess {
     public static void main(String[] args) throws Exception {
 
     }
-
 }
