@@ -60,7 +60,7 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | Vanilla | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#vanilla) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla)  |  |  |
 | Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#reflect) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |  |  |
 | IntraproceduralMethodInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation)  |  |  |
-| IntraproceduralReflectiveFieldAcces | - |  |  |  |  |
+| IntraproceduralReflectiveFieldAcces | - |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |  |  |
 | InterproceduralMethodInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |  |  |
 | InterproceduralReflectiveFieldAcces | - |  |  |  |  |
 | InterproceduralOverloadInvocation | - |  |  |  |  |
