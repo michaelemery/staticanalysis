@@ -17,11 +17,13 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | --- | :---: |
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |
 | Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |
-| Reflect | - |
-| ReflectInterprocedural | - |
-| ReflectOverload | - |
-| InvokeDynamic | - |
-| Proxy | - |
+| IntraproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralmethodinvocation) |
+| InterproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interproceduralmethodinvocation) |
+| InterproceduralOverloadInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interproceduraloverloadinvocation) |
+| IntraproceduralReflectiveFieldAccess | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralreflectivefieldaccess) |
+| InterproceduralReflectiveFieldAccess | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interproceduralreflectivefieldaccess) |
+| InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#invokedynamic) |
+| Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#proxy) |
 
 > Select results for detail.
 
@@ -36,8 +38,8 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Vanilla.java -f text -R category/java/error
 #### output
 
 ```
-nullness/Vanilla.java:17: 
-Assigning an Object to null is a code smell. Consider refactoring.
+nullness/Vanilla.java:16:   
+Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
 | True Pos | False Pos | False Neg |
@@ -62,9 +64,64 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Interprocedural.java -f text -R category/ja
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
+
+### IntraproceduralReflectiveFieldAccess
+
+[nullness/IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralReflectiveFieldAccess.java -f text -R category/java/errorprone.xml
+```
+
+#### output
+
+````
+nullness/IntraproceduralReflectiveFieldAccess.java:9:   Found non-transient, non-static member. Please mark as transient or provide accessors.
+````
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
+
+### InvokeDynamic
+
+[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamic.java -f text -R category/java/errorprone.xml
+```
+
+#### output
+
+````
+
+````
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| TBC | TBC | TBC |
+
+### Proxy
+
+[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/Proxy.java -f text -R category/java/errorprone.xml
+```
+
+#### output
+
+````
+
+````
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| TBC | TBC | TBC |
+
 ## redundant tests
 
-Tests are considered redundant when the results of previous tests at lower dynamic levels were unsound.
+Tests are considered redundant when prerequisite tests are unsound.
 
 ### IntraproceduralMethodInvocation
 
@@ -72,14 +129,6 @@ Tests are considered redundant when the results of previous tests at lower dynam
 
 ```
 $PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralMethodInvocation.java -f text -R category/java/errorprone.xml
-```
-
-### IntraproceduralFieldAccess
-
-[nullness/IntraproceduralFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralFieldAccess.java)
-
-```
-$PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralFieldAccess.java -f text -R category/java/errorprone.xml
 ```
 
 ### InterproceduralMethodInvocation
@@ -90,26 +139,26 @@ $PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralFieldAccess.java -f text -R 
 $PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralMethodInvocation.java -f text -R category/java/errorprone.xml
 ```
 
-### InterproceduralFieldAccess
+### InterproceduralOverloadInvocation
 
-[nullness/InterproceduralFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralFieldAccess.java)
-
-```
-$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralFieldAccess.java -f text -R category/java/errorprone.xml
-```
-
-### InvokeDynamic
-
-[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
+[nullness/InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamic.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralOverloadInvocation.java -f text -R category/java/errorprone.xml
 ```
 
-### Proxy
+### InterproceduralMethodInvocation
 
-[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java)
+[nullness/InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/Proxy.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralMethodInvocation.java -f text -R category/java/errorprone.xml
+```
+
+### InterproceduralReflectiveFieldAccess
+
+[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralReflectiveFieldAccess.java -f text -R category/java/errorprone.xml
 ```

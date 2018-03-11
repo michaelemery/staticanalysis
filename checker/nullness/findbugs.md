@@ -56,6 +56,10 @@ findbugs nullness/Interprocedural.class
 [NO ISSUES IDENTIFIED]
 ```
 
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
+
 ### IntraproceduralReflectiveFieldAccess
 
 [nullness/IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java)
@@ -80,7 +84,7 @@ Warnings generated: 2
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 0 | 0 | 0 |
+| 0 | 0 | 1 |
 
 ### InvokeDynamic
 
@@ -122,7 +126,7 @@ findbugs nullness/Proxy.class
 
 ## redundant tests
 
-Tests are considered redundant when the results of previous tests at lower dynamic levels were unsound.
+Tests are considered redundant when prerequisite tests are unsound.
 
 ### IntraproceduralMethodInvocation
 
