@@ -34,7 +34,7 @@ Overall, Checker Framework is recommended as the most reliable tool for nullness
 | InterproceduralOverloadInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) | - | - |
 | IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralreflectivefieldaccess) |  |
 | InterproceduralReflectiveFieldAccess | - | - |  |
-| InvokeDynamic |  | - | - |
-| Proxy |  | - | - |
+| InvokeDynamic |  |  |  |
+| Proxy |  |  |  |
 
 > Select individual results for detail.

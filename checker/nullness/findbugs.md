@@ -68,9 +68,12 @@ findbugs nullness/IntraproceduralReflectiveFieldAccess.class
 #### output
 
 ```
-M D UwF: Unwritten public or protected field: nullness.IntraproceduralReflectiveFieldAccess.bar  At IntraproceduralReflectiveFieldAccess.java:[line 18]
+M D UwF: Unwritten public or protected field: nullness.IntraproceduralReflectiveFieldAccess.bar
+At IntraproceduralReflectiveFieldAccess.java:[line 18]
 
-M D NP: Read of unwritten public or protected field bar in nullness.IntraproceduralReflectiveFieldAccess.main(String[])  At IntraproceduralReflectiveFieldAccess.java:[line 18]
+M D NP: Read of unwritten public or protected field bar in
+nullness.IntraproceduralReflectiveFieldAccess.main(String[])  
+At IntraproceduralReflectiveFieldAccess.java:[line 18]
 
 Warnings generated: 2
 ```
