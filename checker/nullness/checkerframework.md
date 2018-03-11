@@ -237,7 +237,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-|  |  |  |
+| TBC | TBC | TBC |
 
 ### Proxy
 
@@ -255,7 +255,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-|  |  |  |
+| TBC | TBC | TBC |
 
 ## redundant tests
 
