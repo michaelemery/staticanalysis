@@ -58,7 +58,7 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | Vanilla |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla)  |  |  |
-| Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#interprocedural) |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |  |  |
+| Interprocedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |  |  |
 | IntraproceduralMethodInvocation |  |  |  |
 | InterproceduralMethodInvocation |  |  |  |
 | InterproceduralOverloadInvocation |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |  |  |
