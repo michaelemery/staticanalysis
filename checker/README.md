@@ -63,7 +63,7 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | IntraproceduralReflectiveFieldAcces | - |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |  |  |
 | InterproceduralMethodInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |  |  |
 | InterproceduralReflectiveFieldAcces | - |  |  |  |  |
-| InterproceduralOverloadInvocation | - |  |  |  |  |
+| InterproceduralOverloadInvocation | - |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |  |  |
 | InvokeDynamic | - |  |  |  |  |
 | Proxy | - |  |  |  |  |
 
