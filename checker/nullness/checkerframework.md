@@ -223,7 +223,7 @@ public class IntraproceduralReflectiveFieldAccess {
 
 ## redundant tests
 
-Tests are considered redundant when pre-requisite tests are unsound.
+Tests are considered redundant when prerequisite tests are unsound.
 
 ### InterproceduralReflectiveFieldAccess
 
