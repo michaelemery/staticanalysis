@@ -221,7 +221,7 @@ class Message {
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| 0 | 0 | 0 |
+| 0 | 0 | 1 |
 
 ### IntraproceduralReflectiveFieldAccess
 
