@@ -51,7 +51,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 ### reflection syntax
 
-TYhe first argument of java.lang.reflect.Method.invoke() is the object instance on which a particular method to be invoked. If the method is static, the first argument should be null. This *null* syntax is a common cause of false positives when testing for nullness, therefore instance variables are prefered where static variables may otherwise seem preferable. 
+The first argument of java.lang.reflect.Method.invoke() is the object instance on which a particular method to be invoked. If the method is static, the first argument should be null. This *null* syntax is a common cause of false positives when testing for nullness, therefore instance variables are prefered where static variables may otherwise seem preferable. 
 
 ## results (by tool)
 
