@@ -19,12 +19,12 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | feature | result |
 | --- | :---: |
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#vanilla) |
-| Interprocedural | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interprocedural) |
-| IntraproceduralMethodInvocation | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralmethodinvocation) |
-| InterproceduralMethodInvocation | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interproceduralmethodinvocation) |
-| InterproceduralOverloadInvocation | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interproceduraloverloadinvocation) |
-| IntraproceduralMethodHandle | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralmethodhandle) |
-| IntraproceduralReflectiveFieldAccess | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralreflectivefieldaccess) |
+| Interprocedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interprocedural) |
+| IntraproceduralMethodInvocation | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralmethodinvocation) |
+| InterproceduralMethodInvocation | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interproceduralmethodinvocation) |
+| InterproceduralOverloadInvocation | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interproceduraloverloadinvocation) |
+| IntraproceduralMethodHandle | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralmethodhandle) |
+| IntraproceduralReflectiveFieldAccess | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralreflectivefieldaccess) |
 | InterproceduralReflectiveFieldAccess | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interproceduralreflectivefieldaccess) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#invokedynamic) |
 | Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#proxy) |
@@ -245,6 +245,20 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
+### InterproceduralReflectiveFieldAccess
+
+[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
+
+```
+infer run -a checkers --eradicate -- javac nullness/InterproceduralReflectiveFieldAccess.java
+```
+
+#### output
+
+```
+TBC
+```
+
 ### InvokeDynamic
 
 [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
@@ -285,10 +299,4 @@ TBC
 
 Tests are considered redundant when prerequisite tests are unsound.
 
-### InterproceduralReflectiveFieldAccess
-
-[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
-
-```
-infer run -a checkers --eradicate -- javac nullness/InterproceduralReflectiveFieldAccess.java
-```
+[No Redundant Tests]
