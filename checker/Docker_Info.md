@@ -1,16 +1,27 @@
 # Static Analysis Docker Information
 
-## docker location
-michaelemery/staticanalysis
+## michaelemery/staticanalysis
 
-## about
 This project is part of M.Sc(Computer Science) thesis for Michael Emery, Massey University (2018).
 
-All README.md files in this project are GitHub integrations. For usage help, please visit:
+## usage
+
+Docker will open in the /checker folder. Scripts to run tests are provided in the github repository, and can also be found in the .md files located in each checker type folder (e.g alias, init, nullness, signed, taint etc.). It is recommended that you use the GitHub web interface to access these files.
+
+### git repository
 https://github.com/michaelemery/staticanalysis
 
-## FindBugs
-All checkers except FindBugs only require source files, however FindBugs requires class files to work. You must therefore compile the source files before using FindBugs to check that program. 
+### download latest container build
 
-## editing source files
+`docker pull michaelemery/staticanalysis`
+
+### run container
+
+`docker run -it --rm michaelemery/staticanalysis`
+
+* i = interactive
+* t = terminal
+* rm = remove container on exit
+
+### editing source files
 To edit files, run `apt-get update`, then install vim `apt-get install vim` or nano `apt-get install nano`.
