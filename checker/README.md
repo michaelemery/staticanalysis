@@ -80,6 +80,7 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | IntraproceduralMethodInvocation |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralmethodinvocation) |  |  |
 | InterproceduralMethodInvocation |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralmethodinvocation) |  |  |
 | InterproceduralOverloadInvocation |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduraloverloadinvocation) |  |  |
+| IntraproceduralMethodHandle |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralmethodhandle) |  |  |
 | IntraproceduralReflectiveFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralreflectivefieldacces) |  |  |
 | InterproceduralReflectiveFieldAccess |   |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralreflectivefieldaccess) |  |  |
 | InvokeDynamic |  |  |  |  |  |
@@ -96,6 +97,7 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | IntraproceduralMethodInvocation |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#IntraproceduralMethodInvocation) |  |  |
 | InterproceduralMethodInvocation |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interproceduralmethodinvocation) |  |  |
 | InterproceduralOverloadInvocation |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interproceduraloverloadinvocation) |  |  |
+| IntraproceduralMethodHandle |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralmethodhandle) |  |  |
 | IntraproceduralReflectiveFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
 | InterproceduralReflectiveFieldAccess |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interproceduralreflectivefieldaccess) |  |  |
 | InvokeDynamic |  |  |  |  |  |
