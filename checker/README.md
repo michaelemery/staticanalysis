@@ -66,8 +66,8 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | IntraproceduralMethodHandle |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodhandle) |  |  |
 | IntraproceduralReflectiveFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |  |  |
 | InterproceduralReflectiveFieldAccess |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralreflectivefieldaccess) |  |  |
-| InvokeDynamic |  |  |  |  |  |
-| Proxy |  |  |  |  |  |
+| InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#invokedynamic) |  |  |
+| Proxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/checkerframework.md#proxy) |  |  |
 
 > Select individual results for detail.
 
@@ -83,8 +83,8 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | IntraproceduralMethodHandle |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralmethodhandle) |  |  |
 | IntraproceduralReflectiveFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralreflectivefieldacces) |  |  |
 | InterproceduralReflectiveFieldAccess |   |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralreflectivefieldaccess) |  |  |
-| InvokeDynamic |  |  |  |  |  |
-| Proxy |  |  |  |  |  |
+| InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#invokedynamic) |  |  |
+| Proxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/findbugs.md#proxy) |  |  |
 
 > Select individual results for detail.
 
@@ -100,7 +100,24 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | IntraproceduralMethodHandle |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralmethodhandle) |  |  |
 | IntraproceduralReflectiveFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |  |  |
 | InterproceduralReflectiveFieldAccess |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#interproceduralreflectivefieldaccess) |  |  |
-| InvokeDynamic |  |  |  |  |  |
-| Proxy |  |  |  |  |  |
+| InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#invokedynamic) |  |  |
+| Proxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/pmd.md#proxy) |  |  |
+
+> Select individual results for detail.
+
+### infer
+
+| feature | aliasing | init | nullness | signedness | taint |
+| --- | :---: | :---: | :---: | :---: | :---: |
+| Vanilla |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#vanilla) |  |  |
+| Interprocedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interprocedural) |  |  |
+| IntraproceduralMethodInvocation |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/infer.md#IntraproceduralMethodInvocation) |  |  |
+| InterproceduralMethodInvocation |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/infer.md#interproceduralmethodinvocation) |  |  |
+| InterproceduralOverloadInvocation |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/infer.md#interproceduraloverloadinvocation) |  |  |
+| IntraproceduralMethodHandle |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralmethodhandle) |  |  |
+| IntraproceduralReflectiveFieldAccess |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interprocedural) |  |  |
+| InterproceduralReflectiveFieldAccess |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/infer.md#interproceduralreflectivefieldaccess) |  |  |
+| InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/infer.md#invokedynamic) |  |  |
+| Proxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/infer.md#proxy) |  |  |
 
 > Select individual results for detail.
