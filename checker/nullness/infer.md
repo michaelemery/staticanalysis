@@ -259,6 +259,10 @@ infer run -a checkers --eradicate -- javac nullness/InterproceduralReflectiveFie
 TBC
 ```
 
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| TBC | TBC | TBC |
+
 ### InvokeDynamic
 
 [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
