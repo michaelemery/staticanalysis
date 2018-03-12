@@ -1,4 +1,4 @@
-# checker framework
+# infer
 
 Version: tbc
 
