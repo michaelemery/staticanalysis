@@ -199,7 +199,6 @@ nullness/InterproceduralOverloadInvocation.java:31: error: [return.type.incompat
 | :---: | :---: | :---: |
 | 1 | 1 | 0 |
 
-
 ### IntraproceduralMethodHandle
 
 [nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java)

@@ -61,7 +61,6 @@ findbugs nullness/Interprocedural.class
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-
 ### IntraproceduralMethodHandle
 
 [nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java)
