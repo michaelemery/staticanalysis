@@ -40,10 +40,11 @@ Dynamic programming languages are a class of high-level programming languages wh
 | Vanilla | No dynmaic features. Intraprocedural. |
 | Interprocedural | No dynmaic features. Test occurs across mutliple methods. |
 | IntraproceduralMethodInvocation | Method invoked *intraprocedurally* via reflection. |
-| IntraproceduralReflectiveFieldAcces | Field accessed *intraprocedurally* via reflection. |
 | InterproceduralMethodInvocation | Method invoked *interprocedurally* via reflection. |
-| InterproceduralReflectiveFieldAcces | Field accessed *interprocedurally* via reflection. |
 | InterproceduralOverloadInvocation | Overloaded method invoked *interprocedurally* via reflection. |
+| IntraprocdeduralMethodHandle | Method invoked *intraprocedurally* via MethodHandle. |
+| IntraproceduralReflectiveFieldAcces | Field accessed *intraprocedurally* via reflection. |
+| InterproceduralReflectiveFieldAcces | Field accessed *interprocedurally* via reflection. |
 | InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
 | Proxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 
@@ -62,6 +63,7 @@ TYhe first argument of java.lang.reflect.Method.invoke() is the object instance 
 | IntraproceduralMethodInvocation |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation) |  |  |
 | InterproceduralMethodInvocation |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |  |  |
 | InterproceduralOverloadInvocation |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |  |  |
+| [nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java) |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodhandle) |  |  |
 | IntraproceduralReflectiveFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |  |  |
 | InterproceduralReflectiveFieldAccess |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralreflectivefieldaccess) |  |  |
 | InvokeDynamic |  |  |  |  |  |

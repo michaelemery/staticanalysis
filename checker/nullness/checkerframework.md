@@ -42,6 +42,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | IntraproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation) |
 | InterproceduralMethodInvocation | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |
 | InterproceduralOverloadInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |
+| IntraproceduralMethodHandle | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodhandle) |
 | IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |
 | InterproceduralReflectiveFieldAccess | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralreflectivefieldaccess) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#invokedynamic) |
@@ -197,6 +198,30 @@ nullness/InterproceduralOverloadInvocation.java:31: error: [return.type.incompat
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
 | 1 | 1 | 0 |
+
+
+### IntraproceduralMethodHandle
+
+[nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java)
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraproceduralMethodHandle.java
+```
+
+#### output
+
+```
+nullness/IntraproceduralMethodHandle.java:4: 
+error: [initialization.fields.uninitialized] the constructor does not initialize fields: s
+class Message {
+^
+
+1 error
+```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 0 |
 
 ### IntraproceduralReflectiveFieldAccess
 
