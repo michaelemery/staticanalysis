@@ -20,13 +20,13 @@ Test the effectiveness of static analysis tools in identifying potential causes 
 
 ## results
 
-Checker Framework (CFW) is consistently sound and precise in non-reflective cases. However, it handles reflection in a very rudimentary way that causes excessive false positives. Checker Framework errs on the side of caution when encountering reflective code. 
+Checker Framework is consistently sound and precise in non-reflective cases. However, it handles reflection in a very rudimentary way that causes excessive false positives. Checker Framework errs on the side of caution when encountering reflective code. 
 
 Both FindBugs and PMD are less likely to generate FP results so are more precise than Checker Framework. However, their lack of caution in complex situations compromises soundness compared to Checker Framework.
 
-Overall, CFW is recommended as the most reliable tool for nullness testing given that the FP weakness in reflection is offset by the FN results of other tools that were less sound.
+Overall, Checker Framework is recommended as the most reliable tool for nullness testing given that the FP weakness in reflection is offset by the FN results of other tools that were less sound.
 
-| feature | [CFW](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#checker-framework) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#findbugs) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#pmd) |
+| feature | [Checker FW](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#checker-framework) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#findbugs) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#pmd) |
 | --- | :---: |:---: |:---: |
 | Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |
 | Interprocedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |
