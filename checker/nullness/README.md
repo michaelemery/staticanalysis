@@ -9,12 +9,12 @@ Test the effectiveness of static analysis tools in identifying potential causes 
 | --- | --- |
 | [Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java) | Intraprocedural assignment of a null reference. |
 | [Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java) | Interprocedural assignment of a null reference. |
-| [IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java) | Assignment of a null reference using method invoked *intraprocedurally* via reflection. |
-| [InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java) | Assignment of a null reference using method invoked *interprocedurally* via reflection. |
-| [InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java) | Assignment of a null reference to overloaded method invoked *interprocedurally* via reflection. |
-| [IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java) | Assignment of a null reference using method invoked *intraprocedurally* via MethodHandle. |
-| [IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java) | Assignment of a null reference to a field accessed *intraprocedurally* via reflection. |
-| [InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java) | Assignment of a null reference to a field accessed *interprocedurally* via reflection. |
+| [IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java) | Assign null reference using *intraprocedural*method invocation. |
+| [InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java) | Assign null reference using *interprocedural* method invocation. |
+| [InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java) | Assign null reference using *interprocedural* overload method invocation. |
+| [IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java) | Assign null reference using method invoked *intraprocedurally* via MethodHandle. |
+| [IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java) | Assign null reference using  *intraprocedural* reflective field access. |
+| [InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java) | Assign null reference using  *interprocedural* reflective field access. |
 | [InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java) | Assignment of a null reference via dynamic invocation. |
 | [Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java) | Assignment of a null reference via proxy. |
 

@@ -5,6 +5,9 @@ class Message {
     String s;
 }
 
+/**
+* Assignment of a null reference using method invoked *intraprocedurally* via MethodHandle.
+*/
 public class IntraproceduralMethodHandle {
 
     public static void main(String[] args) throws Throwable {
