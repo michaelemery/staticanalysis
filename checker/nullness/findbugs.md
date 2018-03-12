@@ -13,6 +13,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | IntraproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralmethodinvocation) |
 | InterproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralmethodinvocation) |
 | InterproceduralOverloadInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduraloverloadinvocation) |
+| IntraproceduralMethodHandle | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralmethodhandle) |
 | IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralreflectivefieldaccess) |
 | InterproceduralReflectiveFieldAccess | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralreflectivefieldaccess) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#invokedynamic) |
@@ -48,6 +49,26 @@ Warnings generated: 1
 ```
 javac nullness/Interprocedural.java
 findbugs nullness/Interprocedural.class
+```
+
+#### output
+
+```
+[NO ISSUES IDENTIFIED]
+```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
+
+
+### IntraproceduralMethodHandle
+
+[nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java)
+
+```
+javac nullness/IntraproceduralMethodHandle.java
+findbugs nullness/IntraproceduralMethodHandle.class nullness/Message.class
 ```
 
 #### output
@@ -98,7 +119,7 @@ findbugs nullness/InvokeDynamic.class
 #### output
 
 ```
-
+TBC
 ```
 
 | True Pos | False Pos | False Neg |
@@ -117,7 +138,7 @@ findbugs nullness/Proxy.class
 #### output
 
 ```
-
+TBC
 ```
 
 | True Pos | False Pos | False Neg |

@@ -20,6 +20,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | IntraproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralmethodinvocation) |
 | InterproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interproceduralmethodinvocation) |
 | InterproceduralOverloadInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interproceduraloverloadinvocation) |
+| IntraproceduralMethodHandle | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralmethodhandle) |
 | IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralreflectivefieldaccess) |
 | InterproceduralReflectiveFieldAccess | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interproceduralreflectivefieldaccess) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#invokedynamic) |
@@ -64,6 +65,23 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Interprocedural.java -f text -R category/ja
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
+### IntraproceduralMethodHandle
+
+[nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralMethodHandle.java -f text -R category/java/errorprone.xml
+```
+
+#### output
+
+```
+[NO ISSUES IDENTIFIED]
+```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
 
 ### IntraproceduralReflectiveFieldAccess
 
