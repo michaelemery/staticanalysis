@@ -1,6 +1,6 @@
 # infer
 
-Version: tbc
+Version: 0.13.1
 
 ## usage
 

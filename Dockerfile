@@ -24,6 +24,7 @@ ENV CHECKERFRAMEWORK_HOME /app/checkerframework/checker-framework-2.1.11
 # note that ${CHECKERFRAMEWORK_HOME} must come first
 ENV PATH ${CHECKERFRAMEWORK_HOME}/checker/bin:${PATH}
 
+
 # --- PMD SETUP
 
 # create directory
@@ -36,11 +37,6 @@ RUN unzip pmd-bin-6.1.0.zip
 
 # ccnfigure pmd home
 ENV PMD_HOME /app/pmd/pmd-bin-6.1.0
-
-# <<manually>> configure pmd alias and parameters
-# pmd='$PMD_HOME/bin/run.sh pmd'
-# RUN pmd -d <path/source_file> -f text -R category/java/errorprone.xml
-# (-d = source root, -R = ruleset, -f output format)
 
 
 # --- FINDBUGS SETUP
