@@ -13,19 +13,17 @@ public class IntraproceduralMethodHandle {
     public static void main(String[] args) throws Throwable {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodHandle mh;
+        
         Message message = new Message();
-        String s;
-
-        // set/get field with a non-null value (correct)
-        mh = lookup.findSetter(Message.class, "s", String.class);
-        mh.invoke(message, "text");
+        message.s = ""; // not null !
+        // get field with a non-null value (correct)
         mh = lookup.findGetter(Message.class, "s", String.class);
         s = (String) mh.invoke(message);
         System.out.println(s.toString());  // "text"
 
-        // set/get field with a null value (fail)
-        mh = lookup.findSetter(Message.class, "s", String.class);
-        mh.invoke(message, null);
+        // get field with a null value (fail)
+        
+        message.s = null; // null !
         mh = lookup.findGetter(Message.class, "s", String.class);
         s = (String) mh.invoke(message);
         System.out.println(s.toString());  // NullPointerException
