@@ -38,11 +38,11 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 | feature | description |
 | --- | --- |
-| Vanilla | No dynmaic features. Intraprocedural. |
-| Interprocedural | No dynmaic features. Test occurs across mutliple methods. |
-| IntraproceduralMethodInvocation | Method invoked *intraprocedurally* via reflection. |
-| InterproceduralMethodInvocation | Method invoked *interprocedurally* via reflection. |
-| InterproceduralOverloadInvocation | Overloaded method invoked *interprocedurally* via reflection. |
+| Vanilla | No dynamic features. Intraprocedural. |
+| Interprocedural | No dynamic features. USes interprocedural data flow. |
+| IntraproceduralMethodInvocation | Method invocation via reflection only using locally defined parameters. |
+| InterproceduralMethodInvocation | Method invocation via reflection using parameters defined in other methods. |
+| InterproceduralOverloadInvocation | Invocation of a overloaded method via reflection using parameters defined in other methods. |
 | IntraprocdeduralMethodHandle | Method invoked *intraprocedurally* via MethodHandle. |
 | IntraproceduralReflectiveFieldAccess | Field accessed *intraprocedurally* via reflection. |
 | InterproceduralReflectiveFieldAccess | Field accessed *interprocedurally* via reflection. |
