@@ -9,7 +9,7 @@ Test the effectiveness of static analysis tools in identifying potential causes 
 | --- | --- |
 | [Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java) | Intraprocedural assignment of a null reference. |
 | [Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java) | Interprocedural assignment of a null reference. |
-| [IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java) | Assign null reference using *intraprocedural*method invocation. |
+| [IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Intraprocedural.java) | Assign null reference using *intraprocedural*method invocation. |
 | [InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java) | Assign null reference using *interprocedural* method invocation. |
 | [InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java) | Assign null reference using *interprocedural* overload method invocation. |
 | [IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java) | Assign null reference using *intraprocedural* MethodHandle. |
