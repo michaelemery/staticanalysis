@@ -40,11 +40,11 @@ Dynamic programming languages are a class of high-level programming languages wh
 | --- | --- |
 | VanillaIntraProcedural | No dynamic features. Intraprocedural. |
 | VanillaInterProcedural | No dynamic features. Uses interprocedural data flow. |
-| ReflectMethodInvokeIntraProcedural | Method invocation via reflection only using locally defined parameters. |
+| ReflectMethodInvokeIntraProcedural | Method invocation via reflection using only locally defined parameters. |
 | ReflectMethodInvokeInterProcedural | Method invocation via reflection using parameters defined in other methods. |
 | ReflectOverloadInvokeInterProcedural | Overloaded method invocation via reflection using parameters defined in other methods. |
-| ReflectMethodHandleIntraProcedural | Method invocation via method handle only using locally defined parameters. |
-| ReflectFieldAccessIntraProcedural | Field access via reflection only using locally defined parameters. |
+| ReflectMethodHandleIntraProcedural | Method invocation via method handle using only locally defined parameters. |
+| ReflectFieldAccessIntraProcedural | Field access via reflection using only locally defined parameters. |
 | ReflectFieldAccessInterProcedural | Field access via reflection using parameters defined in other methods. |
 | InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
 | Proxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
