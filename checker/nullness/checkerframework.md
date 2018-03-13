@@ -37,31 +37,31 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 | feature | result |
 | --- | :---: |
-| Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanilla) |
-| Interprocedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interprocedural) |
-| IntraproceduralMethodInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation) |
-| InterproceduralMethodInvocation | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |
-| InterproceduralOverloadInvocation | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |
-| IntraproceduralMethodHandle | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodhandle) |
-| IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |
-| InterproceduralReflectiveFieldAccess | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralreflectivefieldaccess) |
+| VanillaIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanillaintraprocedural) |
+| VanillaInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanillainterprocedural) |
+| ReflectMethodInvokeIntraProcedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodinvocation) |
+| ReflectMethodInvokeInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralmethodinvocation) |
+| ReflectOverloadInvokeInterProcedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduraloverloadinvocation) |
+| ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralmethodhandle) |
+| ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#intraproceduralreflectivefieldaccess) |
+| ReflectFieldAccessInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#interproceduralreflectivefieldaccess) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#invokedynamic) |
 | Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#proxy) |
 
 > Select results for detail.
 
-### Vanilla
+### VanillaIntraProcedural
 
-[nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
+[nullness/VanillaIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaIntraProcedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Vanilla.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/VanillaIntraProcedural.java
 ```
 
 #### output
 
 ```
-nullness/Vanilla.java:17: 
+nullness/VanillaIntraProcedural.java:17: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
@@ -73,18 +73,18 @@ error: [dereference.of.nullable] dereference of possibly-null reference s
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### Interprocedural
+### VanillaInterProcedural
 
-[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
+[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaInterProcedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Interprocedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/VanillaInterProcedural.java
 ```
 
 #### output
 
 ```
-nullness/Interprocedural.java:16: 
+nullness/VanillaInterProcedural.java:16: 
 error: [argument.type.incompatible] incompatible types in argument.
         s = returnReceivedString(null);
                                  ^
@@ -98,28 +98,28 @@ error: [argument.type.incompatible] incompatible types in argument.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### IntraproceduralMethodInvocation
+### ReflectMethodInvokeIntraProcedural
 
-[nullness/IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodInvocation.java)
+[nullness/ReflectMethodInvokeIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeIntraProcedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraproceduralMethodInvocation.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectMethodInvokeIntraProcedural.java
 ```
 
 #### output
 
 ```
-nullness/IntraproceduralMethodInvocation.java:18: 
+nullness/ReflectMethodInvokeIntraProcedural.java:18: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // "text"
                            ^
 
-nullness/IntraproceduralMethodInvocation.java:23: 
+nullness/ReflectMethodInvokeIntraProcedural.java:23: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
 
-nullness/IntraproceduralMethodInvocation.java:31: 
+nullness/ReflectMethodInvokeIntraProcedural.java:31: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
@@ -133,25 +133,25 @@ error: [return.type.incompatible] incompatible types in return.
 | :---: | :---: | :---: |
 | 1 | 1 | 0 |
 
-### InterproceduralMethodInvocation
+### ReflectMethodInvokeInterProcedural
 
-[nullness/InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java)
+[nullness/ReflectMethodInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeInterProcedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterproceduralMethodInvocation.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectMethodInvokeInterProcedural.java
 ```
 
 #### output
 
 ```
-nullness/InterproceduralMethodInvocation.java:26: 
+nullness/ReflectMethodInvokeInterProcedural.java:26: 
 error: [return.type.incompatible] incompatible types in return.
         return s;
                ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
 
-nullness/InterproceduralMethodInvocation.java:34: 
+nullness/ReflectMethodInvokeInterProcedural.java:34: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
@@ -165,28 +165,28 @@ error: [return.type.incompatible] incompatible types in return.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### InterproceduralOverloadInvocation
+### ReflectOverloadInvokeInterProcedural
 
-[nullness/InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java)
+[nullness/ReflectOverloadInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvokeInterProcedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterproceduralOverloadInvocation.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectOverloadInvokeInterProcedural.java
 ```
 
 #### output
 
 ````
-nullness/InterproceduralOverloadInvocation.java:18: 
+nullness/ReflectOverloadInvokeInterProcedural.java:18: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // "text"
                            ^
 
-nullness/InterproceduralOverloadInvocation.java:23: 
+nullness/ReflectOverloadInvokeInterProcedural.java:23: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
 
-nullness/InterproceduralOverloadInvocation.java:31: error: [return.type.incompatible] incompatible types in return.
+nullness/ReflectOverloadInvokeInterProcedural.java:31: error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
   found   : null
@@ -199,44 +199,21 @@ nullness/InterproceduralOverloadInvocation.java:31: error: [return.type.incompat
 | :---: | :---: | :---: |
 | 1 | 1 | 0 |
 
-### IntraproceduralMethodHandle
+### ReflectFieldAccessIntraProcedural
 
-[nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java)
+[nullness/ReflectFieldAccessIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessIntraProcedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraproceduralMethodHandle.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectFieldAccessIntraProcedural.java
 ```
 
 #### output
 
 ```
-nullness/IntraproceduralMethodHandle.java:4: 
+nullness/ReflectFieldAccessIntraProcedural.java:4: 
 error: [initialization.fields.uninitialized] the constructor does not initialize fields: s
 class Message {
 ^
-
-1 error
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 0 | 0 | 1 |
-
-### IntraproceduralReflectiveFieldAccess
-
-[nullness/IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java)
-
-```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraproceduralReflectiveFieldAccess.java
-```
-
-#### output
-
-```
-nullness/IntraproceduralReflectiveFieldAccess.java:8: 
-error: [initialization.fields.uninitialized] the constructor does not initialize fields: bar
-public class IntraproceduralReflectiveFieldAccess {
-       ^
 
 1 error
 ```
@@ -285,10 +262,10 @@ TBC
 
 Tests are considered redundant when prerequisite tests are unsound.
 
-### InterproceduralReflectiveFieldAccess
+### ReflectFieldAccessInterProcedural
 
-[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
+[nullness/ReflectFieldAccessInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessInterProcedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterproceduralReflectiveFieldAccess.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectFieldAccessInterProcedural.java
 ```
