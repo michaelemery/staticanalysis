@@ -5,11 +5,11 @@ import java.lang.reflect.Field;
 /**
  * Assignment of a null reference to a field accessed *intraprocedurally* via reflection.
  */
-public class IntraproceduralReflectiveFieldAccess {
+public class ReflectFieldAccessIntraProcedural {
     public String bar;
 
     public static void main(String[] args) throws Exception {
-        IntraproceduralReflectiveFieldAccess foo = new IntraproceduralReflectiveFieldAccess();
+        ReflectFieldAccessIntraProcedural foo = new ReflectFieldAccessIntraProcedural();
         Class<?> c = foo.getClass();
         Field s = c.getDeclaredField("bar");
 

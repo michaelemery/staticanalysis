@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
  * TEMPLATE ONLY - THIS TEST IS NEVER REQUIRED !!!
  *
  */
-public class InterproceduralReflectiveFieldAccess {
+public class ReflectFieldAccessInterProcedural {
 
     public static void main(String[] args) throws Exception {
 

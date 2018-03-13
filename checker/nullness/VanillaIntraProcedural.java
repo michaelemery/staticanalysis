@@ -3,7 +3,7 @@ package nullness;
 /**
  * Intraprocedural assignment of a null reference.
  */
-public class Vanilla {
+public class VanillaIntraProcedural {
 
     public static void main(String[] args) throws NullPointerException {
         String s;
