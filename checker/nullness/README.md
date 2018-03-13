@@ -5,19 +5,6 @@ Nullness checking guarantees that a program will never throw a null pointer exce
 
 Test the effectiveness of static analysis tools in identifying potential causes of null-pointer exceptions.
 
-| source | description |
-| --- | --- |
-| [Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java) | Intraprocedural assignment of a null reference. |
-| [Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java) | Interprocedural assignment of a null reference. |
-| [IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodInvocation.java) | Assign null reference using *intraprocedural*method invocation. |
-| [InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java) | Assign null reference using *interprocedural* method invocation. |
-| [InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java) | Assign null reference using *interprocedural* overload method invocation. |
-| [IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java) | Assign null reference using *intraprocedural* MethodHandle. |
-| [IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java) | Assign null reference using  *intraprocedural* reflective field access. |
-| [InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java) | Assign null reference using  *interprocedural* reflective field access. |
-| [InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java) | Assignment of a null reference via dynamic invocation. |
-| [Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java) | Assignment of a null reference via proxy. |
-
 ## results
 
 Checker Framework is consistently sound and precise in non-reflective cases. However, it handles reflection in a very rudimentary way that causes excessive false positives. Checker Framework errs on the side of caution when encountering reflective code. 
