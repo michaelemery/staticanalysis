@@ -18,25 +18,25 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 | feature | result |
 | --- | :---: |
-| Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#vanilla) |
-| Interprocedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interprocedural) |
-| IntraproceduralMethodInvocation | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralmethodinvocation) |
-| InterproceduralMethodInvocation | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interproceduralmethodinvocation) |
-| InterproceduralOverloadInvocation | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interproceduraloverloadinvocation) |
-| IntraproceduralMethodHandle | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralmethodhandle) |
-| IntraproceduralReflectiveFieldAccess | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#intraproceduralreflectivefieldaccess) |
-| InterproceduralReflectiveFieldAccess | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#interproceduralreflectivefieldaccess) |
+| VanillaIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#vanillaintraprocedural) |
+| VanillaInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#vanillainterprocedural) |
+| ReflectMethodInvokeIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodinvokeintraprocedural) |
+| ReflectMethodInvokeInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodinvokeinterprocedural) |
+| ReflectOverloadInvokeInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectoverloadinvokeinterprocedural) |
+| ReflectMethodHandleIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandleintraprocedural) |
+| ReflectFieldAccessIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessintraprocedural) |
+| ReflectFieldAccessInterProcedural | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessinterprocedural) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#invokedynamic) |
 | Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#proxy) |
 
 > Select results for detail.
 
-### Vanilla
+### VanillaIntraProcedural
 
-[nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
+[nullness/VanillaIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaIntraProcedural.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/Vanilla.java
+infer run -a checkers --eradicate -- javac nullness/VanillaIntraProcedural.java
 ```
 
 #### output
@@ -44,7 +44,7 @@ infer run -a checkers --eradicate -- javac nullness/Vanilla.java
 ```
 Found 1 issue
 
-nullness/Vanilla.java:17: error: ERADICATE_NULL_METHOD_CALL
+nullness/VanillaIntraProcedural.java:17: error: ERADICATE_NULL_METHOD_CALL
   The value of `s` in the call to `toString()` could be null. (Origin: null constant at line 16)
   15.           // intraprocedural assignment of a null reference (fail)
   16.           s = null;
@@ -60,12 +60,12 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### Interprocedural
+### VanillaInterProcedural
 
-[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
+[nullness/VanillaInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaInterProcedural.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/Interprocedural.java
+infer run -a checkers --eradicate -- javac nullness/VanillaInterProcedural.java
 ```
 
 #### output
@@ -73,7 +73,7 @@ infer run -a checkers --eradicate -- javac nullness/Interprocedural.java
 ```
 Found 1 issue
 
-nullness/Interprocedural.java:16: error: ERADICATE_PARAMETER_NOT_NULLABLE
+nullness/VanillaInterProcedural.java:16: error: ERADICATE_PARAMETER_NOT_NULLABLE
   `returnReceivedString(...)` needs a non-null value in parameter 1 but argument `null` can be 
   null. (Origin: null constant at line 16)
   14.   
@@ -91,12 +91,12 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### IntraproceduralMethodInvocation
+### ReflectMethodInvokeIntraProcedural
 
-[nullness/IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodInvocation.java)
+[nullness/ReflectMethodInvokeIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeIntraProcedural.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/IntraproceduralMethodInvocation.java
+infer run -a checkers --eradicate -- javac nullness/ReflectMethodInvokeIntraProcedural.java
 ```
 
 #### output
@@ -104,7 +104,7 @@ infer run -a checkers --eradicate -- javac nullness/IntraproceduralMethodInvocat
 ```
 Found 1 issue
 
-nullness/IntraproceduralMethodInvocation.java:30: error: ERADICATE_RETURN_NOT_NULLABLE
+nullness/ReflectMethodInvokeIntraProcedural.java:30: error: ERADICATE_RETURN_NOT_NULLABLE
   Method `returnNull()` may return null but it is not annotated with `@Nullable`. 
   (Origin: null constant at line 31)
   28.       }
@@ -122,21 +122,21 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### InterproceduralMethodInvocation
+### ReflectMethodInvokeInterProcedural
 
-[nullness/InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java)
+[nullness/ReflectMethodInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeInterProcedural.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/InterproceduralMethodInvocation.java
+infer run -a checkers --eradicate -- javac nullness/ReflectMethodInvokeInterProcedural.java
 ```
 
 #### output
 
 ```
-nullness/InterproceduralMethodInvocation.java:26: 
+nullness/ReflectMethodInvokeInterProcedural.java:26: 
 Found 1 issue
 
-nullness/InterproceduralMethodInvocation.java:33: error: ERADICATE_RETURN_NOT_NULLABLE
+nullness/ReflectMethodInvokeInterProcedural.java:33: error: ERADICATE_RETURN_NOT_NULLABLE
   Method `returnNull()` may return null but it is not annotated with `@Nullable`. 
   (Origin: null constant at line 34)
   31.       }
@@ -154,12 +154,12 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### InterproceduralOverloadInvocation
+### ReflectOverloadInvokeInterProcedural
 
-[nullness/InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java)
+[nullness/ReflectOverloadInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvokeInterProcedural.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/InterproceduralOverloadInvocation.java
+infer run -a checkers --eradicate -- javac nullness/ReflectOverloadInvokeInterProcedural.java
 ```
 
 #### output
@@ -167,7 +167,7 @@ infer run -a checkers --eradicate -- javac nullness/InterproceduralOverloadInvoc
 ````
 Found 1 issue
 
-nullness/InterproceduralOverloadInvocation.java:30: error: ERADICATE_RETURN_NOT_NULLABLE
+nullness/ReflectOverloadInvokeInterProcedural.java:30: error: ERADICATE_RETURN_NOT_NULLABLE
   Method `returnText(...)` may return null but it is not annotated with `@Nullable`. (Origin: null constant at line 31)
   28.       }
   29.   
@@ -184,12 +184,12 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### IntraproceduralMethodHandle
+### ReflectMethodHandleIntraProcedural
 
-[nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java)
+[nullness/ReflectMethodHandleIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodHandleIntraProcedural.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/IntraproceduralMethodHandle.java
+infer run -a checkers --eradicate -- javac nullness/ReflectMethodHandleIntraProcedural.java
 ```
 
 #### output
@@ -197,7 +197,7 @@ infer run -a checkers --eradicate -- javac nullness/IntraproceduralMethodHandle.
 ```
 Found 1 issue
 
-nullness/IntraproceduralMethodHandle.java:4: error: ERADICATE_FIELD_NOT_INITIALIZED
+nullness/ReflectMethodHandleIntraProcedural.java:4: error: ERADICATE_FIELD_NOT_INITIALIZED
   Field `Message.s` is not initialized in the constructor and is not declared `@Nullable`
   2.   import java.lang.invoke.MethodHandles;
   3.   
@@ -214,12 +214,12 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### IntraproceduralReflectiveFieldAccess
+### ReflectFieldAccessIntraProcedural
 
-[nullness/IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java)
+[nullness/ReflectFieldAccessIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessIntraProcedural.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/IntraproceduralReflectiveFieldAccess.java
+infer run -a checkers --eradicate -- javac nullness/ReflectFieldAccessIntraProcedural.java
 ```
 
 #### output
@@ -227,12 +227,12 @@ infer run -a checkers --eradicate -- javac nullness/IntraproceduralReflectiveFie
 ```
 Found 1 issue
 
-nullness/IntraproceduralReflectiveFieldAccess.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `IntraproceduralReflectiveFieldAccess.bar` is not initialized in the constructor and is 
+nullness/ReflectFieldAccessIntraProcedural.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
+  Field `ReflectFieldAccessIntraProcedural.bar` is not initialized in the constructor and is 
   not declared `@Nullable`
   6.    * Assignment of a null reference to a field accessed *intraprocedurally* via reflection.
   7.    */
-  8. > public class IntraproceduralReflectiveFieldAccess {
+  8. > public class ReflectFieldAccessIntraProcedural {
   9.       public String bar;
   10.   
 
@@ -245,12 +245,12 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### InterproceduralReflectiveFieldAccess
+### ReflectFieldAccessInterProcedural
 
-[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
+[nullness/ReflectFieldAccessInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessInterProcedural.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/InterproceduralReflectiveFieldAccess.java
+infer run -a checkers --eradicate -- javac nullness/ReflectFieldAccessInterProcedural.java
 ```
 
 #### output

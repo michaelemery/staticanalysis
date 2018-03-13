@@ -15,31 +15,31 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 | feature | result |
 | --- | :---: |
-| Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanilla) |
-| Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interprocedural) |
-| IntraproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralmethodinvocation) |
-| InterproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interproceduralmethodinvocation) |
-| InterproceduralOverloadInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interproceduraloverloadinvocation) |
-| IntraproceduralMethodHandle | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralmethodhandle) |
-| IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#intraproceduralreflectivefieldaccess) |
-| InterproceduralReflectiveFieldAccess | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#interproceduralreflectivefieldaccess) |
+| VanillaIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanillaintraprocedural) |
+| VanillaInterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanillainterprocedural) |
+| ReflectMethodInvokeIntraProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectmethodinvokeintraprocedural) |
+| ReflectMethodInvokeInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectmethodinvokeinterprocedural) |
+| ReflectOverloadInvokeInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectoverloadinvokeinterprocedural) |
+| ReflectMethodHandleIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectmethodhandleintraprocedural) |
+| ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessintraprocedural) |
+| ReflectFieldAccessInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessinterprocedural) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#invokedynamic) |
 | Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#proxy) |
 
 > Select results for detail.
 
-### Vanilla
+### VanillaIntraProcedural
 
-[nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
+[nullness/VanillaIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaIntraProcedural.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/Vanilla.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/VanillaIntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-nullness/Vanilla.java:16:   
+nullness/VanillaIntraProcedural.java:16:   
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
@@ -47,30 +47,12 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### Interprocedural
+### VanillaInterProcedural
 
-[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
-
-```
-$PMD_HOME/bin/run.sh pmd -d nullness/Interprocedural.java -f text -R category/java/errorprone.xml
-```
-
-#### output
+[nullness/VanillaInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaInterProcedural.java)
 
 ```
-[NO ISSUES IDENTIFIED]
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 0 | 0 | 1 |
-
-### IntraproceduralMethodHandle
-
-[nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java)
-
-```
-$PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralMethodHandle.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/VanillaInterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -83,18 +65,36 @@ $PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralMethodHandle.java -f text -R
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-### IntraproceduralReflectiveFieldAccess
+### ReflectMethodHandleIntraProcedural
 
-[nullness/IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java)
+[nullness/ReflectMethodHandleIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodHandleIntraProcedural.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralReflectiveFieldAccess.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectMethodHandleIntraProcedural.java -f text -R category/java/errorprone.xml
+```
+
+#### output
+
+```
+[NO ISSUES IDENTIFIED]
+```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
+
+### ReflectFieldAccessIntraProcedural
+
+[nullness/ReflectFieldAccessIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessIntraProcedural.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectFieldAccessIntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ````
-nullness/IntraproceduralReflectiveFieldAccess.java:9:   
+nullness/ReflectFieldAccessIntraProcedural.java:9:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 ````
 
@@ -142,42 +142,42 @@ $PMD_HOME/bin/run.sh pmd -d nullness/Proxy.java -f text -R category/java/errorpr
 
 Tests are considered redundant when prerequisite tests are unsound.
 
-### IntraproceduralMethodInvocation
+### ReflectMethodInvokeIntraProcedural
 
-[nullness/IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodInvocation.java)
-
-```
-$PMD_HOME/bin/run.sh pmd -d nullness/IntraproceduralMethodInvocation.java -f text -R category/java/errorprone.xml
-```
-
-### InterproceduralMethodInvocation
-
-[nullness/InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java)
+[nullness/ReflectMethodInvokeIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeIntraProcedural.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralMethodInvocation.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectMethodInvokeIntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
-### InterproceduralOverloadInvocation
+### ReflectMethodInvokeInterProcedural
 
-[nullness/InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java)
-
-```
-$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralOverloadInvocation.java -f text -R category/java/errorprone.xml
-```
-
-### InterproceduralMethodInvocation
-
-[nullness/InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java)
+[nullness/ReflectMethodInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeInterProcedural.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralMethodInvocation.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectMethodInvokeInterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
-### InterproceduralReflectiveFieldAccess
+### ReflectOverloadInvokeInterProcedural
 
-[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
+[nullness/ReflectOverloadInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvokeInterProcedural.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/InterproceduralReflectiveFieldAccess.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectOverloadInvokeInterProcedural.java -f text -R category/java/errorprone.xml
+```
+
+### ReflectMethodInvokeInterProcedural
+
+[nullness/ReflectMethodInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeInterProcedural.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectMethodInvokeInterProcedural.java -f text -R category/java/errorprone.xml
+```
+
+### ReflectFieldAccessInterProcedural
+
+[nullness/ReflectFieldAccessInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessInterProcedural.java)
+
+```
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectFieldAccessInterProcedural.java -f text -R category/java/errorprone.xml
 ```

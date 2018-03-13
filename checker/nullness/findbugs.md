@@ -8,32 +8,32 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 | feature | result |
 | --- | :---: |
-| Vanilla | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanilla) |
-| Interprocedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interprocedural) |
-| IntraproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralmethodinvocation) |
-| InterproceduralMethodInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralmethodinvocation) |
-| InterproceduralOverloadInvocation | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduraloverloadinvocation) |
-| IntraproceduralMethodHandle | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralmethodhandle) |
-| IntraproceduralReflectiveFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#intraproceduralreflectivefieldaccess) |
-| InterproceduralReflectiveFieldAccess | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#interproceduralreflectivefieldaccess) |
+| VanillaIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanillaintraprocedural) |
+| VanillaInterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanillainterprocedural) |
+| ReflectMethodInvokeIntraProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvokeintraprocedural) |
+| ReflectMethodInvokeInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvokeinterprocedural) |
+| ReflectOverloadInvokeInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectoverloadinvokeinterprocedural) |
+| ReflectMethodHandleIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodhandleintraprocedural) |
+| ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessintraprocedural) |
+| ReflectFieldAccessInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessinterprocedural) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#invokedynamic) |
 | Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#proxy) |
 > Select results for detail.
 
-### Vanilla
+### VanillaIntraProcedural
 
-[nullness/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Vanilla.java)
+[nullness/VanillaIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaIntraProcedural.java)
 
 ```
-javac nullness/Vanilla.java
-findbugs nullness/Vanilla.class
+javac nullness/VanillaIntraProcedural.java
+findbugs nullness/VanillaIntraProcedural.class
 ```
 
 #### output
 
 ```
-H C NP: Null pointer dereference of ? in nullness.Vanilla.main(String[])  
-Dereferenced at Vanilla.java:[line 17]
+H C NP: Null pointer dereference of ? in nullness.VanillaIntraProcedural.main(String[])  
+Dereferenced at VanillaIntraProcedural.java:[line 17]
 
 Warnings generated: 1
 ```
@@ -42,32 +42,13 @@ Warnings generated: 1
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### Interprocedural
+### VanillaInterProcedural
 
-[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Interprocedural.java)
-
-```
-javac nullness/Interprocedural.java
-findbugs nullness/Interprocedural.class
-```
-
-#### output
+[nullness/VanillaInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaInterProcedural.java)
 
 ```
-[NO ISSUES IDENTIFIED]
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 0 | 0 | 1 |
-
-### IntraproceduralMethodHandle
-
-[nullness/IntraproceduralMethodHandle.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodHandle.java)
-
-```
-javac nullness/IntraproceduralMethodHandle.java
-findbugs nullness/IntraproceduralMethodHandle.class nullness/Message.class
+javac nullness/VanillaInterProcedural.java
+findbugs nullness/VanillaInterProcedural.class
 ```
 
 #### output
@@ -80,24 +61,43 @@ findbugs nullness/IntraproceduralMethodHandle.class nullness/Message.class
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-### IntraproceduralReflectiveFieldAccess
+### ReflectMethodHandleIntraProcedural
 
-[nullness/IntraproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralReflectiveFieldAccess.java)
+[nullness/ReflectMethodHandleIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodHandleIntraProcedural.java)
 
 ```
-javac nullness/IntraproceduralReflectiveFieldAccess.java
-findbugs nullness/IntraproceduralReflectiveFieldAccess.class
+javac nullness/ReflectMethodHandleIntraProcedural.java
+findbugs nullness/ReflectMethodHandleIntraProcedural.class nullness/Message.class
 ```
 
 #### output
 
 ```
-M D UwF: Unwritten public or protected field: nullness.IntraproceduralReflectiveFieldAccess.bar
-At IntraproceduralReflectiveFieldAccess.java:[line 18]
+[NO ISSUES IDENTIFIED]
+```
+
+| True Pos | False Pos | False Neg |
+| :---: | :---: | :---: |
+| 0 | 0 | 1 |
+
+### ReflectFieldAccessIntraProcedural
+
+[nullness/ReflectFieldAccessIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessIntraProcedural.java)
+
+```
+javac nullness/ReflectFieldAccessIntraProcedural.java
+findbugs nullness/ReflectFieldAccessIntraProcedural.class
+```
+
+#### output
+
+```
+M D UwF: Unwritten public or protected field: nullness.ReflectFieldAccessIntraProcedural.bar
+At ReflectFieldAccessIntraProcedural.java:[line 18]
 
 M D NP: Read of unwritten public or protected field bar in
-nullness.IntraproceduralReflectiveFieldAccess.main(String[])  
-At IntraproceduralReflectiveFieldAccess.java:[line 18]
+nullness.ReflectFieldAccessIntraProcedural.main(String[])  
+At ReflectFieldAccessIntraProcedural.java:[line 18]
 
 Warnings generated: 2
 ```
@@ -148,38 +148,38 @@ TBC
 
 Tests are considered redundant when prerequisite tests are unsound.
 
-### IntraproceduralMethodInvocation
+### ReflectMethodInvokeIntraProcedural
 
-[nullness/IntraproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraproceduralMethodInvocation.java)
-
-```
-javac nullness/IntraproceduralMethodInvocation.java
-findbugs nullness/IntraproceduralMethodInvocation.class
-```
-
-### InterproceduralMethodInvocation
-
-[nullness/InterproceduralMethodInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralMethodInvocation.java)
+[nullness/ReflectMethodInvokeIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeIntraProcedural.java)
 
 ```
-javac nullness/InterproceduralMethodInvocation.java
-findbugs nullness/InterproceduralMethodInvocation.class
+javac nullness/ReflectMethodInvokeIntraProcedural.java
+findbugs nullness/ReflectMethodInvokeIntraProcedural.class
 ```
 
-### InterproceduralOverloadInvocation
+### ReflectMethodInvokeInterProcedural
 
-[nullness/InterproceduralOverloadInvocation.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralOverloadInvocation.java)
-
-```
-javac nullness/InterproceduralOverloadInvocation.java
-findbugs nullness/InterproceduralOverloadInvocation.class
-```
-
-### InterproceduralReflectiveFieldAccess
-
-[nullness/InterproceduralReflectiveFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterproceduralReflectiveFieldAccess.java)
+[nullness/ReflectMethodInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeInterProcedural.java)
 
 ```
-javac nullness/InterproceduralReflectiveFieldAccess.java
-findbugs nullness/InterproceduralReflectiveFieldAccess.class
+javac nullness/ReflectMethodInvokeInterProcedural.java
+findbugs nullness/ReflectMethodInvokeInterProcedural.class
+```
+
+### ReflectOverloadInvokeInterProcedural
+
+[nullness/ReflectOverloadInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvokeInterProcedural.java)
+
+```
+javac nullness/ReflectOverloadInvokeInterProcedural.java
+findbugs nullness/ReflectOverloadInvokeInterProcedural.class
+```
+
+### ReflectFieldAccessInterProcedural
+
+[nullness/ReflectFieldAccessInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessInterProcedural.java)
+
+```
+javac nullness/ReflectFieldAccessInterProcedural.java
+findbugs nullness/ReflectFieldAccessInterProcedural.class
 ```
