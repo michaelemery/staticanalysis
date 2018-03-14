@@ -1,6 +1,6 @@
 # pmd
 
-Version: pmd-bin-6.0.1
+Version: pmd-bin-6.1.0
 
 ## usage
 
