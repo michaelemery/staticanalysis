@@ -13,6 +13,7 @@ public class MethodHandleIntraProcedural {
     public static void main(String[] args) throws Throwable {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodHandle mh;
+        String s;
         
         Message message = new Message();
         message.s = ""; // not null !
