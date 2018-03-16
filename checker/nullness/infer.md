@@ -42,17 +42,26 @@ infer run -a checkers --eradicate -- javac nullness/VanillaIntraProcedural.java
 #### output
 
 ```
-Found 1 issue
+Found 2 issues
 
 nullness/VanillaIntraProcedural.java:17: error: ERADICATE_NULL_METHOD_CALL
-  The value of `s` in the call to `toString()` could be null. (Origin: null constant at line 16)
+  The value of `s` in the call to `toString()` could be null. (Origin: null constant at line 16).
   15.           // intraprocedural assignment of a null reference (fail)
   16.           s = null;
   17. >         System.out.println(s.toString());  // NullPointerException
   18.       }
 
+nullness/VanillaIntraProcedural.java:17: error: NULL_DEREFERENCE
+  object `s` last assigned on line 16 could be null and is dereferenced at line 17.
+  15.           // intraprocedural assignment of a null reference (fail)
+  16.           s = null;
+  17. >         System.out.println(s.toString());  // NullPointerException
+  18.       }
+
+
 Summary of the reports
 
+            NULL_DEREFERENCE: 1
   ERADICATE_NULL_METHOD_CALL: 1
 ```
 
@@ -71,20 +80,29 @@ infer run -a checkers --eradicate -- javac nullness/VanillaInterProcedural.java
 #### output
 
 ```
-Found 1 issue
+Found 2 issues
 
 nullness/VanillaInterProcedural.java:16: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `returnReceivedString(...)` needs a non-null value in parameter 1 but argument `null` can be 
-  null. (Origin: null constant at line 16)
+  `returnReceivedString(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 16).
   14.   
   15.           // interprocedural assignment of a null reference (fail)
   16. >         s = returnReceivedString(null);
   17.           System.out.println(s.toString());  // NullPointerException
   18.   
 
+nullness/VanillaInterProcedural.java:17: error: NULL_DEREFERENCE
+  object `s` last assigned on line 16 could be null and is dereferenced at line 17.
+  15.           // interprocedural assignment of a null reference (fail)
+  16.           s = returnReceivedString(null);
+  17. >         System.out.println(s.toString());  // NullPointerException
+  18.   
+  19.       }
+
+
 Summary of the reports
 
   ERADICATE_PARAMETER_NOT_NULLABLE: 1
+                  NULL_DEREFERENCE: 1
 ```
 
 | True Pos | False Pos | False Neg |
@@ -112,6 +130,7 @@ nullness/ReflectMethodInvokeIntraProcedural.java:30: error: ERADICATE_RETURN_NOT
   30. >     public static String returnNull() {
   31.           return null;
   32.       }
+
 
 Summary of the reports
 
@@ -145,6 +164,7 @@ nullness/ReflectMethodInvokeInterProcedural.java:33: error: ERADICATE_RETURN_NOT
   34.           return null;
   35.       }
 
+
 Summary of the reports
 
   ERADICATE_RETURN_NOT_NULLABLE: 1
@@ -175,6 +195,7 @@ nullness/ReflectOverloadInvokeInterProcedural.java:30: error: ERADICATE_RETURN_N
   31.           return null;
   32.       }
 
+
 Summary of the reports
 
   ERADICATE_RETURN_NOT_NULLABLE: 1
@@ -195,18 +216,28 @@ infer run -a checkers --eradicate -- javac nullness/ReflectMethodHandleIntraProc
 #### output
 
 ```
-Found 1 issue
+Found 2 issues
 
 nullness/ReflectMethodHandleIntraProcedural.java:4: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `Message.s` is not initialized in the constructor and is not declared `@Nullable`
+  Field `Message.s` is not initialized in the constructor and is not declared `@Nullable`.
   2.   import java.lang.invoke.MethodHandles;
   3.   
   4. > class Message {
   5.       String s;
   6.   }
 
+nullness/ReflectMethodHandleIntraProcedural.java:27: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `Message.s` can be null but is not declared `@Nullable`. (Origin: null constant at line 27).
+  25.           // get field with a null value (fail)
+  26.           
+  27. >         message.s = null; // null !
+  28.           mh = lookup.findGetter(Message.class, "s", String.class);
+  29.           s = (String) mh.invoke(message);
+
+
 Summary of the reports
 
+     ERADICATE_FIELD_NOT_NULLABLE: 1
   ERADICATE_FIELD_NOT_INITIALIZED: 1
 ```
 
