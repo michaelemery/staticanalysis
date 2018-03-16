@@ -22,6 +22,3 @@ https://github.com/michaelemery/staticanalysis
 * i = interactive
 * t = terminal
 * rm = remove container on exit
-
-### editing source files
-To edit files, run `apt-get update`, then install vim `apt-get install vim` or nano `apt-get install nano`.
