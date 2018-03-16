@@ -42,17 +42,26 @@ infer run -a checkers --eradicate -- javac nullness/VanillaIntraProcedural.java
 #### output
 
 ```
-Found 1 issue
+Found 2 issues
 
 nullness/VanillaIntraProcedural.java:17: error: ERADICATE_NULL_METHOD_CALL
-  The value of `s` in the call to `toString()` could be null. (Origin: null constant at line 16)
+  The value of `s` in the call to `toString()` could be null. (Origin: null constant at line 16).
   15.           // intraprocedural assignment of a null reference (fail)
   16.           s = null;
   17. >         System.out.println(s.toString());  // NullPointerException
   18.       }
 
+nullness/VanillaIntraProcedural.java:17: error: NULL_DEREFERENCE
+  object `s` last assigned on line 16 could be null and is dereferenced at line 17.
+  15.           // intraprocedural assignment of a null reference (fail)
+  16.           s = null;
+  17. >         System.out.println(s.toString());  // NullPointerException
+  18.       }
+
+
 Summary of the reports
 
+            NULL_DEREFERENCE: 1
   ERADICATE_NULL_METHOD_CALL: 1
 ```
 
