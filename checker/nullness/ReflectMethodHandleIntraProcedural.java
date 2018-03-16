@@ -8,7 +8,7 @@ class Message {
 /**
 * Assignment of a null reference using method invoked *intraprocedurally* via MethodHandle.
 */
-public class MethodHandleIntraProcedural {
+public class ReflectMethodHandleIntraProcedural {
 
     public static void main(String[] args) throws Throwable {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
