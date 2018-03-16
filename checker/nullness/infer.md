@@ -216,19 +216,28 @@ infer run -a checkers --eradicate -- javac nullness/ReflectMethodHandleIntraProc
 #### output
 
 ```
-Found 1 issue
+Found 2 issues
 
 nullness/ReflectMethodHandleIntraProcedural.java:4: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `Message.s` is not initialized in the constructor and is not declared `@Nullable`
+  Field `Message.s` is not initialized in the constructor and is not declared `@Nullable`.
   2.   import java.lang.invoke.MethodHandles;
   3.   
   4. > class Message {
   5.       String s;
   6.   }
 
+nullness/ReflectMethodHandleIntraProcedural.java:27: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `Message.s` can be null but is not declared `@Nullable`. (Origin: null constant at line 27).
+  25.           // get field with a null value (fail)
+  26.           
+  27. >         message.s = null; // null !
+  28.           mh = lookup.findGetter(Message.class, "s", String.class);
+  29.           s = (String) mh.invoke(message);
+
 
 Summary of the reports
 
+     ERADICATE_FIELD_NOT_NULLABLE: 1
   ERADICATE_FIELD_NOT_INITIALIZED: 1
 ```
 
