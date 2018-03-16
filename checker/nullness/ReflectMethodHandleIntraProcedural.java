@@ -23,7 +23,6 @@ public class ReflectMethodHandleIntraProcedural {
         System.out.println(s.toString());  // "text"
 
         // get field with a null value (fail)
-        
         message.s = null; // null !
         mh = lookup.findGetter(Message.class, "s", String.class);
         s = (String) mh.invoke(message);
