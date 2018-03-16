@@ -58,7 +58,6 @@ nullness/VanillaIntraProcedural.java:17: error: NULL_DEREFERENCE
   17. >         System.out.println(s.toString());  // NullPointerException
   18.       }
 
-
 Summary of the reports
 
             NULL_DEREFERENCE: 1
