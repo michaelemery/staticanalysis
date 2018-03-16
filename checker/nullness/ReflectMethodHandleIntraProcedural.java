@@ -13,6 +13,7 @@ public class ReflectMethodHandleIntraProcedural {
     public static void main(String[] args) throws Throwable {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodHandle mh;
+        String s;
         
         Message message = new Message();
         message.s = ""; // not null !
@@ -22,7 +23,6 @@ public class ReflectMethodHandleIntraProcedural {
         System.out.println(s.toString());  // "text"
 
         // get field with a null value (fail)
-        
         message.s = null; // null !
         mh = lookup.findGetter(Message.class, "s", String.class);
         s = (String) mh.invoke(message);
