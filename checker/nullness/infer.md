@@ -58,6 +58,7 @@ nullness/VanillaIntraProcedural.java:17: error: NULL_DEREFERENCE
   17. >         System.out.println(s.toString());  // NullPointerException
   18.       }
 
+
 Summary of the reports
 
             NULL_DEREFERENCE: 1
@@ -79,20 +80,29 @@ infer run -a checkers --eradicate -- javac nullness/VanillaInterProcedural.java
 #### output
 
 ```
-Found 1 issue
+Found 2 issues
 
 nullness/VanillaInterProcedural.java:16: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `returnReceivedString(...)` needs a non-null value in parameter 1 but argument `null` can be 
-  null. (Origin: null constant at line 16)
+  `returnReceivedString(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 16).
   14.   
   15.           // interprocedural assignment of a null reference (fail)
   16. >         s = returnReceivedString(null);
   17.           System.out.println(s.toString());  // NullPointerException
   18.   
 
+nullness/VanillaInterProcedural.java:17: error: NULL_DEREFERENCE
+  object `s` last assigned on line 16 could be null and is dereferenced at line 17.
+  15.           // interprocedural assignment of a null reference (fail)
+  16.           s = returnReceivedString(null);
+  17. >         System.out.println(s.toString());  // NullPointerException
+  18.   
+  19.       }
+
+
 Summary of the reports
 
   ERADICATE_PARAMETER_NOT_NULLABLE: 1
+                  NULL_DEREFERENCE: 1
 ```
 
 | True Pos | False Pos | False Neg |
@@ -120,6 +130,7 @@ nullness/ReflectMethodInvokeIntraProcedural.java:30: error: ERADICATE_RETURN_NOT
   30. >     public static String returnNull() {
   31.           return null;
   32.       }
+
 
 Summary of the reports
 
@@ -153,6 +164,7 @@ nullness/ReflectMethodInvokeInterProcedural.java:33: error: ERADICATE_RETURN_NOT
   34.           return null;
   35.       }
 
+
 Summary of the reports
 
   ERADICATE_RETURN_NOT_NULLABLE: 1
@@ -183,6 +195,7 @@ nullness/ReflectOverloadInvokeInterProcedural.java:30: error: ERADICATE_RETURN_N
   31.           return null;
   32.       }
 
+
 Summary of the reports
 
   ERADICATE_RETURN_NOT_NULLABLE: 1
@@ -212,6 +225,7 @@ nullness/ReflectMethodHandleIntraProcedural.java:4: error: ERADICATE_FIELD_NOT_I
   4. > class Message {
   5.       String s;
   6.   }
+
 
 Summary of the reports
 
