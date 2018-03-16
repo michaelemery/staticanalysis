@@ -106,7 +106,7 @@ RUN unzip findbugs-3.0.1.zip && \
 
 # add to path
 ENV FINDBUGS_HOME /usr/local/findbugs/findbugs-3.0.1
-# note that ${FINDBUGS_HOME}
+ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
 
 
 # --- INSTALL VIM
