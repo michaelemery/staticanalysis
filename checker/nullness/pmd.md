@@ -23,8 +23,8 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | ReflectMethodHandleIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectmethodhandleintraprocedural) |
 | ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessintraprocedural) |
 | ReflectFieldAccessInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessinterprocedural) |
+| DynamicProxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#dynamicproxy) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#invokedynamic) |
-| Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#proxy) |
 
 > Select results for detail.
 
@@ -102,12 +102,12 @@ Found non-transient, non-static member. Please mark as transient or provide acce
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-### InvokeDynamic
+### DynamicProxy
 
-[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamic.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/DynamicProxy.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -120,12 +120,12 @@ $PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamic.java -f text -R category/java
 | :---: | :---: | :---: |
 | TBC | TBC | TBC |
 
-### Proxy
+### InvokeDynamic
 
-[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java)
+[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/Proxy.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamic.java -f text -R category/java/errorprone.xml
 ```
 
 #### output

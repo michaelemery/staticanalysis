@@ -16,8 +16,9 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | ReflectMethodHandleIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodhandleintraprocedural) |
 | ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessintraprocedural) |
 | ReflectFieldAccessInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessinterprocedural) |
+| DynamicProxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#invokedynamic) |
-| Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#proxy) |
+
 > Select results for detail.
 
 ### VanillaIntraProcedural
@@ -106,13 +107,13 @@ Warnings generated: 2
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-### InvokeDynamic
+### DynamicProxy
 
-[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
 
 ```
-javac nullness/InvokeDynamic.java
-findbugs nullness/InvokeDynamic.class
+javac nullness/DynamicProxy.java
+findbugs nullness/DynamicProxy.class
 ```
 
 #### output
@@ -125,13 +126,13 @@ TBC
 | :---: | :---: | :---: |
 | TBC | TBC | TBC |
 
-### Proxy
+### InvokeDynamic
 
-[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java)
+[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
 
 ```
-javac nullness/Proxy.java
-findbugs nullness/Proxy.class
+javac nullness/InvokeDynamic.java
+findbugs nullness/InvokeDynamic.class
 ```
 
 #### output

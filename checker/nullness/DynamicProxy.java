@@ -1,4 +1,4 @@
-public class Proxy {
+public class DynamicProxy {
 
     public interface MyInterface {
         Object get();

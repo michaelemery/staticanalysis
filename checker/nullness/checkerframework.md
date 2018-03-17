@@ -45,8 +45,8 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | ReflectMethodHandleIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectmethodhandleintraprocedural) |
 | ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectfieldaccessintraprocedural) |
 | ReflectFieldAccessInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectfieldaccessinterprocedural) |
+| DynamicProxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#dynamicproxy) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#invokedynamic) |
-| Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#proxy) |
 
 > Select results for detail.
 
@@ -222,12 +222,12 @@ class Message {
 | :---: | :---: | :---: |
 | 0 | 0 | 1 |
 
-### InvokeDynamic
+### DynamicProxy
 
-[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InvokeDynamic.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/DynamicProxy.java
 ```
 
 #### output
@@ -240,12 +240,12 @@ TBC
 | :---: | :---: | :---: |
 | TBC | TBC | TBC |
 
-### Proxy
+### InvokeDynamic
 
-[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java)
+[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/Proxy.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InvokeDynamic.java
 ```
 
 #### output

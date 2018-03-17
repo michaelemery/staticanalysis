@@ -46,8 +46,8 @@ Dynamic programming languages are a class of high-level programming languages wh
 | ReflectMethodHandleIntraProcedural | Method invocation via method handle using only locally defined parameters. |
 | ReflectFieldAccessIntraProcedural | Field access via reflection using only locally defined parameters. |
 | ReflectFieldAccessInterProcedural | Field access via reflection using parameters defined in other methods. |
+| DynamicProxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 | InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
-| Proxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
 
 ### reflection syntax and use of instance variables
 
@@ -67,8 +67,8 @@ The first argument of java.lang.reflect.Method.invoke() is the object instance o
 | ReflectMethodHandleIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectmethodhandleintraprocedural) |  |  |
 | ReflectFieldAccessIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectfieldaccessintraprocedural) |  |  |
 | ReflectFieldAccessInterProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectfieldaccessinterprocedural) |  |  |
+| DynamicProxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#dynamicproxy) |  |  |
 | InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#invokedynamic) |  |  |
-| Proxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#proxy) |  |  |
 
 > Select individual results for detail.
 
@@ -84,8 +84,8 @@ The first argument of java.lang.reflect.Method.invoke() is the object instance o
 | ReflectMethodHandleIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodhandleintraprocedural) |  |  |
 | ReflectFieldAccessIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessintraprocedural) |  |  |
 | ReflectFieldAccessInterProcedural |   |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessinterprocedural) |  |  |
+| DynamicProxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |  |  |
 | InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#invokedynamic) |  |  |
-| Proxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#proxy) |  |  |
 
 > Select individual results for detail.
 
@@ -101,8 +101,8 @@ The first argument of java.lang.reflect.Method.invoke() is the object instance o
 | ReflectMethodHandleIntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandleintraprocedural) |  |  |
 | ReflectFieldAccessIntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessintraprocedural) |  |  |
 | ReflectFieldAccessInterProcedural |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessinterprocedural) |  |  |
+| DynamicProxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |  |  |
 | InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#invokedynamic) |  |  |
-| Proxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#proxy) |  |  |
 
 > Select individual results for detail.
 
@@ -118,7 +118,7 @@ The first argument of java.lang.reflect.Method.invoke() is the object instance o
 | ReflectMethodHandleIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectmethodhandleintraprocedural) |  |  |
 | ReflectFieldAccessIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessintraprocedural) |  |  |
 | ReflectFieldAccessInterProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessinterprocedural) |  |  |
+| DynamicProxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#dynamicproxy) |  |  |
 | InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#invokedynamic) |  |  |
-| Proxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#proxy) |  |  |
 
 > Select individual results for detail.
