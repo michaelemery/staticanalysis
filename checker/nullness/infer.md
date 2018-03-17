@@ -26,8 +26,8 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | ReflectMethodHandleIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandleintraprocedural) |
 | ReflectFieldAccessIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessintraprocedural) |
 | ReflectFieldAccessInterProcedural | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessinterprocedural) |
+| DynamicProxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#invokedynamic) |
-| Proxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#proxy) |
 
 > Select results for detail.
 
@@ -294,12 +294,12 @@ TBC
 | :---: | :---: | :---: |
 | TBC | TBC | TBC |
 
-### InvokeDynamic
+### DynamicProxy
 
-[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/InvokeDynamic.java
+infer run -a checkers --eradicate -- javac nullness/DynamicProxy.java
 ```
 
 #### output
@@ -312,12 +312,12 @@ TBC
 | :---: | :---: | :---: |
 | TBC | TBC | TBC |
 
-### Proxy
+### InvokeDynamic
 
-[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/Proxy.java)
+[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/Proxy.java
+infer run -a checkers --eradicate -- javac nullness/InvokeDynamic.java
 ```
 
 #### output
