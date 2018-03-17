@@ -224,7 +224,7 @@ class Message {
 
 ### DynamicProxy
 
-[nullness/Proxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/DynamicProxy.java
