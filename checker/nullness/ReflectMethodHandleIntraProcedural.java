@@ -17,10 +17,10 @@ public class ReflectMethodHandleIntraProcedural {
         Message message = new Message();
             
         // get field with a non-null value
-        message.s = "some result";
+        message.s = "text";
         mh = lookup.findGetter(Message.class, "s", String.class);
         s = (String) mh.invoke(message);  // safe
-        System.out.println(s.toString());  // "some result"
+        System.out.println(s.toString());  // "text"
 
         // get field with a null value
         message.s = null;
