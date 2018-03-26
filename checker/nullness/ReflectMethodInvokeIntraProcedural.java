@@ -17,7 +17,7 @@ public class ReflectMethodInvokeIntraProcedural {
         s = (String) m.invoke(foo);  // safe
         System.out.println(s.toString());  // "text"
 
-        // assignment to a null reference by reflection (fail)
+        // assignment to a null reference by reflection
         m = nullness.ReflectMethodInvokeIntraProcedural.class.getDeclaredMethod("returnNull");
         s = (String) m.invoke(foo);  // unsafe
         System.out.println(s.toString());  // NullPointerException
