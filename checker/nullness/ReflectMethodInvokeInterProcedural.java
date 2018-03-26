@@ -13,7 +13,7 @@ public class ReflectMethodInvokeInterProcedural {
 
         // assignment to a non-null reference by reflection
         s = foo.getStringFromMethod("returnText");  // safe
-        System.out.println(s.toString());  // "text"
+        System.out.println(s.toString());  // "some result"
 
         // assignment to a null reference by reflection
         s = foo.getStringFromMethod("returnNull");  // unsafe
@@ -27,7 +27,7 @@ public class ReflectMethodInvokeInterProcedural {
     }
 
     public static String returnText() {
-        return "text";
+        return "some result";
     }
 
     public static String returnNull() {
