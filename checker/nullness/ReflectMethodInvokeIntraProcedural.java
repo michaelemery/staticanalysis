@@ -12,14 +12,14 @@ public class ReflectMethodInvokeIntraProcedural {
         Method m;
         ReflectMethodInvokeIntraProcedural foo = new ReflectMethodInvokeIntraProcedural();
 
-        // assignment to a non-null reference by reflection (correct)
+        // assignment to a non-null reference by reflection
         m = nullness.ReflectMethodInvokeIntraProcedural.class.getDeclaredMethod("returnText");
-        s = (String) m.invoke(foo);
+        s = (String) m.invoke(foo);  // safe
         System.out.println(s.toString());  // "text"
 
         // assignment to a null reference by reflection (fail)
         m = nullness.ReflectMethodInvokeIntraProcedural.class.getDeclaredMethod("returnNull");
-        s = (String) m.invoke(foo);
+        s = (String) m.invoke(foo);  // unsafe
         System.out.println(s.toString());  // NullPointerException
     }
 
