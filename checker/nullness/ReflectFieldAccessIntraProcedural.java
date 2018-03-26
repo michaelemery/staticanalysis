@@ -14,8 +14,8 @@ public class ReflectFieldAccessIntraProcedural {
         Field s = c.getDeclaredField("bar");
 
         // set a field to a non-null by reflection
-        s.set(foo, "some result");  // safe
-        System.out.println(foo.bar.toString());  // "some result"
+        s.set(foo, "text");  // safe
+        System.out.println(foo.bar.toString());  // "text"
 
         // set a field to a null by reflection
         s.set(foo, null);  // unsafe
