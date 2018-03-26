@@ -25,7 +25,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | ReflectOverloadInvokeInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectoverloadinvokeinterprocedural) |
 | ReflectMethodHandleIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandleintraprocedural) |
 | ReflectFieldAccessIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessintraprocedural) |
-| ReflectFieldAccessInterProcedural | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessinterprocedural) |
+| ReflectFieldAccessInterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessinterprocedural) |
 | DynamicProxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#invokedynamic) |
 
@@ -287,12 +287,12 @@ infer run -a checkers --eradicate -- javac nullness/ReflectFieldAccessInterProce
 #### output
 
 ```
-TBC
+[NO ISSUES IDENTIFIED]
 ```
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| TBC | TBC | TBC |
+| 0 | 0 | 1 |
 
 ### DynamicProxy
 
