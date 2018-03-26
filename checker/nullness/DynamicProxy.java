@@ -1,33 +1,41 @@
+package nullness;
+
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+
 public class DynamicProxy {
 
+    public static void main(String[] args) {
+        MyInterface proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), new Class[] { MyInterface.class }, new SafeInvocationHandler());
+        String s = proxy.get().toString();  // safe
+        System.out.println(s);
+     
+        proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
+                new Class[] { MyInterface.class }, 
+                new UnsafeInvocationHandler());
+        proxy.get().toString();  // unsafe
+        s = proxy.get().toString();
+        System.out.println(s);
+    }
+    
     public interface MyInterface {
         Object get();
     }
-
-    public class RunExample {
-
-        public static void main(String[] args) {
-            MyInterface proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(),new Class[] { MyInterface.class },new MyInvocationHandler());
-            proxy.get().toString();
-        }
-
-    }
-
-    public class MyInvocationHandler implements InvocationHandler {
-
+    
+    public static class UnsafeInvocationHandler implements InvocationHandler {
+ 
         @Override
         public Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
-            return null;  
+            return null;        
         }
-
     }
-
-    public class MyClass implements MyInterface {
-
-         public Object get() {
-            return new Object();
+     
+    public static class SafeInvocationHandler implements InvocationHandler {
+ 
+        @Override
+        public Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
+            return "some result";
         }
-
     }
-
 }
