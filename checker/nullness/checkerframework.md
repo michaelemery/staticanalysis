@@ -233,7 +233,25 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 #### output
 
 ```
-TBC
+nullness/DynamicProxy.java:16: error: [argument.type.incompatible] incompatible types in argument.
+        proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
+                                                                                     ^
+  found   : @Initialized @Nullable ClassLoader
+  required: @Initialized @NonNull ClassLoader
+  
+nullness/DynamicProxy.java:23: error: [argument.type.incompatible] incompatible types in argument.
+        proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
+                                                                                     ^
+  found   : @Initialized @Nullable ClassLoader
+  required: @Initialized @NonNull ClassLoader
+  
+nullness/DynamicProxy.java:39: error: [return.type.incompatible] incompatible types in return.
+            return null;        
+                   ^
+  found   : null
+  required: @Initialized @NonNull Object
+  
+3 errors
 ```
 
 | True Pos | False Pos | False Neg |
