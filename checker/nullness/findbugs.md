@@ -16,7 +16,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | ReflectMethodHandleIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodhandleintraprocedural) |
 | ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessintraprocedural) |
 | ReflectFieldAccessInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessinterprocedural) |
-| DynamicProxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |
+| DynamicProxy | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#invokedynamic) |
 
 > Select results for detail.
@@ -119,12 +119,12 @@ findbugs nullness/DynamicProxy.class
 #### output
 
 ```
-TBC
+[NO ISSUES IDENTIFIED]
 ```
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| TBC | TBC | TBC |
+| 0 | 0 | 1 |
 
 ### InvokeDynamic
 
