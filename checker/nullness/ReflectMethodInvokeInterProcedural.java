@@ -11,12 +11,12 @@ public class ReflectMethodInvokeInterProcedural {
         String s;
         ReflectMethodInvokeInterProcedural foo = new ReflectMethodInvokeInterProcedural();
 
-        // assignment to a non-null reference by reflection (correct)
-        s = foo.getStringFromMethod("returnText");
+        // assignment to a non-null reference by reflection
+        s = foo.getStringFromMethod("returnText");  // safe
         System.out.println(s.toString());  // "text"
 
-        // assignment to a null reference by reflection (fail)
-        s = foo.getStringFromMethod("returnNull");
+        // assignment to a null reference by reflection
+        s = foo.getStringFromMethod("returnNull");  // unsafe
         System.out.println(s.toString());  // NullPointerException
     }
 
