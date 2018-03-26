@@ -23,7 +23,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | ReflectMethodHandleIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectmethodhandleintraprocedural) |
 | ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessintraprocedural) |
 | ReflectFieldAccessInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessinterprocedural) |
-| DynamicProxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#dynamicproxy) |
+| DynamicProxy | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#dynamicproxy) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#invokedynamic) |
 
 > Select results for detail.
@@ -113,12 +113,17 @@ $PMD_HOME/bin/run.sh pmd -d nullness/DynamicProxy.java -f text -R category/java/
 #### output
 
 ````
+nullness/DynamicProxy.java:17:	In J2EE, getClassLoader() might not work as expected.  
+Use Thread.currentThread().getContextClassLoader() instead.
+
+nullness/DynamicProxy.java:24:	In J2EE, getClassLoader() might not work as expected.  
+Use Thread.currentThread().getContextClassLoader() instead.
 
 ````
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| TBC | TBC | TBC |
+| 1 | 1 | 0 |
 
 ### InvokeDynamic
 
