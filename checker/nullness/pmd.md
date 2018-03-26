@@ -40,7 +40,8 @@ $PMD_HOME/bin/run.sh pmd -d nullness/VanillaIntraProcedural.java -f text -R cate
 
 ```
 nullness/VanillaIntraProcedural.java:16:   
-Assigning an Object to null is a code smell.  Consider refactoring.
+Assigning an Object to null is a code smell.  
+Consider refactoring.
 ```
 
 | True Pos | False Pos | False Neg |
@@ -95,7 +96,8 @@ $PMD_HOME/bin/run.sh pmd -d nullness/ReflectFieldAccessIntraProcedural.java -f t
 
 ````
 nullness/ReflectFieldAccessIntraProcedural.java:9:   
-Found non-transient, non-static member. Please mark as transient or provide accessors.
+Found non-transient, non-static member. 
+Please mark as transient or provide accessors.
 ````
 
 | True Pos | False Pos | False Neg |
