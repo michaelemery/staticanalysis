@@ -26,7 +26,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | ReflectMethodHandleIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandleintraprocedural) |
 | ReflectFieldAccessIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessintraprocedural) |
 | ReflectFieldAccessInterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessinterprocedural) |
-| DynamicProxy | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
+| DynamicProxy | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
 | InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#invokedynamic) |
 
 > Select results for detail.
@@ -305,12 +305,24 @@ infer run -a checkers --eradicate -- javac nullness/DynamicProxy.java
 #### output
 
 ```
-TBC
+Found 1 issue
+
+nullness/DynamicProxy.java:39: error: ERADICATE_RETURN_NOT_NULLABLE
+  Method `invoke(...)` may return null but it is not annotated with `@Nullable`. (Origin: null constant at line 40)
+  37.    
+  38.           @Override
+  39. >         public Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
+  40.               return null;        
+  41.           }
+
+Summary of the reports
+
+  ERADICATE_RETURN_NOT_NULLABLE: 1
 ```
 
 | True Pos | False Pos | False Neg |
 | :---: | :---: | :---: |
-| TBC | TBC | TBC |
+| 1 | 0 | 0 |
 
 ### InvokeDynamic
 
