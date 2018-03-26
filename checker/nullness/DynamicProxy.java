@@ -7,10 +7,16 @@ import java.lang.reflect.Proxy;
 public class DynamicProxy {
 
     public static void main(String[] args) {
-        MyInterface proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), new Class[] { MyInterface.class }, new SafeInvocationHandler());
+        MyInterface proxy;
+        
+        // assignment of a non-null via dynamic proxy 
+        proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
+                new Class[] { MyInterface.class }, 
+                new SafeInvocationHandler());
         String s = proxy.get().toString();  // safe
         System.out.println(s);  // "text"
      
+        // assignment of a null via dynamic proxy 
         proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
                 new Class[] { MyInterface.class }, 
                 new UnsafeInvocationHandler());
