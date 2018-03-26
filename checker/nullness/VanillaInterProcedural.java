@@ -12,7 +12,7 @@ public class VanillaInterProcedural {
         s = returnReceivedString("text");  // safe
         System.out.println(s.toString());  // "text"
 
-        // interprocedural assignment of a null reference (fail)
+        // interprocedural assignment of a null reference
         s = returnReceivedString(null);  // unsafe
         System.out.println(s.toString());  // NullPointerException
     }
