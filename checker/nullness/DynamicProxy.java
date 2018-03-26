@@ -9,7 +9,7 @@ public class DynamicProxy {
     public static void main(String[] args) {
         MyInterface proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), new Class[] { MyInterface.class }, new SafeInvocationHandler());
         String s = proxy.get().toString();  // safe
-        System.out.println(s);  // "some result"
+        System.out.println(s);  // "text"
      
         proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
                 new Class[] { MyInterface.class }, 
@@ -35,7 +35,7 @@ public class DynamicProxy {
  
         @Override
         public Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
-            return "some result";
+            return "text";
         }
     }
 }
