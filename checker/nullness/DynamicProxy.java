@@ -4,6 +4,9 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * Assignment of a null reference via dynamic proxy.
+ */
 public class DynamicProxy {
 
     public static void main(String[] args) {
