@@ -39,8 +39,7 @@ public class DynamicProxy {
     public static class UnsafeInvocationHandler implements InvocationHandler {
  
         @Override
-        @Nullable
-        public Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
+        public @Nullable Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
             return null;        
         }
     }
@@ -48,7 +47,7 @@ public class DynamicProxy {
     public static class SafeInvocationHandler implements InvocationHandler {
  
         @Override
-        public Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
+        public @NonNull Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
             return "text";
         }
     }
