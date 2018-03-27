@@ -30,12 +30,14 @@ public class DynamicProxy {
     }
     
     public interface MyInterface {
+        @org.checkerframework.checker.nullness.qual.NonNull
         Object get();
     }
     
     public static class UnsafeInvocationHandler implements InvocationHandler {
  
         @Override
+        @org.checkerframework.checker.nullness.qual.Nullable
         public Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
             return null;        
         }
