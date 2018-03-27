@@ -3,6 +3,7 @@ package nullness;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import org.checkerframework.checker.nullness.qual.*;
 
 /**
  * Assignment of a null reference via dynamic proxy.
@@ -14,14 +15,15 @@ public class DynamicProxy {
         String s;
         
         // assignment of a non-null via dynamic proxy 
-        proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
+        @NonNull ClassLoader clLoader = Proxy.newProxyInstance(MyInterface.class.getClassLoader();
+        proxy = (MyInterface) Proxy.newProxyInstance(clLoader, 
                 new Class[] { MyInterface.class }, 
                 new SafeInvocationHandler());
         s = proxy.get().toString();  // safe
         System.out.println(s);  // "text"
      
         // assignment of a null via dynamic proxy 
-        proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
+        proxy = (MyInterface) Proxy.newProxyInstance(clLoader, 
                 new Class[] { MyInterface.class }, 
                 new UnsafeInvocationHandler());
         proxy.get().toString();  // unsafe
@@ -30,14 +32,14 @@ public class DynamicProxy {
     }
     
     public interface MyInterface {
-        @org.checkerframework.checker.nullness.qual.NonNull
+        @NonNull
         Object get();
     }
     
     public static class UnsafeInvocationHandler implements InvocationHandler {
  
         @Override
-        @org.checkerframework.checker.nullness.qual.Nullable
+        @Nullable
         public Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
             return null;        
         }
