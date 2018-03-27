@@ -15,7 +15,7 @@ public class DynamicProxy {
         String s;
         
         // assignment of a non-null via dynamic proxy 
-        @NonNull ClassLoader clLoader = Proxy.newProxyInstance(MyInterface.class.getClassLoader();
+        @NonNull ClassLoader clLoader = MyInterface.class.getClassLoader();
         proxy = (MyInterface) Proxy.newProxyInstance(clLoader, 
                 new Class[] { MyInterface.class }, 
                 new SafeInvocationHandler());
