@@ -17,12 +17,10 @@ LABEL maintainer "Michael Emery"
 # --- INSTALL VIM & NANO
 
 # mkdir man/man1 due to Debian bug #863199
-# nano requires TERM=xterm
 RUN mkdir -p /usr/share/man/man1 && \
     apt-get update && \
     apt-get -y install vim && \
     apt-get -y install nano && \
-    export TERM=xterm
 
 
 # --- SETUP INFER DEPENDENCIES (INCLUDES OPENJDK)
