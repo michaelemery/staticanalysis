@@ -25,7 +25,6 @@ RUN mkdir -p /usr/share/man/man1 && \
 
 # --- SETUP INFER DEPENDENCIES (INCLUDES OPENJDK)
 
-# use man/man1 directory due to Debian bug #863199
 RUN apt-get install --yes --no-install-recommends \
       autoconf \
       automake \
