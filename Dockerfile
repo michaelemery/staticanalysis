@@ -14,11 +14,19 @@ LABEL maintainer "Michael Emery"
 # FROM openjdk:8u121-jdk
 
 
+# --- INSTALL VIM & NANO
+
+# nano requires TERM=xterm
+RUN apt-get update && \
+    apt-get -y install vim && \
+    apt-get -y install nano && \
+    export TERM=xterm
+
+
 # --- SETUP INFER DEPENDENCIES (INCLUDES OPENJDK)
 
-# mkdir the man/man1 directory due to Debian bug #863199
-RUN apt-get update && \
-    mkdir -p /usr/share/man/man1 && \
+# use man/man1 directory due to Debian bug #863199
+RUN mkdir -p /usr/share/man/man1 && \
     apt-get install --yes --no-install-recommends \
       autoconf \
       automake \
@@ -107,13 +115,6 @@ RUN unzip findbugs-3.0.1.zip && \
 # add to path
 ENV FINDBUGS_HOME /usr/local/findbugs/findbugs-3.0.1
 ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
-
-
-# --- INSTALL VIM & NANO
-
-RUN apt-get update && \
-    apt-get -y install vim && \
-    apt-get -y install nano
 
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
