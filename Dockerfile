@@ -20,7 +20,7 @@ LABEL maintainer "Michael Emery"
 RUN mkdir -p /usr/share/man/man1 && \
     apt-get update && \
     apt-get -y install vim && \
-    apt-get -y install nano && \
+    apt-get -y install nano
 
 
 # --- SETUP INFER DEPENDENCIES (INCLUDES OPENJDK)
