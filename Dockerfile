@@ -55,13 +55,11 @@ ENV INFER_HOME /infer/infer
 ENV PATH ${INFER_HOME}/bin:${PATH}
 
 
-
 # --- INSTALL VIM & NANO
 
 RUN apt-get update && \
     apt-get -y install vim && \
     apt-get -y install nano
-
 
 
 # --- CREATE APP FOLDER
