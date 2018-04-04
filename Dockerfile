@@ -109,10 +109,11 @@ ENV FINDBUGS_HOME /usr/local/findbugs/findbugs-3.0.1
 ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
 
 
-# --- INSTALL VIM
+# --- INSTALL VIM & NANO
 
 RUN apt-get update && \
     apt-get -y install vim
+    apt-get -y install nano
 
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
