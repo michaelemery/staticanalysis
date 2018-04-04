@@ -7,18 +7,11 @@ LABEL maintainer "Michael Emery"
 
 # --- MANIFEST
 # openjdk-8-jdk-headless
+# VIM, Nano
 # Infer, Checker Framework, FindBugs, Infer, PMD
-# VIM
 
 # use openjdk runtime as a base image if infer dependencies are not required
 # FROM openjdk:8u121-jdk
-
-
-# --- INSTALL VIM & NANO
-
-RUN apt-get update && \
-    apt-get -y install vim && \
-    apt-get -y install nano
 
 
 # --- SETUP INFER DEPENDENCIES (INCLUDES OPENJDK)
@@ -114,6 +107,13 @@ RUN unzip findbugs-3.0.1.zip && \
 # add to path
 ENV FINDBUGS_HOME /usr/local/findbugs/findbugs-3.0.1
 ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
+
+
+# --- INSTALL VIM & NANO
+
+RUN apt-get update && \
+    apt-get -y install vim && \
+    apt-get -y install nano
 
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
