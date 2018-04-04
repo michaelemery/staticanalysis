@@ -11,6 +11,10 @@ Docker will open in the /checker folder. Scripts to run tests are provided in th
 ### git repository
 https://github.com/michaelemery/staticanalysis
 
+### build new docker container from git repository
+
+`docker build -t michaelemery/staticanalysis https://github.com/michaelemery/staticanalysis.git`
+
 ### download latest container build
 
 `docker pull michaelemery/staticanalysis`
