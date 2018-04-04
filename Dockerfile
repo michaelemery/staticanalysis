@@ -14,6 +14,13 @@ LABEL maintainer "Michael Emery"
 # FROM openjdk:8u121-jdk
 
 
+# --- INSTALL VIM & NANO
+
+RUN apt-get update && \
+    apt-get -y install vim && \
+    apt-get -y install nano
+
+
 # --- SETUP INFER DEPENDENCIES (INCLUDES OPENJDK)
 
 # mkdir the man/man1 directory due to Debian bug #863199
@@ -53,13 +60,6 @@ RUN OCAML_VERSION=4.05.0+flambda; \
 # Install Infer
 ENV INFER_HOME /infer/infer
 ENV PATH ${INFER_HOME}/bin:${PATH}
-
-
-# --- INSTALL VIM & NANO
-
-RUN apt-get update && \
-    apt-get -y install vim && \
-    apt-get -y install nano
 
 
 # --- CREATE APP FOLDER
