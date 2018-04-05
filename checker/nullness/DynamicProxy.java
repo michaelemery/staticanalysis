@@ -9,12 +9,12 @@ import org.checkerframework.checker.nullness.qual.*;
  * Assignment of a null reference via dynamic proxy.
  */
 public class DynamicProxy {
-
+    
     public static void main(String[] args) {
         MyInterface proxy;
         String s;
         
-        // assignment of a non-null via dynamic proxy 
+        // assignment of a non-null via dynamic proxy
         @NonNull ClassLoader clLoader = MyInterface.class.getClassLoader();
         proxy = (MyInterface) Proxy.newProxyInstance(clLoader, 
                 new Class[] { MyInterface.class }, 
@@ -22,7 +22,7 @@ public class DynamicProxy {
         s = proxy.get().toString();  // safe
         System.out.println(s);  // "text"
      
-        // assignment of a null via dynamic proxy 
+        // assignment of a null via dynamic proxy
         proxy = (MyInterface) Proxy.newProxyInstance(clLoader, 
                 new Class[] { MyInterface.class }, 
                 new UnsafeInvocationHandler());
@@ -37,15 +37,15 @@ public class DynamicProxy {
     }
     
     public static class UnsafeInvocationHandler implements InvocationHandler {
- 
+        
         @Override
         public @Nullable Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
-            return null;        
+            return null;
         }
     }
-     
+    
     public static class SafeInvocationHandler implements InvocationHandler {
- 
+        
         @Override
         public @NonNull Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
             return "text";
