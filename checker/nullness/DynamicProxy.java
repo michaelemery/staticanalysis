@@ -21,7 +21,7 @@ public class DynamicProxy {
                 new SafeInvocationHandler());
         s = proxy.get().toString();  // safe
         System.out.println(s);  // "text"
-     
+        
         // assignment of a null via dynamic proxy
         proxy = (MyInterface) Proxy.newProxyInstance(clLoader, 
                 new Class[] { MyInterface.class }, 
