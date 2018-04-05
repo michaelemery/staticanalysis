@@ -233,15 +233,21 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 #### output
 
 ```
-nullness/DynamicProxy.java:16: error: [argument.type.incompatible] incompatible types in argument.
-        proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
-                                                                                     ^
+nullness/DynamicProxy.java:19: 
+error: [argument.type.incompatible] incompatible types in argument.
+        proxy = (MyInterface) Proxy.newProxyInstance(clLoader, 
+                                                     ^
   found   : @Initialized @Nullable ClassLoader
   required: @Initialized @NonNull ClassLoader
-  
-nullness/DynamicProxy.java:23: error: [argument.type.incompatible] incompatible types in argument.
-        proxy = (MyInterface) Proxy.newProxyInstance(MyInterface.class.getClassLoader(), 
-                                                                                     ^
+
+nullness/DynamicProxy.java:48: 
+error: [override.return.invalid] @Initialized @Nullable Object invoke(@Initialized @NonNull UnsafeInvocationHandler this, @Initialized @NonNull Object p0, @Initialized @NonNull Method p1, @Initialized @NonNull Object @Initialized @NonNull [] p2) throws @Initialized @NonNull Throwable in nullness.DynamicProxy.UnsafeInvocationHandler cannot override @Initialized @NonNull Object invoke(@Initialized @NonNull InvocationHandler this, @Initialized @NonNull Object p0, @Initialized @NonNull Method p1, @Initialized @NonNull Object @Initialized @NonNull [] p2) throws @Initialized @NonNull Throwable in java.lang.reflect.InvocationHandler; attempting to use an incompatible return type
+        public @Nullable Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
+                         ^
+  found   : @Initialized @Nullable Object
+  required: @Initialized @NonNull Object
+
+2 errors                                                                    ^
   found   : @Initialized @Nullable ClassLoader
   required: @Initialized @NonNull ClassLoader
   
