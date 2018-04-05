@@ -12,10 +12,10 @@ public class DynamicProxy {
     
     public static void main(String[] args) {
         MyInterface proxy;
+        @Nullable ClassLoader clLoader = MyInterface.class.getClassLoader();
         String s;
         
         // assignment of a non-null via dynamic proxy
-        @NonNull ClassLoader clLoader = MyInterface.class.getClassLoader();
         proxy = (MyInterface) Proxy.newProxyInstance(clLoader, 
                 new Class[] { MyInterface.class }, 
                 new SafeInvocationHandler());
@@ -26,14 +26,20 @@ public class DynamicProxy {
         proxy = (MyInterface) Proxy.newProxyInstance(clLoader, 
                 new Class[] { MyInterface.class }, 
                 new UnsafeInvocationHandler());
-        proxy.get().toString();  // unsafe
-        s = proxy.get().toString();
+        s = proxy.get().toString();  // unsafe
         System.out.println(s);  // NullPointer Exception
     }
     
     public interface MyInterface {
-        @NonNull
         Object get();
+    }
+    
+    public static class SafeInvocationHandler implements InvocationHandler {
+        
+        @Override
+        public @NonNull Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
+            return "text";
+        }
     }
     
     public static class UnsafeInvocationHandler implements InvocationHandler {
@@ -44,11 +50,4 @@ public class DynamicProxy {
         }
     }
     
-    public static class SafeInvocationHandler implements InvocationHandler {
-        
-        @Override
-        public @NonNull Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
-            return "text";
-        }
-    }
 }
