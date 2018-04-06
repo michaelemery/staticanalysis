@@ -246,6 +246,7 @@ error: [override.return.invalid] @Initialized @Nullable Object invoke(@Initializ
                          ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
+
 2 errors
 ```
 
