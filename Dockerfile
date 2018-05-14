@@ -41,7 +41,7 @@ RUN apt-get install --yes --no-install-recommends \
       rm -rf /var/lib/apt/lists/*
 
 
-* --- SETUP MAVEN
+# --- SETUP MAVEN
 
 RUN apt-get install maven
 
