@@ -38,7 +38,7 @@ RUN apt-get install --yes --no-install-recommends \
       pkg-config \
       python2.7 \
       zlib1g-dev && \
-      rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/*
 
 
 # --- SETUP INFER
@@ -113,11 +113,6 @@ RUN unzip findbugs-3.0.1.zip && \
 # add to path
 ENV FINDBUGS_HOME /usr/local/findbugs/findbugs-3.0.1
 ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
-
-
-# --- SETUP MAVEN
-
-RUN apt-get install maven
 
 
 # --- COPY SOURCE FILES FOR CHECKER TESTS
