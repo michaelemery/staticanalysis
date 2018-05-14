@@ -80,7 +80,7 @@ RUN unzip apache-maven-3.5.3-bin.zip && \
 
 # add to path
 ENV MAVEN_HOME /usr/local/maven/apache-maven-3.5.3
-ENV PATH ${MAVEN_HOME}/maven/bin:${PATH}
+ENV PATH ${MAVEN_HOME}/bin:${PATH}
 
 
 # --- CHECKERFRAMEWORK SETUP
