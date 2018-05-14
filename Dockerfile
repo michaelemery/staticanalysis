@@ -38,7 +38,12 @@ RUN apt-get install --yes --no-install-recommends \
       pkg-config \
       python2.7 \
       zlib1g-dev && \
-    rm -rf /var/lib/apt/lists/*
+      rm -rf /var/lib/apt/lists/*
+
+
+* --- SETUP MAVEN
+
+RUN apt-get install maven
 
 
 # --- SETUP INFER
