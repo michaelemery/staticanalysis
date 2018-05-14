@@ -61,18 +61,33 @@ ENV INFER_HOME /infer/infer
 ENV PATH ${INFER_HOME}/bin:${PATH}
 
 
-# --- CREATE usr/local FOLDER
+# --- CREATE APP FOLDER
 
-RUN mkdir -p /usr/local
+# for later use
+RUN mkdir /app
 
 
 # --- MAVEN SETUP
 
+# create directory
+RUN mkdir -p /usr/local/maven
+WORKDIR /usr/local/maven
+
+# copy install files
+ADD ./archive/apache-maven-3.5.3-bin.zip .
+RUN unzip apache-maven-3.5.3-bin.zip && \
+    rm apache-maven-3.5.3-bin.zip
+
+# add to path
+ENV MAVEN_HOME /usr/local/maven/apache-maven-3.5.3
+ENV PATH ${MAVEN_HOME}/maven/bin:${PATH}
 
 
 # --- CHECKERFRAMEWORK SETUP
 
-WORKDIR /usr/local
+# create directory
+RUN mkdir -p /usr/local/checkerframework
+WORKDIR /usr/local/checkerframework
 
 # copy install files
 ADD ./archive/checker-framework-2.1.11.zip .
@@ -80,14 +95,16 @@ RUN unzip checker-framework-2.1.11.zip && \
     rm checker-framework-2.1.11.zip
 
 # add to path
-ENV CHECKERFRAMEWORK_HOME /usr/local/checker-framework-2.1.11
+ENV CHECKERFRAMEWORK_HOME /usr/local/checkerframework/checker-framework-2.1.11
 # note that ${CHECKERFRAMEWORK_HOME} must come first
 ENV PATH ${CHECKERFRAMEWORK_HOME}/checker/bin:${PATH}
 
 
 # --- PMD SETUP
 
-WORKDIR /usr/local
+# create directory
+RUN mkdir -p /usr/local/pmd
+WORKDIR /usr/local/pmd
 
 # copy install files
 ADD ./archive/pmd-bin-6.1.0.zip .
@@ -95,12 +112,14 @@ RUN unzip pmd-bin-6.1.0.zip && \
     rm pmd-bin-6.1.0.zip
 
 # ccnfigure pmd home
-ENV PMD_HOME /usr/local/pmd-bin-6.1.0
+ENV PMD_HOME /usr/local/pmd/pmd-bin-6.1.0
 
 
 # --- FINDBUGS SETUP
 
-WORKDIR /usr/local
+# create directory
+RUN mkdir -p /usr/local/findbugs
+WORKDIR /usr/local/findbugs
 
 # copy install files
 ADD ./archive/findbugs-3.0.1.zip .
@@ -108,7 +127,7 @@ RUN unzip findbugs-3.0.1.zip && \
     rm findbugs-3.0.1.zip
 
 # add to path
-ENV FINDBUGS_HOME /usr/local/findbugs-3.0.1
+ENV FINDBUGS_HOME /usr/local/findbugs/findbugs-3.0.1
 ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
 
 
