@@ -1,4 +1,4 @@
-package nullness;
+package checker.nullness;
 
 /**
  * Interprocedural assignment to a null reference.
@@ -17,7 +17,7 @@ public class VanillaInterProcedural {
         System.out.println(s.toString());  // NullPointerException
     }
 
-    public static String returnReceivedString(String s) {
+    private static String returnReceivedString(String s) {
         return s;
     }
 }
