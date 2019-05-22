@@ -8,7 +8,7 @@ LABEL maintainer "Michael Emery"
 # --- MANIFEST
 # openjdk-8-jdk-headless
 # VIM, Nano
-# Infer, Checker Framework, FindBugs, Infer, PMD
+# Infer, Checker Framework, FindBugs, PMD
 
 # use openjdk runtime as a base image if infer dependencies are not required
 # FROM openjdk:8u121-jdk
