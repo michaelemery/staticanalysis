@@ -1,4 +1,4 @@
-package nullness;
+package checker.nullness;
 
 import java.lang.reflect.Method;
 

@@ -1,4 +1,4 @@
-package nullness;
+package checker.nullness;
 
 import java.lang.reflect.Method;
 
@@ -13,21 +13,21 @@ public class ReflectMethodInvokeIntraProcedural {
         ReflectMethodInvokeIntraProcedural foo = new ReflectMethodInvokeIntraProcedural();
 
         // assignment to a non-null reference by reflection
-        m = nullness.ReflectMethodInvokeIntraProcedural.class.getDeclaredMethod("returnText");
+        m = checker.nullness.ReflectMethodInvokeIntraProcedural.class.getDeclaredMethod("returnText");
         s = (String) m.invoke(foo);  // safe
         System.out.println(s.toString());  // "text"
 
         // assignment to a null reference by reflection
-        m = nullness.ReflectMethodInvokeIntraProcedural.class.getDeclaredMethod("returnNull");
+        m = checker.nullness.ReflectMethodInvokeIntraProcedural.class.getDeclaredMethod("returnNull");
         s = (String) m.invoke(foo);  // unsafe
         System.out.println(s.toString());  // NullPointerException
     }
 
-    public static String returnText() {
+    private static String returnText() {
         return "text";
     }
 
-    public static String returnNull() {
+    private static String returnNull() {
         return null;
     }
 }

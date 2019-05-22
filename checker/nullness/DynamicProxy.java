@@ -1,4 +1,4 @@
-package nullness;
+package checker.nullness;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
@@ -29,12 +29,12 @@ public class DynamicProxy {
         s = proxy.get().toString();  // unsafe
         System.out.println(s);  // NullPointer Exception
     }
-    
-    public interface MyInterface {
+
+    interface MyInterface {
         Object get();
     }
-    
-    public static class SafeInvocationHandler implements InvocationHandler {
+
+    static class SafeInvocationHandler implements InvocationHandler {
         
         @Override
         public @NonNull Object invoke(Object obj, Method m, Object[] arg) throws Throwable {

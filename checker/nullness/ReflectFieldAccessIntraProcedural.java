@@ -1,4 +1,4 @@
-package nullness;
+package checker.nullness;
 
 import java.lang.reflect.Field;
 
@@ -6,7 +6,7 @@ import java.lang.reflect.Field;
  * Assignment of a null reference to a field accessed *intraprocedurally* via reflection.
  */
 public class ReflectFieldAccessIntraProcedural {
-    public String bar;
+    private String bar;
 
     public static void main(String[] args) throws Exception {
         ReflectFieldAccessIntraProcedural foo = new ReflectFieldAccessIntraProcedural();

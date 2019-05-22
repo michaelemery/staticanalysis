@@ -1,3 +1,5 @@
+package checker.nullness;
+
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 
@@ -15,7 +17,7 @@ public class ReflectMethodHandleIntraProcedural {
         MethodHandle mh;
         String s;
         Message message = new Message();
-            
+
         // get field with a non-null value
         message.s = "text";
         mh = lookup.findGetter(Message.class, "s", String.class);

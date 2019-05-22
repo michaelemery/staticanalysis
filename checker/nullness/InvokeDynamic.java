@@ -1,14 +1,13 @@
-package nullness;
+package checker.nullness;
 
 import java.lang.reflect.Method;
-
-/**
- * Assignment of a null reference via InvokeDynamic.
- */
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
+/**
+ * Assignment of a null reference via InvokeDynamic.
+ */
 class Foo {
    String s;
 }

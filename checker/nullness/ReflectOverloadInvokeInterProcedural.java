@@ -1,4 +1,4 @@
-package nullness;
+package checker.nullness;
 
 import java.lang.reflect.Method;
 
@@ -23,11 +23,11 @@ public class ReflectOverloadInvokeInterProcedural {
         System.out.println(s.toString());  // NullPointerException
     }
 
-    public static String returnText(int i) {
+    private static String returnText(int i) {
         return "text";
     }
 
-    public static String returnText(boolean b) {
+    private static String returnText(boolean b) {
         return null;
     }
 }

@@ -1,4 +1,4 @@
-package nullness;
+package checker.nullness;
 
 import java.lang.reflect.Method;
 
@@ -20,7 +20,7 @@ public class ReflectMethodInvokeInterProcedural {
         System.out.println(s.toString());  // NullPointerException
     }
 
-    public String getStringFromMethod(String methodName) throws Exception {
+    private String getStringFromMethod(String methodName) throws Exception {
         Method m = ReflectMethodInvokeInterProcedural.class.getDeclaredMethod(methodName);
         String s = (String) m.invoke(this);
         return s;
