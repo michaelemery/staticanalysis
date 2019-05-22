@@ -1,6 +1,6 @@
 FROM debian:stretch-slim
 
-LABEL maintainer "Michael Emery"
+LABEL maintainer = "Michael Emery"
 
 # Multi-tool Static Analysis Template
 
