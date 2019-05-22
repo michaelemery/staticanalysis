@@ -1,11 +1,11 @@
-package aliasing;
+package checker.aliasing;
 
 /**
  * Interprocedural corruption of an object via an alias.
  */
 public class Interprocedural {
 
-    String s;
+    private String s;
 
     public Interprocedural(String s) {
         this.s = s;

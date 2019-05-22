@@ -1,7 +1,7 @@
-package init;
+package checker.init;
 
 /**
- * Init.java
+ * _Init.java
  *
  * Provide a template to test the effectiveness of static analysis tools in identifying
  * whether or not potential errors could occur as a result of fields being accesses prior
@@ -9,20 +9,21 @@ package init;
  *
  * Created by Michael Emery on 2/12/17.
  */
-public class Init {
+public class _Init {
 
     Object o;
 
     // constructor fails to initialise field before exit
-    Init() { }
+    _Init() {
+    }
 
     // constructor accesses uninitialised field
-    Init(int x) {
+    _Init(int x) {
         System.out.println(this.o);
     }
 
     // constructor calls method that accesses an uninitialised field
-    Init(int x, int y) {
+    _Init(int x, int y) {
         m();
     }
 
@@ -31,9 +32,9 @@ public class Init {
     }
 
     public static void main(String[] args) throws NullPointerException {
-        Init a1 = new Init();
+        _Init a1 = new _Init();
         System.out.println(a1.o);  // null
-        Init a2 = new Init(1);  // null
-        Init a3 = new Init(1, 2);  // null
+        _Init a2 = new _Init(1);  // null
+        _Init a3 = new _Init(1, 2);  // null
     }
 }
