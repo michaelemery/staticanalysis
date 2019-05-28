@@ -3,7 +3,7 @@ package checker.nullness;
 import java.lang.reflect.Method;
 
 /**
- * Assign a null reference via reflection overloaded method invocation.
+ * Assign a null reference via overloaded reflection method invocation.
  */
 public class ReflectOverloadInvoke {
 
