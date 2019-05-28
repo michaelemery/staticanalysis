@@ -3,7 +3,7 @@ package checker.nullness;
 import java.lang.reflect.Field;
 
 /**
- * Assignment of a null reference via reflection field access.
+ * Assign a null reference via reflection field access.
  */
 public class ReflectFieldAccess {
 

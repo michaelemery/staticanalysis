@@ -4,21 +4,21 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 
 /**
- * Assignment of a null reference via method handles field access.
+ * Assign a null reference via dynamic field access invocation.
  */
-public class MethodHandlesField {
+public class InvokeDynamicField {
 
     Object o;
 
-    MethodHandlesField(Object obj) {
+    InvokeDynamicField(Object obj) {
         this.o = obj;
     }
 
     public static void main(String[] args) throws Throwable {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodHandle mh =
-                lookup.findSetter(MethodHandlesField.class, "o", Object.class);
-        MethodHandlesField i = new MethodHandlesField("init");
+                lookup.findSetter(InvokeDynamicField.class, "o", Object.class);
+        InvokeDynamicField i = new InvokeDynamicField("init");
 
         /* safe: set object to non-null */
         mh.invoke(i, "safe");

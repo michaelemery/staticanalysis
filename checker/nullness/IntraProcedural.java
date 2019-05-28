@@ -1,7 +1,7 @@
 package checker.nullness;
 
 /**
- * Assignment of a null reference bia intra-procedural assignment.
+ * Assign a null reference bia intra-procedural assignment.
  */
 public class IntraProcedural {
 

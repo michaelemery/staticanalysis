@@ -8,7 +8,7 @@ import org.checkerframework.checker.nullness.qual.*;
 /**
  * Assignment of a null reference via dynamic proxy.
  */
-public class DynamicProxy {
+public class DynamicProxy_old {
     
     public static void main(String[] args) {
         MyInterface proxy;
@@ -49,5 +49,4 @@ public class DynamicProxy {
             return null;
         }
     }
-    
 }
