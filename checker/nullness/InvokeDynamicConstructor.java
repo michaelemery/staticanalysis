@@ -23,10 +23,10 @@ public class InvokeDynamicConstructor {
 
         /* safe: set object to non-null */
         i = (InvokeDynamicConstructor) mh.invoke("safe");
-        System.out.println(i.o.toString());
+        System.out.println(i.o.toString());  // safe
 
         /* unsafe: set object to null */
         i = (InvokeDynamicConstructor) mh.invoke(null);
-        System.out.println(i.o.toString());
+        System.out.println(i.o.toString());  // NullPointerException
     }
 }
