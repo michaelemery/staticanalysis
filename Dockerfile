@@ -2,16 +2,13 @@ FROM debian:stretch-slim
 
 LABEL maintainer = "Michael Emery"
 
-# Multi-tool Static Analysis Template
-
-
-# --- MANIFEST
-# openjdk-8-jdk-headless
-# VIM, Nano
-# Infer, Checker Framework, FindBugs, PMD
-
-# use openjdk runtime as a base image if infer dependencies are not required
-# FROM openjdk:8u121-jdk
+# Multi-tool Static Analysis Template with code checking examples
+#
+# os: debain (slim)
+# utilities: vim, nano, maven
+# checker frameworks: infer, checkerframework, pmd, findbugs
+#
+# project source: https://github.com/michaelemery/staticanalysis
 
 
 # --- INSTALL VIM & NANO
@@ -131,8 +128,14 @@ ENV FINDBUGS_HOME /usr/local/findbugs/findbugs-3.0.1
 ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
 
 
+# --- TERMINAL HELPER ALAISES
+
+# checkerframework processors (javac [-processor ...] PATH/file.java
+RUN alias cfnull='-processor org.checkerframework.checker.nullness.NullnessChecker'
+
+
 # --- COPY SOURCE FILES FOR CHECKER TESTS
 
 RUN mkdir /checker
-WORKDIR /checker
 ADD /checker /checker
+WORKDIR /

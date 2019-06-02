@@ -4,37 +4,42 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-/**
- * Assign a null reference via dynamic proxy.
- */
-public class DynamicProxy implements InvocationHandler {
+interface Foo {
 
-    Object o;
+    Object get(Boolean safe);
+}
 
-    DynamicProxy() {
-        this.o = "safe";
+class DynamicInvocationHandler implements InvocationHandler {
+
+    @Override
+    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+        System.out.println("Invoked " + method.getName() + "(" + args[0] + ")");
+        Boolean safe = (Boolean) args[0];
+        return safe ? "safe" : null;
     }
+}
+
+/**
+ * Assign a null reference via dynamic proxy invocation.
+ */
+public class DynamicProxy {
 
     public static void main(String[] args) {
 
         /* safe: set object to non-null */
-        System.out.println(new DynamicProxy().get());  // safe
+        Foo f = (Foo) getProxyInstance(Foo.class);
+
+        System.out.println(f.get(true).toString());   // safe
 
         /* unsafe: set object to null */
-        DynamicProxy i = (DynamicProxy) Proxy.newProxyInstance(
+        System.out.println(f.get(false).toString());  // NullPointerException
+    }
+
+    static Object getProxyInstance(Class c) {
+        return Proxy.newProxyInstance(
                 DynamicProxy.class.getClassLoader(),
-                new Class[]{DynamicProxy.class},
-                new DynamicProxy());
-        System.out.println(i.get());  // NullPointerException
-    }
-
-    @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("method: " + method.getName());
-        return null;
-    }
-
-    Object get() {
-        return this.o;
+                new Class[]{c},
+                new DynamicInvocationHandler()
+        );
     }
 }

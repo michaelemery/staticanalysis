@@ -26,7 +26,7 @@ public class InvokeDynamicVirtual {
         System.out.println(i.o.toString());  // safe
 
         /* unsafe: set object to null */
-        mh.invoke(i, true);
+        mh.invoke(i, null);
         System.out.println(i.o.toString());  // NullPointerException
     }
 
