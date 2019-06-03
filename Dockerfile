@@ -138,4 +138,4 @@ RUN alias cfnull='-processor org.checkerframework.checker.nullness.NullnessCheck
 
 RUN mkdir /checker
 ADD /checker /checker
-WORKDIR /checker
+WORKDIR /
