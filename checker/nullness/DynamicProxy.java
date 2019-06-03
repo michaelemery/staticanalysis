@@ -1,22 +1,10 @@
 package checker.nullness;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 interface Foo {
 
     Object get(Boolean safe);
-}
-
-class DynamicInvocationHandler implements InvocationHandler {
-
-    @Override
-    public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        System.out.println("Invoked " + method.getName() + "(" + args[0] + ")");
-        Boolean safe = (Boolean) args[0];
-        return safe ? "safe" : null;
-    }
 }
 
 /**
@@ -27,19 +15,22 @@ public class DynamicProxy {
     public static void main(String[] args) {
 
         /* safe: set object to non-null */
-        Foo f = (Foo) getProxyInstance(Foo.class);
+        Foo proxyInstance = (Foo) Proxy.newProxyInstance(
+                Foo.class.getClassLoader(),
+                new Class[]{Foo.class},
+                (proxy, method, methodArgs) -> {
+                    if (method.getName().equals("get")) {
+                        return (Boolean) methodArgs[0] ? "safe" : null;
+                    } else {
+                        throw new UnsupportedOperationException(
+                                "Unsupported method: " + method.getName());
+                    }
+                });
 
-        System.out.println(f.get(true).toString());   // safe
+        /* safe: simulate setting object to non-null */
+        System.out.println(proxyInstance.get(true).toString());
 
-        /* unsafe: set object to null */
-        System.out.println(f.get(false).toString());  // NullPointerException
-    }
-
-    static Object getProxyInstance(Class c) {
-        return Proxy.newProxyInstance(
-                DynamicProxy.class.getClassLoader(),
-                new Class[]{c},
-                new DynamicInvocationHandler()
-        );
+        /* unsafe: simulate setting object to null */
+        System.out.println(proxyInstance.get(false).toString());
     }
 }
