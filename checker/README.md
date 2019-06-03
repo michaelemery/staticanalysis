@@ -38,16 +38,15 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 | feature | description |
 | --- | --- |
-| VanillaIntraProcedural | No dynamic features. Intraprocedural. |
-| VanillaInterProcedural | No dynamic features. Uses interprocedural data flow. |
-| ReflectMethodInvokeIntraProcedural | Method invocation via reflection using only locally defined parameters. |
-| ReflectMethodInvokeInterProcedural | Method invocation via reflection using parameters defined in other methods. |
-| ReflectOverloadInvokeInterProcedural | Overloaded method invocation via reflection using parameters defined in other methods. |
-| ReflectMethodHandleIntraProcedural | Method invocation via method handle using only locally defined parameters. |
-| ReflectFieldAccessIntraProcedural | Field access via reflection using only locally defined parameters. |
-| ReflectFieldAccessInterProcedural | Field access via reflection using parameters defined in other methods. |
-| DynamicProxy | Proxy objects allow additiion or modification of functionality within an class. The proxy object is used instead of the original class. |
-| InvokeDynamic | A bytecode instruction that facilitates the implementation of dynamic languages (for the JVM) through dynamic method invocation. |
+| IntraProcedural | Checker performance assessed within a single method. No dynamic features. |
+| InterProcedural | Checker performance assessed within multiple methods. No dynamic features. |
+| ReflectMethodInvoke | Checker performance assessed within methods invoked via reflection. |
+| ReflectOverloadInvoke | Checker performance assessed within overloaded methods invoked via reflection. |
+| ReflectFieldAccess | Checker performance assessed on objects directly manipulated via reflective field access. |
+| InvokeDynamicVirtual | Checker performance assessed within dynamically invoked non-static (virtual) methods. |
+| InvokeDynamicConstructor | Checker performance assessed on objects manipulated via dynamically invoked constructor. |
+| InvokeDynamicField | Checker performance assessed on objects directly manipulated via dynamic field access. |
+| DynamicProxy | Checker performance assessed on proxy instances of the original class interface. |
 
 ### reflection syntax and use of instance variables
 
@@ -59,16 +58,15 @@ The first argument of java.lang.reflect.Method.invoke() is the object instance o
 
 | feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| VanillaIntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanillaintraprocedural)  |  |  |
-| VanillaInterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanillainterprocedural) |  |  |
-| ReflectMethodInvokeIntraProcedural |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectmethodinvokeintraprocedural) |  |  |
-| ReflectMethodInvokeInterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectmethodinvokeinterprocedural) |  |  |
-| ReflectOverloadInvokeInterProcedural |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectoverloadinvokeinterprocedural) |  |  |
-| ReflectMethodHandleIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectmethodhandleintraprocedural) |  |  |
-| ReflectFieldAccessIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectfieldaccessintraprocedural) |  |  |
-| ReflectFieldAccessInterProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectfieldaccessinterprocedural) |  |  |
-| DynamicProxy |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#dynamicproxy) |  |  |
-| InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#invokedynamic) |  |  |
+| IntraProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraProcedural)  |  |  |
+| InterProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterProcedural) |  |  |
+| ReflectMethodInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethodInvoke) |  |  |
+| ReflectOverloadInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectOverloadInvoke) |  |  |
+| ReflectFieldAccess |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectFieldAccess) |  |  |
+| InvokeDynamicVirtual |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicVirtual) |  |  |
+| InvokeDynamicConstructor |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicConstructor) |  |  |
+| InvokeDynamicField |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicField) |  |  |
+| DynamicProxy |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#DynamicProxy) |  |  |
 
 > Select individual results for detail.
 
@@ -76,16 +74,15 @@ The first argument of java.lang.reflect.Method.invoke() is the object instance o
 
 | feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| VanillaIntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanillaintraprocedural)  |  |  |
-| VanillaInterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#vanillainterprocedural) |  |  |
-| ReflectMethodInvokeIntraProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvokeintraprocedural) |  |  |
-| ReflectMethodInvokeInterProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvokeinterprocedural) |  |  |
-| ReflectOverloadInvokeInterProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectoverloadinvokeinterprocedural) |  |  |
-| ReflectMethodHandleIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodhandleintraprocedural) |  |  |
-| ReflectFieldAccessIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessintraprocedural) |  |  |
-| ReflectFieldAccessInterProcedural |   |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccessinterprocedural) |  |  |
-| DynamicProxy |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |  |  |
-| InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#invokedynamic) |  |  |
+| IntraProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#IntraProcedural)  |  |  |
+| InterProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InterProcedural) |  |  |
+| ReflectMethodInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectMethodInvoke) |  |  |
+| ReflectOverloadInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectOverloadInvoke) |  |  |
+| ReflectFieldAccess |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectFieldAccess) |  |  |
+| InvokeDynamicVirtual |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicVirtual) |  |  |
+| InvokeDynamicConstructor |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicConstructor) |  |  |
+| InvokeDynamicField |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicField) |  |  |
+| DynamicProxy |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#DynamicProxy) |  |  |
 
 > Select individual results for detail.
 
@@ -93,16 +90,15 @@ The first argument of java.lang.reflect.Method.invoke() is the object instance o
 
 | feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| VanillaIntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#vanillaintraprocedural) |  |  |
-| VanillaInterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#vanillainterprocedural) |  |  |
-| ReflectMethodInvokeIntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodinvokeintraprocedural) |  |  |
-| ReflectMethodInvokeInterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodinvokeinterprocedural) |  |  |
-| ReflectOverloadInvokeInterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectoverloadinvokeinterprocedural) |  |  |
-| ReflectMethodHandleIntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandleintraprocedural) |  |  |
-| ReflectFieldAccessIntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessintraprocedural) |  |  |
-| ReflectFieldAccessInterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessinterprocedural) |  |  |
-| DynamicProxy |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |  |  |
-| InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#invokedynamic) |  |  |
+| IntraProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#IntraProcedural)  |  |  |
+| InterProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InterProcedural) |  |  |
+| ReflectMethodInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethodInvoke) |  |  |
+| ReflectOverloadInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectOverloadInvoke) |  |  |
+| ReflectFieldAccess |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectFieldAccess) |  |  |
+| InvokeDynamicVirtual |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InvokeDynamicVirtual) |  |  |
+| InvokeDynamicConstructor |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/infer/findbugs.md#InvokeDynamicConstructor) |  |  |
+| InvokeDynamicField |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InvokeDynamicField) |  |  |
+| DynamicProxy |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#DynamicProxy) |  |  |
 
 > Select individual results for detail.
 
@@ -110,15 +106,14 @@ The first argument of java.lang.reflect.Method.invoke() is the object instance o
 
 | feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| VanillaIntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanillaintraprocedural) |  |  |
-| VanillaInterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#vanillainterprocedural) |  |  |
-| ReflectMethodInvokeIntraProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectmethodinvokeintraprocedural) |  |  |
-| ReflectMethodInvokeInterProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectmethodinvokeinterprocedural) |  |  |
-| ReflectOverloadInvokeInterProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectoverloadinvokeinterprocedural) |  |  |
-| ReflectMethodHandleIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectmethodhandleintraprocedural) |  |  |
-| ReflectFieldAccessIntraProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessintraprocedural) |  |  |
-| ReflectFieldAccessInterProcedural |  |  | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#reflectfieldaccessinterprocedural) |  |  |
-| DynamicProxy |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#dynamicproxy) |  |  |
-| InvokeDynamic |  |  | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#invokedynamic) |  |  |
+| IntraProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#IntraProcedural)  |  |  |
+| InterProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InterProcedural) |  |  |
+| ReflectMethodInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectMethodInvoke) |  |  |
+| ReflectOverloadInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectOverloadInvoke) |  |  |
+| ReflectFieldAccess |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectFieldAccess) |  |  |
+| InvokeDynamicVirtual |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicVirtual) |  |  |
+| InvokeDynamicConstructor |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicConstructor) |  |  |
+| InvokeDynamicField |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicField) |  |  |
+| DynamicProxy |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#DynamicProxy) |  |  |
 
 > Select individual results for detail.

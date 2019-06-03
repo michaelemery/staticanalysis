@@ -37,31 +37,30 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 | feature | result |
 | --- | :---: |
-| VanillaIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanillaintraprocedural) |
-| VanillaInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#vanillainterprocedural) |
-| ReflectMethodInvokeIntraProcedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectmethodinvokeintraprocedural) |
-| ReflectMethodInvokeInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectmethodinvokeinterprocedural) |
-| ReflectOverloadInvokeInterProcedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectoverloadinvokeinterprocedural) |
-| ReflectMethodHandleIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectmethodhandleintraprocedural) |
-| ReflectFieldAccessIntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectfieldaccessintraprocedural) |
-| ReflectFieldAccessInterProcedural | [redundant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#reflectfieldaccessinterprocedural) |
-| DynamicProxy | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#dynamicproxy) |
-| InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#invokedynamic) |
+| IntraProcedural | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraProcedural) |
+| InterProcedural | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterProcedural) |
+| ReflectMethodInvoke | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethodInvoke) |
+| ReflectOverloadInvoke | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectOverloadInvoke) |
+| ReflectFieldAccess | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectFieldAccess) |
+| InvokeDynamicVirtual | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicVirtual) |
+| InvokeDynamicConstructor | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicConstructor) |
+| InvokeDynamicField | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicField) |
+| DynamicProxy | [xxc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#DynamicProxy) |
 
 > Select results for detail.
 
-### VanillaIntraProcedural
+### IntraProcedural
 
-[nullness/VanillaIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaIntraProcedural.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/VanillaIntraProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraProcedural.java
 ```
 
 #### output
 
 ```
-nullness/VanillaIntraProcedural.java:17: 
+nullness/IntraProcedural.java:17: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
@@ -73,18 +72,18 @@ error: [dereference.of.nullable] dereference of possibly-null reference s
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### VanillaInterProcedural
+### InterProcedural
 
-[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaInterProcedural.java)
+[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/VanillaInterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedural.java
 ```
 
 #### output
 
 ```
-nullness/VanillaInterProcedural.java:16: 
+nullness/InterProcedural.java:16: 
 error: [argument.type.incompatible] incompatible types in argument.
         s = returnReceivedString(null);
                                  ^
@@ -98,28 +97,28 @@ error: [argument.type.incompatible] incompatible types in argument.
 | :---: | :---: | :---: |
 | 1 | 0 | 0 |
 
-### ReflectMethodInvokeIntraProcedural
+### ReflectMethodInvoke
 
-[nullness/ReflectMethodInvokeIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeIntraProcedural.java)
+[nullness/ReflectMethodInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvoke.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectMethodInvokeIntraProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectMethodInvoke.java
 ```
 
 #### output
 
 ```
-nullness/ReflectMethodInvokeIntraProcedural.java:18: 
+nullness/ReflectMethodInvoke.java:18: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // "text"
                            ^
 
-nullness/ReflectMethodInvokeIntraProcedural.java:23: 
+nullness/ReflectMethodInvoke.java:23: 
 error: [dereference.of.nullable] dereference of possibly-null reference s
         System.out.println(s.toString());  // NullPointerException
                            ^
 
-nullness/ReflectMethodInvokeIntraProcedural.java:31: 
+nullness/ReflectMethodInvoke.java:31: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
@@ -133,25 +132,25 @@ error: [return.type.incompatible] incompatible types in return.
 | :---: | :---: | :---: |
 | 1 | 1 | 0 |
 
-### ReflectMethodInvokeInterProcedural
+### ReflectOverloadInvoke
 
-[nullness/ReflectMethodInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeInterProcedural.java)
+[nullness/ReflectOverloadInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvoke.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectMethodInvokeInterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectOverloadInvoke.java
 ```
 
 #### output
 
 ```
-nullness/ReflectMethodInvokeInterProcedural.java:26: 
+nullness/ReflectOverloadInvoke.java:26: 
 error: [return.type.incompatible] incompatible types in return.
         return s;
                ^
   found   : @Initialized @Nullable String
   required: @Initialized @NonNull String
 
-nullness/ReflectMethodInvokeInterProcedural.java:34: 
+nullness/ReflectOverloadInvoke.java:34: 
 error: [return.type.incompatible] incompatible types in return.
         return null;
                ^
@@ -287,10 +286,10 @@ TBC
 
 Tests are considered redundant when prerequisite tests are unsound.
 
-### ReflectFieldAccessInterProcedural
+### InvokeDynamicField
 
-[nullness/ReflectFieldAccessInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessInterProcedural.java)
+[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectFieldAccessInterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InvokeDynamicField.java
 ```
