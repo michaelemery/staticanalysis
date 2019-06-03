@@ -4,11 +4,9 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
-interface FooAlt {
-
-    Object get(Boolean safe);
-}
-
+/**
+ * Dynamic invocation handler for main class.
+ */
 class DynamicInvocationHandler implements InvocationHandler {
 
     @Override
@@ -24,10 +22,15 @@ class DynamicInvocationHandler implements InvocationHandler {
  */
 public class DynamicProxyAlt {
 
+    interface Foo {
+
+        Object get(Boolean safe);
+    }
+
     public static void main(String[] args) {
 
         /* safe: set object to non-null */
-        FooAlt f = (FooAlt) getProxyInstance(FooAlt.class);
+        Foo f = (Foo) getProxyInstance(Foo.class);
 
         System.out.println(f.get(true).toString());   // safe
 

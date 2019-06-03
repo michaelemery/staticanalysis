@@ -2,15 +2,15 @@ package checker.nullness;
 
 import java.lang.reflect.Proxy;
 
-interface Foo {
-
-    Object get(Boolean safe);
-}
-
 /**
  * Assign a null reference via dynamic proxy invocation.
  */
 public class DynamicProxy {
+
+    interface Foo {
+
+        Object get(Boolean safe);
+    }
 
     public static void main(String[] args) {
 
