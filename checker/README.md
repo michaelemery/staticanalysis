@@ -38,15 +38,15 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 | feature | description |
 | --- | --- |
-| IntraProcedural | Checker performance assessed within a single method. No dynamic features. |
-| InterProcedural | Checker performance assessed within multiple methods. No dynamic features. |
-| ReflectMethodInvoke | Checker performance assessed within methods invoked via reflection. |
-| ReflectOverloadInvoke | Checker performance assessed within overloaded methods invoked via reflection. |
-| ReflectFieldAccess | Checker performance assessed on objects directly manipulated via reflective field access. |
-| InvokeDynamicVirtual | Checker performance assessed within dynamically invoked non-static (virtual) methods. |
-| InvokeDynamicConstructor | Checker performance assessed on objects manipulated via dynamically invoked constructor. |
-| InvokeDynamicField | Checker performance assessed on objects directly manipulated via dynamic field access. |
-| DynamicProxy | Checker performance assessed on proxy instances of the original class interface. |
+| IntraProcedural | Test nullness safety within a single method. No dynamic features. |
+| InterProcedural | Test nullness safety within multiple methods. No dynamic features. |
+| ReflectMethodInvoke | Test nullness safety within methods invoked via reflection. |
+| ReflectOverloadInvoke | Test nullness safety within overloaded methods invoked via reflection. |
+| ReflectFieldAccess | Test nullness safety on objects directly manipulated via reflective field access. |
+| InvokeDynamicVirtual | Test nullness safety within dynamically invoked non-static (virtual) methods. |
+| InvokeDynamicConstructor | Test nullness safety on objects manipulated via dynamically invoked constructor. |
+| InvokeDynamicField | Test nullness safety on objects directly manipulated via dynamic field access. |
+| DynamicProxy | Test nullness safety on proxy instances of the original class interface. |
 
 ### reflection syntax and use of instance variables
 
