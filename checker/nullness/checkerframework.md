@@ -37,7 +37,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 | feature | result |
 | --- | :---: |
-| IntraProcedural | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraProcedural) |
+| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraProcedural) |
 | InterProcedural | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterProcedural) |
 | ReflectMethodInvoke | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethodInvoke) |
 | ReflectOverloadInvoke | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectOverloadInvoke) |
@@ -60,17 +60,17 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/
 #### output
 
 ```
-nullness/IntraProcedural.java:17: 
-error: [dereference.of.nullable] dereference of possibly-null reference s
-        System.out.println(s.toString());  // NullPointerException
-                           ^
-
+nullness/IntraProcedural.java:22: error: [assignment.type.incompatible] incompatible types in assignment.
+        i.o = null;
+              ^
+  found   : null
+  required: @Initialized @NonNull Object
 1 error
 ```
 
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 1 | 0 | 0 | accurate |
 
 ### InterProcedural
 
