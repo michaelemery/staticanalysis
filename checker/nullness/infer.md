@@ -18,332 +18,277 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 | feature | result |
 | --- | :---: |
-| VanillaIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#vanillaintraprocedural) |
-| VanillaInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#vanillainterprocedural) |
-| ReflectMethodInvokeIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodinvokeintraprocedural) |
-| ReflectMethodInvokeInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodinvokeinterprocedural) |
-| ReflectOverloadInvokeInterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectoverloadinvokeinterprocedural) |
-| ReflectMethodHandleIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandleintraprocedural) |
-| ReflectFieldAccessIntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessintraprocedural) |
-| ReflectFieldAccessInterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccessinterprocedural) |
-| DynamicProxy | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
-| InvokeDynamic | [tbc](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#invokedynamic) |
+| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#IntraProcedural) |
+| InterProcedural | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InterProcedural) |
+| ReflectMethodInvoke | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethodInvoke) |
+| ReflectOverloadInvoke | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectOverloadInvoke) |
+| ReflectFieldAccess | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectoverloadinvoke) |
+| InvokeDynamicVirtual | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandle) |
+| InvokeDynamicConstructor | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
+| InvokeDynamicField | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
+| DynamicProxy | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
 
 > Select results for detail.
 
-### VanillaIntraProcedural
+### IntraProcedural
 
-[nullness/VanillaIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaIntraProcedural.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/VanillaIntraProcedural.java
+infer run -a checkers --eradicate -- javac checker/nullness/IntraProcedural.java
 ```
 
 #### output
 
 ```
-Found 2 issues
+Found 3 issues
 
-nullness/VanillaIntraProcedural.java:17: error: ERADICATE_NULL_METHOD_CALL
-  The value of `s` in the call to `toString()` could be null. (Origin: null constant at line 16).
-  15.           // intraprocedural assignment of a null reference (fail)
-  16.           s = null;
-  17. >         System.out.println(s.toString());  // NullPointerException
-  18.       }
+checker/nullness/IntraProcedural.java:22: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `IntraProcedural.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 22).
+  20.   
+  21.           /* unsafe: set object to null */
+  22. >         i.o = null;
+  23.           System.out.println(i.o.toString());  // NullPointerException
+  24.       }
 
-nullness/VanillaIntraProcedural.java:17: error: NULL_DEREFERENCE
-  object `s` last assigned on line 16 could be null and is dereferenced at line 17.
-  15.           // intraprocedural assignment of a null reference (fail)
-  16.           s = null;
-  17. >         System.out.println(s.toString());  // NullPointerException
-  18.       }
+checker/nullness/IntraProcedural.java:23: error: ERADICATE_NULL_METHOD_CALL
+  The value of `i.o` in the call to `toString()` could be null. (Origin: null constant at line 22).
+  21.           /* unsafe: set object to null */
+  22.           i.o = null;
+  23. >         System.out.println(i.o.toString());  // NullPointerException
+  24.       }
+  25.   }
+
+checker/nullness/IntraProcedural.java:23: error: NULL_DEREFERENCE
+  object `i.o` last assigned on line 22 could be null and is dereferenced at line 23.
+  21.           /* unsafe: set object to null */
+  22.           i.o = null;
+  23. >         System.out.println(i.o.toString());  // NullPointerException
+  24.       }
+  25.   }
 
 
 Summary of the reports
 
-            NULL_DEREFERENCE: 1
-  ERADICATE_NULL_METHOD_CALL: 1
+    ERADICATE_NULL_METHOD_CALL: 1
+              NULL_DEREFERENCE: 1
+  ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 3 | 0 | 0 | accurate |
 
-### VanillaInterProcedural
+### InterProcedural
 
-[nullness/VanillaInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/VanillaInterProcedural.java)
-
-```
-infer run -a checkers --eradicate -- javac nullness/VanillaInterProcedural.java
-```
-
-#### output
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
 
 ```
-Found 2 issues
-
-nullness/VanillaInterProcedural.java:16: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `returnReceivedString(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 16).
-  14.   
-  15.           // interprocedural assignment of a null reference (fail)
-  16. >         s = returnReceivedString(null);
-  17.           System.out.println(s.toString());  // NullPointerException
-  18.   
-
-nullness/VanillaInterProcedural.java:17: error: NULL_DEREFERENCE
-  object `s` last assigned on line 16 could be null and is dereferenced at line 17.
-  15.           // interprocedural assignment of a null reference (fail)
-  16.           s = returnReceivedString(null);
-  17. >         System.out.println(s.toString());  // NullPointerException
-  18.   
-  19.       }
-
-
-Summary of the reports
-
-  ERADICATE_PARAMETER_NOT_NULLABLE: 1
-                  NULL_DEREFERENCE: 1
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
-
-### ReflectMethodInvokeIntraProcedural
-
-[nullness/ReflectMethodInvokeIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeIntraProcedural.java)
-
-```
-infer run -a checkers --eradicate -- javac nullness/ReflectMethodInvokeIntraProcedural.java
+infer run -a checkers --eradicate -- javac checker/nullness/InterProcedural.java
 ```
 
 #### output
 
 ```
-Found 1 issue
+Found 3 issues
 
-nullness/ReflectMethodInvokeIntraProcedural.java:30: error: ERADICATE_RETURN_NOT_NULLABLE
-  Method `returnNull()` may return null but it is not annotated with `@Nullable`. 
-  (Origin: null constant at line 31)
+checker/nullness/InterProcedural.java:19: error: NULL_DEREFERENCE
+  object `i.o` last assigned on line 18 could be null and is dereferenced at line 19.
+  17.           /* safe: set object to non-null */
+  18.           i.set(true);
+  19. >         System.out.println(i.o.toString());  // safe
+  20.   
+  21.           /* unsafe: set object to null */
+
+checker/nullness/InterProcedural.java:23: error: NULL_DEREFERENCE
+  object `i.o` last assigned on line 22 could be null and is dereferenced at line 23.
+  21.           /* unsafe: set object to null */
+  22.           i.set(false);
+  23. >         System.out.println(i.o.toString());  // NullPointerException
+  24.       }
+  25.   
+
+checker/nullness/InterProcedural.java:27: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `InterProcedural.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 27).
+  25.   
+  26.       public void set(Boolean safe) {
+  27. >         this.o = safe ? "safe" : null;
   28.       }
-  29.   
-  30. >     public static String returnNull() {
-  31.           return null;
-  32.       }
+  29.   }
 
 
 Summary of the reports
 
-  ERADICATE_RETURN_NOT_NULLABLE: 1
+              NULL_DEREFERENCE: 2
+  ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 2 | 1 | 0 | imprecise |
 
-### ReflectMethodInvokeInterProcedural
+### ReflectMethodInvoke
 
-[nullness/ReflectMethodInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvokeInterProcedural.java)
+[nullness/ReflectMethodInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvoke.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/ReflectMethodInvokeInterProcedural.java
+infer run -a checkers --eradicate -- javac checker/nullness/ReflectMethodInvoke.java
 ```
 
 #### output
 
 ```
-nullness/ReflectMethodInvokeInterProcedural.java:26: 
 Found 1 issue
 
-nullness/ReflectMethodInvokeInterProcedural.java:33: error: ERADICATE_RETURN_NOT_NULLABLE
-  Method `returnNull()` may return null but it is not annotated with `@Nullable`. 
-  (Origin: null constant at line 34)
-  31.       }
+checker/nullness/ReflectMethodInvoke.java:31: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `ReflectMethodInvoke.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 31).
+  29.   
+  30.       public void set(Boolean safe) {
+  31. >         this.o = safe ? "safe" : null;
+  32.       }
+  33.   }
+
+
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_NULLABLE: 1
+```
+
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 1 | 0 | 0 | accurate |
+
+### ReflectOverloadInvoke
+
+[nullness/ReflectOverloadInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvoke.java)
+
+```
+infer run -a checkers --eradicate -- javac checker/nullness/ReflectOverloadInvoke.java
+```
+
+### output
+
+```
+Found 1 issue
+
+checker/nullness/ReflectOverloadInvoke.java:36: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `ReflectOverloadInvoke.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 36).
+  34.   
+  35.       void set() {
+  36. >         this.o = null;
+  37.       }
+  38.   }
+
+
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_NULLABLE: 1
+```
+
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 1 | 0 | 0 | accurate |
+
+### ReflectFieldAccess
+
+[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
+
+```
+infer run -a checkers --eradicate -- javac checker/nullness/ReflectFieldAccess.java
+```
+
+#### output
+
+````
+No reported issues.
+
+````
+
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 0 | 0 | 0 | unsound |
+
+### InvokeDynamicVirtual
+
+[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicVirtual.java)
+
+```
+infer run -a checkers --eradicate -- javac checker/nullness/InvokeDynamicVirtual.java
+```
+
+#### output
+
+```
+Found 1 issue
+
+checker/nullness/InvokeDynamicVirtual.java:34: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `InvokeDynamicVirtual.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 34).
   32.   
-  33. >     public static String returnNull() {
-  34.           return null;
+  33.       void set(Boolean safe) {
+  34. >         this.o = safe ? "safe" : null;
   35.       }
+  36.   }
 
 
 Summary of the reports
 
-  ERADICATE_RETURN_NOT_NULLABLE: 1
+  ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 1 | 0 | 0 | accurate |
 
-### ReflectOverloadInvokeInterProcedural
+### InvokeDynamicConstructor
 
-[nullness/ReflectOverloadInvokeInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvokeInterProcedural.java)
-
-```
-infer run -a checkers --eradicate -- javac nullness/ReflectOverloadInvokeInterProcedural.java
-```
-
-#### output
-
-````
-Found 1 issue
-
-nullness/ReflectOverloadInvokeInterProcedural.java:30: error: ERADICATE_RETURN_NOT_NULLABLE
-  Method `returnText(...)` may return null but it is not annotated with `@Nullable`. (Origin: null constant at line 31)
-  28.       }
-  29.   
-  30. >     public static String returnText(boolean b) {
-  31.           return null;
-  32.       }
-
-
-Summary of the reports
-
-  ERADICATE_RETURN_NOT_NULLABLE: 1
-````
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
-
-### ReflectMethodHandleIntraProcedural
-
-[nullness/ReflectMethodHandleIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodHandleIntraProcedural.java)
+[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicConstructor.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/ReflectMethodHandleIntraProcedural.java
+infer run -a checkers --eradicate -- javac checker/nullness/InvokeDynamicConstructor.java
 ```
 
 #### output
 
 ```
-Found 2 issues
-
-nullness/ReflectMethodHandleIntraProcedural.java:4: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `Message.s` is not initialized in the constructor and is not declared `@Nullable`.
-  2.   import java.lang.invoke.MethodHandles;
-  3.   
-  4. > class Message {
-  5.       String s;
-  6.   }
-
-nullness/ReflectMethodHandleIntraProcedural.java:27: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `Message.s` can be null but is not declared `@Nullable`. (Origin: null constant at line 27).
-  25.           // get field with a null value (fail)
-  26.           
-  27. >         message.s = null; // null !
-  28.           mh = lookup.findGetter(Message.class, "s", String.class);
-  29.           s = (String) mh.invoke(message);
-
-
-Summary of the reports
-
-     ERADICATE_FIELD_NOT_NULLABLE: 1
-  ERADICATE_FIELD_NOT_INITIALIZED: 1
+No reported issues.
 ```
 
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 0 | 0 | 0 | unsound |
 
-### ReflectFieldAccessIntraProcedural
+### InvokeDynamicField
 
-[nullness/ReflectFieldAccessIntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessIntraProcedural.java)
+[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/ReflectFieldAccessIntraProcedural.java
+infer run -a checkers --eradicate -- javac checker/nullness/InvokeDynamicField.java
 ```
 
 #### output
 
 ```
-Found 1 issue
-
-nullness/ReflectFieldAccessIntraProcedural.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `ReflectFieldAccessIntraProcedural.bar` is not initialized in the constructor and is 
-  not declared `@Nullable`
-  6.    * Assignment of a null reference to a field accessed *intraprocedurally* via reflection.
-  7.    */
-  8. > public class ReflectFieldAccessIntraProcedural {
-  9.       public String bar;
-  10.   
-
-Summary of the reports
-
-  ERADICATE_FIELD_NOT_INITIALIZED: 1
+No reported issues.
 ```
 
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
-
-### ReflectFieldAccessInterProcedural
-
-[nullness/ReflectFieldAccessInterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccessInterProcedural.java)
-
-```
-infer run -a checkers --eradicate -- javac nullness/ReflectFieldAccessInterProcedural.java
-```
-
-#### output
-
-```
-[NO ISSUES IDENTIFIED]
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 0 | 0 | 1 |
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 0 | 0 | 0 | unsound |
 
 ### DynamicProxy
 
 [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
 
 ```
-infer run -a checkers --eradicate -- javac nullness/DynamicProxy.java
+infer run -a checkers --eradicate -- javac checker/nullness/DynamicProxy.java
 ```
 
 #### output
 
 ```
-Found 1 issue
-
-nullness/DynamicProxy.java:39: error: ERADICATE_RETURN_NOT_NULLABLE
-  Method `invoke(...)` may return null but it is not annotated with `@Nullable`. (Origin: null constant at line 40)
-  37.    
-  38.           @Override
-  39. >         public Object invoke(Object obj, Method m, Object[] arg) throws Throwable {
-  40.               return null;        
-  41.           }
-
-Summary of the reports
-
-  ERADICATE_RETURN_NOT_NULLABLE: 1
+No reported issues.
 ```
 
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| 1 | 0 | 0 |
-
-### InvokeDynamic
-
-[nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamic.java)
-
-```
-infer run -a checkers --eradicate -- javac nullness/InvokeDynamic.java
-```
-
-#### output
-
-```
-TBC
-```
-
-| True Pos | False Pos | False Neg |
-| :---: | :---: | :---: |
-| TBC | TBC | TBC |
-
-## redundant tests
-
-Tests are considered redundant when prerequisite tests are unsound.
-
-[No Redundant Tests]
+| True Pos | False Pos | False Neg | Result |
+| :---: | :---: | :---: | :---: |
+| 0 | 0 | 0 | unsound |

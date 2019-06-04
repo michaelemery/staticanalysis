@@ -181,7 +181,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-No reported errors.
+No reported issues.
 ```
 
 | True Pos | False Pos | False Neg | Result |
@@ -233,7 +233,6 @@ checker/nullness/InvokeDynamicVirtual.java:34: error: [assignment.type.incompati
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
 1 error
-
 ```
 
 | True Pos | False Pos | False Neg | Result |
@@ -251,8 +250,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-No reported errors.
-
+No reported issues.
 ```
 
 | True Pos | False Pos | False Neg | Result |
@@ -270,8 +268,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-No reported errors.
-
+No reported issues.
 ```
 
 | True Pos | False Pos | False Neg | Result |
@@ -300,8 +297,6 @@ checker/nullness/DynamicProxy.java:23: error: [return.type.incompatible] incompa
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
 2 errors
-
-
 ```
 
 | True Pos | False Pos | False Neg | Result |
