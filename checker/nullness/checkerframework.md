@@ -149,7 +149,7 @@ checker/nullness/ReflectOverloadInvoke.java:36: error: [assignment.type.incompat
 
 ### ReflectFieldAccess
 
-[nullness/ReflectOverloadInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
+[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectFieldAccess.java
@@ -209,7 +209,7 @@ No reported issues.
 
 ### InvokeDynamicField
 
-[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
+[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/InvokeDynamicField.java
@@ -227,7 +227,7 @@ No reported issues.
 
 ### DynamicProxy
 
-[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/DynamicProxy.java
