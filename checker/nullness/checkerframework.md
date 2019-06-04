@@ -68,9 +68,9 @@ nullness/IntraProcedural.java:22: error: [assignment.type.incompatible] incompat
 1 error
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 1 | 0 | 0 | accurate |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 1 | 0 | accurate |
 
 ### InterProcedural
 
@@ -91,9 +91,9 @@ nullness/InterProcedural.java:27: error: [assignment.type.incompatible] incompat
 1 error
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 1 | 0 | 0 | accurate |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 1 | 0 | accurate |
 
 ### ReflectMethodInvoke
 
@@ -120,9 +120,9 @@ checker/nullness/ReflectMethodInvoke.java:31: error: [assignment.type.incompatib
 3 errors
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 2 | 1 | 0 | imprecise |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 2 | 1 | imprecise |
 
 ### ReflectOverloadInvoke
 
@@ -143,9 +143,9 @@ checker/nullness/ReflectOverloadInvoke.java:36: error: [assignment.type.incompat
 1 error
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 1 | 0 | 0 | accurate |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 1 | 0 | accurate |
 
 ### ReflectOverloadInvoke
 
@@ -166,9 +166,9 @@ checker/nullness/ReflectOverloadInvoke.java:36: error: [assignment.type.incompat
 1 error
 ````
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 1 | 0 | 0 | accurate |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 1 | 0 | accurate |
 
 ### ReflectFieldAccessIntraProcedural
 
@@ -184,9 +184,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### DynamicProxy
 
@@ -212,9 +212,9 @@ checker/nullness/DynamicProxy.java:23: error: [return.type.incompatible] incompa
 2 errors
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 2 | 1 | 0 | imprecise |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 2 | 1 | imprecise |
 
 ### InvokeDynamic
 
@@ -235,9 +235,9 @@ checker/nullness/InvokeDynamicVirtual.java:34: error: [assignment.type.incompati
 1 error
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 1 | 0 | 0 | accurate |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 1 | 0 | accurate |
 
 ### InvokeDynamicConstructor
 
@@ -253,9 +253,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### InvokeDynamicField
 
@@ -271,9 +271,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### DynamicProxy
 
@@ -299,6 +299,6 @@ checker/nullness/DynamicProxy.java:23: error: [return.type.incompatible] incompa
 2 errors
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 1 | 1 | 0 | imprecise |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 1 | 1 | imprecise |

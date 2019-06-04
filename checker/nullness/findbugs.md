@@ -16,7 +16,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodhandle) |
 | InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccess) |
 | InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccess) |
-| DynamicProxy | [fail](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |
+| DynamicProxy | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |
 
 > Select results for detail.
 
@@ -36,9 +36,9 @@ H C NP: Null pointer dereference of IntraProcedural.o in checker.nullness.IntraP
 Warnings generated: 1
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 1 | 0 | 0 | accurate |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 1 | 0 | accurate |
 
 ### InterProcedural
 
@@ -55,9 +55,9 @@ findbugs checker/nullness/InterProcedural.class
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### ReflectMethodInvoke
 
@@ -65,7 +65,7 @@ No reported issues.
 
 ```
 javac checker/nullness/ReflectMethodInvoke.java
-findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/ReflectMethodInvoke.class
+findbugs checker/nullness/InvokeDynamicVirtual.class
 ```
 
 #### output
@@ -74,9 +74,9 @@ findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/ReflectMet
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### ReflectOverloadInvoke
 
@@ -93,9 +93,9 @@ findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/ReflectOve
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### ReflectFieldAccess
 
@@ -112,9 +112,9 @@ findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/ReflectFie
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### InvokeDynamicVirtual
 
@@ -131,9 +131,9 @@ findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/InvokeDyna
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### InvokeDynamicConstructor
 
@@ -150,9 +150,9 @@ findbugs checker/nullness/InvokeDynamicConstructor.class
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### InvokeDynamicField
 
@@ -169,9 +169,9 @@ findbugs checker/nullness/InvokeDynamicField.class
 No reported issues.
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 0 | unsound |
 
 ### DynamicProxy
 
@@ -186,9 +186,12 @@ findbugs checker/nullness/DynamicProxy.class checker/nullness/DynamicProxy.class
 #### output
 
 ```
-Checker failed to operate.
+root@de7f4557a7e1:/# findbugs checker/nullness/DynamicProxy.class checker/nullness/DynamicProxy.class
+The following classes needed for analysis were missing:
+  checker.nullness.DynamicProxy$Foo
+Missing classes: 1
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | fail |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 0 | 1 | aberrant |
