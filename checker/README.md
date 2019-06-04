@@ -61,6 +61,8 @@ The first argument of java.lang.reflect.Method.invoke() is the object instance o
 | unsound | false | true |
 | aberrant | false | false |
 
+Tests are assessed based on the number of true postives and false negatives. All test programs will generally incorporated only one deliberate safety concern, however multiple false positives may be detected at additional points where the concern may cascade. Only one point needs to be detected for the result to be considered sound (at best) or imprecise (at least). Any number of false positives will result in an "imprecise" rating (at best), or "aberrant" (at least).
+
 
 ## result summary (by tool)
 
