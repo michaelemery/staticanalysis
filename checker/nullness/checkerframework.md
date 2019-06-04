@@ -147,32 +147,9 @@ checker/nullness/ReflectOverloadInvoke.java:36: error: [assignment.type.incompat
 | :---: | :---: | :---: |
 | 1 | 0 | accurate |
 
-### ReflectOverloadInvoke
+### ReflectFieldAccess
 
-[nullness/ReflectOverloadInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvoke.java)
-
-```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectOverloadInvoke.java
-```
-
-#### output
-
-````
-checker/nullness/ReflectOverloadInvoke.java:36: error: [assignment.type.incompatible] incompatible types in assignment.
-        this.o = null;
-                 ^
-  found   : null
-  required: @Initialized @NonNull Object
-1 error
-````
-
-| True Pos | False Pos | Result |
-| :---: | :---: | :---: |
-| 1 | 0 | accurate |
-
-### ReflectFieldAccessIntraProcedural
-
-[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
+[nullness/ReflectOverloadInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectFieldAccess.java
@@ -180,43 +157,16 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 
 #### output
 
-```
+````
 No reported issues.
-```
+````
 
 | True Pos | False Pos | Result |
 | :---: | :---: | :---: |
 | 0 | 0 | unsound |
 
-### DynamicProxy
 
-[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
-
-```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/DynamicProxy.java
-```
-
-#### output
-
-```
-checker/nullness/DynamicProxy.java:19: error: [argument.type.incompatible] incompatible types in argument.
-                Foo.class.getClassLoader(),
-                                        ^
-  found   : @Initialized @Nullable ClassLoader
-  required: @Initialized @NonNull ClassLoader
-checker/nullness/DynamicProxy.java:23: error: [return.type.incompatible] incompatible types in return.
-                        return (Boolean) methodArgs[0] ? "safe" : null;
-                                                       ^
-  found   : @Initialized @Nullable Object
-  required: @Initialized @NonNull Object
-2 errors
-```
-
-| True Pos | False Pos | Result |
-| :---: | :---: | :---: |
-| 2 | 1 | imprecise |
-
-### InvokeDynamic
+### InvokeDynamicVirtual
 
 [nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicVirtual.java)
 
