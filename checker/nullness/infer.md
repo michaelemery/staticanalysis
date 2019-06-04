@@ -19,14 +19,14 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | feature | result |
 | --- | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#IntraProcedural) |
-| InterProcedural | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InterProcedural) |
-| ReflectMethodInvoke | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethodInvoke) |
-| ReflectOverloadInvoke | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectOverloadInvoke) |
-| ReflectFieldAccess | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectoverloadinvoke) |
-| InvokeDynamicVirtual | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandle) |
-| InvokeDynamicConstructor | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
-| InvokeDynamicField | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
-| DynamicProxy | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
+| InterProcedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InterProcedural) |
+| ReflectMethodInvoke | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethodInvoke) |
+| ReflectOverloadInvoke | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectOverloadInvoke) |
+| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectoverloadinvoke) |
+| InvokeDynamicVirtual | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandle) |
+| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
+| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
+| DynamicProxy | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
 
 > Select results for detail.
 
