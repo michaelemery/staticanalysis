@@ -153,7 +153,6 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicConstructor.java -f te
 
 ```
 /checker/nullness/InvokeDynamicConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-
 ```
 
 | True Pos | False Pos | Result | 
