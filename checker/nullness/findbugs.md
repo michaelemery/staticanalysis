@@ -16,7 +16,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodhandle) |
 | InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccess) |
 | InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccess) |
-| DynamicProxy | [no result](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |
+| DynamicProxy | [fail](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |
 
 > Select results for detail.
 
@@ -179,18 +179,16 @@ No reported issues.
 
 ```
 javac checker/nullness/DynamicProxy.java
-findbugs checker/nullness/DynamicProxy.class
+findbugs checker/nullness/DynamicProxy.class checker/nullness/DynamicProxy.class
+
 ```
 
 #### output
 
 ```
-root@de7f4557a7e1:/# findbugs checker/nullness/DynamicProxy.class
-The following classes needed for analysis were missing:
-  checker.nullness.DynamicProxy$Foo
-Missing classes: 1
+Checker failed to operate.
 ```
 
 | True Pos | False Pos | False Neg | Result |
 | :---: | :---: | :---: | :---: |
-| 0 | 0 | 0 | unsound |
+| 0 | 0 | 0 | fail |
