@@ -86,15 +86,15 @@ Tests are assessed based on the number of true postives and false negatives gene
 
 | feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| IntraProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#IntraProcedural)  |  |  |
-| InterProcedural |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InterProcedural) |  |  |
-| ReflectMethodInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectMethodInvoke) |  |  |
-| ReflectOverloadInvoke |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectOverloadInvoke) |  |  |
-| ReflectFieldAccess |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectFieldAccess) |  |  |
-| InvokeDynamicVirtual |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicVirtual) |  |  |
-| InvokeDynamicConstructor |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicConstructor) |  |  |
-| InvokeDynamicField |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicField) |  |  |
-| DynamicProxy |  |  | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#DynamicProxy) |  |  |
+| IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#IntraProcedural)  |  |  |
+| InterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InterProcedural) |  |  |
+| ReflectMethodInvoke |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectMethodInvoke) |  |  |
+| ReflectOverloadInvoke |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectOverloadInvoke) |  |  |
+| ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectFieldAccess) |  |  |
+| InvokeDynamicVirtual |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicVirtual) |  |  |
+| InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicConstructor) |  |  |
+| InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicField) |  |  |
+| DynamicProxy |  |  | [fail](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#DynamicProxy) |  |  |
 
 > Select individual results for detail.
 
