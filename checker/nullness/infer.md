@@ -123,9 +123,9 @@ Summary of the reports
   ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| True Pos | False Pos | False Neg | Result |
-| :---: | :---: | :---: | :---: |
-| 2 | 1 | 0 | imprecise |
+| True Pos | False Pos | Result |
+| :---: | :---: | :---: |
+| 2 | 1 | imprecise |
 
 ### ReflectMethodInvoke
 
