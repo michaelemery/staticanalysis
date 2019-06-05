@@ -1,7 +1,7 @@
 # nullness
 Nullness checking guarantees that a program will never throw a null pointer exception. De-referenced expressions are a common cause a null pointer exceptions. Dereferences occur not only when a field is accessed, but when an array is indexed, an exception is thrown, and more. Such exceptions may also occur simply as a result of a field not being initialised by its constructor.
 
-## test objective
+## test objectives
 
 Test the effectiveness of static analysis tools in identifying potential causes of null-pointer exceptions.
 

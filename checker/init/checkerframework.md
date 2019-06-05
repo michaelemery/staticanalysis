@@ -6,7 +6,7 @@ Version: checker-framework-2.1.11
 
 ### checkers used (fqn)
 
-1. org.checkerframework.checker.nullness.NullnessChecker
+1. org.checkerframework.checker.nullness.NullnessChecker (checking for initialisation)
 
 ### qualifiers
 
