@@ -40,8 +40,8 @@ Dynamic programming languages are a class of high-level programming languages wh
 | --- | --- |
 | IntraProcedural | Test nullness safety within a single method. No dynamic features. |
 | InterProcedural | Test nullness safety within multiple methods. No dynamic features. |
-| ReflectMethodInvoke | Test nullness safety within methods invoked via reflection. |
-| ReflectOverloadInvoke | Test nullness safety within overloaded methods invoked via reflection. |
+| ReflectMethod | Test nullness safety within methods invoked via reflection. |
+| ReflectMethodOverload | Test nullness safety within overloaded methods invoked via reflection. |
 | ReflectFieldAccess | Test nullness safety on objects directly manipulated via reflective field access. |
 | InvokeDynamicVirtual | Test nullness safety within dynamically invoked non-static (virtual) methods. |
 | InvokeDynamicConstructor | Test nullness safety on objects manipulated via dynamically invoked constructor. |
@@ -80,8 +80,8 @@ The final result of each test is based on the combination of false negative and 
 | --- | :---: | :---: | :---: | :---: | :---: |
 | IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraProcedural)  |  |  |
 | InterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterProcedural) |  |  |
-| ReflectMethodInvoke |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethodInvoke) |  |  |
-| ReflectOverloadInvoke |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectOverloadInvoke) |  |  |
+| ReflectMethod |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethod) |  |  |
+| ReflectMethodOverload |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethodOverload) |  |  |
 | ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectFieldAccess) |  |  |
 | InvokeDynamicVirtual |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicVirtual) |  |  |
 | InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicConstructor) |  |  |
@@ -96,8 +96,8 @@ The final result of each test is based on the combination of false negative and 
 | --- | :---: | :---: | :---: | :---: | :---: |
 | IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#IntraProcedural)  |  |  |
 | InterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InterProcedural) |  |  |
-| ReflectMethodInvoke |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectMethodInvoke) |  |  |
-| ReflectOverloadInvoke |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectOverloadInvoke) |  |  |
+| ReflectMethod |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectMethod) |  |  |
+| ReflectMethodOverload |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectMethodOverload) |  |  |
 | ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectFieldAccess) |  |  |
 | InvokeDynamicVirtual |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicVirtual) |  |  |
 | InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InvokeDynamicConstructor) |  |  |
@@ -112,8 +112,8 @@ The final result of each test is based on the combination of false negative and 
 | --- | :---: | :---: | :---: | :---: | :---: |
 | IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#IntraProcedural)  |  |  |
 | InterProcedural |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InterProcedural) |  |  |
-| ReflectMethodInvoke |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethodInvoke) |  |  |
-| ReflectOverloadInvoke |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectOverloadInvoke) |  |  |
+| ReflectMethod |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethod) |  |  |
+| ReflectMethodOverload |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#ReflectMethodOverload) |  |  |
 | ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectFieldAccess) |  |  |
 | InvokeDynamicVirtual |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InvokeDynamicVirtual) |  |  |
 | InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/infer/findbugs.md#InvokeDynamicConstructor) |  |  |
@@ -128,8 +128,8 @@ The final result of each test is based on the combination of false negative and 
 | --- | :---: | :---: | :---: | :---: | :---: |
 | IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#IntraProcedural)  |  |  |
 | InterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InterProcedural) |  |  |
-| ReflectMethodInvoke |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectMethodInvoke) |  |  |
-| ReflectOverloadInvoke |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectOverloadInvoke) |  |  |
+| ReflectMethod |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectMethod) |  |  |
+| ReflectMethodOverload |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectMethodOverload) |  |  |
 | ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectFieldAccess) |  |  |
 | InvokeDynamicVirtual |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicVirtual) |  |  |
 | InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicConstructor) |  |  |

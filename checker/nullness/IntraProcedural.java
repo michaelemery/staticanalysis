@@ -1,7 +1,7 @@
 package checker.nullness;
 
 /**
- * Assign a null reference bia intra-procedural assignment.
+ * Assign a null reference via intra-procedural assignment.
  */
 public class IntraProcedural {
 
@@ -12,14 +12,13 @@ public class IntraProcedural {
     }
 
     public static void main(String[] args) throws NullPointerException {
-        IntraProcedural i = new IntraProcedural("init");
 
         /* safe: set object to non-null */
-        i.o = "safe";
-        System.out.println(i.o.toString());  // safe
+        System.out.println(
+                new IntraProcedural("safe").o.toString());  // safe
 
         /* unsafe: set object to null */
-        i.o = null;
-        System.out.println(i.o.toString());  // NullPointerException
+        System.out.println(
+                new IntraProcedural(null).o.toString());    // NullPointerException
     }
 }

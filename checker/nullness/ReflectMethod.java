@@ -5,18 +5,18 @@ import java.lang.reflect.Method;
 /**
  * Assign a null reference via reflection method invocation.
  */
-public class ReflectMethodInvoke {
+public class ReflectMethod {
 
     Object o;
 
-    ReflectMethodInvoke(Object obj) {
+    ReflectMethod(Object obj) {
         this.o = obj;
     }
 
     public static void main(String[] args) throws Exception {
-        Class<?> C = ReflectMethodInvoke.class;
+        Class<?> C = ReflectMethod.class;
         Method m = C.getDeclaredMethod("set", Boolean.class);
-        ReflectMethodInvoke i = new ReflectMethodInvoke("init");
+        ReflectMethod i = new ReflectMethod("init");
 
         /* safe: set object to non-null */
         i.o = m.invoke(i, true).toString();

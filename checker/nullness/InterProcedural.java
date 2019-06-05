@@ -7,12 +7,12 @@ public class InterProcedural {
 
     Object o;
 
-    InterProcedural(Object obj) {
-        this.o = obj;
+    InterProcedural() {
+        this.o = "init";
     }
 
     public static void main(String[] args) throws NullPointerException {
-        InterProcedural i = new InterProcedural("init");
+        InterProcedural i = new InterProcedural();
 
         /* safe: set object to non-null */
         i.set(true);

@@ -39,8 +39,8 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | --- | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraProcedural) |
 | InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterProcedural) |
-| ReflectMethodInvoke | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethodInvoke) |
-| ReflectOverloadInvoke | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectOverloadInvoke) |
+| ReflectMethod | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethod) |
+| ReflectMethodOverload | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethodOverload) |
 | ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectFieldAccess) |
 | InvokeDynamicVirtual | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicVirtual) |
 | InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicConstructor) |
@@ -60,9 +60,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-nullness/IntraProcedural.java:22: error: [assignment.type.incompatible] incompatible types in assignment.
-        i.o = null;
-              ^
+checker/nullness/IntraProcedural.java:22: error: [argument.type.incompatible] incompatible types in argument.
+                new IntraProcedural(null).toString());  // NullPointerException
+                                    ^
   found   : null
   required: @Initialized @NonNull Object
 1 error
@@ -83,7 +83,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-nullness/InterProcedural.java:27: error: [assignment.type.incompatible] incompatible types in assignment.
+checker/nullness/InterProcedural.java:27: error: [assignment.type.incompatible] incompatible types in assignment.
         this.o = safe ? "safe" : null;
                       ^
   found   : @Initialized @Nullable Object
@@ -95,24 +95,24 @@ nullness/InterProcedural.java:27: error: [assignment.type.incompatible] incompat
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-### ReflectMethodInvoke
+### ReflectMethod
 
-[nullness/ReflectMethodInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvoke.java)
+[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectMethodInvoke.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectMethod.java
 ```
 
 #### output
 
 ```
-checker/nullness/ReflectMethodInvoke.java:22: error: [dereference.of.nullable] dereference of possibly-null reference m.invoke(i, true)
+checker/nullness/ReflectMethod.java:22: error: [dereference.of.nullable] dereference of possibly-null reference m.invoke(i, true)
         i.o = m.invoke(i, true).toString();
                       ^
-checker/nullness/ReflectMethodInvoke.java:26: error: [dereference.of.nullable] dereference of possibly-null reference m.invoke(i, false)
+checker/nullness/ReflectMethod.java:26: error: [dereference.of.nullable] dereference of possibly-null reference m.invoke(i, false)
         i.o = m.invoke(i, false).toString();
                       ^
-checker/nullness/ReflectMethodInvoke.java:31: error: [assignment.type.incompatible] incompatible types in assignment.
+checker/nullness/ReflectMethod.java:31: error: [assignment.type.incompatible] incompatible types in assignment.
         this.o = safe ? "safe" : null;
                       ^
   found   : @Initialized @Nullable Object
@@ -124,18 +124,18 @@ checker/nullness/ReflectMethodInvoke.java:31: error: [assignment.type.incompatib
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
-### ReflectOverloadInvoke
+### ReflectMethodOverload
 
-[nullness/ReflectOverloadInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvoke.java)
+[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectOverloadInvoke.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectMethodOverload.java
 ```
 
 #### output
 
 ```
-checker/nullness/ReflectOverloadInvoke.java:36: error: [assignment.type.incompatible] incompatible types in assignment.
+checker/nullness/ReflectMethodOverload.java:36: error: [assignment.type.incompatible] incompatible types in assignment.
         this.o = null;
                  ^
   found   : null

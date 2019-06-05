@@ -20,7 +20,7 @@ class DynamicInvocationHandler implements InvocationHandler {
 /**
  * Assign a null reference via dynamic proxy invocation.
  */
-public class DynamicProxyAlt {
+public class DynamicProxyNonLambda {
 
     interface Foo {
 
@@ -40,7 +40,7 @@ public class DynamicProxyAlt {
 
     static Object getProxyInstance(Class c) {
         return Proxy.newProxyInstance(
-                DynamicProxyAlt.class.getClassLoader(),
+                DynamicProxyNonLambda.class.getClassLoader(),
                 new Class[]{c},
                 new DynamicInvocationHandler()
         );
