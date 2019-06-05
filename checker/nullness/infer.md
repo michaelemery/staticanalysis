@@ -75,9 +75,9 @@ Summary of the reports
   ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 3 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### InterProcedural
 
@@ -123,9 +123,9 @@ Summary of the reports
   ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 2 | 1 | imprecise |
+| 0 | 1 | imprecise |
 
 ### ReflectMethodInvoke
 
@@ -154,9 +154,9 @@ Summary of the reports
   ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### ReflectOverloadInvoke
 
@@ -185,9 +185,9 @@ Summary of the reports
   ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### ReflectFieldAccess
 
@@ -204,9 +204,9 @@ No reported issues.
 
 ````
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### InvokeDynamicVirtual
 
@@ -235,9 +235,9 @@ Summary of the reports
   ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### InvokeDynamicConstructor
 
@@ -253,9 +253,9 @@ infer run -a checkers --eradicate -- javac checker/nullness/InvokeDynamicConstru
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### InvokeDynamicField
 
@@ -271,9 +271,9 @@ infer run -a checkers --eradicate -- javac checker/nullness/InvokeDynamicField.j
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### DynamicProxy
 
@@ -289,6 +289,6 @@ infer run -a checkers --eradicate -- javac checker/nullness/DynamicProxy.java
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |

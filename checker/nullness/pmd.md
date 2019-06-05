@@ -42,9 +42,9 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/IntraProcedural.java -f text -R cat
 /checker/nullness/IntraProcedural.java:22:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-| True Pos | False Pos | Result | 
+| False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### InterProcedural
 
@@ -61,9 +61,9 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InterProcedural.java -f text -R cat
 /checker/nullness/InterProcedural.java:27:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-| True Pos | False Pos | Result | 
+| False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### ReflectMethodInvoke
 
@@ -80,9 +80,9 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethodInvoke.java -f text -R
 /checker/nullness/ReflectMethodInvoke.java:31:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-| True Pos | False Pos | Result | 
+| False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### ReflectOverloadInvoke
 
@@ -99,9 +99,9 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectOverloadInvoke.java -f text 
 /checker/nullness/ReflectOverloadInvoke.java:36:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-| True Pos | False Pos | Result | 
+| False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### ReflectFieldAccess
 
@@ -117,9 +117,9 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectFieldAccess.java -f text -R 
 /checker/nullness/ReflectFieldAccess.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| True Pos | False Pos | Result | 
+| False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 
 ### InvokeDynamicVirtual
@@ -137,9 +137,9 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicVirtual.java -f text -
 /checker/nullness/InvokeDynamicVirtual.java:34:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-| True Pos | False Pos | Result | 
+| False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### InvokeDynamicConstructor
 
@@ -155,9 +155,9 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicConstructor.java -f te
 /checker/nullness/InvokeDynamicConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| True Pos | False Pos | Result | 
+| False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### InvokeDynamicField
 
@@ -173,9 +173,9 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicField.java -f text -R 
 /checker/nullness/InvokeDynamicField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| True Pos | False Pos | Result | 
+| False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### DynamicProxy
 
@@ -192,6 +192,6 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/DynamicProxy.java -f text -R catego
 /checker/nullness/DynamicProxy.java:23:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-| True Pos | False Pos | Result | 
+| False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |

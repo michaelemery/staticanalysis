@@ -68,9 +68,9 @@ nullness/IntraProcedural.java:22: error: [assignment.type.incompatible] incompat
 1 error
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### InterProcedural
 
@@ -91,9 +91,9 @@ nullness/InterProcedural.java:27: error: [assignment.type.incompatible] incompat
 1 error
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### ReflectMethodInvoke
 
@@ -120,9 +120,9 @@ checker/nullness/ReflectMethodInvoke.java:31: error: [assignment.type.incompatib
 3 errors
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 2 | 1 | imprecise |
+| 0 | 1 | imprecise |
 
 ### ReflectOverloadInvoke
 
@@ -143,9 +143,9 @@ checker/nullness/ReflectOverloadInvoke.java:36: error: [assignment.type.incompat
 1 error
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### ReflectFieldAccess
 
@@ -161,9 +161,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ````
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1| 0 | unsound |
 
 
 ### InvokeDynamicVirtual
@@ -185,9 +185,9 @@ checker/nullness/InvokeDynamicVirtual.java:34: error: [assignment.type.incompati
 1 error
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### InvokeDynamicConstructor
 
@@ -203,9 +203,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1| 0 | unsound |
 
 ### InvokeDynamicField
 
@@ -221,9 +221,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1| 0 | unsound |
 
 ### DynamicProxy
 
@@ -249,6 +249,6 @@ checker/nullness/DynamicProxy.java:23: error: [return.type.incompatible] incompa
 2 errors
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 1 | imprecise |
+| 0 | 1 | imprecise |

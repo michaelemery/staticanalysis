@@ -36,9 +36,9 @@ H C NP: Null pointer dereference of IntraProcedural.o in checker.nullness.IntraP
 Warnings generated: 1
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 0 | 0 | accurate |
 
 ### InterProcedural
 
@@ -55,9 +55,9 @@ findbugs checker/nullness/InterProcedural.class
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### ReflectMethodInvoke
 
@@ -74,9 +74,9 @@ findbugs checker/nullness/InvokeDynamicVirtual.class
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### ReflectOverloadInvoke
 
@@ -93,9 +93,9 @@ findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/ReflectOve
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### ReflectFieldAccess
 
@@ -112,9 +112,9 @@ findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/ReflectFie
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### InvokeDynamicVirtual
 
@@ -131,9 +131,9 @@ findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/InvokeDyna
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### InvokeDynamicConstructor
 
@@ -150,9 +150,9 @@ findbugs checker/nullness/InvokeDynamicConstructor.class
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### InvokeDynamicField
 
@@ -169,9 +169,9 @@ findbugs checker/nullness/InvokeDynamicField.class
 No reported issues.
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ### DynamicProxy
 
@@ -180,7 +180,6 @@ No reported issues.
 ```
 javac checker/nullness/DynamicProxy.java
 findbugs checker/nullness/DynamicProxy.class checker/nullness/DynamicProxy.class
-
 ```
 
 #### output
@@ -192,6 +191,6 @@ The following classes needed for analysis were missing:
 Missing classes: 1
 ```
 
-| True Pos | False Pos | Result |
+| False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 1 | aberrant |
+| 1| 1 | aberrant |
