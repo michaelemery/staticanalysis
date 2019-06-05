@@ -41,7 +41,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InterProcedural) |
 | ReflectMethod | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#ReflectMethod) |
 | ReflectMethodOverload | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#ReflectMethodOverload) |
-| ReflectFieldAccess | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#ReflectFieldAccess) |
+| ReflectFieldAccess | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#ReflectFieldAccess) |
 | InvokeDynamicVirtual | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InvokeDynamicVirtual) |
 | InvokeDynamicConstructor | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InvokeDynamicConstructor) |
 | InvokeDynamicField | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InvokeDynamicField) |
@@ -175,12 +175,18 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 #### output
 
 ````
-
+checker/init/ReflectFieldAccess.java:12: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
+    ReflectFieldAccess(int x) throws Exception {
+    ^
+checker/init/ReflectFieldAccess.java:18: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
+    ReflectFieldAccess(int x, int y) throws Exception {
+    ^
+2 errors
 ````
 
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| - | - | xxx |
+| 0 | 1 | imprecise |
 
 
 ### InvokeDynamicVirtual
