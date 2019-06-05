@@ -1,23 +1,35 @@
 package checker.init;
 
 /**
- * Constructor accesses uninitialised field via intra-procedural call
+ * Reference an object before initialisation is complete.
  */
 public class IntraProcedural {
 
-    String s;
+    Object o;
 
-    // only initialises if argument is true
-    IntraProcedural(Boolean safe) {
-        if (safe) this.s = "safe";
+    public IntraProcedural() {
+        this.o = "safe";
+    }
+
+    public IntraProcedural(int x) {
+    }
+
+    public IntraProcedural(int x, int y) {
+        this.o.toString();
     }
 
     public static void main(String[] args) throws NullPointerException {
 
-        // safe
-        System.out.println(new IntraProcedural(true).s);
+        /* safe: set object to non-null */
+        System.out.println(
+                new IntraProcedural().o.toString());  // safe
 
-        //unsafe
-        System.out.println(new IntraProcedural(false).s);
+        /* safe: set object to non-null */
+        System.out.println(
+                new IntraProcedural(1).o.toString());  // NullPointerException
+
+        /* unsafe: set object to null */
+        System.out.println(
+                new IntraProcedural(1, 2).o.toString());  // NullPointerException
     }
 }

@@ -1,22 +1,34 @@
 package checker.init;
 
 /**
- * Constructor accesses uninitialised field via inter-procedural call
+ * Initialise with a null reference via intra-procedural assignment.
  */
+
 public class InterProcedural {
 
-    String s;
+    Object o;
 
-    InterProcedural(Boolean safe) {
-        this.s = getValue(safe);
+    public InterProcedural() {
+        this.o = "safe";
     }
 
-    public static void main(String[] args) throws NullPointerException {
-        System.out.println(new InterProcedural(true).s);
-        System.out.println(new InterProcedural(false).s);
+    public InterProcedural(int x) {
+        m();
+        o = new Object();
     }
 
-    static String getValue(Boolean safe) {
-        return safe ? "safe" : null;
+    public void m() {
+        this.o.toString();
+    }
+
+    public static void main(String[] args) {
+
+        /* safe: set object to non-null */
+        System.out.println(
+                new InterProcedural().o.toString());  // safe
+
+        /* safe: set object to non-null */
+        System.out.println(
+                new InterProcedural(1).o.toString());  // NullPointerException
     }
 }
