@@ -22,6 +22,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 > Select results for detail.
 
+
 ### IntraProcedural
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/IntraProcedural.java)
@@ -44,6 +45,7 @@ checker/init/IntraProcedural.java:16: error: [dereference.of.nullable] dereferen
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
+
 
 ### InterProcedural
 
@@ -69,6 +71,7 @@ checker/init/InterProcedural.java:17: error: [method.invocation.invalid] call to
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
+
 
 ### ReflectMethod
 
@@ -103,6 +106,7 @@ checker/init/ReflectMethod.java:18: error: [argument.type.incompatible] incompat
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
+
 ### ReflectMethodOverload
 
 [init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethodOverload.java)
@@ -135,6 +139,7 @@ checker/init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] 
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
+
 
 ### ReflectFieldAccess
 
@@ -183,6 +188,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 | :---: | :---: | :---: |
 | - | - | xxx |
 
+
 ### InvokeDynamicConstructor
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicConstructor.java)
@@ -203,6 +209,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 | :---: | :---: | :---: |
 | - | - | xxx |
 
+
 ### InvokeDynamicField
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicField.java)
@@ -222,6 +229,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
 | - | - | xxx |
+
 
 ### DynamicProxy
 
