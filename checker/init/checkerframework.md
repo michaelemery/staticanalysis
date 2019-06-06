@@ -1,4 +1,4 @@
-# results for checker framework (init)
+# checker framework results (init)
 
 Version: checker-framework-2.1.11
 
