@@ -1,4 +1,4 @@
-# pmd
+# pmd results (nullness)
 
 Version: pmd-bin-6.1.0
 
