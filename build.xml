@@ -90,7 +90,7 @@
     <jsr308.javac
           srcdir="${src}/signedness"
           includeantruntime="false">
-      <compilerarg line="-processor org.checkerframework.checker.signedness.SignednessChecker"/>
+      <compilerarg line="-processor org.checkerframework.signedness.SignednessChecker"/>
       <compilerarg line="-Xmaxerrs 10000"/>
     </jsr308.javac>
   </target>

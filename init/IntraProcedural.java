@@ -1,4 +1,4 @@
-package checker.init;
+package init;
 
 /**
  * Reference an object before initialisation is complete.

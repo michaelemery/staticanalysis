@@ -1,4 +1,4 @@
-package checker.init;
+package init;
 
 /**
  * Initialise with a null reference via intra-procedural assignment.

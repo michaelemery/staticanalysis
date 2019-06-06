@@ -1,4 +1,4 @@
-package checker.init;
+package init;
 
 import java.lang.reflect.Method;
 

@@ -1,4 +1,4 @@
-package checker.aliasing;
+package aliasing;
 
 /**
  * Interprocedural corruption of an object via an alias.

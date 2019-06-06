@@ -1,4 +1,4 @@
-package checker.init;
+package init;
 
 /**
  * Created by Michael Emery on 2019-06-06.
