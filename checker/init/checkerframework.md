@@ -6,7 +6,7 @@ org.checkerframework.checker.nullness.NullnessChecker (checking for initialisati
 
 ### summary
 
-Results can be replicated using a Docker terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) repository. Copy the docker command(s) provided with each test result, and paste them into your docker session. 
+Results can be replicated using an interactive Docker terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
 | feature | result |
 | --- | :---: |
