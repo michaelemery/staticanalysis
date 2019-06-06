@@ -43,7 +43,7 @@ checker/init/IntraProcedural.java:16: error: [dereference.of.nullable] dereferen
 
 #### analysis
 
-| false neg | false pos | result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
@@ -70,7 +70,7 @@ checker/init/InterProcedural.java:17: error: [method.invocation.invalid] call to
 
 #### analysis
 
-| false neg | false pos | result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
@@ -105,7 +105,7 @@ checker/init/ReflectMethod.java:18: error: [argument.type.incompatible] incompat
 
 #### analysis
 
-| false neg | false pos | result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
@@ -140,7 +140,7 @@ checker/init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] 
 
 #### analysis
 
-| false neg | false pos | result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
@@ -168,7 +168,7 @@ checker/init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] derefe
 
 #### analysis
 
-| false neg | false pos | result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
@@ -190,7 +190,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 #### analysis
 
-| false neg | false pos | result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | - | - | xxx |
 
@@ -212,7 +212,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 #### analysis
 
-| false neg | false pos | result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | - | - | xxx |
 
@@ -234,7 +234,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 #### analysis
 
-| false neg | false pos | result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | - | - | xxx |
 
@@ -256,6 +256,6 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 #### analysis
 
-| false neg | false pos | result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | - | - | xxx |
