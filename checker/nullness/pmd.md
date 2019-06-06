@@ -2,16 +2,14 @@
 
 Version: pmd-bin-6.1.0
 
-## usage
-
 * PMD checkers belonging to the "error prone" category are the only ones required for these tests.
 * The `$PMD_HOME` variable must be configured to use these commands.
 * JDK must be set to 1.8 or lower.
 * Outputs have been simplified for brevity.
 
-## results
+Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
+### summary
 
 | feature | result |
 | --- | :---: |
@@ -27,9 +25,11 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 > Select results for detail.
 
-### IntraProcedural
+## IntraProcedural
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
+
+#### docker
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
@@ -45,9 +45,11 @@ checker/nullness/IntraProcedural.java:23:	Assigning an Object to null is a code 
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-### InterProcedural
+## InterProcedural
 
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+
+#### docker
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/InterProcedural.java -f text -R category/java/errorprone.xml
@@ -63,9 +65,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### ReflectMethod
+## ReflectMethod
 
 [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
+
+#### docker
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethod.java -f text -R category/java/errorprone.xml
@@ -81,9 +85,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### ReflectMethodOverload
+## ReflectMethodOverload
 
 [nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
+
+#### docker
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethodOverload.java -f text -R category/java/errorprone.xml
@@ -99,9 +105,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### ReflectFieldAccess
+## ReflectFieldAccess
 
 [nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
+
+#### docker
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectFieldAccess.java -f text -R category/java/errorprone.xml
@@ -118,9 +126,11 @@ No reported issues.
 | 1 | 0 | unsound |
 
 
-### InvokeDynamicVirtual
+## InvokeDynamicVirtual
 
 [nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicVirtual.java)
+
+#### docker
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicVirtual.java -f text -R category/java/errorprone.xml
@@ -136,9 +146,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### InvokeDynamicConstructor
+## InvokeDynamicConstructor
 
 [nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicConstructor.java)
+
+#### docker
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
@@ -154,9 +166,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### InvokeDynamicField
+## InvokeDynamicField
 
 [nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
+
+#### docker
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicField.java -f text -R category/java/errorprone.xml
@@ -172,9 +186,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### DynamicProxy
+## DynamicProxy
 
 [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
+
+#### docker
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/DynamicProxy.java -f text -R category/java/errorprone.xml
