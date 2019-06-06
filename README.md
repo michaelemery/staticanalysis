@@ -13,10 +13,10 @@ of each tool are compared in order to assess overall and relative effectiveness.
 
 | tool | description |
 | --- | --- |
-| [Checker Framework](https://github.com/michaelemery/staticanalysis/tree/master#checker-framework) | The Checker Framework enhances Java’s type system by detecting and preventing specific errors in Java programs. |
-| [FindBugs](https://github.com/michaelemery/staticanalysis/tree/master#findbugs) | FindBugs™ is a program to find bugs in Java programs. It looks for instances of "bug patterns" — code instances that are likely to be errors. |
-| [Infer](https://github.com/michaelemery/staticanalysis/tree/master#infer) | Open-sourced by Facebook. Infer checks for null pointer exceptions, resource leaks, annotation reachability, missing lock guards, and concurrency race conditions in Java code. |
-| [PMD](https://github.com/michaelemery/staticanalysis/tree/master/tree/master#pmd) | PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code in multiple languages. The CDP feature is not used in this project. PMD has numerous categories of checking options, however this project only uses the errorprone.xmlruleset. Other checking options relate more to style. |
+| [Checker Framework](https://github.com/michaelemery/staticanalysis#checker-framework) | The Checker Framework enhances Java’s type system by detecting and preventing specific errors in Java programs. |
+| [FindBugs](https://github.com/michaelemery/staticanalysis#findbugs) | FindBugs™ is a program to find bugs in Java programs. It looks for instances of "bug patterns" — code instances that are likely to be errors. |
+| [Infer](https://github.com/michaelemery/staticanalysis#infer) | Open-sourced by Facebook. Infer checks for null pointer exceptions, resource leaks, annotation reachability, missing lock guards, and concurrency race conditions in Java code. |
+| [PMD](https://github.com/michaelemery/staticanalysis#pmd) | PMD is a source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. Additionally it includes CPD, the copy-paste-detector. CPD finds duplicated code in multiple languages. The CDP feature is not used in this project. PMD has numerous categories of checking options, however this project only uses the errorprone.xmlruleset. Other checking options relate more to style. |
 
 ### checker types
 
