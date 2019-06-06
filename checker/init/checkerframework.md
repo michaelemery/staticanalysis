@@ -6,8 +6,6 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 ### summary
 
-> Select results for detail.
-
 | feature | result |
 | --- | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#IntraProcedural) |
@@ -19,6 +17,8 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 | InvokeDynamicConstructor | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InvokeDynamicConstructor) |
 | InvokeDynamicField | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InvokeDynamicField) |
 | DynamicProxy | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#DynamicProxy) |
+
+> Select results for detail.
 
 ## IntraProcedural
 
