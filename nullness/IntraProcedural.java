@@ -1,4 +1,4 @@
-package checker.nullness;
+package nullness;
 
 /**
  * Assign a null reference via intra-procedural assignment.

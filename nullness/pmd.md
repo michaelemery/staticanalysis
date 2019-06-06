@@ -41,7 +41,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/IntraProcedural.java -f text -R cat
 checker/nullness/IntraProcedural.java:23:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
-| False Neg | False Pos | Result | 
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
@@ -61,7 +61,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InterProcedural.java -f text -R cat
 No reported issues.
 ```
 
-| False Neg | False Pos | Result | 
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -81,7 +81,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethod.java -f text -R categ
 No reported issues.
 ```
 
-| False Neg | False Pos | Result | 
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -101,7 +101,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethodOverload.java -f text 
 No reported issues.
 ```
 
-| False Neg | False Pos | Result | 
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -121,7 +121,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectFieldAccess.java -f text -R 
 No reported issues.
 ```
 
-| False Neg | False Pos | Result | 
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -142,7 +142,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicVirtual.java -f text -
 No reported issues.
 ```
 
-| False Neg | False Pos | Result | 
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -162,7 +162,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicConstructor.java -f te
 No reported issues.
 ```
 
-| False Neg | False Pos | Result | 
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -182,7 +182,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicField.java -f text -R 
 No reported issues.
 ```
 
-| False Neg | False Pos | Result | 
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -203,6 +203,6 @@ checker/nullness/DynamicProxy.java:18:	Found 'DU'-anomaly for variable 'proxyIns
 hecker/nullness/DynamicProxy.java:19:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
 ```
 
-| False Neg | False Pos | Result | 
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 2 | aberrant |

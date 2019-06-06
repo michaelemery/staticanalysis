@@ -54,7 +54,7 @@
     <jsr308.javac
           srcdir="${src}/init"
           includeantruntime="false">
-      <compilerarg line="-processor org.checkerframework.checker.nullness.NullnessChecker"/>
+      <compilerarg line="-processor org.checkerframework.nullness.NullnessChecker"/>
       <compilerarg line="-Xmaxerrs 10000"/>
     </jsr308.javac>
   </target>
@@ -78,7 +78,7 @@
     <jsr308.javac
           srcdir="${src}/nullness"
           includeantruntime="false">
-      <compilerarg line="-processor org.checkerframework.checker.nullness.NullnessChecker"/>
+      <compilerarg line="-processor org.checkerframework.nullness.NullnessChecker"/>
       <compilerarg line="-Xmaxerrs 10000"/>
     </jsr308.javac>
   </target>
