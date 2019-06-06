@@ -71,7 +71,7 @@ RUN mkdir -p /usr/local/maven
 WORKDIR /usr/local/maven
 
 # copy install files
-ADD ./archive/apache-maven-3.5.3-bin.zip .
+ADD ../archive .
 RUN unzip apache-maven-3.5.3-bin.zip && \
     rm apache-maven-3.5.3-bin.zip
 
@@ -87,7 +87,7 @@ RUN mkdir -p /usr/local/checkerframework
 WORKDIR /usr/local/checkerframework
 
 # copy install files
-ADD ./archive/checker-framework-2.1.11.zip .
+ADD ../archive .
 RUN unzip checker-framework-2.1.11.zip && \
     rm checker-framework-2.1.11.zip
 
@@ -104,7 +104,7 @@ RUN mkdir -p /usr/local/pmd
 WORKDIR /usr/local/pmd
 
 # copy install files
-ADD ./archive/pmd-bin-6.1.0.zip .
+ADD ../archive .
 RUN unzip pmd-bin-6.1.0.zip && \
     rm pmd-bin-6.1.0.zip
 
@@ -119,7 +119,7 @@ RUN mkdir -p /usr/local/findbugs
 WORKDIR /usr/local/findbugs
 
 # copy install files
-ADD ./archive/findbugs-3.0.1.zip .
+ADD ../archive .
 RUN unzip findbugs-3.0.1.zip && \
     rm findbugs-3.0.1.zip
 
