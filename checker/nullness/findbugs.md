@@ -1,8 +1,10 @@
-# findbugs
+# findbugs results (nullness)
 
 Version: findbugs-3.0.1
 
-## results
+Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
+
+### summary
 
 Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
 
@@ -20,9 +22,11 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 > Select results for detail.
 
-### IntraProcedural
+## IntraProcedural
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
+
+#### docker
 
 ```
 javac checker/nullness/IntraProcedural.java
@@ -40,9 +44,11 @@ Warnings generated: 1
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-### InterProcedural
+## InterProcedural
 
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+
+#### docker
 
 ```
 javac checker/nullness/InterProcedural.java
@@ -59,9 +65,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### ReflectMethod
+## ReflectMethod
 
 [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
+
+#### docker
 
 ```
 javac checker/nullness/ReflectMethod.java
@@ -78,9 +86,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### ReflectMethodOverload
+## ReflectMethodOverload
 
 [nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
+
+#### docker
 
 ```
 javac checker/nullness/ReflectMethodOverload.java
@@ -97,9 +107,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### ReflectFieldAccess
+## ReflectFieldAccess
 
 [nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
+
+#### docker
 
 ```
 javac checker/nullness/ReflectFieldAccess.java
@@ -116,9 +128,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### InvokeDynamicVirtual
+## InvokeDynamicVirtual
 
 [nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicVirtual.java)
+
+#### docker
 
 ```
 javac checker/nullness/InvokeDynamicVirtual.java
@@ -135,9 +149,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### InvokeDynamicConstructor
+## InvokeDynamicConstructor
 
 [nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicConstructor.java)
+
+#### docker
 
 ```
 javac checker/nullness/InvokeDynamicConstructor.java
@@ -154,9 +170,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### InvokeDynamicField
+## InvokeDynamicField
 
 [nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
+
+#### docker
 
 ```
 javac checker/nullness/InvokeDynamicField.java
@@ -173,9 +191,11 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### DynamicProxy
+## DynamicProxy
 
 [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
+
+#### docker
 
 ```
 javac checker/nullness/DynamicProxy.java
