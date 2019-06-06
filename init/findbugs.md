@@ -39,7 +39,7 @@ M C UR: Uninitialized read of o in new checker.init.IntraProcedural(int, int)  A
 Warnings generated: 2
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
@@ -60,7 +60,7 @@ findbugs init/InterProcedural.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 2 | 0 | unsound |
 
@@ -81,7 +81,7 @@ findbugs init/ReflectMethod.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | o | unsound |
 
@@ -102,7 +102,7 @@ findbugs init/ReflectMethodOverload.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | o | unsound |
 
@@ -125,7 +125,7 @@ M C NP: Read of unwritten field o in checker.init.ReflectFieldAccess.main(String
 Warnings generated: 2
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 1 | aberrant |
 
@@ -146,7 +146,7 @@ findbugs init/InvokeDynamicVirtual.class init/InvokeDynamicVirtual.class
 
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | x | x | xxx |
 
@@ -167,7 +167,7 @@ findbugs init/InvokeDynamicConstructor.class
 
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | x | x | xxx |
 
@@ -188,7 +188,7 @@ findbugs init/InvokeDynamicField.class
 
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | x | x | xxx |
 
@@ -209,6 +209,6 @@ findbugs init/DynamicProxy.class init/DynamicProxy.class
 
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | x | x | xxx |
