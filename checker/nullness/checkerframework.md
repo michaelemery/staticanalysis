@@ -1,12 +1,10 @@
-# checker framework
+# checker framework results (nullness)
 
 Version: checker-framework-2.1.11
 
-org.checkerframework.checker.nullness.NullnessChecker
+Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-## results
-
-Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repository `michaelemery/staticanalysis`. Copy and paste the commands provided in each example. Some outputs have been reformatted for readability.
+### summary
 
 | feature | result |
 | --- | :---: |
@@ -22,9 +20,11 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 > Select results for detail.
 
-### IntraProcedural
+## IntraProcedural
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
+
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/IntraProcedural.java
@@ -41,13 +41,15 @@ checker/nullness/IntraProcedural.java:23: error: [assignment.type.incompatible] 
 1 error
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-### InterProcedural
+## InterProcedural
 
 [nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/InterProcedural.java
@@ -64,13 +66,15 @@ checker/nullness/InterProcedural.java:22: error: [argument.type.incompatible] in
 1 error
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-### ReflectMethod
+## ReflectMethod
 
 [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
+
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectMethod.java
@@ -87,13 +91,15 @@ checker/nullness/ReflectMethod.java:25: error: [argument.type.incompatible] inco
 1 error
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-### ReflectMethodOverload
+## ReflectMethodOverload
 
 [nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
+
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectMethodOverload.java
@@ -110,13 +116,15 @@ checker/nullness/ReflectMethodOverload.java:27: error: [argument.type.incompatib
 1 error
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-### ReflectFieldAccess
+## ReflectFieldAccess
 
 [nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
+
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/ReflectFieldAccess.java
@@ -128,14 +136,16 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ````
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1| 0 | unsound |
 
 
-### InvokeDynamicVirtual
+## InvokeDynamicVirtual
 
 [nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicVirtual.java)
+
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/InvokeDynamicVirtual.java
@@ -147,13 +157,15 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### InvokeDynamicConstructor
+## InvokeDynamicConstructor
 
 [nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicConstructor.java)
+
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/InvokeDynamicConstructor.java
@@ -165,13 +177,15 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1| 0 | unsound |
 
-### InvokeDynamicField
+## InvokeDynamicField
 
 [nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
+
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/InvokeDynamicField.java
@@ -183,13 +197,15 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1| 0 | unsound |
 
-### DynamicProxy
+## DynamicProxy
 
 [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
+
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/nullness/DynamicProxy.java
@@ -211,6 +227,6 @@ checker/nullness/DynamicProxy.java:34: error: [argument.type.incompatible] incom
 2 errors
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
