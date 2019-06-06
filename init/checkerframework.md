@@ -10,32 +10,32 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 | feature | result |
 | --- | :---: |
-| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#IntraProcedural) |
-| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InterProcedural) |
-| ReflectMethod | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#ReflectMethod) |
-| ReflectMethodOverload | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#ReflectMethodOverload) |
-| ReflectFieldAccess | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#ReflectFieldAccess) |
-| InvokeDynamicVirtual | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InvokeDynamicVirtual) |
-| InvokeDynamicConstructor | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InvokeDynamicConstructor) |
-| InvokeDynamicField | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#InvokeDynamicField) |
-| DynamicProxy | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/checkerframework.md#DynamicProxy) |
+| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#IntraProcedural) |
+| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InterProcedural) |
+| ReflectMethod | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#ReflectMethod) |
+| ReflectMethodOverload | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#ReflectMethodOverload) |
+| ReflectFieldAccess | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#ReflectFieldAccess) |
+| InvokeDynamicVirtual | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicVirtual) |
+| InvokeDynamicConstructor | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicConstructor) |
+| InvokeDynamicField | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicField) |
+| DynamicProxy | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#DynamicProxy) |
 
 > Select results for detail.
 
 ## IntraProcedural
 
-[init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/IntraProcedural.java)
+[init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/IntraProcedural.java)
 
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/IntraProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker init/IntraProcedural.java
 ```
 
 #### output
 
 ```
-checker/init/IntraProcedural.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.o
+init/IntraProcedural.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.o
         System.out.println(this.o.toString());
                                ^
 1 error
@@ -47,18 +47,18 @@ checker/init/IntraProcedural.java:16: error: [dereference.of.nullable] dereferen
 
 ## InterProcedural
 
-[init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InterProcedural.java)
+[init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InterProcedural.java)
 
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InterProcedural.java
 ```
 
 #### output
 
 ```
-checker/init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not allowed on the given receiver.
+init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not allowed on the given receiver.
         m();
          ^
   found   : @UnderInitialization(java.lang.Object.class) @NonNull InterProcedural
@@ -72,26 +72,26 @@ checker/init/InterProcedural.java:17: error: [method.invocation.invalid] call to
 
 ## ReflectMethod
 
-[init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethod.java)
+[init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethod.java)
 
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/ReflectMethod.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectMethod.java
 ```
 
 #### output
 
 ```
-checker/init/ReflectMethod.java:14: error: [argument.type.incompatible] incompatible types in argument.
+init/ReflectMethod.java:14: error: [argument.type.incompatible] incompatible types in argument.
         m.invoke(this);
                  ^
   found   : @UnderInitialization(checker.init.ReflectMethod.class) @NonNull ReflectMethod
   required: @Initialized @NonNull Object
-checker/init/ReflectMethod.java:17: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
+init/ReflectMethod.java:17: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
     ReflectMethod(Method m, int x) throws Exception {
     ^
-checker/init/ReflectMethod.java:18: error: [argument.type.incompatible] incompatible types in argument.
+init/ReflectMethod.java:18: error: [argument.type.incompatible] incompatible types in argument.
         m.invoke(this);
                  ^
   found   : @UnderInitialization(java.lang.Object.class) @NonNull ReflectMethod
@@ -105,26 +105,26 @@ checker/init/ReflectMethod.java:18: error: [argument.type.incompatible] incompat
 
 ## ReflectMethodOverload
 
-[init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethodOverload.java)
+[init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethodOverload.java)
 
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/ReflectMethodOverload.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectMethodOverload.java
 ```
 
 #### output
 
 ```
-checker/init/ReflectMethodOverload.java:16: error: [argument.type.incompatible] incompatible types in argument.
+init/ReflectMethodOverload.java:16: error: [argument.type.incompatible] incompatible types in argument.
         m.invoke(this, 1);
                  ^
   found   : @UnderInitialization(checker.init.ReflectMethodOverload.class) @NonNull ReflectMethodOverload
   required: @Initialized @NonNull Object
-checker/init/ReflectMethodOverload.java:19: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
+init/ReflectMethodOverload.java:19: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
     ReflectMethodOverload(int x) throws Exception {
     ^
-checker/init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] incompatible types in argument.
+init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] incompatible types in argument.
         m.invoke(this, 1);
                  ^
   found   : @UnderInitialization(java.lang.Object.class) @NonNull ReflectMethodOverload
@@ -138,21 +138,21 @@ checker/init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] 
 
 ## ReflectFieldAccess
 
-[init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectFieldAccess.java)
+[init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectFieldAccess.java)
 
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/ReflectFieldAccess.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectFieldAccess.java
 ```
 
 #### output
 
 ````
-checker/init/ReflectFieldAccess.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.o
+init/ReflectFieldAccess.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.o
         System.out.println(this.o.toString());
                                ^
-checker/init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of possibly-null reference this.o
+init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of possibly-null reference this.o
         System.out.println(this.o.toString());
                                ^
 2 errors
@@ -164,12 +164,12 @@ checker/init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] derefe
 
 ## InvokeDynamicVirtual
 
-[init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicVirtual.java)
+[init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicVirtual.java)
 
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InvokeDynamicVirtual.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicVirtual.java
 ```
 
 #### output
@@ -184,12 +184,12 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 ## InvokeDynamicConstructor
 
-[init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicConstructor.java)
+[init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicConstructor.java)
 
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InvokeDynamicConstructor.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicConstructor.java
 ```
 
 #### output
@@ -204,12 +204,12 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 ## InvokeDynamicField
 
-[init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicField.java)
+[init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicField.java)
 
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InvokeDynamicField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicField.java
 ```
 
 #### output
@@ -224,12 +224,12 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 ## DynamicProxy
 
-[init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/DynamicProxy.java)
+[init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/init/DynamicProxy.java)
 
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/DynamicProxy.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker init/DynamicProxy.java
 ```
 
 #### output
