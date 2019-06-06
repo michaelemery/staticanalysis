@@ -16,14 +16,14 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | feature | result |
 | --- | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#IntraProcedural) |
-| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InterProcedural) |
-| ReflectMethodInvoke | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectMethodInvoke) |
-| ReflectOverloadInvoke | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectOverloadInvoke) |
+| InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InterProcedural) |
+| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectMethod) |
+| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectMethodOverload) |
 | ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectFieldAccess) |
-| InvokeDynamicVirtual | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicVirtual) |
+| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicVirtual) |
 | InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicConstructor) |
 | InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicField) |
-| DynamicProxy | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#DynamicProxy) |
+| DynamicProxy | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#DynamicProxy) |
 
 > Select results for detail.
 
@@ -38,8 +38,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/IntraProcedural.java -f text -R cat
 #### output
 
 ```
-/checker/nullness/IntraProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/checker/nullness/IntraProcedural.java:22:	Assigning an Object to null is a code smell.  Consider refactoring.
+checker/nullness/IntraProcedural.java:23:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
 | False Neg | False Pos | Result | 
@@ -57,51 +56,48 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InterProcedural.java -f text -R cat
 #### output
 
 ```
-/checker/nullness/InterProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/checker/nullness/InterProcedural.java:27:	Assigning an Object to null is a code smell.  Consider refactoring.
+No reported issues.
 ```
 
 | False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 0 | unsound |
 
-### ReflectMethodInvoke
+### ReflectMethod
 
-[nullness/ReflectMethodInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvoke.java)
+[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethodInvoke.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-/checker/nullness/ReflectMethodInvoke.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/checker/nullness/ReflectMethodInvoke.java:31:	Assigning an Object to null is a code smell.  Consider refactoring.
+No reported issues.
 ```
 
 | False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 0 | unsound |
 
-### ReflectOverloadInvoke
+### ReflectMethodOverload
 
-[nullness/ReflectOverloadInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvoke.java)
+[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectOverloadInvoke.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethodOverload.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-/checker/nullness/ReflectOverloadInvoke.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/checker/nullness/ReflectOverloadInvoke.java:36:	Assigning an Object to null is a code smell.  Consider refactoring.
+No reported issues.
 ```
 
 | False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 0 | unsound |
 
 ### ReflectFieldAccess
 
@@ -114,7 +110,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectFieldAccess.java -f text -R 
 #### output
 
 ```
-/checker/nullness/ReflectFieldAccess.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+No reported issues.
 ```
 
 | False Neg | False Pos | Result | 
@@ -133,13 +129,12 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicVirtual.java -f text -
 #### output
 
 ```
-/checker/nullness/InvokeDynamicVirtual.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/checker/nullness/InvokeDynamicVirtual.java:34:	Assigning an Object to null is a code smell.  Consider refactoring.
+No reported issues.
 ```
 
 | False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 0 | unsound |
 
 ### InvokeDynamicConstructor
 
@@ -152,7 +147,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicConstructor.java -f te
 #### output
 
 ```
-/checker/nullness/InvokeDynamicConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+No reported issues.
 ```
 
 | False Neg | False Pos | Result | 
@@ -161,7 +156,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicConstructor.java -f te
 
 ### InvokeDynamicField
 
-[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
+[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
 
 ```
 $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicField.java -f text -R category/java/errorprone.xml
@@ -170,7 +165,7 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicField.java -f text -R 
 #### output
 
 ```
-/checker/nullness/InvokeDynamicField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+No reported issues.
 ```
 
 | False Neg | False Pos | Result | 
@@ -188,10 +183,10 @@ $PMD_HOME/bin/run.sh pmd -d checker/nullness/DynamicProxy.java -f text -R catego
 #### output
 
 ```
-/checker/nullness/DynamicProxy.java:19:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
-/checker/nullness/DynamicProxy.java:23:	Assigning an Object to null is a code smell.  Consider refactoring.
+checker/nullness/DynamicProxy.java:18:	Found 'DU'-anomaly for variable 'proxyInstance' (lines '18'-'35').
+hecker/nullness/DynamicProxy.java:19:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
 ```
 
 | False Neg | False Pos | Result | 
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 0 | 2 | aberrant |

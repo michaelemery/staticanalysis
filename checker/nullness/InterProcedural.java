@@ -15,15 +15,15 @@ public class InterProcedural {
         InterProcedural i = new InterProcedural();
 
         /* safe: set object to non-null */
-        i.set(true);
-        System.out.println(i.o.toString());  // safe
+        i.set("safe");
+        System.out.println(i.o.toString());
 
         /* unsafe: set object to null */
-        i.set(false);
-        System.out.println(i.o.toString());  // NullPointerException
+        i.set(null);
+        System.out.println(i.o.toString());
     }
 
-    public void set(Boolean safe) {
-        this.o = safe ? "safe" : null;
+    public void set(Object obj) {
+        this.o = obj;
     }
 }

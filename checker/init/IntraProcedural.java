@@ -9,15 +9,11 @@ public class IntraProcedural {
 
     public IntraProcedural() {
         this.o = "safe";
-        System.out.println(this.o.toString());  // safe
+        System.out.println(this.o.toString());
     }
 
     public IntraProcedural(int x) {
-        System.out.println(this.o.toString());  // NullPointerException
-    }
-
-    public IntraProcedural(int x, int y) {
-        System.out.println(this.o.toString());  // NullPointerException
+        System.out.println(this.o.toString());
         this.o = new IntraProcedural();
     }
 
@@ -26,10 +22,7 @@ public class IntraProcedural {
         /* safe: set object to non-null */
         new IntraProcedural();
 
-        /* unsafe: fail to set object */
-        new IntraProcedural(1);
-
         /* unsafe: access object before setting */
-        new IntraProcedural(1, 2);
+        new IntraProcedural(1);
     }
 }

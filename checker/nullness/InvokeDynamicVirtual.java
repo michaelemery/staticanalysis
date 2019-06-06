@@ -1,5 +1,6 @@
 package checker.nullness;
 
+import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
@@ -15,22 +16,20 @@ public class InvokeDynamicVirtual {
     }
 
     public static void main(String[] args) throws Throwable {
-        MethodHandles.Lookup lookup = MethodHandles.lookup();
-        MethodType mt = MethodType.methodType(void.class, Boolean.class);
-        java.lang.invoke.MethodHandle mh =
-                lookup.findVirtual(InvokeDynamicVirtual.class, "set", mt);
+        MethodHandles.Lookup l = MethodHandles.lookup();
+        MethodType t = MethodType.methodType(void.class, Object.class);
+        MethodHandle h = l.findVirtual(InvokeDynamicVirtual.class, "set", t);
         InvokeDynamicVirtual i = new InvokeDynamicVirtual("init");
 
         /* safe: set object to non-null */
-        mh.invoke(i, true);
-        System.out.println(i.o.toString());  // safe
+        h.invoke(i, "safe");
 
         /* unsafe: set object to null */
-        mh.invoke(i, null);
-        System.out.println(i.o.toString());  // NullPointerException
+        h.invoke(i, null);
     }
 
-    void set(Boolean safe) {
-        this.o = safe ? "safe" : null;
+    void set(Object obj) {
+        this.o = obj;
+        System.out.println(this.o.toString());
     }
 }

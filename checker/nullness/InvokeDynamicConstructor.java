@@ -13,20 +13,18 @@ public class InvokeDynamicConstructor {
 
     InvokeDynamicConstructor(Object obj) {
         this.o = obj;
+        System.out.println(this.o.toString());
     }
 
     public static void main(String[] args) throws Throwable {
-        MethodHandles.Lookup lookup = MethodHandles.lookup();
-        MethodType mt = MethodType.methodType(void.class, Object.class);
-        MethodHandle mh = lookup.findConstructor(InvokeDynamicConstructor.class, mt);
-        InvokeDynamicConstructor i;
+        MethodHandles.Lookup l = MethodHandles.lookup();
+        MethodType t = MethodType.methodType(void.class, Object.class);
+        MethodHandle h = l.findConstructor(InvokeDynamicConstructor.class, t);
 
         /* safe: set object to non-null */
-        i = (InvokeDynamicConstructor) mh.invoke("safe");
-        System.out.println(i.o.toString());  // safe
+        h.invoke("safe");
 
         /* unsafe: set object to null */
-        i = (InvokeDynamicConstructor) mh.invoke(null);
-        System.out.println(i.o.toString());  // NullPointerException
+        h.invoke(null);
     }
 }

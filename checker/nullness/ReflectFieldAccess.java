@@ -10,24 +10,20 @@ public class ReflectFieldAccess {
     Object o;
 
     ReflectFieldAccess() {
-        this.o = "safe";
+        this.o = "init";
     }
     
     public static void main(String[] args) throws Exception {
-        Class<?> C;
-        ReflectFieldAccess i;
+        ReflectFieldAccess i = new ReflectFieldAccess();
+        Class<?> C = i.getClass();
+        Field f = C.getDeclaredField("o");
 
         /* safe: set object to non-null */
-        i = new ReflectFieldAccess();
-        C = i.getClass();
-        Field f = C.getDeclaredField("o");
         f.set(i, "safe");
-        System.out.println(i.o.toString());  // safe
+        System.out.println(i.o.toString());
 
         /* unsafe: set object to null */
-        C = i.getClass();
-        f = C.getDeclaredField("o");
         f.set(i, null);
-        System.out.println(i.o.toString());  // NullPointerException
+        System.out.println(i.o.toString());
     }
 }

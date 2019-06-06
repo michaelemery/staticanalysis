@@ -9,7 +9,7 @@ public class DynamicProxy {
 
     interface Foo {
 
-        Object get(Boolean safe);
+        Object get(Object o);
     }
 
     public static void main(String[] args) {
@@ -20,7 +20,7 @@ public class DynamicProxy {
                 new Class[]{Foo.class},
                 (proxy, method, methodArgs) -> {
                     if (method.getName().equals("get")) {
-                        return (Boolean) methodArgs[0] ? "safe" : null;
+                        return methodArgs[0];
                     } else {
                         throw new UnsupportedOperationException(
                                 "Unsupported method: " + method.getName());
@@ -28,9 +28,9 @@ public class DynamicProxy {
                 });
 
         /* safe: simulate setting object to non-null */
-        System.out.println(proxyInstance.get(true).toString());
+        System.out.println(proxyInstance.get("safe").toString());
 
         /* unsafe: simulate setting object to null */
-        System.out.println(proxyInstance.get(false).toString());
+        System.out.println(proxyInstance.get(null).toString());
     }
 }

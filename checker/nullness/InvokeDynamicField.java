@@ -15,17 +15,16 @@ public class InvokeDynamicField {
     }
 
     public static void main(String[] args) throws Throwable {
-        MethodHandles.Lookup lookup = MethodHandles.lookup();
-        MethodHandle mh =
-                lookup.findSetter(InvokeDynamicField.class, "o", Object.class);
+        MethodHandles.Lookup l = MethodHandles.lookup();
+        MethodHandle h = l.findSetter(InvokeDynamicField.class, "o", Object.class);
         InvokeDynamicField i = new InvokeDynamicField("init");
 
         /* safe: set object to non-null */
-        mh.invoke(i, "safe");
-        System.out.println(i.o.toString());  // safe
+        h.invoke(i, "safe");
+        System.out.println(i.o.toString());
 
         /* unsafe: set object to null */
-        mh.invoke(i, null);
-        System.out.println(i.o.toString());  // NullPointerException
+        h.invoke(i, null);
+        System.out.println(i.o.toString());
     }
 }

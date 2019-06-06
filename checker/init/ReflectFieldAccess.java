@@ -9,26 +9,26 @@ public class ReflectFieldAccess {
 
     Object o;
 
-    ReflectFieldAccess(int x) throws Exception {
+    ReflectFieldAccess() throws Exception {
         Class<?> C = this.getClass();
         Field f = C.getDeclaredField("o");
         f.set(this, "safe");
+        System.out.println(this.o.toString());
     }
 
-    ReflectFieldAccess(int x, int y) throws Exception {
+    ReflectFieldAccess(int x) throws Exception {
         Class<?> C = this.getClass();
         Field f = C.getDeclaredField("o");
         f.set(this, null);
+        System.out.println(this.o.toString());
     }
 
     public static void main(String[] args) throws Exception {
 
         /* safe: set object to non-null */
-        System.out.println(
-                new ReflectFieldAccess(1).o.toString());  // safe
+        new ReflectFieldAccess();
 
         /* safe: set object to non-null */
-        System.out.println(
-                new ReflectFieldAccess(1, 2).o.toString());  // NullPointerException
+        new ReflectFieldAccess(1);
     }
 }

@@ -9,30 +9,31 @@ public class ReflectMethodOverload {
 
     Object o;
 
-    ReflectMethodOverload(Object obj) {
-        this.o = obj;
+    ReflectMethodOverload() {
+        this.o = "init";
     }
 
     public static void main(String[] args) throws Exception {
-        Method m;
-        ReflectMethodOverload i = new ReflectMethodOverload("init");
+        Class<?> C = ReflectMethodOverload.class;
+        Method m; C.getDeclaredMethod("set", Object.class);
+        ReflectMethodOverload i = new ReflectMethodOverload();
 
         /* safe: set object to non-null */
-        m = ReflectMethodOverload.class.getDeclaredMethod("set", String.class);
-        m.invoke(i, "safe");
-        System.out.println(i.o.toString());  // safe
+        m = C.getDeclaredMethod("set", Object.class, int.class);
+        m.invoke(i, "safe", 1);
 
         /* unsafe: set object to null */
-        m = ReflectMethodOverload.class.getDeclaredMethod("set");
-        m.invoke(i);
-        System.out.println(i.o.toString());  // NullPointerException
+        m = C.getDeclaredMethod("set", Object.class);
+        m.invoke(i, (Object) null);  // cast to suppress compiler warning
     }
 
-    void set(String s) {
-        this.o = s;
+    void set(Object obj) {
+        this.o = obj;
+        System.out.println(this.o.toString());
     }
 
-    void set() {
-        this.o = null;
+    void set(Object obj, int x) {
+        this.o = obj;
+        System.out.println(this.o.toString());
     }
 }

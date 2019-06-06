@@ -9,25 +9,24 @@ public class ReflectMethod {
 
     Object o;
 
-    ReflectMethod(Object obj) {
-        this.o = obj;
+    ReflectMethod() {
+        this.o = "init";
     }
 
     public static void main(String[] args) throws Exception {
         Class<?> C = ReflectMethod.class;
-        Method m = C.getDeclaredMethod("set", Boolean.class);
-        ReflectMethod i = new ReflectMethod("init");
+        Method m = C.getDeclaredMethod("set", Object.class);
+        ReflectMethod i = new ReflectMethod();
 
         /* safe: set object to non-null */
-        i.o = m.invoke(i, true).toString();
-        System.out.println(i.o.toString());  // safe
+        m.invoke(i, "safe");
 
         /* unsafe: set object to null */
-        i.o = m.invoke(i, false).toString();
-        System.out.println(i.o.toString());  // NullPointerException
+        m.invoke(i, (Object) null);  // cast to suppress compiler warning
     }
 
-    public void set(Boolean safe) {
-        this.o = safe ? "safe" : null;
+    void set(Object obj) {
+        this.o = obj;
+        System.out.println(this.o.toString());
     }
 }

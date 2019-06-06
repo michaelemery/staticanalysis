@@ -9,16 +9,18 @@ public class IntraProcedural {
 
     IntraProcedural(Object obj) {
         this.o = obj;
+        System.out.println(this.o.toString());
     }
 
     public static void main(String[] args) throws NullPointerException {
+        IntraProcedural i = new IntraProcedural("init");
 
         /* safe: set object to non-null */
-        System.out.println(
-                new IntraProcedural("safe").o.toString());  // safe
+        i.o = "safe";
+        System.out.println(i.o.toString());
 
         /* unsafe: set object to null */
-        System.out.println(
-                new IntraProcedural(null).o.toString());    // NullPointerException
+        i.o = null;
+        System.out.println(i.o.toString());
     }
 }

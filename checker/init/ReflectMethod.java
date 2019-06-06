@@ -9,20 +9,12 @@ public class ReflectMethod {
 
     Object o;
 
-    ReflectMethod() {
-        System.out.println(this.o.toString());
-    }
-
-    ReflectMethod(int x) throws Exception {
-        Class<?> C = ReflectMethod.class;
-        Method m = C.getDeclaredMethod("m");
+    ReflectMethod(Method m) throws Exception {
         this.o = "safe";
         m.invoke(this);
     }
 
-    ReflectMethod(int x, int y) throws Exception {
-        Class<?> C = ReflectMethod.class;
-        Method m = C.getDeclaredMethod("m");
+    ReflectMethod(Method m, int x) throws Exception {
         m.invoke(this);
     }
 
@@ -31,11 +23,13 @@ public class ReflectMethod {
     }
 
     public static void main(String[] args) throws Exception {
+        Class<?> C = ReflectMethod.class;
+        Method m = C.getDeclaredMethod("m");
 
         /* safe: set object to non-null */
-        new ReflectMethod(1);  // safe
+        new ReflectMethod(m);
 
         /* safe: set object to non-null */
-        new ReflectMethod(1,2);  // NullPointerException
+        new ReflectMethod(m, 1);
     }
 }

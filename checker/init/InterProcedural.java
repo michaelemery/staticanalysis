@@ -10,11 +10,11 @@ public class InterProcedural {
 
     public InterProcedural() {
         this.o = "safe";
-        System.out.println(this.o);  // safe
+        System.out.println(this.o.toString());
     }
 
     public InterProcedural(int x) {
-        m();  // NullPointerException
+        m();
         o = new InterProcedural();
     }
 

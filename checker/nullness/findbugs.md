@@ -10,9 +10,9 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | --- | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#IntraProcedural) |
 | InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InterProcedural) |
-| ReflectMethodInvoke | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvoke) |
-| ReflectOverloadInvoke | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvoke) |
-| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectoverloadinvoke) |
+| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvoke) |
+| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvoke) |
+| ReflectFieldAccess | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectoverloadinvoke) |
 | InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodhandle) |
 | InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccess) |
 | InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccess) |
@@ -32,7 +32,7 @@ findbugs checker/nullness/IntraProcedural.class
 #### output
 
 ```
-H C NP: Null pointer dereference of IntraProcedural.o in checker.nullness.IntraProcedural.main(String[])  Dereferenced at IntraProcedural.java:[line 23]
+H C NP: Null pointer dereference of IntraProcedural.o in checker.nullness.IntraProcedural.main(String[])  Dereferenced at IntraProcedural.java:[line 24]
 Warnings generated: 1
 ```
 
@@ -59,13 +59,13 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### ReflectMethodInvoke
+### ReflectMethod
 
-[nullness/ReflectMethodInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvoke.java)
+[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
 
 ```
-javac checker/nullness/ReflectMethodInvoke.java
-findbugs checker/nullness/InvokeDynamicVirtual.class
+javac checker/nullness/ReflectMethod.java
+findbugs checker/nullness/ReflectMethod.class
 ```
 
 #### output
@@ -78,13 +78,13 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-### ReflectOverloadInvoke
+### ReflectMethodOverload
 
-[nullness/ReflectOverloadInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvoke.java)
+[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
 
 ```
-javac checker/nullness/ReflectOverloadInvoke.java
-findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/ReflectOverloadInvoke.class
+javac checker/nullness/ReflectMethodOverload.java
+findbugs checker/nullness/ReflectMethodOverload.class
 ```
 
 #### output
@@ -103,7 +103,7 @@ No reported issues.
 
 ```
 javac checker/nullness/ReflectFieldAccess.java
-findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/ReflectFieldAccess.class
+findbugs checker/nullness/ReflectFieldAccess.class
 ```
 
 #### output
@@ -122,7 +122,7 @@ No reported issues.
 
 ```
 javac checker/nullness/InvokeDynamicVirtual.java
-findbugs checker/nullness/InvokeDynamicVirtual.class checker/nullness/InvokeDynamicVirtual.class
+findbugs checker/nullness/InvokeDynamicVirtual.class
 ```
 
 #### output
@@ -179,7 +179,7 @@ No reported issues.
 
 ```
 javac checker/nullness/DynamicProxy.java
-findbugs checker/nullness/DynamicProxy.class checker/nullness/DynamicProxy.class
+findbugs checker/nullness/DynamicProxy.class
 ```
 
 #### output

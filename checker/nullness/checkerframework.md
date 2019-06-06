@@ -2,34 +2,7 @@
 
 Version: checker-framework-2.1.11
 
-## usage
-
-### checkers used (fqn)
-
-1. org.checkerframework.checker.nullness.NullnessChecker
-
-### qualifiers
-
-The nullness hierarchy contains these qualifiers:
-
-| qualifier | description |
-| --- | --- |
-| @Nullable | Indicates a type that includes the null value. For example, the type Boolean is nullable: a variable of type Boolean always has one of the values TRUE, FALSE, or null. |
-| @NonNull *(default)*| Indicates a type that does not include the null value. The type boolean is non-null; a variable of type boolean always has one of the values true or false. The type @NonNull Boolean is also non-null: a variable of type @NonNull Boolean always has one of the values TRUE or FALSE — never null. Dereferencing an expression of non-null type can never cause a null pointer exception. |
-
-> The default state of any object in Checker Framework is *@NonNull*.
-
-### annotations
-
-The Nullness Checker supports several annotations that specify method behavior. These are 
-declaration annotations, not type annotations as they apply to the method itself rather than to 
-some particular type:
-
-| annotation | description |
-| --- | --- |
-| @RequiresNonNull | Indicates a method precondition: The annotated method expects the specified variables (typically field references) to be non-null when the method is invoked. |
-| @EnsuresNonNull | |
-| @EnsuresNonNullIf | Indicates a method postcondition. With @EnsuresNonNull, the given expressions are non-null after the method returns; this is useful for a method that initializes a field, for example. With @EnsuresNonNullIf, if the annotated method returns the given boolean value (true or false), then the given expressions are non-null. |
+org.checkerframework.checker.nullness.NullnessChecker
 
 ## results
 
@@ -39,10 +12,10 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | --- | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#IntraProcedural) |
 | InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InterProcedural) |
-| ReflectMethod | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethod) |
+| ReflectMethod | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethod) |
 | ReflectMethodOverload | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectMethodOverload) |
 | ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#ReflectFieldAccess) |
-| InvokeDynamicVirtual | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicVirtual) |
+| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicVirtual) |
 | InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicConstructor) |
 | InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#InvokeDynamicField) |
 | DynamicProxy | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/checkerframework.md#DynamicProxy) |
@@ -60,9 +33,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-checker/nullness/IntraProcedural.java:22: error: [argument.type.incompatible] incompatible types in argument.
-                new IntraProcedural(null).toString());  // NullPointerException
-                                    ^
+checker/nullness/IntraProcedural.java:23: error: [assignment.type.incompatible] incompatible types in assignment.
+        i.o = null;
+              ^
   found   : null
   required: @Initialized @NonNull Object
 1 error
@@ -83,10 +56,10 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-checker/nullness/InterProcedural.java:27: error: [assignment.type.incompatible] incompatible types in assignment.
-        this.o = safe ? "safe" : null;
-                      ^
-  found   : @Initialized @Nullable Object
+checker/nullness/InterProcedural.java:22: error: [argument.type.incompatible] incompatible types in argument.
+        i.set(null);
+              ^
+  found   : null
   required: @Initialized @NonNull Object
 1 error
 ```
@@ -106,23 +79,17 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-checker/nullness/ReflectMethod.java:22: error: [dereference.of.nullable] dereference of possibly-null reference m.invoke(i, true)
-        i.o = m.invoke(i, true).toString();
-                      ^
-checker/nullness/ReflectMethod.java:26: error: [dereference.of.nullable] dereference of possibly-null reference m.invoke(i, false)
-        i.o = m.invoke(i, false).toString();
-                      ^
-checker/nullness/ReflectMethod.java:31: error: [assignment.type.incompatible] incompatible types in assignment.
-        this.o = safe ? "safe" : null;
-                      ^
-  found   : @Initialized @Nullable Object
+checker/nullness/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible types in argument.
+        m.invoke(i, (Object) null);  // cast to suppress compiler warning
+                    ^
+  found   : @FBCBottom @Nullable Object
   required: @Initialized @NonNull Object
-3 errors
+1 error
 ```
 
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 1 | imprecise |
+| 0 | 0 | accurate |
 
 ### ReflectMethodOverload
 
@@ -135,10 +102,10 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-checker/nullness/ReflectMethodOverload.java:36: error: [assignment.type.incompatible] incompatible types in assignment.
-        this.o = null;
-                 ^
-  found   : null
+checker/nullness/ReflectMethodOverload.java:27: error: [argument.type.incompatible] incompatible types in argument.
+        m.invoke(i, (Object) null);  // cast to suppress compiler warning
+                    ^
+  found   : @FBCBottom @Nullable Object
   required: @Initialized @NonNull Object
 1 error
 ```
@@ -177,17 +144,12 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/n
 #### output
 
 ```
-checker/nullness/InvokeDynamicVirtual.java:34: error: [assignment.type.incompatible] incompatible types in assignment.
-        this.o = safe ? "safe" : null;
-                      ^
-  found   : @Initialized @Nullable Object
-  required: @Initialized @NonNull Object
-1 error
+No reported issues.
 ```
 
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 0 | unsound |
 
 ### InvokeDynamicConstructor
 
@@ -241,10 +203,10 @@ checker/nullness/DynamicProxy.java:19: error: [argument.type.incompatible] incom
                                         ^
   found   : @Initialized @Nullable ClassLoader
   required: @Initialized @NonNull ClassLoader
-checker/nullness/DynamicProxy.java:23: error: [return.type.incompatible] incompatible types in return.
-                        return (Boolean) methodArgs[0] ? "safe" : null;
-                                                       ^
-  found   : @Initialized @Nullable Object
+checker/nullness/DynamicProxy.java:34: error: [argument.type.incompatible] incompatible types in argument.
+        System.out.println(proxyInstance.get(null).toString());
+                                             ^
+  found   : null
   required: @Initialized @NonNull Object
 2 errors
 ```

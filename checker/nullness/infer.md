@@ -19,14 +19,14 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 | feature | result |
 | --- | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#IntraProcedural) |
-| InterProcedural | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InterProcedural) |
-| ReflectMethodInvoke | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethodInvoke) |
-| ReflectOverloadInvoke | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectOverloadInvoke) |
+| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InterProcedural) |
+| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethod) |
+| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethodOverload) |
 | ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectoverloadinvoke) |
-| InvokeDynamicVirtual | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandle) |
+| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandle) |
 | InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
 | InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
-| DynamicProxy | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
+| DynamicProxy | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
 
 > Select results for detail.
 
@@ -41,37 +41,27 @@ infer run -a checkers --eradicate -- javac checker/nullness/IntraProcedural.java
 #### output
 
 ```
-Found 3 issues
+Found 2 issues
 
-checker/nullness/IntraProcedural.java:22: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `IntraProcedural.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 22).
-  20.   
-  21.           /* unsafe: set object to null */
-  22. >         i.o = null;
-  23.           System.out.println(i.o.toString());  // NullPointerException
-  24.       }
+checker/nullness/IntraProcedural.java:23: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `IntraProcedural.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 23)
+  21.   
+  22.           /* unsafe: set object to null */
+  23. >         i.o = null;
+  24.           System.out.println(i.o.toString());
+  25.       }
 
-checker/nullness/IntraProcedural.java:23: error: ERADICATE_NULL_METHOD_CALL
-  The value of `i.o` in the call to `toString()` could be null. (Origin: null constant at line 22).
-  21.           /* unsafe: set object to null */
-  22.           i.o = null;
-  23. >         System.out.println(i.o.toString());  // NullPointerException
-  24.       }
-  25.   }
-
-checker/nullness/IntraProcedural.java:23: error: NULL_DEREFERENCE
-  object `i.o` last assigned on line 22 could be null and is dereferenced at line 23.
-  21.           /* unsafe: set object to null */
-  22.           i.o = null;
-  23. >         System.out.println(i.o.toString());  // NullPointerException
-  24.       }
-  25.   }
-
+checker/nullness/IntraProcedural.java:24: error: ERADICATE_NULL_METHOD_CALL
+  The value of `i.o` in the call to `toString()` could be null. (Origin: null constant at line 23)
+  22.           /* unsafe: set object to null */
+  23.           i.o = null;
+  24. >         System.out.println(i.o.toString());
+  25.       }
+  26.   }
 
 Summary of the reports
 
     ERADICATE_NULL_METHOD_CALL: 1
-              NULL_DEREFERENCE: 1
   ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
@@ -90,104 +80,60 @@ infer run -a checkers --eradicate -- javac checker/nullness/InterProcedural.java
 #### output
 
 ```
-Found 3 issues
+Found 1 issue
 
-checker/nullness/InterProcedural.java:19: error: NULL_DEREFERENCE
-  object `i.o` last assigned on line 18 could be null and is dereferenced at line 19.
-  17.           /* safe: set object to non-null */
-  18.           i.set(true);
-  19. >         System.out.println(i.o.toString());  // safe
+checker/nullness/InterProcedural.java:22: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `set(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 22)
   20.   
   21.           /* unsafe: set object to null */
-
-checker/nullness/InterProcedural.java:23: error: NULL_DEREFERENCE
-  object `i.o` last assigned on line 22 could be null and is dereferenced at line 23.
-  21.           /* unsafe: set object to null */
-  22.           i.set(false);
-  23. >         System.out.println(i.o.toString());  // NullPointerException
+  22. >         i.set(null);
+  23.           System.out.println(i.o.toString());
   24.       }
-  25.   
-
-checker/nullness/InterProcedural.java:27: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `InterProcedural.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 27).
-  25.   
-  26.       public void set(Boolean safe) {
-  27. >         this.o = safe ? "safe" : null;
-  28.       }
-  29.   }
-
 
 Summary of the reports
 
-              NULL_DEREFERENCE: 2
-  ERADICATE_FIELD_NOT_NULLABLE: 1
+  ERADICATE_PARAMETER_NOT_NULLABLE: 1
 ```
 
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 1 | imprecise |
+| 0 | 0 | accurate |
 
-### ReflectMethodInvoke
+### ReflectMethod
 
-[nullness/ReflectMethodInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodInvoke.java)
+[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/ReflectMethodInvoke.java
+infer run -a checkers --eradicate -- javac checker/nullness/ReflectMethod.java
 ```
 
 #### output
 
 ```
-Found 1 issue
-
-checker/nullness/ReflectMethodInvoke.java:31: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `ReflectMethodInvoke.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 31).
-  29.   
-  30.       public void set(Boolean safe) {
-  31. >         this.o = safe ? "safe" : null;
-  32.       }
-  33.   }
-
-
-Summary of the reports
-
-  ERADICATE_FIELD_NOT_NULLABLE: 1
+No reported issues.
 ```
 
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 0 | unsound |
 
-### ReflectOverloadInvoke
+### ReflectMethodOverload
 
-[nullness/ReflectOverloadInvoke.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectOverloadInvoke.java)
+[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/ReflectOverloadInvoke.java
+infer run -a checkers --eradicate -- javac checker/nullness/ReflectMethodOverload.java
 ```
 
 ### output
 
 ```
-Found 1 issue
-
-checker/nullness/ReflectOverloadInvoke.java:36: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `ReflectOverloadInvoke.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 36).
-  34.   
-  35.       void set() {
-  36. >         this.o = null;
-  37.       }
-  38.   }
-
-
-Summary of the reports
-
-  ERADICATE_FIELD_NOT_NULLABLE: 1
+No reported issues.
 ```
 
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 0 | unsound |
 
 ### ReflectFieldAccess
 
@@ -219,25 +165,12 @@ infer run -a checkers --eradicate -- javac checker/nullness/InvokeDynamicVirtual
 #### output
 
 ```
-Found 1 issue
-
-checker/nullness/InvokeDynamicVirtual.java:34: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `InvokeDynamicVirtual.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 34).
-  32.   
-  33.       void set(Boolean safe) {
-  34. >         this.o = safe ? "safe" : null;
-  35.       }
-  36.   }
-
-
-Summary of the reports
-
-  ERADICATE_FIELD_NOT_NULLABLE: 1
+No reported issues.
 ```
 
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 0 | unsound |
 
 ### InvokeDynamicConstructor
 
@@ -286,9 +219,21 @@ infer run -a checkers --eradicate -- javac checker/nullness/DynamicProxy.java
 #### output
 
 ```
-No reported issues.
+Found 1 issue
+
+checker/nullness/DynamicProxy.java:34: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `get(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 34)
+  32.   
+  33.           /* unsafe: simulate setting object to null */
+  34. >         System.out.println(proxyInstance.get(null).toString());
+  35.       }
+  36.   }
+
+Summary of the reports
+
+  ERADICATE_PARAMETER_NOT_NULLABLE: 1
 ```
 
 | False Neg | False Pos | Result |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| 0 | 0 | accurate |
