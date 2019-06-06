@@ -6,8 +6,6 @@ Static program analysis is the analysis of computer software that is performed w
 
 This project combines checking tools and dynamic language features in order assess the checkers effectiveness in identifying common conditions that result in incorrect programs.
 
-## test components
-
 ### tools
 
 Source code in the checker section will be analysed by multiple static analysis tools. The results 
@@ -50,11 +48,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | InvokeDynamicField | Test nullness safety on objects directly manipulated via dynamic field access. |
 | DynamicProxy | Test nullness safety on proxy instances of the original class interface. |
 
-### reflection syntax and use of instance variables
-
-The first argument of java.lang.reflect.Method.invoke() is the object instance on which a particular method to be invoked. If the method is static, the first argument should be null. This *null* syntax is a common cause of false positives when testing for nullness, therefore instance variables are prefered where static variables may otherwise seem preferable. 
-
-## results
+### results
 
 Tests are simple programs incorporating a single deliberate error of a specific type. Each test will produce zero or more outcomes that are categorised as either false negative or false positive as follows;
 
