@@ -22,8 +22,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 > Select results for detail.
 
-
-#### IntraProcedural
+## IntraProcedural
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/IntraProcedural.java)
 
@@ -46,8 +45,7 @@ checker/init/IntraProcedural.java:16: error: [dereference.of.nullable] dereferen
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-
-#### InterProcedural
+## InterProcedural
 
 [init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InterProcedural.java)
 
@@ -72,8 +70,7 @@ checker/init/InterProcedural.java:17: error: [method.invocation.invalid] call to
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-
-#### ReflectMethod
+## ReflectMethod
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethod.java)
 
@@ -106,8 +103,7 @@ checker/init/ReflectMethod.java:18: error: [argument.type.incompatible] incompat
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
-
-#### ReflectMethodOverload
+## ReflectMethodOverload
 
 [init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethodOverload.java)
 
@@ -140,8 +136,7 @@ checker/init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] 
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
-
-#### ReflectFieldAccess
+## ReflectFieldAccess
 
 [init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectFieldAccess.java)
 
@@ -167,8 +162,7 @@ checker/init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] derefe
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
-
-#### InvokeDynamicVirtual
+## InvokeDynamicVirtual
 
 [init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicVirtual.java)
 
@@ -188,8 +182,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 | :---: | :---: | :---: |
 | - | - | xxx |
 
-
-#### InvokeDynamicConstructor
+## InvokeDynamicConstructor
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicConstructor.java)
 
@@ -209,8 +202,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 | :---: | :---: | :---: |
 | - | - | xxx |
 
-
-#### InvokeDynamicField
+## InvokeDynamicField
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicField.java)
 
@@ -230,8 +222,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 | :---: | :---: | :---: |
 | - | - | xxx |
 
-
-#### DynamicProxy
+## DynamicProxy
 
 [init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/DynamicProxy.java)
 
