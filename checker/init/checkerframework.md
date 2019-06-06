@@ -41,8 +41,6 @@ checker/init/IntraProcedural.java:16: error: [dereference.of.nullable] dereferen
 1 error
 ```
 
-#### analysis
-
 | false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
