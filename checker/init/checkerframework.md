@@ -26,7 +26,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/IntraProcedural.java)
 
-### docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/IntraProcedural.java
@@ -49,7 +49,7 @@ checker/init/IntraProcedural.java:16: error: [dereference.of.nullable] dereferen
 
 [init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InterProcedural.java)
 
-### docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InterProcedural.java
@@ -74,7 +74,7 @@ checker/init/InterProcedural.java:17: error: [method.invocation.invalid] call to
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethod.java)
 
-### docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/ReflectMethod.java
@@ -107,7 +107,7 @@ checker/init/ReflectMethod.java:18: error: [argument.type.incompatible] incompat
 
 [init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethodOverload.java)
 
-### docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/ReflectMethodOverload.java
@@ -140,7 +140,7 @@ checker/init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] 
 
 [init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectFieldAccess.java)
 
-### docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/ReflectFieldAccess.java
@@ -167,7 +167,7 @@ checker/init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] derefe
 
 [init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicVirtual.java)
 
-### docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InvokeDynamicVirtual.java
@@ -187,7 +187,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicConstructor.java)
 
-### docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InvokeDynamicConstructor.java
@@ -207,7 +207,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicField.java)
 
-### docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InvokeDynamicField.java
@@ -227,7 +227,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 [init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/DynamicProxy.java)
 
-### docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/DynamicProxy.java
