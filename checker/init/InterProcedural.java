@@ -10,25 +10,24 @@ public class InterProcedural {
 
     public InterProcedural() {
         this.o = "safe";
+        System.out.println(this.o);  // safe
     }
 
     public InterProcedural(int x) {
-        m();
-        o = new Object();
+        m();  // NullPointerException
+        o = new InterProcedural();
     }
 
     public void m() {
-        this.o.toString();
+        System.out.println(this.o.toString());
     }
 
     public static void main(String[] args) {
 
         /* safe: set object to non-null */
-        System.out.println(
-                new InterProcedural().o.toString());  // safe
+        new InterProcedural();
 
-        /* safe: set object to non-null */
-        System.out.println(
-                new InterProcedural(1).o.toString());  // NullPointerException
+        /* unsafe: set object to null */
+        new InterProcedural(1);
     }
 }

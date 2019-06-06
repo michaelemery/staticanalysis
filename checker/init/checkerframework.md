@@ -51,7 +51,7 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 ### IntraProcedural
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/IntraProcedural.java)
+[init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/IntraProcedural.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/IntraProcedural.java
@@ -75,7 +75,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 ### InterProcedural
 
-[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InterProcedural.java)
+[init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InterProcedural.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InterProcedural.java
@@ -98,7 +98,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 ### ReflectMethod
 
-[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethod.java)
+[init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethod.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/ReflectMethod.java
@@ -132,7 +132,7 @@ src/checker/init/ReflectMethod.java:26: error: [argument.type.incompatible] inco
 
 ### ReflectMethodOverload
 
-[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethodOverload.java)
+[init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectMethodOverload.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/ReflectMethodOverload.java
@@ -166,7 +166,7 @@ checker/init/ReflectMethodOverload.java:26: error: [argument.type.incompatible] 
 
 ### ReflectFieldAccess
 
-[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectFieldAccess.java)
+[init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/ReflectFieldAccess.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/ReflectFieldAccess.java
@@ -191,7 +191,7 @@ checker/init/ReflectFieldAccess.java:18: error: [initialization.fields.uninitial
 
 ### InvokeDynamicVirtual
 
-[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicVirtual.java)
+[init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicVirtual.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InvokeDynamicVirtual.java
@@ -209,7 +209,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 ### InvokeDynamicConstructor
 
-[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicConstructor.java)
+[init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicConstructor.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InvokeDynamicConstructor.java
@@ -227,7 +227,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 ### InvokeDynamicField
 
-[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicField.java)
+[init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/InvokeDynamicField.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/InvokeDynamicField.java
@@ -245,7 +245,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/i
 
 ### DynamicProxy
 
-[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/DynamicProxy.java)
+[init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/init/DynamicProxy.java)
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker checker/init/DynamicProxy.java
