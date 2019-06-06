@@ -2,6 +2,8 @@
 
 Version: checker-framework-2.1.11
 
+To run the Nullness Checker, supply the -processor org.checkerframework.checker.nullness.NullnessChecker command-line option to javac.
+
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
 ### summary
