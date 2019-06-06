@@ -40,7 +40,7 @@ H C NP: Null pointer dereference of IntraProcedural.o in checker.nullness.IntraP
 Warnings generated: 1
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
@@ -61,7 +61,7 @@ findbugs checker/nullness/InterProcedural.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -82,7 +82,7 @@ findbugs checker/nullness/ReflectMethod.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -103,7 +103,7 @@ findbugs checker/nullness/ReflectMethodOverload.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -124,7 +124,7 @@ findbugs checker/nullness/ReflectFieldAccess.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -145,7 +145,7 @@ findbugs checker/nullness/InvokeDynamicVirtual.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -166,7 +166,7 @@ findbugs checker/nullness/InvokeDynamicConstructor.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -187,7 +187,7 @@ findbugs checker/nullness/InvokeDynamicField.class
 No reported issues.
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
@@ -211,6 +211,6 @@ The following classes needed for analysis were missing:
 Missing classes: 1
 ```
 
-| False Neg | False Pos | Result |
+| false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1| 1 | aberrant |
