@@ -12,14 +12,14 @@ This docker component of this project is part of M.Sc(Computer Science) thesis f
     * t = *terminal*
     * rm = *remove container on exit*
 
-#### usage
+### usage
 
 Your terminal will open in the /src folder. Scripts to run tests are provided alongside individual test results within this GitHub repository. Copy the docker commands from the repository, and paste them directly into the Docker terminal to see the commands execute.
 
 File edits only persist for the life of your terminal instance, so you are **encouraged to experiment** as much as you like. The next run you run the terminal, it will revert to its original state.
 
 
-#### resources
+### resources
 
 Your interactive terminal includes [*Vim*](https://www.vim.org/docs.php) and [*Nano*](https://wiki.gentoo.org/wiki/Nano/Basics_Guide) text editors for inspecting and modifying code. 
 
