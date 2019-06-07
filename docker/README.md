@@ -1,4 +1,4 @@
-# Static Analysis Docker Information
+# Project Docker Information
 
 This docker component of this project is part of M.Sc(Computer Science) thesis for Michael Emery, Massey University (2018).
 
