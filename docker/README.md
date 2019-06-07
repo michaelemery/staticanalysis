@@ -1,28 +1,26 @@
 # Static Analysis Docker Information
 
-## michaelemery/staticanalysis
+This docker component of this project is part of M.Sc(Computer Science) thesis for Michael Emery, Massey University (2018).
 
-This project is part of M.Sc(Computer Science) thesis for Michael Emery, Massey University (2018).
+### instructions
 
-## usage
+1. Ensure the docker environment is [installed and running](https://www.docker.com/products/docker-desktop). 
+2. Use the console command `docker pull michaelemery/staticanalysis` to download the project Docker image. Your current or working directory is *irrelevant* as storage is managed by Docker.
+3. Open a an interactive project terminal with the `docker run -it --rm michaelemery/staticanalysis` command. Once downloaded, the terminal may be run as many times as needed.
 
-Docker will open in the /checker folder. Scripts to run tests are provided in the github repository, and can also be found in the .md files located in each checker type folder (e.g alias, init, nullness, signed, taint etc.). It is recommended that you use the GitHub web interface to access these files.
+    * i = *interactive*
+    * t = *terminal*
+    * rm = *remove container on exit*
 
-### git repository
-https://github.com/michaelemery/staticanalysis
+#### usage
 
-### build new docker container from git repository
-`docker build -t michaelemery/staticanalysis https://github.com/michaelemery/staticanalysis.git`
+Your terminal will open in the /src folder. Scripts to run tests are provided alongside individual test results within this GitHub repository. Copy the docker commands from the repository, and paste them directly into the Docker terminal to see the commands execute.
 
-### push latest build to docker cloud
-`docker push michaelemery/staticanalysis`
+File edits only persist for the life of your terminal instance, so you are **encouraged to experiment** as much as you like. The next run you run the terminal, it will revert to its original state.
 
-### download latest container build
-`docker pull michaelemery/staticanalysis`
 
-### run container
-`docker run -it --rm michaelemery/staticanalysis`
+#### resources
 
-* i = interactive
-* t = terminal
-* rm = remove container on exit
+Your interactive terminal includes [*Vim*](https://www.vim.org/docs.php) and [*Nano*](https://wiki.gentoo.org/wiki/Nano/Basics_Guide) text editors for inspecting and modifying code. 
+
+`vim [path]/[filename]` or `nano [path]/[filename]`
