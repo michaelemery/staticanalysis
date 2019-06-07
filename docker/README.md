@@ -6,7 +6,7 @@ This docker component of this project is part of M.Sc(Computer Science) thesis f
 
 1. Ensure the docker environment is [installed and running](https://www.docker.com/products/docker-desktop). 
 2. Use the console command `docker pull michaelemery/staticanalysis` to download the project Docker image. Your current or working directory is *irrelevant* as storage is managed by Docker.
-3. Open a an interactive project terminal with the `docker run -it --rm michaelemery/staticanalysis` command. Once downloaded, the terminal may be run as many times as needed.
+3. Open an interactive project terminal with the `docker run -it --rm michaelemery/staticanalysis` command. Once downloaded, the terminal may be run as many times as needed.
 
     * i = *interactive*
     * t = *terminal*
