@@ -24,11 +24,11 @@ of each tool are compared in order to assess overall and relative effectiveness.
 
 | type | description |
 | --- | --- |
-| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/aliasing) | Errors may occur when an object is referenced without consideration for mutations caused by an aliasing to the same object. |
-| [init](https://github.com/michaelemery/staticanalysis/tree/master/init)| Objects accessed at runtime prior to being fully initialised will cause an error. |
-| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/nullness)| Dereferenced expressions are a common cause a null pointer exceptions. |
-| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/signedness)|Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
-| [taint](https://github.com/michaelemery/staticanalysis/tree/master/taint) | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
+| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/src/aliasing) | Errors may occur when an object is referenced without consideration for mutations caused by an aliasing to the same object. |
+| [init](https://github.com/michaelemery/staticanalysis/tree/master/src/init)| Objects accessed at runtime prior to being fully initialised will cause an error. |
+| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/src/nullness)| Dereferenced expressions are a common cause a null pointer exceptions. |
+| [signedness](https://github.com/michaelemery/staticanalysis/tree/master/src/signedness)|Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
+| [taint](https://github.com/michaelemery/staticanalysis/tree/master/src/taint) | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
 
 > Select type links for results by category.
 
@@ -38,15 +38,15 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 | feature | description |
 | --- | --- |
-| IntraProcedural | Test nullness safety within a single method. No dynamic features. |
-| InterProcedural | Test nullness safety within multiple methods. No dynamic features. |
-| ReflectMethod | Test nullness safety within methods invoked via reflection. |
-| ReflectMethodOverload | Test nullness safety within overloaded methods invoked via reflection. |
-| ReflectFieldAccess | Test nullness safety on objects directly manipulated via reflective field access. |
-| InvokeDynamicVirtual | Test nullness safety within dynamically invoked non-static (virtual) methods. |
-| InvokeDynamicConstructor | Test nullness safety on objects manipulated via dynamically invoked constructor. |
-| InvokeDynamicField | Test nullness safety on objects directly manipulated via dynamic field access. |
-| DynamicProxy | Test nullness safety on proxy instances of the original class interface. |
+| IntraProcedural | Single method. No dynamic features. |
+| InterProcedural | Multiple methods. No dynamic features. |
+| ReflectMethod | Methods invoked via reflection. |
+| ReflectMethodOverload | Overloaded methods invoked via reflection. |
+| ReflectFieldAccess | Objects directly manipulated via reflective field access. |
+| InvokeDynamicVirtual | Dynamically invoked non-static (virtual) methods. |
+| InvokeDynamicConstructor | Objects manipulated via dynamically invoked constructor. |
+| InvokeDynamicField | Objects directly manipulated via dynamic field access. |
+| DynamicProxy | Proxy instances of the original class interface. |
 
 ### results
 
