@@ -16,7 +16,9 @@ This docker component of this project is part of M.Sc(Computer Science) thesis f
 
 Your terminal will open in the /src folder. Scripts to run tests are provided alongside individual test results within this GitHub repository. Copy the docker commands from the repository, and paste them directly into the Docker terminal to see the commands execute.
 
-File edits only persist for the life of your terminal instance, so you are **encouraged to experiment** as much as you like. The next run you run the terminal, it will revert to its original state.
+File edits only persist for the life of your terminal instance, so you are **encouraged to experiment** as much as you like. Your terminal will revert to its original state when re-started.
+
+Exit an interactive session with the `exit` command.
 
 
 ### resources
