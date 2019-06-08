@@ -8,7 +8,7 @@ Use &uarr; this &uarr; navigation bar to group results by *checker type* &#x25c0
 
 Tests are simple programs incorporating a single deliberate error of a specific type. Each test will produce zero or more outcomes that are categorised as either false negative or false positive as follows;
  
- | outcome| description |
+ | test outcome| description |
  | --- | :--- |
  | false negative | Checker failed to detect an error of the type being tested. | 
  | false positive |Checker incorrectly identifies safe code as an error (or potential error) of the type being tested. |
