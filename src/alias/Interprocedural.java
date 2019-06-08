@@ -1,21 +1,19 @@
-package aliasing;
-
-import org.checkerframework.common.aliasing.qual.Unique;
+package alias;
 
 /**
- * Inter-procedural corruption of an object via an alias.
+ * Interprocedural corruption of an object via an alias.
  */
-public class Interprocedural_CF {
+public class Interprocedural {
 
-    String s;
+    private String s;
 
-    public Interprocedural_CF(String s) {
+    public Interprocedural(String s) {
         this.s = s;
     }
 
     public static void main(String[] args) {
-        @Unique Interprocedural_CF foo = new Interprocedural_CF("text");
-        Interprocedural_CF bar;
+        Interprocedural foo = new Interprocedural("text");
+        Interprocedural bar;
 
         // protect an object through cloning (correct)
         bar = foo.makeCopy();
@@ -29,12 +27,12 @@ public class Interprocedural_CF {
 
     }
 
-    public Interprocedural_CF makeCopy() {
-        Interprocedural_CF copy = new Interprocedural_CF(this.s);
+    public Interprocedural makeCopy() {
+        Interprocedural copy = new Interprocedural(this.s);
         return copy;
     }
 
-    public Interprocedural_CF alias() {
+    public Interprocedural alias() {
         return this;
     }
 

@@ -6,7 +6,7 @@ Version: checker-framework-2.3.0
 
 **checkers used (fqn)**
 
-1. org.checkerframework.common.aliasing.AliasingChecker
+1. org.checkerframework.common.alias.AliasingChecker
 
 **annotations**
 
@@ -36,27 +36,27 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 ### vanilla
 
-[aliasing/Vanilla_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla_CF.java)
+[alias/Vanilla_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla_CF.java)
 
 ```
-javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Vanilla_CF.java 
+javac -processor org.checkerframework.common.alias.AliasingChecker alias/Vanilla_CF.java 
 ```
 
 #### output
 ```
-aliasing/Vanilla_CF.java:21: 
+alias/Vanilla_CF.java:21: 
 error: [assignment.type.incompatible] incompatible types in assignment.
         @Unique Vanilla_CF foo = new Vanilla_CF("text");
                                          ^
   found   : @MaybeAliased Vanilla_CF
   required: @NonLeaked @Unique Vanilla_CF
 
-aliasing/Vanilla_CF.java:25: 
+alias/Vanilla_CF.java:25: 
 error: [unique.leaked] Reference annotated as @Unique is leaked.
         bar = new Vanilla_CF(foo);
                                      ^
 
-aliasing/Vanilla_CF.java:30: 
+alias/Vanilla_CF.java:30: 
 error: [unique.leaked] Reference annotated as @Unique is leaked.
         bar = foo;
               ^
@@ -71,15 +71,15 @@ error: [unique.leaked] Reference annotated as @Unique is leaked.
 
 ### interprocedural
 
-[aliasing/Interprocedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural_CF.java)
+[alias/Interprocedural_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural_CF.java)
 
 ```
-javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Interprocedural_CF.java 
+javac -processor org.checkerframework.common.alias.AliasingChecker alias/Interprocedural_CF.java 
 ```
 
 #### output
 ```
-aliasing/Interprocedural_CF.java:17: 
+alias/Interprocedural_CF.java:17: 
 error: [assignment.type.incompatible] incompatible types in assignment.
         @Unique Interprocedural_CF foo = new Interprocedural_CF("text");
                                          ^
@@ -95,27 +95,27 @@ error: [assignment.type.incompatible] incompatible types in assignment.
 
 ### reflect
 
-[aliasing/Reflect_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect_CF.java)
+[alias/Reflect_CF.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect_CF.java)
 
 ```
-javac -processor org.checkerframework.common.aliasing.AliasingChecker aliasing/Reflect_CF.java 
+javac -processor org.checkerframework.common.alias.AliasingChecker alias/Reflect_CF.java 
 ```
 
 #### output
 ```
-aliasing/Reflect_CF.java:19: 
+alias/Reflect_CF.java:19: 
 error: [assignment.type.incompatible] incompatible types in assignment.
         @Unique Reflect_CF foo = new Reflect_CF("text");
                                     ^
   found   : @MaybeAliased Reflect_CF
   required: @NonLeaked @Unique Reflect_CF
 
-aliasing/Reflect_CF.java:27: 
+alias/Reflect_CF.java:27: 
 error: [unique.leaked] Reference annotated as @Unique is leaked.
             bar = (Reflect_CF) m.invoke(foo);
                                            ^
 
-aliasing/Reflect_CF.java:33: 
+alias/Reflect_CF.java:33: 
 error: [unique.leaked] Reference annotated as @Unique is leaked.
             bar = (Reflect_CF) m.invoke(foo);
                                            ^

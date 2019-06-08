@@ -42,7 +42,7 @@
   <jsr308.javac 
       srcdir="${src}/alias"
       includeantruntime="false">
-      <compilerarg line="-processor org.checkerframework.common.aliasing.AliasingChecker"/>
+      <compilerarg line="-processor org.checkerframework.common.alias.AliasingChecker"/>
       <compilerarg line="-Xmaxerrs 10000"/>
     </jsr308.javac>
   </target>

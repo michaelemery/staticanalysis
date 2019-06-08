@@ -4,7 +4,7 @@ This repository is in support of the authors Masters Thesis on the effectiveness
 
 <br>
 
-[JUMP TO RESULTS](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerframework](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
@@ -30,7 +30,7 @@ of each tool are compared in order to assess overall and relative effectiveness.
 
 | type | description |
 | --- | --- |
-| [aliasing](https://github.com/michaelemery/staticanalysis/tree/master/src/aliasing) | Errors may occur when an object is referenced without consideration for mutations caused by an aliasing to the same object. |
+| [alias](https://github.com/michaelemery/staticanalysis/tree/master/src/aliasing) | Errors may occur when an object is referenced without consideration for mutations caused by an alias to the same object. |
 | [init](https://github.com/michaelemery/staticanalysis/tree/master/src/init)| Objects accessed at runtime prior to being fully initialised will cause an error. |
 | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/src/nullness)| Dereferenced expressions are a common cause a null pointer exceptions. |
 | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/src/signedness)|Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |

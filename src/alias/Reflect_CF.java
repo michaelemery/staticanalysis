@@ -1,4 +1,4 @@
-package aliasing;
+package alias;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;

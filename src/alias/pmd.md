@@ -19,21 +19,21 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 ### vanilla
 
-[aliasing/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java)
+[alias/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java)
 
 ```
-$PMD_HOME/bin/run.sh pmd -d aliasing/Vanilla.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d alias/Vanilla.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 ```
-aliasing/Vanilla.java:8:  
+alias/Vanilla.java:8:  
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 
-aliasing/Vanilla.java:24:  
+alias/Vanilla.java:24:  
 Assigning an Object to null is a code smell.  Consider refactoring.
 
-aliasing/Vanilla.java:29:  
+alias/Vanilla.java:29:  
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
@@ -43,7 +43,7 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 
 ### interprocedural
 
-[aliasing/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java)
+[alias/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java)
 
 ```
 $PMD_HOME/bin/run.sh pmd -d Interprocedural.java -f text -R category/java/errorprone.xml
@@ -51,13 +51,13 @@ $PMD_HOME/bin/run.sh pmd -d Interprocedural.java -f text -R category/java/errorp
 
 #### output
 ```
-aliasing/Interprocedural.java:8:   
+alias/Interprocedural.java:8:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 
-aliasing/Interprocedural.java:20:  
+alias/Interprocedural.java:20:  
 Assigning an Object to null is a code smell.  Consider refactoring.
 
-aliasing/Interprocedural.java:25:  
+alias/Interprocedural.java:25:  
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
@@ -67,7 +67,7 @@ Assigning an Object to null is a code smell.  Consider refactoring.
 
 ### reflect
 
-[aliasing/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect.java)
+[alias/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect.java)
 
 ```
 $PMD_HOME/bin/run.sh pmd -d NullReflect.java -f text -R category/java/errorprone.xml
@@ -75,13 +75,13 @@ $PMD_HOME/bin/run.sh pmd -d NullReflect.java -f text -R category/java/errorprone
 
 #### output
 ```
-aliasing/Reflect.java:11:   
+alias/Reflect.java:11:   
 Found non-transient, non-static member. Please mark as transient or provide accessors.
 
-aliasing/Reflect.java:27:   
+alias/Reflect.java:27:   
 Assigning an Object to null is a code smell.  Consider refactoring.
 
-aliasing/Reflect.java:33:   
+alias/Reflect.java:33:   
 Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 

@@ -1,28 +1,26 @@
-package aliasing;
-
-import org.checkerframework.common.aliasing.qual.Unique;
+package alias;
 
 /**
- * Intra-procedural corruption of an object via an alias.
+ * Intraprocedural corruption of an object via an alias.
  */
-public class Vanilla_CF {
+public class Vanilla {
 
     String s;
 
-    public Vanilla_CF(String s) {
+    public Vanilla(String s) {
         this.s = s;
     }
 
-    public Vanilla_CF(Vanilla_CF copy) {
+    public Vanilla(Vanilla copy) {
         this.s = copy.s;
     }
 
     public static void main(String[] args) {
-        @Unique Vanilla_CF foo = new Vanilla_CF("text");
-        Vanilla_CF bar;
+        Vanilla foo = new Vanilla("text");
+        Vanilla bar;
 
         // protect an object through cloning (correct)
-        bar = new Vanilla_CF(foo);
+        bar = new Vanilla(foo);
         bar.s = null;
         System.out.println(foo.s.toString());  // "text"
 

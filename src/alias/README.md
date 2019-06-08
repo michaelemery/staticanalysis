@@ -1,5 +1,5 @@
-# aliasing
-Two expressions are aliasinged when they have the same non-primitive value; that is, they are references to the identical Java object in the heap. Errors may occur when an object is referenced, without consideration for mutations caused by an aliasing to the same object.
+# alias
+Two expressions are aliasinged when they have the same non-primitive value; that is, they are references to the identical Java object in the heap. Errors may occur when an object is referenced, without consideration for mutations caused by an alias to the same object.
 
 ## testing
 Test the effectiveness of static analysis tools in identifying unintentional mutations of objects that were intended to be unique.

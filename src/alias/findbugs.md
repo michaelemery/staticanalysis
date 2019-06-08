@@ -12,18 +12,18 @@ Results can be replicated on [Docker](https://docs.docker.com/docker-hub/) repos
 
 ### vanilla
 
-[aliasing/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java)
+[alias/Vanilla.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Vanilla.java)
 
 ```
-findbugs aliasing/Vanilla.class 
+findbugs alias/Vanilla.class 
 ```
 
 #### output
 ```
-H C NP: Null pointer dereference of Vanilla.s in aliasing.Vanilla.main(String[]) 
+H C NP: Null pointer dereference of Vanilla.s in alias.Vanilla.main(String[]) 
 Dereferenced at Vanilla.java:[line 30]
 
-M D UC: Useless object stored in variable var$2 of method aliasing.Vanilla.main(String[]) 
+M D UC: Useless object stored in variable var$2 of method alias.Vanilla.main(String[]) 
 At Vanilla.java:[line 23]
 
 Warnings generated: 2
@@ -35,10 +35,10 @@ Warnings generated: 2
 
 ### interprocedural
 
-[aliasing/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java)
+[alias/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Interprocedural.java)
 
 ```
-findbugs aliasing/Interprocedural.class 
+findbugs alias/Interprocedural.class 
 ```
 
 #### output
@@ -52,10 +52,10 @@ findbugs aliasing/Interprocedural.class
 
 ### reflect
 
-[aliasing/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect.java)
+[alias/Reflect.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/aliasing/Reflect.java)
 
 ```
-findbugs aliasing/Reflect.class 
+findbugs alias/Reflect.class 
 ```
 
 #### output
