@@ -20,5 +20,5 @@ Nullness checking guarantees that a program will never throw a null pointer exce
 
 
 
-[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/results) &nbsp; : : &nbsp; results by: [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
+[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/results) &nbsp; : : &nbsp; [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
 
