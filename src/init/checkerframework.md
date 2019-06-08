@@ -18,7 +18,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 | InvokeDynamicVirtual | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicVirtual) |
 | InvokeDynamicConstructor | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicConstructor) |
 | InvokeDynamicField | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicField) |
-| DynamicProxy | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#DynamicProxy) |
+| DynamicProxy | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#DynamicProxy) |
 
 > Select results for detail.
 
@@ -255,9 +255,19 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker init/Dyna
 #### output
 
 ```
-
+init/DynamicProxy.java:18: error: [argument.type.incompatible] incompatible types in argument.
+        this.o = proxyInstance.get(null);
+                                   ^
+  found   : null
+  required: @Initialized @NonNull Object
+init/DynamicProxy.java:31: error: [argument.type.incompatible] incompatible types in argument.
+                Foo.class.getClassLoader(),
+                                        ^
+  found   : @Initialized @Nullable ClassLoader
+  required: @Initialized @NonNull ClassLoader
+2 errors
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | xxx |
+| 1 | 1 | imprecise |

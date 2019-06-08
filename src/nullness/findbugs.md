@@ -8,27 +8,27 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 | feature | result |
 | --- | :---: |
-| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#IntraProcedural) |
-| InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#InterProcedural) |
-| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvoke) |
-| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodinvoke) |
-| ReflectFieldAccess | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectoverloadinvoke) |
-| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectmethodhandle) |
-| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccess) |
-| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#reflectfieldaccess) |
-| DynamicProxy | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/findbugs.md#dynamicproxy) |
+| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/findbugs.md#IntraProcedural) |
+| InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/findbugs.md#InterProcedural) |
+| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/findbugs.md#reflectmethodinvoke) |
+| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/findbugs.md#reflectmethodinvoke) |
+| ReflectFieldAccess | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/nullness/findbugs.md#reflectoverloadinvoke) |
+| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/findbugs.md#reflectmethodhandle) |
+| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/findbugs.md#reflectfieldaccess) |
+| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/findbugs.md#reflectfieldaccess) |
+| DynamicProxy | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/nullness/findbugs.md#dynamicproxy) |
 
 > Select results for detail.
 
 ## IntraProcedural
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/IntraProcedural.java)
 
 #### docker
 
 ```
-javac checker/nullness/IntraProcedural.java
-findbugs checker/nullness/IntraProcedural.class
+javac nullness/IntraProcedural.java
+findbugs nullness/IntraProcedural.class
 ```
 
 #### output
@@ -44,13 +44,13 @@ Warnings generated: 1
 
 ## InterProcedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InterProcedural.java)
 
 #### docker
 
 ```
-javac checker/nullness/InterProcedural.java
-findbugs checker/nullness/InterProcedural.class
+javac nullness/InterProcedural.java
+findbugs nullness/InterProcedural.class
 ```
 
 #### output
@@ -65,13 +65,13 @@ No reported issues.
 
 ## ReflectMethod
 
-[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
+[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectMethod.java)
 
 #### docker
 
 ```
-javac checker/nullness/ReflectMethod.java
-findbugs checker/nullness/ReflectMethod.class
+javac nullness/ReflectMethod.java
+findbugs nullness/ReflectMethod.class
 ```
 
 #### output
@@ -86,13 +86,13 @@ No reported issues.
 
 ## ReflectMethodOverload
 
-[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
+[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectMethodOverload.java)
 
 #### docker
 
 ```
-javac checker/nullness/ReflectMethodOverload.java
-findbugs checker/nullness/ReflectMethodOverload.class
+javac nullness/ReflectMethodOverload.java
+findbugs nullness/ReflectMethodOverload.class
 ```
 
 #### output
@@ -107,13 +107,13 @@ No reported issues.
 
 ## ReflectFieldAccess
 
-[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
+[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectFieldAccess.java)
 
 #### docker
 
 ```
-javac checker/nullness/ReflectFieldAccess.java
-findbugs checker/nullness/ReflectFieldAccess.class
+javac nullness/ReflectFieldAccess.java
+findbugs nullness/ReflectFieldAccess.class
 ```
 
 #### output
@@ -128,13 +128,13 @@ No reported issues.
 
 ## InvokeDynamicVirtual
 
-[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicVirtual.java)
+[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicVirtual.java)
 
 #### docker
 
 ```
-javac checker/nullness/InvokeDynamicVirtual.java
-findbugs checker/nullness/InvokeDynamicVirtual.class
+javac nullness/InvokeDynamicVirtual.java
+findbugs nullness/InvokeDynamicVirtual.class
 ```
 
 #### output
@@ -149,13 +149,13 @@ No reported issues.
 
 ## InvokeDynamicConstructor
 
-[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicConstructor.java)
+[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicConstructor.java)
 
 #### docker
 
 ```
-javac checker/nullness/InvokeDynamicConstructor.java
-findbugs checker/nullness/InvokeDynamicConstructor.class
+javac nullness/InvokeDynamicConstructor.java
+findbugs nullness/InvokeDynamicConstructor.class
 ```
 
 #### output
@@ -170,13 +170,13 @@ No reported issues.
 
 ## InvokeDynamicField
 
-[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
+[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicField.java)
 
 #### docker
 
 ```
-javac checker/nullness/InvokeDynamicField.java
-findbugs checker/nullness/InvokeDynamicField.class
+javac nullness/InvokeDynamicField.java
+findbugs nullness/InvokeDynamicField.class
 ```
 
 #### output
@@ -191,19 +191,19 @@ No reported issues.
 
 ## DynamicProxy
 
-[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/DynamicProxy.java)
 
 #### docker
 
 ```
-javac checker/nullness/DynamicProxy.java
-findbugs checker/nullness/DynamicProxy.class
+javac nullness/DynamicProxy.java
+findbugs nullness/DynamicProxy.class
 ```
 
 #### output
 
 ```
-root@de7f4557a7e1:/# findbugs checker/nullness/DynamicProxy.class checker/nullness/DynamicProxy.class
+root@de7f4557a7e1:/# findbugs nullness/DynamicProxy.class nullness/DynamicProxy.class
 The following classes needed for analysis were missing:
   checker.nullness.DynamicProxy$Foo
 Missing classes: 1

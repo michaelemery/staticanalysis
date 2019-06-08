@@ -1,4 +1,4 @@
-package nullness;
+package init;
 
 import java.lang.reflect.Proxy;
 
@@ -7,9 +7,21 @@ import java.lang.reflect.Proxy;
  */
 public class DynamicProxy {
 
+    Object o;
+
+    DynamicProxy(Foo proxyInstance) {
+        this.o = proxyInstance.get("safe");
+        System.out.println(this.o.toString());
+    }
+
+    DynamicProxy(Foo proxyInstance, int x) {
+        this.o = proxyInstance.get(null);
+        System.out.println(this.o.toString());
+    }
+
     interface Foo {
 
-        Object get(Object obj);
+        Object get(Object o);
     }
 
     public static void main(String[] args) {
@@ -28,9 +40,9 @@ public class DynamicProxy {
                 });
 
         /* safe: simulate setting object to non-null */
-        System.out.println(proxyInstance.get("safe").toString());
+        new DynamicProxy(proxyInstance);
 
         /* unsafe: simulate setting object to null */
-        System.out.println(proxyInstance.get(null).toString());
+        new DynamicProxy(proxyInstance, 1);
     }
 }

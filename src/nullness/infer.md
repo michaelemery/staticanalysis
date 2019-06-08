@@ -12,26 +12,26 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 | feature | result |
 | --- | :---: |
-| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#IntraProcedural) |
-| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#InterProcedural) |
-| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethod) |
-| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#ReflectMethodOverload) |
-| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectoverloadinvoke) |
-| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectmethodhandle) |
-| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
-| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#reflectfieldaccess) |
-| DynamicProxy | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/infer.md#dynamicproxy) |
+| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#IntraProcedural) |
+| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#InterProcedural) |
+| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#ReflectMethod) |
+| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#ReflectMethodOverload) |
+| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#reflectoverloadinvoke) |
+| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#reflectmethodhandle) |
+| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#reflectfieldaccess) |
+| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#reflectfieldaccess) |
+| DynamicProxy | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#dynamicproxy) |
 
 > Select results for detail.
 
 ## IntraProcedural
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/IntraProcedural.java)
 
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/IntraProcedural.java
+infer run -a checkers --eradicate -- javac nullness/IntraProcedural.java
 ```
 
 #### output
@@ -39,7 +39,7 @@ infer run -a checkers --eradicate -- javac checker/nullness/IntraProcedural.java
 ```
 Found 2 issues
 
-checker/nullness/IntraProcedural.java:23: error: ERADICATE_FIELD_NOT_NULLABLE
+nullness/IntraProcedural.java:23: error: ERADICATE_FIELD_NOT_NULLABLE
   Field `IntraProcedural.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 23)
   21.   
   22.           /* unsafe: set object to null */
@@ -47,7 +47,7 @@ checker/nullness/IntraProcedural.java:23: error: ERADICATE_FIELD_NOT_NULLABLE
   24.           System.out.println(i.o.toString());
   25.       }
 
-checker/nullness/IntraProcedural.java:24: error: ERADICATE_NULL_METHOD_CALL
+nullness/IntraProcedural.java:24: error: ERADICATE_NULL_METHOD_CALL
   The value of `i.o` in the call to `toString()` could be null. (Origin: null constant at line 23)
   22.           /* unsafe: set object to null */
   23.           i.o = null;
@@ -67,12 +67,12 @@ Summary of the reports
 
 ## InterProcedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InterProcedural.java)
 
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/InterProcedural.java
+infer run -a checkers --eradicate -- javac nullness/InterProcedural.java
 ```
 
 #### output
@@ -80,7 +80,7 @@ infer run -a checkers --eradicate -- javac checker/nullness/InterProcedural.java
 ```
 Found 1 issue
 
-checker/nullness/InterProcedural.java:22: error: ERADICATE_PARAMETER_NOT_NULLABLE
+nullness/InterProcedural.java:22: error: ERADICATE_PARAMETER_NOT_NULLABLE
   `set(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 22)
   20.   
   21.           /* unsafe: set object to null */
@@ -99,12 +99,12 @@ Summary of the reports
 
 ## ReflectMethod
 
-[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
+[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectMethod.java)
 
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/ReflectMethod.java
+infer run -a checkers --eradicate -- javac nullness/ReflectMethod.java
 ```
 
 #### output
@@ -119,12 +119,12 @@ No reported issues.
 
 ## ReflectMethodOverload
 
-[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
+[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectMethodOverload.java)
 
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/ReflectMethodOverload.java
+infer run -a checkers --eradicate -- javac nullness/ReflectMethodOverload.java
 ```
 
 ### output
@@ -139,12 +139,12 @@ No reported issues.
 
 ## ReflectFieldAccess
 
-[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
+[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectFieldAccess.java)
 
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/ReflectFieldAccess.java
+infer run -a checkers --eradicate -- javac nullness/ReflectFieldAccess.java
 ```
 
 #### output
@@ -160,12 +160,12 @@ No reported issues.
 
 ## InvokeDynamicVirtual
 
-[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicVirtual.java)
+[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicVirtual.java)
 
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/InvokeDynamicVirtual.java
+infer run -a checkers --eradicate -- javac nullness/InvokeDynamicVirtual.java
 ```
 
 #### output
@@ -180,12 +180,12 @@ No reported issues.
 
 ## InvokeDynamicConstructor
 
-[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicConstructor.java)
+[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicConstructor.java)
 
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/InvokeDynamicConstructor.java
+infer run -a checkers --eradicate -- javac nullness/InvokeDynamicConstructor.java
 ```
 
 #### output
@@ -200,12 +200,12 @@ No reported issues.
 
 ## InvokeDynamicField
 
-[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
+[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicField.java)
 
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/InvokeDynamicField.java
+infer run -a checkers --eradicate -- javac nullness/InvokeDynamicField.java
 ```
 
 #### output
@@ -220,12 +220,12 @@ No reported issues.
 
 ## DynamicProxy
 
-[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/DynamicProxy.java)
 
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac checker/nullness/DynamicProxy.java
+infer run -a checkers --eradicate -- javac nullness/DynamicProxy.java
 ```
 
 #### output
@@ -233,7 +233,7 @@ infer run -a checkers --eradicate -- javac checker/nullness/DynamicProxy.java
 ```
 Found 1 issue
 
-checker/nullness/DynamicProxy.java:34: error: ERADICATE_PARAMETER_NOT_NULLABLE
+nullness/DynamicProxy.java:34: error: ERADICATE_PARAMETER_NOT_NULLABLE
   `get(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 34)
   32.   
   33.           /* unsafe: simulate setting object to null */

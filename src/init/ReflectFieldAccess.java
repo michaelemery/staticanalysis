@@ -10,6 +10,7 @@ public class ReflectFieldAccess {
     Object o;
 
     ReflectFieldAccess() throws Exception {
+        this.o = "init";
         Class<?> C = this.getClass();
         Field f = C.getDeclaredField("o");
         f.set(this, "safe");
@@ -17,6 +18,7 @@ public class ReflectFieldAccess {
     }
 
     ReflectFieldAccess(int x) throws Exception {
+        this.o = "init";
         Class<?> C = this.getClass();
         Field f = C.getDeclaredField("o");
         f.set(this, null);

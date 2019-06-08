@@ -8,9 +8,9 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 | feature | result |
 | --- | :---: |
-| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#IntraProcedural) |
+| IntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#IntraProcedural) |
 | InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#InterProcedural) |
-| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodinvoke) |
+| ReflectMethod | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodinvoke) |
 | ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodinvoke) |
 | ReflectFieldAccess | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectoverloadinvoke) |
 | InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodhandle) |
@@ -27,20 +27,18 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 #### docker
 
 ```
-javac init/IntraProcedural.java
-findbugs init/IntraProcedural.class
+infer run -a checkers --eradicate -- javac init/IntraProcedural.java
 ```
 
 #### output
 
 ```
-M C UR: Uninitialized read of o in new init.IntraProcedural(int)  At IntraProcedural.java:[line 16]
-Warnings generated: 1
+No reported issues.
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 0 | unsound |
 
 ## InterProcedural
 
@@ -49,8 +47,7 @@ Warnings generated: 1
 #### docker
 
 ```
-javac init/InterProcedural.java
-findbugs init/InterProcedural.class
+infer run -a checkers --eradicate -- javac init/InterProcedural.java
 ```
 
 #### output
@@ -61,7 +58,7 @@ No reported issues.
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 2 | 0 | unsound |
+| 1 | 0 | unsound |
 
 ## ReflectMethod
 
@@ -70,19 +67,31 @@ No reported issues.
 #### docker
 
 ```
-javac init/ReflectMethod.java
-findbugs init/ReflectMethod.class
+infer run -a checkers --eradicate -- javac init/ReflectMethod.java
 ```
 
 #### output
 
 ```
-No reported issues.
+Found 1 issue
+
+init/ReflectMethod.java:17: error: ERADICATE_FIELD_NOT_INITIALIZED
+  Field `ReflectMethod.o` is not initialized in the constructor and is not declared `@Nullable`.
+  15.       }
+  16.   
+  17. >     ReflectMethod(Method m, int x) throws Exception {
+  18.           m.invoke(this);
+  19.       }
+
+
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_INITIALIZED: 1
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| 1 | 0 | accurate |
 
 ## ReflectMethodOverload
 
@@ -91,19 +100,31 @@ No reported issues.
 #### docker
 
 ```
-javac init/ReflectMethodOverload.java
-findbugs init/ReflectMethodOverload.class
+infer run -a checkers --eradicate -- javac init/ReflectMethodOverload.java
 ```
 
 #### output
 
 ```
-No reported issues.
+Found 1 issue
+
+init/ReflectMethodOverload.java:19: error: ERADICATE_FIELD_NOT_INITIALIZED
+  Field `ReflectMethodOverload.o` is not initialized in the constructor and is not declared `@Nullable`.
+  17.       }
+  18.   
+  19. >     ReflectMethodOverload(int x) throws Exception {
+  20.           Class<?> C = ReflectMethodOverload.class;
+  21.           Method m = C.getDeclaredMethod("m");
+
+
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_INITIALIZED: 1
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| 1 | 0 | accurate |
 
 ## ReflectFieldAccess
 
@@ -112,24 +133,18 @@ No reported issues.
 #### docker
 
 ```
-javac init/ReflectFieldAccess.java
-findbugs init/ReflectFieldAccess.class
+infer run -a checkers --eradicate -- javac init/ReflectFieldAccess.java
 ```
 
 #### output
 
 ```
-M C UR: Uninitialized read of o in new init.ReflectFieldAccess()  At ReflectFieldAccess.java:[line 16]
-M C UR: Uninitialized read of o in new init.ReflectFieldAccess(int)  At ReflectFieldAccess.java:[line 23]
-M C UwF: Unwritten field: init.ReflectFieldAccess.o  At ReflectFieldAccess.java:[line 16]
-M C NP: Read of unwritten field o in new init.ReflectFieldAccess()  At ReflectFieldAccess.java:[line 16]
-M C NP: Read of unwritten field o in new init.ReflectFieldAccess(int)  At ReflectFieldAccess.java:[line 23]
-Warnings generated: 5
+No reported issues.
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | 1 | aberrant |
+| 1 | 0 | unsound |
 
 ## InvokeDynamicVirtual
 
@@ -138,8 +153,7 @@ Warnings generated: 5
 #### docker
 
 ```
-javac init/InvokeDynamicVirtual.java
-findbugs init/InvokeDynamicVirtual.class init/InvokeDynamicVirtual.class
+infer run -a checkers --eradicate -- javac init/InvokeDynamicVirtual.java
 ```
 
 #### output
@@ -150,7 +164,7 @@ No reported issues.
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| 1 | 0 | unsound |
 
 ## InvokeDynamicConstructor
 
@@ -159,8 +173,7 @@ No reported issues.
 #### docker
 
 ```
-javac init/InvokeDynamicConstructor.java
-findbugs init/InvokeDynamicConstructor.class
+infer run -a checkers --eradicate -- javac init/InvokeDynamicConstructor.java
 ```
 
 #### output
@@ -171,7 +184,7 @@ No reported issues.
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| 1 | 0 | unsound |
 
 ## InvokeDynamicField
 
@@ -180,8 +193,7 @@ No reported issues.
 #### docker
 
 ```
-javac init/InvokeDynamicField.java
-findbugs init/InvokeDynamicField.class
+infer run -a checkers --eradicate -- javac init/InvokeDynamicField.java
 ```
 
 #### output
@@ -192,7 +204,7 @@ No reported issues.
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| 1 | 0 | unsound |
 
 ## DynamicProxy
 
@@ -201,18 +213,28 @@ No reported issues.
 #### docker
 
 ```
-javac init/DynamicProxy.java
-findbugs init/DynamicProxy.class init/DynamicProxy.class
+infer run -a checkers --eradicate -- javac init/DynamicProxy.java
 ```
 
 #### output
 
 ```
-The following classes needed for analysis were missing:
-  init.DynamicProxy$Foo
-Missing classes: 1
+Found 1 issue
+
+init/DynamicProxy.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `get(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 18).
+  16.   
+  17.       DynamicProxy(Foo proxyInstance, int x) {
+  18. >         this.o = proxyInstance.get(null);
+  19.           System.out.println(this.o.toString());
+  20.       }
+
+
+Summary of the reports
+
+  ERADICATE_PARAMETER_NOT_NULLABLE: 1
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | 1 | aberrant |
+| 0 | 0 | accurate |

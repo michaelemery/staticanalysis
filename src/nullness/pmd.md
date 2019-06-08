@@ -13,32 +13,32 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 | feature | result |
 | --- | :---: |
-| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#IntraProcedural) |
-| InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InterProcedural) |
-| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectMethod) |
-| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectMethodOverload) |
-| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#ReflectFieldAccess) |
-| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicVirtual) |
-| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicConstructor) |
-| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#InvokeDynamicField) |
-| DynamicProxy | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/pmd.md#DynamicProxy) |
+| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#IntraProcedural) |
+| InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#InterProcedural) |
+| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#ReflectMethod) |
+| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#ReflectMethodOverload) |
+| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#ReflectFieldAccess) |
+| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#InvokeDynamicVirtual) |
+| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#InvokeDynamicConstructor) |
+| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#InvokeDynamicField) |
+| DynamicProxy | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#DynamicProxy) |
 
 > Select results for detail.
 
 ## IntraProcedural
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/IntraProcedural.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/IntraProcedural.java)
 
 #### docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-checker/nullness/IntraProcedural.java:23:	Assigning an Object to null is a code smell.  Consider refactoring.
+nullness/IntraProcedural.java:23:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
 | false negative | false positive | result |
@@ -47,12 +47,12 @@ checker/nullness/IntraProcedural.java:23:	Assigning an Object to null is a code 
 
 ## InterProcedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InterProcedural.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InterProcedural.java)
 
 #### docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/InterProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -67,12 +67,12 @@ No reported issues.
 
 ## ReflectMethod
 
-[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethod.java)
+[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectMethod.java)
 
 #### docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethod.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -87,12 +87,12 @@ No reported issues.
 
 ## ReflectMethodOverload
 
-[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectMethodOverload.java)
+[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectMethodOverload.java)
 
 #### docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectMethodOverload.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectMethodOverload.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -107,12 +107,12 @@ No reported issues.
 
 ## ReflectFieldAccess
 
-[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/ReflectFieldAccess.java)
+[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectFieldAccess.java)
 
 #### docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/ReflectFieldAccess.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectFieldAccess.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -128,12 +128,12 @@ No reported issues.
 
 ## InvokeDynamicVirtual
 
-[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicVirtual.java)
+[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicVirtual.java)
 
 #### docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicVirtual.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamicVirtual.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -148,12 +148,12 @@ No reported issues.
 
 ## InvokeDynamicConstructor
 
-[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicConstructor.java)
+[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicConstructor.java)
 
 #### docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -168,12 +168,12 @@ No reported issues.
 
 ## InvokeDynamicField
 
-[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/InvokeDynamicField.java)
+[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicField.java)
 
 #### docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/InvokeDynamicField.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamicField.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
@@ -188,18 +188,18 @@ No reported issues.
 
 ## DynamicProxy
 
-[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/checker/nullness/DynamicProxy.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/DynamicProxy.java)
 
 #### docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d checker/nullness/DynamicProxy.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/DynamicProxy.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-checker/nullness/DynamicProxy.java:18:	Found 'DU'-anomaly for variable 'proxyInstance' (lines '18'-'35').
+nullness/DynamicProxy.java:18:	Found 'DU'-anomaly for variable 'proxyInstance' (lines '18'-'35').
 hecker/nullness/DynamicProxy.java:19:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
 ```
 
