@@ -4,7 +4,7 @@
 
 Use &uarr; this &uarr; navigation bar to group results by *checker type* &#x25c0; **or** &#x25b6; *checker tool*.
 
-### interpreting results
+### interpretation
 
 Tests are simple programs incorporating a single deliberate error of a specific type. Each test will produce zero or more outcomes that are categorised as either false negative or false positive as follows;
  
