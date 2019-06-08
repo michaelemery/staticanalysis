@@ -1,6 +1,6 @@
 # results for nullness
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | **nullness** | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | **nullness** | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; : : &nbsp; [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
 
 | language feature | CheckerFwk | FindBugs | Infer | PMD | 
 | --- | :---: | :---: | :---: | :---: |
@@ -20,5 +20,5 @@ Nullness checking guarantees that a program will never throw a null pointer exce
 
 
 
-[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/results) &nbsp; : : &nbsp; [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
+[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/results)
 
