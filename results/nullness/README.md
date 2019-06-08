@@ -1,19 +1,8 @@
-# nullness
-Nullness checking guarantees that a program will never throw a null pointer exception. De-referenced expressions are a common cause a null pointer exceptions. Dereferences occur not only when a field is accessed, but when an array is indexed, an exception is thrown, and more. Such exceptions may also occur simply as a result of a field not being initialised by its constructor.
+# results by checker type
 
-## test objectives
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [initialisation](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | **nullness** | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md)
 
-Test the effectiveness of static analysis tools in identifying potential causes of null-pointer exceptions.
-
-## results
-
-Checker Framework is consistently sound and precise in non-reflective cases. However, it handles reflection in a very rudimentary way that causes excessive false positives. Checker Framework errs on the side of caution when encountering reflective code. 
-
-Both FindBugs and PMD are less likely to generate FP results so are more precise than Checker Framework. However, their lack of caution in complex situations compromises soundness compared to Checker Framework.
-
-Overall, Checker Framework is recommended as the most reliable tool for nullness testing given that the FP weakness in reflection is offset by the FN results of other tools that were less sound.
-
-| feature | [Checker FW](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md) | [Infer](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/infer.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md) | 
+| language feature | [CheckerFwk](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md) | [Infer](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/infer.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md) | 
 | --- | :---: | :---: | :---: | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/infer.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#IntraProcedural) |
 | InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#InterProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#InterProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/infer.md#InterProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#InterProcedural) |
@@ -25,5 +14,11 @@ Overall, Checker Framework is recommended as the most reliable tool for nullness
 | InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/infer.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#InvokeDynamicField) |
 | DynamicProxy | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#DynamicProxy) | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#DynamicProxy) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/infer.md#DynamicProxy) | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#DynamicProxy) |
 
-
 > Select individual results for detail.
+
+[CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
+
+Nullness checking guarantees that a program will never throw a null pointer exception. De-referenced expressions are a common cause a null pointer exceptions. Dereferences occur not only when a field is accessed, but when an array is indexed, an exception is thrown, and more. Such exceptions may also occur simply as a result of a field not being initialised by its constructor.
+
+[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/results)
+

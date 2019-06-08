@@ -48,7 +48,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | InvokeDynamicField | Objects directly manipulated via dynamic field access. |
 | DynamicProxy | Proxy instances of the original class interface. |
 
-### results
+### test outcomes
 
 Tests are simple programs incorporating a single deliberate error of a specific type. Each test will produce zero or more outcomes that are categorised as either false negative or false positive as follows;
 
@@ -58,15 +58,6 @@ Tests are simple programs incorporating a single deliberate error of a specific 
 | false positive |Checker incorrectly identifies safe code as an error (or potential error) of the type being tested. |
 
 Although each test incorporates only one intentional error, that error may be detected at multiple locations within the code. This may occur where a checker attempts to identify not just the error, but also it's pre-cursors and cascading effects. Multiple counts of any correctly identified error are only counted once, and are not considered false positives. Where a checker correctly identifies an error or concern that is unrelated to the test, that outcome is ignored. 
-
-The final result of each test is based on the combination of false negative and false positive outcomes. Outcomes are categorised as either true or false, regardless of the number of occurrences.   
-
-| false negative found | false positive found | result | 
-| :---: | :---: | :---: |
-| false | false |accurate | 
-| false | true | imprecise |
-| true | false | unsound |
-| true | true | aberrant |
 
 ## result summary (by tool)
 
