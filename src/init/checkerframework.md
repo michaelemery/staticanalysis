@@ -15,9 +15,9 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 | ReflectMethod | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#ReflectMethod) |
 | ReflectMethodOverload | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#ReflectMethodOverload) |
 | ReflectFieldAccess | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#ReflectFieldAccess) |
-| InvokeDynamicVirtual | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicVirtual) |
-| InvokeDynamicConstructor | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicConstructor) |
-| InvokeDynamicField | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicField) |
+| InvokeDynamicVirtual | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicVirtual) |
+| InvokeDynamicConstructor | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicConstructor) |
+| InvokeDynamicField | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicField) |
 | DynamicProxy | [xxx](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#DynamicProxy) |
 
 > Select results for detail.
@@ -175,12 +175,22 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker init/Invo
 #### output
 
 ```
-
+init/InvokeDynamicVirtual.java:16: error: [argument.type.incompatible] incompatible types in argument.
+        h.invoke(this, "safe");
+                 ^
+  found   : @UnderInitialization(init.InvokeDynamicVirtual.class) @NonNull InvokeDynamicVirtual
+  required: @Initialized @NonNull InvokeDynamicVirtual
+init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompatible types in argument.
+        h.invoke(this, null);
+                 ^
+  found   : @UnderInitialization(init.InvokeDynamicVirtual.class) @NonNull InvokeDynamicVirtual
+  required: @Initialized @NonNull InvokeDynamicVirtual
+2 errors
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | xxx |
+| 0 | 1 | imprecise |
 
 ## InvokeDynamicConstructor
 
@@ -195,12 +205,12 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker init/Invo
 #### output
 
 ```
-
+No rpeorted issues.
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | xxx |
+| 1 | 0 | unsound |
 
 ## InvokeDynamicField
 
@@ -215,12 +225,22 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker init/Invo
 #### output
 
 ```
-
+init/InvokeDynamicField.java:15: error: [argument.type.incompatible] incompatible types in argument.
+        h.invoke(this, "safe");
+                 ^
+  found   : @UnderInitialization(init.InvokeDynamicField.class) @NonNull InvokeDynamicField
+  required: @Initialized @NonNull InvokeDynamicField
+init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatible types in argument.
+        h.invoke(this, null);
+                 ^
+  found   : @UnderInitialization(init.InvokeDynamicField.class) @NonNull InvokeDynamicField
+  required: @Initialized @NonNull InvokeDynamicField
+2 errors
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | xxx |
+| 0 | 1 | imprecise |
 
 ## DynamicProxy
 

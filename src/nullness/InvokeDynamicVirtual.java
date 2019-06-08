@@ -11,21 +11,20 @@ public class InvokeDynamicVirtual {
 
     Object o;
 
-    InvokeDynamicVirtual(Object obj) {
-        this.o = obj;
+    InvokeDynamicVirtual() {
+        this.o = "safe";
     }
 
     public static void main(String[] args) throws Throwable {
         MethodHandles.Lookup l = MethodHandles.lookup();
         MethodType t = MethodType.methodType(void.class, Object.class);
         MethodHandle h = l.findVirtual(InvokeDynamicVirtual.class, "set", t);
-        InvokeDynamicVirtual i = new InvokeDynamicVirtual("init");
 
         /* safe: set object to non-null */
-        h.invoke(i, "safe");
+        h.invoke(new InvokeDynamicVirtual(),"safe");
 
         /* unsafe: set object to null */
-        h.invoke(i, null);
+        h.invoke(new InvokeDynamicVirtual(), null);
     }
 
     void set(Object obj) {
