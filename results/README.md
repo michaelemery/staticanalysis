@@ -4,7 +4,7 @@
 
 <br>
 
-Use &uarr; this &uarr; navigation bar to group results by **checker type** &#x25c0; *or* &#x25b6; **checker tool**.
+Use &uarr; this &uarr; navigation bar to group results by *checker type* &#x25c0; **or** &#x25b6; *checker tool*.
 
 <br>
 
