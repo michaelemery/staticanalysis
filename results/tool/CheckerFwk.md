@@ -4,8 +4,6 @@
 
 <br>
 
-| dynamic language feature | CheckerFwk | FindBugs | Infer | PMD | 
-| --- | :---: | :---: | :---: | :---: |
 | feature | aliasing | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#IntraProcedural)  |  |  |
