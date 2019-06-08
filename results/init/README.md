@@ -4,7 +4,7 @@
 
 <br>
 
-| dynamic language feature | CheckerFwk | FindBugs | Infer | PMD | 
+| dynamic language feature | checkerfwk | findbugs | infer | pmd | 
 | --- | :---: | :---: | :---: | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/checkerframework.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/findbugs.md#IntraProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/infer.md#IntraProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/pmd.md#IntraProcedural) |
 | InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/checkerframework.md#InterProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/findbugs.md#InterProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/infer.md#InterProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/pmd.md#InterProcedural) |

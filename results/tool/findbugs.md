@@ -4,7 +4,7 @@
 
 <br>
 
-| feature | alias | init | nullness | signedness | taint |
+| dynamic language feature | alias | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#IntraProcedural)  |  |  |
 | InterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#InterProcedural) |  |  |
