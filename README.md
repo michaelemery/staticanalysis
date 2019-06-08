@@ -4,7 +4,7 @@ This repository is in support of the authors Masters Thesis on the effectiveness
 
 <br>
 
-[Jump to Results]()
+[Jump to Results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
 
 <br>
 
