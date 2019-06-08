@@ -16,7 +16,7 @@
 | InvokeDynamicField | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/src/init/checkerframework.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/findbugs.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/infer.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/pmd.md#InvokeDynamicField) |
 | DynamicProxy | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/src/init/checkerframework.md#DynamicProxy) | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/init/findbugs.md#DynamicProxy) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/infer.md#DynamicProxy) | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/init/pmd.md#DynamicProxy) |
 
-> Select individual results for detail.
+> Select test result for detail.
 
 <br>
 

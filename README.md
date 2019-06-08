@@ -70,7 +70,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#InvokeDynamicField) |  |  |
 | DynamicProxy |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#DynamicProxy) |  |  |
 
-> Select individual results for detail.
+> Select test result for detail.
 
 ### findbugs
 
@@ -86,7 +86,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#InvokeDynamicField) |  |  |
 | DynamicProxy |  |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#DynamicProxy) |  |  |
 
-> Select individual results for detail.
+> Select test result for detail.
 
 ### infer
 
@@ -102,7 +102,7 @@ Dynamic programming languages are a class of high-level programming languages wh
 | InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/infer.md#InvokeDynamicField) |  |  |
 | DynamicProxy |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/infer.md#DynamicProxy) |  |  |
 
-> Select individual results for detail.
+> Select test result for detail.
 
 ### pmd
 
@@ -118,4 +118,4 @@ Dynamic programming languages are a class of high-level programming languages wh
 | InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#InvokeDynamicField) |  |  |
 | DynamicProxy |  |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#DynamicProxy) |  |  |
 
-> Select individual results for detail.
+> Select test result for detail.

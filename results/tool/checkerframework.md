@@ -1,4 +1,4 @@
-# results for checker framework
+# results for checkerframework
 
 [alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerframework](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
@@ -16,7 +16,7 @@
 | InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#InvokeDynamicField) |  |  |
 | DynamicProxy |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#DynamicProxy) |  |  |
 
-> Select individual results for detail.
+> Select test result for detail.
 
 <br>
 

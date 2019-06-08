@@ -16,7 +16,7 @@
 | InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#InvokeDynamicField) |  |  |
 | DynamicProxy |  |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/findbugs.md#DynamicProxy) |  |  |
 
-> Select individual results for detail.
+> Select test result for detail.
 
 <br>
 
