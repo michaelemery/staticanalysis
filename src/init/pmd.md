@@ -1,10 +1,11 @@
-# infer results (init)
+# pmd results (init)
 
-Version: 0.13.1
+Version: pmd-bin-6.1.0
 
-Infer:Eradicate is a type checker for @Nullable annotations for Java. It is part of the Infer static analysis suite of tools. The goal is to eradicate null pointer exceptions.
-@Nullable annotations denote that a parameter, field or the return value of a method can be null. When decorating a parameter, this denotes that the parameter can legitimately be null and the method will need to deal with it. When decorating a method, this denotes the method might legitimately return null.
-Starting from @Nullable-annotated programs, the checker performs a flow sensitive analysis to propagate the nullability through assignments and calls, and flags errors for unprotected accesses to nullable values or inconsistent/missing annotations. It can also be used to add annotations to a previously un-annotated program.
+* PMD checkers belonging to the "error prone" category are the only ones required for these tests.
+* The `$PMD_HOME` variable must be configured to use these commands.
+* JDK must be set to 1.8 or lower.
+* Outputs have been simplified for brevity.
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
@@ -13,10 +14,10 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 | feature | result |
 | --- | :---: |
 | IntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#IntraProcedural) |
-| InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#InterProcedural) |
-| ReflectMethod | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodinvoke) |
+| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#InterProcedural) |
+| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodinvoke) |
 | ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodinvoke) |
-| ReflectFieldAccess | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectoverloadinvoke) |
+| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectoverloadinvoke) |
 | InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodhandle) |
 | InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectfieldaccess) |
 | InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectfieldaccess) |
@@ -31,13 +32,13 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac init/IntraProcedural.java
+$PMD_HOME/bin/run.sh pmd -d init/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-No reported issues.
+/src/init/IntraProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 | false negative | false positive | result |
@@ -51,18 +52,19 @@ No reported issues.
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac init/InterProcedural.java
+$PMD_HOME/bin/run.sh pmd -d init/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-No reported issues.
+/src/init/InterProcedural.java:9:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/src/init/InterProcedural.java:17:	Overridable method 'm' called during object construction
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| 0 | 0 | accurate |
 
 ## ReflectMethod
 
@@ -71,31 +73,18 @@ No reported issues.
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac init/ReflectMethod.java
+$PMD_HOME/bin/run.sh pmd -d init/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-Found 1 issue
-
-init/ReflectMethod.java:17: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `ReflectMethod.o` is not initialized in the constructor and is not declared `@Nullable`.
-  15.       }
-  16.   
-  17. >     ReflectMethod(Method m, int x) throws Exception {
-  18.           m.invoke(this);
-  19.       }
-
-
-Summary of the reports
-
-  ERADICATE_FIELD_NOT_INITIALIZED: 1
+/src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 1 | 0 | unsound |
 
 ## ReflectMethodOverload
 
@@ -104,31 +93,18 @@ Summary of the reports
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac init/ReflectMethodOverload.java
+$PMD_HOME/bin/run.sh pmd -d init/ReflectMethodOverload.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-Found 1 issue
-
-init/ReflectMethodOverload.java:19: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `ReflectMethodOverload.o` is not initialized in the constructor and is not declared `@Nullable`.
-  17.       }
-  18.   
-  19. >     ReflectMethodOverload(int x) throws Exception {
-  20.           Class<?> C = ReflectMethodOverload.class;
-  21.           Method m = C.getDeclaredMethod("m");
-
-
-Summary of the reports
-
-  ERADICATE_FIELD_NOT_INITIALIZED: 1
+/src/init/ReflectMethodOverload.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| 1 | 0 | unsound |
 
 ## ReflectFieldAccess
 
@@ -137,13 +113,13 @@ Summary of the reports
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac init/ReflectFieldAccess.java
+$PMD_HOME/bin/run.sh pmd -d init/ReflectFieldAccess.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-No reported issues.
+/src/init/ReflectFieldAccess.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 | false negative | false positive | result |
@@ -157,13 +133,13 @@ No reported issues.
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac init/InvokeDynamicVirtual.java
+$PMD_HOME/bin/run.sh pmd -d init/InvokeDynamicVirtual.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-No reported issues.
+/src/init/InvokeDynamicVirtual.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 | false negative | false positive | result |
@@ -177,13 +153,13 @@ No reported issues.
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac init/InvokeDynamicConstructor.java
+$PMD_HOME/bin/run.sh pmd -d init/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-No reported issues.
+/src/init/InvokeDynamicConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 | false negative | false positive | result |
@@ -197,13 +173,13 @@ No reported issues.
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac init/InvokeDynamicField.java
+$PMD_HOME/bin/run.sh pmd -d init/InvokeDynamicField.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-No reported issues.
+/src/init/InvokeDynamicField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 | false negative | false positive | result |
@@ -217,28 +193,17 @@ No reported issues.
 #### docker
 
 ```
-infer run -a checkers --eradicate -- javac init/DynamicProxy.java
+$PMD_HOME/bin/run.sh pmd -d init/DynamicProxy.java -f text -R category/java/errorprone.xml
 ```
 
 #### output
 
 ```
-Found 1 issue
-
-init/DynamicProxy.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `get(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 18).
-  16.   
-  17.       DynamicProxy(Foo proxyInstance, int x) {
-  18. >         this.o = proxyInstance.get(null);
-  19.           System.out.println(this.o.toString());
-  20.       }
-
-
-Summary of the reports
-
-  ERADICATE_PARAMETER_NOT_NULLABLE: 1
+/src/init/DynamicProxy.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/src/init/DynamicProxy.java:30:	Found 'DU'-anomaly for variable 'proxyInstance' (lines '30'-'47').
+/src/init/DynamicProxy.java:31:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 1 | 1 | aberrant |
