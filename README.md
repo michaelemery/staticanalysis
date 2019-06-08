@@ -2,6 +2,12 @@
 
 This repository is in support of the authors Masters Thesis on the effectiveness of Static Analysis tools, techniques, and frameworks.
 
+<br>
+
+[Jump to Results]()
+
+<br>
+
 Static program analysis is the analysis of computer software that is performed without actually executing programs (analysis performed on executing programs is known as dynamic analysis). In most cases the analysis is performed on some version of the source code, and in the other cases, some form of the object code.
 
 This project combines checking tools and dynamic language features in order assess the checkers effectiveness in identifying common conditions that result in incorrect programs.
