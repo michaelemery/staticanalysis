@@ -1,6 +1,6 @@
-# results for CheckerFwk
+# results for checker framework
 
-[alias](https://github.com/michaelemery/staticanalysis/tree/master/results/alias) | [init](https://github.com/michaelemery/staticanalysis/tree/master/results/init)| [nullness](https://github.com/michaelemery/staticanalysis/tree/master/results/nullness) | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/results/signedness) | [taint](https://github.com/michaelemery/staticanalysis/tree/master/results/taint) &nbsp; &#x25c0; &#x25b6; &nbsp; [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
+[alias](https://github.com/michaelemery/staticanalysis/tree/master/results/alias) | [init](https://github.com/michaelemery/staticanalysis/tree/master/results/init) | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/results/nullness) | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/results/signedness) | [taint](https://github.com/michaelemery/staticanalysis/tree/master/results/taint) &nbsp; &#x25c0; &#x25b6; &nbsp; [CheckerFwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [Infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
@@ -20,7 +20,7 @@
 
 <br>
 
-An initialization checker determines whether an object is initialized or not. Any object that is accessed at runtime prior to being fully initialised will cause an error. An object is only partially initialized from the time that its constructor starts until its constructor finishes.
+XXXXX
 
 <br>
 
