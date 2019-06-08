@@ -1,13 +1,10 @@
-# init
-An initialization checker determines whether an object is initialized or not. Any object 
-that is accessed at runtime prior to being fully initialised will cause an error. An 
-object is only partially initialized from the time that its constructor starts until its 
-constructor finishes.
+# results for init
 
-### results
+[alias](https://github.com/michaelemery/staticanalysis/tree/master/results/alias/README.md) | **init** | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/tree/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
 
-| feature | [CheckerF/wk](https://github.com/michaelemery/staticanalysis/blob/master/src/init/checkerframework.md) | [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/src/init/findbugs.md) | [Infer](https://github.com/michaelemery/staticanalysis/blob/master/src/init/infer.md) | [PMD](https://github.com/michaelemery/staticanalysis/blob/master/src/init/pmd.md) | 
-| --- | :---: | :---: | :---: | :---: |
+<br>
+
+| dynamic language feature | CheckerFwk | FindBugs | Infer | PMD | | --- | :---: | :---: | :---: | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/checkerframework.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/findbugs.md#IntraProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/infer.md#IntraProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/pmd.md#IntraProcedural) |
 | InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/checkerframework.md#InterProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/findbugs.md#InterProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/infer.md#InterProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/pmd.md#InterProcedural) |
 | ReflectMethod | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/src/init/checkerframework.md#ReflectMethod) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/findbugs.md#ReflectMethod) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/infer.md#ReflectMethod) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/init/pmd.md#ReflectMethod) |
@@ -19,3 +16,11 @@ constructor finishes.
 | DynamicProxy | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/src/init/checkerframework.md#DynamicProxy) | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/init/findbugs.md#DynamicProxy) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/init/infer.md#DynamicProxy) | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/init/pmd.md#DynamicProxy) |
 
 > Select individual results for detail.
+
+<br>
+
+An initialization checker determines whether an object is initialized or not. Any object that is accessed at runtime prior to being fully initialised will cause an error. An object is only partially initialized from the time that its constructor starts until its constructor finishes.
+
+<br>
+
+[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/results)
