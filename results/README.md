@@ -1,8 +1,8 @@
 # results
 
-<br>
-
 [alias](https://github.com/michaelemery/staticanalysis/tree/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/tree/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/tree/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
+
+<br>
 
 Tests are simple programs incorporating a single deliberate error of a specific type. Each test will produce zero or more outcomes that are categorised as either false negative or false positive as follows;
  
