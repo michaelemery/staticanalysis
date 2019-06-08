@@ -2,7 +2,6 @@
 
 <br>
 
-
 [alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | **nullness** | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
 
 <br>
@@ -21,9 +20,11 @@
 
 > Select test result for detail.
 
+<br>
+
 Nullness checking guarantees that a program will never throw a null pointer exception. De-referenced expressions are a common cause a null pointer exceptions. Dereferences occur not only when a field is accessed, but when an array is indexed, an exception is thrown, and more. Such exceptions may also occur simply as a result of a field not being initialised by its constructor.
 
-
+<br>
 
 [home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/results)
 
