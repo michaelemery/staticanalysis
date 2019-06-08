@@ -1,6 +1,6 @@
 # results for init
 
-[alias](https://github.com/michaelemery/staticanalysis/tree/master/results/alias/README.md) | **init** | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/tree/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
+[alias](https://github.com/michaelemery/staticanalysis/tree/master/results/alias) | **init** | [nullness](https://github.com/michaelemery/staticanalysis/tree/master/results/nullness) | [signedness](https://github.com/michaelemery/staticanalysis/tree/master/results/signedness) | [taint](https://github.com/michaelemery/staticanalysis/tree/master/results/taint) &nbsp; &#x25c0; &#x25b6; &nbsp; [CheckerFwk]() | [FindBugs]() | [Infer]() | [PMD]()
 
 <br>
 
