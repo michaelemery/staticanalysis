@@ -61,9 +61,9 @@ Tests are simple programs incorporating a single deliberate error of a specific 
  | false negative | Checker failed to detect an error of the type being tested. | 
  | false positive |Checker incorrectly identifies safe code as an error (or potential error) of the type being tested. |
  
-Although each test incorporates only one intentional error, that error may be detected at multiple locations within the code. This may occur where a checker attempts to identify not just the error, but also it's pre-cursors and cascading effects. Multiple counts of any correctly identified error are only counted once, and are not considered false positives. Where a checker correctly identifies an issue that is unrelated to the test, that outcome is ignored. 
+Although each test incorporates only one intentional error, that error may be detected at multiple locations within the code. This may occur where a checker attempts to identify not just the error, but also it's pre-cursors and cascading effects. Multiple counts of any correctly identified error are only counted once, and are not considered false positives. Where a checker correctly identifies an issue that is unrelated to the test, that outcome is ignored. Outcomes are categorised as either true or false, regardless of the number of occurrences.
 
-The final result of each test is based on the combination of false negative and false positive outcomes. Outcomes are categorised as either true or false, regardless of the number of occurrences.   
+The final result of each test is based on the combination of false negative and false positive outcomes. In order to provide a quantitative assessment, a score is attributed to each outcome. If the checker correctly identifies the error (false negative = false), a score of +2 is awarded. If the checker does not generate any false positive results, a score of +1 is awarded. Negative scores of -2 amd -1 are awarded respectively for inverse outcomes.
 
 | false negative | false positive | result | 
 | :---: | :---: | :---: |
