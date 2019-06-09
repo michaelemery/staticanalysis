@@ -20,7 +20,11 @@
 
 <br>
 
-An initialization checker determines whether an object is initialized or not. Any object that is accessed at runtime prior to being fully initialised will cause an error. An object is only partially initialized from the time that its constructor starts until its constructor finishes.
+The Signedness Checker guarantees that signed and unsigned integral values are not mixed together in a computation. In addition, it prohibits meaningless operations, such as division on an unsigned value.
+
+Recall that a computer represents a number as a sequence of bits. Signedness indicates how to interpret the most significant bit. For example, the bits 10000010 ordinarily represent the value -126, but when interpreted as unsigned, those bits represent the value 130. The bits 01111110 represent the value 126 in signed and in unsigned interpretation. The range of signed byte values is -128 to 127. The range of unsigned byte values is 0 to 255.
+
+Signedness is only applicable to integral types: bype, char, short, int, and long. Floating-point types (float and double) do not have operations that interpret the bits as unsigned.
 
 <br>
 
