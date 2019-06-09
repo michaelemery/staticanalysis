@@ -40,7 +40,7 @@ of each tool are compared in order to assess overall and relative effectiveness.
 
 Dynamic programming languages are a class of high-level programming languages which, at runtime, execute many common programming behaviors that static programming languages perform during compilation. These behaviors could include extension of the program, by adding new code, by extending objects and definitions, or by modifying the type system. 
 
-| feature | description |
+| dynamic language feature | description |
 | --- | --- |
 | IntraProcedural | Single method. No dynamic features. |
 | InterProcedural | Multiple methods. No dynamic features. |
