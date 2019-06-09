@@ -20,7 +20,7 @@
 
 <br>
 
-XXXXX
+Infer checks for null pointer exceptions, resource leaks, annotation reachability, missing lock guards, and concurrency race conditions in Android and Java code.
 
 <br>
 
