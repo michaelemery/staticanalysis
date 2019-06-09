@@ -10,7 +10,7 @@ Version: checker-framework-2.1.11
 
 Init checking is part of the Nullness Checker. To run the Nullness Checker, supply the `-processor org.checkerframework.checker.nullness.NullnessChecker` command-line option to javac.
 
-Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
+Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.checker framework.com/u/michaelemery/repository/checker framework/michaelemery/staticanalysis) Docker repository. Copy the checker framework command(s) provided with each test result, and paste them into your interactive Docker session. 
 
 <br>
 
@@ -18,7 +18,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/IntraProcedural.java)
 
-#### docker
+#### checker framework
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/IntraProcedural.java
@@ -41,7 +41,7 @@ init/IntraProcedural.java:16: error: [dereference.of.nullable] dereference of po
 
 [init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InterProcedural.java)
 
-#### docker
+#### checker framework
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InterProcedural.java
@@ -66,7 +66,7 @@ init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethod.java)
 
-#### docker
+#### checker framework
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectMethod.java
@@ -99,7 +99,7 @@ init/ReflectMethod.java:18: error: [argument.type.incompatible] incompatible typ
 
 [init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethodOverload.java)
 
-#### docker
+#### checker framework
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectMethodOverload.java
@@ -132,7 +132,7 @@ init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] incompat
 
 [init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectFieldAccess.java)
 
-#### docker
+#### checker framework
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectFieldAccess.java
@@ -158,7 +158,7 @@ init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of
 
 [init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicVirtual.java)
 
-#### docker
+#### checker framework
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicVirtual.java
@@ -188,7 +188,7 @@ init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompati
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicConstructor.java)
 
-#### docker
+#### checker framework
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicConstructor.java
@@ -208,7 +208,7 @@ No rpeorted issues.
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicField.java)
 
-#### docker
+#### checker framework
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicField.java
@@ -238,7 +238,7 @@ init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatibl
 
 [init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/init/DynamicProxy.java)
 
-#### docker
+#### checker framework
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/DynamicProxy.java
