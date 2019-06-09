@@ -15,7 +15,7 @@
 | InvokeDynamicConstructor | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/checkerframework.md#InvokeDynamicConstructor) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/findbugs.md#InvokeDynamicConstructor) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/infer.md#InvokeDynamicConstructor) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/pmd.md#InvokeDynamicConstructor) |
 | InvokeDynamicField | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/checkerframework.md#InvokeDynamicField) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/findbugs.md#InvokeDynamicField) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/infer.md#InvokeDynamicField) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/pmd.md#InvokeDynamicField) |
 | DynamicProxy | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/checkerframework.md#DynamicProxy) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/findbugs.md#DynamicProxy) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/infer.md#DynamicProxy) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/pmd.md#DynamicProxy) |
-| **Score** |  |  |  |  |  |
+| **Score** | - | - | - | - | - |
 
 > Select test result for detail.
 
