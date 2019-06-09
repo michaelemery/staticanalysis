@@ -15,6 +15,7 @@
 | InvokeDynamicConstructor | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/checkerframework.md#InvokeDynamicConstructor) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/findbugs.md#InvokeDynamicConstructor) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/infer.md#InvokeDynamicConstructor) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/pmd.md#InvokeDynamicConstructor) |
 | InvokeDynamicField | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/checkerframework.md#InvokeDynamicField) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/findbugs.md#InvokeDynamicField) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/infer.md#InvokeDynamicField) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/pmd.md#InvokeDynamicField) |
 | DynamicProxy | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/checkerframework.md#DynamicProxy) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/findbugs.md#DynamicProxy) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/infer.md#DynamicProxy) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/pmd.md#DynamicProxy) |
+| Score |  |  |  |  |  |
 
 > Select test result for detail.
 
