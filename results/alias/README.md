@@ -20,7 +20,14 @@
 
 <br>
 
-An initialization checker determines whether an object is initialized or not. Any object that is accessed at runtime prior to being fully initialised will cause an error. An object is only partially initialized from the time that its constructor starts until its constructor finishes.
+The Aliasing Checker identifies expressions that definitely have no aliases.
+
+Two expressions are aliased when they have the same non-primitive value; that is, they are references to the identical Java object in the heap. Another way of saying this is that two expressions, exprA and exprB, are aliases of each other when exprA == exprB at the same program point.
+
+Assigning to a variable or field typically creates an alias. For example, after the statement a = b;, the variables a and b are aliased.
+
+Knowing that an expression is not aliased permits more accurate reasoning about how side effects modify the expression’s value.
+
 
 <br>
 
