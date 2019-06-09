@@ -6,15 +6,15 @@
 
 | dynamic language feature | alias | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#IntraProcedural)  |  |  |
-| InterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InterProcedural) |  |  |
-| ReflectMethod |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectMethod) |  |  |
-| ReflectMethodOverload |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectMethodOverload) |  |  |
-| ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectFieldAccess) |  |  |
-| InvokeDynamicVirtual |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InvokeDynamicVirtual) |  |  |
-| InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InvokeDynamicConstructor) |  |  |
-| InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InvokeDynamicField) |  |  |
-| DynamicProxy |  |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#DynamicProxy) |  |  |
+| IntraProcedural |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/init/findbugs.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#IntraProcedural)  |  |  |
+| InterProcedural |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/init/findbugs.md#InterProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InterProcedural) |  |  |
+| ReflectMethod |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/init/findbugs.md#ReflectMethod) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectMethod) |  |  |
+| ReflectMethodOverload |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/init/findbugs.md#ReflectMethodOverload) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectMethodOverload) |  |  |
+| ReflectFieldAccess |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/results/init/findbugs.md#ReflectFieldAccess) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectFieldAccess) |  |  |
+| InvokeDynamicVirtual |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/init/findbugs.md#InvokeDynamicVirtual) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InvokeDynamicVirtual) |  |  |
+| InvokeDynamicConstructor |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/init/findbugs.md#InvokeDynamicConstructor) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InvokeDynamicConstructor) |  |  |
+| InvokeDynamicField |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/init/findbugs.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InvokeDynamicField) |  |  |
+| DynamicProxy |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/results/init/findbugs.md#DynamicProxy) | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#DynamicProxy) |  |  |
 
 > Select test result for detail.
 
