@@ -20,7 +20,7 @@
 
 <br>
 
-XXXXX
+The Checker Framework enhances Java's type system to make it more powerful and useful. This lets software developers detect and prevent errors in their Java programs. The Checker Framework includes compiler plug-ins ("checkers") that find bugs or verify their absence. It also permits you to write your own compiler plug-ins.
 
 <br>
 
