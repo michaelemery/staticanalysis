@@ -6,22 +6,6 @@ To run the Nullness Checker, supply the `-processor org.checkerframework.checker
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-### summary
-
-| feature | result |
-| --- | :---: |
-| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/checkerframework.md#IntraProcedural) |
-| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/checkerframework.md#InterProcedural) |
-| ReflectMethod | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/checkerframework.md#ReflectMethod) |
-| ReflectMethodOverload | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/checkerframework.md#ReflectMethodOverload) |
-| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/checkerframework.md#ReflectFieldAccess) |
-| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/checkerframework.md#InvokeDynamicVirtual) |
-| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/checkerframework.md#InvokeDynamicConstructor) |
-| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/checkerframework.md#InvokeDynamicField) |
-| DynamicProxy | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/nullness/checkerframework.md#DynamicProxy) |
-
-> Select results for detail.
-
 ## IntraProcedural
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/IntraProcedural.java)
