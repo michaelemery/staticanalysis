@@ -6,15 +6,15 @@
 
 | dynamic language feature | alias | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#IntraProcedural)  |  |  |
-| InterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#InterProcedural) |  |  |
-| ReflectMethod |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#ReflectMethod) |  |  |
-| ReflectMethodOverload |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#ReflectMethodOverload) |  |  |
-| ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#ReflectFieldAccess) |  |  |
-| InvokeDynamicVirtual |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#InvokeDynamicVirtual) |  |  |
-| InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#InvokeDynamicConstructor) |  |  |
-| InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#InvokeDynamicField) |  |  |
-| DynamicProxy |  |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/pmd.md#DynamicProxy) |  |  |
+| IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#IntraProcedural)  |  |  |
+| InterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#InterProcedural) |  |  |
+| ReflectMethod |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#ReflectMethod) |  |  |
+| ReflectMethodOverload |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#ReflectMethodOverload) |  |  |
+| ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#ReflectFieldAccess) |  |  |
+| InvokeDynamicVirtual |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#InvokeDynamicVirtual) |  |  |
+| InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#InvokeDynamicConstructor) |  |  |
+| InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#InvokeDynamicField) |  |  |
+| DynamicProxy |  |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#DynamicProxy) |  |  |
 
 > Select test result for detail.
 
