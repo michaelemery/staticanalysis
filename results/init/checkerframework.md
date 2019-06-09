@@ -18,13 +18,13 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/IntraProcedural.java)
 
-#### init.docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/IntraProcedural.java
 ```
 
-#### init.output
+#### output
 
 ```
 init/IntraProcedural.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.o
@@ -41,13 +41,13 @@ init/IntraProcedural.java:16: error: [dereference.of.nullable] dereference of po
 
 [init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InterProcedural.java)
 
-#### init.docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InterProcedural.java
 ```
 
-#### init.output
+#### output
 
 ```
 init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not allowed on the given receiver.
@@ -66,13 +66,13 @@ init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethod.java)
 
-#### init.docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectMethod.java
 ```
 
-#### init.output
+#### output
 
 ```
 init/ReflectMethod.java:14: error: [argument.type.incompatible] incompatible types in argument.
@@ -99,13 +99,13 @@ init/ReflectMethod.java:18: error: [argument.type.incompatible] incompatible typ
 
 [init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethodOverload.java)
 
-#### init.docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectMethodOverload.java
 ```
 
-#### init.output
+#### output
 
 ```
 init/ReflectMethodOverload.java:16: error: [argument.type.incompatible] incompatible types in argument.
@@ -132,13 +132,13 @@ init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] incompat
 
 [init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectFieldAccess.java)
 
-#### init.docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectFieldAccess.java
 ```
 
-#### init.output
+#### output
 
 ````
 init/ReflectFieldAccess.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.o
@@ -158,13 +158,13 @@ init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of
 
 [init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicVirtual.java)
 
-#### init.docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicVirtual.java
 ```
 
-#### init.output
+#### output
 
 ```
 init/InvokeDynamicVirtual.java:16: error: [argument.type.incompatible] incompatible types in argument.
@@ -188,13 +188,13 @@ init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompati
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicConstructor.java)
 
-#### init.docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicConstructor.java
 ```
 
-#### init.output
+#### output
 
 ```
 No rpeorted issues.
@@ -208,13 +208,13 @@ No rpeorted issues.
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicField.java)
 
-#### init.docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicField.java
 ```
 
-#### init.output
+#### output
 
 ```
 init/InvokeDynamicField.java:15: error: [argument.type.incompatible] incompatible types in argument.
@@ -238,13 +238,13 @@ init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatibl
 
 [init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/init/DynamicProxy.java)
 
-#### init.docker
+#### docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker init/DynamicProxy.java
 ```
 
-#### init.output
+#### output
 
 ```
 init/DynamicProxy.java:18: error: [argument.type.incompatible] incompatible types in argument.
