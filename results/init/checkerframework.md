@@ -12,8 +12,6 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 Version: checker-framework-2.1.11
 
-<br>
-
 ## IntraProcedural
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/IntraProcedural.java)
