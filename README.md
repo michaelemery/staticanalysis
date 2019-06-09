@@ -65,7 +65,7 @@ Although each test incorporates only one intentional error, that error may be de
 
 The final result of each test is based on the combination of false negative and false positive outcomes. Outcomes are categorised as either true or false, regardless of the number of occurrences.   
 
-| false negative | found <br> false positive | result | 
+| false negative | false positive | result | 
 | :---: | :---: | :---: |
 | false <br> *+2* | false <br> *+1* |accurate <br> *+3* | 
 | false <br> *+2* | true <br> *-1* | imprecise <br> *+1* |
