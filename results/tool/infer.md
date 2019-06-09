@@ -15,6 +15,7 @@
 | InvokeDynamicConstructor |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/init/infer.md#InvokeDynamicConstructor) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/infer/findbugs.md#InvokeDynamicConstructor) |  |  |
 | InvokeDynamicField |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/init/infer.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/infer.md#InvokeDynamicField) |  |  |
 | DynamicProxy |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/init/infer.md#DynamicProxy) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/infer.md#DynamicProxy) |  |  |
+| Score |  | -15 | -3 |  |  |
 
 > Select test result for detail.
 
