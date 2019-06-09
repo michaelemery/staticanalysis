@@ -6,15 +6,15 @@
 
 | feature | alias | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
-| IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#IntraProcedural)  |  |  |
-| InterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#InterProcedural) |  |  |
-| ReflectMethod |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#ReflectMethod) |  |  |
-| ReflectMethodOverload |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#ReflectMethodOverload) |  |  |
-| ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#ReflectFieldAccess) |  |  |
-| InvokeDynamicVirtual |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#InvokeDynamicVirtual) |  |  |
-| InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#InvokeDynamicConstructor) |  |  |
-| InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#InvokeDynamicField) |  |  |
-| DynamicProxy |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/checkerframework.md#DynamicProxy) |  |  |
+| IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#IntraProcedural)  |  |  |
+| InterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#InterProcedural) |  |  |
+| ReflectMethod |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#ReflectMethod) |  |  |
+| ReflectMethodOverload |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#ReflectMethodOverload) |  |  |
+| ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#ReflectFieldAccess) |  |  |
+| InvokeDynamicVirtual |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#InvokeDynamicVirtual) |  |  |
+| InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#InvokeDynamicConstructor) |  |  |
+| InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#InvokeDynamicField) |  |  |
+| DynamicProxy |  |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#DynamicProxy) |  |  |
 
 > Select test result for detail.
 
