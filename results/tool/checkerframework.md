@@ -4,7 +4,7 @@
 
 <br>
 
-| ynamic language feature | alias | init | nullness | signedness | taint |
+| dynamic language feature | alias | init | nullness | signedness | taint |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | IntraProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#IntraProcedural)  |  |  |
 | InterProcedural |  |  | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#InterProcedural) |  |  |
