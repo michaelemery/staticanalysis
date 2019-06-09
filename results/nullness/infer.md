@@ -8,22 +8,6 @@ Starting from @Nullable-annotated programs, the checker performs a flow sensitiv
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-### summary
-
-| feature | result |
-| --- | :---: |
-| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#IntraProcedural) |
-| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#InterProcedural) |
-| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#ReflectMethod) |
-| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#ReflectMethodOverload) |
-| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#reflectoverloadinvoke) |
-| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#reflectmethodhandle) |
-| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#reflectfieldaccess) |
-| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#reflectfieldaccess) |
-| DynamicProxy | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/infer.md#dynamicproxy) |
-
-> Select results for detail.
-
 ## IntraProcedural
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/IntraProcedural.java)

@@ -6,22 +6,6 @@ Init checking is part of the Nullness Checker. To run the Nullness Checker, supp
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-### summary
-
-| feature | result |
-| --- | :---: |
-| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#IntraProcedural) |
-| InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InterProcedural) |
-| ReflectMethod | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#ReflectMethod) |
-| ReflectMethodOverload | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#ReflectMethodOverload) |
-| ReflectFieldAccess | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#ReflectFieldAccess) |
-| InvokeDynamicVirtual | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicVirtual) |
-| InvokeDynamicConstructor | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicConstructor) |
-| InvokeDynamicField | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#InvokeDynamicField) |
-| DynamicProxy | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/init/checkerframework.md#DynamicProxy) |
-
-> Select results for detail.
-
 ## IntraProcedural
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/IntraProcedural.java)

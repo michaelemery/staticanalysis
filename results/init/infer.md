@@ -8,21 +8,6 @@ Starting from @Nullable-annotated programs, the checker performs a flow sensitiv
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-### summary
-
-| feature | result |
-| --- | :---: |
-| IntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#IntraProcedural) |
-| InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#InterProcedural) |
-| ReflectMethod | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodinvoke) |
-| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodinvoke) |
-| ReflectFieldAccess | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectoverloadinvoke) |
-| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectmethodhandle) |
-| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectfieldaccess) |
-| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#reflectfieldaccess) |
-| DynamicProxy | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/init/findbugs.md#dynamicproxy) |
-
-> Select results for detail.
 
 ## IntraProcedural
 

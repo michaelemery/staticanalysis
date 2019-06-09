@@ -9,22 +9,6 @@ Version: pmd-bin-6.1.0
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-### summary
-
-| feature | result |
-| --- | :---: |
-| IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#IntraProcedural) |
-| InterProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#InterProcedural) |
-| ReflectMethod | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#ReflectMethod) |
-| ReflectMethodOverload | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#ReflectMethodOverload) |
-| ReflectFieldAccess | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#ReflectFieldAccess) |
-| InvokeDynamicVirtual | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#InvokeDynamicVirtual) |
-| InvokeDynamicConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#InvokeDynamicConstructor) |
-| InvokeDynamicField | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#InvokeDynamicField) |
-| DynamicProxy | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/nullness/pmd.md#DynamicProxy) |
-
-> Select results for detail.
-
 ## IntraProcedural
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/IntraProcedural.java)
