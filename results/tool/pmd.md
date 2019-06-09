@@ -20,7 +20,9 @@
 
 <br>
 
-XXXXX
+PMD is a static source code analyzer. It finds common programming flaws like unused variables, empty catch blocks, unnecessary object creation, and so forth. It’s mainly concerned with Java and Apex, but supports six other languages.
+
+PMD features many built-in checks placed into categories including; best practice, code style, design, documentation, error prone, multithreading, performance and security. This project is primarily concerned with those rules belonging to the *error prone* category.
 
 <br>
 
