@@ -67,7 +67,7 @@ The final result of each test is based on the combination of false negative and 
 
 | false negative found | false positive found | result | 
 | :---: | :---: | :---: |
-| false (+2) | false (+1) |accurate (+3 points) | 
-| false (+2) | true (-1) | imprecise (+1 points) |
-| true (-2)| false (+1) | unsound (-1 points) |
-| true (-2) | true (-1) | aberrant (-3 points) |
+| false <br> (+2) | false <br> (+1) |accurate <br> (+3 points) | 
+| false <br> (+2) | true <br> (-1) | imprecise <br> (+1 points) |
+| true <br> (-2)| false <br> (+1) | unsound <br> (-1 points) |
+| true <br> (-2) | true <br> (-1) | aberrant <br> (-3 points) |
