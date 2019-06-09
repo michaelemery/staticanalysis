@@ -15,7 +15,7 @@
 | InvokeDynamicConstructor |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#InvokeDynamicConstructor) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#InvokeDynamicConstructor) |  |  |
 | InvokeDynamicField |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#InvokeDynamicField) |  |  |
 | DynamicProxy |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#DynamicProxy) | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#DynamicProxy) |  |  |
-| **Score** |  | -14 | -14 |  |  |
+| **score** |  | -14 | -14 |  |  |
 
 > Select test result for detail.
 

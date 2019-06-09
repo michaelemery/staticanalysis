@@ -15,7 +15,7 @@
 | InvokeDynamicConstructor |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/init/checkerframework.md#InvokeDynamicConstructor) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#InvokeDynamicConstructor) |  |  |
 | InvokeDynamicField |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/results/init/checkerframework.md#InvokeDynamicField) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#InvokeDynamicField) |  |  |
 | DynamicProxy |  | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/results/init/checkerframework.md#DynamicProxy) | [imprecise](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#DynamicProxy) |  |  |
-| **Score** |  | 16 | 6 |  |  |
+| **score** |  | 16 | 6 |  |  |
  
 > Select test result for detail.
 
