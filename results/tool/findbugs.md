@@ -20,7 +20,7 @@
 
 <br>
 
-XXXXX
+FindBugs is a program which uses static analysis to look for bugs in Java code.  It is free software, distributed under the terms of the Lesser GNU Public License. The name FindBugs™ and the FindBugs logo are trademarked by The University of Maryland. FindBugs has been downloaded more than a million times.
 
 <br>
 
