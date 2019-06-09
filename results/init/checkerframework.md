@@ -1,4 +1,4 @@
-# init / checker framework results
+# checker framework results for init
 
 [alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
@@ -14,7 +14,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 <br>
 
-## init.IntraProcedural
+## IntraProcedural
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/IntraProcedural.java)
 
@@ -37,7 +37,7 @@ init/IntraProcedural.java:16: error: [dereference.of.nullable] dereference of po
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-## init.InterProcedural
+## InterProcedural
 
 [init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InterProcedural.java)
 
@@ -62,7 +62,7 @@ init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
 
-## init.ReflectMethod
+## ReflectMethod
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethod.java)
 
@@ -95,7 +95,7 @@ init/ReflectMethod.java:18: error: [argument.type.incompatible] incompatible typ
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
-## init.ReflectMethodOverload
+## ReflectMethodOverload
 
 [init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethodOverload.java)
 
@@ -128,7 +128,7 @@ init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] incompat
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
-## init.ReflectFieldAccess
+## ReflectFieldAccess
 
 [init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectFieldAccess.java)
 
@@ -154,7 +154,7 @@ init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
-## init.InvokeDynamicVirtual
+## InvokeDynamicVirtual
 
 [init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicVirtual.java)
 
@@ -184,7 +184,7 @@ init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompati
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
-## init.InvokeDynamicConstructor
+## InvokeDynamicConstructor
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicConstructor.java)
 
@@ -204,7 +204,7 @@ No rpeorted issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-## init.InvokeDynamicField
+## InvokeDynamicField
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicField.java)
 
@@ -234,7 +234,7 @@ init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatibl
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
-## init.DynamicProxy
+## DynamicProxy
 
 [init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/init/DynamicProxy.java)
 
