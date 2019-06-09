@@ -10,7 +10,7 @@
 | InterProcedural |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InterProcedural) |  |  |
 | ReflectMethod |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectMethod) |  |  |
 | ReflectMethodOverload |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectMethodOverload) |  |  |
-| ReflectFieldAccess |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectFieldAccess) |  |  |
+| ReflectFieldAccess |  |  | [aberrant](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#ReflectFieldAccess) |  |  |
 | InvokeDynamicVirtual |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InvokeDynamicVirtual) |  |  |
 | InvokeDynamicConstructor |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InvokeDynamicConstructor) |  |  |
 | InvokeDynamicField |  |  | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/findbugs.md#InvokeDynamicField) |  |  |
