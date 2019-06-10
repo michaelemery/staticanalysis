@@ -2,11 +2,8 @@
 
 [alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
-<<<<<<< HEAD
 ### results scoring
 
-=======
->>>>>>> ec65316de5eebafc1dd9549aa7734a2a94a1adef
 description | false negative /<br> score | false positive /<br> score | result /<br> total score | 
 | --- | :---: | :---: | :---: |
 | Found the error and nothing else.| false <br> *+2* | false <br> *+1* |accurate <br> *+3* | 
