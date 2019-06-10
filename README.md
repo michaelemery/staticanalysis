@@ -65,7 +65,7 @@ Although each test incorporates only one intentional error, that error may be de
 
 The final result of each test is based on the combination of false negative and false positive outcomes. In order to provide a quantitative assessment, a score is attributed to each outcome. If the checker correctly identifies the error (false negative = false), a score of +2 is awarded. If the checker does not generate any false positive results, a score of +1 is awarded. Negative scores of -2 and -1 are awarded for inverse outcomes respectively.
 
-description | false negative /<br> points | false positive /<br> points | result /<br> score | 
+description | false negative /<br> score | false positive /<br> score | result /<br> total score | 
 | --- | :---: | :---: | :---: |
 | Found the error and nothing else.| false <br> *+2* | false <br> *+1* |accurate <br> *+3* | 
 | Found the error but wrongly flagged safe code. | false <br> *+2* | true <br> *-1* | imprecise <br> *+1* |
