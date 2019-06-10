@@ -25,4 +25,4 @@ FindBugs is a program which uses static analysis to look for bugs in Java code. 
 
 <br>
 
-[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
+[home](https://github.com/michaelemery/staticanalysis) | [results help](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)

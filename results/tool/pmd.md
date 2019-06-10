@@ -25,4 +25,4 @@ PMD is a static source code analyzer. It is mainly concerned with Java and Apex,
 
 <br>
 
-[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
+[home](https://github.com/michaelemery/staticanalysis) | [results help](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)

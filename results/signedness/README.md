@@ -29,4 +29,4 @@ Signedness is only applicable to integral types: bype, char, short, int, and lon
 
 <br>
 
-[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
+[home](https://github.com/michaelemery/staticanalysis) | [results help](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)

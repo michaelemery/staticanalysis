@@ -25,4 +25,4 @@ The Checker Framework enhances Java's type system to make it more powerful and u
 
 <br>
 
-[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
+[home](https://github.com/michaelemery/staticanalysis) | [results help](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)

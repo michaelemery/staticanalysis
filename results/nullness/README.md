@@ -25,4 +25,4 @@ Nullness checking guarantees that a program will never throw a null pointer exce
 
 <br>
 
-[home](https://github.com/michaelemery/staticanalysis) | [results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
+[home](https://github.com/michaelemery/staticanalysis) | [results help](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
