@@ -67,7 +67,7 @@ The final result of each test is based on the combination of false negative and 
 
 description | false negative found | false positive found | result | 
 | --- | :---: | :---: | :---: |
-| Found the error and nothing else.| no<br> *(+2)* | no<br> *(+1)* |accurate <br> *(+3)* | 
-| Found the error but wrongly flagged safe code. | no false neg <br> *+2* | false pos found <br> *-1* | imprecise <br> *+1* |
-| Did not find anything. | true <br> *-2*| false <br> *+1* | unsound <br> *-1* |
-| Did not find the error, and wrongly flagged safe code. | true <br> *-2* | true <br> *-1* | aberrant <br> *-3* |
+| Found the error and nothing else.| no<br> *+2* | no<br> *+1* | **accurate** <br> *(+3)* | 
+| Found the error but wrongly flagged safe code. | no <br> *+2* | yes <br> *-1* | **imprecise** <br> *+1* |
+| Did not find anything. | yes <br> *-2*| no <br> *+1* | **unsound** <br> *-1* |
+| Did not find the error, and wrongly flagged safe code. | yes <br> *-2* | yes <br> *-1* | **aberrant** <br> *-3* |
