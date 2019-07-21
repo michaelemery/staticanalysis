@@ -20,10 +20,10 @@ findbugs alias/Vanilla.class
 
 #### output
 ```
-H C NP: Null pointer dereference of Vanilla.s in alias.Vanilla.main(String[]) 
+H C NP: Null pointer dereference of Vanilla.s in alias.Intraprocedural.main(String[]) 
 Dereferenced at Vanilla.java:[line 30]
 
-M D UC: Useless object stored in variable var$2 of method alias.Vanilla.main(String[]) 
+M D UC: Useless object stored in variable var$2 of method alias.Intraprocedural.main(String[]) 
 At Vanilla.java:[line 23]
 
 Warnings generated: 2
