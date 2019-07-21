@@ -72,4 +72,4 @@ description | false negative found / score | false positive found / score | resu
 | Did not find anything. | yes <br> *-2*| no <br> *+1* | **unsound** <br> *-1* |
 | Did not find the error, and wrongly flagged safe code. | yes <br> *-2* | yes <br> *-1* | **aberrant** <br> *-3* |
 
-Note that scores are consistent (as shown in the table) regardless of how many false negatives or false positives are identified by the the checker.
+Note that scores are consistent (as shown in the table) regardless of how many false negatives or false positives are identified by the the checker in a single test.
