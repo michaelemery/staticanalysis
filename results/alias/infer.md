@@ -16,6 +16,8 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [//]: [alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
 
+Infer does not have a checker to detect an alias.
+
 #### docker
 
 ```
@@ -36,6 +38,8 @@ N/A
 
 [//]: [alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
 
+Infer does not have a checker to detect an alias.
+
 #### docker
 
 ```
@@ -55,6 +59,8 @@ N/A
 ## ReflectMethod
 
 [//]: [alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
+
+Infer does not have a checker to detect an alias.
 
 #### docker
 
@@ -82,6 +88,8 @@ N/A
 
 [//]: [alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
 
+Infer does not have a checker to detect an alias.
+
 #### docker
 
 ```
@@ -101,6 +109,8 @@ N/A
 ## ReflectFieldAccess
 
 [//]: [alias/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectFieldAccess.java)
+
+Infer does not have a checker to detect an alias.
 
 #### docker
 
@@ -122,6 +132,8 @@ N/A
 
 [//]: [alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
 
+Infer does not have a checker to detect an alias.
+
 #### docker
 
 ```
@@ -141,6 +153,8 @@ N/A
 ## InvokeDynamicConstructor
 
 [//]: [alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
+
+Infer does not have a checker to detect an alias.
 
 #### docker
 
@@ -162,6 +176,8 @@ N/A
 
 [//]: [alias/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicField.java)
 
+Infer does not have a checker to detect an alias.
+
 #### docker
 
 ```
@@ -181,6 +197,8 @@ N/A
 ## DynamicProxy
 
 [//]: [alias/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/DynamicProxy.java)
+
+Infer does not have a checker to detect an alias.
 
 #### docker
 
