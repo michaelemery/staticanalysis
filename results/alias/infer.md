@@ -177,7 +177,8 @@ N/A
 
 [//]: [alias/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicField.java)
 
-Infer does not have a checker to detect an alias.
+1) This language feature is not applicable to the checker being tested.
+2) Infer does not have a checker to detect an alias.
 
 #### docker
 
