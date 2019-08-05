@@ -15,7 +15,6 @@
 | InvokeDynamicConstructor | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/checkerframework.md#InvokeDynamicConstructor) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/findbugs.md#InvokeDynamicConstructor) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/infer.md#InvokeDynamicConstructor) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/pmd.md#InvokeDynamicConstructor) |
 | InvokeDynamicField | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/checkerframework.md#InvokeDynamicField) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/findbugs.md#InvokeDynamicField) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/infer.md#InvokeDynamicField) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/pmd.md#InvokeDynamicField) |
 | DynamicProxy | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/checkerframework.md#DynamicProxy) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/findbugs.md#DynamicProxy) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/infer.md#DynamicProxy) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/pmd.md#DynamicProxy) |
-| **score** |  |  |  |  |  |
 
 > Select test result for detail.
 

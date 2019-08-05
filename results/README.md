@@ -4,9 +4,4 @@
 
 ### scoring schedule
 
-description | false negative /<br> score | false positive /<br> score | result /<br> total score | 
-| --- | :---: | :---: | :---: |
-| Found the error and nothing else.| false <br> *+2* | false <br> *+1* |accurate <br> *+3* | 
-| Found the error but wrongly flagged safe code. | false <br> *+2* | true <br> *-1* | imprecise <br> *+1* |
-| Did not find anything. | true <br> *-2*| false <br> *+1* | unsound <br> *-1* |
-| Did not find the error, and wrongly flagged safe code. | true <br> *-2* | true <br> *-1* | aberrant <br> *-3* |
+Select result summary from the menu above. You may select results for either the type of checker (alias, initialisation, nullness, signedness, taint), or the checker tool (Checkerframework, FindBugs, Infer, PMD).
