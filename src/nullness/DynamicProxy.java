@@ -8,7 +8,6 @@ import java.lang.reflect.Proxy;
 public class DynamicProxy {
 
     interface Foo {
-
         Object get(Object obj);
     }
 

@@ -12,7 +12,7 @@ public class InvokeDynamicVirtual {
     Object o;
 
     InvokeDynamicVirtual() {
-        this.o = "safe";
+        this.o = "init";
     }
 
     public static void main(String[] args) throws Throwable {

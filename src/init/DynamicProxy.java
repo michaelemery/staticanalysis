@@ -20,7 +20,6 @@ public class DynamicProxy {
     }
 
     interface Foo {
-
         Object get(Object o);
     }
 
