@@ -110,7 +110,8 @@ N/A
 
 [//]: [alias/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectFieldAccess.java)
 
-Infer does not have a checker to detect an alias.
+1) This language feature is not applicable to the checker being tested.
+2) Infer does not have a checker to detect an alias.
 
 #### docker
 
@@ -198,7 +199,8 @@ N/A
 
 [//]: [alias/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/DynamicProxy.java)
 
-Infer does not have a checker to detect an alias.
+1) This language feature is not applicable to the checker being tested.
+2) Infer does not have a checker to detect an alias.
 
 #### docker
 
