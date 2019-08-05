@@ -1,6 +1,6 @@
 # findbugs results (nullness)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
 
 <br>
 
@@ -12,7 +12,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 ## IntraProcedural
 
-[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/IntraProcedural.java)
+[nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/IntraProcedural.java)
 
 #### docker
 
@@ -34,7 +34,7 @@ Warnings generated: 1
 
 ## InterProcedural
 
-[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InterProcedural.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InterProcedural.java)
 
 #### docker
 
@@ -46,7 +46,7 @@ findbugs nullness/InterProcedural.class
 #### output
 
 ```
-No reported issues.
+master/src/src/
 ```
 
 | false negative | false positive | result |
@@ -55,7 +55,7 @@ No reported issues.
 
 ## ReflectMethod
 
-[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectMethod.java)
+[nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethod.java)
 
 #### docker
 
@@ -67,7 +67,7 @@ findbugs nullness/ReflectMethod.class
 #### output
 
 ```
-No reported issues.
+master/src/src/
 ```
 
 | false negative | false positive | result |
@@ -76,7 +76,7 @@ No reported issues.
 
 ## ReflectMethodOverload
 
-[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectMethodOverload.java)
+[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethodOverload.java)
 
 #### docker
 
@@ -88,7 +88,7 @@ findbugs nullness/ReflectMethodOverload.class
 #### output
 
 ```
-No reported issues.
+master/src/src/
 ```
 
 | false negative | false positive | result |
@@ -97,7 +97,7 @@ No reported issues.
 
 ## ReflectFieldAccess
 
-[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/ReflectFieldAccess.java)
+[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectFieldAccess.java)
 
 #### docker
 
@@ -109,7 +109,7 @@ findbugs nullness/ReflectFieldAccess.class
 #### output
 
 ```
-No reported issues.
+master/src/src/
 ```
 
 | false negative | false positive | result |
@@ -118,7 +118,7 @@ No reported issues.
 
 ## InvokeDynamicVirtual
 
-[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicVirtual.java)
+[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicVirtual.java)
 
 #### docker
 
@@ -130,7 +130,7 @@ findbugs nullness/InvokeDynamicVirtual.class
 #### output
 
 ```
-No reported issues.
+master/src/src/
 ```
 
 | false negative | false positive | result |
@@ -139,7 +139,7 @@ No reported issues.
 
 ## InvokeDynamicConstructor
 
-[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicConstructor.java)
+[nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicConstructor.java)
 
 #### docker
 
@@ -151,7 +151,7 @@ findbugs nullness/InvokeDynamicConstructor.class
 #### output
 
 ```
-No reported issues.
+master/src/src/
 ```
 
 | false negative | false positive | result |
@@ -160,7 +160,7 @@ No reported issues.
 
 ## InvokeDynamicField
 
-[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/InvokeDynamicField.java)
+[nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicField.java)
 
 #### docker
 
@@ -172,7 +172,7 @@ findbugs nullness/InvokeDynamicField.class
 #### output
 
 ```
-No reported issues.
+master/src/src/
 ```
 
 | false negative | false positive | result |
@@ -181,7 +181,7 @@ No reported issues.
 
 ## DynamicProxy
 
-[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/nullness/DynamicProxy.java)
+[nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/DynamicProxy.java)
 
 #### docker
 

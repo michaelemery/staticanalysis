@@ -1,6 +1,6 @@
 # checker framework results (init)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
 
 <br>
 
@@ -14,7 +14,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 ## IntraProcedural
 
-[init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/IntraProcedural.java)
+[init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/IntraProcedural.java)
 
 #### docker
 
@@ -37,7 +37,7 @@ init/IntraProcedural.java:16: error: [dereference.of.nullable] dereference of po
 
 ## InterProcedural
 
-[init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InterProcedural.java)
+[init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
 
 #### docker
 
@@ -62,7 +62,7 @@ init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not
 
 ## ReflectMethod
 
-[init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethod.java)
+[init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
 
 #### docker
 
@@ -95,7 +95,7 @@ init/ReflectMethod.java:18: error: [argument.type.incompatible] incompatible typ
 
 ## ReflectMethodOverload
 
-[init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectMethodOverload.java)
+[init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethodOverload.java)
 
 #### docker
 
@@ -128,7 +128,7 @@ init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] incompat
 
 ## ReflectFieldAccess
 
-[init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/init/ReflectFieldAccess.java)
+[init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectFieldAccess.java)
 
 #### docker
 
@@ -154,7 +154,7 @@ init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of
 
 ## InvokeDynamicVirtual
 
-[init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicVirtual.java)
+[init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicVirtual.java)
 
 #### docker
 
@@ -184,7 +184,7 @@ init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompati
 
 ## InvokeDynamicConstructor
 
-[init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicConstructor.java)
+[init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicConstructor.java)
 
 #### docker
 
@@ -204,7 +204,7 @@ No rpeorted issues.
 
 ## InvokeDynamicField
 
-[init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/init/InvokeDynamicField.java)
+[init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicField.java)
 
 #### docker
 
@@ -234,7 +234,7 @@ init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatibl
 
 ## DynamicProxy
 
-[init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/init/DynamicProxy.java)
+[init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/DynamicProxy.java)
 
 #### docker
 
