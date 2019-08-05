@@ -72,7 +72,7 @@ No reported issues.
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| 0 | 0 | unsound |
 
 ## ReflectMethodOverload
 
@@ -177,7 +177,7 @@ No reported issues.
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| 1 | 0 | unsound |
 
 ## DynamicProxy
 
@@ -200,4 +200,4 @@ Missing classes: 1
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | 1 | master/src/src/ |
+| 1 | 0 | unsound |
