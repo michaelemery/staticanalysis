@@ -109,17 +109,12 @@ findbugs init/ReflectFieldAccess.class
 #### output
 
 ```
-M C UR: Uninitialized read of o in new init.ReflectFieldAccess()  At ReflectFieldAccess.java:[line 16]
-M C UR: Uninitialized read of o in new init.ReflectFieldAccess(int)  At ReflectFieldAccess.java:[line 23]
-M C UwF: Unwritten field: init.ReflectFieldAccess.o  At ReflectFieldAccess.java:[line 16]
-M C NP: Read of unwritten field o in new init.ReflectFieldAccess()  At ReflectFieldAccess.java:[line 16]
-M C NP: Read of unwritten field o in new init.ReflectFieldAccess(int)  At ReflectFieldAccess.java:[line 23]
-Warnings generated: 5
+No reported issues.
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | 1 | master/src/src/ |
+| 0 | 0 | unsound |
 
 ## InvokeDynamicVirtual
 
