@@ -63,13 +63,13 @@ Tests are simple programs incorporating a single deliberate error of a specific 
  
 Although each test incorporates only one intentional error, that error may be detected at multiple locations within the code. This may occur where a checker attempts to identify not just the error, but also it's pre-cursors and cascading effects. Multiple counts of any correctly identified error are only counted once, and are not considered false positives. Where a checker correctly identifies an issue that is unrelated to the test, that outcome is ignored. Outcomes are categorised as either true or false, regardless of the number of occurrences.
 
-The final result of each test is based on the combination of false negative and false positive outcomes. In order to provide a quantitative assessment, a score is attributed to each outcome. If the checker correctly identifies the error (false negative = false), a score of +2 is awarded. If the checker does not generate any false positive results, a score of +1 is awarded. Negative scores of -2 and -1 are awarded for inverse outcomes respectively.
+The final result of each test is based on the combination of false negative and false positive outcomes.
 
-| result | description | false negative found / score | false positive found / score | total score | 
-| :---: | --- | :---: | :---: | :---: |
-| **accurate** | Found the error and nothing else.| no<br> *+2* | no<br> *+1* | *+3* | 
-| **imprecise** | Found the error but wrongly flagged safe code. | no <br> *+2* | yes <br> *-1* | *+1* |
-| **unsound** | Did not find anything. | yes <br> *-2*| no <br> *+1* | *-1* |
-| **aberrant** | Did not find the error, and wrongly flagged safe code. | yes <br> *-2* | yes <br> *-1* | *-3* |
+| result | description |
+| :---: | --- |
+| **accurate** | Found the error and nothing else. |
+| **imprecise** | Found the error but wrongly flagged safe code. |
+| **unsound** | Did not find anything. | yes <br> *-2* |
+| **aberrant** | Did not find the error, and wrongly flagged safe code. |
 
 Note that scores are consistent (as shown in the table) regardless of how many false negatives or false positives are identified by the the checker in each test.
