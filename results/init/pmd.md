@@ -196,4 +196,4 @@ $PMD_HOME/bin/run.sh pmd -d init/DynamicProxy.java -f text -R category/java/erro
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 1 | 1 | aberrant |
+| 1 | 0 | unsound |
