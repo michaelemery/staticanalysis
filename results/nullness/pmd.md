@@ -195,4 +195,4 @@ hecker/nullness/DynamicProxy.java:19:	In J2EE, getClassLoader() might not work a
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 0 | 2 | aberrant |
+| 1 | 0 | unsound |
