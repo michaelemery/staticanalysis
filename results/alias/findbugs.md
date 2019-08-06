@@ -115,7 +115,7 @@ N/A
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| - | - | N/A |
 
 ## InvokeDynamicVirtual
 
@@ -180,7 +180,7 @@ N/A
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| - | - | N/A |
 
 ## DynamicProxy
 
@@ -202,4 +202,4 @@ N/A
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| - | - | N/A |

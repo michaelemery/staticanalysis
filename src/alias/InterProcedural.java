@@ -7,7 +7,7 @@ import org.checkerframework.common.aliasing.qual.Unique;
  */
 public class InterProcedural {
 
-    Object o;
+    Object o = "init";
 
     public static void main(String[] args) {
         @Unique InterProcedural original = new InterProcedural();

@@ -14,53 +14,71 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 ## IntraProcedural
 
-[//]: [alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
-
-Infer does not have a checker to detect an alias.
+[alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
 
 #### docker
 
 ```
-N/A
+infer run -a checkers --eradicate -- javac alias/IntraProcedural.java
 ```
 
 #### output
 
 ```
-N/A
+Found 1 issue
+
+alias/IntraProcedural.java:21: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `IntraProcedural.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 21)
+  19.           /* unsafe: make object null via alias */
+  20.           IntraProcedural alias = original;
+  21. >         alias.o = null;
+  22.           System.out.println(original.o.toString());
+  23.       }
+
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| 1 | 0 | unsound |
 
 ## InterProcedural
 
-[//]: [alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
-
-Infer does not have a checker to detect an alias.
+[alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
 
 #### docker
 
 ```
-N/A
+infer run -a checkers --eradicate -- javac alias/InterProcedural.java
 ```
 
 #### output
 
 ```
-N/A
+Found 1 issue
+
+alias/InterProcedural.java:21: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `InterProcedural.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 21)
+  19.           /* unsafe: make object null via alias */
+  20.           InterProcedural alias = aliasOf(original);
+  21. >         alias.o = null;
+  22.           System.out.println(original.o.toString());
+  23.       }
+
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| 1 | 0 | unsound |
 
 ## ReflectMethod
 
-[//]: [alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
-
-Infer does not have a checker to detect an alias.
+[alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
 
 #### docker
 
@@ -71,47 +89,62 @@ infer run -a checkers --eradicate -- javac alias/ReflectMethod.java
 #### output
 
 ```
-N/A
-```
+Found 1 issue
 
-#### output
+alias/ReflectMethod.java:25: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `ReflectMethod.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 25)
+  23.           Method m = C.getDeclaredMethod("aliasOf", Object.class);
+  24.           ReflectMethod alias = (ReflectMethod) m.invoke(new ReflectMethod(), original);
+  25. >         alias.o = null;
+  26.           System.out.println(original.o.toString());
+  27.       }
 
-```
-N/A
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| 1 | 0 | unsound |
 
 ## ReflectMethodOverload
 
-[//]: [alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
-
-Infer does not have a checker to detect an alias.
+[alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
 
 #### docker
 
 ```
-N/A
+infer run -a checkers --eradicate -- javac alias/ReflectMethodOverload.java
 ```
 
 #### output
 
 ```
-N/A
+Found 1 issue
+
+alias/ReflectMethodOverload.java:26: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `ReflectMethodOverload.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 26)
+  24.           ReflectMethodOverload alias =
+  25.                   (ReflectMethodOverload) m.invoke(new ReflectMethodOverload(), original, 1);
+  26. >         alias.o = null;
+  27.           System.out.println(original.o.toString());
+  28.       }
+
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| 1 | 0 | unsound |
 
 ## ReflectFieldAccess
 
 [//]: [alias/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectFieldAccess.java)
 
-1) This language feature is not applicable to the checker being tested.
-2) Infer does not have a checker to detect an alias.
+This language feature is not applicable to the checker being tested.
 
 #### docker
 
@@ -127,58 +160,77 @@ N/A
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| - | - | N/A |
 
 ## InvokeDynamicVirtual
 
-[//]: [alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
-
-Infer does not have a checker to detect an alias.
+[alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
 
 #### docker
 
 ```
-N/A
+infer run -a checkers --eradicate -- javac alias/InvokeDynamicVirtual.java
 ```
 
 #### output
 
 ```
-N/A
+Found 1 issue
+
+alias/InvokeDynamicVirtual.java:29: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `InvokeDynamicVirtual.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 29)
+  27.           InvokeDynamicVirtual alias =
+  28.                   (InvokeDynamicVirtual) h.invoke(new InvokeDynamicVirtual(), original);
+  29. >         alias.o = null;
+  30.           System.out.println(original.o.toString());
+  31.       }
+
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| 1 | 0 | unsound |
 
 ## InvokeDynamicConstructor
 
-[//]: [alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
-
-Infer does not have a checker to detect an alias.
+[alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
 
 #### docker
 
 ```
-N/A
+infer run -a checkers --eradicate -- javac alias/InvokeDynamicConstructor.java
 ```
 
 #### output
 
 ```
-N/A
+Found 1 issue
+
+alias/InvokeDynamicConstructor.java:31: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `InvokeDynamicConstructor.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 31)
+  29.           /* unsafe: make object null via alias */
+  30.           InvokeDynamicConstructor alias = original;
+  31. >         alias.o = null;
+  32.           System.out.println(original.o.toString());
+  33.       }
+
+Summary of the reports
+
+  ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| 1 | 0 | unsound |
 
 ## InvokeDynamicField
 
 [//]: [alias/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicField.java)
 
-1) This language feature is not applicable to the checker being tested.
-2) Infer does not have a checker to detect an alias.
+This language feature is not applicable to the checker being tested.
 
 #### docker
 
@@ -194,14 +246,13 @@ N/A
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| - | - | N/A |
 
 ## DynamicProxy
 
 [//]: [alias/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/DynamicProxy.java)
 
-1) This language feature is not applicable to the checker being tested.
-2) Infer does not have a checker to detect an alias.
+This language feature is not applicable to the checker being tested.
 
 #### docker
 
@@ -217,4 +268,4 @@ N/A
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | - |
+| - | - | N/A |

@@ -11,7 +11,7 @@ import java.lang.invoke.MethodType;
  */
 public class InvokeDynamicVirtual {
 
-    Object o;
+    Object o = "init";
 
     public static void main(String[] args) throws Throwable {
         @Unique InvokeDynamicVirtual original = new InvokeDynamicVirtual();

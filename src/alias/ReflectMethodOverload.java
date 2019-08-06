@@ -9,7 +9,7 @@ import java.lang.reflect.Method;
  */
 public class ReflectMethodOverload {
 
-    Object o;
+    Object o = "init";
 
     public static void main(String[] args) throws Exception {
         @Unique ReflectMethodOverload original = new ReflectMethodOverload();
