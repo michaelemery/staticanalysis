@@ -72,4 +72,4 @@ The final result of each test is based on the combination of false negative and 
 | **unsound** | Did not find anything. | yes <br> *-2* |
 | **aberrant** | Did not find the error, and wrongly flagged safe code. |
 
-Note that scores are consistent (as shown in the table) regardless of how many false negatives or false positives are identified by the the checker in each test.
+Note that descriptions are consistent regardless of how many false negatives or false positives are identified by the the checker in each test.
