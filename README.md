@@ -63,7 +63,7 @@ Tests are simple programs incorporating a single deliberate error of a specific 
  
 Although each test incorporates only one intentional error, that error may be detected at multiple locations within the code. This may occur where a checker attempts to identify not just the error, but also it's pre-cursors and cascading effects. Multiple counts of any correctly identified error are only counted once, and are not considered false positives. Where a checker correctly identifies an issue that is unrelated to the test, that outcome is ignored. Outcomes are categorised as either true or false, regardless of the number of occurrences.
 
-The final result of each test is based on the combination of false negative and false positive outcomes.
+The final result of each test is based on the combination of false negative and false positive outcomes. Descriptions are consistent regardless of how many false negatives or false positives are identified by the the checker in each test.
 
 | result | description |
 | :---: | --- |
@@ -71,5 +71,3 @@ The final result of each test is based on the combination of false negative and 
 | **imprecise** | Found the error but wrongly flagged safe code. |
 | **unsound** | Did not find anything. | yes <br> *-2* |
 | **aberrant** | Did not find the error, and wrongly flagged safe code. |
-
-Note that descriptions are consistent regardless of how many false negatives or false positives are identified by the the checker in each test.
