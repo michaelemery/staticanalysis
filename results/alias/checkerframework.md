@@ -135,18 +135,18 @@ This language feature is not applicable to the checker being tested.
 #### docker
 
 ```
-N/A
+NA
 ```
 
 #### output
 
 ```
-N/A
+NA
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | N/A |
+| - | - | NA |
 
 ## InvokeDynamicVirtual
 
@@ -210,18 +210,18 @@ This language feature is not applicable to the checker being tested.
 #### docker
 
 ```
-N/A
+NA
 ```
 
 #### output
 
 ```
-N/A
+NA
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | N/A |
+| - | - | NA |
 
 ## DynamicProxy
 
@@ -232,15 +232,15 @@ This language feature is not applicable to the checker being tested.
 #### docker
 
 ```
-N/A
+NA
 ```
 
 #### output
 
 ```
-N/A
+NA
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| - | - | N/A |
+| - | - | NA |
