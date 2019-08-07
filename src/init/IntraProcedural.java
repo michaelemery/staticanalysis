@@ -7,12 +7,12 @@ public class IntraProcedural {
 
     Object o;
 
-    public IntraProcedural() {
+    IntraProcedural() {
         this.o = "safe";
         System.out.println(this.o.toString());
     }
 
-    public IntraProcedural(int x) {
+    IntraProcedural(int x) {
         System.out.println(this.o.toString());
         this.o = new IntraProcedural();
     }
