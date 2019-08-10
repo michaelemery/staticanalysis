@@ -5,22 +5,22 @@ package nullness;
  */
 public class IntraProcedural {
 
-    Object o;
+    Object object;
 
     IntraProcedural(Object obj) {
-        this.o = obj;
-        System.out.println(this.o.toString());
+        this.object = obj;
+        System.out.println(this.object.toString());
     }
 
     public static void main(String[] args) throws NullPointerException {
         IntraProcedural i = new IntraProcedural("init");
 
         /* safe: set object to non-null */
-        i.o = "safe";
-        System.out.println(i.o.toString());
+        i.object = "safe";
+        System.out.println(i.object.toString());
 
         /* unsafe: set object to null */
-        i.o = null;
-        System.out.println(i.o.toString());
+        i.object = null;
+        System.out.println(i.object.toString());
     }
 }

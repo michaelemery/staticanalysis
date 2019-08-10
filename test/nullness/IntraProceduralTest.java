@@ -16,7 +16,7 @@ class IntraProceduralTest {
     @BeforeEach
     void setUp() {
         i = new IntraProcedural("init");
-        assertEquals(i.o, "init");
+        assertEquals(i.object, "init");
     }
 
     @AfterEach
@@ -26,18 +26,18 @@ class IntraProceduralTest {
 
     @Test
     public void safeSet() {
-        i.o = "safe";
-        assertEquals(i.o, "safe");
+        i.object = "safe";
+        assertEquals(i.object, "safe");
         assertDoesNotThrow(() -> {
-            i.o.toString();
+            i.object.toString();
         });
     }
 
     @Test
     public void unsafeSet() {
-        i.o = null;
+        i.object = null;
         assertThrows(NullPointerException.class, () -> {
-            System.out.println(i.o.toString());
+            System.out.println(i.object.toString());
         });
     }
 }

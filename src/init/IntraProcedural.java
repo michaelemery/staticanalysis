@@ -5,16 +5,14 @@ package init;
  */
 public class IntraProcedural {
 
-    Object o;
+    Object object;
 
-    IntraProcedural() {
-        this.o = "safe";
-        System.out.println(this.o.toString());
+    public IntraProcedural() {
+        this.object = "safe";
     }
 
     IntraProcedural(int x) {
-        System.out.println(this.o.toString());
-        this.o = new IntraProcedural();
+        this.object = null;
     }
 
     public static void main(String[] args) throws NullPointerException {

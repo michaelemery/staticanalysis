@@ -3,32 +3,32 @@ package init;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  *
  */
-class IntraProceduralTest {
+public class IntraProceduralTest {
 
     IntraProcedural i;
 
     @AfterEach
-    void tearDown() {
+    public void tearDown() {
         i = null;
     }
 
     @Test
-    void safeSet() {
+    public void safeSet() {
         i = new IntraProcedural();
-        assertEquals(this.i.toString(), "safe");
+        assertEquals(this.i.object.toString(), "safe");
     }
 
     @Test
-    void unsafeSet() {
-        new IntraProcedural(1);
+    public void unsafeSet() {
+        i = new IntraProcedural(1);
         assertThrows(NullPointerException.class, () -> {
-            this.i.toString();
+            this.i.object.toString();
         });
-
     }
 }
