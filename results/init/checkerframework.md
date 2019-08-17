@@ -42,7 +42,7 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 
 #### result
 
-Checker tested as **accurate**.
+**accurate**
 
 | | true | false |
 | :--- | :---: | :---: |
