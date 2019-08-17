@@ -37,7 +37,7 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 | :--- | :---: | :---: |
 | positive | 2 | 0 |
 | negative | 1 | 0 |
-| result | <td colspan=2> accurate |
+| result | accurate |
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
