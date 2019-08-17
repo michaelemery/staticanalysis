@@ -42,14 +42,14 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 2 errors
 ```
 
-#### result (expected / actual)
-
-*accurate*
+#### expected / actual
 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 2 | 0 |
 | - | 0 | 1 |
+
+*accurate*
 
 <br>
 
