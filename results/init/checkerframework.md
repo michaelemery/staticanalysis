@@ -33,15 +33,15 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
         ^
 2 errors
 ```
+
+#### result
+
+** accurate **
+
 | | true | false |
 | :--- | :---: | :---: |
 | positive | 2 | 0 |
 | negative | 1 | 0 |
-| result | accurate |
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 0 / 1 | 0 | accurate ||
 
 ## InterProcedural
 
