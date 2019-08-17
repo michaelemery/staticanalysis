@@ -47,7 +47,7 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 *accurate*
 
 | expected <br>/ actual| + | - |
-| :--- | :---: | :---: |
+| :---: | :---: | :---: |
 | + | 2 | 0 |
 | - | 1 | 0 |
 
