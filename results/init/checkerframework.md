@@ -8,16 +8,16 @@
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-#### run junit tests from Docker
+#### run junit tests from docker
 
 ```
 sh test.sh [ [ package ] | [ package class ] ]
 ```
 
 *e.g.*
-- sh test.sh
-- sh test.sh init
-- sh test.sh init IntraProcedural
+- sh test.sh *(run all tests)*
+- sh test.sh init *(just this package)*
+- sh test.sh init IntraProcedural *(just this class)*
 
 #### checker
 
