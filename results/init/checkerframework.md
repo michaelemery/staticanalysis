@@ -4,13 +4,19 @@
 
 <br>
 
-Version: checker-framework-2.1.11
-
-Init checking is part of the Nullness Checker. To run the Nullness Checker, supply the `-processor org.checkerframework.checker.nullness.NullnessChecker` command-line option to javac.
+#### docker
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-To run all junit tests from Docker, use `sh testAll.sh`.
+#### run junit tests from Docker
+
+```
+sh test.sh [ [ package ] | [ package class ] ]                  
+```
+
+Version: checker-framework-2.1.11
+
+Init checking is part of the Nullness Checker. To run the Nullness Checker, supply the `-processor org.checkerframework.checker.nullness.NullnessChecker` command-line option to javac.
 
 <br>
 
