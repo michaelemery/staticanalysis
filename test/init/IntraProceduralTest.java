@@ -1,34 +1,32 @@
 package init;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
+ * Intra-procedural initialisation of an object attribute.
  */
 public class IntraProceduralTest {
 
-    IntraProcedural i;
-
-    @AfterEach
-    public void tearDown() {
-        i = null;
+    @Test
+    public void initialise() {
+        assertDoesNotThrow(() -> {
+            new IntraProcedural();
+        });
     }
 
     @Test
-    public void safeSet() {
-        i = new IntraProcedural();
-        assertEquals(this.i.object.toString(), "safe");
-    }
-
-    @Test
-    public void unsafeSet() {
-        i = new IntraProcedural(1);
+    public void failToInitialise() {
         assertThrows(NullPointerException.class, () -> {
-            this.i.object.toString();
+            new IntraProcedural(1);
+        });
+    }
+
+    @Test
+    public void accessBeforeInitialised() {
+        assertThrows(NullPointerException.class, () -> {
+            new IntraProcedural(1, 2);
         });
     }
 }

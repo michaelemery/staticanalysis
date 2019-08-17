@@ -19,21 +19,29 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker init/IntraProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/IntraProcedural.java
 ```
 
 #### output
 
 ```
-init/IntraProcedural.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.o
-        System.out.println(this.o.toString());
-                               ^
-1 error
+src/init/IntraProcedural.java:18: error: [dereference.of.nullable] dereference of possibly-null reference object
+        object.toString();
+        ^
+src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference of possibly-null reference object
+        object.toString();
+        ^
+2 errors
 ```
+| | true | false |
+| :--- | :---: | :---: |
+| positive | 2 | 0 |
+| negative | 1 | 0 |
+| result | <td colspan=2> accurate |
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| 0 / 1 | 0 | accurate ||
 
 ## InterProcedural
 
@@ -42,7 +50,7 @@ init/IntraProcedural.java:16: error: [dereference.of.nullable] dereference of po
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/InterProcedural.java
 ```
 
 #### output
@@ -67,7 +75,7 @@ init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectMethod.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/ReflectMethod.java
 ```
 
 #### output
@@ -100,7 +108,7 @@ init/ReflectMethod.java:18: error: [argument.type.incompatible] incompatible typ
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectMethodOverload.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/ReflectMethodOverload.java
 ```
 
 #### output
@@ -133,7 +141,7 @@ init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] incompat
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker init/ReflectFieldAccess.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/ReflectFieldAccess.java
 ```
 
 #### output
@@ -159,7 +167,7 @@ init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicVirtual.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/InvokeDynamicVirtual.java
 ```
 
 #### output
@@ -189,7 +197,7 @@ init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompati
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicConstructor.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/InvokeDynamicConstructor.java
 ```
 
 #### output
@@ -209,7 +217,7 @@ No rpeorted issues.
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker init/InvokeDynamicField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/InvokeDynamicField.java
 ```
 
 #### output
@@ -239,18 +247,18 @@ init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatibl
 #### docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker init/DynamicProxy.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/DynamicProxy.java
 ```
 
 #### output
 
 ```
-init/DynamicProxy.java:18: error: [argument.type.incompatible] incompatible types in argument.
+src/init/DynamicProxy.java:18: error: [argument.type.incompatible] incompatible types in argument.
         this.o = proxyInstance.get(null);
                                    ^
   found   : null
   required: @Initialized @NonNull Object
-init/DynamicProxy.java:30: error: [argument.type.incompatible] incompatible types in argument.
+src/init/DynamicProxy.java:30: error: [argument.type.incompatible] incompatible types in argument.
                 Foo.class.getClassLoader(),
                                         ^
   found   : @Initialized @Nullable ClassLoader
