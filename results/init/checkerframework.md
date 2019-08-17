@@ -18,6 +18,8 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [test/init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
 
+<br>
+
 #### run junit test from docker
 
 ```
