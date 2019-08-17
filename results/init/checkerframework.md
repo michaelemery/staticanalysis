@@ -10,9 +10,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### run junit tests from Docker
 
-```
-sh test.sh [ [ package ] | [ package class ] ]                  
-```
+`sh test.sh [ [ package ] | [ package class ] ]`
 
 Version: checker-framework-2.1.11
 
