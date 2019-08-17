@@ -15,10 +15,9 @@ sh test.sh [ [ package ] | [ package class ] ]
 ```
 
 *Examples*
-
-sh test.sh <br>
-sh test.sh init <br>
-sh test.sh init InterProcedural
+- sh test.sh
+- sh test.sh init
+- sh test.sh init InterProcedural
 
 #### checker
 
