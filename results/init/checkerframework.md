@@ -46,8 +46,8 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 
 | | true | false |
 | :--- | :---: | :---: |
-| **positive** | 2 | 0 |
-| **negative** | 1 | 0 |
+| + | 2 | 0 |
+| - | 1 | 0 |
 
 <br>
 
