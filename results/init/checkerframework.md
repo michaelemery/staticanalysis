@@ -17,7 +17,7 @@ sh test.sh [ [ package ] | [ package class ] ]
 *e.g.*
 - sh test.sh
 - sh test.sh init
-- sh test.sh init InterProcedural
+- sh test.sh init IntraProcedural
 
 #### checker
 
@@ -32,12 +32,6 @@ Init checking is part of the Nullness Checker. To run the Nullness Checker, supp
 [src/init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/IntraProcedural.java)
 
 [test/init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
-
-#### run junit test from docker
-
-```
-sh test.sh init IntraProcedural
-```
 
 #### run checker from docker
 
@@ -73,12 +67,6 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 [src/init/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
 
 [test/init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
-
-#### run junit test from docker
-
-```
-sh test.sh init/InterProcedural
-```
 
 #### run checker from docker
 
