@@ -46,24 +46,32 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 
 *accurate*
 
-| | true | false |
+| expected \n/ actual| + | - |
 | :--- | :---: | :---: |
-| positive | 2 | 0 |
-| negative | 1 | 0 |
+| + | 2 | 0 |
+| - | 1 | 0 |
 
 <br>
 
 ## InterProcedural
 
-[init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
+[src/init/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
 
-#### docker
+[test/init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
+
+#### run junit test from docker
+
+```
+sh test.sh init/InterProcedural
+```
+
+#### run checker from docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/InterProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not allowed on the given receiver.
