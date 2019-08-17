@@ -28,7 +28,7 @@ sh test.sh init/IntraProcedural
 javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/IntraProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 src/init/IntraProcedural.java:18: error: [dereference.of.nullable] dereference of possibly-null reference object
@@ -40,7 +40,9 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 2 errors
 ```
 
-#### result = accurate
+#### result
+
+Checker tested as **accurate**.
 
 | | true | false |
 | :--- | :---: | :---: |
