@@ -41,6 +41,8 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 | positive | 2 | 0 |
 | negative | 1 | 0 |
 
+<br>
+
 ## InterProcedural
 
 [init/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
@@ -65,6 +67,8 @@ init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not
 | false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 0 | accurate |
+
+<br>
 
 ## ReflectMethod
 
@@ -99,6 +103,8 @@ init/ReflectMethod.java:18: error: [argument.type.incompatible] incompatible typ
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
+<br>
+
 ## ReflectMethodOverload
 
 [init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethodOverload.java)
@@ -132,6 +138,8 @@ init/ReflectMethodOverload.java:22: error: [argument.type.incompatible] incompat
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
+<br>
+
 ## ReflectFieldAccess
 
 [init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectFieldAccess.java)
@@ -157,6 +165,8 @@ init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of
 | false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
+
+<br>
 
 ## InvokeDynamicVirtual
 
@@ -188,6 +198,8 @@ init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompati
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
 
+<br>
+
 ## InvokeDynamicConstructor
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicConstructor.java)
@@ -207,6 +219,8 @@ No rpeorted issues.
 | false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
+
+<br>
 
 ## InvokeDynamicField
 
@@ -237,6 +251,8 @@ init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatibl
 | false negative | false positive | result |
 | :---: | :---: | :---: |
 | 0 | 1 | imprecise |
+ 
+<br>
 
 ## DynamicProxy
 
