@@ -14,7 +14,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 sh test.sh [ [ package ] | [ package class ] ]
 ```
 
-*Examples*
+*examples...*
 - sh test.sh
 - sh test.sh init
 - sh test.sh init InterProcedural
