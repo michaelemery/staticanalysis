@@ -14,6 +14,14 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 sh test.sh [ [ package ] | [ package class ] ]
 ```
 
+*Examples*
+
+sh test.sh
+sh test.sh init
+sh test.sh init InterProcedural
+
+#### checker
+
 Version: checker-framework-2.1.11
 
 Init checking is part of the Nullness Checker. To run the Nullness Checker, supply the `-processor org.checkerframework.checker.nullness.NullnessChecker` command-line option to javac.
