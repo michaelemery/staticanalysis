@@ -16,7 +16,13 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/IntraProcedural.java)
 
-#### docker
+#### run test from docker
+
+```
+sh test.sh init/IntraProcedural
+```
+
+#### run checker from docker
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/IntraProcedural.java
