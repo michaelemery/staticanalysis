@@ -58,7 +58,7 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 | + | 2 | 0 |
 | - | 0 | 1 |
 
-&nbsp; &nbsp; = &nbsp; *accurate*
+&nbsp; &nbsp; &#x279C &nbsp; *accurate*
 
 <br>
 
