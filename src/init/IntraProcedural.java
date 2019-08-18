@@ -1,7 +1,7 @@
 package init;
 
 /**
- * Intra-procedural initialisation of an object attribute.
+ * Validate initialisation of an object via a single method.
  */
 public class IntraProcedural {
 

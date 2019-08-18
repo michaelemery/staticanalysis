@@ -5,12 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Intra-procedural initialisation of an object attribute.
+ * Validate initialisation of an object via a single method.
  */
 public class IntraProceduralTest {
 
     @Test
-    public void initialise() {
+    public void validInitialise() {
         assertDoesNotThrow(() -> {
             new IntraProcedural();
         });

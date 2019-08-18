@@ -105,25 +105,20 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/
 #### output
 
 ```
-init/ReflectMethod.java:14: error: [argument.type.incompatible] incompatible types in argument.
-        m.invoke(this);
-                 ^
-  found   : @UnderInitialization(checker.init.ReflectMethod.class) @NonNull ReflectMethod
-  required: @Initialized @NonNull Object
-init/ReflectMethod.java:17: error: [initialization.fields.uninitialized] the constructor does not initialize fields: o
-    ReflectMethod(Method m, int x) throws Exception {
+src/init/ReflectMethod.java:20: error: [initialization.fields.uninitialized] the constructor does not initialize fields: object
+    ReflectMethod(Method method, int x) throws Exception {
     ^
-init/ReflectMethod.java:18: error: [argument.type.incompatible] incompatible types in argument.
-        m.invoke(this);
-                 ^
-  found   : @UnderInitialization(java.lang.Object.class) @NonNull ReflectMethod
-  required: @Initialized @NonNull Object
-3 errors
+1 error
 ```
 
-| false negative | false positive | result |
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 1 | imprecise |
+| + | 1 | 0 |
+| - | 1 | 1 |
+
+&nbsp; &#x27F6; &nbsp; imprecise
 
 <br>
 

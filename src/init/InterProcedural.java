@@ -1,7 +1,7 @@
 package init;
 
 /**
- * Inter-procedural initialisation of an object attribute.
+ * Validate initialisation of an object via layered methods.
  */
 public class InterProcedural {
 
