@@ -31,6 +31,12 @@ Init checking is part of the Nullness Checker. To run the Nullness Checker, supp
 
 [test/init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
 
+#### run tests from docker
+
+```
+sh test.sh init IntraProcedural
+```
+
 #### run checker from docker
 
 ```
@@ -127,7 +133,7 @@ src/init/ReflectMethod.java:26: error: [argument.type.incompatible] incompatible
 ```
 
 * Error at line 16 ignored as valid caution.
-* Errors at line 20, 21 combined as single error.
+* Error at line 20, 21 combined as single error.
 
 #### expected / actual errors
 
