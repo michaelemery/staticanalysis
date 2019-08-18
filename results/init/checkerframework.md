@@ -181,7 +181,7 @@ src/init/ReflectMethodOverload.java:33: error: [return.type.incompatible] incomp
 5 errors
 ```
 
-* Error at lne 16a, 16b, 24a, 24b, 33 ignored as valid caution.
+* Error at line 16(i), 16(ii), 24(1), 24(ii), 33 ignored as valid caution.
 
 #### expected / actual errors
 

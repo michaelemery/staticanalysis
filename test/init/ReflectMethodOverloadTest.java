@@ -13,7 +13,7 @@ class ReflectMethodOverloadTest {
     @Test
     void validInitialise() throws Exception {
         assertDoesNotThrow(() -> {
-            new ReflectMethodOverload();
+            new ReflectMethodOverload().toString();
         });
     }
 
@@ -21,7 +21,7 @@ class ReflectMethodOverloadTest {
     void failToInitialise() throws Exception {
         assertThrows(NullPointerException.class, () -> {
             try {
-                new ReflectMethodOverload(1);
+                new ReflectMethodOverload(1).toString();
             } catch (Exception ex) {
                 throw ex.getCause();
             }
