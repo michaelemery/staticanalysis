@@ -14,7 +14,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 sh test.sh [ [ package-name ] | [ package-name class-name ] ]
 ```
 
-* *Omitting package and class names will run all tests.*
+* *`sh test.sh` will run all tests.*
 * *Do not include `.class` suffix for class name.*
 
 #### checker
@@ -31,7 +31,7 @@ Init checking is part of the Nullness Checker. To run the Nullness Checker, supp
 
 [test/init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
 
-#### run tests from docker
+#### run JUNIT tests from docker
 
 ```
 sh test.sh init IntraProcedural
