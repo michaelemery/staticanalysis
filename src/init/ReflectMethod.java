@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * Validate initialisation of an object via reflective methods calls.
+ * Validate initialisation of an object via reflective methods.
  */
 public class ReflectMethod {
 
