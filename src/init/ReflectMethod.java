@@ -13,17 +13,17 @@ public class ReflectMethod {
     // initialises field
     ReflectMethod(Method method) throws Exception {
         this.object = new Object();
-        method.invoke(ReflectMethod.class);
+        method.invoke(this);
     }
 
     // fails to initialise field
     ReflectMethod(Method method, int x) throws Exception {
-        method.invoke(ReflectMethod.class);
+        method.invoke(this);
     }
 
     // accesses field before initialised
     ReflectMethod(Method method, int x, int y) throws Exception {
-        method.invoke(ReflectMethod.class);
+        method.invoke(this);
         this.object = new Object();
     }
 
