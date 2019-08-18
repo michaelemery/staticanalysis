@@ -11,13 +11,11 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 #### run junit tests from docker
 
 ```
-sh test.sh [ [ package ] | [ package class ] ]
+sh test.sh [ [ package-name ] | [ package-name class-name ] ]
 ```
 
-*e.g.*
-- sh test.sh *(run all tests)*
-- sh test.sh init *(just this package)*
-- sh test.sh init IntraProcedural *(just this class)*
+* *Omitting package and class names will run all tests.*
+* *Do not include `.class` suffix for class name.*
 
 #### checker
 
@@ -51,7 +49,7 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 2 errors
 ```
 
-#### expected / actual results
+#### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
@@ -77,17 +75,20 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/
 #### checker output
 
 ```
-init/InterProcedural.java:17: error: [method.invocation.invalid] call to m() not allowed on the given receiver.
-        m();
-         ^
-  found   : @UnderInitialization(java.lang.Object.class) @NonNull InterProcedural
-  required: @Initialized @NonNull InterProcedural
+src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference of possibly-null reference this.object
+        this.object.toString();
+            ^
 1 error
 ```
 
-| false negative | false positive | result |
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| + | 1 | 0 |
+| - | 0 | 1 |
+
+&nbsp; &#x27F6; &nbsp; accurate
 
 <br>
 

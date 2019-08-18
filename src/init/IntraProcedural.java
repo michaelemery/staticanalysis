@@ -7,20 +7,20 @@ public class IntraProcedural {
 
     Object object;
 
-    // constructor initialises field
-    public IntraProcedural() {
-        object = new Object();
-        object.toString();
+    // initialises field
+    IntraProcedural() {
+        this.object = new Object();
+        this.object.toString();
     }
 
-    // constructor fails to initialise field
+    // fails to initialise field
     IntraProcedural(int x) {
-        object.toString();
+        this.object.toString();
     }
 
-    // constructor accesses field before initialised
+    // accesses field before initialised
     IntraProcedural(int x, int y) {
-        object.toString();
-        object = new Object();
+        this.object.toString();
+        this.object = new Object();
     }
 }

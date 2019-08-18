@@ -7,31 +7,19 @@ public class InterProcedural {
 
     Object object;
 
-    public InterProcedural() {
-        initialise();
+    // initialises field
+    InterProcedural() {
+        this.object = set();
+        this.object.toString();
     }
 
-    public InterProcedural(int x) {
-        failToInitialise();
+    // accesses field before initialised
+    InterProcedural(int x) {
+        this.object.toString();
+        this.object = set();
     }
 
-    public InterProcedural(int x, int y) {
-        accessBeforeInitialised();
-    }
-
-    void initialise() {
-        object = new Object();
-        object.toString();
-    }
-
-    // method fails to initialise field
-    void failToInitialise() {
-        object.toString();
-    }
-
-    // method accesses field before initialised
-    void accessBeforeInitialised() {
-        object.toString();
-        object = new Object();
+    static Object set() {
+        return new Object();
     }
 }
