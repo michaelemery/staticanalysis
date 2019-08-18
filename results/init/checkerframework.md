@@ -14,8 +14,8 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 sh test.sh [ [ package-name ] | [ package-name class-name ] ]
 ```
 
-* *`sh test.sh` will run all tests.*
-* *Do not include `.class` suffix for class name.*
+* `sh test.sh` will run all tests.
+* Do not include `.class` suffix for class name.
 
 #### checker
 
