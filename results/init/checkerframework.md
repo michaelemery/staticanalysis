@@ -49,7 +49,7 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 2 errors
 ```
 | line(s) | event |
-| :--- | :---: |
+| :---: | :---: |
 | 18 | TP |
 | 23 | TP |
 
@@ -86,9 +86,8 @@ src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference o
 ```
 
 | line(s) | event |
-| :--- | :---: |
+| :---: | :---: |
 | 18 | TP |
-* line 18: true positive
 
 #### expected / actual errors
 
@@ -136,7 +135,7 @@ src/init/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible
 ```
 
 | line(s) | event |
-| :--- | :---: |
+| :---: | :---: |
 | 15 | FP |
 | 19, 20 | TP |
 | 25 | TP |
