@@ -20,8 +20,8 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 sh test.sh [ [ package-name ] | [ package-name class-name ] ]
 ```
 
-* `sh test.sh` will run all tests.
-* Do not include `.class` suffix for class name.
+* `sh test.sh` will run all tests
+* do not include `.class` suffix for class name
 
 <br>
 
@@ -65,7 +65,7 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 
 #### result
 
-accurate
+* accurate
 
 <br>
 
@@ -105,7 +105,7 @@ src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference o
 
 #### result
 
-accurate
+* accurate
 
 <br>
 
@@ -160,7 +160,7 @@ src/init/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible
 
 #### result
 
-imprecise
+* imprecise
 
 <br>
 
@@ -222,7 +222,7 @@ src/init/ReflectMethodOverload.java:33: error: [return.type.incompatible] incomp
 
 #### result
 
-unsound
+* unsound
 
 <br>
 
