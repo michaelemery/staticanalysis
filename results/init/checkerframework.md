@@ -48,6 +48,9 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
         ^
 2 errors
 ```
+
+#### analysis
+
 | line(s) | event |
 | :---: | :---: |
 | 18 | TP |
@@ -84,6 +87,8 @@ src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference o
             ^
 1 error
 ```
+
+#### analysis
 
 | line(s) | event |
 | :---: | :---: |
@@ -133,6 +138,8 @@ src/init/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible
   required: @Initialized @NonNull Object
 4 errors
 ```
+
+#### analysis
 
 | line(s) | event |
 | :---: | :---: |
@@ -192,14 +199,20 @@ src/init/ReflectMethodOverload.java:33: error: [return.type.incompatible] incomp
 5 errors
 ```
 
-* Error at line 16(i), 16(ii), 24(1), 24(ii), 33 ignored as valid caution.
+#### analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 16(i), 16(ii) | FP |
+| 24(i), 24(ii) | TP |
+| 33 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
-| - | 1 | 1 |
+| + | 1 | 1 |
+| - | 0 | 0 |
 
 &nbsp; &#x27F6; &nbsp; unsound
 
