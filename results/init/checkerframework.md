@@ -48,6 +48,10 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
         ^
 2 errors
 ```
+| line(s) | event |
+| :--- | :---: |
+| 18 | TP |
+| 23 | TP |
 
 #### expected / actual errors
 
@@ -81,6 +85,11 @@ src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference o
 1 error
 ```
 
+| line(s) | event |
+| :--- | :---: |
+| 18 | TP |
+* line 18: true positive
+
 #### expected / actual errors
 
 |  | + | - |
@@ -105,20 +114,20 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/
 #### checker output
 
 ```
-src/init/ReflectMethod.java:16: error: [argument.type.incompatible] incompatible types in argument.
+src/init/ReflectMethod.java:15: error: [argument.type.incompatible] incompatible types in argument.
         method.invoke(this);
                       ^
   found   : @UnderInitialization(init.ReflectMethod.class) @NonNull ReflectMethod
   required: @Initialized @NonNull Object
-src/init/ReflectMethod.java:20: error: [initialization.fields.uninitialized] the constructor does not initialize fields: object
+src/init/ReflectMethod.java:19: error: [initialization.fields.uninitialized] the constructor does not initialize fields: object
     ReflectMethod(Method method, int x) throws Exception {
     ^
-src/init/ReflectMethod.java:21: error: [argument.type.incompatible] incompatible types in argument.
+src/init/ReflectMethod.java:20: error: [argument.type.incompatible] incompatible types in argument.
         method.invoke(this);
                       ^
   found   : @UnderInitialization(java.lang.Object.class) @NonNull ReflectMethod
   required: @Initialized @NonNull Object
-src/init/ReflectMethod.java:26: error: [argument.type.incompatible] incompatible types in argument.
+src/init/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible types in argument.
         method.invoke(this);
                       ^
   found   : @UnderInitialization(java.lang.Object.class) @NonNull ReflectMethod
@@ -126,17 +135,20 @@ src/init/ReflectMethod.java:26: error: [argument.type.incompatible] incompatible
 4 errors
 ```
 
-* Error at line 16 ignored as valid caution.
-* Error at line 20, 21 combined as single error.
+| line(s) | event |
+| :--- | :---: |
+| 15 | FP |
+| 19, 20 | TP |
+| 25 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 2 | 0 |
-| - | 0 | 1 |
+| + | 2 | 1 |
+| - | 0 | 0 |
 
-&nbsp; &#x27F6; &nbsp; accurate
+&nbsp; &#x27F6; &nbsp; imprecise
 
 <br>
 
