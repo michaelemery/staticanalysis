@@ -3,26 +3,26 @@ package init;
 import java.lang.reflect.Field;
 
 /**
- * Created by Michael Emery on 2019-06-06.
+ * Validate initialisation of an object via reflective field access.
  */
 public class ReflectFieldAccess {
 
-    Object o;
+    Object object;
 
     ReflectFieldAccess() throws Exception {
-        this.o = "init";
+        this.object = "init";
         Class<?> C = this.getClass();
-        Field f = C.getDeclaredField("o");
+        Field f = C.getDeclaredField("object");
         f.set(this, "safe");
-        System.out.println(this.o.toString());
+        System.out.println(this.object.toString());
     }
 
     ReflectFieldAccess(int x) throws Exception {
-        this.o = "init";
+        this.object = "init";
         Class<?> C = this.getClass();
-        Field f = C.getDeclaredField("o");
+        Field f = C.getDeclaredField("object");
         f.set(this, null);
-        System.out.println(this.o.toString());
+        System.out.println(this.object.toString());
     }
 
     public static void main(String[] args) throws Exception {
