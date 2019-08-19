@@ -49,7 +49,7 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 2 errors
 ```
 
-#### analysis
+#### output analysis
 
 | line(s) | event |
 | :---: | :---: |
@@ -90,7 +90,7 @@ src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference o
 1 error
 ```
 
-#### analysis
+#### output analysis
 
 | line(s) | event |
 | :---: | :---: |
@@ -141,7 +141,7 @@ src/init/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible
 4 errors
 ```
 
-#### analysis
+#### output analysis
 
 | line(s) | event |
 | :---: | :---: |
@@ -201,7 +201,7 @@ src/init/ReflectMethodOverload.java:33: error: [return.type.incompatible] incomp
 5 errors
 ```
 
-#### analysis
+#### output analysis
 
 | line(s) | event |
 | :---: | :---: |
