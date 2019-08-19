@@ -9,31 +9,16 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class ReflectFieldAccessTest {
     @Test
-    void validInitialise() throws Exception {
+    void validSet() throws Exception {
         assertDoesNotThrow(() -> {
-            new ReflectMethod(ReflectFieldAccess.getBeStringMethod());
+            new ReflectFieldAccess();
         });
     }
 
     @Test
-    void failToInitialise() throws Exception {
+    void invalidSet() throws Exception {
         assertThrows(NullPointerException.class, () -> {
-            try {
-                new ReflectMethod(ReflectFieldAccess.getBeStringMethod(), 1);
-            } catch (Exception ex) {
-                throw ex.getCause();
-            }
-        });
-    }
-
-    @Test
-    void accessBeforeInitialised() throws Exception {
-        assertThrows(NullPointerException.class, () -> {
-            try {
-                new ReflectMethod(ReflectFieldAccess.getBeStringMethod(), 1, 2);
-            } catch (Exception ex) {
-                throw ex.getCause();
-            }
+            new ReflectFieldAccess(1);
         });
     }
 }

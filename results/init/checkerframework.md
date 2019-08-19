@@ -109,6 +109,8 @@ src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference o
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
 
+[test/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
+
 #### run checker from docker
 
 ```
@@ -161,6 +163,8 @@ src/init/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible
 ## ReflectMethodOverload
 
 [init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethodOverload.java)
+
+[test/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodOverloadTest.java)
 
 #### run checker from docker
 
@@ -222,6 +226,8 @@ src/init/ReflectMethodOverload.java:33: error: [return.type.incompatible] incomp
 
 [init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectFieldAccess.java)
 
+[test/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectFieldAccessTest.java)
+
 #### run checker from docker
 
 ```
@@ -231,24 +237,38 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/
 #### checker output
 
 ````
-init/ReflectFieldAccess.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.o
-        System.out.println(this.o.toString());
-                               ^
-init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of possibly-null reference this.o
-        System.out.println(this.o.toString());
-                               ^
+src/init/ReflectFieldAccess.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.object
+        this.object.toString();
+            ^
+src/init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of possibly-null reference this.object
+        this.object.toString();
+            ^
 2 errors
 ````
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 16 | FP |
+| 23 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 1 | imprecise |
+| + | 1 | 1 |
+| - | 0 | 0 |
+
+&nbsp; ⟶ &nbsp; imprecise
 
 <br>
 
 ## InvokeDynamicVirtual
 
 [init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicVirtual.java)
+
+[test/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicVirtualTest.java)
 
 #### run checker from docker
 
@@ -272,15 +292,28 @@ init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompati
 2 errors
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 1 | imprecise |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+&nbsp; ⟶ &nbsp; ???
 
 <br>
 
 ## InvokeDynamicConstructor
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicConstructor.java)
+
+[test/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
 
 #### run checker from docker
 
@@ -294,15 +327,28 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/
 No rpeorted issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+&nbsp; ⟶ &nbsp; ???
 
 <br>
 
 ## InvokeDynamicField
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicField.java)
+
+[test/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicFieldTest.java)
 
 #### run checker from docker
 
@@ -326,15 +372,28 @@ init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatibl
 2 errors
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 1 | imprecise |
- 
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+&nbsp; ⟶ &nbsp; ???
+
 <br>
 
 ## DynamicProxy
 
 [init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/DynamicProxy.java)
+
+[test/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/DynamicProxyTest.java)
 
 #### run checker from docker
 
@@ -358,6 +417,17 @@ src/init/DynamicProxy.java:30: error: [argument.type.incompatible] incompatible 
 2 errors
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 1 | imprecise |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+&nbsp; ⟶ &nbsp; ???
