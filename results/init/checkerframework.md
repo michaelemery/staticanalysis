@@ -101,9 +101,7 @@ src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference o
 | + | 1 | 0 |
 | - | 0 | 1 |
 
-#### result
-
-* accurate
+&nbsp; ⟶ &nbsp; accurate
 
 <br>
 
@@ -156,9 +154,7 @@ src/init/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible
 | + | 2 | 1 |
 | - | 0 | 0 |
 
-#### result
-
-* imprecise
+&nbsp; ⟶ &nbsp; imprecise
 
 <br>
 
@@ -218,9 +214,7 @@ src/init/ReflectMethodOverload.java:33: error: [return.type.incompatible] incomp
 | + | 1 | 1 |
 | - | 0 | 0 |
 
-#### result
-
-* unsound
+&nbsp; ⟶ &nbsp; unsound
 
 <br>
 
