@@ -4,6 +4,12 @@
 
 <br>
 
+#### checker
+
+Version: checker-framework-2.1.11
+
+Init checking is part of the Nullness Checker. To run the Nullness Checker, supply the `-processor org.checkerframework.checker.nullness.NullnessChecker` command-line option to javac.
+
 #### run checker from docker
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
@@ -16,12 +22,6 @@ sh test.sh [ [ package-name ] | [ package-name class-name ] ]
 
 * `sh test.sh` will run all tests.
 * Do not include `.class` suffix for class name.
-
-#### checker
-
-Version: checker-framework-2.1.11
-
-Init checking is part of the Nullness Checker. To run the Nullness Checker, supply the `-processor org.checkerframework.checker.nullness.NullnessChecker` command-line option to javac.
 
 <br>
 
