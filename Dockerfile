@@ -138,6 +138,12 @@ RUN alias cfnull='-processor org.checkerframework.checker.nullness.NullnessCheck
 
 ADD lib/junit-platform-console-standalone-1.5.1.jar /lib
 
+
+# --- COPY JUNIT TEST SCRIPT TO /
+
+ADD test.sh /
+
+
 # --- COPY SOURCE FILES FOR CHECKER TESTS
 
 RUN mkdir /src
