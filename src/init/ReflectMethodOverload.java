@@ -3,39 +3,33 @@ package init;
 import java.lang.reflect.Method;
 
 /**
- * Created by Michael Emery on 2019-06-05.
+ * Validate initialisation of an object via overloaded reflective methods.
  */
 public class ReflectMethodOverload {
 
-    Object o;
+    Object object;
 
+    // initialises field
     ReflectMethodOverload() throws Exception {
         Class<?> C = ReflectMethodOverload.class;
-        Method m = C.getDeclaredMethod("m");
-        this.o = "safe";
-        m.invoke(this, 1);
+        Method method = C.getDeclaredMethod("getObject");
+        this.object = method.invoke(this);
+        this.object.toString();
     }
 
+    // fails to initialise field
     ReflectMethodOverload(int x) throws Exception {
         Class<?> C = ReflectMethodOverload.class;
-        Method m = C.getDeclaredMethod("m");
-        m.invoke(this, 1);
+        Method method = C.getDeclaredMethod("getObject", int.class);
+        this.object = method.invoke(this);
+        this.object.toString();
     }
 
-    void m() {
-        System.out.println(this.o.toString());
+    Object getObject() {
+        return new Object();
     }
 
-    void m(int x) {
-        System.out.println(this.o.toString());
-    }
-
-    public static void main(String[] args) throws Exception {
-
-        /* safe: set object to non-null */
-        new ReflectMethodOverload();
-
-        /* safe: set object to non-null */
-        new ReflectMethodOverload(1);
+    Object getObject(int x) {
+        return null;
     }
 }

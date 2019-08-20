@@ -3,33 +3,35 @@ package init;
 import java.lang.reflect.Method;
 
 /**
- * Created by Michael Emery on 2019-06-05.
+ * Validate initialisation of an object via reflective methods.
  */
 public class ReflectMethod {
 
-    Object o;
+    Object object;
 
-    ReflectMethod(Method m) throws Exception {
-        this.o = "safe";
-        m.invoke(this);
+    // initialises field
+    ReflectMethod(Method method) throws Exception {
+        this.object = new Object();
+        method.invoke(this);
     }
 
-    ReflectMethod(Method m, int x) throws Exception {
-        m.invoke(this);
+    // fails to initialise field
+    ReflectMethod(Method method, int x) throws Exception {
+        method.invoke(this);
     }
 
-    void m() {
-        System.out.println(this.o.toString());
+    // accesses field before initialised
+    ReflectMethod(Method method, int x, int y) throws Exception {
+        method.invoke(this);
+        this.object = new Object();
     }
 
-    public static void main(String[] args) throws Exception {
+    void beString() {
+        this.object.toString();
+    }
+
+    static Method getBeStringMethod() throws NoSuchMethodException {
         Class<?> C = ReflectMethod.class;
-        Method m = C.getDeclaredMethod("m");
-
-        /* safe: set object to non-null */
-        new ReflectMethod(m);
-
-        /* safe: set object to non-null */
-        new ReflectMethod(m, 1);
+        return C.getDeclaredMethod("beString");
     }
 }

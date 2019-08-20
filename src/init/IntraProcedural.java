@@ -1,28 +1,26 @@
 package init;
 
 /**
- * Reference an object before initialisation is complete.
+ * Validate initialisation of an object via a single method.
  */
 public class IntraProcedural {
 
-    Object o;
+    Object object;
 
+    // initialises field
     IntraProcedural() {
-        this.o = "safe";
-        System.out.println(this.o.toString());
+        this.object = new Object();
+        this.object.toString();
     }
 
+    // fails to initialise field
     IntraProcedural(int x) {
-        System.out.println(this.o.toString());
-        this.o = new IntraProcedural();
+        this.object.toString();
     }
 
-    public static void main(String[] args) throws NullPointerException {
-
-        /* safe: set object to non-null */
-        new IntraProcedural();
-
-        /* unsafe: access object before setting */
-        new IntraProcedural(1);
+    // accesses field before initialised
+    IntraProcedural(int x, int y) {
+        this.object.toString();
+        this.object = new Object();
     }
 }

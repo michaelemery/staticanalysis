@@ -1,33 +1,25 @@
 package init;
 
 /**
- * Initialise with a null reference via intra-procedural assignment.
+ * Validate initialisation of an object via layered methods.
  */
-
 public class InterProcedural {
 
-    Object o;
+    Object object;
 
-    public InterProcedural() {
-        this.o = "safe";
-        System.out.println(this.o.toString());
+    // initialises field
+    InterProcedural() {
+        this.object = set();
+        this.object.toString();
     }
 
-    public InterProcedural(int x) {
-        m();
-        o = new InterProcedural();
+    // accesses field before initialised
+    InterProcedural(int x) {
+        this.object.toString();
+        this.object = set();
     }
 
-    public void m() {
-        System.out.println(this.o.toString());
-    }
-
-    public static void main(String[] args) {
-
-        /* safe: set object to non-null */
-        new InterProcedural();
-
-        /* unsafe: set object to null */
-        new InterProcedural(1);
+    static Object set() {
+        return new Object();
     }
 }

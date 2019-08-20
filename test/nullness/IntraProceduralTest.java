@@ -13,6 +13,7 @@ import org.junit.jupiter.api.Test;
  */
 class IntraProceduralTest {
 
+<<<<<<< HEAD
 	IntraProcedural i;
 
 	@BeforeEach
@@ -42,4 +43,35 @@ class IntraProceduralTest {
 			System.out.println(i.o.toString());
 		});
 	}
+=======
+    IntraProcedural i;
+
+    @BeforeEach
+    void setUp() {
+        i = new IntraProcedural("init");
+        assertEquals(i.object, "init");
+    }
+
+    @AfterEach
+    void tearDown() {
+        i = null;
+    }
+
+    @Test
+    public void safeSet() {
+        i.object = "safe";
+        assertEquals(i.object, "safe");
+        assertDoesNotThrow(() -> {
+            i.object.toString();
+        });
+    }
+
+    @Test
+    public void unsafeSet() {
+        i.object = null;
+        assertThrows(NullPointerException.class, () -> {
+            System.out.println(i.object.toString());
+        });
+    }
+>>>>>>> 6509b1964bb2744212544ed36e597b8408518b90
 }

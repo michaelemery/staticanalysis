@@ -1,34 +1,38 @@
 package init;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
+ * Validate initialisation of an object via a single method.
  */
-class IntraProceduralTest {
+public class IntraProceduralTest {
 
-    IntraProcedural i;
-
-    @AfterEach
-    void tearDown() {
-        i = null;
+    @Test
+    public void validInitialise() {
+        assertDoesNotThrow(() -> {
+            new IntraProcedural();
+        });
     }
 
     @Test
+<<<<<<< HEAD
     void testSafeSet() {
         i = new IntraProcedural();
         assertEquals(this.i.toString(), "safe");
+=======
+    public void failToInitialise() {
+        assertThrows(NullPointerException.class, () -> {
+            new IntraProcedural(1);
+        });
+>>>>>>> 6509b1964bb2744212544ed36e597b8408518b90
     }
 
     @Test
-    void unsafeSet() {
-        new IntraProcedural(1);
+    public void accessBeforeInitialised() {
         assertThrows(NullPointerException.class, () -> {
-            this.i.toString();
+            new IntraProcedural(1, 2);
         });
-
     }
 }
