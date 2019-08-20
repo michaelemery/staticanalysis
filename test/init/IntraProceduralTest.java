@@ -18,7 +18,7 @@ class IntraProceduralTest {
     }
 
     @Test
-    void safeSet() {
+    void testSafeSet() {
         i = new IntraProcedural();
         assertEquals(this.i.toString(), "safe");
     }
