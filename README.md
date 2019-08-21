@@ -45,9 +45,9 @@ Dynamic programming languages are a class of high-level programming languages wh
 | IntraProcedural | Single method. No dynamic features. |
 | InterProcedural | Multiple methods. No dynamic features. |
 | ReflectMethod | Methods invoked via reflection. |
-| ReflectMethodOverload | Overloaded methods invoked via reflection. |
-| ReflectFieldAccess | Objects directly manipulated via reflective field access. |
-| InvokeDynamicVirtual | Dynamically invoked non-static (virtual) methods. |
+| ReflectConstructor | Constructors invoked via reflection. |
+| ReflectField | Objects directly manipulated via reflective field access. |
+| InvokeDynamicMethod | Dynamically invoked via dynamically invoked methods. |
 | InvokeDynamicConstructor | Objects manipulated via dynamically invoked constructor. |
 | InvokeDynamicField | Objects directly manipulated via dynamic field access. |
 | DynamicProxy | Proxy instances of the original class interface. |
@@ -61,7 +61,7 @@ Tests are simple programs incorporating a single deliberate error of a specific 
  | false negative | Checker failed to detect an error of the type being tested. | 
  | false positive |Checker incorrectly identifies safe code as an error (or potential error) of the type being tested. |
  
-Although each test incorporates only one intentional error, that error may be detected at multiple locations within the code. This may occur where a checker attempts to identify not just the error, but also it's pre-cursors and cascading effects. Multiple counts of any correctly identified error are only counted once, and are not considered false positives. Where a checker correctly identifies an issue that is unrelated to the test, that outcome is ignored. Outcomes are categorised as either true or false, regardless of the number of occurrences.
+Some errors may be detected at multiple locations within the code. This may occur where a checker attempts to identify not just the error, but also it's pre-cursors and cascading effects. Multiple counts of any correctly identified error are only counted once, and are not considered false positives. Where a checker correctly identifies an issue that is unrelated to the test, that outcome is recorded as Not Applicable (NA).
 
 The final result of each test is based on the combination of false negative and false positive outcomes. Descriptions are consistent regardless of how many false negatives or false positives are identified by the the checker in each test.
 
@@ -70,4 +70,4 @@ The final result of each test is based on the combination of false negative and 
 | **accurate** | Found the error and nothing else. |
 | **imprecise** | Found the error but wrongly flagged safe code. |
 | **unsound** | Did not find anything. | yes <br> *-2* |
-| **aberrant** | Did not find the error, and wrongly flagged safe code. |
+| **NA** | Test not applicable for checker / language feature combination |
