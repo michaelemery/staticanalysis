@@ -14,183 +14,343 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/IntraProcedural.java)
 
-#### docker
+[init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
+
+#### run checker from docker
 
 ```
-javac init/IntraProcedural.java
-findbugs init/IntraProcedural.class
+javac -d out/ src/init/IntraProcedural.java
+findbugs out/init/IntraProcedural.class
 ```
 
-#### output
+#### checker output
 
 ```
-M C UR: Uninitialized read of o in new init.IntraProcedural(int)  At IntraProcedural.java:[line 16]
-Warnings generated: 1
+M C UR: Uninitialized read of object in new init.IntraProcedural(int)  At IntraProcedural.java:[line 18]
+M C UR: Uninitialized read of object in new init.IntraProcedural(int, int)  At IntraProcedural.java:[line 23]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 13]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 18]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 23]
+Warnings generated: 5
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 18(i) | TP |
+| 23(i) | TP |
+| 13 | NA |
+| 18(ii) | NA |
+| 23(ii) | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| + | 2 | 0 |
+| - | 0 | 1 |
+
+&nbsp; ⟶ &nbsp; accurate
+
+<br>
 
 ## InterProcedural
 
 [init/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
 
-#### docker
+[init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
+
+#### run checker from docker
 
 ```
-javac init/InterProcedural.java
-findbugs init/InterProcedural.class
+javac -d out/ src/init/InterProcedural.java
+findbugs out/init/InterProcedural.class
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+M C UR: Uninitialized read of object in new init.InterProcedural(int)  At InterProcedural.java:[line 18]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 13]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 18]
+Warnings generated: 3
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 18(i) | TP |
+| 13 | NA |
+| 18(ii) | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 2 | 0 | unsound |
+| + | 1 | 0 |
+| - | 0 | 1 |
+
+&nbsp; ⟶ &nbsp; accurate
+
+<br>
 
 ## ReflectMethod
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
 
-#### docker
+[init/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
+
+#### run checker from docker
 
 ```
-javac init/ReflectMethod.java
-findbugs init/ReflectMethod.class
+javac -d out/ src/init/ReflectMethod.java
+findbugs out/init/ReflectMethod.class
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+M C UR: Uninitialized read of object in new init.ReflectMethod(int)  At ReflectMethod.java:[line 20]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectMethod.java:[line 15]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectMethod.java:[line 21]
+Warnings generated: 3
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 20 | TP |
+| 15 | NA |
+| 21 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| + | 1 | 0 |
+| - | 0 | 1 |
 
-## ReflectMethodOverload
+&nbsp; ⟶ &nbsp; accurate
 
-[init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethodOverload.java)
+<br>
 
-#### docker
+## ReflectConstructor
+
+[init/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectConstructor.java)
+
+[init/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectConstructorTest.java)
+
+#### run checker from docker
 
 ```
-javac init/ReflectMethodOverload.java
-findbugs init/ReflectMethodOverload.class
+javac -d out/ src/init/ReflectConstructor.java
+findbugs out/init/ReflectConstructor.class
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectConstructor.java:[line 14]
+Warnings generated: 1
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 14 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
-## ReflectFieldAccess
+&nbsp; ⟶ &nbsp; unsound
 
-[init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectFieldAccess.java)
+<br>
 
-#### docker
+## ReflectField
+
+[init/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectField.java)
+
+[init/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectFieldTest.java)
+
+#### run checker from docker
 
 ```
-javac init/ReflectFieldAccess.java
-findbugs init/ReflectFieldAccess.class
+javac -d out/ src/init/ReflectField.java
+findbugs out/init/ReflectField.class
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+M C UR: Uninitialized read of object in new init.ReflectField()  At ReflectField.java:[line 16]
+M C UR: Uninitialized read of object in new init.ReflectField(int)  At ReflectField.java:[line 23]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectField.java:[line 16]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectField.java:[line 23]
+M C UwF: Unwritten field: init.ReflectField.object  At ReflectField.java:[line 16]
+M C NP: Read of unwritten field object in new init.ReflectField(int)  At ReflectField.java:[line 23]
+M C NP: Read of unwritten field object in new init.ReflectField()  At ReflectField.java:[line 16]
+Warnings generated: 7
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 16(i), 16(iii), 16(iv) | FP |
+| 23(i), 23(iii) | TP |
+| 16(ii) | NA |
+| 23(ii) | NA |
+
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| + | 1 | 1 |
+| - | 0 | 0 |
 
-## InvokeDynamicVirtual
+&nbsp; ⟶ &nbsp; imprecise
 
-[init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicVirtual.java)
+<br>
 
-#### docker
+## InvokeDynamicMethod
+
+[init/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicMethod.java)
+
+[init/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
+
+#### run checker from docker
 
 ```
-javac init/InvokeDynamicVirtual.java
-findbugs init/InvokeDynamicVirtual.class init/InvokeDynamicVirtual.class
+javac -d out/ src/init/InvokeDynamicMethod.java
+findbugs out/init/InvokeDynamicMethod.class
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamicMethod.java:[line 17]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamicMethod.java:[line 23]
+Warnings generated: 2
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 17 | NA |
+| 23 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## InvokeDynamicConstructor
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicConstructor.java)
 
-#### docker
+[init/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
+
+#### run checker from docker
 
 ```
-javac init/InvokeDynamicConstructor.java
-findbugs init/InvokeDynamicConstructor.class
+javac -d out/ src/init/InvokeDynamicConstructor.java
+findbugs out/init/InvokeDynamicConstructor.class
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamicConstructor.java:[line 16]
+Warnings generated: 1
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 16 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | o | unsound |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## InvokeDynamicField
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicField.java)
 
-#### docker
+[init/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicFieldTest.java)
+
+#### run checker from docker
 
 ```
-javac init/InvokeDynamicField.java
-findbugs init/InvokeDynamicField.class
+javac -d out/ src/init/InvokeDynamicField.java
+findbugs out/init/InvokeDynamicField.class
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamicField.java:[line 18]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamicField.java:[line 25]
+Warnings generated: 2
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 18 | NA |
+| 25 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## DynamicProxy
 
 [init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/DynamicProxy.java)
 
-#### docker
+[init/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/DynamicProxyTest.java)
+
+#### run checker from docker
 
 ```
-javac init/DynamicProxy.java
-findbugs init/DynamicProxy.class init/DynamicProxy.class
+javac -d out/ src/init/DynamicProxy.java
+findbugs out/init/DynamicProxy.class
 ```
 
-#### output
+#### checker output
 
 ```
 The following classes needed for analysis were missing:
@@ -198,6 +358,19 @@ The following classes needed for analysis were missing:
 Missing classes: 1
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | FN |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 1 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>

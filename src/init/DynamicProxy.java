@@ -3,7 +3,7 @@ package init;
 import java.lang.reflect.Proxy;
 
 /**
- * Assign a null reference via dynamic proxy invocation.
+ * Initialisation of an object via dynamic proxy invocation.
  */
 public class DynamicProxy {
 
@@ -23,9 +23,7 @@ public class DynamicProxy {
         Object get(Object o);
     }
 
-    public static void main(String[] args) {
-
-        /* safe: set object to non-null */
+    static Foo getProxyInstance() {
         Foo proxyInstance = (Foo) Proxy.newProxyInstance(
                 Foo.class.getClassLoader(),
                 new Class[]{Foo.class},
@@ -37,11 +35,16 @@ public class DynamicProxy {
                                 "Unsupported method: " + method.getName());
                     }
                 });
+        return proxyInstance;
+    }
 
-        /* safe: simulate setting object to non-null */
-        new DynamicProxy(proxyInstance);
+    // initialises field
+    static void constructWithObject() {
+        new DynamicProxy(getProxyInstance());
+    }
 
-        /* unsafe: simulate setting object to null */
-        new DynamicProxy(proxyInstance, 1);
+    // fails to initialise field
+    static void constructWithNull() {
+        new DynamicProxy(getProxyInstance(), 1);
     }
 }

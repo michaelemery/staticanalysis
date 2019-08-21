@@ -2,34 +2,31 @@ package init;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
+import java.lang.invoke.MethodType;
 
 /**
- * Assign a null reference via dynamic field access invocation.
+ * Initialisation of an object via dynamic invocation of a field set.
  */
 public class InvokeDynamicField {
 
-    Object o;
+    Object object;
 
-    InvokeDynamicField(MethodHandle h) throws Throwable {
-        this.o = "init";
-        h.invoke(this, "safe");
-        System.out.println(this.o.toString());
+    // initialises field
+    InvokeDynamicField() throws Throwable {
+        this.object = new Object();
+        getSetterMethodHandle().invoke(this, new Object());
+        this.object.toString();
     }
 
-    InvokeDynamicField(MethodHandle h, int x) throws Throwable {
-        this.o = "init";
-        h.invoke(this, null);
-        System.out.println(this.o.toString());
+    // fails to initialise field
+    InvokeDynamicField(int x) throws Throwable {
+        this.object = new Object();
+        getSetterMethodHandle().invoke(this, null);
+        this.object.toString();
     }
 
-    public static void main(String[] args) throws Throwable {
-        MethodHandles.Lookup l = MethodHandles.lookup();
-        MethodHandle h = l.findSetter(InvokeDynamicField.class, "o", Object.class);
-
-        /* safe: set object to non-null */
-        new InvokeDynamicField(h);
-
-        /* unsafe: set object to null */
-        new InvokeDynamicField(h, 1);
+    static MethodHandle getSetterMethodHandle() throws Throwable {
+        MethodHandles.Lookup lookup = MethodHandles.lookup();
+        return lookup.findSetter(InvokeDynamicField.class, "object", Object.class);
     }
 }

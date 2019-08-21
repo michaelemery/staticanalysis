@@ -134,17 +134,17 @@ ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
 RUN alias cfnull='-processor org.checkerframework.checker.nullness.NullnessChecker'
 
 
-# --- COPY JUNIT5 STANDALONE APP TO LIB
+# --- \JUNIT STANDALONE APP AND TEST SCRIPT
 
 ADD lib/junit-platform-console-standalone-1.5.1.jar /lib
-
-
-# --- COPY JUNIT TEST SCRIPT TO /
-
 ADD test.sh /
 
 
-# --- COPY SOURCE FILES FOR CHECKER TESTS
+# --- COPY SOURCE AND TEST FILES FOR CHECKER TESTS
 
 RUN mkdir /src
 ADD src /src
+RUN mkdir /test
+ADD test /test
+RUN mkdir /out
+WORKDIR /

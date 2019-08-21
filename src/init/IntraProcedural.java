@@ -1,7 +1,7 @@
 package init;
 
 /**
- * Validate initialisation of an object via a single method.
+ * Initialisation of an object via a single method.
  */
 public class IntraProcedural {
 

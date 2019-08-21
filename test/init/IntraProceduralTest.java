@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Validate initialisation of an object via a single method.
+ * Test initialisation of an object via a single method.
  */
 public class IntraProceduralTest {
 

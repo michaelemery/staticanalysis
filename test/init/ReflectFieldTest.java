@@ -5,20 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Validate initialisation of an object via reflective field access.
+ * Test initialisation of an object via reflective field access.
  */
-class ReflectFieldAccessTest {
+class ReflectFieldTest {
+
     @Test
-    void validSet() throws Exception {
+    void initWithObject() throws Exception {
         assertDoesNotThrow(() -> {
-            new ReflectFieldAccess();
+            new ReflectField();
         });
     }
 
     @Test
-    void invalidSet() throws Exception {
+    void initWithNull() throws Exception {
         assertThrows(NullPointerException.class, () -> {
-            new ReflectFieldAccess(1);
+            new ReflectField(1);
         });
     }
 }
