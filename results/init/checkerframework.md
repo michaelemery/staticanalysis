@@ -34,18 +34,18 @@ sh test.sh [ [ package-name ] | [ package-name class-name ] ]
 #### run checker from docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/IntraProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/IntraProcedural.java
 ```
 
 #### checker output
 
 ```
-src/init/IntraProcedural.java:18: error: [dereference.of.nullable] dereference of possibly-null reference object
-        object.toString();
-        ^
-src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference of possibly-null reference object
-        object.toString();
-        ^
+src/init/IntraProcedural.java:18: error: [dereference.of.nullable] dereference of possibly-null reference this.object
+        this.object.toString();
+            ^
+src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference of possibly-null reference this.object
+        this.object.toString();
+            ^
 2 errors
 ```
 
@@ -76,7 +76,7 @@ src/init/IntraProcedural.java:23: error: [dereference.of.nullable] dereference o
 #### run checker from docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/InterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/InterProcedural.java
 ```
 
 #### checker output
@@ -109,96 +109,41 @@ src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference o
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
 
-[test/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
+[test/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
 
 #### run checker from docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/ReflectMethod.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/ReflectMethod.java
 ```
 
 #### checker output
 
 ```
-src/init/ReflectMethod.java:15: error: [argument.type.incompatible] incompatible types in argument.
-        method.invoke(this);
-                      ^
-  found   : @UnderInitialization(init.ReflectMethod.class) @NonNull ReflectMethod
-  required: @Initialized @NonNull Object
-src/init/ReflectMethod.java:19: error: [initialization.fields.uninitialized] the constructor does not initialize fields: object
-    ReflectMethod(Method method, int x) throws Exception {
-    ^
-src/init/ReflectMethod.java:20: error: [argument.type.incompatible] incompatible types in argument.
-        method.invoke(this);
-                      ^
-  found   : @UnderInitialization(java.lang.Object.class) @NonNull ReflectMethod
-  required: @Initialized @NonNull Object
-src/init/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible types in argument.
-        method.invoke(this);
-                      ^
-  found   : @UnderInitialization(java.lang.Object.class) @NonNull ReflectMethod
-  required: @Initialized @NonNull Object
-4 errors
-```
-
-#### output analysis
-
-| line(s) | event |
-| :---: | :---: |
-| 15 | FP |
-| 19, 20 | TP |
-| 25 | TP |
-
-#### expected / actual errors
-
-|  | + | - |
-| :---: | :---: | :---: |
-| + | 2 | 1 |
-| - | 0 | 0 |
-
-&nbsp; ⟶ &nbsp; imprecise
-
-<br>
-
-## ReflectMethodOverload
-
-[init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethodOverload.java)
-
-[test/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodOverloadTest.java)
-
-#### run checker from docker
-
-```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/ReflectMethodOverload.java
-```
-
-#### checker output
-
-```
-src/init/ReflectMethodOverload.java:16: error: [assignment.type.incompatible] incompatible types in assignment.
-        this.object = method.invoke(this);
+src/init/ReflectMethod.java:14: error: [assignment.type.incompatible] incompatible types in assignment.
+        this.object = method.invoke(null, new Object());
                                    ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
-src/init/ReflectMethodOverload.java:16: error: [argument.type.incompatible] incompatible types in argument.
-        this.object = method.invoke(this);
+src/init/ReflectMethod.java:14: error: [argument.type.incompatible] incompatible types in argument.
+        this.object = method.invoke(null, new Object());
                                     ^
-  found   : @UnderInitialization(java.lang.Object.class) @NonNull ReflectMethodOverload
-  required: @Initialized @NonNull Object
-src/init/ReflectMethodOverload.java:24: error: [assignment.type.incompatible] incompatible types in assignment.
-        this.object = method.invoke(this);
-                                   ^
-  found   : @Initialized @Nullable Object
-  required: @Initialized @NonNull Object
-src/init/ReflectMethodOverload.java:24: error: [argument.type.incompatible] incompatible types in argument.
-        this.object = method.invoke(this);
-                                    ^
-  found   : @UnderInitialization(java.lang.Object.class) @NonNull ReflectMethodOverload
-  required: @Initialized @NonNull Object
-src/init/ReflectMethodOverload.java:33: error: [return.type.incompatible] incompatible types in return.
-        return null;
-               ^
   found   : null
+  required: @Initialized @NonNull Object
+src/init/ReflectMethod.java:20: error: [assignment.type.incompatible] incompatible types in assignment.
+        this.object = method.invoke(null, (Object) object);
+                                   ^
+  found   : @Initialized @Nullable Object
+  required: @Initialized @NonNull Object
+src/init/ReflectMethod.java:20: error: [argument.type.incompatible] incompatible types in argument.
+        this.object = method.invoke(null, (Object) object);
+                                    ^
+  found   : null
+  required: @Initialized @NonNull Object
+src/init/ReflectMethod.java:20: error: [argument.type.incompatible] incompatible types in argument.
+        this.object = method.invoke(null, (Object) object);
+                                          ^
+  found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
 5 errors
 ```
@@ -207,9 +152,8 @@ src/init/ReflectMethodOverload.java:33: error: [return.type.incompatible] incomp
 
 | line(s) | event |
 | :---: | :---: |
-| 16(i), 16(ii) | FP |
-| 24(i), 24(ii) | TP |
-| 33 | NA |
+| 14(i), 14(ii) | FP |
+| 20(i), 20(ii), 20(iii) | TP |
 
 #### expected / actual errors
 
@@ -218,29 +162,69 @@ src/init/ReflectMethodOverload.java:33: error: [return.type.incompatible] incomp
 | + | 1 | 1 |
 | - | 0 | 0 |
 
-&nbsp; ⟶ &nbsp; unsound
+&nbsp; ⟶ &nbsp; imprecise
 
 <br>
 
-## ReflectFieldAccess
+## ReflectConstructor
 
-[init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectFieldAccess.java)
+[init/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectConstructor.java)
 
-[test/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectFieldAccessTest.java)
+[test/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectConstructorTest.java)
 
 #### run checker from docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/ReflectFieldAccess.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/ReflectConstructor.java
+```
+
+#### checker output
+
+```
+src/init/ReflectConstructor.java:30: error: [argument.type.incompatible] incompatible types in argument.
+        constructor.newInstance((Object) null);
+                                ^
+  found   : @FBCBottom @Nullable Object
+  required: @Initialized @NonNull Object
+1 error
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 30 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 1 | 0 |
+| - | 0 | 1 |
+
+&nbsp; ⟶ &nbsp; accurate
+
+<br>
+
+## ReflectField
+
+[init/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectField.java)
+
+[test/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectFieldTest.java)
+
+#### run checker from docker
+
+```
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/ReflectField.java
 ```
 
 #### checker output
 
 ````
-src/init/ReflectFieldAccess.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.object
+src/init/ReflectField.java:16: error: [dereference.of.nullable] dereference of possibly-null reference this.object
         this.object.toString();
             ^
-src/init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereference of possibly-null reference this.object
+src/init/ReflectField.java:23: error: [dereference.of.nullable] dereference of possibly-null reference this.object
         this.object.toString();
             ^
 2 errors
@@ -264,32 +248,22 @@ src/init/ReflectFieldAccess.java:23: error: [dereference.of.nullable] dereferenc
 
 <br>
 
-## InvokeDynamicVirtual
+## InvokeDynamicMethod
 
-[init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicVirtual.java)
+[init/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicMethod.java)
 
-[test/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicVirtualTest.java)
+[test/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
 
 #### run checker from docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/InvokeDynamicVirtual.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/InvokeDynamicMethod.java
 ```
 
 #### checker output
 
 ```
-init/InvokeDynamicVirtual.java:16: error: [argument.type.incompatible] incompatible types in argument.
-        h.invoke(this, "safe");
-                 ^
-  found   : @UnderInitialization(init.InvokeDynamicVirtual.class) @NonNull InvokeDynamicVirtual
-  required: @Initialized @NonNull InvokeDynamicVirtual
-init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompatible types in argument.
-        h.invoke(this, null);
-                 ^
-  found   : @UnderInitialization(init.InvokeDynamicVirtual.class) @NonNull InvokeDynamicVirtual
-  required: @Initialized @NonNull InvokeDynamicVirtual
-2 errors
+No reported issues.
 ```
 
 #### output analysis
@@ -303,9 +277,9 @@ init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompati
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 0 | 0 |
+| - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; ???
+&nbsp; ⟶ &nbsp; unsound
 
 <br>
 
@@ -313,18 +287,18 @@ init/InvokeDynamicVirtual.java:21: error: [argument.type.incompatible] incompati
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicConstructor.java)
 
-[test/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
+[test/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
 
 #### run checker from docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/InvokeDynamicConstructor.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/InvokeDynamicConstructor.java
 ```
 
 #### checker output
 
 ```
-No rpeorted issues.
+No reported issues.
 ```
 
 #### output analysis
@@ -338,9 +312,9 @@ No rpeorted issues.
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 0 | 0 |
+| - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; ???
+&nbsp; ⟶ &nbsp; unsound
 
 <br>
 
@@ -348,25 +322,25 @@ No rpeorted issues.
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicField.java)
 
-[test/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicFieldTest.java)
+[test/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicFieldTest.java)
 
 #### run checker from docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/InvokeDynamicField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/InvokeDynamicField.java
 ```
 
 #### checker output
 
 ```
-init/InvokeDynamicField.java:15: error: [argument.type.incompatible] incompatible types in argument.
-        h.invoke(this, "safe");
-                 ^
+src/init/InvokeDynamicField.java:17: error: [argument.type.incompatible] incompatible types in argument.
+        getSetterMethodHandle().invoke(this, new Object());
+                                       ^
   found   : @UnderInitialization(init.InvokeDynamicField.class) @NonNull InvokeDynamicField
   required: @Initialized @NonNull InvokeDynamicField
-init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatible types in argument.
-        h.invoke(this, null);
-                 ^
+src/init/InvokeDynamicField.java:24: error: [argument.type.incompatible] incompatible types in argument.
+        getSetterMethodHandle().invoke(this, null);
+                                       ^
   found   : @UnderInitialization(init.InvokeDynamicField.class) @NonNull InvokeDynamicField
   required: @Initialized @NonNull InvokeDynamicField
 2 errors
@@ -376,16 +350,17 @@ init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatibl
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 17 | FP |
+| 24 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
+| + | 1 | 1 |
 | - | 0 | 0 |
 
-&nbsp; ⟶ &nbsp; ???
+&nbsp; ⟶ &nbsp; imprecise
 
 <br>
 
@@ -398,7 +373,7 @@ init/InvokeDynamicField.java:21: error: [argument.type.incompatible] incompatibl
 #### run checker from docker
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker src/init/DynamicProxy.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/DynamicProxy.java
 ```
 
 #### checker output
@@ -409,7 +384,7 @@ src/init/DynamicProxy.java:18: error: [argument.type.incompatible] incompatible 
                                    ^
   found   : null
   required: @Initialized @NonNull Object
-src/init/DynamicProxy.java:30: error: [argument.type.incompatible] incompatible types in argument.
+src/init/DynamicProxy.java:28: error: [argument.type.incompatible] incompatible types in argument.
                 Foo.class.getClassLoader(),
                                         ^
   found   : @Initialized @Nullable ClassLoader
@@ -421,13 +396,14 @@ src/init/DynamicProxy.java:30: error: [argument.type.incompatible] incompatible 
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 18 | TP |
+| 28 | FN |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
+| + | 1 | 1 |
 | - | 0 | 0 |
 
-&nbsp; ⟶ &nbsp; ???
+&nbsp; ⟶ &nbsp; imprecise

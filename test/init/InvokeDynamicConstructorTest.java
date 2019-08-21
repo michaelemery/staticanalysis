@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test initialisation of an object via reflective methods calls.
+ * Test initialisation of an object via dynamic invocation of a constructor.
  */
-class ReflectMethodTest {
+class InvokeDynamicConstructorTest {
 
     @Test
     void initWithObject() throws Exception {
         assertDoesNotThrow(() -> {
-            new ReflectMethod();
+            InvokeDynamicConstructor.constructWithObject();
         });
     }
 
     @Test
     void initWithNull() throws Exception {
         assertThrows(NullPointerException.class, () -> {
-            new ReflectMethod(1);
+            InvokeDynamicConstructor.constructWithNull();
         });
     }
 }

@@ -5,26 +5,30 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Created by Michael Emery on 2019-06-06.
+ * Initialisation of an object via dynamic invocation of a constructor.
  */
 public class InvokeDynamicConstructor {
 
-    Object o;
+    Object object;
 
-    InvokeDynamicConstructor(Object obj) {
-        this.o = obj;
-        System.out.println(this.o.toString());
+    InvokeDynamicConstructor(Object object) throws Throwable {
+        this.object = object;
+        this.object.toString();
     }
 
-    public static void main(String[] args) throws Throwable {
-        MethodHandles.Lookup l = MethodHandles.lookup();
-        MethodType t = MethodType.methodType(void.class, Object.class);
-        MethodHandle h = l.findConstructor(InvokeDynamicConstructor.class, t);
+    static MethodHandle getConstructorMethodHandle() throws Throwable {
+        MethodHandles.Lookup lookup = MethodHandles.lookup();
+        MethodType methodType = MethodType.methodType(void.class, Object.class);
+        return lookup.findConstructor(InvokeDynamicConstructor.class, methodType);
+    }
 
-        /* safe: set object to non-null */
-        h.invoke("safe");
+    // initialises field
+    static void constructWithObject() throws Throwable {
+        getConstructorMethodHandle().invoke(new Object());
+    }
 
-        /* unsafe: set object to null */
-        h.invoke(null);
+    // fails to initialise field
+    static void constructWithNull() throws Throwable {
+        getConstructorMethodHandle().invoke(null);
     }
 }

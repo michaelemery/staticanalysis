@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * Validate initialisation of an object via layered methods.
+ * Test initialisation of an object via layered methods.
  */
 public class InterProceduralTest {
 

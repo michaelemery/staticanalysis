@@ -3,35 +3,25 @@ package init;
 import java.lang.reflect.Method;
 
 /**
- * Validate initialisation of an object via reflective methods.
+ * Initialisation of an object via reflective methods.
  */
 public class ReflectMethod {
 
     Object object;
 
-    // initialises field
-    ReflectMethod(Method method) throws Exception {
-        this.object = new Object();
-        method.invoke(this);
-    }
-
-    // fails to initialise field
-    ReflectMethod(Method method, int x) throws Exception {
-        method.invoke(this);
-    }
-
-    // accesses field before initialised
-    ReflectMethod(Method method, int x, int y) throws Exception {
-        method.invoke(this);
-        this.object = new Object();
-    }
-
-    void beString() {
+    ReflectMethod() throws Exception {
+        Method method = this.getClass().getDeclaredMethod("returnObject", Object.class);
+        this.object = method.invoke(null, new Object());
         this.object.toString();
     }
 
-    static Method getBeStringMethod() throws NoSuchMethodException {
-        Class<?> C = ReflectMethod.class;
-        return C.getDeclaredMethod("beString");
+    ReflectMethod(int x) throws Exception {
+        Method method = this.getClass().getDeclaredMethod("returnObject", Object.class);
+        this.object = method.invoke(null, (Object) object);
+        this.object.toString();
+    }
+
+    static Object returnObject(Object object) {
+        return object;
     }
 }
