@@ -17,7 +17,7 @@ public class ReflectMethod {
 
     ReflectMethod(int x) throws Exception {
         Method method = this.getClass().getDeclaredMethod("returnObject", Object.class);
-        this.object = method.invoke(null, (Object) object);
+        this.object = method.invoke(null, (Object) null);
         this.object.toString();
     }
 
