@@ -8,7 +8,7 @@ Version: findbugs-3.0.1
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-If you have Docker installed on your system, you may pull/update and run you Docker instance with;
+If you have Docker installed on your system, you may pull/update and run the Docker instance for this project with;
 
 ```
 docker pull michaelemery/staticanalysis
