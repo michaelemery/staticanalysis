@@ -19,13 +19,13 @@ public class ReflectConstructor {
     }
 
     // initialises field
-    static void constructWithObject() throws Exception {
+    static void initialiseWithObject() throws Exception {
         Constructor constructor = ReflectConstructor.getConstructor(Object.class);
         constructor.newInstance(new Object());
     }
 
     // fails to initialise field
-    static void constructWithNull() throws Exception {
+    static void failToInitialise() throws Exception {
         Constructor constructor = ReflectConstructor.getConstructor(Object.class);
         constructor.newInstance((Object) null);
     }

@@ -38,7 +38,10 @@ M C UR: Uninitialized read of object in new init.IntraProcedural(int, int)  At I
 M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 13]
 M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 18]
 M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 23]
-Warnings generated: 5
+M D RV: Return value of new IntraProcedural() ignored, but method has no side effect  At IntraProcedural.java:[line 28]
+M D RV: Return value of new IntraProcedural(int) ignored, but method has no side effect  At IntraProcedural.java:[line 32]
+M D RV: Return value of new IntraProcedural(int, int) ignored, but method has no side effect  At IntraProcedural.java:[line 36]
+Warnings generated: 8
 ```
 
 #### output analysis
@@ -47,9 +50,9 @@ Warnings generated: 5
 | :---: | :---: |
 | 18(i) | TP |
 | 23(i) | TP |
-| 13 | NA |
-| 18(ii) | NA |
-| 23(ii) | NA |
+| 13, 18(ii), 23(ii) | NA |
+| 28, 32, 36 | NA |
+
 
 #### expected / actual errors
 
@@ -78,19 +81,23 @@ findbugs out/init/InterProcedural.class
 #### checker output
 
 ```
-M C UR: Uninitialized read of object in new init.InterProcedural(int)  At InterProcedural.java:[line 18]
+M C UR: Uninitialized read of object in new init.InterProcedural(int, int)  At InterProcedural.java:[line 24]
 M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 13]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 18]
-Warnings generated: 3
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 19]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 24]
+M D RV: Return value of new InterProcedural() ignored, but method has no side effect  At InterProcedural.java:[line 33]
+M D RV: Return value of new InterProcedural(int) ignored, but method has no side effect  At InterProcedural.java:[line 37]
+M D RV: Return value of new InterProcedural(int, int) ignored, but method has no side effect  At InterProcedural.java:[line 41]
+Warnings generated: 7
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 18(i) | TP |
-| 13 | NA |
-| 18(ii) | NA |
+| 24 | TP |
+| 13, 19, 24 | NA |
+| 33, 37, 41 | NA |
 
 #### expected / actual errors
 
@@ -119,28 +126,25 @@ findbugs out/init/ReflectMethod.class
 #### checker output
 
 ```
-M C UR: Uninitialized read of object in new init.ReflectMethod(int)  At ReflectMethod.java:[line 20]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectMethod.java:[line 15]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectMethod.java:[line 21]
-Warnings generated: 3
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectMethod.java:[line 16]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectMethod.java:[line 23]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 20 | TP |
-| 15 | NA |
-| 21 | NA |
+| 16, 23 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; accurate
+&nbsp; ⟶ &nbsp; unsound
 
 <br>
 
@@ -211,12 +215,9 @@ Warnings generated: 7
 
 | line(s) | event |
 | :---: | :---: |
-| 16(i), 16(iii), 16(iv) | FP |
-| 23(i), 23(iii) | TP |
-| 16(ii) | NA |
-| 23(ii) | NA |
-
-| - | - |
+| 16(i), 16(iii), 16(iv) FP |
+| 23(i), 23(iii)| TP |
+| 16(ii), 23(ii)| NA |
 
 #### expected / actual errors
 
@@ -254,8 +255,7 @@ Warnings generated: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 17 | NA |
-| 23 | NA |
+| 17, 23 | NA |
 
 #### expected / actual errors
 

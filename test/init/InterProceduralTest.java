@@ -1,6 +1,5 @@
 package init;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -12,16 +11,23 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class InterProceduralTest {
 
     @Test
-    void validInitialise() {
+    void testInitialiseWithObject() {
         assertDoesNotThrow(() -> {
-            InterProcedural i = new InterProcedural();
+            InterProcedural.initialiseWithObject();
         });
     }
 
     @Test
-    void accessBeforeInitialised() {
+    void testFailToInitialise() {
         assertThrows(NullPointerException.class, () -> {
-            InterProcedural i = new InterProcedural(1);
+            InterProcedural.failToInitialise();
+        });
+    }
+
+    @Test
+    void testAccessBeforeInitialised() {
+        assertThrows(NullPointerException.class, () -> {
+            InterProcedural.accessBeforeInitialise();
         });
     }
 }

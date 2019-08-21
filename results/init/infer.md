@@ -4,13 +4,16 @@
 
 <br>
 
-Version: 0.13.1
-
-Infer:Eradicate is a type checker for @Nullable annotations for Java. It is part of the Infer static analysis suite of tools. The goal is to eradicate null pointer exceptions.
-@Nullable annotations denote that a parameter, field or the return value of a method can be null. When decorating a parameter, this denotes that the parameter can legitimately be null and the method will need to deal with it. When decorating a method, this denotes the method might legitimately return null.
-Starting from @Nullable-annotated programs, the checker performs a flow sensitive analysis to propagate the nullability through assignments and calls, and flags errors for unprotected accesses to nullable values or inconsistent/missing annotations. It can also be used to add annotations to a previously un-annotated program.
+Version: findbugs-3.0.1
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
+
+If you have Docker installed on your system, you may pull/update and run the Docker instance for this project with;
+
+```
+docker pull michaelemery/staticanalysis
+docker run -it --rm michaelemery/staticanalysis
+```
 
 <br>
 
@@ -18,217 +21,354 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/IntraProcedural.java)
 
-#### docker
+[init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
+
+#### run checker from docker
 
 ```
-infer run -a checkers --eradicate -- javac init/IntraProcedural.java
+infer run -a checkers --eradicate -- javac src/init/IntraProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+Found 1 issue
+
+src/init/IntraProcedural.java:17: error: ERADICATE_FIELD_NOT_INITIALIZED
+  Field `IntraProcedural.object` is not initialized in the constructor and is not declared `@Nullable`
+  15.   
+  16.       // fail to initialise
+  17. >     IntraProcedural(int x) {
+  18.           this.object.toString();
+  19.       }
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 17 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 1 | 0 |
+| - | 0 | 1 |
+
+&nbsp; ⟶ &nbsp; accurate
+
+<br>
 
 ## InterProcedural
 
 [init/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
 
-#### docker
+[init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
+
+#### run checker from docker
 
 ```
-infer run -a checkers --eradicate -- javac init/InterProcedural.java
+infer run -a checkers --eradicate -- javac src/init/InterProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+Found 1 issue
+
+src/init/InterProcedural.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `returnObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 18)
+  16.       // fail to initialise
+  17.       InterProcedural(int x) {
+  18. >         this.object = returnObject(null);
+  19.           this.object.toString();
+  20.       }
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 18 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 1 | 0 |
+| - | 0 | 1 |
+
+&nbsp; ⟶ &nbsp; accurate
+
+<br>
 
 ## ReflectMethod
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
 
-#### docker
+[init/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
+
+#### run checker from docker
 
 ```
-infer run -a checkers --eradicate -- javac init/ReflectMethod.java
+infer run -a checkers --eradicate -- javac src/init/ReflectMethod.java
 ```
 
-#### output
+#### checker output
 
 ```
-Found 1 issue
-
-init/ReflectMethod.java:17: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `ReflectMethod.o` is not initialized in the constructor and is not declared `@Nullable`.
-  15.       }
-  16.   
-  17. >     ReflectMethod(Method m, int x) throws Exception {
-  18.           m.invoke(this);
-  19.       }
-
-
-Summary of the reports
-
-  ERADICATE_FIELD_NOT_INITIALIZED: 1
+No issues found.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| + | 0 | 0 |
+| - | 1 | 0 |
 
-## ReflectMethodOverload
+&nbsp; ⟶ &nbsp; unsound
 
-[init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethodOverload.java)
+<br>
 
-#### docker
+## ReflectConstructor
+
+[init/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectConstructor.java)
+
+[init/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectConstructorTest.java)
+
+#### run checker from docker
 
 ```
-infer run -a checkers --eradicate -- javac init/ReflectMethodOverload.java
+infer run -a checkers --eradicate -- javac src/init/ReflectConstructor.java
 ```
 
-#### output
+#### checker output
 
 ```
-Found 1 issue
+No issues found.
+```
 
-init/ReflectMethodOverload.java:19: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `ReflectMethodOverload.o` is not initialized in the constructor and is not declared `@Nullable`.
-  17.       }
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
+
+## ReflectField
+
+[init/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectField.java)
+
+[init/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectFieldTest.java)
+
+#### run checker from docker
+
+```
+infer run -a checkers --eradicate -- javac src/init/ReflectField.java
+```
+
+#### checker output
+
+```
+Found 2 issues
+
+src/init/ReflectField.java:13: error: ERADICATE_FIELD_NOT_INITIALIZED
+  Field `ReflectField.object` is not initialized in the constructor and is not declared `@Nullable`
+  11.   
+  12.       // initialises field
+  13. >     ReflectField() throws Exception {
+  14.           Field field = this.getClass().getDeclaredField("object");
+  15.           field.set(this, new Object());
+
+src/init/ReflectField.java:20: error: ERADICATE_FIELD_NOT_INITIALIZED
+  Field `ReflectField.object` is not initialized in the constructor and is not declared `@Nullable`
   18.   
-  19. >     ReflectMethodOverload(int x) throws Exception {
-  20.           Class<?> C = ReflectMethodOverload.class;
-  21.           Method m = C.getDeclaredMethod("m");
-
-
-Summary of the reports
-
-  ERADICATE_FIELD_NOT_INITIALIZED: 1
+  19.       // fails to initialise field
+  20. >     ReflectField(int x) throws Exception {
+  21.           Field field = this.getClass().getDeclaredField("object");
+  22.           field.set(this, (Object) null);
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 13 | FP |
+| 20 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | accurate |
+| + | 1 | 1 |
+| - | 0 | 0 |
 
-## ReflectFieldAccess
+&nbsp; ⟶ &nbsp; imprecise
 
-[init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectFieldAccess.java)
+<br>
 
-#### docker
+## InvokeDynamicMethod
+
+[init/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicMethod.java)
+
+[init/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
+
+#### run checker from docker
 
 ```
-infer run -a checkers --eradicate -- javac init/ReflectFieldAccess.java
+infer run -a checkers --eradicate -- javac src/init/InvokeDynamicMethod.java
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+No issues found.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
 
-## InvokeDynamicVirtual
+&nbsp; ⟶ &nbsp; unsound
 
-[init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicVirtual.java)
-
-#### docker
-
-```
-infer run -a checkers --eradicate -- javac init/InvokeDynamicVirtual.java
-```
-
-#### output
-
-```
-No reported issues.
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 1 | 0 | unsound |
+<br>
 
 ## InvokeDynamicConstructor
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicConstructor.java)
 
-#### docker
+[init/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
+
+#### run checker from docker
 
 ```
-infer run -a checkers --eradicate -- javac init/InvokeDynamicConstructor.java
+infer run -a checkers --eradicate -- javac src/init/InvokeDynamicConstructor.java
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+No issues found.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## InvokeDynamicField
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicField.java)
 
-#### docker
+[init/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicFieldTest.java)
+
+#### run checker from docker
 
 ```
-infer run -a checkers --eradicate -- javac init/InvokeDynamicField.java
+infer run -a checkers --eradicate -- javac src/init/InvokeDynamicField.java
 ```
 
-#### output
+#### checker output
 
 ```
-No reported issues.
+No issues found.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## DynamicProxy
 
 [init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/DynamicProxy.java)
 
-#### docker
+[init/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/DynamicProxyTest.java)
+
+#### run checker from docker
 
 ```
-infer run -a checkers --eradicate -- javac init/DynamicProxy.java
+infer run -a checkers --eradicate -- javac src/init/DynamicProxy.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 1 issue
 
-init/DynamicProxy.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `get(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 18).
+src/init/DynamicProxy.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `get(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 18)
   16.   
   17.       DynamicProxy(Foo proxyInstance, int x) {
   18. >         this.o = proxyInstance.get(null);
-  19.           System.out.println(this.o.toString());
+  19.           this.o.toString();
   20.       }
-
-
-Summary of the reports
-
-  ERADICATE_PARAMETER_NOT_NULLABLE: 1
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 18 | FP |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| + | 0 | 1 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>

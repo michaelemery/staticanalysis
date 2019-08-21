@@ -23,12 +23,12 @@ public class InvokeDynamicConstructor {
     }
 
     // initialises field
-    static void constructWithObject() throws Throwable {
+    static void initialiseWithObject() throws Throwable {
         getConstructorMethodHandle().invoke(new Object());
     }
 
     // fails to initialise field
-    static void constructWithNull() throws Throwable {
+    static void failToInitialise() throws Throwable {
         getConstructorMethodHandle().invoke(null);
     }
 }

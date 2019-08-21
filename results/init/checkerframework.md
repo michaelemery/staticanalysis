@@ -89,10 +89,15 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 #### checker output
 
 ```
-src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference of possibly-null reference this.object
+src/init/InterProcedural.java:18: error: [argument.type.incompatible] incompatible types in argument.
+        this.object = returnObject(null);
+                                   ^
+  found   : null
+  required: @Initialized @NonNull Object
+src/init/InterProcedural.java:24: error: [dereference.of.nullable] dereference of possibly-null reference this.object
         this.object.toString();
             ^
-1 error
+2 errors
 ```
 
 #### output analysis
@@ -100,12 +105,13 @@ src/init/InterProcedural.java:18: error: [dereference.of.nullable] dereference o
 | line(s) | event |
 | :---: | :---: |
 | 18 | TP |
+| 24 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
+| + | 2 | 0 |
 | - | 0 | 1 |
 
 &nbsp; ⟶ &nbsp; accurate
@@ -127,30 +133,30 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 #### checker output
 
 ```
-src/init/ReflectMethod.java:14: error: [assignment.type.incompatible] incompatible types in assignment.
+src/init/ReflectMethod.java:15: error: [assignment.type.incompatible] incompatible types in assignment.
         this.object = method.invoke(null, new Object());
                                    ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
-src/init/ReflectMethod.java:14: error: [argument.type.incompatible] incompatible types in argument.
+src/init/ReflectMethod.java:15: error: [argument.type.incompatible] incompatible types in argument.
         this.object = method.invoke(null, new Object());
                                     ^
   found   : null
   required: @Initialized @NonNull Object
-src/init/ReflectMethod.java:20: error: [assignment.type.incompatible] incompatible types in assignment.
-        this.object = method.invoke(null, (Object) object);
+src/init/ReflectMethod.java:22: error: [assignment.type.incompatible] incompatible types in assignment.
+        this.object = method.invoke(null, (Object) null);
                                    ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
-src/init/ReflectMethod.java:20: error: [argument.type.incompatible] incompatible types in argument.
-        this.object = method.invoke(null, (Object) object);
+src/init/ReflectMethod.java:22: error: [argument.type.incompatible] incompatible types in argument.
+        this.object = method.invoke(null, (Object) null);
                                     ^
   found   : null
   required: @Initialized @NonNull Object
-src/init/ReflectMethod.java:20: error: [argument.type.incompatible] incompatible types in argument.
-        this.object = method.invoke(null, (Object) object);
+src/init/ReflectMethod.java:22: error: [argument.type.incompatible] incompatible types in argument.
+        this.object = method.invoke(null, (Object) null);
                                           ^
-  found   : @Initialized @Nullable Object
+  found   : @FBCBottom @Nullable Object
   required: @Initialized @NonNull Object
 5 errors
 ```
@@ -159,8 +165,8 @@ src/init/ReflectMethod.java:20: error: [argument.type.incompatible] incompatible
 
 | line(s) | event |
 | :---: | :---: |
-| 14(i), 14(ii) | FP |
-| 20(i), 20(ii), 20(iii) | TP |
+| 15(i), 15(ii) | FP |
+| 22(i), 22(ii), 22(iii) | TP |
 
 #### expected / actual errors
 
@@ -270,7 +276,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 #### checker output
 
 ```
-No reported issues.
+No issues found.
 ```
 
 #### output analysis
@@ -305,7 +311,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 #### checker output
 
 ```
-No reported issues.
+No issues found.
 ```
 
 #### output analysis

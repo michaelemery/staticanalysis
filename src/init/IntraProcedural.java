@@ -13,7 +13,7 @@ public class IntraProcedural {
         this.object.toString();
     }
 
-    // fails to initialise field
+    // fail to initialise
     IntraProcedural(int x) {
         this.object.toString();
     }
@@ -22,5 +22,17 @@ public class IntraProcedural {
     IntraProcedural(int x, int y) {
         this.object.toString();
         this.object = new Object();
+    }
+
+    static void initialiseWithObject() {
+        new IntraProcedural();
+    }
+
+    static void failToInitialise() {
+        new IntraProcedural(1);
+    }
+
+    static void accessBeforeInitialise() {
+        new IntraProcedural(1, 2);
     }
 }

@@ -10,16 +10,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class ReflectMethodTest {
 
     @Test
-    void initWithObject() throws Exception {
+    public void testInitialiseWithObject() {
         assertDoesNotThrow(() -> {
-            new ReflectMethod();
+            ReflectMethod.initialiseWithObject();
         });
     }
 
     @Test
-    void initWithNull() throws Exception {
+    public void testFailToInitialise() {
         assertThrows(NullPointerException.class, () -> {
-            new ReflectMethod(1);
+            ReflectMethod.failToInitialise();
         });
     }
 }

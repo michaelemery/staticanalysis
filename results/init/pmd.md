@@ -4,14 +4,16 @@
 
 <br>
 
-Version: pmd-bin-6.1.0
-
-* PMD checkers belonging to the "error prone" category are the only ones required for these tests.
-* The `$PMD_HOME` variable must be configured to use these commands.
-* JDK must be set to 1.8 or lower.
-* Outputs have been simplified for brevity.
+Version: findbugs-3.0.1
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
+
+If you have Docker installed on your system, you may pull/update and run the Docker instance for this project with;
+
+```
+docker pull michaelemery/staticanalysis
+docker run -it --rm michaelemery/staticanalysis
+```
 
 <br>
 
@@ -19,181 +21,316 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/IntraProcedural.java)
 
-#### docker
+[init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
+
+#### run checker from docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d init/IntraProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
-/src/init/IntraProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/init/IntraProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 8 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## InterProcedural
 
 [init/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
 
-#### docker
+[init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
+
+#### run checker from docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d init/InterProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
-/src/init/InterProcedural.java:9:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/src/init/InterProcedural.java:17:	Overridable method 'm' called during object construction
+src/init/InterProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 8 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| + | 0 | 0 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## ReflectMethod
 
 [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
 
-#### docker
+[init/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
+
+#### run checker from docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d init/ReflectMethod.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
-/src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 10 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
 
-## ReflectMethodOverload
+&nbsp; ⟶ &nbsp; unsound
 
-[init/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethodOverload.java)
+<br>
 
-#### docker
+## ReflectMethod
+
+[init/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectConstructor.java)
+
+[init/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectConstructorTest.java)
+
+#### run checker from docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d init/ReflectMethodOverload.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
-/src/init/ReflectMethodOverload.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 10 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
 
-## ReflectFieldAccess
+&nbsp; ⟶ &nbsp; unsound
 
-[init/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectFieldAccess.java)
+<br>
 
-#### docker
+## ReflectField
+
+[init/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectField.java)
+
+[init/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectFieldTest.java)
+
+#### run checker from docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d init/ReflectFieldAccess.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/ReflectField.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
-/src/init/ReflectFieldAccess.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/michaelemery/Developer/staticanalysis/src/init/ReflectField.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 10 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
 
-## InvokeDynamicVirtual
+&nbsp; ⟶ &nbsp; unsound
 
-[init/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicVirtual.java)
+<br>
 
-#### docker
+## InvokeDynamicMethod
+
+[init/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicMethod.java)
+
+[init/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
+
+#### run checker from docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d init/InvokeDynamicVirtual.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
-/src/init/InvokeDynamicVirtual.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/init/InvokeDynamicMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 12 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## InvokeDynamicConstructor
 
 [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicConstructor.java)
 
-#### docker
+[init/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
+
+#### run checker from docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d init/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
-/src/init/InvokeDynamicConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/michaelemery/Developer/staticanalysis/src/init/InvokeDynamicConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 12 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## InvokeDynamicField
 
 [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicField.java)
 
-#### docker
+[init/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicFieldTest.java)
+
+#### run checker from docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d init/InvokeDynamicField.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicField.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
-/src/init/InvokeDynamicField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/init/InvokeDynamicField.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 12 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>
 
 ## DynamicProxy
 
 [init/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/DynamicProxy.java)
 
-#### docker
+[init/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/DynamicProxyTest.java)
+
+#### run checker from docker
 
 ```
-$PMD_HOME/bin/run.sh pmd -d init/DynamicProxy.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/DynamicProxy.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
-/src/init/DynamicProxy.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-/src/init/DynamicProxy.java:30:	Found 'DU'-anomaly for variable 'proxyInstance' (lines '30'-'47').
-/src/init/DynamicProxy.java:31:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
+src/init/DynamicProxy.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/init/DynamicProxy.java:27:	Found 'DU'-anomaly for variable 'proxyInstance' (lines '27'-'39').
+rc/init/DynamicProxy.java:28:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead. issues found.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 18, 28 | NA |
+| 27 | FP |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 1 |
+| - | 1 | 0 |
+
+&nbsp; ⟶ &nbsp; unsound
+
+<br>

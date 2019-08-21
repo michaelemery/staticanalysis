@@ -12,14 +12,14 @@ class InvokeDynamicFieldTest {
     @Test
     void setWithObject() {
         assertDoesNotThrow((() -> {
-            new InvokeDynamicField();
+            InvokeDynamicField.initialiseWithObject();
         }));
     }
 
     @Test
     void setWithNull() {
         assertThrows(NullPointerException.class, () -> {
-            new InvokeDynamicField(1);
+            InvokeDynamicField.failToInitialise();
         });
     }
 

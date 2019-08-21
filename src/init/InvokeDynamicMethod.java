@@ -32,4 +32,12 @@ public class InvokeDynamicMethod {
     static Object returnObject(Object object) {
         return object;
     }
+
+    static void initialiseWithObject() throws Throwable {
+        new InvokeDynamicMethod();
+    }
+
+    static void failToInitialise() throws Throwable {
+        new InvokeDynamicMethod(1);
+    }
 }

@@ -10,16 +10,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class DynamicProxyTest {
 
     @Test
-    void initWithObject() throws Exception {
+    void testInitialiseWithObject() throws Exception {
         assertDoesNotThrow(() -> {
-            DynamicProxy.constructWithObject();
+            DynamicProxy.initialiseWithObject();
         });
     }
 
     @Test
-    void initWithNull() throws Exception {
+    void testFailToInitialise() throws Exception {
         assertThrows(NullPointerException.class, () -> {
-            DynamicProxy.constructWithNull();
+            DynamicProxy.failToInitialise();
         });
     }
 }

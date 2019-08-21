@@ -22,4 +22,12 @@ public class ReflectField {
         field.set(this, (Object) null);
         this.object.toString();
     }
+
+    static void initialiseWithObject() throws Exception {
+        new ReflectField();
+    }
+
+    static void failToInitialise() throws Exception {
+        new ReflectField(1);
+    }
 }

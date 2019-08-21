@@ -10,13 +10,13 @@ public class DynamicProxy {
     Object o;
 
     DynamicProxy(Foo proxyInstance) {
-        this.o = proxyInstance.get("safe");
-        System.out.println(this.o.toString());
+        this.o = proxyInstance.get(new Object());
+        this.o.toString();
     }
 
     DynamicProxy(Foo proxyInstance, int x) {
         this.o = proxyInstance.get(null);
-        System.out.println(this.o.toString());
+        this.o.toString();
     }
 
     interface Foo {
@@ -39,12 +39,12 @@ public class DynamicProxy {
     }
 
     // initialises field
-    static void constructWithObject() {
+    static void initialiseWithObject() {
         new DynamicProxy(getProxyInstance());
     }
 
     // fails to initialise field
-    static void constructWithNull() {
+    static void failToInitialise() {
         new DynamicProxy(getProxyInstance(), 1);
     }
 }

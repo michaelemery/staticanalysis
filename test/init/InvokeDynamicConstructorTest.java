@@ -10,16 +10,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class InvokeDynamicConstructorTest {
 
     @Test
-    void initWithObject() throws Exception {
+    void testInitialiseWithObject() throws Exception {
         assertDoesNotThrow(() -> {
-            InvokeDynamicConstructor.constructWithObject();
+            InvokeDynamicConstructor.initialiseWithObject();
         });
     }
 
     @Test
-    void initWithNull() throws Exception {
+    void testFailToInitialise() throws Exception {
         assertThrows(NullPointerException.class, () -> {
-            InvokeDynamicConstructor.constructWithNull();
+            InvokeDynamicConstructor.failToInitialise();
         });
     }
 }

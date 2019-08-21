@@ -29,4 +29,12 @@ public class InvokeDynamicField {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         return lookup.findSetter(InvokeDynamicField.class, "object", Object.class);
     }
+
+    static void initialiseWithObject() throws Throwable {
+        new InvokeDynamicField();
+    }
+
+    static void failToInitialise() throws Throwable {
+        new InvokeDynamicField(1);
+    }
 }

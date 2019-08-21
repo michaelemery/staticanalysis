@@ -10,17 +10,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class ReflectConstructorTest {
 
     @Test
-    void initWithObject() throws Exception {
+    void testInitialiseWithObject() throws Exception {
         assertDoesNotThrow(() -> {
-            ReflectConstructor.constructWithObject();
+            ReflectConstructor.initialiseWithObject();
         });
     }
 
     @Test
-    void initWithNull() throws Exception {
+    void testFailToInitialise() throws Exception {
         assertThrows(NullPointerException.class, () -> {
             try {
-                ReflectConstructor.constructWithNull();
+                ReflectConstructor.failToInitialise();
             } catch (Exception exception) {
                 throw exception.getCause();  // unwrap reflect.InvocationTargetException
             }
