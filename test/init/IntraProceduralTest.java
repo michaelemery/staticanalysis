@@ -17,19 +17,6 @@ public class IntraProceduralTest {
     }
 
     @Test
-<<<<<<< HEAD
-    void testSafeSet() {
-        i = new IntraProcedural();
-        assertEquals(this.i.toString(), "safe");
-=======
-    public void failToInitialise() {
-        assertThrows(NullPointerException.class, () -> {
-            new IntraProcedural(1);
-        });
->>>>>>> 6509b1964bb2744212544ed36e597b8408518b90
-    }
-
-    @Test
     public void accessBeforeInitialised() {
         assertThrows(NullPointerException.class, () -> {
             new IntraProcedural(1, 2);
