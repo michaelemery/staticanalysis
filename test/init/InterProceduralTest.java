@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * Initialisation of field set via inter-procedural return.
+ * Check initialisation of field set via inter-procedural return.
  */
 public class InterProceduralTest {
 

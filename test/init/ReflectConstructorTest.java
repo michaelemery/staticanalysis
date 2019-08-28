@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Initialisation of field via reflective constructor.
+ * Check initialisation of field via reflective constructor call.
  */
 class ReflectConstructorTest {
 

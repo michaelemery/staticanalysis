@@ -4,27 +4,36 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 
 /**
- * Assign a null reference via dynamic field access invocation.
+ * Nullness for field set via dynamic field access invocation.
  */
 public class InvokeDynamicField {
 
-    Object o;
+    Object foo;
 
     InvokeDynamicField() {
-        this.o = "init";
+        this.foo = new Object();
     }
 
-    public static void main(String[] args) throws Throwable {
+    static MethodHandle getSetterMethodHandle() throws Exception {
         MethodHandles.Lookup l = MethodHandles.lookup();
-        MethodHandle h = l.findSetter(InvokeDynamicField.class, "o", Object.class);
+        return l.findSetter(InvokeDynamicField.class, "foo", Object.class);
+    }
+
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    public static void setFooToNonNull() throws Throwable {
         InvokeDynamicField i = new InvokeDynamicField();
+        getSetterMethodHandle().invoke(i, new Object());
+        i.foo.toString();
+    }
 
-        /* safe: set object to non-null */
-        h.invoke(i, "safe");
-        System.out.println(i.o.toString());
-
-        /* unsafe: set object to null */
-        h.invoke(i, null);
-        System.out.println(i.o.toString());
+    /**
+     * Field set to null always throws NullPointerException.
+     */
+    public static void setFooToNull() throws Throwable {
+        InvokeDynamicField i = new InvokeDynamicField();
+        getSetterMethodHandle().invoke(i, null);
+        i.foo.toString();
     }
 }

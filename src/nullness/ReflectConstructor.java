@@ -3,7 +3,7 @@ package nullness;
 import java.lang.reflect.Constructor;
 
 /**
- * Check nullness for field set via reflective constructor.
+ * Check nullness for field set via reflective constructor call.
  */
 public class ReflectConstructor {
 
@@ -27,8 +27,6 @@ public class ReflectConstructor {
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() throws Exception {
         Constructor constructor = getConstructor(Object.class);

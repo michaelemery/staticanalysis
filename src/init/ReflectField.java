@@ -3,7 +3,7 @@ package init;
 import java.lang.reflect.Field;
 
 /**
- * Initialisation of field set via reflective field access.
+ * Check initialisation of field set via reflective field access.
  */
 public class ReflectField {
 
@@ -24,8 +24,6 @@ public class ReflectField {
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() throws Exception {
         new ReflectField(null).foo.toString();

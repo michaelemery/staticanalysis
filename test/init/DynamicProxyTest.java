@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test initialisation of an object via dynamic proxy invocation.
+ * Check initialisation of a field set via dynamic proxy invocation.
  */
 class DynamicProxyTest {
 
     @Test
-    void testInitialiseWithObject() throws Exception {
+    void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            DynamicProxy.initialiseWithObject();
+            DynamicProxy.setFooToNonNull();
         });
     }
 
     @Test
-    void testFailToInitialise() throws Exception {
+    void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            DynamicProxy.failToInitialise();
+            DynamicProxy.setFooToNull();
         });
     }
 }

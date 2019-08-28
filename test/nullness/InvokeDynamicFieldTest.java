@@ -1,19 +1,19 @@
-package init;
+package nullness;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check initialisation of a field via dynamic invocation of a field set.
+ * Nullness for field set via dynamic field access invocation.
  */
 class InvokeDynamicFieldTest {
 
     @Test
     void setFooToNonNull() {
-        assertDoesNotThrow((() -> {
+        assertDoesNotThrow(() -> {
             InvokeDynamicField.setFooToNonNull();
-        }));
+        });
     }
 
     @Test

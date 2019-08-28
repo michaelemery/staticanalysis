@@ -9,22 +9,30 @@ import java.lang.invoke.MethodType;
  */
 public class InvokeDynamicConstructor {
 
-    Object o;
+    Object foo;
 
-    InvokeDynamicConstructor(Object obj) {
-        this.o = obj;
-        System.out.println(this.o.toString());
+    InvokeDynamicConstructor(Object object) {
+        this.foo = object;
+        this.foo.toString();
     }
 
-    public static void main(String[] args) throws Throwable {
-        MethodHandles.Lookup l = MethodHandles.lookup();
-        MethodType t = MethodType.methodType(void.class, Object.class);
-        MethodHandle h = l.findConstructor(InvokeDynamicConstructor.class, t);
+    static MethodHandle getConstructorMethodHandle() throws Throwable {
+        MethodHandles.Lookup lookup = MethodHandles.lookup();
+        MethodType methodType = MethodType.methodType(void.class, Object.class);
+        return lookup.findConstructor(InvokeDynamicConstructor.class, methodType);
+    }
 
-        /* safe: set object to non-null */
-        h.invoke("safe");
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    public static void setFooToNonNull() throws Throwable {
+        getConstructorMethodHandle().invoke(new Object());
+    }
 
-        /* unsafe: set object to null */
-        h.invoke(null);
+    /**
+     * Field set to null always throws NullPointerException.
+     */
+    public static void setFooToNull() throws Throwable {
+        getConstructorMethodHandle().invoke(null);
     }
 }

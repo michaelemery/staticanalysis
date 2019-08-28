@@ -1,15 +1,11 @@
 package nullness;
 
 /**
- * Nullness of field set via inter-procedural return.
+ * Check nullness of field set via inter-procedural return.
  */
 public class InterProcedural {
 
     Object foo;
-
-    InterProcedural() {
-        this.foo = new Object();
-    }
 
     static Object getObject(Object object) {
         return object;
@@ -20,13 +16,12 @@ public class InterProcedural {
      */
     public static void setFooToNonNull() {
         InterProcedural i = new InterProcedural();
+        i.foo = getObject(new Object());
         i.foo.toString();
     }
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() {
         IntraProcedural i = new IntraProcedural();

@@ -3,15 +3,11 @@ package nullness;
 import java.lang.reflect.Method;
 
 /**
- * Check nullness for field set via reflection method invocation.
+ * Check nullness of field set via reflection method invocation.
  */
 public class ReflectMethod {
 
     Object foo;
-
-    ReflectMethod() {
-        this.foo = new Object();
-    }
 
     static Object getObject(Object object) {
         return object;
@@ -30,8 +26,6 @@ public class ReflectMethod {
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() throws Exception {
         ReflectMethod i = new ReflectMethod();

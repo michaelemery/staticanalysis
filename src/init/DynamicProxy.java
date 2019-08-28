@@ -3,48 +3,45 @@ package init;
 import java.lang.reflect.Proxy;
 
 /**
- * Initialisation of an object via dynamic proxy invocation.
+ * Check initialisation of a field set via dynamic proxy invocation.
  */
 public class DynamicProxy {
 
-    Object o;
+    Object foo;
 
-    DynamicProxy(Foo proxyInstance) {
-        this.o = proxyInstance.get(new Object());
-        this.o.toString();
+    DynamicProxy(MyClass proxyInstance, Object object) {
+        this.foo = proxyInstance.getObject(object);
     }
 
-    DynamicProxy(Foo proxyInstance, int x) {
-        this.o = proxyInstance.get(null);
-        this.o.toString();
+    interface MyClass {
+        Object getObject(Object object);
     }
 
-    interface Foo {
-        Object get(Object o);
-    }
-
-    static Foo getProxyInstance() {
-        Foo proxyInstance = (Foo) Proxy.newProxyInstance(
-                Foo.class.getClassLoader(),
-                new Class[]{Foo.class},
+    static MyClass getProxyInstance() {
+        return (MyClass) Proxy.newProxyInstance(
+                MyClass.class.getClassLoader(),
+                new Class[]{MyClass.class},
                 (proxy, method, methodArgs) -> {
-                    if (method.getName().equals("get")) {
+                    if (method.getName().equals("getObject")) {
                         return methodArgs[0];
                     } else {
                         throw new UnsupportedOperationException(
                                 "Unsupported method: " + method.getName());
                     }
                 });
-        return proxyInstance;
     }
 
-    // initialises field
-    static void initialiseWithObject() {
-        new DynamicProxy(getProxyInstance());
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    static void setFooToNonNull() {
+        new DynamicProxy(getProxyInstance(), new Object()).foo.toString();
     }
 
-    // fails to initialise field
-    static void failToInitialise() {
-        new DynamicProxy(getProxyInstance(), 1);
+    /**
+     * Field set to null always throws NullPointerException.
+     */
+    static void setFooToNull() {
+        new DynamicProxy(getProxyInstance(), null).foo.toString();
     }
 }

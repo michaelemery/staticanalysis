@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * Initialisation of field set via direct value assignment.
+ * Check initialisation of field set via direct value assignment.
  */
 public class IntraProceduralTest {
 

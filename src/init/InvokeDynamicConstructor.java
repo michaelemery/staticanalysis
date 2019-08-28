@@ -5,15 +5,15 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Initialisation of an object via dynamic invocation of a constructor.
+ * Check initialisation of a field via dynamic invocation of a constructor.
  */
 public class InvokeDynamicConstructor {
 
-    Object object;
+    Object foo;
 
     InvokeDynamicConstructor(Object object) throws Throwable {
-        this.object = object;
-        this.object.toString();
+        this.foo = object;
+        this.foo.toString();
     }
 
     static MethodHandle getConstructorMethodHandle() throws Throwable {
@@ -22,13 +22,17 @@ public class InvokeDynamicConstructor {
         return lookup.findConstructor(InvokeDynamicConstructor.class, methodType);
     }
 
-    // initialises field
-    static void initialiseWithObject() throws Throwable {
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    public static void setFooToNonNull() throws Throwable {
         getConstructorMethodHandle().invoke(new Object());
     }
 
-    // fails to initialise field
-    static void failToInitialise() throws Throwable {
+    /**
+     * Field set to null always throws NullPointerException.
+     */
+    public static void setFooToNull() throws Throwable {
         getConstructorMethodHandle().invoke(null);
     }
 }

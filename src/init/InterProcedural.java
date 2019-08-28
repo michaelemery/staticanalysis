@@ -1,7 +1,7 @@
 package init;
 
 /**
- * Initialisation of field set via inter-procedural return.
+ * Check initialisation of field set via inter-procedural return.
  */
 public class InterProcedural {
 
@@ -30,8 +30,6 @@ public class InterProcedural {
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() {
         new InterProcedural(null).foo.toString();
@@ -39,8 +37,6 @@ public class InterProcedural {
 
     /**
      * Field accessed before set always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void accessFooBeforeSet() {
         new InterProcedural(new Object(), 1).foo.toString();

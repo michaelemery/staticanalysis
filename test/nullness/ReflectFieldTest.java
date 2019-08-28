@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check nullness for field set via reflection field access.
+ * Check nullness of field set via reflection field access.
  */
 class ReflectFieldTest {
 

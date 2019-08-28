@@ -1,15 +1,11 @@
 package nullness;
 
 /**
- * Check nullness for field set via reflection field access.
+ * Check nullness of field set via reflection field access.
  */
 public class ReflectField {
 
     Object foo;
-
-    ReflectField() {
-        this.foo = new Object();
-    }
 
     /**
      * Field set to non-null never throws NullPointerException.
@@ -22,8 +18,6 @@ public class ReflectField {
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() throws Exception {
         ReflectField i = new ReflectField();

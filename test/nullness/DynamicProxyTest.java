@@ -1,25 +1,25 @@
-package init;
+package nullness;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check initialisation of a field set via dynamic invocation of a static method.
+ * Check nullness for field set via dynamic proxy invocation.
  */
-class InvokeDynamicMethodTest {
+class DynamicProxyTest {
 
     @Test
     void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            InvokeDynamicMethod.setFooToNonNull();
+            DynamicProxy.setFooToNonNull();
         });
     }
 
     @Test
     void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            InvokeDynamicMethod.setFooToNull();
+            DynamicProxy.setFooToNull();
         });
     }
 }

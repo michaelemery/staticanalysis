@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test initialisation of an object via dynamic invocation of a constructor.
+ * Check initialisation of a field via dynamic invocation of a constructor.
  */
 class InvokeDynamicConstructorTest {
 
     @Test
-    void testInitialiseWithObject() throws Exception {
+    void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            InvokeDynamicConstructor.initialiseWithObject();
+            InvokeDynamicConstructor.setFooToNonNull();
         });
     }
 
     @Test
-    void testFailToInitialise() throws Exception {
+    void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            InvokeDynamicConstructor.failToInitialise();
+            InvokeDynamicConstructor.setFooToNull();
         });
     }
 }

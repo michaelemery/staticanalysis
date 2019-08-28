@@ -1,7 +1,7 @@
 package init;
 
 /**
- * Initialisation of field set via direct value assignment.
+ * Check initialisation of field set via direct value assignment.
  */
 public class IntraProcedural {
 
@@ -26,8 +26,6 @@ public class IntraProcedural {
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() {
         new IntraProcedural(null).foo.toString();
@@ -35,8 +33,6 @@ public class IntraProcedural {
 
     /**
      * Field accessed before set always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void accessFooBeforeSet() {
         new IntraProcedural(new Object(), 1);

@@ -3,7 +3,7 @@ package init;
 import java.lang.reflect.Constructor;
 
 /**
- * Initialisation of field via reflective constructor.
+ * Check initialisation of field via reflective constructor call.
  */
 public class ReflectConstructor {
 
@@ -27,8 +27,6 @@ public class ReflectConstructor {
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() throws Exception {
         Constructor constructor = getConstructor(Object.class);

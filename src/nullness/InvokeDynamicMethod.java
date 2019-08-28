@@ -11,10 +11,6 @@ public class InvokeDynamicMethod {
 
     Object foo;
 
-    InvokeDynamicMethod() {
-        this.foo = new Object();
-    }
-
     void setFoo(Object object) {
         this.foo = object;
     }
@@ -36,8 +32,6 @@ public class InvokeDynamicMethod {
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() throws Throwable {
         InvokeDynamicMethod i = new InvokeDynamicMethod();

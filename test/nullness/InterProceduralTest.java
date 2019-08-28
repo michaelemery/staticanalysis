@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Nullness of field set via inter-procedural return.
+ * Check nullness of field set via inter-procedural return.
  */
 class InterProceduralTest {
 

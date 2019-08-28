@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Nullness of field set via direct value assignment.
+ * Check nullness for field set via direct value assignment.
  */
 class IntraProceduralTest {
 

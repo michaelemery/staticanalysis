@@ -5,7 +5,7 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Initialisation of an object via dynamic invocation of a static method.
+ * Check initialisation of a field via dynamic invocation of a static method.
  */
 public class InvokeDynamicMethod {
 
@@ -26,16 +26,14 @@ public class InvokeDynamicMethod {
     /**
      * Field set to non-null never throws NullPointerException.
      */
-    static void setFooToNonNull() throws Throwable {
+    public static void setFooToNonNull() throws Throwable {
         new InvokeDynamicMethod(new Object()).foo.toString();
     }
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
-    static void setFooToNull() throws Throwable {
+    public static void setFooToNull() throws Throwable {
         new InvokeDynamicMethod(null).foo.toString();
     }
 }

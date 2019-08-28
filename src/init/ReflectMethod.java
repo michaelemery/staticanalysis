@@ -3,7 +3,7 @@ package init;
 import java.lang.reflect.Method;
 
 /**
- * Initialisation of an object via reflective methods.
+ * Check initialisation of an object via reflective method return.
  */
 public class ReflectMethod {
 
@@ -28,8 +28,6 @@ public class ReflectMethod {
 
     /**
      * Field set to null always throws NullPointerException.
-     *
-     * @throws NullPointerException Checker should warn on compile.
      */
     public static void setFooToNull() throws Exception {
         new ReflectMethod(null).foo.toString();
