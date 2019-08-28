@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check initialisation of an object via reflective method return.
+ * Check initialisation of field set via reflective method return.
  */
 class ReflectMethodTest {
 

@@ -4,7 +4,7 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 
 /**
- * Check initialisation of a field via dynamic invocation of a field set.
+ * Check initialisation of field set via dynamic invocation of a field set.
  */
 public class InvokeDynamicField {
 

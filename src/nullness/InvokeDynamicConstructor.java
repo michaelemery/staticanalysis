@@ -5,7 +5,7 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Assign a null reference via dynamic constructor invocation.
+ * Check nullness of field set via dynamic constructor invocation.
  */
 public class InvokeDynamicConstructor {
 

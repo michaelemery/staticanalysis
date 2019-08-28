@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check nullness for field set via dynamic virtual (non-static) method invocation.
+ * Check nullness of field set via dynamic virtual (non-static) method invocation.
  */
 class InvokeDynamicMethodTest {
 

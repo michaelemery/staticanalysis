@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Created by Michael Emery on 28/08/19.
+ * Check nullness of field set via dynamic constructor invocation.
  */
 class InvokeDynamicConstructorTest {
 

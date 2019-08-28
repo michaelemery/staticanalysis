@@ -5,7 +5,7 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Check initialisation of a field via dynamic invocation of a static method.
+ * Check initialisation of field set via dynamic invocation of a static method.
  */
 public class InvokeDynamicMethod {
 

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check initialisation of a field set via dynamic invocation of a static method.
+ * Check initialisation of field set via dynamic invocation of a static method.
  */
 class InvokeDynamicMethodTest {
 

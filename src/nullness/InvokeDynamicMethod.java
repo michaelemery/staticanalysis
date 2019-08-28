@@ -5,7 +5,7 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Check nullness for field set via dynamic virtual (non-static) method invocation.
+ * Check nullness of field set via dynamic virtual (non-static) method invocation.
  */
 public class InvokeDynamicMethod {
 

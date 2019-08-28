@@ -3,7 +3,7 @@ package init;
 import java.lang.reflect.Constructor;
 
 /**
- * Check initialisation of field via reflective constructor call.
+ * Check initialisation of field set via reflective constructor call.
  */
 public class ReflectConstructor {
 

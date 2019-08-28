@@ -3,7 +3,7 @@ package init;
 import java.lang.reflect.Proxy;
 
 /**
- * Check initialisation of a field set via dynamic proxy invocation.
+ * Check initialisation of field set via dynamic proxy invocation.
  */
 public class DynamicProxy {
 

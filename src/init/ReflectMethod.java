@@ -3,7 +3,7 @@ package init;
 import java.lang.reflect.Method;
 
 /**
- * Check initialisation of an object via reflective method return.
+ * Check initialisation of field set via reflective method return.
  */
 public class ReflectMethod {
 

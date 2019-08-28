@@ -4,7 +4,7 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 
 /**
- * Nullness for field set via dynamic field access invocation.
+ * Nullness of field set via dynamic field access invocation.
  */
 public class InvokeDynamicField {
 
