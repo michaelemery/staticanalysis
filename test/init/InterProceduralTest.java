@@ -6,28 +6,28 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * Test initialisation of an object via layered methods.
+ * Initialisation of field set via inter-procedural return.
  */
 public class InterProceduralTest {
 
     @Test
-    void testInitialiseWithObject() {
+    void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            InterProcedural.initialiseWithObject();
+            InterProcedural.setFooToNonNull();
         });
     }
 
     @Test
-    void testFailToInitialise() {
+    void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            InterProcedural.failToInitialise();
+            InterProcedural.setFooToNull();
         });
     }
 
     @Test
-    void testAccessBeforeInitialised() {
+    void accessFooBeforeSet() {
         assertThrows(NullPointerException.class, () -> {
-            InterProcedural.accessBeforeInitialise();
+            InterProcedural.accessFooBeforeSet();
         });
     }
 }

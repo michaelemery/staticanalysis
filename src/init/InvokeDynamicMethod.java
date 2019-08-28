@@ -9,35 +9,33 @@ import java.lang.invoke.MethodType;
  */
 public class InvokeDynamicMethod {
 
-    Object object;
+    Object foo;
 
-    // initialises field
-    InvokeDynamicMethod() throws Throwable {
-        this.object = getReturnObjectMethodHandle().invoke(new Object());
-        this.object.toString();
-    }
-
-    // fails to initialise field
-    InvokeDynamicMethod(int x) throws Throwable {
-        this.object = getReturnObjectMethodHandle().invoke(null);
-        this.object.toString();
-    }
-
-    static MethodHandle getReturnObjectMethodHandle() throws Throwable {
+    InvokeDynamicMethod(Object object) throws Throwable {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodType methodType = MethodType.methodType(Object.class, Object.class);
-        return lookup.findStatic(InvokeDynamicMethod.class, "returnObject", methodType);
+        MethodHandle getObjectMethodHandle = lookup.findStatic(InvokeDynamicMethod.class,
+                "getObject", methodType);
+        this.foo = getObjectMethodHandle.invoke(object);
     }
 
-    static Object returnObject(Object object) {
+    static Object getObject(Object object) {
         return object;
     }
 
-    static void initialiseWithObject() throws Throwable {
-        new InvokeDynamicMethod();
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    static void setFooToNonNull() throws Throwable {
+        new InvokeDynamicMethod(new Object()).foo.toString();
     }
 
-    static void failToInitialise() throws Throwable {
-        new InvokeDynamicMethod(1);
+    /**
+     * Field set to null always throws NullPointerException.
+     *
+     * @throws NullPointerException Checker should warn on compile.
+     */
+    static void setFooToNull() throws Throwable {
+        new InvokeDynamicMethod(null).foo.toString();
     }
 }

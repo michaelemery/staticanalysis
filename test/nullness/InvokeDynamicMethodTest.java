@@ -1,11 +1,11 @@
-package init;
+package nullness;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test initialisation of an object via dynamic invocation of a static method.
+ * Check nullness for field set via dynamic virtual (non-static) method invocation.
  */
 class InvokeDynamicMethodTest {
 

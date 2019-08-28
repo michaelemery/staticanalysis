@@ -6,28 +6,28 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
- * Test initialisation of an object via a single method.
+ * Initialisation of field set via direct value assignment.
  */
 public class IntraProceduralTest {
 
     @Test
-    public void testInitialiseWithObject() {
+    public void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            IntraProcedural.initialiseWithObject();
+            IntraProcedural.setFooToNonNull();
         });
     }
 
     @Test
-    public void testFailToInitialise() {
+    public void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            IntraProcedural.failToInitialise();
+            IntraProcedural.setFooToNull();
         });
     }
 
     @Test
-    public void testAccessBeforeInitialise() {
+    public void accessFooBeforeSet() {
         assertThrows(NullPointerException.class, () -> {
-            IntraProcedural.accessBeforeInitialise();
+            IntraProcedural.accessFooBeforeSet();
         });
     }
 }

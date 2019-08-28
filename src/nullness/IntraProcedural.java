@@ -1,26 +1,32 @@
 package nullness;
 
 /**
- * Assign a null reference via intra-procedural assignment.
+ * Nullness for field set via direct value assignment.
  */
 public class IntraProcedural {
 
-    Object object;
+    Object foo;
 
-    IntraProcedural(Object obj) {
-        this.object = obj;
-        System.out.println(this.object.toString());
+    IntraProcedural() {
+        this.foo = new Object();
     }
 
-    public static void main(String[] args) throws NullPointerException {
-        IntraProcedural i = new IntraProcedural("init");
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    public static void setFooToNonNull() {
+        IntraProcedural i = new IntraProcedural();
+        i.foo.toString();
+    }
 
-        /* safe: set object to non-null */
-        i.object = "safe";
-        System.out.println(i.object.toString());
-
-        /* unsafe: set object to null */
-        i.object = null;
-        System.out.println(i.object.toString());
+    /**
+     * Field set to null always throws NullPointerException.
+     *
+     * @throws NullPointerException Checker should warn on compile.
+     */
+    public static void setFooToNull() {
+        IntraProcedural i = new IntraProcedural();
+        i.foo = null;
+        i.foo.toString();
     }
 }

@@ -1,25 +1,25 @@
-package init;
+package nullness;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test initialisation of an object via dynamic invocation of a static method.
+ * Nullness of field set via inter-procedural return.
  */
-class InvokeDynamicMethodTest {
+class InterProceduralTest {
 
     @Test
     void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            InvokeDynamicMethod.setFooToNonNull();
+            InterProcedural.setFooToNonNull();
         });
     }
 
     @Test
     void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            InvokeDynamicMethod.setFooToNull();
+            InterProcedural.setFooToNull();
         });
     }
 }

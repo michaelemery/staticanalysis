@@ -1,25 +1,25 @@
-package init;
+package nullness;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test initialisation of an object via dynamic invocation of a static method.
+ * Check nullness for field set via reflection method invocation.
  */
-class InvokeDynamicMethodTest {
+class ReflectMethodTest {
 
     @Test
     void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            InvokeDynamicMethod.setFooToNonNull();
+            ReflectMethod.setFooToNonNull();
         });
     }
 
     @Test
     void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            InvokeDynamicMethod.setFooToNull();
+            ReflectMethod.setFooToNull();
         });
     }
 }

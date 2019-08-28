@@ -5,25 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test initialisation of an object via reflective constructor.
+ * Initialisation of field via reflective constructor.
  */
 class ReflectConstructorTest {
 
     @Test
-    void testInitialiseWithObject() throws Exception {
+    void setFooToNonNull() throws Exception {
         assertDoesNotThrow(() -> {
-            ReflectConstructor.initialiseWithObject();
+            ReflectConstructor.setFooToNonNull();
         });
     }
 
     @Test
-    void testFailToInitialise() throws Exception {
+    void setFooToNull() throws Exception {
         assertThrows(NullPointerException.class, () -> {
-            try {
-                ReflectConstructor.failToInitialise();
-            } catch (Exception exception) {
-                throw exception.getCause();  // unwrap reflect.InvocationTargetException
-            }
+            ReflectConstructor.setFooToNull();
         });
     }
 }

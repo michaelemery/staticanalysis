@@ -3,31 +3,31 @@ package init;
 import java.lang.reflect.Field;
 
 /**
- * Validate initialisation of an object via reflective field access.
+ * Initialisation of field set via reflective field access.
  */
 public class ReflectField {
 
-    Object object;
+    Object foo;
 
-    // initialises field
-    ReflectField() throws Exception {
-        Field field = this.getClass().getDeclaredField("object");
-        field.set(this, new Object());
-        this.object.toString();
+    ReflectField(Object object) throws NoSuchFieldException, IllegalAccessException {
+        Class<?> C = this.getClass();
+        Field objectField = C.getDeclaredField("foo");
+        objectField.set(this, object);
     }
 
-    // fails to initialise field
-    ReflectField(int x) throws Exception {
-        Field field = this.getClass().getDeclaredField("object");
-        field.set(this, (Object) null);
-        this.object.toString();
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    public static void setFooToNonNull() throws Exception {
+        new ReflectField(new Object()).foo.toString();
     }
 
-    static void initialiseWithObject() throws Exception {
-        new ReflectField();
-    }
-
-    static void failToInitialise() throws Exception {
-        new ReflectField(1);
+    /**
+     * Field set to null always throws NullPointerException.
+     *
+     * @throws NullPointerException Checker should warn on compile.
+     */
+    public static void setFooToNull() throws Exception {
+        new ReflectField(null).foo.toString();
     }
 }

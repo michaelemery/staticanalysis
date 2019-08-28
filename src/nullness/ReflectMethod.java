@@ -3,30 +3,41 @@ package nullness;
 import java.lang.reflect.Method;
 
 /**
- * Assign a null reference via reflection method invocation.
+ * Check nullness for field set via reflection method invocation.
  */
 public class ReflectMethod {
 
-    Object o;
+    Object foo;
 
     ReflectMethod() {
-        this.o = "init";
+        this.foo = new Object();
     }
 
-    public static void main(String[] args) throws Exception {
-        Class<?> C = ReflectMethod.class;
-        Method m = C.getDeclaredMethod("set", Object.class);
+    static Object getObject(Object object) {
+        return object;
+    }
+
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    public static void setFooToNonNull() throws Exception {
         ReflectMethod i = new ReflectMethod();
-
-        /* safe: set object to non-null */
-        m.invoke(i, "safe");
-
-        /* unsafe: set object to null */
-        m.invoke(i, (Object) null);  // cast to suppress compiler warning
+        Class<?> C = i.getClass();
+        Method getObjectMethod = C.getDeclaredMethod("getObject", Object.class);
+        i.foo = getObjectMethod.invoke(i, new Object());
+        i.foo.toString();
     }
 
-    void set(Object obj) {
-        this.o = obj;
-        System.out.println(this.o.toString());
+    /**
+     * Field set to null always throws NullPointerException.
+     *
+     * @throws NullPointerException Checker should warn on compile.
+     */
+    public static void setFooToNull() throws Exception {
+        ReflectMethod i = new ReflectMethod();
+        Class<?> C = i.getClass();
+        Method getObjectMethod = C.getDeclaredMethod("getObject", Object.class);
+        i.foo = getObjectMethod.invoke(i, (Object) null);
+        i.foo.toString();
     }
 }

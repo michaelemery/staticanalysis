@@ -1,38 +1,44 @@
 package init;
 
 /**
- * Initialisation of an object via a single method.
+ * Initialisation of field set via direct value assignment.
  */
 public class IntraProcedural {
 
-    Object object;
+    Object foo;
 
-    // initialises field
-    IntraProcedural() {
-        this.object = new Object();
-        this.object.toString();
+    IntraProcedural(Object object) {
+        this.foo = object;
     }
 
-    // fail to initialise
-    IntraProcedural(int x) {
-        this.object.toString();
+    // field is accessed before initialised
+    IntraProcedural(Object object, int x) {
+        this.foo.toString();
+        this.foo = object;
     }
 
-    // accesses field before initialised
-    IntraProcedural(int x, int y) {
-        this.object.toString();
-        this.object = new Object();
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    public static void setFooToNonNull() {
+        new IntraProcedural(new Object()).foo.toString();
     }
 
-    static void initialiseWithObject() {
-        new IntraProcedural();
+    /**
+     * Field set to null always throws NullPointerException.
+     *
+     * @throws NullPointerException Checker should warn on compile.
+     */
+    public static void setFooToNull() {
+        new IntraProcedural(null).foo.toString();
     }
 
-    static void failToInitialise() {
-        new IntraProcedural(1);
-    }
-
-    static void accessBeforeInitialise() {
-        new IntraProcedural(1, 2);
+    /**
+     * Field accessed before set always throws NullPointerException.
+     *
+     * @throws NullPointerException Checker should warn on compile.
+     */
+    public static void accessFooBeforeSet() {
+        new IntraProcedural(new Object(), 1);
     }
 }

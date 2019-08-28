@@ -1,9 +1,9 @@
-package init;
+package nullness;
 
 import java.lang.reflect.Constructor;
 
 /**
- * Initialisation of field via reflective constructor.
+ * Check nullness for field set via reflective constructor.
  */
 public class ReflectConstructor {
 
@@ -13,8 +13,8 @@ public class ReflectConstructor {
         this.foo = object;
     }
 
-    static Constructor getConstructor(Class Object) throws NoSuchMethodException {
-        return ReflectConstructor.class.getDeclaredConstructor(Object);
+    static Constructor getConstructor(Class... args) throws NoSuchMethodException {
+        return ReflectConstructor.class.getDeclaredConstructor(args);
     }
 
     /**

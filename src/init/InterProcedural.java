@@ -1,43 +1,48 @@
 package init;
 
 /**
- * Initialisation of an object via layered methods.
+ * Initialisation of field set via inter-procedural return.
  */
 public class InterProcedural {
 
-    Object object;
+    Object foo;
 
-    // initialises field
-    InterProcedural() {
-        this.object = returnObject(new Object());
-        this.object.toString();
+    InterProcedural(Object object) {
+        this.foo = getObject(object);
     }
 
-    // fail to initialise
-    InterProcedural(int x) {
-        this.object = returnObject(null);
-        this.object.toString();
+    // field is accessed before initialised
+    InterProcedural(Object object, int x) {
+        this.foo.toString();
+        this.foo = getObject(object);
     }
 
-    // accesses field before initialised
-    InterProcedural(int x, int y) {
-        this.object.toString();
-        this.object = returnObject(new Object());
-    }
-
-    static Object returnObject(Object object) {
+    static Object getObject(Object object) {
         return object;
     }
 
-    static void initialiseWithObject() {
-        new InterProcedural();
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    public static void setFooToNonNull() {
+        new InterProcedural(new Object()).foo.toString();
     }
 
-    static void failToInitialise() {
-        new InterProcedural(1);
+    /**
+     * Field set to null always throws NullPointerException.
+     *
+     * @throws NullPointerException Checker should warn on compile.
+     */
+    public static void setFooToNull() {
+        new InterProcedural(null).foo.toString();
     }
 
-    static void accessBeforeInitialise() {
-        new InterProcedural(1, 2);
+    /**
+     * Field accessed before set always throws NullPointerException.
+     *
+     * @throws NullPointerException Checker should warn on compile.
+     */
+    public static void accessFooBeforeSet() {
+        new InterProcedural(new Object(), 1).foo.toString();
     }
 }

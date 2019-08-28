@@ -7,31 +7,31 @@ import java.lang.reflect.Method;
  */
 public class ReflectMethod {
 
-    Object object;
+    Object foo;
 
-    // initialises field
-    ReflectMethod() throws Exception {
-        Method method = this.getClass().getDeclaredMethod("returnObject", Object.class);
-        this.object = method.invoke(null, new Object());
-        this.object.toString();
+    ReflectMethod(Object object) throws Exception {
+        Class<?> C = this.getClass();
+        Method getObject = C.getDeclaredMethod("getObject", Object.class);
+        this.foo = getObject.invoke(this, object);
     }
 
-    // fail to initialise
-    ReflectMethod(int x) throws Exception {
-        Method method = this.getClass().getDeclaredMethod("returnObject", Object.class);
-        this.object = method.invoke(null, (Object) null);
-        this.object.toString();
-    }
-
-    static Object returnObject(Object object) {
+    static Object getObject(Object object) {
         return object;
     }
 
-    static void initialiseWithObject() throws Exception {
-        new ReflectMethod();
+    /**
+     * Field set to non-null never throws NullPointerException.
+     */
+    public static void setFooToNonNull() throws Exception {
+        new ReflectMethod(new Object()).foo.toString();
     }
 
-    static void failToInitialise() throws Exception {
-        new ReflectMethod(1);
+    /**
+     * Field set to null always throws NullPointerException.
+     *
+     * @throws NullPointerException Checker should warn on compile.
+     */
+    public static void setFooToNull() throws Exception {
+        new ReflectMethod(null).foo.toString();
     }
 }

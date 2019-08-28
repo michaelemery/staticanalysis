@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Test initialisation of an object via reflective field access.
+ * Initialisation of field set via reflective field access.
  */
 class ReflectFieldTest {
 
     @Test
-    public void testInitialiseWithObject() {
+    public void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            ReflectField.initialiseWithObject();
+            ReflectField.setFooToNonNull();
         });
     }
 
     @Test
-    public void testFailToInitialise() {
+    public void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            ReflectField.failToInitialise();
+            ReflectField.setFooToNull();
         });
     }
 }
