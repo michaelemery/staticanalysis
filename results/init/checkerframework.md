@@ -288,8 +288,8 @@ No issues found.
 | - | 1 | 1 |
 
 > failed to predict NullPointerException at setFooToNull()
->
-> &nbsp; unsound
+> 
+> unsound
 
 <br>
 
