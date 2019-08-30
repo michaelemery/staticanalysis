@@ -3,7 +3,7 @@ package nullness;
 import java.lang.reflect.Constructor;
 
 /**
- * Check nullness for field set via reflective constructor call.
+ * Check nullness of field set via reflective constructor call.
  */
 public class ReflectConstructor {
 

@@ -280,6 +280,8 @@ No issues found.
 | :---: | :---: |
 | - | - |
 
+* &nbsp; failed to predict NullPointerException at setFooToNull()
+
 #### expected / actual errors
 
 |  | + | - |
@@ -287,7 +289,7 @@ No issues found.
 | + | 0 | 0 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound : failed to predict NullPointerException at setFooToNull()
+&nbsp; ⟶ &nbsp; unsound
 
 <br>
 

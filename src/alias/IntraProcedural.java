@@ -1,24 +1,38 @@
 package alias;
 
+import org.checkerframework.common.aliasing.qual.LeakedToResult;
 import org.checkerframework.common.aliasing.qual.Unique;
 
 /**
- *
+ * Check field for changes caused via direct value assignment to an alias.
  */
 public class IntraProcedural {
 
-    Object o = "init";
+    int one;
 
-    public static void main(String[] args) throws Throwable {
+    IntraProcedural() {
+        this.one = 1;
+    }
+
+    /**
+     * Non-aliased object never throws Exception.
+     */
+    public void setFieldWithoutAlias() throws Exception {
         @Unique IntraProcedural original = new IntraProcedural();
+        if (original.one + 1 != 2) {
+            throw new Exception();
+        }
+    }
 
-        /* safe: set unique object uniquely */
-        original.o = "safe";
-        System.out.println(original.o.toString());
-
-        /* unsafe: make object null via alias */
+    /**
+     * Aliased object always throws Exception.
+     */
+    public static void setFieldWithAlias() throws Exception {
+        @Unique IntraProcedural original = new IntraProcedural();
         IntraProcedural alias = original;
-        alias.o = null;
-        System.out.println(original.o.toString());
+        alias.one = 2;
+        if (original.one + 1 != 2) {
+            throw new Exception();
+        }
     }
 }

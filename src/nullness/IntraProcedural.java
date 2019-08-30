@@ -1,5 +1,7 @@
 package nullness;
 
+import org.checkerframework.common.aliasing.qual.Unique;
+
 /**
  * Check nullness for field set via direct value assignment.
  */

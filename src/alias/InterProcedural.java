@@ -3,26 +3,40 @@ package alias;
 import org.checkerframework.common.aliasing.qual.Unique;
 
 /**
- *
+ * Check for null alias of field set via inter-procedural return.
  */
 public class InterProcedural {
 
-    Object o = "init";
+    int one;
 
-    public static void main(String[] args) {
-        @Unique InterProcedural original = new InterProcedural();
-
-        /* safe: set unique object uniquely */
-        original.o = "safe";
-        System.out.println(original.o.toString());
-
-        /* unsafe: make object null via alias */
-        InterProcedural alias = aliasOf(original);
-        alias.o = null;
-        System.out.println(original.o.toString());
+    InterProcedural() {
+        this.one = 1;
     }
 
-    static InterProcedural aliasOf(InterProcedural original) {
-        return original;
+    static InterProcedural getAlias(InterProcedural object) {
+        InterProcedural alias = object;
+        alias.one = 2;
+        return alias;
+    }
+
+    /**
+     * Non-aliased object never throws Exception.
+     */
+    public static void setFieldWithAlias() throws Exception {
+        @Unique InterProcedural original = new InterProcedural();
+        if (original.one + 1 != 2) {
+            throw new Exception();
+        }
+    }
+
+    /**
+     * Aliased object always throws Exception.
+     */
+    public static void setFieldWithoutAlias() throws Exception {
+        @Unique InterProcedural original = new InterProcedural();
+        InterProcedural alias = getAlias(original);
+        if (original.one + 1 != 2) {
+            throw new Exception();
+        }
     }
 }

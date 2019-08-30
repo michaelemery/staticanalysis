@@ -12,7 +12,7 @@ public class ReflectMethod {
     ReflectMethod(Object object) throws Exception {
         Class<?> C = this.getClass();
         Method getObject = C.getDeclaredMethod("getObject", Object.class);
-        this.foo = getObject.invoke(this, object);
+        this.foo = getObject.invoke(null, object);
     }
 
     static Object getObject(Object object) {
