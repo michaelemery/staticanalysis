@@ -280,7 +280,7 @@ No issues found.
 | :---: | :---: |
 | - | - |
 
-* &nbsp; failed to predict NullPointerException at setFooToNull()
+* failed to predict NullPointerException at setFooToNull()
 
 #### expected / actual errors
 
