@@ -73,7 +73,7 @@ src/init/IntraProcedural.java:31: error: [argument.type.incompatible] incompatib
 | + | 2 | 0 |
 | - | 0 | 1 |
 
-&nbsp; ⟶ &nbsp; accurate
+> accurate
 
 <br>
 
@@ -117,7 +117,7 @@ src/init/InterProcedural.java:35: error: [argument.type.incompatible] incompatib
 | + | 2 | 0 |
 | - | 0 | 1 |
 
-&nbsp; ⟶ &nbsp; accurate
+> accurate
 
 <br>
 
@@ -157,7 +157,7 @@ src/init/ReflectConstructor.java:33: error: [argument.type.incompatible] incompa
 | + | 1 | 0 |
 | - | 0 | 1 |
 
-&nbsp; ⟶ &nbsp; accurate
+> accurate
 
 <br>
 
@@ -208,7 +208,7 @@ src/init/ReflectMethod.java:33: error: [argument.type.incompatible] incompatible
 | + | 1 | 1 |
 | - | 0 | 0 |
 
-&nbsp; ⟶ &nbsp; imprecise
+> imprecise
 
 <br>
 
@@ -252,7 +252,7 @@ src/init/ReflectField.java:29: error: [argument.type.incompatible] incompatible 
 | + | 1 | 1 |
 | - | 0 | 0 |
 
-&nbsp; ⟶ &nbsp; imprecise
+> imprecise
 
 <br>
 
@@ -288,7 +288,7 @@ No issues found.
 | - | 1 | 1 |
 
 > unsound
-> * failed to Predict NullPointerException at setFooToNull()
+> * failed to predict NullPointerException at setFooToNull()
 
 <br>
 
@@ -328,7 +328,7 @@ src/init/InvokeDynamicMethod.java:37: error: [argument.type.incompatible] incomp
 | + | 1 | 0 |
 | - | 0 | 1 |
 
-&nbsp; ⟶ &nbsp; accurate
+> accurate
 
 <br>
 
@@ -372,7 +372,7 @@ src/init/InvokeDynamicField.java:34: error: [argument.type.incompatible] incompa
 | + | 1 | 2 |
 | - | 0 | 0 |
 
-&nbsp; ⟶ &nbsp; imprecise
+> imprecise
 
 <br>
 
@@ -418,4 +418,4 @@ src/init/DynamicProxy.java:45: error: [argument.type.incompatible] incompatible 
 | + | 1 | 1 |
 | - | 0 | 0 |
 
-&nbsp; ⟶ &nbsp; imprecise
+> imprecise

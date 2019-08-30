@@ -70,7 +70,7 @@ src/init/IntraProcedural.java:31: error: ERADICATE_PARAMETER_NOT_NULLABLE
 | + | 1 | 0 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -113,7 +113,7 @@ src/init/InterProcedural.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
 | + | 1 | 0 |
 | - | 0 | 1 |
 
-&nbsp; ⟶ &nbsp; accurate
+> accurate
 
 <br>
 
@@ -148,7 +148,7 @@ No issues found.
 | + | 0 | 0 |
 | - | 1 | 0 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -183,7 +183,7 @@ No issues found.
 | + | 0 | 0 |
 | - | 1 | 0 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -235,7 +235,7 @@ src/init/ReflectField.java:20: error: ERADICATE_FIELD_NOT_INITIALIZED
 | + | 1 | 1 |
 | - | 0 | 0 |
 
-&nbsp; ⟶ &nbsp; imprecise
+> imprecise
 
 <br>
 
@@ -270,7 +270,7 @@ No issues found.
 | + | 0 | 0 |
 | - | 1 | 0 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -305,7 +305,7 @@ No issues found.
 | + | 0 | 0 |
 | - | 1 | 0 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -340,7 +340,7 @@ No issues found.
 | + | 0 | 0 |
 | - | 1 | 0 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -383,6 +383,6 @@ src/init/DynamicProxy.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
 | + | 0 | 1 |
 | - | 1 | 0 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>

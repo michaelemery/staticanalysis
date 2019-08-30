@@ -72,7 +72,8 @@ Warnings generated: 5
 | + | 1 | 0 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
+> * predicted NullPointerException at accessFooBeforeSet() but failed to predict NullPointerException at setFooToNull()
 
 <br>
 
@@ -117,7 +118,9 @@ Warnings generated: 5
 | + | 1 | 0 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
+> * failed to predict NullPointerException at setFooToNull()
+> * failed to predict NullPointerException at accessFooBeforeSet()
 
 <br>
 
@@ -156,7 +159,9 @@ Warnings generated: 2
 | + | 0 | 0 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
+> * failed to predict NullPointerException at setFooToNull()
+> * failed to predict NullPointerException at accessFooBeforeSet()
 
 <br>
 
@@ -195,7 +200,7 @@ Warnings generated: 2
 | + | 0 | 0 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -241,7 +246,7 @@ Warnings generated: 5
 | + | 0 | 3 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -278,7 +283,7 @@ Warnings generated: 1
 | + | 0 | 0 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -317,7 +322,7 @@ Warnings generated: 2
 | + | 0 | 0 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -356,7 +361,7 @@ Warnings generated: 2
 | + | 0 | 0 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
 
@@ -399,6 +404,6 @@ Missing classes: 1
 | + | 0 | 1 |
 | - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; unsound
+> unsound
 
 <br>
