@@ -1,6 +1,6 @@
 # checker framework results (nullness)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
@@ -12,17 +12,38 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 <br>
 
+#### run checker from docker
+
+Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the checker command(s) provided with each test result, and paste them into your interactive Docker session. 
+
+To download/update and run your project Docker container;
+
+```
+docker pull michaelemery/staticanalysis
+docker run -it --rm michaelemery/staticanalysis
+```
+
+#### run junit tests from docker
+
+```
+sh test.sh [ [ nullness ] | [ nullness <class-name> ] ]
+```
+
+* `sh test.sh` will run all tests for all packages
+
+<br>
+
 ## IntraProcedural
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/IntraProcedural.java)
 
-#### docker
+#### checker command
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/IntraProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/IntraProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 nullness/IntraProcedural.java:23: error: [assignment.type.incompatible] incompatible types in assignment.
@@ -39,15 +60,15 @@ nullness/IntraProcedural.java:23: error: [assignment.type.incompatible] incompat
 
 ## InterProcedural
 
-[nullness/Interprocedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InterProcedural.java)
+[nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InterProcedural.java)
 
-#### docker
+#### checker command
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/InterProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 nullness/InterProcedural.java:22: error: [argument.type.incompatible] incompatible types in argument.
@@ -66,13 +87,13 @@ nullness/InterProcedural.java:22: error: [argument.type.incompatible] incompatib
 
 [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethod.java)
 
-#### docker
+#### checker command
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectMethod.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/ReflectMethod.java
 ```
 
-#### output
+#### checker output
 
 ```
 nullness/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible types in argument.
@@ -91,13 +112,13 @@ nullness/ReflectMethod.java:25: error: [argument.type.incompatible] incompatible
 
 [nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethodOverload.java)
 
-#### docker
+#### checker command
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectMethodOverload.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/ReflectMethodOverload.java
 ```
 
-#### output
+#### checker output
 
 ```
 nullness/ReflectMethodOverload.java:27: error: [argument.type.incompatible] incompatible types in argument.
@@ -116,13 +137,13 @@ nullness/ReflectMethodOverload.java:27: error: [argument.type.incompatible] inco
 
 [nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectFieldAccess.java)
 
-#### docker
+#### checker command
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/ReflectFieldAccess.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/ReflectFieldAccess.java
 ```
 
-#### output
+#### checker output
 
 ````
 No reported issues.
@@ -137,13 +158,13 @@ No reported issues.
 
 [nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicVirtual.java)
 
-#### docker
+#### checker command
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InvokeDynamicVirtual.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/InvokeDynamicVirtual.java
 ```
 
-#### output
+#### checker output
 
 ```
 No reported issues.
@@ -157,13 +178,13 @@ No reported issues.
 
 [nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicConstructor.java)
 
-#### docker
+#### checker command
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InvokeDynamicConstructor.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/InvokeDynamicConstructor.java
 ```
 
-#### output
+#### checker output
 
 ```
 No reported issues.
@@ -177,13 +198,13 @@ No reported issues.
 
 [nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicField.java)
 
-#### docker
+#### checker command
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/InvokeDynamicField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/InvokeDynamicField.java
 ```
 
-#### output
+#### checker output
 
 ```
 No reported issues.
@@ -197,13 +218,13 @@ No reported issues.
 
 [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/DynamicProxy.java)
 
-#### docker
+#### checker command
 
 ```
-javac -processor org.checkerframework.checker.nullness.NullnessChecker nullness/DynamicProxy.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/DynamicProxy.java
 ```
 
-#### output
+#### checker output
 
 ```
 nullness/DynamicProxy.java:18: error: [argument.type.incompatible] incompatible types in argument.

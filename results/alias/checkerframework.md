@@ -1,6 +1,6 @@
 # checker framework results (alias)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
@@ -24,13 +24,13 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
 
-#### docker
+#### checker command
 
 ```
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/IntraProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 alias/IntraProcedural.java:13: error: [assignment.type.incompatible] incompatible types in assignment.
@@ -52,13 +52,13 @@ alias/IntraProcedural.java:20: error: [unique.leaked] Reference annotated as @Un
 
 [alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
 
-#### docker
+#### checker command
 
 ```
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InterProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 alias/InterProcedural.java:13: error: [assignment.type.incompatible] incompatible types in assignment.
@@ -80,13 +80,13 @@ alias/InterProcedural.java:20: error: [unique.leaked] Reference annotated as @Un
 
 [alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
 
-#### docker
+#### checker command
 
 ```
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/ReflectMethod.java
 ```
 
-#### output
+#### checker output
 
 ```
 alias/ReflectMethod.java:15: error: [assignment.type.incompatible] incompatible types in assignment.
@@ -105,13 +105,13 @@ alias/ReflectMethod.java:15: error: [assignment.type.incompatible] incompatible 
 
 [alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
 
-#### docker
+#### checker command
 
 ```
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/ReflectMethodOverload.java
 ```
 
-#### output
+#### checker output
 
 ```
 alias/ReflectMethodOverload.java:15: error: [assignment.type.incompatible] incompatible types in assignment.
@@ -132,13 +132,13 @@ alias/ReflectMethodOverload.java:15: error: [assignment.type.incompatible] incom
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -152,13 +152,13 @@ NA
 
 [alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
 
-#### docker
+#### checker command
 
 ```
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InvokeDynamicVirtual.java
 ```
 
-#### output
+#### checker output
 
 ```
 alias/InvokeDynamicVirtual.java:17: error: [assignment.type.incompatible] incompatible types in assignment.
@@ -177,13 +177,13 @@ alias/InvokeDynamicVirtual.java:17: error: [assignment.type.incompatible] incomp
 
 [alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
 
-#### docker
+#### checker command
 
 ```
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InvokeDynamicConstructor.java
 ```
 
-#### output
+#### checker output
 
 ```
 alias/InvokeDynamicConstructor.java:27: error: [assignment.type.incompatible] incompatible types in assignment.
@@ -207,13 +207,13 @@ alias/InvokeDynamicConstructor.java:30: error: [unique.leaked] Reference annotat
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -229,13 +229,13 @@ NA
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA

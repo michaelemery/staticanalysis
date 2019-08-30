@@ -1,19 +1,33 @@
 # infer results (init)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
-Version: findbugs-3.0.1
+Version: infer-0.13.1
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-If you have Docker installed on your system, you may pull/update and run the Docker instance for this project with;
+<br>
+
+#### run checker from docker
+
+Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the checker command(s) provided with each test result, and paste them into your interactive Docker session. 
+
+To download/update and run your project Docker container;
 
 ```
 docker pull michaelemery/staticanalysis
 docker run -it --rm michaelemery/staticanalysis
 ```
+
+#### run junit tests from docker
+
+```
+sh test.sh [ [ init ] | [ init <class-name> ] ]
+```
+
+* `sh test.sh` will run all tests
 
 <br>
 
@@ -23,7 +37,7 @@ docker run -it --rm michaelemery/staticanalysis
 
 [init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac src/init/IntraProcedural.java
@@ -34,29 +48,29 @@ infer run -a checkers --eradicate -- javac src/init/IntraProcedural.java
 ```
 Found 1 issue
 
-src/init/IntraProcedural.java:17: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `IntraProcedural.object` is not initialized in the constructor and is not declared `@Nullable`
-  15.   
-  16.       // fail to initialise
-  17. >     IntraProcedural(int x) {
-  18.           this.object.toString();
-  19.       }
+src/init/IntraProcedural.java:31: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `IntraProcedural(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 31)
+  29.        */
+  30.       public static void setFooToNull() {
+  31. >         new IntraProcedural(null).foo.toString();
+  32.       }
+  33.   
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 17 | TP |
+| 31 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 1 | 0 |
-| - | 0 | 1 |
+| - | 1 | 1 |
 
-&nbsp; ⟶ &nbsp; accurate
+&nbsp; ⟶ &nbsp; unsound
 
 <br>
 
@@ -66,7 +80,7 @@ src/init/IntraProcedural.java:17: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 [init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac src/init/InterProcedural.java
@@ -109,7 +123,7 @@ src/init/InterProcedural.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 [init/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac src/init/ReflectMethod.java
@@ -144,7 +158,7 @@ No issues found.
 
 [init/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectConstructorTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac src/init/ReflectConstructor.java
@@ -179,7 +193,7 @@ No issues found.
 
 [init/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectFieldTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac src/init/ReflectField.java
@@ -231,7 +245,7 @@ src/init/ReflectField.java:20: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 [init/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac src/init/InvokeDynamicMethod.java
@@ -266,7 +280,7 @@ No issues found.
 
 [init/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac src/init/InvokeDynamicConstructor.java
@@ -301,7 +315,7 @@ No issues found.
 
 [init/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicFieldTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac src/init/InvokeDynamicField.java
@@ -336,7 +350,7 @@ No issues found.
 
 [init/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/DynamicProxyTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac src/init/DynamicProxy.java

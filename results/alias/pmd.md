@@ -1,6 +1,6 @@
 # pmd results (alias)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/init/README.md) | [alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
@@ -19,13 +19,13 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
 
-#### docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d alias/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
 alias/IntraProcedural.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
@@ -40,13 +40,13 @@ alias/IntraProcedural.java:21:	Assigning an Object to null is a code smell.  Con
 
 [alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
 
-#### docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d alias/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
 alias/InterProcedural.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
@@ -62,13 +62,13 @@ alias/InterProcedural.java:21:	Assigning an Object to null is a code smell.  Con
 
 [alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
 
-#### docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d alias/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
 alias/ReflectMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
@@ -83,13 +83,13 @@ alias/ReflectMethod.java:25:	Assigning an Object to null is a code smell.  Consi
 
 [alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
 
-#### docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d alias/ReflectMethodOverload.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
 alias/ReflectMethodOverload.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
@@ -106,13 +106,13 @@ alias/ReflectMethodOverload.java:26:	Assigning an Object to null is a code smell
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -126,13 +126,13 @@ NA
 
 [alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
 
-#### docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d alias/InvokeDynamicVirtual.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
 alias/InvokeDynamicVirtual.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
@@ -147,13 +147,13 @@ alias/InvokeDynamicVirtual.java:29:	Assigning an Object to null is a code smell.
 
 [alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
 
-#### docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d alias/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 
-#### output
+#### checker output
 
 ```
 alias/InvokeDynamicConstructor.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
@@ -170,13 +170,13 @@ alias/InvokeDynamicConstructor.java:31:	Assigning an Object to null is a code sm
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -192,13 +192,13 @@ NA
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA

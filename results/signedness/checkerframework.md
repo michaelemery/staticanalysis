@@ -1,6 +1,6 @@
 # checker framework results (signedness)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
@@ -16,13 +16,13 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [signedness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/signedness/IntraProcedural.java)
 
-#### docker
+#### checker command
 
 ```
 javac -processor org.checkerframework.checker.nullness.NullnessChecker signedness/InterProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 No reported issues.
@@ -38,13 +38,13 @@ No reported issues.
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -60,13 +60,13 @@ NA
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -82,13 +82,13 @@ NA
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -104,13 +104,13 @@ NA
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -127,13 +127,13 @@ NA
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -149,13 +149,13 @@ NA
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -171,13 +171,13 @@ NA
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -193,13 +193,13 @@ NA
 
 This language feature is not applicable to the checker being tested. 
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA

@@ -1,6 +1,6 @@
 # infer results (nullness)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
@@ -18,13 +18,13 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/IntraProcedural.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac nullness/IntraProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 2 issues
@@ -59,13 +59,13 @@ Summary of the reports
 
 [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InterProcedural.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac nullness/InterProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 1 issue
@@ -91,13 +91,13 @@ Summary of the reports
 
 [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethod.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac nullness/ReflectMethod.java
 ```
 
-#### output
+#### checker output
 
 ```
 No reported issues.
@@ -111,7 +111,7 @@ No reported issues.
 
 [nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethodOverload.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac nullness/ReflectMethodOverload.java
@@ -131,13 +131,13 @@ No reported issues.
 
 [nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectFieldAccess.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac nullness/ReflectFieldAccess.java
 ```
 
-#### output
+#### checker output
 
 ````
 No reported issues.
@@ -152,13 +152,13 @@ No reported issues.
 
 [nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicVirtual.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac nullness/InvokeDynamicVirtual.java
 ```
 
-#### output
+#### checker output
 
 ```
 No reported issues.
@@ -172,13 +172,13 @@ No reported issues.
 
 [nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicConstructor.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac nullness/InvokeDynamicConstructor.java
 ```
 
-#### output
+#### checker output
 
 ```
 No reported issues.
@@ -192,13 +192,13 @@ No reported issues.
 
 [nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicField.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac nullness/InvokeDynamicField.java
 ```
 
-#### output
+#### checker output
 
 ```
 No reported issues.
@@ -212,13 +212,13 @@ No reported issues.
 
 [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/DynamicProxy.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac nullness/DynamicProxy.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 1 issue

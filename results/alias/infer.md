@@ -1,6 +1,6 @@
 # infer results (alias)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
@@ -16,13 +16,13 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 [alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac alias/IntraProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 1 issue
@@ -48,13 +48,13 @@ Summary of the reports
 
 [alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac alias/InterProcedural.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 1 issue
@@ -80,13 +80,13 @@ Summary of the reports
 
 [alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac alias/ReflectMethod.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 1 issue
@@ -112,13 +112,13 @@ Summary of the reports
 
 [alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac alias/ReflectMethodOverload.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 1 issue
@@ -146,13 +146,13 @@ Summary of the reports
 
 This language feature is not applicable to the checker being tested.
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -166,13 +166,13 @@ NA
 
 [alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac alias/InvokeDynamicVirtual.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 1 issue
@@ -198,13 +198,13 @@ Summary of the reports
 
 [alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
 
-#### docker
+#### checker command
 
 ```
 infer run -a checkers --eradicate -- javac alias/InvokeDynamicConstructor.java
 ```
 
-#### output
+#### checker output
 
 ```
 Found 1 issue
@@ -232,13 +232,13 @@ Summary of the reports
 
 This language feature is not applicable to the checker being tested.
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA
@@ -254,13 +254,13 @@ NA
 
 This language feature is not applicable to the checker being tested.
 
-#### docker
+#### checker command
 
 ```
 NA
 ```
 
-#### output
+#### checker output
 
 ```
 NA

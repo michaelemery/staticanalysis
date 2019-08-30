@@ -1,19 +1,33 @@
 # pmd results (init)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/src/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/src/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/src/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/src/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/src/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
-Version: findbugs-3.0.1
+Version: findbugs-6.1.0
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-If you have Docker installed on your system, you may pull/update and run the Docker instance for this project with;
+<br>
+
+#### run checker from docker
+
+Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the checker command(s) provided with each test result, and paste them into your interactive Docker session. 
+
+To download/update and run your project Docker container;
 
 ```
 docker pull michaelemery/staticanalysis
 docker run -it --rm michaelemery/staticanalysis
 ```
+
+#### run junit tests from docker
+
+```
+sh test.sh [ [ init ] | [ init <class-name> ] ]
+```
+
+* `sh test.sh` will run all tests
 
 <br>
 
@@ -23,7 +37,7 @@ docker run -it --rm michaelemery/staticanalysis
 
 [init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d src/init/IntraProcedural.java -f text -R category/java/errorprone.xml
@@ -58,7 +72,7 @@ src/init/IntraProcedural.java:8:	Found non-transient, non-static member. Please 
 
 [init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d src/init/InterProcedural.java -f text -R category/java/errorprone.xml
@@ -93,7 +107,7 @@ src/init/InterProcedural.java:8:	Found non-transient, non-static member. Please 
 
 [init/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d src/init/ReflectMethod.java -f text -R category/java/errorprone.xml
@@ -128,7 +142,7 @@ src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please m
 
 [init/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectConstructorTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d src/init/ReflectMethod.java -f text -R category/java/errorprone.xml
@@ -163,7 +177,7 @@ src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please m
 
 [init/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectFieldTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d src/init/ReflectField.java -f text -R category/java/errorprone.xml
@@ -198,7 +212,7 @@ $PMD_HOME/bin/run.sh pmd -d src/init/ReflectField.java -f text -R category/java/
 
 [init/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
@@ -233,7 +247,7 @@ src/init/InvokeDynamicMethod.java:12:	Found non-transient, non-static member. Pl
 
 [init/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
@@ -268,7 +282,7 @@ $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicConstructor.java -f text -R ca
 
 [init/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicFieldTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicField.java -f text -R category/java/errorprone.xml
@@ -303,7 +317,7 @@ src/init/InvokeDynamicField.java:12:	Found non-transient, non-static member. Ple
 
 [init/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/DynamicProxyTest.java)
 
-#### run checker from docker
+#### checker command
 
 ```
 $PMD_HOME/bin/run.sh pmd -d src/init/DynamicProxy.java -f text -R category/java/errorprone.xml
