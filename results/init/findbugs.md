@@ -73,15 +73,16 @@ Warnings generated: 5
 | - | 1 | 1 |
 
 > unsound
-> * predicted NullPointerException at accessFooBeforeSet() but failed to predict NullPointerException at setFooToNull()
+> * failed to predict NullPointerException at setFooToNull()
+> * predicted NullPointerException at accessFooBeforeSet()
 
 <br>
 
 ## InterProcedural
 
-[init/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
+* [init/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
 
-[init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
+* [init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
 
 #### checker command
 
