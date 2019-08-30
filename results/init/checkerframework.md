@@ -287,9 +287,9 @@ No issues found.
 | + | 0 | 0 |
 | - | 1 | 1 |
 
-> failed to predict NullPointerException at setFooToNull()
+>failed to predict NullPointerException at setFooToNull()
 > 
-> unsound
+>unsound
 
 <br>
 
