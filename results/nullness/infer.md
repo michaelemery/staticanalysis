@@ -4,7 +4,7 @@
 
 <br>
 
-Version: 0.13.1
+Version: infer-0.13.1
 
 Infer:Eradicate is a type checker for @Nullable annotations for Java. It is part of the Infer static analysis suite of tools. The goal is to eradicate null pointer exceptions.
 @Nullable annotations denote that a parameter, field or the return value of a method can be null. When decorating a parameter, this denotes that the parameter can legitimately be null and the method will need to deal with it. When decorating a method, this denotes the method might legitimately return null.
@@ -51,9 +51,23 @@ Summary of the reports
   ERADICATE_FIELD_NOT_NULLABLE: 1
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
 
 ## InterProcedural
 
@@ -83,9 +97,23 @@ Summary of the reports
   ERADICATE_PARAMETER_NOT_NULLABLE: 1
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
 
 ## ReflectMethod
 
@@ -103,18 +131,32 @@ infer run -a checkers --eradicate -- javac nullness/ReflectMethod.java
 No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 0 | 0 |
 
-## ReflectMethodOverload
+> ???
 
-[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethodOverload.java)
+<br>
+
+## ReflectConstructor
+
+[nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectConstructor.java)
 
 #### checker command
 
 ```
-infer run -a checkers --eradicate -- javac nullness/ReflectMethodOverload.java
+infer run -a checkers --eradicate -- javac nullness/ReflectConstructor.java
 ```
 
 ### output
@@ -123,18 +165,32 @@ infer run -a checkers --eradicate -- javac nullness/ReflectMethodOverload.java
 No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 0 | 0 |
 
-## ReflectFieldAccess
+> ???
 
-[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectFieldAccess.java)
+<br>
+
+## ReflectField
+
+[nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectField.java)
 
 #### checker command
 
 ```
-infer run -a checkers --eradicate -- javac nullness/ReflectFieldAccess.java
+infer run -a checkers --eradicate -- javac nullness/ReflectField.java
 ```
 
 #### checker output
@@ -144,18 +200,32 @@ No reported issues.
 
 ````
 
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 1 | 0 | unsound |
+|#### output analysis
+ 
+ | line(s) | event |
+ | :---: | :---: |
+ | - | - |
+ | - | - |
+ 
+ #### expected / actual errors
+ 
+ |  | + | - |
+ | :---: | :---: | :---: |
+ | + | 0 | 0 |
+ | - | 0 | 0 |
+ 
+ > ???
+ 
+ <br>
 
-## InvokeDynamicVirtual
+## InvokeDynamicMethod
 
-[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicVirtual.java)
+[nullness/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicMethod.java)
 
 #### checker command
 
 ```
-infer run -a checkers --eradicate -- javac nullness/InvokeDynamicVirtual.java
+infer run -a checkers --eradicate -- javac nullness/InvokeDynamicMethod.java
 ```
 
 #### checker output
@@ -164,9 +234,23 @@ infer run -a checkers --eradicate -- javac nullness/InvokeDynamicVirtual.java
 No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
 
 ## InvokeDynamicConstructor
 
@@ -184,9 +268,23 @@ infer run -a checkers --eradicate -- javac nullness/InvokeDynamicConstructor.jav
 No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
 
 ## InvokeDynamicField
 
@@ -204,9 +302,23 @@ infer run -a checkers --eradicate -- javac nullness/InvokeDynamicField.java
 No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
 
 ## DynamicProxy
 
@@ -236,6 +348,20 @@ Summary of the reports
   ERADICATE_PARAMETER_NOT_NULLABLE: 1
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | accurate |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>

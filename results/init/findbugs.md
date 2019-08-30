@@ -374,7 +374,7 @@ Warnings generated: 2
 
 ```
 javac -d out/ src/init/DynamicProxy.java
-findbugs out/init/DynamicProxy.class
+findbugs out/init/DynamicProxy.class`
 ```
 
 #### checker output
@@ -404,5 +404,3 @@ Missing classes: 1
 | - | 1 | 1 |
 
 > unsound
-
-<br>

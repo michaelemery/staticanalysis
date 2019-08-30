@@ -101,24 +101,24 @@ alias/ReflectMethod.java:15: error: [assignment.type.incompatible] incompatible 
 | :---: | :---: | :---: |
 | 1 | 1 | aberrant |
 
-## ReflectMethodOverload
+## ReflectConstructor
 
-[alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
+[alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
 
 #### checker command
 
 ```
-javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/ReflectMethodOverload.java
+javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/ReflectConstructor.java
 ```
 
 #### checker output
 
 ```
-alias/ReflectMethodOverload.java:15: error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique ReflectMethodOverload original = new ReflectMethodOverload();
+alias/ReflectConstructor.java:15: error: [assignment.type.incompatible] incompatible types in assignment.
+        @Unique ReflectConstructor original = new ReflectConstructor();
                                                  ^
-  found   : @MaybeAliased ReflectMethodOverload
-  required: @NonLeaked @Unique ReflectMethodOverload
+  found   : @MaybeAliased ReflectConstructor
+  required: @NonLeaked @Unique ReflectConstructor
 1 error
 ```
 
@@ -126,9 +126,9 @@ alias/ReflectMethodOverload.java:15: error: [assignment.type.incompatible] incom
 | :---: | :---: | :---: |
 | 1 | 1 | aberrant |
 
-## ReflectFieldAccess
+## ReflectField
 
-[//]: [alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectFieldAccess.java)
+[//]: [alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectField.java)
 
 This language feature is not applicable to the checker being tested. 
 
@@ -148,24 +148,24 @@ NA
 | :---: | :---: | :---: |
 | - | - | NA |
 
-## InvokeDynamicVirtual
+## InvokeDynamicMethod
 
-[alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
+[alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
 
 #### checker command
 
 ```
-javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InvokeDynamicVirtual.java
+javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InvokeDynamicMethod.java
 ```
 
 #### checker output
 
 ```
-alias/InvokeDynamicVirtual.java:17: error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique InvokeDynamicVirtual original = new InvokeDynamicVirtual();
+alias/InvokeDynamicMethod.java:17: error: [assignment.type.incompatible] incompatible types in assignment.
+        @Unique InvokeDynamicMethod original = new InvokeDynamicMethod();
                                                 ^
-  found   : @MaybeAliased InvokeDynamicVirtual
-  required: @NonLeaked @Unique InvokeDynamicVirtual
+  found   : @MaybeAliased InvokeDynamicMethod
+  required: @NonLeaked @Unique InvokeDynamicMethod
 1 error
 ```
 

@@ -79,30 +79,30 @@ alias/ReflectMethod.java:25:	Assigning an Object to null is a code smell.  Consi
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-## ReflectMethodOverload
+## ReflectConstructor
 
-[alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
+[alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
 
 #### checker command
 
 ```
-$PMD_HOME/bin/run.sh pmd -d alias/ReflectMethodOverload.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d alias/ReflectConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-alias/ReflectMethodOverload.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-alias/ReflectMethodOverload.java:26:	Assigning an Object to null is a code smell.  Consider refactoring.
+alias/ReflectConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+alias/ReflectConstructor.java:26:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
 | false negative | false positive | result |
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-## ReflectFieldAccess
+## ReflectField
 
-[//]: [alias/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectFieldAccess.java)
+[//]: [alias/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectField.java)
 
 This language feature is not applicable to the checker being tested. 
 
@@ -122,21 +122,21 @@ NA
 | :---: | :---: | :---: |
 | - | - | NA |
 
-## InvokeDynamicVirtual
+## InvokeDynamicMethod
 
-[alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
+[alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
 
 #### checker command
 
 ```
-$PMD_HOME/bin/run.sh pmd -d alias/InvokeDynamicVirtual.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d alias/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-alias/InvokeDynamicVirtual.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-alias/InvokeDynamicVirtual.java:29:	Assigning an Object to null is a code smell.  Consider refactoring.
+alias/InvokeDynamicMethod.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+alias/InvokeDynamicMethod.java:29:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
 | false negative | false positive | result |

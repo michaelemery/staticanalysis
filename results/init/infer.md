@@ -6,6 +6,10 @@
 
 Version: infer-0.13.1
 
+Infer:Eradicate is a type checker for @Nullable annotations for Java. It is part of the Infer static analysis suite of tools. The goal is to eradicate null pointer exceptions.
+@Nullable annotations denote that a parameter, field or the return value of a method can be null. When decorating a parameter, this denotes that the parameter can legitimately be null and the method will need to deal with it. When decorating a method, this denotes the method might legitimately return null.
+Starting from @Nullable-annotated programs, the checker performs a flow sensitive analysis to propagate the nullability through assignments and calls, and flags errors for unprotected accesses to nullable values or inconsistent/missing annotations. It can also be used to add annotations to a previously un-annotated program.
+
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
 <br>
@@ -68,9 +72,9 @@ src/init/IntraProcedural.java:31: error: ERADICATE_PARAMETER_NOT_NULLABLE
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 1 | 0 |
-| - | 1 | 1 |
+| - | 0 | 1 |
 
-> unsound
+> accurate
 
 <br>
 
@@ -91,20 +95,20 @@ infer run -a checkers --eradicate -- javac src/init/InterProcedural.java
 ```
 Found 1 issue
 
-src/init/InterProcedural.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `returnObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 18)
-  16.       // fail to initialise
-  17.       InterProcedural(int x) {
-  18. >         this.object = returnObject(null);
-  19.           this.object.toString();
-  20.       }
+src/init/InterProcedural.java:35: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `InterProcedural(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 35)
+  33.        */
+  34.       public static void setFooToNull() {
+  35. >         new InterProcedural(null).foo.toString();
+  36.       }
+  37.   
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 18 | TP |
+| 35 | TP |
 
 #### expected / actual errors
 
@@ -114,41 +118,6 @@ src/init/InterProcedural.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
 | - | 0 | 1 |
 
 > accurate
-
-<br>
-
-## ReflectMethod
-
-* [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
-
-* [init/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
-
-#### checker command
-
-```
-infer run -a checkers --eradicate -- javac src/init/ReflectMethod.java
-```
-
-#### checker output
-
-```
-No issues found.
-```
-
-#### output analysis
-
-| line(s) | event |
-| :---: | :---: |
-| - | - |
-
-#### expected / actual errors
-
-|  | + | - |
-| :---: | :---: | :---: |
-| + | 0 | 0 |
-| - | 1 | 0 |
-
-> unsound
 
 <br>
 
@@ -187,6 +156,49 @@ No issues found.
 
 <br>
 
+## ReflectMethod
+
+* [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
+
+* [init/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
+
+#### checker command
+
+```
+infer run -a checkers --eradicate -- javac src/init/ReflectMethod.java
+```
+
+#### checker output
+
+```
+Found 1 issue
+
+src/init/ReflectMethod.java:33: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `ReflectMethod(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 33)
+  31.        */
+  32.       public static void setFooToNull() throws Exception {
+  33. >         new ReflectMethod(null).foo.toString();
+  34.       }
+  35.   }
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 33 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 1 | 0 |
+| - | 0 | 1 |
+
+> accurate
+
+<br>
+
 ## ReflectField
 
 * [init/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectField.java)
@@ -204,29 +216,29 @@ infer run -a checkers --eradicate -- javac src/init/ReflectField.java
 ```
 Found 2 issues
 
-src/init/ReflectField.java:13: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `ReflectField.object` is not initialized in the constructor and is not declared `@Nullable`
+src/init/ReflectField.java:12: error: ERADICATE_FIELD_NOT_INITIALIZED
+  Field `ReflectField.foo` is not initialized in the constructor and is not declared `@Nullable`
+  10.       Object foo;
   11.   
-  12.       // initialises field
-  13. >     ReflectField() throws Exception {
-  14.           Field field = this.getClass().getDeclaredField("object");
-  15.           field.set(this, new Object());
+  12. >     ReflectField(Object object) throws NoSuchFieldException, IllegalAccessException {
+  13.           Class<?> C = this.getClass();
+  14.           Field objectField = C.getDeclaredField("foo");
 
-src/init/ReflectField.java:20: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `ReflectField.object` is not initialized in the constructor and is not declared `@Nullable`
-  18.   
-  19.       // fails to initialise field
-  20. >     ReflectField(int x) throws Exception {
-  21.           Field field = this.getClass().getDeclaredField("object");
-  22.           field.set(this, (Object) null);
+src/init/ReflectField.java:29: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `ReflectField(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 29)
+  27.        */
+  28.       public static void setFooToNull() throws Exception {
+  29. >         new ReflectField(null).foo.toString();
+  30.       }
+  31.   }
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 13 | FP |
-| 20 | TP |
+| 12 | FP |
+| 29 | TP |
 
 #### expected / actual errors
 
@@ -236,41 +248,6 @@ src/init/ReflectField.java:20: error: ERADICATE_FIELD_NOT_INITIALIZED
 | - | 0 | 0 |
 
 > imprecise
-
-<br>
-
-## InvokeDynamicMethod
-
-* [init/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicMethod.java)
-
-* [init/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
-
-#### checker command
-
-```
-infer run -a checkers --eradicate -- javac src/init/InvokeDynamicMethod.java
-```
-
-#### checker output
-
-```
-No issues found.
-```
-
-#### output analysis
-
-| line(s) | event |
-| :---: | :---: |
-| - | - |
-
-#### expected / actual errors
-
-|  | + | - |
-| :---: | :---: | :---: |
-| + | 0 | 0 |
-| - | 1 | 0 |
-
-> unsound
 
 <br>
 
@@ -309,6 +286,49 @@ No issues found.
 
 <br>
 
+## InvokeDynamicMethod
+
+* [init/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicMethod.java)
+
+* [init/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
+
+#### checker command
+
+```
+infer run -a checkers --eradicate -- javac src/init/InvokeDynamicMethod.java
+```
+
+#### checker output
+
+```
+Found 1 issue
+
+src/init/InvokeDynamicMethod.java:37: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `InvokeDynamicMethod(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 37)
+  35.        */
+  36.       public static void setFooToNull() throws Throwable {
+  37. >         new InvokeDynamicMethod(null).foo.toString();
+  38.       }
+  39.   }
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 37 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 1 | 0 |
+| - | 0 | 1 |
+
+> accurate
+
+<br>
+
 ## InvokeDynamicField
 
 * [init/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicField.java)
@@ -324,23 +344,40 @@ infer run -a checkers --eradicate -- javac src/init/InvokeDynamicField.java
 #### checker output
 
 ```
-No issues found.
+Found 2 issues
+
+src/init/InvokeDynamicField.java:13: error: ERADICATE_FIELD_NOT_INITIALIZED
+  Field `InvokeDynamicField.foo` is not initialized in the constructor and is not declared `@Nullable`
+  11.       Object foo;
+  12.   
+  13. >     InvokeDynamicField(Object object) throws Throwable {
+  14.           getSetterMethodHandle().invoke(null, object);
+  15.           this.foo.toString();
+
+src/init/InvokeDynamicField.java:34: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `InvokeDynamicField(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 34)
+  32.        */
+  33.       public static void setFooToNull() throws Throwable {
+  34. >         new InvokeDynamicField(null);
+  35.       }
+  36.   }
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 13 | FP |
+| 34 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
-| - | 1 | 0 |
+| + | 1 | 1 |
+| - | 0 | 0 |
 
-> unsound
+> imprecise
 
 <br>
 
@@ -361,28 +398,26 @@ infer run -a checkers --eradicate -- javac src/init/DynamicProxy.java
 ```
 Found 1 issue
 
-src/init/DynamicProxy.java:18: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `get(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 18)
-  16.   
-  17.       DynamicProxy(Foo proxyInstance, int x) {
-  18. >         this.o = proxyInstance.get(null);
-  19.           this.o.toString();
-  20.       }
+src/init/DynamicProxy.java:45: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `DynamicProxy(...)` needs a non-null value in parameter 2 but argument `null` can be null. (Origin: null constant at line 45)
+  43.        */
+  44.       static void setFooToNull() {
+  45. >         new DynamicProxy(getProxyInstance(), null).foo.toString();
+  46.       }
+  47.   }
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 18 | FP |
+| 45 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 1 |
-| - | 1 | 0 |
+| + | 1 | 0 |
+| - | 0 | 1 |
 
-> unsound
-
-<br>
+> accurate

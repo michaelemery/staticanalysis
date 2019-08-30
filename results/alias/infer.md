@@ -108,14 +108,14 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-## ReflectMethodOverload
+## ReflectConstructor
 
-[alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
+[alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
 
 #### checker command
 
 ```
-infer run -a checkers --eradicate -- javac alias/ReflectMethodOverload.java
+infer run -a checkers --eradicate -- javac alias/ReflectConstructor.java
 ```
 
 #### checker output
@@ -123,10 +123,10 @@ infer run -a checkers --eradicate -- javac alias/ReflectMethodOverload.java
 ```
 Found 1 issue
 
-alias/ReflectMethodOverload.java:26: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `ReflectMethodOverload.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 26)
-  24.           ReflectMethodOverload alias =
-  25.                   (ReflectMethodOverload) m.invoke(new ReflectMethodOverload(), original, 1);
+alias/ReflectConstructor.java:26: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `ReflectConstructor.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 26)
+  24.           ReflectConstructor alias =
+  25.                   (ReflectConstructor) m.invoke(new ReflectConstructor(), original, 1);
   26. >         alias.o = null;
   27.           System.out.println(original.o.toString());
   28.       }
@@ -140,9 +140,9 @@ Summary of the reports
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-## ReflectFieldAccess
+## ReflectField
 
-[//]: [alias/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectFieldAccess.java)
+[//]: [alias/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectField.java)
 
 This language feature is not applicable to the checker being tested.
 
@@ -162,14 +162,14 @@ NA
 | :---: | :---: | :---: |
 | - | - | NA |
 
-## InvokeDynamicVirtual
+## InvokeDynamicMethod
 
-[alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
+[alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
 
 #### checker command
 
 ```
-infer run -a checkers --eradicate -- javac alias/InvokeDynamicVirtual.java
+infer run -a checkers --eradicate -- javac alias/InvokeDynamicMethod.java
 ```
 
 #### checker output
@@ -177,10 +177,10 @@ infer run -a checkers --eradicate -- javac alias/InvokeDynamicVirtual.java
 ```
 Found 1 issue
 
-alias/InvokeDynamicVirtual.java:29: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `InvokeDynamicVirtual.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 29)
-  27.           InvokeDynamicVirtual alias =
-  28.                   (InvokeDynamicVirtual) h.invoke(new InvokeDynamicVirtual(), original);
+alias/InvokeDynamicMethod.java:29: error: ERADICATE_FIELD_NOT_NULLABLE
+  Field `InvokeDynamicMethod.o` can be null but is not declared `@Nullable`. (Origin: null constant at line 29)
+  27.           InvokeDynamicMethod alias =
+  28.                   (InvokeDynamicMethod) h.invoke(new InvokeDynamicMethod(), original);
   29. >         alias.o = null;
   30.           System.out.println(original.o.toString());
   31.       }

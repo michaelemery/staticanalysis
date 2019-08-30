@@ -76,31 +76,9 @@ NA
 | :---: | :---: | :---: |
 | - | - | NA |
 
-## ReflectMethodOverload
+## ReflectConstructor
 
-[//]: [signedness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/signedness/ReflectMethodOverload.java)
-
-This language feature is not applicable to the checker being tested. 
-
-#### checker command
-
-```
-NA
-```
-
-#### checker output
-
-```
-NA
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| - | - | NA |
-
-## ReflectFieldAccess
-
-[//]: [signedness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/signedness/ReflectFieldAccess.java)
+[//]: [signedness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/signedness/ReflectConstructor.java)
 
 This language feature is not applicable to the checker being tested. 
 
@@ -120,10 +98,32 @@ NA
 | :---: | :---: | :---: |
 | - | - | NA |
 
+## ReflectField
 
-## InvokeDynamicVirtual
+[//]: [signedness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/signedness/ReflectField.java)
 
-[//]: [signedness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/signedness/InvokeDynamicVirtual.java)
+This language feature is not applicable to the checker being tested. 
+
+#### checker command
+
+```
+NA
+```
+
+#### checker output
+
+```
+NA
+```
+
+| false negative | false positive | result |
+| :---: | :---: | :---: |
+| - | - | NA |
+
+
+## InvokeDynamicMethod
+
+[//]: [signedness/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/signedness/InvokeDynamicMethod.java)
 
 This language feature is not applicable to the checker being tested. 
 

@@ -74,15 +74,15 @@ No reported issues.
 | :---: | :---: | :---: |
 | 0 | 0 | unsound |
 
-## ReflectMethodOverload
+## ReflectConstructor
 
-[alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethodOverload.java)
+[alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
 
 #### checker command
 
 ```
-javac alias/ReflectMethodOverload.java
-findbugs alias/ReflectMethodOverload.class
+javac alias/ReflectConstructor.java
+findbugs alias/ReflectConstructor.class
 ```
 
 #### checker output
@@ -95,9 +95,9 @@ No reported issues.
 | :---: | :---: | :---: |
 | 0 | 0 | unsound |
 
-## ReflectFieldAccess
+## ReflectField
 
-[//]: [alias/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectFieldAccess.java)
+[//]: [alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectField.java)
 
 This language feature is not applicable to the checker being tested. 
 
@@ -117,15 +117,15 @@ NA
 | :---: | :---: | :---: |
 | - | - | NA |
 
-## InvokeDynamicVirtual
+## InvokeDynamicMethod
 
-[alias/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicVirtual.java)
+[alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
 
 #### checker command
 
 ```
-javac alias/InvokeDynamicVirtual.java
-findbugs alias/InvokeDynamicVirtual.class
+javac alias/InvokeDynamicMethod.java
+findbugs alias/InvokeDynamicMethod.class
 ```
 
 #### checker output

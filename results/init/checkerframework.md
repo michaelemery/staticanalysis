@@ -37,7 +37,7 @@ sh test.sh [ [ init ] | [ init <class-name> ] ]
 
 * [init/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/IntraProcedural.java)
 
-* [test/init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
+* [init/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/IntraProceduralTest.java)
 
 #### checker command
 
@@ -81,7 +81,7 @@ src/init/IntraProcedural.java:31: error: [argument.type.incompatible] incompatib
 
 * [init/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InterProcedural.java)
 
-* [test/init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
+* [init/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InterProceduralTest.java)
 
 #### checker command
 
@@ -288,7 +288,6 @@ No issues found.
 | - | 1 | 1 |
 
 > unsound
-> * failed to predict NullPointerException at setFooToNull()
 
 <br>
 

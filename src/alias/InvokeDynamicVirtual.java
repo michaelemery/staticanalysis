@@ -9,12 +9,12 @@ import java.lang.invoke.MethodType;
 /**
  *
  */
-public class InvokeDynamicVirtual {
+public class InvokeDynamicMethod {
 
     Object o = "init";
 
     public static void main(String[] args) throws Throwable {
-        @Unique InvokeDynamicVirtual original = new InvokeDynamicVirtual();
+        @Unique InvokeDynamicMethod original = new InvokeDynamicMethod();
 
         /* safe: set unique object uniquely */
         original.o = "safe";
@@ -23,9 +23,9 @@ public class InvokeDynamicVirtual {
         /* unsafe: make object null via alias */
         MethodHandles.Lookup l = MethodHandles.lookup();
         MethodType t = MethodType.methodType(Object.class, Object.class);
-        MethodHandle h = l.findVirtual(InvokeDynamicVirtual.class, "aliasOf", t);
-        InvokeDynamicVirtual alias =
-                (InvokeDynamicVirtual) h.invoke(new InvokeDynamicVirtual(), original);
+        MethodHandle h = l.findVirtual(InvokeDynamicMethod.class, "aliasOf", t);
+        InvokeDynamicMethod alias =
+                (InvokeDynamicMethod) h.invoke(new InvokeDynamicMethod(), original);
         alias.o = null;
         System.out.println(original.o.toString());
     }

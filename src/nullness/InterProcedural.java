@@ -24,7 +24,7 @@ public class InterProcedural {
      * Field set to null always throws NullPointerException.
      */
     public static void setFooToNull() {
-        IntraProcedural i = new IntraProcedural();
+        InterProcedural i = new InterProcedural();
         i.foo = getObject(null);
         i.foo.toString();
     }

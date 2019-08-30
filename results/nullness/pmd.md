@@ -4,7 +4,7 @@
 
 <br>
 
-Version: pmd-bin-6.1.0
+Version: pmd-6.1.0
 
 * PMD checkers belonging to the "error prone" category are the only ones required for these tests.
 * The `$PMD_HOME` variable must be configured to use these commands.
@@ -75,14 +75,14 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-## ReflectMethodOverload
+## ReflectConstructor
 
-[nullness/ReflectMethodOverload.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethodOverload.java)
+[nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectConstructor.java)
 
 #### checker command
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/ReflectMethodOverload.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -95,14 +95,14 @@ No reported issues.
 | :---: | :---: | :---: |
 | 1 | 0 | unsound |
 
-## ReflectFieldAccess
+## ReflectField
 
-[nullness/ReflectFieldAccess.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectFieldAccess.java)
+[nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectField.java)
 
 #### checker command
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/ReflectFieldAccess.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/ReflectField.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -116,14 +116,14 @@ No reported issues.
 | 1 | 0 | unsound |
 
 
-## InvokeDynamicVirtual
+## InvokeDynamicMethod
 
-[nullness/InvokeDynamicVirtual.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicVirtual.java)
+[nullness/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicMethod.java)
 
 #### checker command
 
 ```
-$PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamicVirtual.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d nullness/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output

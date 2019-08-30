@@ -7,22 +7,22 @@ import java.lang.reflect.Method;
 /**
  *
  */
-public class ReflectMethodOverload {
+public class ReflectConstructor {
 
     Object o = "init";
 
     public static void main(String[] args) throws Exception {
-        @Unique ReflectMethodOverload original = new ReflectMethodOverload();
+        @Unique ReflectConstructor original = new ReflectConstructor();
 
         /* safe: set unique object uniquely */
         original.o = "safe";
         System.out.println(original.o.toString());
 
         /* unsafe: make object null via alias */
-        Class<?> C = ReflectMethodOverload.class;
+        Class<?> C = ReflectConstructor.class;
         Method m = C.getDeclaredMethod("aliasOf", Object.class, int.class);
-        ReflectMethodOverload alias =
-                (ReflectMethodOverload) m.invoke(new ReflectMethodOverload(), original, 1);
+        ReflectConstructor alias =
+                (ReflectConstructor) m.invoke(new ReflectConstructor(), original, 1);
         alias.o = null;
         System.out.println(original.o.toString());
     }

@@ -4,7 +4,12 @@
 
 <br>
 
-Version: findbugs-6.1.0
+Version: pmd-6.1.0
+
+* PMD checkers belonging to the "error prone" category are the only ones required for these tests.
+* The `$PMD_HOME` variable must be configured to use these commands.
+* JDK must be set to 1.8 or lower.
+* Outputs have been simplified for brevity.
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
@@ -291,14 +296,14 @@ $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicField.java -f text -R category
 #### checker output
 
 ```
-src/init/InvokeDynamicField.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/init/InvokeDynamicField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 12 | NA |
+| 11 | NA |
 
 #### expected / actual errors
 
@@ -327,16 +332,15 @@ $PMD_HOME/bin/run.sh pmd -d src/init/DynamicProxy.java -f text -R category/java/
 
 ```
 src/init/DynamicProxy.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-src/init/DynamicProxy.java:27:	Found 'DU'-anomaly for variable 'proxyInstance' (lines '27'-'39').
-rc/init/DynamicProxy.java:28:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead. issues found.
+rc/init/DynamicProxy.java:22:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead. issues found.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 18, 28 | NA |
-| 27 | FP |
+| 10 | NA |
+| 22 | FP |
 
 #### expected / actual errors
 
@@ -346,6 +350,3 @@ rc/init/DynamicProxy.java:28:	In J2EE, getClassLoader() might not work as expect
 | - | 1 | 0 |
 
 > unsound
-
-<br>
-˚
