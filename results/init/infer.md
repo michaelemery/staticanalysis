@@ -12,7 +12,7 @@ Starting from @Nullable-annotated programs, the checker performs a flow sensitiv
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-#### run checker from docker
+#### pull docker container and run interactive instance
 
 ```shell script
 docker pull michaelemery/staticanalysis
@@ -24,8 +24,6 @@ docker run -it --rm michaelemery/staticanalysis
 ```shell script
 sh test.sh [ [ init ] | [ init <class-name> ] ]
 ```
-
-* `sh test.sh` will run all tests
 
 <br>
 
