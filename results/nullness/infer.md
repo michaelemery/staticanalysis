@@ -14,10 +14,6 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### run checker from docker
 
-Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the checker command(s) provided with each test result, and paste them into your interactive Docker session. 
-
-To download/update and run your project Docker container;
-
 ```
 docker pull michaelemery/staticanalysis
 docker run -it --rm michaelemery/staticanalysis
