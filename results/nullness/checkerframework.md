@@ -191,16 +191,14 @@ src/nullness/ReflectMethod.java:34: error: [argument.type.incompatible] incompat
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | FP |
-| 23 | FP |
-| 34(i) | TP |
-| 34(ii) | FP |
+| 8, 23 | FP |
+| 34(i), 34(ii) | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 3 |
+| + | 1 | 1 |
 | - | 0 | 0 |
 
 > imprecise
@@ -274,7 +272,7 @@ No reported issues.
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -353,9 +351,9 @@ No reported issues.
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
-> imprecise
+> unsound
 
 <br>
 
@@ -394,15 +392,14 @@ src/nullness/DynamicProxy.java:44: error: [argument.type.incompatible] incompati
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | FP |
-| 18 | FP |
+| 8, 18 | FP |
 | 44 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 2 |
+| + | 1 | 1 |
 | - | 0 | 0 |
 
 > imprecise

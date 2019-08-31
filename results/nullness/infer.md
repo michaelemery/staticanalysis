@@ -38,48 +38,31 @@ infer run -a checkers --eradicate -- javac src/nullness/IntraProcedural.java
 #### checker output
 
 ```
-Found 3 issues
+Found 1 issue
 
-src/nullness/IntraProcedural.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `IntraProcedural.foo` is not initialized in the constructor and is not declared `@Nullable`
-  6.    * Check nullness for field set via direct value assignment.
-  7.    */
-  8. > public class IntraProcedural {
-  9.   
-  10.       Object foo;
-
-src/nullness/IntraProcedural.java:26: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `IntraProcedural.foo` can be null but is not declared `@Nullable`. (Origin: null constant at line 26)
-  24.       public static void setFooToNull() {
-  25.           IntraProcedural i = new IntraProcedural();
-  26. >         i.foo = null;
-  27.           i.foo.toString();
-  28.       }
-
-src/nullness/IntraProcedural.java:27: error: ERADICATE_NULL_METHOD_CALL
-  The value of `i.foo` in the call to `toString()` could be null. (Origin: null constant at line 26)
-  25.           IntraProcedural i = new IntraProcedural();
-  26.           i.foo = null;
-  27. >         i.foo.toString();
-  28.       }
-  29.   }
+src/init/IntraProcedural.java:31: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `IntraProcedural(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 31)
+  29.        */
+  30.       public static void setFooToNull() {
+  31. >         new IntraProcedural(null).foo.toString();
+  32.       }
+  33.   
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 6 | FP |
-| 25, 24 | TP |
+| 31 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 1 |
-| - | 0 | 0 |
+| + | 1 | 0 |
+| - | 0 | 1 |
 
-> imprecise
+> accurate
 
 <br>
 
@@ -129,9 +112,11 @@ src/nullness/InterProcedural.java:28: error: ERADICATE_PARAMETER_NOT_NULLABLE
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 1 | 1 |
-| - | 0 | 0 |
+| - | 0 | 1 |
 
 > imprecise
+>
+> * line 6 error occurs with or without setFooToNull() and is therefore FP
 
 <br>
 
@@ -206,10 +191,12 @@ src/nullness/ReflectMethod.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
+| + | 0 | 1 |
 | - | 1 | 1 |
 
 > unsound
+>
+> * line 8 error occurs with or without setFooToNull() and is therefore FP
 
 <br>
 
@@ -288,6 +275,8 @@ src/nullness/ReflectField.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
  | - | 1 | 1 |
  
  > unsound
+>
+> * line 6 error occurs with or without setFooToNull() and is therefore FP
  
  <br>
 
@@ -362,10 +351,12 @@ src/nullness/InvokeDynamicMethod.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
+| + | 0 | 1 |
 | - | 1 | 1 |
 
 > unsound
+>
+> * line 10 error occurs with or without setFooToNull() and is therefore FP
 
 <br>
 
@@ -453,3 +444,5 @@ src/nullness/DynamicProxy.java:44: error: ERADICATE_PARAMETER_NOT_NULLABLE
 | - | 0 | 1 |
 
 > imprecise
+>
+> * line 8 error occurs with or without setFooToNull() and is therefore FP
