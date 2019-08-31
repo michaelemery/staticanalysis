@@ -18,7 +18,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac alias/IntraProcedural.java
 ```
 
@@ -50,7 +50,7 @@ Summary of the reports
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac alias/InterProcedural.java
 ```
 
@@ -82,7 +82,7 @@ Summary of the reports
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac alias/ReflectMethod.java
 ```
 
@@ -114,7 +114,7 @@ Summary of the reports
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac alias/ReflectConstructor.java
 ```
 
@@ -168,7 +168,7 @@ NA
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac alias/InvokeDynamicMethod.java
 ```
 
@@ -200,7 +200,7 @@ Summary of the reports
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac alias/InvokeDynamicConstructor.java
 ```
 

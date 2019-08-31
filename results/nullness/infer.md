@@ -21,7 +21,7 @@ docker run -it --rm michaelemery/staticanalysis
 
 #### run junit tests from docker
 
-```
+```shell script
 sh test.sh [ [ nullness ] | [ nullness <class-name> ] ]
 ```
 
@@ -37,7 +37,7 @@ sh test.sh [ [ nullness ] | [ nullness <class-name> ] ]
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/IntraProcedural.java
 ```
 
@@ -97,7 +97,7 @@ src/nullness/IntraProcedural.java:27: error: ERADICATE_NULL_METHOD_CALL
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/InterProcedural.java
 ```
 
@@ -149,7 +149,7 @@ src/nullness/InterProcedural.java:28: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/ReflectConstructor.java
 ```
 
@@ -184,7 +184,7 @@ No reported issues.
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/ReflectMethod.java
 ```
 
@@ -227,7 +227,7 @@ src/nullness/ReflectMethod.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/ReflectConstructor.java
 ```
 
@@ -262,7 +262,7 @@ No reported issues.
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/ReflectField.java
 ```
 
@@ -305,7 +305,7 @@ src/nullness/ReflectField.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/InvokeDynamicConstructor.java
 ```
 
@@ -340,7 +340,7 @@ No reported issues.
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/InvokeDynamicMethod.java
 ```
 
@@ -383,7 +383,7 @@ src/nullness/InvokeDynamicMethod.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/InvokeDynamicField.java
 ```
 
@@ -418,7 +418,7 @@ No reported issues.
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/nullness/DynamicProxy.java
 ```
 

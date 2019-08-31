@@ -21,7 +21,7 @@ docker run -it --rm michaelemery/staticanalysis
 
 #### run junit tests from docker
 
-```
+```shell script
 sh test.sh [ [ init ] | [ init <class-name> ] ]
 ```
 
@@ -37,7 +37,7 @@ sh test.sh [ [ init ] | [ init <class-name> ] ]
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/init/IntraProcedural.java
 ```
 
@@ -80,7 +80,7 @@ src/init/IntraProcedural.java:31: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/init/InterProcedural.java
 ```
 
@@ -123,7 +123,7 @@ src/init/InterProcedural.java:35: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/init/ReflectConstructor.java
 ```
 
@@ -144,7 +144,7 @@ No issues found.
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -158,7 +158,7 @@ No issues found.
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/init/ReflectMethod.java
 ```
 
@@ -201,7 +201,7 @@ src/init/ReflectMethod.java:33: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/init/ReflectField.java
 ```
 
@@ -253,7 +253,7 @@ src/init/ReflectField.java:29: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/init/InvokeDynamicConstructor.java
 ```
 
@@ -274,7 +274,7 @@ No issues found.
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -288,7 +288,7 @@ No issues found.
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/init/InvokeDynamicMethod.java
 ```
 
@@ -331,7 +331,7 @@ src/init/InvokeDynamicMethod.java:37: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/init/InvokeDynamicField.java
 ```
 
@@ -383,7 +383,7 @@ src/init/InvokeDynamicField.java:34: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 #### checker command
 
-```
+```shell script
 infer run -a checkers --eradicate -- javac src/init/DynamicProxy.java
 ```
 

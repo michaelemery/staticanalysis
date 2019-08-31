@@ -22,7 +22,7 @@ docker run -it --rm michaelemery/staticanalysis
 
 #### run junit tests from docker
 
-```
+```shell script
 sh test.sh [ [ init ] | [ init <class-name> ] ]
 ```
 
