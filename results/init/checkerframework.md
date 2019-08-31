@@ -12,7 +12,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### run checker from docker
 
-```
+```shell script
 docker pull michaelemery/staticanalysis
 docker run -it --rm michaelemery/staticanalysis
 ```
@@ -35,7 +35,7 @@ sh test.sh [ [ init ] | [ init <class-name> ] ]
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/IntraProcedural.java
 ```
 
@@ -79,7 +79,7 @@ src/init/IntraProcedural.java:31: error: [argument.type.incompatible] incompatib
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/InterProcedural.java
 ```
 
@@ -123,7 +123,7 @@ src/init/InterProcedural.java:35: error: [argument.type.incompatible] incompatib
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/ReflectConstructor.java
 ```
 
@@ -163,7 +163,7 @@ src/init/ReflectConstructor.java:33: error: [argument.type.incompatible] incompa
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/ReflectMethod.java
 ```
 
@@ -214,7 +214,7 @@ src/init/ReflectMethod.java:33: error: [argument.type.incompatible] incompatible
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/ReflectField.java
 ```
 
@@ -258,7 +258,7 @@ src/init/ReflectField.java:29: error: [argument.type.incompatible] incompatible 
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/InvokeDynamicConstructor.java
 ```
 
@@ -293,7 +293,7 @@ No issues found.
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/InvokeDynamicMethod.java
 ```
 
@@ -333,7 +333,7 @@ src/init/InvokeDynamicMethod.java:37: error: [argument.type.incompatible] incomp
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/InvokeDynamicField.java
 ```
 
@@ -377,7 +377,7 @@ src/init/InvokeDynamicField.java:34: error: [argument.type.incompatible] incompa
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/init/DynamicProxy.java
 ```
 

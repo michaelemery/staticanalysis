@@ -16,7 +16,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### checker command
 
-```
+```shell script
 javac alias/IntraProcedural.java
 findbugs alias/IntraProcedural.class
 ```
@@ -38,7 +38,7 @@ Warnings generated: 1
 
 #### checker command
 
-```
+```shell script
 javac alias/InterProcedural.java
 findbugs alias/InterProcedural.class
 ```
@@ -59,7 +59,7 @@ No reported issues.
 
 #### checker command
 
-```
+```shell script
 javac alias/ReflectMethod.java
 findbugs alias/ReflectMethod.class
 ```
@@ -80,7 +80,7 @@ No reported issues.
 
 #### checker command
 
-```
+```shell script
 javac alias/ReflectConstructor.java
 findbugs alias/ReflectConstructor.class
 ```
@@ -123,7 +123,7 @@ NA
 
 #### checker command
 
-```
+```shell script
 javac alias/InvokeDynamicMethod.java
 findbugs alias/InvokeDynamicMethod.class
 ```
@@ -144,7 +144,7 @@ No reported issues.
 
 #### checker command
 
-```
+```shell script
 javac alias/InvokeDynamicConstructor.java
 findbugs alias/InvokeDynamicConstructor.class
 ```

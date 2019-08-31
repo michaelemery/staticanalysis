@@ -18,7 +18,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.checker.nullness.NullnessChecker signedness/InterProcedural.java
 ```
 

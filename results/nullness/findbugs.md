@@ -10,7 +10,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### run checker from docker
 
-```
+```shell script
 docker pull michaelemery/staticanalysis
 docker run -it --rm michaelemery/staticanalysis
 ```
@@ -33,7 +33,7 @@ sh test.sh [ [ nullness ] | [ nullness <class-name> ] ]
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/nullness/IntraProcedural.java
 findbugs out/nullness/IntraProcedural.class
 ```
@@ -78,7 +78,7 @@ Warnings generated: 5
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/nullness/InterProcedural.java
 findbugs out/nullness/InterProcedural.class
 ```
@@ -121,7 +121,7 @@ Warnings generated: 4
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/nullness/ReflectConstructor.java
 findbugs out/nullness/ReflectConstructor.class
 ```
@@ -160,7 +160,7 @@ Warnings generated: 2
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/nullness/ReflectMethod.java
 findbugs out/nullness/ReflectMethod.class
 ```
@@ -199,7 +199,7 @@ Warnings generated: 2
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/nullness/ReflectField.java
 findbugs out/nullness/ReflectField.class
 ```
@@ -238,7 +238,7 @@ Warnings generated: 2
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/nullness/InvokeDynamicConstructor.java
 findbugs out/nullness/InvokeDynamicConstructor.class
 ```
@@ -275,7 +275,7 @@ Warnings generated: 1
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/nullness/InvokeDynamicMethod.java
 findbugs out/nullness/InvokeDynamicMethod.class
 ```
@@ -314,7 +314,7 @@ Warnings generated: 2
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/nullness/InvokeDynamicField.java
 findbugs out/nullness/InvokeDynamicField.class
 ```
@@ -353,7 +353,7 @@ Warnings generated: 2
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/nullness/DynamicProxy.java
 findbugs out/nullness/DynamicProxy.class
 ```

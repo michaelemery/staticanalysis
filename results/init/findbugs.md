@@ -10,7 +10,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### run checker from docker
 
-```
+```shell script
 docker pull michaelemery/staticanalysis
 docker run -it --rm michaelemery/staticanalysis
 ```
@@ -33,7 +33,7 @@ sh test.sh [ [ init ] | [ init <class-name> ] ]
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/init/IntraProcedural.java
 findbugs out/init/IntraProcedural.class
 ```
@@ -80,7 +80,7 @@ Warnings generated: 5
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/init/InterProcedural.java
 findbugs out/init/InterProcedural.class
 ```
@@ -127,7 +127,7 @@ Warnings generated: 5
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/init/ReflectConstructor.java
 findbugs out/init/ReflectConstructor.class
 ```
@@ -166,7 +166,7 @@ Warnings generated: 2
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/init/ReflectMethod.java
 findbugs out/init/ReflectMethod.class
 ```
@@ -205,7 +205,7 @@ Warnings generated: 2
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/init/ReflectField.java
 findbugs out/init/ReflectField.class
 ```
@@ -251,7 +251,7 @@ Warnings generated: 5
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/init/InvokeDynamicConstructor.java
 findbugs out/init/InvokeDynamicConstructor.class
 ```
@@ -288,7 +288,7 @@ Warnings generated: 1
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/init/InvokeDynamicMethod.java
 findbugs out/init/InvokeDynamicMethod.class
 ```
@@ -327,7 +327,7 @@ Warnings generated: 2
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/init/InvokeDynamicField.java
 findbugs out/init/InvokeDynamicField.class
 ```
@@ -366,7 +366,7 @@ Warnings generated: 2
 
 #### checker command
 
-```
+```shell script
 javac -d out/ src/init/DynamicProxy.java
 findbugs out/init/DynamicProxy.class`
 ```

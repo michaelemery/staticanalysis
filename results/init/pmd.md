@@ -15,7 +15,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### run checker from docker
 
-```
+```shell script
 docker pull michaelemery/staticanalysis
 docker run -it --rm michaelemery/staticanalysis
 ```
@@ -38,7 +38,7 @@ sh test.sh [ [ init ] | [ init <class-name> ] ]
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/init/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
@@ -73,7 +73,7 @@ src/init/IntraProcedural.java:8:	Found non-transient, non-static member. Please 
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/init/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
@@ -108,7 +108,7 @@ src/init/InterProcedural.java:8:	Found non-transient, non-static member. Please 
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/init/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
@@ -143,7 +143,7 @@ src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please m
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/init/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
@@ -178,7 +178,7 @@ src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please m
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/init/ReflectField.java -f text -R category/java/errorprone.xml
 ```
 
@@ -213,7 +213,7 @@ $PMD_HOME/bin/run.sh pmd -d src/init/ReflectField.java -f text -R category/java/
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
 ```
 
@@ -248,7 +248,7 @@ src/init/InvokeDynamicMethod.java:12:	Found non-transient, non-static member. Pl
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 
@@ -283,7 +283,7 @@ $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicConstructor.java -f text -R ca
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicField.java -f text -R category/java/errorprone.xml
 ```
 
@@ -318,7 +318,7 @@ src/init/InvokeDynamicField.java:11:	Found non-transient, non-static member. Ple
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/init/DynamicProxy.java -f text -R category/java/errorprone.xml
 ```
 

@@ -21,7 +21,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d alias/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
@@ -42,7 +42,7 @@ alias/IntraProcedural.java:21:	Assigning an Object to null is a code smell.  Con
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d alias/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
@@ -64,7 +64,7 @@ alias/InterProcedural.java:21:	Assigning an Object to null is a code smell.  Con
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d alias/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
@@ -85,7 +85,7 @@ alias/ReflectMethod.java:25:	Assigning an Object to null is a code smell.  Consi
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d alias/ReflectConstructor.java -f text -R category/java/errorprone.xml
 ```
 
@@ -128,7 +128,7 @@ NA
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d alias/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
 ```
 
@@ -149,7 +149,7 @@ alias/InvokeDynamicMethod.java:29:	Assigning an Object to null is a code smell. 
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d alias/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 

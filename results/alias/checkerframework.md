@@ -26,7 +26,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/IntraProcedural.java
 ```
 
@@ -54,7 +54,7 @@ alias/IntraProcedural.java:20: error: [unique.leaked] Reference annotated as @Un
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InterProcedural.java
 ```
 
@@ -82,7 +82,7 @@ alias/InterProcedural.java:20: error: [unique.leaked] Reference annotated as @Un
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/ReflectMethod.java
 ```
 
@@ -107,7 +107,7 @@ alias/ReflectMethod.java:15: error: [assignment.type.incompatible] incompatible 
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/ReflectConstructor.java
 ```
 
@@ -154,7 +154,7 @@ NA
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InvokeDynamicMethod.java
 ```
 
@@ -179,7 +179,7 @@ alias/InvokeDynamicMethod.java:17: error: [assignment.type.incompatible] incompa
 
 #### checker command
 
-```
+```shell script
 javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InvokeDynamicConstructor.java
 ```
 

@@ -15,7 +15,7 @@ Results can be replicated using an interactive terminal from the [michaelemery/s
 
 #### run checker from docker
 
-```
+```shell script
 docker pull michaelemery/staticanalysis
 docker run -it --rm michaelemery/staticanalysis
 ```
@@ -38,7 +38,7 @@ sh test.sh [ [ nullness ] | [ nullness <class-name> ] ]
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
@@ -74,7 +74,7 @@ src/nullness/IntraProcedural.java:24:	Assigning an Object to null is a code smel
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/nullness/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
@@ -108,7 +108,7 @@ src/nullness/InterProcedural.java:8:	Found non-transient, non-static member. Ple
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/nullness/ReflectConstructor.java -f text -R category/java/errorprone.xml
 ```
 
@@ -142,7 +142,7 @@ src/nullness/ReflectConstructor.java:10:	Found non-transient, non-static member.
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/nullness/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
@@ -176,7 +176,7 @@ src/nullness/ReflectMethod.java:10:	Found non-transient, non-static member. Plea
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/nullness/ReflectField.java -f text -R category/java/errorprone.xml
 ```
 
@@ -210,7 +210,7 @@ src/nullness/ReflectField.java:8:	Found non-transient, non-static member. Please
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/nullness/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 
@@ -244,7 +244,7 @@ src/nullness/InvokeDynamicConstructor.java:12:	Found non-transient, non-static m
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/nullness/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
 ```
 
@@ -278,7 +278,7 @@ src/nullness/InvokeDynamicMethod.java:12:	Found non-transient, non-static member
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/nullness/InvokeDynamicField.java -f text -R category/java/errorprone.xml
 ```
 
@@ -312,7 +312,7 @@ src/nullness/InvokeDynamicField.java:11:	Found non-transient, non-static member.
 
 #### checker command
 
-```
+```shell script
 $PMD_HOME/bin/run.sh pmd -d src/nullness/DynamicProxy.java -f text -R category/java/errorprone.xml
 ```
 
