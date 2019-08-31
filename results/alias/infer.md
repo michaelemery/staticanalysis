@@ -4,11 +4,22 @@
 
 <br>
 
-Version: 0.13.1
-
-Infer does not have a checker to detect an alias.
+Version: infer-0.13.1
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
+
+#### pull docker container and run interactive instance
+
+```shell script
+docker pull michaelemery/staticanalysis
+docker run -it --rm michaelemery/staticanalysis
+```
+
+#### run junit tests from docker
+
+```shell script
+sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
+```
 
 <br>
 

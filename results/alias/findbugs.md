@@ -6,7 +6,20 @@
 
 Version: findbugs-3.0.1
 
-Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.checker framework.com/u/michaelemery/repository/checker framework/michaelemery/staticanalysis) Docker repository. Copy the checker framework command(s) provided with each test result, and paste them into your interactive Docker session. 
+Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
+
+#### pull docker container and run interactive instance
+
+```shell script
+docker pull michaelemery/staticanalysis
+docker run -it --rm michaelemery/staticanalysis
+```
+
+#### run junit tests from docker
+
+```shell script
+sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
+```
 
 <br>
 

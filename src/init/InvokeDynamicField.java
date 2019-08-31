@@ -11,7 +11,7 @@ public class InvokeDynamicField {
     Object foo;
 
     InvokeDynamicField(Object object) throws Throwable {
-        getSetterMethodHandle().invoke(null, object);
+        getSetterMethodHandle().invoke(this, object);
         this.foo.toString();
     }
 

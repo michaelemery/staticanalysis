@@ -6,23 +6,28 @@
 
 Version: checker-framework-2.1.11
 
-The Aliasing Checker identifies expressions that definitely have no aliases.
+Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
-Two expressions are aliased when they have the same non-primitive value; that is, they are references to the identical Java object in the heap. Another way of saying this is that two expressions, exprA and exprB, are aliases of each other when exprA == exprB at the same program point.
+#### pull docker container and run interactive instance
 
-Assigning to a variable or field typically creates an alias. For example, after the statement a = b;, the variables a and b are aliased.
+```shell script
+docker pull michaelemery/staticanalysis
+docker run -it --rm michaelemery/staticanalysis
+```
 
-Knowing that an expression is not aliased permits more accurate reasoning about how side effects modify the expression’s value.
+#### run junit tests from docker
 
-To run the Aliasing Checker, supply the `-processor org.checkerframework.common.aliasing.AliasingChecker` command-line option to javac. However, a user rarely runs the Aliasing Checker directly. This type system is mainly intended to be used together with other type systems. For example, the SPARTA information flow type-checker (Section 24.8) uses the Aliasing Checker to improve its type refinement — if an expression has no aliases, a more refined type can often be inferred, otherwise the type-checker makes conservative assumptions.
-
-Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.checker framework.com/u/michaelemery/repository/checker framework/michaelemery/staticanalysis) Docker repository. Copy the checker framework command(s) provided with each test result, and paste them into your interactive Docker session. 
+```shell script
+sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
+```
 
 <br>
 
 ## IntraProcedural
 
-[alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
+* [alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
+
+* [alias/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/IntraProceduralTest.java)
 
 #### checker command
 
@@ -31,26 +36,32 @@ javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/Intr
 ```
 
 #### checker output
-
-```
-alias/IntraProcedural.java:13: error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique IntraProcedural original = new IntraProcedural();
-                                           ^
-  found   : @MaybeAliased IntraProcedural
-  required: @NonLeaked @Unique IntraProcedural
-alias/IntraProcedural.java:20: error: [unique.leaked] Reference annotated as @Unique is leaked.
-        IntraProcedural alias = original;
-                                ^
-2 errors
 ```
 
-| false negative | false positive | result |
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 1 | imprecise |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
 
 ## InterProcedural
 
-[alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
+* [alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
+
+* [alias/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InterProceduralTest.java)
 
 #### checker command
 
@@ -59,51 +70,32 @@ javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/Inte
 ```
 
 #### checker output
-
-```
-alias/InterProcedural.java:13: error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique InterProcedural original = new InterProcedural();
-                                           ^
-  found   : @MaybeAliased InterProcedural
-  required: @NonLeaked @Unique InterProcedural
-alias/InterProcedural.java:20: error: [unique.leaked] Reference annotated as @Unique is leaked.
-        InterProcedural alias = aliasOf(original);
-                                        ^
-2 errors
 ```
 
-| false negative | false positive | result |
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 1 | imprecise |
+| + | 0 | 0 |
+| - | 0 | 0 |
 
-## ReflectMethod
+> ???
 
-[alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
-
-#### checker command
-
-```shell script
-javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/ReflectMethod.java
-```
-
-#### checker output
-
-```
-alias/ReflectMethod.java:15: error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique ReflectMethod original = new ReflectMethod();
-                                         ^
-  found   : @MaybeAliased ReflectMethod
-  required: @NonLeaked @Unique ReflectMethod
-1 error
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 1 | 1 | aberrant |
+<br>
 
 ## ReflectConstructor
 
-[alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
+* [alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
+
+* [alias/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/ReflectConstructorTest.java)
 
 #### checker command
 
@@ -112,23 +104,66 @@ javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/Refl
 ```
 
 #### checker output
-
-```
-alias/ReflectConstructor.java:15: error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique ReflectConstructor original = new ReflectConstructor();
-                                                 ^
-  found   : @MaybeAliased ReflectConstructor
-  required: @NonLeaked @Unique ReflectConstructor
-1 error
 ```
 
-| false negative | false positive | result |
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 1 | aberrant |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
+
+## ReflectMethod
+
+* [alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
+
+* [alias/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/ReflectMethodTest.java)
+
+#### checker command
+
+```shell script
+javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/ReflectMethod.java
+```
+
+#### checker output
+```
+
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
 
 ## ReflectField
 
-[//]: [alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectField.java)
+* [alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectField.java)
+
+* [alias/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/ReflectFieldTest.java)
 
 This language feature is not applicable to the checker being tested. 
 
@@ -138,44 +173,33 @@ This language feature is not applicable to the checker being tested.
 NA
 ```
 
-#### checker output
-
-```
-NA
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| - | - | NA |
-
-## InvokeDynamicMethod
-
-[alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
-
-#### checker command
-
-```shell script
-javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InvokeDynamicMethod.java
-```
-
-#### checker output
-
-```
-alias/InvokeDynamicMethod.java:17: error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique InvokeDynamicMethod original = new InvokeDynamicMethod();
-                                                ^
-  found   : @MaybeAliased InvokeDynamicMethod
-  required: @NonLeaked @Unique InvokeDynamicMethod
-1 error
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 1 | 1 | aberrant |
+##### checker output
+ ```
+ 
+ ```
+ 
+ #### output analysis
+ 
+ | line(s) | event |
+ | :---: | :---: |
+ | - | - |
+ 
+ #### expected / actual errors
+ 
+ |  | + | - |
+ | :---: | :---: | :---: |
+ | + | 0 | 0 |
+ | - | 0 | 0 |
+ 
+ > ???
+ 
+ <br>
 
 ## InvokeDynamicConstructor
 
-[alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
+* [alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
+
+* [alias/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InvokeDynamicConstructorTest.java)
 
 #### checker command
 
@@ -184,26 +208,68 @@ javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/Invo
 ```
 
 #### checker output
-
-```
-alias/InvokeDynamicConstructor.java:27: error: [assignment.type.incompatible] incompatible types in assignment.
-        @Unique InvokeDynamicConstructor original = (InvokeDynamicConstructor) h.invoke("safe");
-                                                    ^
-  found   : @MaybeAliased InvokeDynamicConstructor
-  required: @NonLeaked @Unique InvokeDynamicConstructor
-alias/InvokeDynamicConstructor.java:30: error: [unique.leaked] Reference annotated as @Unique is leaked.
-        InvokeDynamicConstructor alias = original;
-                                         ^
-2 errors
 ```
 
-| false negative | false positive | result |
+```
+
+<br>
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 1 | imprecise |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
+
+## InvokeDynamicMethod
+
+* [alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
+
+* [alias/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InvokeDynamicMethodTest.java)
+
+#### checker command
+
+```shell script
+javac -processor org.checkerframework.common.aliasing.AliasingChecker alias/InvokeDynamicMethod.java
+```
+
+#### checker output
+```
+
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
 
 ## InvokeDynamicField
 
-[//]: [alias/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicField.java)
+* [alias/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicField.java)
+
+* [alias/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InvokeDynamicFieldTest.java)
 
 This language feature is not applicable to the checker being tested. 
 
@@ -214,18 +280,32 @@ NA
 ```
 
 #### checker output
-
-```
-NA
 ```
 
-| false negative | false positive | result |
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| - | - | NA |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???
+
+<br>
 
 ## DynamicProxy
 
-[//]: [alias/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/DynamicProxy.java)
+* [alias/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/DynamicProxy.java)
+
+* [alias/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/DynamicProxyTest.java)
 
 This language feature is not applicable to the checker being tested. 
 
@@ -236,11 +316,21 @@ NA
 ```
 
 #### checker output
-
-```
-NA
 ```
 
-| false negative | false positive | result |
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| - | - | NA |
+| + | 0 | 0 |
+| - | 0 | 0 |
+
+> ???

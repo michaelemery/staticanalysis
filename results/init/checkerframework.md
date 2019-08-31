@@ -196,7 +196,7 @@ src/init/ReflectMethod.java:33: error: [argument.type.incompatible] incompatible
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 1 | 1 |
-| - | 0 | 0 |
+| - | 0 | 1 |
 
 > imprecise
 
@@ -240,7 +240,7 @@ src/init/ReflectField.java:29: error: [argument.type.incompatible] incompatible 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 1 | 1 |
-| - | 0 | 0 |
+| - | 0 | 1 |
 
 > imprecise
 
@@ -336,6 +336,11 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 #### checker output
 
 ```
+src/init/InvokeDynamicField.java:14: error: [argument.type.incompatible] incompatible types in argument.
+        getSetterMethodHandle().invoke(this, object);
+                                       ^
+  found   : @UnderInitialization(java.lang.Object.class) @NonNull InvokeDynamicField
+  required: @Initialized @NonNull InvokeDynamicField
 src/init/InvokeDynamicField.java:15: error: [dereference.of.nullable] dereference of possibly-null reference this.foo
         this.foo.toString();
             ^
@@ -344,22 +349,22 @@ src/init/InvokeDynamicField.java:34: error: [argument.type.incompatible] incompa
                                ^
   found   : null
   required: @Initialized @NonNull Object
-2 errors
+3 errors
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 15 | FP |
+| 14, 15 | FP |
 | 24 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 2 |
-| - | 0 | 0 |
+| + | 1 | 1 |
+| - | 0 | 1 |
 
 > imprecise
 
@@ -405,6 +410,6 @@ src/init/DynamicProxy.java:45: error: [argument.type.incompatible] incompatible 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 1 | 1 |
-| - | 0 | 0 |
+| - | 0 | 1 |
 
 > imprecise

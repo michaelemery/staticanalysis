@@ -1,6 +1,5 @@
 package alias;
 
-import org.checkerframework.common.aliasing.qual.LeakedToResult;
 import org.checkerframework.common.aliasing.qual.Unique;
 
 /**
@@ -17,9 +16,9 @@ public class IntraProcedural {
     /**
      * Non-aliased object never throws Exception.
      */
-    public void setFieldWithoutAlias() throws Exception {
+    public static void setOneWithoutAlias() throws Exception {
         @Unique IntraProcedural original = new IntraProcedural();
-        if (original.one + 1 != 2) {
+        if (original.one + 1 == 3) {
             throw new Exception();
         }
     }
@@ -27,11 +26,11 @@ public class IntraProcedural {
     /**
      * Aliased object always throws Exception.
      */
-    public static void setFieldWithAlias() throws Exception {
+    public static void setOneWithAlias() throws Exception {
         @Unique IntraProcedural original = new IntraProcedural();
         IntraProcedural alias = original;
         alias.one = 2;
-        if (original.one + 1 != 2) {
+        if (original.one + 1 == 3) {
             throw new Exception();
         }
     }

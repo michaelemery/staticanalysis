@@ -5,28 +5,42 @@ import org.checkerframework.common.aliasing.qual.Unique;
 import java.lang.reflect.Method;
 
 /**
- *
+ * Check field for changes caused via reflective method return.
  */
 public class ReflectMethod {
 
-    Object o = "init";
+    int one;
 
-    public static void main(String[] args) throws Exception {
-        @Unique ReflectMethod original = new ReflectMethod();
-
-        /* safe: set unique object uniquely */
-        original.o = "safe";
-        System.out.println(original.o.toString());
-
-        /* unsafe: make object null via alias */
-        Class<?> C = ReflectMethod.class;
-        Method m = C.getDeclaredMethod("aliasOf", Object.class);
-        ReflectMethod alias = (ReflectMethod) m.invoke(new ReflectMethod(), original);
-        alias.o = null;
-        System.out.println(original.o.toString());
+    ReflectMethod() {
+        this.one = 1;
     }
 
-    Object aliasOf(Object obj) {
-        return obj;
+    static ReflectMethod getAlias(ReflectMethod object) {
+        ReflectMethod alias = object;
+        alias.one = 2;
+        return alias;
+    }
+
+    /**
+     * Non-aliased object never throws Exception.
+     */
+    public static void setOneWithAlias() throws Exception {
+        @Unique ReflectMethod original = new ReflectMethod();
+        if (original.one + 1 == 3) {
+            throw new Exception();
+        }
+    }
+
+    /**
+     * Aliased object always throws Exception.
+     */
+    public static void setOneWithoutAlias() throws Exception {
+        @Unique ReflectMethod original = new ReflectMethod();
+        Class<?> C = original.getClass();
+        Method getObjectMethod = C.getDeclaredMethod("getAlias", Object.class);
+        ReflectMethod alias = (ReflectMethod) getObjectMethod.invoke(null, original);
+        if (original.one + 1 == 3) {
+            throw new Exception();
+        }
     }
 }

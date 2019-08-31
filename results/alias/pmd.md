@@ -6,12 +6,20 @@
 
 Version: pmd-bin-6.1.0
 
-* PMD checkers belonging to the "error prone" category are the only ones required for these tests.
-* The `$PMD_HOME` variable must be configured to use these commands.
-* JDK must be set to 1.8 or lower.
-* Outputs have been simplified for brevity.
-
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
+
+#### pull docker container and run interactive instance
+
+```shell script
+docker pull michaelemery/staticanalysis
+docker run -it --rm michaelemery/staticanalysis
+```
+
+#### run junit tests from docker
+
+```shell script
+sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
+```
 
 <br>
 
