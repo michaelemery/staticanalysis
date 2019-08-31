@@ -19,7 +19,7 @@ docker run -it --rm michaelemery/staticanalysis
 
 ```shell script
 sh test.sh [ [ nullness ] | [ nullness <class-name> ] ]
-``` for all packages
+```
 
 <br>
 
