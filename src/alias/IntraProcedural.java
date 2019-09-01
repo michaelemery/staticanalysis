@@ -7,11 +7,7 @@ import org.checkerframework.common.aliasing.qual.Unique;
  */
 public class IntraProcedural {
 
-    int foo;
-
-    IntraProcedural() {
-        this.foo = 1;
-    }
+    int foo = 1;
 
     /**
      * Non-aliased object never throws Exception.

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * CCheck for changes due to aliasing an object via inter-procedural return.
+ * Check for changes due to aliasing an object via inter-procedural return.
  */
 class InterProceduralTest {
 

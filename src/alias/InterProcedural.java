@@ -7,11 +7,7 @@ import org.checkerframework.common.aliasing.qual.Unique;
  */
 public class InterProcedural {
 
-    int foo;
-
-    InterProcedural() {
-        this.foo = 1;
-    }
+    int foo = 1;
 
     static InterProcedural getAlias(InterProcedural object) {
         InterProcedural alias = object;

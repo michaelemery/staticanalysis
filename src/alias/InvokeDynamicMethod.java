@@ -11,11 +11,7 @@ import java.lang.invoke.MethodType;
  */
 public class InvokeDynamicMethod {
 
-    Object foo;
-
-    InvokeDynamicMethod(Object object) {
-        this.foo = 1;
-    }
+    int foo = 1;
 
     static Object getObject(Object object) {
         return object;

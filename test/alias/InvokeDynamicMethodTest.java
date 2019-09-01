@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Created by Michael Emery on 2/09/19.
+ * Check for changes due to aliasing an object via dynamic virtual method invocation.
  */
 class InvokeDynamicMethodTest {
 

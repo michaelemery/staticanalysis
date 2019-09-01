@@ -9,11 +9,7 @@ import java.lang.reflect.Method;
  */
 public class ReflectMethod {
 
-    int foo;
-
-    ReflectMethod() {
-        this.foo = 1;
-    }
+    int foo = 1;
 
     static ReflectMethod getAlias(Object object) {
         ReflectMethod alias = (ReflectMethod) object;

@@ -9,11 +9,7 @@ import java.lang.reflect.Proxy;
  */
 public class DynamicProxy {
 
-    int foo;
-
-    DynamicProxy() {
-        this.foo = 1;
-    }
+    int foo = 1;
 
     interface MyClass {
         Object getObject(Object object);
