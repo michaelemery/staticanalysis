@@ -3,22 +3,22 @@ package alias;
 import org.checkerframework.common.aliasing.qual.Unique;
 
 /**
- * Check field for changes caused via direct value assignment to an alias.
+ * Check for changes due to aliasing an object via direct value assignment.
  */
 public class IntraProcedural {
 
-    int one;
+    int foo;
 
     IntraProcedural() {
-        this.one = 1;
+        this.foo = 1;
     }
 
     /**
      * Non-aliased object never throws Exception.
      */
-    public static void setOneWithoutAlias() throws Exception {
+    public static void setFooWithoutAlias() throws Exception {
         @Unique IntraProcedural original = new IntraProcedural();
-        if (original.one + 1 == 3) {
+        if (original.foo != 1) {
             throw new Exception();
         }
     }
@@ -26,12 +26,12 @@ public class IntraProcedural {
     /**
      * Aliased object always throws Exception.
      */
-    public static void setOneWithAlias() throws Exception {
+    public static void setFooWithAlias() throws Exception {
         @Unique IntraProcedural original = new IntraProcedural();
         IntraProcedural alias = original;
-        alias.one = 2;
-        if (original.one + 1 == 3) {
-            throw new Exception();
+        alias.foo = 2;
+        if (original.foo == 2) {
+            throw new Exception("original.foo == 2");
         }
     }
 }

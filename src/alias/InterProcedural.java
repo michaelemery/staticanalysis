@@ -3,28 +3,28 @@ package alias;
 import org.checkerframework.common.aliasing.qual.Unique;
 
 /**
- * Check for null alias of field set via inter-procedural return.
+ * Check for changes due to aliasing an object via inter-procedural return.
  */
 public class InterProcedural {
 
-    int one;
+    int foo;
 
     InterProcedural() {
-        this.one = 1;
+        this.foo = 1;
     }
 
     static InterProcedural getAlias(InterProcedural object) {
         InterProcedural alias = object;
-        alias.one = 2;
+        alias.foo = 2;
         return alias;
     }
 
     /**
      * Non-aliased object never throws Exception.
      */
-    public static void setOneWithAlias() throws Exception {
+    public static void setFooWithoutAlias() throws Exception {
         @Unique InterProcedural original = new InterProcedural();
-        if (original.one + 1 == 3) {
+        if (original.foo != 1) {
             throw new Exception();
         }
     }
@@ -32,11 +32,11 @@ public class InterProcedural {
     /**
      * Aliased object always throws Exception.
      */
-    public static void setOneWithoutAlias() throws Exception {
+    public static void setFooWithAlias() throws Exception {
         @Unique InterProcedural original = new InterProcedural();
         InterProcedural alias = getAlias(original);
-        if (original.one + 1 == 3) {
-            throw new Exception();
+        if (original.foo == 2) {
+            throw new Exception("original.foo == 2");
         }
     }
 }

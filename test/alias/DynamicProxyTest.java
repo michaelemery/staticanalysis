@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check for changes due to aliasing an object via direct value assignment.
+ * Check for changes due to aliasing an object via dynamic proxy.
  */
-class IntraProceduralTest {
+class DynamicProxyTest {
 
     @Test
     void setFooWithoutAlias() {
         assertDoesNotThrow(() -> {
-            IntraProcedural.setFooWithoutAlias();
+            DynamicProxy.setFooWithoutAlias();
         });
     }
 
     @Test
     void setFooWithAlias() {
         Exception thrown = assertThrows(Exception.class, () -> {
-            IntraProcedural.setFooWithAlias();
+            DynamicProxy.setFooWithAlias();
         });
         assertTrue(thrown.getMessage() == "original.foo == 2");
     }

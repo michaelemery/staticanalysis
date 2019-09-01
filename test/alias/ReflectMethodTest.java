@@ -5,21 +5,22 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Created by Michael Emery on 1/09/19.
+ * Check for changes due to aliasing an object via reflective method return.
  */
 class ReflectMethodTest {
 
     @Test
-    void setOneWithAlias() {
+    void setFooWithoutAlias() {
         assertDoesNotThrow(() -> {
-            ReflectMethod.setOneWithAlias();
+            ReflectMethod.setFooWithoutAlias();
         });
     }
 
     @Test
-    void setOneWithoutAlias() {
-        assertThrows(Exception.class, () -> {
-            ReflectMethod.setOneWithoutAlias();
+    void setFooWithAlias() {
+        Exception thrown = assertThrows(Exception.class, () -> {
+            ReflectMethod.setFooWithAlias();
         });
+        assertTrue(thrown.getMessage() == "original.foo == 2");
     }
 }

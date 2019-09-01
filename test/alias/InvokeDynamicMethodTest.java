@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check for changes due to aliasing an object via direct value assignment.
+ * Created by Michael Emery on 2/09/19.
  */
-class IntraProceduralTest {
+class InvokeDynamicMethodTest {
 
     @Test
     void setFooWithoutAlias() {
         assertDoesNotThrow(() -> {
-            IntraProcedural.setFooWithoutAlias();
+            InvokeDynamicMethod.setFooWithoutAlias();
         });
     }
 
     @Test
     void setFooWithAlias() {
         Exception thrown = assertThrows(Exception.class, () -> {
-            IntraProcedural.setFooWithAlias();
+            InvokeDynamicMethod.setFooWithAlias();
         });
         assertTrue(thrown.getMessage() == "original.foo == 2");
     }

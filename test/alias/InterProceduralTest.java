@@ -5,21 +5,22 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Created by Michael Emery on 30/08/19.
+ * CCheck for changes due to aliasing an object via inter-procedural return.
  */
 class InterProceduralTest {
 
     @Test
-    void setOneWithAlias() {
+    void setFooWithoutAlias() {
         assertDoesNotThrow(() -> {
-            InterProcedural.setOneWithAlias();
+            InterProcedural.setFooWithoutAlias();
         });
     }
 
     @Test
-    void setOneWithoutAlias() {
-        assertThrows(Exception.class, () -> {
-            InterProcedural.setOneWithoutAlias();
+    void setFooWithAlias() {
+        Exception thrown = assertThrows(Exception.class, () -> {
+            InterProcedural.setFooWithAlias();
         });
+        assertTrue(thrown.getMessage() == "original.foo == 2");
     }
 }

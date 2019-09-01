@@ -1,7 +1,7 @@
 package nullness;
 
 /**
- * Check nullness of field set via reflection field access.
+ * Check nullness of field set via reflective field access.
  */
 public class ReflectField {
 

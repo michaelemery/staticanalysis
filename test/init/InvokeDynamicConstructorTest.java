@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check initialisation of field set via dynamic invocation of a constructor.
+ * Check initialisation of field set via dynamic constructor invocation.
  */
 class InvokeDynamicConstructorTest {
 
