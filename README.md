@@ -52,22 +52,6 @@ Dynamic programming languages are a class of high-level programming languages wh
 | InvokeDynamicField | Objects directly manipulated via dynamic field access. |
 | DynamicProxy | Proxy instances of the original class interface. |
 
-### interpretation of results
+### results
 
-Tests are simple programs incorporating a single deliberate error of a specific type. Each test will produce zero or more outcomes that are categorised as either false negative or false positive as follows;
- 
- | test outcome| description |
- | --- | :--- |
- | false negative | Checker failed to detect an error of the type being tested. | 
- | false positive |Checker incorrectly identifies safe code as an error (or potential error) of the type being tested. |
- 
-Some errors may be detected at multiple locations within the code. This may occur where a checker attempts to identify not just the error, but also it's pre-cursors and cascading effects. Multiple counts of any correctly identified error are only counted once, and are not considered false positives. Where a checker correctly identifies an issue that is unrelated to the test, that outcome is recorded as Not Applicable (NA).
-
-The final result of each test is based on the combination of false negative and false positive outcomes. Descriptions are consistent regardless of how many false negatives or false positives are identified by the the checker in each test.
-
-| result | description |
-| :---: | --- |
-| **accurate** | Found the error and nothing else. |
-| **imprecise** | Found the error but wrongly flagged safe code. |
-| **unsound** | Did not find anything. | yes <br> *-2* |
-| **NA** | Test not applicable for checker / language feature combination |
+For a brief summary of analysis and results see the [results help](https://github.com/michaelemery/staticanalysis/tree/master/results) page.
