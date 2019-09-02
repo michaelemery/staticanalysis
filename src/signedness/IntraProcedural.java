@@ -1,9 +1,6 @@
 package signedness;
 
-import org.checkerframework.checker.signedness.qual.Signed;
 import org.checkerframework.checker.signedness.qual.Unsigned;
-
-import java.math.BigDecimal;
 
 /**
  * Check signedness of divisor set via direct value assignment.
