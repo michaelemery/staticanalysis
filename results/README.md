@@ -26,5 +26,5 @@
 | Result | Description |
 | :---: | :--- |
 | accurate | Expected issue was detected (TP = 1+) without any false issues (FP = 0) |
-| imprecise | Expected issue (TP) was detected along with false issues (FP = 1+) |
+| imprecise | Expected issue was detected (TP = 1+) as well as false issues (FP = 1+) |
 | unsound | Expected issue was not detected (TP = 0)|
