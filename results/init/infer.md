@@ -124,7 +124,7 @@ infer run -a checkers --eradicate -- javac src/init/ReflectConstructor.java
 #### checker output
 
 ```
-No issues found.
+No reported issues.
 ```
 
 #### output analysis
@@ -254,7 +254,7 @@ infer run -a checkers --eradicate -- javac src/init/InvokeDynamicConstructor.jav
 #### checker output
 
 ```
-No issues found.
+No reported issues.
 ```
 
 #### output analysis

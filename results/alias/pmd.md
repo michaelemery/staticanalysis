@@ -25,193 +25,339 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 
 ## IntraProcedural
 
-[alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
+* [alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
+
+* [alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d alias/IntraProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/alias/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-alias/IntraProcedural.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-alias/IntraProcedural.java:21:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/alias/IntraProcedural.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/alias/IntraProcedural.java:17:	Avoid using Literals in Conditional Statements
+src/alias/IntraProcedural.java:29:	Avoid using Literals in Conditional Statements
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 10, 17, 29 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
 
 ## InterProcedural
 
-[alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
+* [alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
+
+* [alias/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InterProceduralTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d alias/InterProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/alias/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-alias/InterProcedural.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-alias/InterProcedural.java:21:	Assigning an Object to null is a code smell.  Consider refactoring.
-
+src/alias/InterProcedural.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/alias/InterProcedural.java:23:	Avoid using Literals in Conditional Statements
+src/alias/InterProcedural.java:33:	Found 'DU'-anomaly for variable 'alias' (lines '33'-'37').
+src/alias/InterProcedural.java:34:	Avoid using Literals in Conditional Statements
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 10, 23, 33, 34 | NA |
+
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
-## ReflectMethod
+> unsound
 
-[alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
-
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d alias/ReflectMethod.java -f text -R category/java/errorprone.xml
-```
-
-#### checker output
-
-```
-alias/ReflectMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-alias/ReflectMethod.java:25:	Assigning an Object to null is a code smell.  Consider refactoring.
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 1 | 0 | unsound |
+<br>
 
 ## ReflectConstructor
 
-[alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
+[//]: [alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
 
+[//]: [alias/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/ReflectConstructorTest.java)
+
+Dynamic language feature not applicable for this checker. 
+<!--
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d alias/ReflectConstructor.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/alias/ReflectConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-alias/ReflectConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-alias/ReflectConstructor.java:26:	Assigning an Object to null is a code smell.  Consider refactoring.
+No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 0 | 0 |
+-->
+> NA
+> * Alias can not be assigned via constructor.
+
+<br>
+
+## ReflectMethod
+
+* [alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
+
+* [alias/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/ReflectMethodTest.java)
+
+#### checker command
+
+```shell script
+$PMD_HOME/bin/run.sh pmd -d src/alias/ReflectMethod.java -f text -R category/java/errorprone.xml
+```
+
+#### checker output
+
+```
+src/alias/ReflectMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/alias/ReflectMethod.java:25:	Avoid using Literals in Conditional Statements
+src/alias/ReflectMethod.java:38:	Found 'DU'-anomaly for variable 'alias' (lines '38'-'42').
+src/alias/ReflectMethod.java:39:	Avoid using Literals in Conditional Statements
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 12, 35, 28, 39 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
 
 ## ReflectField
 
 [//]: [alias/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectField.java)
 
-This language feature is not applicable to the checker being tested. 
+[//]: [alias/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/ReflectFieldTest.java)
 
+Dynamic language feature not applicable for this checker. 
+<!--
 #### checker command
 
 ```
-NA
+$PMD_HOME/bin/run.sh pmd -d src/alias/ReflectField.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-NA
+No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| - | - | NA |
+| + | 0 | 0 |
+| - | 0 | 0 |
+-->
+> NA
+> * Alias can not be assigned via fields.
 
-## InvokeDynamicMethod
-
-[alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
-
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d alias/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
-```
-
-#### checker output
-
-```
-alias/InvokeDynamicMethod.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-alias/InvokeDynamicMethod.java:29:	Assigning an Object to null is a code smell.  Consider refactoring.
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 1 | 0 | unsound |
+<br>
 
 ## InvokeDynamicConstructor
 
-[alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
+[//]: [alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
 
+[//]: [alias/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InvokeDynamicConstructorTest.java)
+
+Dynamic language feature not applicable for this checker. 
+<!--
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d alias/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/alias/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-alias/InvokeDynamicConstructor.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-alias/InvokeDynamicConstructor.java:31:	Assigning an Object to null is a code smell.  Consider refactoring.
+No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 1 | 0 | unsound |
+| + | 0 | 0 |
+| - | 0 | 0 |
+-->
+> NA 
+> * Alias can not be assigned via constructor.
+
+<br>
+
+## InvokeDynamicMethod
+
+* [alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
+
+* [alias/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InvokeDynamicMethodTest.java)
+
+#### checker command
+
+```shell script
+$PMD_HOME/bin/run.sh pmd -d src/alias/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
+```
+
+#### checker output
+
+```
+src/alias/InvokeDynamicMethod.java:14:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/alias/InvokeDynamicMethod.java:31:	Avoid using Literals in Conditional Statements
+src/alias/InvokeDynamicMethod.java:44:	Avoid using Literals in Conditional Statements
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 14, 31, 44 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
 
 ## InvokeDynamicField
 
 [//]: [alias/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicField.java)
 
-This language feature is not applicable to the checker being tested. 
+[//]: [alias/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InvokeDynamicFieldTest.java)
 
+Dynamic language feature not applicable for this checker. 
+<!--
 #### checker command
 
 ```
-NA
+$PMD_HOME/bin/run.sh pmd -d src/alias/InvokeDynamicField.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-NA
+No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| - | - | NA |
+| + | 0 | 0 |
+| - | 0 | 0 |
+-->
+> NA
+> * Alias can not be assigned via fields.
+
+<br>
 
 ## DynamicProxy
 
-[//]: [alias/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/DynamicProxy.java)
+* [alias/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/DynamicProxy.java)
 
-This language feature is not applicable to the checker being tested. 
+* [alias/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/DynamicProxyTest.java)
 
 #### checker command
 
 ```
-NA
+$PMD_HOME/bin/run.sh pmd -d src/alias/DynamicProxy.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-NA
+src/alias/DynamicProxy.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/alias/DynamicProxy.java:20:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
+src/alias/DynamicProxy.java:37:	Avoid using Literals in Conditional Statements
+src/alias/DynamicProxy.java:50:	Avoid using Literals in Conditional Statements
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 12, 20, 37, 50 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| - | - | NA |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound

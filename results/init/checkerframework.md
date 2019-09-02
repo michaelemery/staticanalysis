@@ -261,7 +261,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 #### checker output
 
 ```
-No issues found.
+No reported issues.
 ```
 
 #### output analysis

@@ -27,7 +27,7 @@ public class InvokeDynamicMethod {
      * Non-aliased object never throws Exception.
      */
     public static void setFooWithoutAlias() throws Exception {
-        @Unique InterProcedural original = new InterProcedural();
+        @Unique InvokeDynamicMethod original = new InvokeDynamicMethod();
         if (original.foo != 1) {
             throw new Exception();
         }
@@ -37,9 +37,9 @@ public class InvokeDynamicMethod {
      * Aliased object always throws Exception.
      */
     public static void setFooWithAlias() throws Throwable {
-        @Unique InterProcedural original = new InterProcedural();
-        InterProcedural alias =
-                (InterProcedural) getGetObjectMethodHandle().invoke(original);
+        @Unique InvokeDynamicMethod original = new InvokeDynamicMethod();
+        InvokeDynamicMethod alias =
+                (InvokeDynamicMethod) getGetObjectMethodHandle().invoke(original);
         alias.foo = 2;
         if (original.foo == 2) {
             throw new Exception("original.foo == 2");

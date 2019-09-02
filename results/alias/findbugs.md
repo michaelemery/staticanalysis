@@ -25,194 +25,339 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 
 ## IntraProcedural
 
-[alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
+* [alias/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/IntraProcedural.java)
+
+* [alias/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/IntraProceduralTest.java)
 
 #### checker command
 
 ```shell script
-javac alias/IntraProcedural.java
-findbugs alias/IntraProcedural.class
+javac src/alias/IntraProcedural.java
+findbugs src/alias/IntraProcedural.class
 ```
 
 #### checker output
-
 ```
-H C NP: Null pointer dereference of IntraProcedural.o in alias.IntraProcedural.main(String[])  Dereferenced at IntraProcedural.java:[line 22]
-Warnings generated: 1
+No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
 
 ## InterProcedural
 
-[alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
+* [alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
+
+* [alias/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InterProcedural.java)
 
 #### checker command
 
 ```shell script
-javac alias/InterProcedural.java
-findbugs alias/InterProcedural.class
+javac src/alias/InterProcedural.java
+findbugs src/alias/InterProcedural.class
 ```
 
 #### checker output
 
 ```
-No reported issues.
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 0 | 0 | unsound |
-
-## ReflectMethod
-
-[alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
-
-#### checker command
-
-```shell script
-javac alias/ReflectMethod.java
-findbugs alias/ReflectMethod.class
-```
-
-#### checker output
-
-```
-No reported issues.
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 0 | 0 | unsound |
-
-## ReflectConstructor
-
-[alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
-
-#### checker command
-
-```shell script
-javac alias/ReflectConstructor.java
-findbugs alias/ReflectConstructor.class
-```
-
-#### checker output
-
-```
-No reported issues.
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 0 | 0 | unsound |
-
-## ReflectField
-
-[//]: [alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectField.java)
-
-This language feature is not applicable to the checker being tested. 
-
-#### checker command
-
-```
-NA
-```
-
-#### checker output
-
-```
-NA
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| - | - | NA |
-
-## InvokeDynamicMethod
-
-[alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
-
-#### checker command
-
-```shell script
-javac alias/InvokeDynamicMethod.java
-findbugs alias/InvokeDynamicMethod.class
-```
-
-#### checker output
-
-```
-No reported issues.
-```
-
-| false negative | false positive | result |
-| :---: | :---: | :---: |
-| 0 | 0 | unsound |
-
-## InvokeDynamicConstructor
-
-[alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
-
-#### checker command
-
-```shell script
-javac alias/InvokeDynamicConstructor.java
-findbugs alias/InvokeDynamicConstructor.class
-```
-
-#### checker output
-
-```
-H C NP: Null pointer dereference of InvokeDynamicConstructor.o in alias.InvokeDynamicConstructor.main(String[])  Dereferenced at InvokeDynamicConstructor.java:[line 32]
+M D DLS: Dead store to $L1 in alias.InterProcedural.setFooWithAlias()  At InterProcedural.java:[line 33]
 Warnings generated: 1
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 33 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| 0 | 0 | unsound |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
+
+## ReflectConstructor
+
+[//]: [alias/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectConstructor.java)
+
+[//]: [alias/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/ReflectConstructorTest.java)
+
+Dynamic language feature not applicable for this checker. 
+<!--
+#### checker command
+
+```shell script
+javac src/alias/ReflectConstructor.java
+findbugs src/alias/ReflectConstructor.class
+```
+
+#### checker output
+```
+No reported issues.
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 0 | 0 |
+-->
+> NA
+> * Alias can not be assigned via constructor.
+
+<br>
+
+## ReflectMethod
+
+* [alias/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectMethod.java)
+
+* [alias/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/ReflectMethodTest.java)
+
+#### checker command
+
+```shell script
+javac src/alias/ReflectMethod.java
+findbugs src/alias/ReflectMethod.class
+```
+
+#### checker output
+
+```
+M D DLS: Dead store to $L2 in alias.ReflectMethod.setFooWithAlias()  At ReflectMethod.java:[line 38]
+Warnings generated: 1
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 38 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
+
+## ReflectField
+
+[//]: [alias/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/ReflectField.java)
+
+[//]: [alias/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/ReflectFieldTest.java)
+
+Dynamic language feature not applicable for this checker. 
+<!--
+#### checker command
+
+```
+javac src/alias/ReflectField.java
+findbugs src/alias/ReflectField.class
+```
+
+#### checker output
+
+```
+No reported issues.
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 0 | 0 |
+-->
+> NA
+> * Alias can not be assigned via fields.
+
+<br>
+
+## InvokeDynamicConstructor
+
+[//]: [alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
+
+[//]: [alias/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicConstructor.java)
+
+Dynamic language feature not applicable for this checker. 
+<!--
+#### checker command
+
+```shell script
+javac src/alias/InvokeDynamicConstructor.java
+findbugs src/alias/InvokeDynamicConstructor.class
+```
+
+#### checker output
+
+```
+No reported issues.
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 0 | 0 |
+-->
+> NA
+> * Alias can not be assigned via constructor.
+
+<br>
+
+## InvokeDynamicMethod
+
+* [alias/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicMethod.java)
+
+* [alias/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InvokeDynamicMethodTest.java)
+
+#### checker command
+
+```shell script
+javac src/alias/InvokeDynamicMethod.java
+findbugs src/alias/InvokeDynamicMethod.class
+```
+
+#### checker output
+
+```
+No reported issues.
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
 
 ## InvokeDynamicField
 
 [//]: [alias/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/InvokeDynamicField.java)
 
-This language feature is not applicable to the checker being tested. 
+[//]: [alias/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/InvokeDynamicFieldTest.java)
 
+Dynamic language feature not applicable for this checker. 
+<!--
 #### checker command
 
 ```
-NA
+javac src/alias/InvokeDynamicField.java
+findbugs src/alias/InvokeDynamicField.class
 ```
 
 #### checker output
 
 ```
-NA
+No reported issues.
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
+| - | - |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| - | - | NA |
+| + | 0 | 0 |
+| - | 0 | 0 |
+-->
+> NA
+> * Alias can not be assigned via fields.
+
+<br>
 
 ## DynamicProxy
 
-[//]: [alias/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/DynamicProxy.java)
+* [alias/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/alias/DynamicProxy.java)
 
-This language feature is not applicable to the checker being tested. 
+* [alias/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/alias/DynamicProxyTest.java)
 
 #### checker command
 
 ```
-NA
+javac src/alias/DynamicProxy.java
+findbugs src/alias/DynamicProxy.class
 ```
 
 #### checker output
 
 ```
-NA
+The following classes needed for analysis were missing:
+  alias.DynamicProxy$MyClass
+Missing classes: 1
 ```
 
-| false negative | false positive | result |
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| Missing classes | NA |
+
+#### expected / actual errors
+
+|  | + | - |
 | :---: | :---: | :---: |
-| - | - | NA |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
