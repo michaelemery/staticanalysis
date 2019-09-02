@@ -5,7 +5,7 @@
 ### toolbar
 
 * Select a dynamic language feature (alias, init, nullness, signedness, or taint), for a summary table of all results for that language feature.
-* Select a checker (checkerframework, findbugs, infer, or pmd), for summary table of all results for that checker.
+* Select a checker (checkerframework, findbugs, infer, or pmd), for a summary table of all results for that checker.
 
 ### analysis
 
