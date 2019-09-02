@@ -44,11 +44,11 @@ Dynamic programming languages are a class of high-level programming languages wh
 | --- | --- |
 | IntraProcedural | Single method. No dynamic features. |
 | InterProcedural | Multiple methods. No dynamic features. |
-| ReflectMethod | Methods invoked via reflection. |
 | ReflectConstructor | Constructors invoked via reflection. |
+| ReflectMethod | Methods invoked via reflection. |
 | ReflectField | Objects directly manipulated via reflective field access. |
-| InvokeDynamicMethod | Dynamically invoked via dynamically invoked methods. |
 | InvokeDynamicConstructor | Objects manipulated via dynamically invoked constructor. |
+| InvokeDynamicMethod | Dynamically invoked via dynamically invoked methods. |
 | InvokeDynamicField | Objects directly manipulated via dynamic field access. |
 | DynamicProxy | Proxy instances of the original class interface. |
 
