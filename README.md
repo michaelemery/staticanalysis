@@ -54,4 +54,4 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 ### results
 
-For a brief summary of analysis and results see the [results help](https://github.com/michaelemery/staticanalysis/tree/master/results) page.
+For a brief summary of analysis and results, see [results help](https://github.com/michaelemery/staticanalysis/tree/master/results).
