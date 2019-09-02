@@ -2,14 +2,15 @@
 
 [alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
-From the tool bar, select; 
-* a dynamic language feature (alias, init, nullness, signedness, or taint), for a summary table of all results for that language feature.
-* a checker (checkerframework, findbugs, infer, or pmd), for summary table of all results for that checker.
+### toolbar
+
+* Select a dynamic language feature (alias, init, nullness, signedness, or taint), for a summary table of all results for that language feature.
+* Select a checker (checkerframework, findbugs, infer, or pmd), for summary table of all results for that checker.
 
 ### analysis
 
 * The output of each checker is analysed line by line.
-* Line numbers quoted in each analysis refer to the source code line number the error or warning os referring to.
+* Line numbers quoted in each analysis refer to the source code line number the error or warning is referring to.
 * Each line is categorised as True Positive (TP), False Positive (FP), or not applicable (NA) as follows;
 
 | Analysis | Description |
