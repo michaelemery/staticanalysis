@@ -32,8 +32,8 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 #### checker command
 
 ```shell script
-javac src/alias/IntraProcedural.java
-findbugs src/alias/IntraProcedural.class
+javac -d out/ src/alias/IntraProcedural.java
+findbugs out/alias/IntraProcedural.class
 ```
 
 #### checker output
@@ -67,8 +67,8 @@ No reported issues.
 #### checker command
 
 ```shell script
-javac src/alias/InterProcedural.java
-findbugs src/alias/InterProcedural.class
+javac -d out/ src/alias/InterProcedural.java
+findbugs out/alias/InterProcedural.class
 ```
 
 #### checker output
@@ -106,8 +106,8 @@ Dynamic language feature not applicable for this checker.
 #### checker command
 
 ```shell script
-javac src/alias/ReflectConstructor.java
-findbugs src/alias/ReflectConstructor.class
+javac -d out/ src/alias/ReflectConstructor.java
+findbugs out/alias/ReflectConstructor.class
 ```
 
 #### checker output
@@ -142,8 +142,8 @@ No reported issues.
 #### checker command
 
 ```shell script
-javac src/alias/ReflectMethod.java
-findbugs src/alias/ReflectMethod.class
+javac -d out/ src/alias/ReflectMethod.java
+findbugs out/alias/ReflectMethod.class
 ```
 
 #### checker output
@@ -181,8 +181,8 @@ Dynamic language feature not applicable for this checker.
 #### checker command
 
 ```
-javac src/alias/ReflectField.java
-findbugs src/alias/ReflectField.class
+javac -d out/ src/alias/ReflectField.java
+findbugs out/alias/ReflectField.class
 ```
 
 #### checker output
@@ -221,8 +221,8 @@ Dynamic language feature not applicable for this checker.
 #### checker command
 
 ```shell script
-javac src/alias/InvokeDynamicConstructor.java
-findbugs src/alias/InvokeDynamicConstructor.class
+javac -d out/ src/alias/InvokeDynamicConstructor.java
+findbugs out/alias/InvokeDynamicConstructor.class
 ```
 
 #### checker output
@@ -259,8 +259,8 @@ No reported issues.
 #### checker command
 
 ```shell script
-javac src/alias/InvokeDynamicMethod.java
-findbugs src/alias/InvokeDynamicMethod.class
+javac -d out/ src/alias/InvokeDynamicMethod.java
+findbugs out/alias/InvokeDynamicMethod.class
 ```
 
 #### checker output
@@ -297,8 +297,8 @@ Dynamic language feature not applicable for this checker.
 #### checker command
 
 ```
-javac src/alias/InvokeDynamicField.java
-findbugs src/alias/InvokeDynamicField.class
+javac -d out/ src/alias/InvokeDynamicField.java
+findbugs out/alias/InvokeDynamicField.class
 ```
 
 #### checker output
@@ -335,8 +335,8 @@ No reported issues.
 #### checker command
 
 ```
-javac src/alias/DynamicProxy.java
-findbugs src/alias/DynamicProxy.class
+javac -d out/ src/alias/DynamicProxy.java
+findbugs out/alias/DynamicProxy.class
 ```
 
 #### checker output
