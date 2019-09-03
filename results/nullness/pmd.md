@@ -55,7 +55,7 @@ src/nullness/IntraProcedural.java:24:	Assigning an Object to null is a code smel
 | + | 0 | 0 |
 | - | 1 | 1 |
 
-> unsound
+> accurate
 
 <br>
 

@@ -200,41 +200,6 @@ src/nullness/ReflectMethod.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 <br>
 
-## ReflectConstructor
-
-* [nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectConstructor.java)
-
-* [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectConstructorTest.java)
-
-#### checker command
-
-```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectConstructor.java
-```
-
-### output
-
-```
-No reported issues.
-```
-
-#### output analysis
-
-| line(s) | event |
-| :---: | :---: |
-| - | - |
-
-#### expected / actual errors
-
-|  | + | - |
-| :---: | :---: | :---: |
-| + | 0 | 0 |
-| - | 1 | 1 |
-
-> unsound
-
-<br>
-
 ## ReflectField
 
 * [nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectField.java)
@@ -261,13 +226,13 @@ src/nullness/ReflectField.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
   8.       Object foo;
 ````
 
-|#### output analysis
+#### output analysis
  
  | line(s) | event |
  | :---: | :---: |
  | 6 | FP |
  
- #### expected / actual errors
+#### expected / actual errors
  
  |  | + | - |
  | :---: | :---: | :---: |

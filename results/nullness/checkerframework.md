@@ -53,17 +53,17 @@ src/nullness/IntraProcedural.java:26: error: [assignment.type.incompatible] inco
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | FP |
+| 8 | NA |
 | 26 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 1 |
-| - | 0 | 0 |
+| + | 1 | 0 |
+| - | 0 | 1 |
 
-> imprecise
+> accurate
 
 <br>
 
@@ -97,17 +97,17 @@ src/nullness/InterProcedural.java:28: error: [argument.type.incompatible] incomp
 
 | line(s) | event |
 | :---: | :---: |
-| 6 | FP |
+| 6 | NA |
 | 27 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 1 |
-| - | 0 | 0 |
+| + | 1 | 0 |
+| - | 0 | 1 |
 
-> imprecise
+> accurate
 
 <br>
 
@@ -191,7 +191,8 @@ src/nullness/ReflectMethod.java:34: error: [argument.type.incompatible] incompat
 
 | line(s) | event |
 | :---: | :---: |
-| 8, 23 | FP |
+| 8 | NA |
+| 23 | FP |
 | 34(i), 34(ii) | TP |
 
 #### expected / actual errors
@@ -199,7 +200,7 @@ src/nullness/ReflectMethod.java:34: error: [argument.type.incompatible] incompat
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 1 | 1 |
-| - | 0 | 0 |
+| - | 0 | 1 |
 
 > imprecise
 
@@ -230,14 +231,14 @@ public class ReflectField {
 
 | line(s) | event |
 | :---: | :---: |
-| 6 | FP |
+| 6 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 1 |
-| - | 1 | 0 |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -308,17 +309,17 @@ src/nullness/InvokeDynamicMethod.java:38: error: [argument.type.incompatible] in
 
 | line(s) | event |
 | :---: | :---: |
-| 10 | FP |
+| 10 | NA |
 | 38 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 1 |
-| - | 0 | 0 |
+| + | 1 | 0 |
+| - | 0 | 1 |
 
-> imprecise
+> accurate
 
 <br>
 
@@ -392,7 +393,8 @@ src/nullness/DynamicProxy.java:43: error: [argument.type.incompatible] incompati
 
 | line(s) | event |
 | :---: | :---: |
-| 8, 18 | FP |
+| 8 | NA |
+| 18 | FP |
 | 44 | TP |
 
 #### expected / actual errors
@@ -400,6 +402,6 @@ src/nullness/DynamicProxy.java:43: error: [argument.type.incompatible] incompati
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 1 | 1 |
-| - | 0 | 0 |
+| - | 0 | 1 |
 
 > imprecise

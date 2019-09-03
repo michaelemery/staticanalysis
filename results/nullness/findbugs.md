@@ -52,10 +52,7 @@ Warnings generated: 5
 | line(s) | event |
 | :---: | :---: |
 | 27(i) | TP |
-| 16 | NA |
-| 25 | NA |
-| 18 | NA |
-| 27(ii) | NA |
+| 16, 25, 18, 27(ii) | NA |
 
 #### expected / actual errors
 
@@ -95,10 +92,7 @@ Warnings generated: 4
 
 | line(s) | event |
 | :---: | :---: |
-| 27 | NA |
-| 18 | NA |
-| 20 | NA |
-| 29 | NA |
+| 27, 18, 20, 29 | NA |
 
 #### expected / actual errors
 
@@ -136,8 +130,7 @@ Warnings generated: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 25 | NA |
-| 33 | NA |
+| 25, 33 | NA |
 
 #### expected / actual errors
 
@@ -175,8 +168,7 @@ Warnings generated: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 24 | NA |
-| 35 | NA |
+| 24, 35 | NA |
 
 #### expected / actual errors
 
@@ -214,8 +206,7 @@ Warnings generated: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 16 | NA |
-| 25 | NA |
+| 16, 25 | NA |
 
 #### expected / actual errors
 
@@ -290,8 +281,7 @@ Warnings generated: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 30 | NA |
-| 39 | NA |
+| 30, 39 | NA |
 
 #### expected / actual errors
 
@@ -329,8 +319,7 @@ Warnings generated: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 28 | NA |
-| 37 | NA |
+| 28, 37 | NA |
 
 #### expected / actual errors
 
@@ -373,10 +362,7 @@ Missing classes: 1
 
 | line(s) | event |
 | :---: | :---: |
-| 43 | NA |
-| 34 | NA |
-| 36 | NA |
-| 45 | NA |
+| 43, 34, 36, 45 | NA |
 | Missing Class | FP |
 
 #### expected / actual errors
@@ -384,6 +370,6 @@ Missing classes: 1
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 1 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound

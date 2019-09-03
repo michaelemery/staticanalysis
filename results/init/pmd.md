@@ -93,11 +93,11 @@ src/init/InterProcedural.java:8:	Found non-transient, non-static member. Please 
 
 <br>
 
-## ReflectMethod
+## ReflectConstructor
 
-* [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
+* [init/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectConstructor.java)
 
-* [init/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
+* [init/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectConstructorTest.java)
 
 #### checker command
 
@@ -130,9 +130,9 @@ src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please m
 
 ## ReflectMethod
 
-* [init/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectConstructor.java)
+* [init/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/ReflectMethod.java)
 
-* [init/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectConstructorTest.java)
+* [init/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/ReflectMethodTest.java)
 
 #### checker command
 
@@ -198,22 +198,22 @@ $PMD_HOME/bin/run.sh pmd -d src/init/ReflectField.java -f text -R category/java/
 
 <br>
 
-## InvokeDynamicMethod
+## InvokeDynamicConstructor
 
-* [init/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicMethod.java)
+* [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicConstructor.java)
 
-* [init/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
+* [init/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-src/init/InvokeDynamicMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+/Users/michaelemery/Developer/staticanalysis/src/init/InvokeDynamicConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -233,22 +233,22 @@ src/init/InvokeDynamicMethod.java:12:	Found non-transient, non-static member. Pl
 
 <br>
 
-## InvokeDynamicConstructor
+## InvokeDynamicMethod
 
-* [init/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicConstructor.java)
+* [init/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/init/InvokeDynamicMethod.java)
 
-* [init/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicConstructorTest.java)
+* [init/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/init/InvokeDynamicMethodTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-/Users/michaelemery/Developer/staticanalysis/src/init/InvokeDynamicConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/init/InvokeDynamicMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
