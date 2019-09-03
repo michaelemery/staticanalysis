@@ -3,24 +3,25 @@ package taint;
 import org.checkerframework.checker.tainting.qual.Untainted;
 
 /**
- *
+ * Check tainting of field set via direct value assignment.
  */
 class IntraProcedural {
 
-    @Untainted String s;
+    @Untainted Object foo;
 
-    public static void main(String[] args) {
-
+    /**
+     * Untainted field never throws Exception.
+     */
+    public static void setFooToUntainted() {
         IntraProcedural i = new IntraProcedural();
+        i.foo = new @Untainted Object();
+    }
 
-        // safe: modified with untainted value
-        @Untainted String safe = "safe";
-        i.s = safe;
-        System.out.println(i.s.toString());
-
-        // unsafe: modified with untainted value
-        String unsafe = null;
-        i.s = unsafe;
-        System.out.println(i.s.toString());
+    /**
+     * Tainted field always throws Exception.
+     */
+    public static void setFooToTainted() {
+        IntraProcedural i = new IntraProcedural();
+        i.foo = new Object();
     }
 }

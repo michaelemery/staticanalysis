@@ -16,13 +16,13 @@ class IntraProceduralTest {
         });
     }
 
-    @Test
-    void divisorUnsigned() {
-        Exception thrown = assertThrows(Exception.class, () -> {
-            IntraProcedural.divisorUnsigned();
-        });
-        assertTrue(thrown.getMessage().contains("Division by @Unsigned."));
-    }
+//    @Test
+//    void divisorUnsigned() {
+//        Exception thrown = assertThrows(Exception.class, () -> {
+//            IntraProcedural.divisorUnsigned();
+//        });
+//        assertTrue(thrown.getMessage().contains("Division by @Unsigned."));
+//    }
 
     @Test
     void modulusSigned() {
@@ -31,11 +31,11 @@ class IntraProceduralTest {
         });
     }
 
-    @Test
-    void modulusUnsigned() {
-        Exception thrown = assertThrows(Exception.class, () -> {
-            IntraProcedural.modulusUnsigned();
-        });
-        assertTrue(thrown.getMessage().contains("Division by @Unsigned."));
-    }
+//    @Test
+//    void modulusUnsigned() {
+//        Exception thrown = assertThrows(Exception.class, () -> {
+//            IntraProcedural.modulusUnsigned();
+//        });
+//        assertTrue(thrown.getMessage().contains("Division by @Unsigned."));
+//    }
 }

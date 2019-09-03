@@ -13,7 +13,7 @@ public class DynamicProxy {
         Object getObject(Object object);
     }
 
-    static MyClass getProxyInstance() {
+    MyClass getProxyInstance() {
         return (MyClass) Proxy.newProxyInstance(
                 MyClass.class.getClassLoader(),
                 new Class[]{MyClass.class},
@@ -21,8 +21,7 @@ public class DynamicProxy {
                     if (method.getName().equals("getObject")) {
                         return methodArgs[0];
                     } else {
-                        throw new UnsupportedOperationException(
-                                "Unsupported method: " + method.getName());
+                        throw new UnsupportedOperationException();
                     }
                 });
     }
@@ -32,7 +31,7 @@ public class DynamicProxy {
      */
     public static void setFooToNonNull() {
         DynamicProxy i = new DynamicProxy();
-        i.foo = getProxyInstance().getObject(new Object());
+        i.foo = i.getProxyInstance().getObject(new Object());
         i.foo.toString();
     }
 
@@ -41,7 +40,7 @@ public class DynamicProxy {
      */
     public static void setFooToNull() {
         DynamicProxy i = new DynamicProxy();
-        i.foo = getProxyInstance().getObject(null);
+        i.foo = i.getProxyInstance().getObject(null);
         i.foo.toString();
     }
 }

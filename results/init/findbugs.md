@@ -366,14 +366,14 @@ Warnings generated: 2
 
 ```shell script
 javac -d out/ src/init/DynamicProxy.java
-findbugs out/init/DynamicProxy.class`
+findbugs out/init/DynamicProxy.class
 ```
 
 #### checker output
 
 ```
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 38]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 45]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 37]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 44]
 The following classes needed for analysis were missing:
   init.DynamicProxy$MyClass
 Warnings generated: 2
@@ -385,7 +385,7 @@ Missing classes: 1
 | line(s) | event |
 | :---: | :---: |
 | 38 | NA |
-| 45 | NA |
+| 44 | NA |
 | Missing Class | FP |
 
 #### expected / actual errors

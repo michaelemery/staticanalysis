@@ -1,17 +1,19 @@
-package nullness;
+package taint;
+
+import org.checkerframework.checker.tainting.qual.Untainted;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Check nullness of field set via dynamic virtual (non-static) method invocation.
+ * Check tainting of field set via dynamic virtual (non-static) method invocation.
  */
 public class InvokeDynamicMethod {
 
-    Object foo;
+    @Untainted Object foo;
 
-    void setFoo(Object object) {
+    void setFoo(@Untainted Object object) {
         this.foo = object;
     }
 
@@ -22,20 +24,18 @@ public class InvokeDynamicMethod {
     }
 
     /**
-     * Field set to non-null never throws NullPointerException.
+     * Untainted field never throws Exception.
      */
-    public static void setFooToNonNull() throws Throwable {
+    public static void setFooToUntainted() throws Throwable {
         InvokeDynamicMethod i = new InvokeDynamicMethod();
-        i.getSetFooMethodHandle().invoke(i, new Object());
-        i.foo.toString();
+        i.getSetFooMethodHandle().invoke(i, new @Untainted Object());
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     * Tainted field always throws Exception.
      */
-    public static void setFooToNull() throws Throwable {
+    public static void setFooToTainted() throws Throwable {
         InvokeDynamicMethod i = new InvokeDynamicMethod();
-        i.getSetFooMethodHandle().invoke(i, (Object) null);
-        i.foo.toString();
+        i.getSetFooMethodHandle().invoke(i, new Object());
     }
 }

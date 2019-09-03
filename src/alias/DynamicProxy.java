@@ -23,8 +23,7 @@ public class DynamicProxy {
                     if (method.getName().equals("getObject")) {
                         return methodArgs[0];
                     } else {
-                        throw new UnsupportedOperationException(
-                                "Unsupported method: " + method.getName());
+                        throw new UnsupportedOperationException();
                     }
                 });
     }

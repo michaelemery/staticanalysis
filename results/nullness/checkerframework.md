@@ -86,8 +86,8 @@ src/nullness/InterProcedural.java:6: error: [initialization.fields.uninitialized
 public class InterProcedural {
        ^
 src/nullness/InterProcedural.java:28: error: [argument.type.incompatible] incompatible types in argument.
-        i.foo = getObject(null);
-                          ^
+        i.foo = i.getObject(null);
+                            ^
   found   : null
   required: @Initialized @NonNull Object
 2 errors
@@ -297,8 +297,8 @@ src/nullness/InvokeDynamicMethod.java:10: error: [initialization.fields.uninitia
 public class InvokeDynamicMethod {
        ^
 src/nullness/InvokeDynamicMethod.java:38: error: [argument.type.incompatible] incompatible types in argument.
-        getSetFooMethodHandle().invoke(i, (Object) null);
-                                          ^
+        i.getSetFooMethodHandle().invoke(i, (Object) null);
+                                            ^
   found   : @FBCBottom @Nullable Object
   required: @Initialized @NonNull Object
 2 errors
@@ -380,9 +380,9 @@ src/nullness/DynamicProxy.java:18: error: [argument.type.incompatible] incompati
                                             ^
   found   : @Initialized @Nullable ClassLoader
   required: @Initialized @NonNull ClassLoader
-src/nullness/DynamicProxy.java:44: error: [argument.type.incompatible] incompatible types in argument.
-        i.foo = getProxyInstance().getObject(null);
-                                             ^
+src/nullness/DynamicProxy.java:43: error: [argument.type.incompatible] incompatible types in argument.
+        i.foo = i.getProxyInstance().getObject(null);
+                                               ^
   found   : null
   required: @Initialized @NonNull Object
 3 errors

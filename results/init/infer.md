@@ -386,20 +386,20 @@ infer run -a checkers --eradicate -- javac src/init/DynamicProxy.java
 ```
 Found 1 issue
 
-src/init/DynamicProxy.java:45: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `DynamicProxy(...)` needs a non-null value in parameter 2 but argument `null` can be null. (Origin: null constant at line 45)
-  43.        */
-  44.       static void setFooToNull() {
-  45. >         new DynamicProxy(getProxyInstance(), null).foo.toString();
-  46.       }
-  47.   }
+src/init/DynamicProxy.java:44: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `DynamicProxy(...)` needs a non-null value in parameter 2 but argument `null` can be null. (Origin: null constant at line 44)
+  42.        */
+  43.       static void setFooToNull() {
+  44. >         new DynamicProxy(getProxyInstance(), null).foo.toString();
+  45.       }
+  46.   }
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 45 | TP |
+| 44 | TP |
 
 #### expected / actual errors
 

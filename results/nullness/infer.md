@@ -32,7 +32,7 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/IntraProcedural.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/IntraProcedural.java
 ```
 
 #### checker output
@@ -75,7 +75,7 @@ src/init/IntraProcedural.java:31: error: ERADICATE_PARAMETER_NOT_NULLABLE
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/InterProcedural.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/InterProcedural.java
 ```
 
 #### checker output
@@ -95,7 +95,7 @@ src/nullness/InterProcedural.java:28: error: ERADICATE_PARAMETER_NOT_NULLABLE
   `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 28)
   26.       public static void setFooToNull() {
   27.           InterProcedural i = new InterProcedural();
-  28. >         i.foo = getObject(null);
+  28. >         i.foo = i.getObject(null);
   29.           i.foo.toString();
   30.       }
 ```
@@ -129,7 +129,7 @@ src/nullness/InterProcedural.java:28: error: ERADICATE_PARAMETER_NOT_NULLABLE
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/ReflectConstructor.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectConstructor.java
 ```
 
 ### output
@@ -164,7 +164,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/ReflectMethod.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectMethod.java
 ```
 
 #### checker output
@@ -209,7 +209,7 @@ src/nullness/ReflectMethod.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/ReflectConstructor.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectConstructor.java
 ```
 
 ### output
@@ -244,7 +244,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/ReflectField.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectField.java
 ```
 
 #### checker output
@@ -289,7 +289,7 @@ src/nullness/ReflectField.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/InvokeDynamicConstructor.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/InvokeDynamicConstructor.java
 ```
 
 #### checker output
@@ -324,7 +324,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/InvokeDynamicMethod.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/InvokeDynamicMethod.java
 ```
 
 #### checker output
@@ -369,7 +369,7 @@ src/nullness/InvokeDynamicMethod.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/InvokeDynamicField.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/InvokeDynamicField.java
 ```
 
 #### checker output
@@ -404,7 +404,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/nullness/DynamicProxy.java
+infer run -a checkers --eradicate -- javac -d out/ src/nullness/DynamicProxy.java
 ```
 
 #### checker output
@@ -420,13 +420,13 @@ src/nullness/DynamicProxy.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
   9.   
   10.       Object foo;
 
-src/nullness/DynamicProxy.java:44: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 44)
-  42.       public static void setFooToNull() {
-  43.           DynamicProxy i = new DynamicProxy();
-  44. >         i.foo = getProxyInstance().getObject(null);
-  45.           i.foo.toString();
-  46.       }
+src/nullness/DynamicProxy.java:43: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 43)
+  41.       public static void setFooToNull() {
+  42.           DynamicProxy i = new DynamicProxy();
+  43. >         i.foo = i.getProxyInstance().getObject(null);
+  44.           i.foo.toString();
+  45.       }
 ```
 
 #### output analysis

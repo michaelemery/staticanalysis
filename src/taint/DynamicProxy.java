@@ -1,23 +1,21 @@
-package init;
+package taint;
+
+import org.checkerframework.checker.tainting.qual.Untainted;
 
 import java.lang.reflect.Proxy;
 
 /**
- * Check initialisation of field set via dynamic proxy invocation.
+ * Check tainting for field set via dynamic proxy invocation.
  */
 public class DynamicProxy {
 
-    Object foo;
-
-    DynamicProxy(MyClass proxyInstance, Object object) {
-        this.foo = proxyInstance.getObject(object);
-    }
+    @Untainted Object foo;
 
     interface MyClass {
         Object getObject(Object object);
     }
 
-    static MyClass getProxyInstance() {
+    MyClass getProxyInstance() {
         return (MyClass) Proxy.newProxyInstance(
                 MyClass.class.getClassLoader(),
                 new Class[]{MyClass.class},
@@ -31,16 +29,18 @@ public class DynamicProxy {
     }
 
     /**
-     * Field set to non-null never throws NullPointerException.
+     * Untainted field never throws Exception.
      */
-    static void setFooToNonNull() {
-        new DynamicProxy(getProxyInstance(), new Object()).foo.toString();
+    public static void setFooToUntainted() {
+        DynamicProxy i = new DynamicProxy();
+        i.foo = i.getProxyInstance().getObject(new @Untainted Object());
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     * Tainted field always throws Exception.
      */
-    static void setFooToNull() {
-        new DynamicProxy(getProxyInstance(), null).foo.toString();
+    public static void setFooToTainted() {
+        DynamicProxy i = new DynamicProxy();
+        i.foo = i.getProxyInstance().getObject(new Object());
     }
 }

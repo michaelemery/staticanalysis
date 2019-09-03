@@ -7,7 +7,7 @@ public class InterProcedural {
 
     Object foo;
 
-    static Object getObject(Object object) {
+    Object getObject(Object object) {
         return object;
     }
 
@@ -16,7 +16,7 @@ public class InterProcedural {
      */
     public static void setFooToNonNull() {
         InterProcedural i = new InterProcedural();
-        i.foo = getObject(new Object());
+        i.foo = i.getObject(new Object());
         i.foo.toString();
     }
 
@@ -25,7 +25,7 @@ public class InterProcedural {
      */
     public static void setFooToNull() {
         InterProcedural i = new InterProcedural();
-        i.foo = getObject(null);
+        i.foo = i.getObject(null);
         i.foo.toString();
     }
 }

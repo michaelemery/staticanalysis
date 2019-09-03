@@ -9,7 +9,7 @@ public class ReflectMethod {
 
     Object foo;
 
-    static Object getObject(Object object) {
+    Object getObject(Object object) {
         return object;
     }
 

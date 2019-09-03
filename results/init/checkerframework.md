@@ -390,7 +390,7 @@ src/init/DynamicProxy.java:22: error: [argument.type.incompatible] incompatible 
                                             ^
   found   : @Initialized @Nullable ClassLoader
   required: @Initialized @NonNull ClassLoader
-src/init/DynamicProxy.java:45: error: [argument.type.incompatible] incompatible types in argument.
+src/init/DynamicProxy.java:44: error: [argument.type.incompatible] incompatible types in argument.
         new DynamicProxy(getProxyInstance(), null).foo.toString();
                                              ^
   found   : null
@@ -403,7 +403,7 @@ src/init/DynamicProxy.java:45: error: [argument.type.incompatible] incompatible 
 | line(s) | event |
 | :---: | :---: |
 | 22 | FN |
-| 45 | TP |
+| 44 | TP |
 
 #### expected / actual errors
 
