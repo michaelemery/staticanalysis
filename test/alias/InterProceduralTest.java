@@ -21,6 +21,6 @@ class InterProceduralTest {
         Exception thrown = assertThrows(Exception.class, () -> {
             InterProcedural.setFooWithAlias();
         });
-        assertTrue(thrown.getMessage() == "original.foo == 2");
+        assertTrue(thrown.getMessage() == "foo changed by alias");
     }
 }

@@ -37,7 +37,7 @@ public class ReflectMethod {
                 original.getClass().getDeclaredMethod("getAlias", Object.class);
         ReflectMethod alias = (ReflectMethod) getObjectMethod.invoke(null, original);
         if (original.foo == 2) {
-            throw new Exception("original.foo == 2");
+            throw new Exception("foo changed by alias");
         }
     }
 }

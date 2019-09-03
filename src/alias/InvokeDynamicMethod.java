@@ -42,7 +42,7 @@ public class InvokeDynamicMethod {
                 (InvokeDynamicMethod) getGetObjectMethodHandle().invoke(original);
         alias.foo = 2;
         if (original.foo == 2) {
-            throw new Exception("original.foo == 2");
+            throw new Exception("foo changed by alias");
         }
     }
 }

@@ -21,6 +21,6 @@ class InvokeDynamicMethodTest {
         Exception thrown = assertThrows(Exception.class, () -> {
             InvokeDynamicMethod.setFooWithAlias();
         });
-        assertTrue(thrown.getMessage() == "original.foo == 2");
+        assertTrue(thrown.getMessage() == "foo changed by alias");
     }
 }

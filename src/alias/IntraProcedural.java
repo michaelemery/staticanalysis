@@ -27,7 +27,7 @@ public class IntraProcedural {
         IntraProcedural alias = original;
         alias.foo = 2;
         if (original.foo == 2) {
-            throw new Exception("original.foo == 2");
+            throw new Exception("foo changed by alias");
         }
     }
 }

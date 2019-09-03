@@ -21,6 +21,6 @@ class DynamicProxyTest {
         Exception thrown = assertThrows(Exception.class, () -> {
             DynamicProxy.setFooWithAlias();
         });
-        assertTrue(thrown.getMessage() == "original.foo == 2");
+        assertTrue(thrown.getMessage() == "foo changed by alias");
     }
 }

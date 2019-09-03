@@ -32,7 +32,7 @@ public class InterProcedural {
         @Unique InterProcedural original = new InterProcedural();
         InterProcedural alias = getAlias(original);
         if (original.foo == 2) {
-            throw new Exception("original.foo == 2");
+            throw new Exception("foo changed by alias");
         }
     }
 }

@@ -21,6 +21,6 @@ class ReflectMethodTest {
         Exception thrown = assertThrows(Exception.class, () -> {
             ReflectMethod.setFooWithAlias();
         });
-        assertTrue(thrown.getMessage() == "original.foo == 2");
+        assertTrue(thrown.getMessage() == "foo changed by alias");
     }
 }
