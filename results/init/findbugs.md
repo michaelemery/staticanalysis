@@ -238,6 +238,7 @@ Warnings generated: 5
 | - | 1 | 1 |
 
 > unsound
+> * FP x 3 -> checker failed to recognise fields were written by reflection
 
 <br>
 
@@ -349,7 +350,7 @@ Warnings generated: 2
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
+| + | 0 | 1 |
 | - | 1 | 1 |
 
 > unsound

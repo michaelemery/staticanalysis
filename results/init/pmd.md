@@ -52,7 +52,7 @@ src/init/IntraProcedural.java:8:	Found non-transient, non-static member. Please 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -87,7 +87,7 @@ src/init/InterProcedural.java:8:	Found non-transient, non-static member. Please 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -122,7 +122,7 @@ src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please m
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -157,7 +157,7 @@ src/init/ReflectMethod.java:10:	Found non-transient, non-static member. Please m
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -192,7 +192,7 @@ $PMD_HOME/bin/run.sh pmd -d src/init/ReflectField.java -f text -R category/java/
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -227,7 +227,7 @@ $PMD_HOME/bin/run.sh pmd -d src/init/InvokeDynamicConstructor.java -f text -R ca
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -262,7 +262,7 @@ src/init/InvokeDynamicMethod.java:12:	Found non-transient, non-static member. Pl
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -297,7 +297,7 @@ src/init/InvokeDynamicField.java:11:	Found non-transient, non-static member. Ple
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -334,6 +334,6 @@ rc/init/DynamicProxy.java:22:	In J2EE, getClassLoader() might not work as expect
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 1 |
-| - | 1 | 0 |
+| - | 1 | 1 |
 
 > unsound
