@@ -17,7 +17,7 @@ class IntraProceduralTest {
     }
 
     @Test
-    void setFooToTainted() {
+    void setFooToTainted() throws NoSuchFieldException {
         IntraProcedural.setFooToTainted();  // placeholder: does not test anything
 //        Exception thrown = assertThrows(Exception.class, () -> {
 //            IntraProcedural.setFooToTainted();
