@@ -1,10 +1,10 @@
-# checker framework results (signedness)
+# findbugs results (signedness)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results//README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
-Version: checker-framework-2.1.11
+Version: findbugs-3.0.1
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
@@ -32,27 +32,31 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/IntraProcedural.java
+javac -d out/ src/signedness/IntraProcedural.java
+findbugs out/signedness/IntraProcedural.class
 ```
 
 #### checker output
 
 ```
-No reported issues.
+M D UC: Method signedness.IntraProcedural.divisorSigned() seems to be useless  At IntraProcedural.java:[line 23]
+M D UC: Method signedness.IntraProcedural.divisorUnsigned() seems to be useless  At IntraProcedural.java:[line 38]
+M D UC: Method signedness.IntraProcedural.modulusSigned() seems to be useless  At IntraProcedural.java:[line 51]
+Warnings generated: 3
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 23, 38, 51 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 0 | 1 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -67,7 +71,8 @@ No reported issues.
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InterProcedural.java
+javac -d out/ src/signedness/InterProcedural.java
+findbugs out/signedness/InterProcedural.class
 ```
 
 #### checker output
@@ -102,7 +107,8 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/ReflectConstructor.java
+javac -d out/ src/signedness/ReflectConstructor.java
+findbugs out/signedness/ReflectConstructor.class
 ```
 
 #### checker output
@@ -137,7 +143,8 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/ReflectMethod.java
+javac -d out/ src/signedness/ReflectMethod.java
+findbugs out/signedness/ReflectMethod.class
 ```
 
 #### checker output
@@ -172,7 +179,8 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/ReflectField.java
+javac -d out/ src/signedness/ReflectField.java
+findbugs out/signedness/ReflectField.class
 ```
 
 #### checker output
@@ -207,7 +215,8 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InvokeDynamicConstructor.java
+javac -d out/ src/signedness/InvokeDynamicConstructor.java
+findbugs out/signedness/InvokeDynamicConstructor.class
 ```
 
 #### checker output
@@ -242,29 +251,32 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InvokeDynamicMethod.java
+javac -d out/ src/signedness/InvokeDynamicMethod.java
+findbugs out/signedness/InvokeDynamicMethod.class
 ```
 
 #### checker output
 
 ```
-NA
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamicMethod.java:[line 30]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamicMethod.java:[line 39]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 30, 39 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 0 | 0 |
+| - | 1 | 1 |
 
-> NA
+> unsound
 
 <br>
 
@@ -277,7 +289,8 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InvokeDynamicField.java
+javac -d out/ src/signedness/InvokeDynamicField.java
+findbugs out/signedness/InvokeDynamicField.class
 ```
 
 #### checker output
@@ -312,7 +325,8 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/DynamicProxy.java
+javac -d out/ src/signedness/DynamicProxy.java
+findbugs out/signedness/DynamicProxy.class
 ```
 
 #### checker output

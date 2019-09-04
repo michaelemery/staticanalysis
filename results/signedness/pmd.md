@@ -1,10 +1,10 @@
-# checker framework results (signedness)
+# pmd results (signedness)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results//README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
-Version: checker-framework-2.1.11
+Version: pmd-6.1.0
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
@@ -32,27 +32,29 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/IntraProcedural.java
+$PMD_HOME/bin/run.sh pmd -d src/signedness/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 
 ```
-No reported issues.
+src/signedness/IntraProcedural.java:20:	Avoid using Literals in Conditional Statements
+src/signedness/IntraProcedural.java:35:	Avoid using Literals in Conditional Statements
+
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 20, 35 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 0 | 1 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -67,7 +69,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InterProcedural.java
+$PMD_HOME/bin/run.sh pmd -d src/signedness/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -102,7 +104,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/ReflectConstructor.java
+$PMD_HOME/bin/run.sh pmd -d src/signedness/ReflectConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -137,7 +139,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/ReflectMethod.java
+$PMD_HOME/bin/run.sh pmd -d src/signedness/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -172,7 +174,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/ReflectField.java
+$PMD_HOME/bin/run.sh pmd -d src/signedness/ReflectField.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -207,7 +209,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InvokeDynamicConstructor.java
+$PMD_HOME/bin/run.sh pmd -d src/signedness/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -242,7 +244,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InvokeDynamicMethod.java
+$PMD_HOME/bin/run.sh pmd -d src/signedness/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -277,7 +279,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InvokeDynamicField.java
+$PMD_HOME/bin/run.sh pmd -d src/signedness/InvokeDynamicField.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -312,7 +314,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/DynamicProxy.java
+$PMD_HOME/bin/run.sh pmd -d src/signedness/DynamicProxy.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output

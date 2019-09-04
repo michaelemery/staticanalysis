@@ -1,10 +1,10 @@
-# checker framework results (signedness)
+# infer results (signedness)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results//README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
+[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
 
 <br>
 
-Version: checker-framework-2.1.11
+Version: infer-0.13.1
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
@@ -32,7 +32,7 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/IntraProcedural.java
+infer run -a checkers --eradicate -- javac -d out/ src/signedness/IntraProcedural.java
 ```
 
 #### checker output
@@ -52,7 +52,7 @@ No reported issues.
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 0 | 1 |
+| - | 1 | 1 |
 
 > unsound
 
@@ -67,7 +67,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InterProcedural.java
+infer run -a checkers --eradicate -- javac -d out/ src/signedness/InterProcedural.java
 ```
 
 #### checker output
@@ -102,7 +102,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/ReflectConstructor.java
+infer run -a checkers --eradicate -- javac -d out/ src/signedness/ReflectConstructor.java
 ```
 
 #### checker output
@@ -137,7 +137,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/ReflectMethod.java
+infer run -a checkers --eradicate -- javac -d out/ src/signedness/ReflectMethod.java
 ```
 
 #### checker output
@@ -172,7 +172,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/ReflectField.java
+infer run -a checkers --eradicate -- javac -d out/ src/signedness/ReflectField.java
 ```
 
 #### checker output
@@ -207,7 +207,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InvokeDynamicConstructor.java
+infer run -a checkers --eradicate -- javac -d out/ src/signedness/InvokeDynamicConstructor.java
 ```
 
 #### checker output
@@ -242,7 +242,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InvokeDynamicMethod.java
+infer run -a checkers --eradicate -- javac -d out/ src/signedness/InvokeDynamicMethod.java
 ```
 
 #### checker output
@@ -277,7 +277,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/InvokeDynamicField.java
+infer run -a checkers --eradicate -- javac -d out/ src/signedness/InvokeDynamicField.java
 ```
 
 #### checker output
@@ -312,7 +312,7 @@ NA
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.signedness.SignednessChecker -d out/ src/signedness/DynamicProxy.java
+infer run -a checkers --eradicate -- javac -d out/ src/signedness/DynamicProxy.java
 ```
 
 #### checker output

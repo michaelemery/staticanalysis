@@ -132,7 +132,7 @@ src/nullness/InterProcedural.java:28: error: ERADICATE_PARAMETER_NOT_NULLABLE
 infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectConstructor.java
 ```
 
-### output
+### checker output
 
 ```
 No reported issues.

@@ -6,7 +6,7 @@
 
 | dynamic language feature | checkerfwk | findbugs | infer | pmd | 
 | --- | :---: | :---: | :---: | :---: |
-| IntraProcedural | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/checkerframework.md#IntraProcedural) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/findbugs.md#IntraProcedural) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/infer.md#IntraProcedural) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/pmd.md#IntraProcedural) |
+| IntraProcedural | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/checkerframework.md#IntraProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/findbugs.md#IntraProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/infer.md#IntraProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/pmd.md#IntraProcedural) |
 | InterProcedural | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/checkerframework.md#InterProcedural) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/findbugs.md#InterProcedural) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/infer.md#InterProcedural) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/pmd.md#InterProcedural) |
 | ReflectMethod | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/checkerframework.md#ReflectMethod) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/findbugs.md#ReflectMethod) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/infer.md#ReflectMethod) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/pmd.md#ReflectMethod) |
 | ReflectOMethodOverload | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/checkerframework.md#ReflectOMethodOverload) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/findbugs.md#ReflectOMethodOverload) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/infer.md#ReflectOMethodOverload) | [](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/pmd.md#ReflectOMethodOverload) |
@@ -24,7 +24,7 @@ The Signedness Checker guarantees that signed and unsigned integral values are n
 
 Recall that a computer represents a number as a sequence of bits. Signedness indicates how to interpret the most significant bit. For example, the bits 10000010 ordinarily represent the value -126, but when interpreted as unsigned, those bits represent the value 130. The bits 01111110 represent the value 126 in signed and in unsigned interpretation. The range of signed byte values is -128 to 127. The range of unsigned byte values is 0 to 255.
 
-Signedness is only applicable to integral types: bype, char, short, int, and long. Floating-point types (float and double) do not have operations that interpret the bits as unsigned.
+Signedness is only applicable to integral types: byte, char, short, int, and long. Floating-point types (float and double) do not have operations that interpret the bits as unsigned.
 
 <br>
 
