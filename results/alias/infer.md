@@ -32,7 +32,7 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/alias/IntraProcedural.java
+infer run -a checkers --eradicate -- javac -d out/ src/alias/IntraProcedural.java
 ```
 
 #### checker output
@@ -67,7 +67,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/alias/InterProcedural.java
+infer run -a checkers --eradicate -- javac -d out/ src/alias/InterProcedural.java
 ```
 
 #### checker output
@@ -104,7 +104,7 @@ Dynamic language feature not applicable for this checker.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/alias/ReflectConstructor.java
+infer run -a checkers --eradicate -- javac -d out/ src/alias/ReflectConstructor.java
 ```
 
 #### checker output
@@ -141,7 +141,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/alias/ReflectMethod.java
+infer run -a checkers --eradicate -- javac -d out/ src/alias/ReflectMethod.java
 ```
 
 #### checker output
@@ -178,7 +178,7 @@ This language feature is not applicable to the checker being tested.
 #### checker command
 
 ```
-infer run -a checkers --eradicate -- javac src/alias/ReflectField.java
+infer run -a checkers --eradicate -- javac -d out/ src/alias/ReflectField.java
 ```
 
 #### checker output
@@ -217,7 +217,7 @@ Dynamic language feature not applicable for this checker.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/alias/InvokeDynamicConstructor.java
+infer run -a checkers --eradicate -- javac -d out/ src/alias/InvokeDynamicConstructor.java
 ```
 
 #### checker output
@@ -254,7 +254,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac src/alias/InvokeDynamicMethod.java
+infer run -a checkers --eradicate -- javac -d out/ src/alias/InvokeDynamicMethod.java
 ```
 
 #### checker output
@@ -291,7 +291,7 @@ Dynamic language feature not applicable for this checker.
 #### checker command
 
 ```
-infer run -a checkers --eradicate -- javac src/alias/InvokeDynamicField.java
+infer run -a checkers --eradicate -- javac -d out/ src/alias/InvokeDynamicField.java
 ```
 
 #### checker output
@@ -328,7 +328,7 @@ No reported issues.
 #### checker command
 
 ```
-infer run -a checkers --eradicate -- javac src/alias/DynamicProxy.java
+infer run -a checkers --eradicate -- javac -d out/ src/alias/DynamicProxy.java
 ```
 
 #### checker output
