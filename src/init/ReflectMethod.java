@@ -10,8 +10,8 @@ public class ReflectMethod {
     Object foo;
 
     ReflectMethod(Object object) throws Exception {
-        Class<?> C = this.getClass();
-        Method getObject = C.getDeclaredMethod("getObject", Object.class);
+        Method getObject =
+                this.getClass().getDeclaredMethod("getObject", Object.class);
         this.foo = getObject.invoke(null, object);
     }
 

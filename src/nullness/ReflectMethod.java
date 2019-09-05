@@ -18,8 +18,8 @@ public class ReflectMethod {
      */
     public static void setFooToNonNull() throws Exception {
         ReflectMethod i = new ReflectMethod();
-        Class<?> C = i.getClass();
-        Method getObjectMethod = C.getDeclaredMethod("getObject", Object.class);
+        Method getObjectMethod =
+                i.getClass().getDeclaredMethod("getObject", Object.class);
         i.foo = getObjectMethod.invoke(i, new Object());
         i.foo.toString();
     }
@@ -29,8 +29,8 @@ public class ReflectMethod {
      */
     public static void setFooToNull() throws Exception {
         ReflectMethod i = new ReflectMethod();
-        Class<?> C = i.getClass();
-        Method getObjectMethod = C.getDeclaredMethod("getObject", Object.class);
+        Method getObjectMethod =
+                i.getClass().getDeclaredMethod("getObject", Object.class);
         i.foo = getObjectMethod.invoke(i, (Object) null);
         i.foo.toString();
     }

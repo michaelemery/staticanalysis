@@ -24,8 +24,8 @@ public class ReflectMethod {
      */
     public static void setFooToUntainted() throws Exception {
         ReflectMethod i = new ReflectMethod();
-        Class<?> C = i.getClass();
-        Method getObjectMethod = C.getDeclaredMethod("getUntaintedObject");
+        Method getObjectMethod =
+                i.getClass().getDeclaredMethod("getUntaintedObject");
         i.foo = getObjectMethod.invoke(i);
     }
 
@@ -34,8 +34,8 @@ public class ReflectMethod {
      */
     public static void setFooToTainted() throws Exception {
         ReflectMethod i = new ReflectMethod();
-        Class<?> C = i.getClass();
-        Method getObjectMethod = C.getDeclaredMethod("getTaintedObject");
+        Method getObjectMethod =
+                i.getClass().getDeclaredMethod("getTaintedObject");
         i.foo = getObjectMethod.invoke(i);
     }
 }
