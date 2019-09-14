@@ -38,10 +38,10 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 #### checker output
 
 ```
-src/nullness/IntraProcedural.java:8: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/nullness/IntraProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class IntraProcedural {
        ^
-src/nullness/IntraProcedural.java:26: error: [assignment.type.incompatible] incompatible types in assignment.
+src/nullness/IntraProcedural.java:24: error: [assignment.type.incompatible] incompatible types in assignment.
         i.foo = null;
                 ^
   found   : null
@@ -53,8 +53,8 @@ src/nullness/IntraProcedural.java:26: error: [assignment.type.incompatible] inco
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | NA |
-| 26 | TP |
+| 6 | NA |
+| 24 | TP |
 
 #### expected / actual errors
 
