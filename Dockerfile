@@ -67,32 +67,32 @@ RUN mkdir /app
 # --- MAVEN SETUP
 
 # create directory
-RUN mkdir -p /usr/local/maven
-WORKDIR /usr/local/maven
+RUN mkdir -p /opt/maven
+WORKDIR /opt/maven
 
 # copy install files
-ADD docker/archive/ .
+ADD docker/archive/apache-maven-3.5.3-bin.zip .
 RUN unzip apache-maven-3.5.3-bin.zip && \
     rm apache-maven-3.5.3-bin.zip
 
 # add to path
-ENV MAVEN_HOME /usr/local/maven/apache-maven-3.5.3
+ENV MAVEN_HOME /opt/maven/apache-maven-3.5.3
 ENV PATH ${MAVEN_HOME}/bin:${PATH}
 
 
 # --- CHECKERFRAMEWORK SETUP
 
 # create directory
-RUN mkdir -p /usr/local/checkerframework
-WORKDIR /usr/local/checkerframework
+RUN mkdir -p /opt/checkerframework
+WORKDIR /opt/checkerframework
 
 # copy install files
-ADD docker/archive/ .
+ADD docker/archive/checker-framework-2.1.11.zip .
 RUN unzip checker-framework-2.1.11.zip && \
     rm checker-framework-2.1.11.zip
 
 # add to path
-ENV CHECKERFRAMEWORK_HOME /usr/local/checkerframework/checker-framework-2.1.11
+ENV CHECKERFRAMEWORK_HOME /opt/checkerframework/checker-framework-2.1.11
 # note that ${CHECKERFRAMEWORK_HOME} must come first
 ENV PATH ${CHECKERFRAMEWORK_HOME}/checker/bin:${PATH}
 
@@ -100,43 +100,37 @@ ENV PATH ${CHECKERFRAMEWORK_HOME}/checker/bin:${PATH}
 # --- PMD SETUP
 
 # create directory
-RUN mkdir -p /usr/local/pmd
-WORKDIR /usr/local/pmd
+RUN mkdir -p /opt/pmd
+WORKDIR /opt/pmd
 
 # copy install files
-ADD docker/archive/ .
+ADD docker/archive/pmd-bin-6.1.0.zip .
 RUN unzip pmd-bin-6.1.0.zip && \
     rm pmd-bin-6.1.0.zip
 
 # ccnfigure pmd home
-ENV PMD_HOME /usr/local/pmd/pmd-bin-6.1.0
+ENV PMD_HOME /opt/pmd/pmd-bin-6.1.0
 
 
 # --- FINDBUGS SETUP
 
 # create directory
-RUN mkdir -p /usr/local/findbugs
-WORKDIR /usr/local/findbugs
+RUN mkdir -p /opt/findbugs
+WORKDIR /opt/findbugs
 
 # copy install files
-ADD docker/archive/ .
+ADD docker/archive/findbugs-3.0.1.zip .
 RUN unzip findbugs-3.0.1.zip && \
     rm findbugs-3.0.1.zip
 
 # add to path
-ENV FINDBUGS_HOME /usr/local/findbugs/findbugs-3.0.1
+ENV FINDBUGS_HOME /opt/findbugs/findbugs-3.0.1
 ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
-
-
-# --- TERMINAL HELPER ALAISES
-
-# checkerframework processors (javac [-processor ...] PATH/file.java
-RUN alias cfnull='-processor org.checkerframework.checker.nullness.NullnessChecker'
 
 
 # --- \JUNIT STANDALONE APP AND TEST SCRIPT
 
-ADD lib/junit-platform-console-standalone-1.5.1.jar /lib
+ADD docker/archive/junit-platform-console-standalone-1.5.2.jar /opt
 ADD test.sh /
 
 
