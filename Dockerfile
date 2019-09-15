@@ -128,7 +128,7 @@ ENV FINDBUGS_HOME /opt/findbugs/findbugs-3.0.1
 ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
 
 
-# --- \JUNIT STANDALONE APP AND TEST SCRIPT
+# --- JUNIT STANDALONE APP AND TEST SCRIPT
 
 ADD docker/archive/junit-platform-console-standalone-1.5.2.jar /opt
 ADD test.sh /
