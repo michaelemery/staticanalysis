@@ -42,7 +42,8 @@
   <jsr308.javac 
       srcdir="${src}/alias"
       includeantruntime="false">
-      <compilerarg line="-processor org.checkerframework.common.alias.AliasingChecker"/>
+      <compilerarg
+              line="-processor org.checkerframework.common.com.foofactory.staticanalysis.alias.AliasingChecker"/>
       <compilerarg line="-Xmaxerrs 10000"/>
     </jsr308.javac>
   </target>
@@ -54,7 +55,8 @@
     <jsr308.javac
           srcdir="${src}/init"
           includeantruntime="false">
-      <compilerarg line="-processor org.checkerframework.nullness.NullnessChecker"/>
+        <compilerarg
+                line="-processor org.checkerframework.com.foofactory.staticanalysis.nullness.NullnessChecker"/>
       <compilerarg line="-Xmaxerrs 10000"/>
     </jsr308.javac>
   </target>
@@ -78,7 +80,8 @@
     <jsr308.javac
           srcdir="${src}/nullness"
           includeantruntime="false">
-      <compilerarg line="-processor org.checkerframework.nullness.NullnessChecker"/>
+        <compilerarg
+                line="-processor org.checkerframework.com.foofactory.staticanalysis.nullness.NullnessChecker"/>
       <compilerarg line="-Xmaxerrs 10000"/>
     </jsr308.javac>
   </target>
@@ -90,7 +93,8 @@
     <jsr308.javac
           srcdir="${src}/signedness"
           includeantruntime="false">
-      <compilerarg line="-processor org.checkerframework.signedness.SignednessChecker"/>
+        <compilerarg
+                line="-processor org.checkerframework.com.foofactory.staticanalysis.signedness.SignednessChecker"/>
       <compilerarg line="-Xmaxerrs 10000"/>
     </jsr308.javac>
   </target>
