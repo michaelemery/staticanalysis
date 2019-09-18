@@ -3,13 +3,12 @@ package generic;
 import java.lang.reflect.Field;
 
 /**
- *  init an object via unsafe.
- *
- *  may result as a FP
+ *  allocate an empty instance of a given class directly on the heap, ignoring field initialization and constructors.
  */
 public class UnsafeInitialization {
+    Object foo;
+    Object bar=new Object();
 
-    Foo foo;
 
     public static sun.misc.Unsafe getUnsafe() {
         sun.misc.Unsafe unsafe = null;
@@ -22,13 +21,21 @@ public class UnsafeInitialization {
         }
         return unsafe;
     }
-
-    public static void allocateInstance() throws Exception{
-        UnsafeInitialization i =new UnsafeInitialization();
-        i.foo =(Foo)getUnsafe().allocateInstance(Foo.class);
-        i.foo.toString();
+    /**
+     * a FN if it is NOT reported. otherwise a TP
+     * @throws java.lang.NullPointerException
+     */
+    public static void allocateEmptyInstance1() throws Exception{
+        UnsafeInitialization i= (UnsafeInitialization)getUnsafe().allocateInstance(UnsafeInitialization.class);
+        i.bar.toString();
     }
 
-    public class Foo{
+    /**
+     * It is a TP because the initial state of UnsafeInitialization.foo is null
+     * @throws java.lang.NullPointerException
+     */
+    public static void allocateEmptyInstance2() throws Exception{
+        UnsafeInitialization i= (UnsafeInitialization)getUnsafe().allocateInstance(UnsafeInitialization.class);
+        i.foo.toString();
     }
 }

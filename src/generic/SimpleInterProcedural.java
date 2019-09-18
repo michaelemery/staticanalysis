@@ -7,26 +7,28 @@ package generic;
 public class SimpleInterProcedural {
 
     Object foo;
+    Object bar= new Object();
 
-    Object getObject(Object object) {
-        return object;
+    Object getObject() {
+        return new Object();
     }
+    Object getNullObject() {return null;}
 
     /**
      * Field set to non-null never throws NullPointerException.
      */
     public static void setFooToNonNull() {
         SimpleInterProcedural i = new SimpleInterProcedural();
-        i.foo = i.getObject(new Object());
+        i.foo = i.getObject();
         i.foo.toString();
     }
 
     /**
      * Field set to null always throws NullPointerException.
      */
-    public static void setFooToNull() {
+    public static void setBarToNull() {
         SimpleInterProcedural i = new SimpleInterProcedural();
-        i.foo = i.getObject(null);
-        i.foo.toString();
+        i.bar = i.getNullObject();
+        i.bar.toString();
     }
 }

@@ -7,14 +7,14 @@ package generic;
 public class NativeAllocation {
 
     Object foo;
+    Object bar =new Object();
 
     public native Object getObject();
 
     public native Object getNullObject();
 
     /**
-     * may result as a FP
-     * @throws Exception
+     * a FP if it is reported. otherwise a TP
      */
     public static void setFooToNotNull() throws Exception{
         NativeAllocation i= new NativeAllocation();
@@ -23,12 +23,12 @@ public class NativeAllocation {
     }
 
     /**
-     *
-     * @throws Exception
+     *  a FN if it is NOT reported, otherwise a TP
+     * @throws java.lang.NullPointerException
      */
-    public static void setFooToNull() throws Exception{
+    public static void setBarToNull() throws Exception{
         NativeAllocation i= new NativeAllocation();
-        i.foo=i.getNullObject();
-        i.foo.toString();
+        i.bar=i.getNullObject();
+        i.bar.toString();
     }
 }

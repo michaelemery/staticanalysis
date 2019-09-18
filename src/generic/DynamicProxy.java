@@ -10,16 +10,21 @@ import java.lang.reflect.Proxy;
 public class DynamicProxy {
 
     Object foo;
+    Object bar =new Object();
 
     interface MyClass {
-        Object getObject(Object object);
+        Object getObject();
+        Object getNullObject();
     }
 
     public class MyClassImple implements MyClass{
         @Override
-        public Object getObject(Object object){
-            return object;
+        public Object getObject(){
+            return new Object();
         }
+
+        @Override
+        public Object getNullObject(){return null;}
     }
     public class MyClassInvocationHandler implements InvocationHandler{
         @Override
@@ -38,21 +43,21 @@ public class DynamicProxy {
 
 
     /**
-     * Field set to non-null never throws NullPointerException.
-     * may report it as a FP
+     *  a FP if it is reported. otherwise a TP
      */
     public static void setFooToNonNull() {
         DynamicProxy i = new DynamicProxy();
-        i.foo = i.getProxyInstance().getObject(new Object());
+        i.foo = i.getProxyInstance().getObject();
         i.foo.toString();
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     * a FN if it is NOT reported, otherwise a TP
+     * @throws java.lang.NullPointerException
      */
-    public static void setFooToNull() {
+    public static void setBarToNull() {
         DynamicProxy i = new DynamicProxy();
-        i.foo = i.getProxyInstance().getObject(null);
-        i.foo.toString();
+        i.bar = i.getProxyInstance().getNullObject();
+        i.bar.toString();
     }
 }

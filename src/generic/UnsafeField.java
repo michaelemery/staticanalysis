@@ -8,6 +8,7 @@ import java.lang.reflect.Field;
 public class UnsafeField {
 
     Object foo;
+    Object bar=new Object();
 
     public static sun.misc.Unsafe getUnsafe() {
         sun.misc.Unsafe unsafe = null;
@@ -21,9 +22,9 @@ public class UnsafeField {
         return unsafe;
     }
 
+
     /**
-     * may result as a FP
-     * @throws Exception
+     * a FP if it is reported. otherwise a TP
      */
     public static void setFooToNotNull() throws Exception{
         UnsafeField i= new UnsafeField();
@@ -32,12 +33,12 @@ public class UnsafeField {
     }
 
     /**
-     *  throw NullPointerException
-     * @throws Exception
+     *  a FN if it is NOT reported, otherwise a TP
+     * @throws java.lang.NullPointerException
      */
-    public static void setFooToNull() throws Exception{
+    public static void setBarToNull() throws Exception{
         UnsafeField i= new UnsafeField();
-        getUnsafe().putObject(i,getUnsafe().objectFieldOffset(UnsafeField.class.getDeclaredField("foo")), null);
-        i.foo.toString();
+        getUnsafe().putObject(i,getUnsafe().objectFieldOffset(UnsafeField.class.getDeclaredField("bar")), null);
+        i.bar.toString();
     }
 }

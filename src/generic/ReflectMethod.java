@@ -7,31 +7,32 @@ import java.lang.reflect.Method;
  */
 public class ReflectMethod {
     Object foo;
+    Object bar=new Object();
 
-    Object getObject(Object object) {
-        return object;
-    }
+    Object getObject() { return new Object(); }
+
+    Object getNullObject(){ return null; }
 
     /**
-     * Field set to non-null never throws NullPointerException.
-     *  may result as a FP
+     * a FP if it is reported. otherwise a TP
      */
     public static void setFooToNonNull() throws Exception {
         ReflectMethod i = new ReflectMethod();
         Method getObjectMethod =
-                i.getClass().getDeclaredMethod("getObject", Object.class);
-        i.foo = getObjectMethod.invoke(i, new Object());
+                i.getClass().getDeclaredMethod("getObject");
+        i.foo = getObjectMethod.invoke(i);
         i.foo.toString();
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     *  a FN if it is NOT reported, otherwise a TP
+     * @throws java.lang.NullPointerException
      */
-    public static void setFooToNull() throws Exception {
+    public static void setBarToNull() throws Exception {
         ReflectMethod i = new ReflectMethod();
         Method getObjectMethod =
-                i.getClass().getDeclaredMethod("getObject", Object.class);
-        i.foo = getObjectMethod.invoke(i, (Object) null);
-        i.foo.toString();
+                i.getClass().getDeclaredMethod("getNullObject");
+        i.bar = getObjectMethod.invoke(i);
+        i.bar.toString();
     }
 }

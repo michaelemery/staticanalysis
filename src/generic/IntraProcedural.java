@@ -6,9 +6,10 @@ package generic;
 public class IntraProcedural {
 
     Object foo;
+    Object bar=new Object();
 
     /**
-     * Field set to non-null never throws NullPointerException.
+     * a FP if it is reported. otherwise a TP
      */
     public static void setFooToNonNull() {
         IntraProcedural i = new IntraProcedural();
@@ -17,11 +18,12 @@ public class IntraProcedural {
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     *  a FN if it is NOT reported, otherwise a TP
+     * @throws java.lang.NullPointerException
      */
-    public static void setFooToNull() {
+    public static void setBarToNull() {
         IntraProcedural i = new IntraProcedural();
-        i.foo = null;
-        i.foo.toString();
+        i.bar = null;
+        i.bar.toString();
     }
 }

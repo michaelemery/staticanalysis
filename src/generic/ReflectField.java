@@ -6,10 +6,10 @@ package generic;
 public class ReflectField {
 
     Object foo;
+    Object bar =new Object();
 
     /**
-     * Field set to non-null never throws NullPointerException.
-     *  may result as a FP
+     * a FP if it is reported. otherwise a TP
      */
     public static void setFooToNonNull() throws Exception {
         ReflectField i = new ReflectField();
@@ -18,11 +18,12 @@ public class ReflectField {
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     *  a FN if it is NOT reported, otherwise a TP
+     * @throws java.lang.NullPointerException
      */
-    public static void setFooToNull() throws Exception {
+    public static void setBarToNull() throws Exception {
         ReflectField i = new ReflectField();
-        ReflectField.class.getDeclaredField("foo").set(i, null);
-        i.foo.toString();
+        ReflectField.class.getDeclaredField("bar").set(i, null);
+        i.bar.toString();
     }
 }

@@ -1,21 +1,20 @@
 package generic;
 
 /**
- *  generic example of dynamic allocation. init an object without using the new keyword
+ *  generic example of dynamic allocation. init an object without using the new keyword.
+ *  We could extend it to class loading
  *
- *   may report it as a FP
  */
 public class DynamicAllocation {
 
     DynamicAllocation foo;
     /**
-     * init an object via newInstance, may result as a FP
-     * @throws Exception
+     * a FP if it is reported. otherwise a TP
      */
-    public static void loadClass() throws Exception {
+    public static void initFoo() throws Exception {
         DynamicAllocation i =new DynamicAllocation();
         Class claz= Class.forName("generic.DynamicAllocation");
-        i.foo=(DynamicAllocation) claz.newInstance();
+        i.foo=(DynamicAllocation)claz.newInstance();
         i.foo.toString();
     }
 }
