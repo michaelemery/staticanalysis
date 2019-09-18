@@ -3,15 +3,20 @@ package generic;
 import java.lang.reflect.Constructor;
 
 /**
- * generic example of using reflective constructor. TODO: discuss, maybe duplicate with DynamicAllocation example
+ * generic example of using reflective constructor.
  */
 public class ReflectConstructor {
 
     Object foo;
     Object bar=new Object();
 
-    ReflectConstructor(Object object) {
-        this.foo = object;
+    ReflectConstructor(){
+        //default constructor
+    }
+
+    ReflectConstructor(Object foo, Object bar) {
+        this.foo = foo;
+        this.bar=bar;
     }
 
     static Constructor getConstructor(Class... args) throws NoSuchMethodException {
@@ -22,8 +27,8 @@ public class ReflectConstructor {
      * a FP if it is reported. otherwise a TP
      */
     public static void setFooToNonNull() throws Exception {
-        Constructor constructor = getConstructor(Object.class);
-        ((ReflectConstructor) constructor.newInstance(new Object())).foo.toString();
+        Constructor constructor = getConstructor(Object.class,Object.class);
+        ((ReflectConstructor) constructor.newInstance(new Object(),new Object())).foo.toString();
     }
 
     /**
@@ -31,7 +36,7 @@ public class ReflectConstructor {
      * @throws java.lang.NullPointerException
      */
     public static void setBarToNull() throws Exception {
-        Constructor constructor = getConstructor(Object.class);
-        ((ReflectConstructor) constructor.newInstance((Object) null)).bar.toString();
+        Constructor constructor = getConstructor(Object.class,Object.class);
+        ((ReflectConstructor) constructor.newInstance((Object) null, (Object)null)).bar.toString();
     }
 }
