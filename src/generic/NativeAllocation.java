@@ -1,10 +1,22 @@
 package generic;
 
+import java.io.File;
+
 /**
- * TODO: implement the native code.
+ * command to compile c code in linux:
+ * gcc -fPIC -I"$JAVA_HOME/include" -I"$JAVA_HOME/include/linux" -shared -o resources/nativeAllocation.so resources/nativeAllocation.c
+ *
+ * command to compile c code in MacOS:
+ * TODO:
  *
  */
 public class NativeAllocation {
+
+    static{
+        //load native library in Linux
+        System.load(new File("resources/nativeAllocation.so").getAbsolutePath());
+
+    }
 
     Object foo;
     Object bar =new Object();
