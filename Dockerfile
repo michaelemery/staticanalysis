@@ -71,7 +71,7 @@ RUN mkdir -p /opt/maven
 WORKDIR /opt/maven
 
 # copy install files
-ADD docker/archive/apache-maven-3.5.3-bin.zip .
+ADD archive/apache-maven-3.5.3-bin.zip .
 RUN unzip apache-maven-3.5.3-bin.zip && \
     rm apache-maven-3.5.3-bin.zip
 
@@ -87,7 +87,7 @@ RUN mkdir -p /opt/checkerframework
 WORKDIR /opt/checkerframework
 
 # copy install files
-ADD docker/archive/checker-framework-2.1.11.zip .
+ADD archive/checker-framework-2.1.11.zip .
 RUN unzip checker-framework-2.1.11.zip && \
     rm checker-framework-2.1.11.zip
 
@@ -104,7 +104,7 @@ RUN mkdir -p /opt/pmd
 WORKDIR /opt/pmd
 
 # copy install files
-ADD docker/archive/pmd-bin-6.1.0.zip .
+ADD archive/pmd-bin-6.1.0.zip .
 RUN unzip pmd-bin-6.1.0.zip && \
     rm pmd-bin-6.1.0.zip
 
@@ -119,7 +119,7 @@ RUN mkdir -p /opt/findbugs
 WORKDIR /opt/findbugs
 
 # copy install files
-ADD docker/archive/findbugs-3.0.1.zip .
+ADD archive/findbugs-3.0.1.zip .
 RUN unzip findbugs-3.0.1.zip && \
     rm findbugs-3.0.1.zip
 
@@ -130,7 +130,7 @@ ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
 
 # --- JUNIT STANDALONE APP AND TEST SCRIPT
 
-ADD docker/archive/junit-platform-console-standalone-1.5.2.jar /opt
+ADD archive/junit-platform-console-standalone-1.5.2.jar /opt
 ADD test.sh /
 
 

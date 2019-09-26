@@ -1,5 +1,7 @@
 package nullness;
 
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
@@ -9,21 +11,28 @@ public class DynamicProxy {
 
     Object foo;
 
-    interface MyClass {
+    interface MyInterface {
         Object getObject(Object object);
     }
 
-    MyClass getProxyInstance() {
-        return (MyClass) Proxy.newProxyInstance(
-                MyClass.class.getClassLoader(),
-                new Class[]{MyClass.class},
-                (proxy, method, methodArgs) -> {
-                    if (method.getName().equals("getObject")) {
-                        return methodArgs[0];
-                    } else {
-                        throw new UnsupportedOperationException();
-                    }
-                });
+    public class MyClass implements MyInterface {
+        public Object getObject(Object object) {
+            return object;
+        }
+    }
+
+    public class MyInvocationHandler implements InvocationHandler {
+        public Object invoke(Object object, Method method, Object[] methodArgs)
+                throws Throwable {
+            return method.invoke(new MyClass(), methodArgs);
+        }
+    }
+
+    MyInterface getProxyInstance() {
+        return (MyInterface) Proxy.newProxyInstance(
+                MyInterface.class.getClassLoader(),
+                new Class[]{MyInterface.class},
+                new MyInvocationHandler());
     }
 
     /**
