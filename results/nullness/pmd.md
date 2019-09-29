@@ -195,21 +195,21 @@ src/nullness/ReflectField.java:8:	Found non-transient, non-static member. Please
 
 <br>
 
-## InvokeDynamicConstructor
+## MethodHandleConstructor
 
-* [nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicConstructor.java)
+* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleConstructor.java)
 
-* [nullness/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicConstructorTest.java)
+* [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleConstructorTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/InvokeDynamicConstructor.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/nullness/MethodHandleConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/InvokeDynamicConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/nullness/MethodHandleConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -229,21 +229,21 @@ src/nullness/InvokeDynamicConstructor.java:12:	Found non-transient, non-static m
 
 <br>
 
-## InvokeDynamicMethod
+## MethodHandleMethod
 
-* [nullness/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicMethod.java)
+* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleMethod.java)
 
-* [nullness/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicMethodTest.java)
+* [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleMethodTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/InvokeDynamicMethod.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/nullness/MethodHandleMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/InvokeDynamicMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/nullness/MethodHandleMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -263,21 +263,21 @@ src/nullness/InvokeDynamicMethod.java:12:	Found non-transient, non-static member
 
 <br>
 
-## InvokeDynamicField
+## MethodHandleField
 
-* [nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicField.java)
+* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleField.java)
 
-* [nullness/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicFieldTest.java)
+* [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleFieldTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/InvokeDynamicField.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/nullness/MethodHandleField.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/InvokeDynamicField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/nullness/MethodHandleField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -285,6 +285,40 @@ src/nullness/InvokeDynamicField.java:11:	Found non-transient, non-static member.
 | line(s) | event |
 | :---: | :---: |
 | 11 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
+
+## InvokeDynamic
+
+* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamic.java)
+
+* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicTest.java)
+
+#### checker command
+
+```shell script
+$PMD_HOME/bin/run.sh pmd -d src/nullness/InvokeDynamic.java -f text -R category/java/errorprone.xml
+```
+
+#### checker output
+```
+No reported issues.
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| - | - |
 
 #### expected / actual errors
 
@@ -311,22 +345,91 @@ $PMD_HOME/bin/run.sh pmd -d src/nullness/DynamicProxy.java -f text -R category/j
 
 #### checker output
 ```
-src/nullness/DynamicProxy.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-src/nullness/DynamicProxy.java:18:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
+src/nullness/DynamicProxy.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/nullness/DynamicProxy.java:33:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 10 | NA |
-| 18 | FP |
+| 12 | NA |
+| 33 | na |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 1 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
+
+## UnsafeField
+
+* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/UnsafeField.java)
+
+* [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeFieldTest.java)
+
+#### checker command
+
+```shell script
+$PMD_HOME/bin/run.sh pmd -d src/nullness/UnsafeField.java -f text -R category/java/errorprone.xml
+```
+
+#### checker output
+```
+src/nullness/UnsafeField.java:3:	Avoid importing anything from the sun.* packages
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 3 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
+
+## UnsafeInitialisation
+
+* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/UnsafeInitialisation.java)
+
+* [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeInitialisationTest.java)
+
+#### checker command
+
+```shell script
+$PMD_HOME/bin/run.sh pmd -d src/nullness/UnsafeInitialisation.java -f text -R category/java/errorprone.xml
+```
+
+#### checker output
+```
+src/nullness/UnsafeInitialisation.java:3:	Avoid importing anything from the sun.* packages
+src/nullness/UnsafeInitialisation.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 3,12 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
 | - | 1 | 1 |
 
 > unsound
