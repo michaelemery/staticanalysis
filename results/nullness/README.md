@@ -1,6 +1,6 @@
 # results for nullness
 
-[Results Summary](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)
+[results summary](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)
 
 <br>
 
