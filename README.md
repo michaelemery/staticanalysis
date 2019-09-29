@@ -36,8 +36,6 @@ of each tool are compared in order to assess overall and relative effectiveness.
 | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
 --->
 
-> Select type links for results by category.
-
 ### dynamic language features
 
 Dynamic programming languages are a class of high-level programming languages which, at runtime, execute many common programming behaviors that static programming languages perform during compilation. These behaviors could include extension of the program, by adding new code, by extending objects and definitions, or by modifying the type system. 
