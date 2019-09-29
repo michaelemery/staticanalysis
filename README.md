@@ -18,9 +18,9 @@ of each tool are compared in order to assess overall and relative effectiveness.
 | tool | description |
 | --- | --- |
 | **Checker Framework** | The Checker Framework enhances Java's type system to make it more powerful and useful. This lets software developers detect and prevent errors in their Java programs. The Checker Framework includes compiler plug-ins ("checkers") that find bugs or verify their absence. It also permits you to write your own compiler plug-ins. |
-| **SpotBugs** | SpotBugs is a program to find bugs in Java programs. It looks for instances of “bug patterns” — code instances that are likely to be errors. |
 | **Infer** | Open-sourced by Facebook. Infer checks for null pointer exceptions, resource leaks, annotation reachability, missing lock guards, and concurrency race conditions in Android and Java code. |
 | **PMD** | PMD is a static source code analyzer. It is mainly concerned with Java and Apex, but supports six other languages. PMD features many built-in checks placed into categories including; best practice, code style, design, documentation, error prone, multithreading, performance and security. The checks used by this project belong primarily to the *error prone* category. |
+| **SpotBugs** | SpotBugs is a program to find bugs in Java programs. It looks for instances of “bug patterns” — code instances that are likely to be errors. |
 
 ### checker types
 
