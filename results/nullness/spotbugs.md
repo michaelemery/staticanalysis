@@ -1,6 +1,6 @@
 # spotbugs results (nullness)
 
-[results summary](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)
+[results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
 
 <br>
 

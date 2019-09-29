@@ -1,6 +1,6 @@
 # static analysis
 
-[results summary](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)
+[results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
 
 <br>
 
@@ -55,7 +55,3 @@ Dynamic programming languages are a class of high-level programming languages wh
 | UnsafeField | Field set via sun.misc.Unsafe. |
 | UnsafeInitialisation | Allocate an empty instance of a class directly on the heap via sun.misc.Unsafe. |
 *(12 tests)*
-
-### results
-
-For a brief summary of analysis and results, see [results help](https://github.com/michaelemery/staticanalysis/tree/master/results).
