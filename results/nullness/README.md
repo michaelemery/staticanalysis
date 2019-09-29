@@ -1,7 +1,5 @@
 # results for nullness
 
-[results summary](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)
-
 <br>
 
 | dynamic language feature | checkerfwk | infer | pmd |  spotbugs |
