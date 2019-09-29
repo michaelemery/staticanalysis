@@ -4,35 +4,36 @@ import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 
 /**
- * Check nullness of field set via dynamic field access invocation.
+ * Check nullness of field set by invoking setter method handle.
  */
-public class InvokeDynamicField {
+public class MethodHandleField {
 
     Object foo;
 
-    InvokeDynamicField() {
+    MethodHandleField() {
         this.foo = new Object();
     }
 
     static MethodHandle getSetterMethodHandle() throws Exception {
         MethodHandles.Lookup l = MethodHandles.lookup();
-        return l.findSetter(InvokeDynamicField.class, "foo", Object.class);
+        return l.findSetter(MethodHandleField.class, "foo", Object.class);
     }
 
     /**
-     * Field set to non-null never throws NullPointerException.
+     * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() throws Throwable {
-        InvokeDynamicField i = new InvokeDynamicField();
+        MethodHandleField i = new MethodHandleField();
         getSetterMethodHandle().invoke(i, new Object());
         i.foo.toString();
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     * True Positive (TP) if checker reports null warning, else False Negative (FN).
+     * @throws NullPointerException
      */
     public static void setFooToNull() throws Throwable {
-        InvokeDynamicField i = new InvokeDynamicField();
+        MethodHandleField i = new MethodHandleField();
         getSetterMethodHandle().invoke(i, null);
         i.foo.toString();
     }

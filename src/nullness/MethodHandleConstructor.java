@@ -5,36 +5,37 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Check nullness of field set via dynamic constructor invocation.
+ * Check nullness of field set by invoking constructor method handle.
  */
-public class InvokeDynamicConstructor {
+public class MethodHandleConstructor {
 
     Object foo;
 
-    InvokeDynamicConstructor(Object object) {
+    MethodHandleConstructor(Object object) {
         this.foo = object;
     }
 
     static MethodHandle getConstructorMethodHandle() throws Throwable {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodType methodType = MethodType.methodType(void.class, Object.class);
-        return lookup.findConstructor(InvokeDynamicConstructor.class, methodType);
+        return lookup.findConstructor(MethodHandleConstructor.class, methodType);
     }
 
     /**
-     * Field set to non-null never throws NullPointerException.
+     * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() throws Throwable {
-        InvokeDynamicConstructor i = (InvokeDynamicConstructor)
+        MethodHandleConstructor i = (MethodHandleConstructor)
                 getConstructorMethodHandle().invoke(new Object());
         i.foo.toString();
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     * True Positive (TP) if checker reports null warning, else False Negative (FN).
+     * @throws NullPointerException
      */
     public static void setFooToNull() throws Throwable {
-        InvokeDynamicConstructor i = (InvokeDynamicConstructor)
+        MethodHandleConstructor i = (MethodHandleConstructor)
                 getConstructorMethodHandle().invoke(null);
         i.foo.toString();
     }

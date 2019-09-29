@@ -12,7 +12,7 @@ public class InterProcedural {
     }
 
     /**
-     * Field set to non-null never throws NullPointerException.
+     * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() {
         InterProcedural i = new InterProcedural();
@@ -21,7 +21,8 @@ public class InterProcedural {
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     * True Positive (TP) if checker reports null warning, else False Negative (FN).
+     * @throws NullPointerException
      */
     public static void setFooToNull() {
         InterProcedural i = new InterProcedural();

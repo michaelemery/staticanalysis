@@ -1,13 +1,12 @@
 package nullness;
 
-import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Check nullness of field set via dynamic virtual (non-static) method invocation.
+ * Check nullness of field set by invoking virtual (non-static) method handle.
  */
-public class InvokeDynamicMethod {
+public class MethodHandleMethod {
 
     Object foo;
 
@@ -15,26 +14,27 @@ public class InvokeDynamicMethod {
         this.foo = object;
     }
 
-    MethodHandle getSetFooMethodHandle() throws Exception {
+    java.lang.invoke.MethodHandle getSetFooMethodHandle() throws Exception {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
         MethodType type = MethodType.methodType(void.class, Object.class);
-        return lookup.findVirtual(InvokeDynamicMethod.class, "setFoo", type);
+        return lookup.findVirtual(MethodHandleMethod.class, "setFoo", type);
     }
 
     /**
-     * Field set to non-null never throws NullPointerException.
+     * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() throws Throwable {
-        InvokeDynamicMethod i = new InvokeDynamicMethod();
+        MethodHandleMethod i = new MethodHandleMethod();
         i.getSetFooMethodHandle().invoke(i, new Object());
         i.foo.toString();
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     * True Positive (TP) if checker reports null warning, else False Negative (FN).
+     * @throws NullPointerException
      */
     public static void setFooToNull() throws Throwable {
-        InvokeDynamicMethod i = new InvokeDynamicMethod();
+        MethodHandleMethod i = new MethodHandleMethod();
         i.getSetFooMethodHandle().invoke(i, (Object) null);
         i.foo.toString();
     }

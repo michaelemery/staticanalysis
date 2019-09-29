@@ -36,7 +36,7 @@ public class DynamicProxy {
     }
 
     /**
-     * Field set to non-null never throws NullPointerException.
+     * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() {
         DynamicProxy i = new DynamicProxy();
@@ -45,7 +45,8 @@ public class DynamicProxy {
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     * True Positive (TP) if checker reports null warning, else False Negative (FN).
+     * @throws NullPointerException
      */
     public static void setFooToNull() {
         DynamicProxy i = new DynamicProxy();

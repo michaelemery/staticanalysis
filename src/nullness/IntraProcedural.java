@@ -1,14 +1,14 @@
 package nullness;
 
 /**
- * Check nullness for field set via direct value assignment.
+ * Check nullness of field set via direct value assignment.
  */
 public class IntraProcedural {
 
     Object foo;
 
     /**
-     * Field set to non-null never throws NullPointerException.
+     * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() {
         IntraProcedural i = new IntraProcedural();
@@ -17,7 +17,8 @@ public class IntraProcedural {
     }
 
     /**
-     * Field set to null always throws NullPointerException.
+     * True Positive (TP) if checker reports null warning, else False Negative (FN)
+     * @throws NullPointerException
      */
     public static void setFooToNull() {
         IntraProcedural i = new IntraProcedural();
