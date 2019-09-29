@@ -11,7 +11,6 @@ public class MethodHandleMethod {
 
     Object getNullObject(){ return null; }
 
-
     /**
      * a FP if it is reported. otherwise a TP
      */
