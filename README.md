@@ -1,6 +1,6 @@
 # static analysis
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerframework](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
+[Results Summary](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)
 
 <br>
 
@@ -17,10 +17,10 @@ of each tool are compared in order to assess overall and relative effectiveness.
 
 | tool | description |
 | --- | --- |
-| [Checker Framework](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | The Checker Framework enhances Java's type system to make it more powerful and useful. This lets software developers detect and prevent errors in their Java programs. The Checker Framework includes compiler plug-ins ("checkers") that find bugs or verify their absence. It also permits you to write your own compiler plug-ins. |
-| [FindBugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | FindBugs is a program which uses static analysis to look for bugs in Java code. It looks for instances of "bug patterns" — code instances that are likely to be errors. The name FindBugs™ and the FindBugs logo are trademarked by The University of Maryland. FindBugs has been downloaded more than a million times. |
-| [Infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | Open-sourced by Facebook. Infer checks for null pointer exceptions, resource leaks, annotation reachability, missing lock guards, and concurrency race conditions in Android and Java code. |
-| [PMD](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md) | PMD is a static source code analyzer. It is mainly concerned with Java and Apex, but supports six other languages. PMD features many built-in checks placed into categories including; best practice, code style, design, documentation, error prone, multithreading, performance and security. The checks used by this project belong primarily to the *error prone* category. |
+| **Checker Framework** | The Checker Framework enhances Java's type system to make it more powerful and useful. This lets software developers detect and prevent errors in their Java programs. The Checker Framework includes compiler plug-ins ("checkers") that find bugs or verify their absence. It also permits you to write your own compiler plug-ins. |
+| **SpotBugs** | SpotBugs is a program to find bugs in Java programs. It looks for instances of “bug patterns” — code instances that are likely to be errors. |
+| **Infer** | Open-sourced by Facebook. Infer checks for null pointer exceptions, resource leaks, annotation reachability, missing lock guards, and concurrency race conditions in Android and Java code. |
+| **PMD** | PMD is a static source code analyzer. It is mainly concerned with Java and Apex, but supports six other languages. PMD features many built-in checks placed into categories including; best practice, code style, design, documentation, error prone, multithreading, performance and security. The checks used by this project belong primarily to the *error prone* category. |
 
 ### checker types
 
@@ -28,11 +28,13 @@ of each tool are compared in order to assess overall and relative effectiveness.
 
 | type | description |
 | --- | --- |
+| [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)|  Dereferenced expressions are a common cause a null pointer exceptions. |
+<!---
 | [alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | Errors may occur when an object is referenced without consideration for mutations caused by an alias to the same object. |
 | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | Objects accessed at runtime prior to being fully initialised will cause an error. |
-| [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)|  Dereferenced expressions are a common cause a null pointer exceptions. |
 | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) |Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
 | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
+--->
 
 > Select type links for results by category.
 
@@ -42,15 +44,19 @@ Dynamic programming languages are a class of high-level programming languages wh
 
 | dynamic language feature | description |
 | --- | --- |
-| IntraProcedural | Single method. No dynamic features. |
-| InterProcedural | Multiple methods. No dynamic features. |
+| IntraProcedural | Field set via direct value assignment. |
+| InterProcedural | Field set via inter-procedural return. |
 | ReflectConstructor | Constructors invoked via reflection. |
 | ReflectMethod | Methods invoked via reflection. |
-| ReflectField | Objects directly manipulated via reflective field access. |
-| InvokeDynamicConstructor | Objects manipulated via dynamically invoked constructor. |
-| InvokeDynamicMethod | Dynamically invoked via dynamically invoked methods. |
-| InvokeDynamicField | Objects directly manipulated via dynamic field access. |
-| DynamicProxy | Proxy instances of the original class interface. |
+| ReflectField | Field set by invoking virtual (non-static) method handle. |
+| MethodHandleConstructor | Field set by invoking constructor method handle. |
+| MethodHandleMethod | Method handle invocation of method. |
+| MethodHandleField | Field set by invoking setter method handle. |
+| InvokeDynamic | Field set via dynamic invocation of setter method. |
+| DynamicProxy | Field set via dynamic proxy invocation. |
+| UnsafeField | Field set via sun.misc.Unsafe. |
+| UnsafeInitialisation | Allocate an empty instance of a class directly on the heap via sun.misc.Unsafe. |
+*(12 tests)*
 
 ### results
 

@@ -1,11 +1,6 @@
 # results
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
-
-### toolbar
-
-* Select a dynamic language feature (alias, init, nullness, signedness, or taint), for a summary table of all results for that language feature.
-* Select a checker (checkerframework, findbugs, infer, or pmd), for a summary table of all results for that checker.
+[Results Summary](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)
 
 ### analysis
 
@@ -25,8 +20,8 @@
 
 | Result | Description |
 | :---: | :--- |
-| accurate | Expected issue was detected (TP = 1+) without any false issues (FP = 0) |
-| imprecise | Expected issue was detected (TP = 1+) as well as false issues (FP = 1+) |
+| accurate | Expected issue was detected (TP >= 1) without any false issues (FP = 0) |
+| imprecise | Expected issue was detected (TP >= 1) as well as false issues (FP >= 1) |
 | unsound | Expected issue was not detected (TP = 0)|
 
 <br>

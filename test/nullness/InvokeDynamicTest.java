@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check nullness of field set via dynamic virtual (non-static) method invocation.
+ * Check nullness of field set via dynamic invocation of setter method.
  */
-class InvokeDynamicMethodTest {
+class InvokeDynamicTest {
 
     @Test
     void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            InvokeDynamicMethod.setFooToNonNull();
+            InvokeDynamic.setFooToNonNull();
         });
     }
 
     @Test
     void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            InvokeDynamicMethod.setFooToNull();
+            InvokeDynamic.setFooToNull();
         });
     }
 }

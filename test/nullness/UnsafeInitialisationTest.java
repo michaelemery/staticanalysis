@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check nullness of field set via dynamic field access invocation.
+ * Check nullness of field set via sun.misc.Unsafe api.
  */
-class InvokeDynamicFieldTest {
+class UnsafeInitialisationTest {
 
     @Test
     void setFooToNonNull() {
-        assertDoesNotThrow(() -> {
-            InvokeDynamicField.setFooToNonNull();
-        });
+//        assertDoesNotThrow(() -> {
+//            UnsafeInitialisation.setFooToNonNull();
+//        });
     }
 
     @Test
     void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            InvokeDynamicField.setFooToNull();
+            ReflectMethod.setFooToNull();
         });
     }
 }

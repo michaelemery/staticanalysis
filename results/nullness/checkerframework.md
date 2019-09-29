@@ -1,6 +1,6 @@
 # checker framework results (nullness)
 
-[alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md) | [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) | [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) &nbsp; &#x25c0; &#x25b6; &nbsp; [checkerfwk](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/checkerframework.md) | [findbugs](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/findbugs.md) | [infer](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/infer.md) | [pmd](https://github.com/michaelemery/staticanalysis/blob/master/results/tool/pmd.md)
+[Results Summary](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)
 
 <br>
 
@@ -41,7 +41,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 src/nullness/IntraProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class IntraProcedural {
        ^
-src/nullness/IntraProcedural.java:24: error: [assignment.type.incompatible] incompatible types in assignment.
+src/nullness/IntraProcedural.java:25: error: [assignment.type.incompatible] incompatible types in assignment.
         i.foo = null;
                 ^
   found   : null
@@ -54,7 +54,7 @@ src/nullness/IntraProcedural.java:24: error: [assignment.type.incompatible] inco
 | line(s) | event |
 | :---: | :---: |
 | 6 | NA |
-| 24 | TP |
+| 25 | TP |
 
 #### expected / actual errors
 
@@ -85,7 +85,7 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 src/nullness/InterProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class InterProcedural {
        ^
-src/nullness/InterProcedural.java:28: error: [argument.type.incompatible] incompatible types in argument.
+src/nullness/InterProcedural.java:29: error: [argument.type.incompatible] incompatible types in argument.
         i.foo = i.getObject(null);
                             ^
   found   : null
@@ -98,7 +98,7 @@ src/nullness/InterProcedural.java:28: error: [argument.type.incompatible] incomp
 | line(s) | event |
 | :---: | :---: |
 | 6 | NA |
-| 27 | TP |
+| 29 | TP |
 
 #### expected / actual errors
 
@@ -244,16 +244,16 @@ public class ReflectField {
 
 <br>
 
-## InvokeDynamicConstructor
+## MethodHandleConstructor
 
-* [nullness/InvokeDynamicConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicConstructor.java)
+* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleConstructor.java)
 
-* [nullness/InvokeDynamicConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicConstructorTest.java)
+* [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleConstructorTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/InvokeDynamicConstructor.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/MethodHandleConstructor.java
 ```
 
 #### checker output
@@ -279,25 +279,25 @@ No reported issues.
 
 <br>
 
-## InvokeDynamicMethod
+## MethodHandleMethod
 
-* [nullness/InvokeDynamicMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicMethod.java)
+* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleMethod.java)
 
-* [nullness/InvokeDynamicMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicMethodTest.java)
+* [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleMethodTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/InvokeDynamicMethod.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/MethodHandleMethod.java
 ```
 
 #### checker output
 
 ```
-src/nullness/InvokeDynamicMethod.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
-public class InvokeDynamicMethod {
+src/nullness/MethodHandleMethod.java:9: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+public class MethodHandleMethod {
        ^
-src/nullness/InvokeDynamicMethod.java:38: error: [argument.type.incompatible] incompatible types in argument.
+src/nullness/MethodHandleMethod.java:38: error: [argument.type.incompatible] incompatible types in argument.
         i.getSetFooMethodHandle().invoke(i, (Object) null);
                                             ^
   found   : @FBCBottom @Nullable Object
@@ -309,7 +309,7 @@ src/nullness/InvokeDynamicMethod.java:38: error: [argument.type.incompatible] in
 
 | line(s) | event |
 | :---: | :---: |
-| 10 | NA |
+| 9 | NA |
 | 38 | TP |
 
 #### expected / actual errors
@@ -323,16 +323,16 @@ src/nullness/InvokeDynamicMethod.java:38: error: [argument.type.incompatible] in
 
 <br>
 
-## InvokeDynamicField
+## MethodHandleField
 
-* [nullness/InvokeDynamicField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamicField.java)
+* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleField.java)
 
-* [nullness/InvokeDynamicFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicFieldTest.java)
+* [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleFieldTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/InvokeDynamicField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/MethodHandleField.java
 ```
 
 #### checker output
@@ -355,6 +355,50 @@ No reported issues.
 | - | 1 | 1 |
 
 > unsound
+
+<br>
+
+## InvokeDynamic
+
+* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamic.java)
+
+* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicTest.java)
+
+#### checker command
+
+```shell script
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/InvokeDynamic.java
+```
+
+#### checker output
+
+```
+src/nullness/InvokeDynamic.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+public class InvokeDynamic {
+       ^
+src/nullness/InvokeDynamic.java:30: error: [argument.type.incompatible] incompatible types in argument.
+        java.util.function.Consumer<Object> c = foo -> i.setFoo(null);
+                                                                ^
+  found   : null
+  required: @Initialized @NonNull Object
+2 errors
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 6 | NA |
+| 30 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 1 | 0 |
+| - | 0 | 1 |
+
+> accurate
 
 <br>
 
@@ -373,17 +417,73 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ s
 #### checker output
 
 ```
-src/nullness/DynamicProxy.java:8: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/nullness/DynamicProxy.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class DynamicProxy {
        ^
-src/nullness/DynamicProxy.java:18: error: [argument.type.incompatible] incompatible types in argument.
-                MyClass.class.getClassLoader(),
-                                            ^
+src/nullness/DynamicProxy.java:27: error: [return.type.incompatible] incompatible types in return.
+            return method.invoke(new MyClass(), methodArgs);
+                                ^
+  found   : @Initialized @Nullable Object
+  required: @Initialized @NonNull Object
+src/nullness/DynamicProxy.java:33: error: [argument.type.incompatible] incompatible types in argument.
+                MyInterface.class.getClassLoader(),
+                                                ^
   found   : @Initialized @Nullable ClassLoader
   required: @Initialized @NonNull ClassLoader
-src/nullness/DynamicProxy.java:43: error: [argument.type.incompatible] incompatible types in argument.
+src/nullness/DynamicProxy.java:53: error: [argument.type.incompatible] incompatible types in argument.
         i.foo = i.getProxyInstance().getObject(null);
                                                ^
+  found   : null
+  required: @Initialized @NonNull Object
+4 errors
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 10 | NA |
+| 27 | FP |
+| 33 | FP |
+| 53 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 1 | 2 |
+| - | 0 | 1 |
+
+> imprecise
+
+<br>
+
+## UnsafeField
+
+* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/UnsafeField.java)
+
+* [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeFieldTest.java)
+
+#### checker command
+
+```shell script
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/UnsafeField.java
+```
+
+#### checker output
+
+```
+src/nullness/UnsafeField.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+public class UnsafeField {
+       ^
+src/nullness/UnsafeField.java:17: error: [return.type.incompatible] incompatible types in return.
+        return (Unsafe) f.get(null);
+               ^
+  found   : @Initialized @Nullable Unsafe
+  required: @Initialized @NonNull Unsafe
+src/nullness/UnsafeField.java:38: error: [argument.type.incompatible] incompatible types in argument.
+                        UnsafeField.class.getDeclaredField("foo")), null);
+                                                                    ^
   found   : null
   required: @Initialized @NonNull Object
 3 errors
@@ -393,15 +493,58 @@ src/nullness/DynamicProxy.java:43: error: [argument.type.incompatible] incompati
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | NA |
-| 18 | FP |
-| 44 | TP |
+| 10, 17 | NA |
+| 38 | TP |
+
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 1 |
+| + | 1 | 0 |
 | - | 0 | 1 |
 
-> imprecise
+> accurate
+
+<br>
+
+## UnsafeInitialisation
+
+* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/UnsafeInitialisation.java)
+
+* [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeInitialisationTest.java)
+
+#### checker command
+
+```shell script
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/UnsafeInitialisation.java
+```
+
+#### checker output
+
+```
+src/nullness/UnsafeInitialisation.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+public class UnsafeInitialisation {
+       ^
+src/nullness/UnsafeInitialisation.java:17: error: [return.type.incompatible] incompatible types in return.
+        return (Unsafe) f.get(null);
+               ^
+  found   : @Initialized @Nullable Unsafe
+  required: @Initialized @NonNull Unsafe
+2 errors
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 10,17 | NA |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound

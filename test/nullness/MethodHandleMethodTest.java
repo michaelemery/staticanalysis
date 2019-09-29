@@ -5,21 +5,21 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Check nullness of field set via dynamic constructor invocation.
+ * Check nullness of field set via reflective constructor call.
  */
-class InvokeDynamicConstructorTest {
+class MethodHandleMethodTest {
 
     @Test
     void setFooToNonNull() {
         assertDoesNotThrow(() -> {
-            InvokeDynamicConstructor.setFooToNonNull();
+            MethodHandleMethod.setFooToNonNull();
         });
     }
 
     @Test
     void setFooToNull() {
         assertThrows(NullPointerException.class, () -> {
-            InvokeDynamicConstructor.setFooToNull();
+            MethodHandleMethod.setFooToNull();
         });
     }
 }
