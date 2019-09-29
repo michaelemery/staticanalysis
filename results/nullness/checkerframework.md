@@ -4,7 +4,7 @@
 
 <br>
 
-Version: checker-framework-2.3.0
+Version: checker-framework-2.11.0
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
