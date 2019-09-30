@@ -58,12 +58,6 @@ ENV INFER_HOME /infer/infer
 ENV PATH ${INFER_HOME}/bin:${PATH}
 
 
-# --- CREATE APP FOLDER
-
-# for later use
-RUN mkdir /app
-
-
 # --- MAVEN SETUP
 
 # create directory
@@ -71,7 +65,7 @@ RUN mkdir -p /opt/maven
 WORKDIR /opt/maven
 
 # copy install files
-ADD archive/apache-maven-3.5.3-bin.zip .
+ADD lib .
 RUN unzip apache-maven-3.5.3-bin.zip && \
     rm apache-maven-3.5.3-bin.zip
 
@@ -87,7 +81,7 @@ RUN mkdir -p /opt/checkerframework
 WORKDIR /opt/checkerframework
 
 # copy install files
-ADD archive/checker-framework-2.1.11.zip .
+ADD lib .
 RUN unzip checker-framework-2.1.11.zip && \
     rm checker-framework-2.1.11.zip
 
@@ -104,7 +98,7 @@ RUN mkdir -p /opt/pmd
 WORKDIR /opt/pmd
 
 # copy install files
-ADD archive/pmd-bin-6.1.0.zip .
+ADD lib .
 RUN unzip pmd-bin-6.1.0.zip && \
     rm pmd-bin-6.1.0.zip
 
@@ -119,7 +113,7 @@ RUN mkdir -p /opt/findbugs
 WORKDIR /opt/findbugs
 
 # copy install files
-ADD archive/findbugs-3.0.1.zip .
+ADD lib .
 RUN unzip findbugs-3.0.1.zip && \
     rm findbugs-3.0.1.zip
 
@@ -130,7 +124,7 @@ ENV PATH ${FINDBUGS_HOME}/bin:${PATH}
 
 # --- JUNIT STANDALONE APP AND TEST SCRIPT
 
-ADD archive/junit-platform-console-standalone-1.5.2.jar /opt
+ADD lib /opt
 ADD test.sh /
 
 
