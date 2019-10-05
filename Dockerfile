@@ -132,7 +132,5 @@ ADD test.sh /
 
 RUN mkdir /src
 ADD src /src
-RUN mkdir /test
-ADD test /test
 RUN mkdir /out
 WORKDIR /
