@@ -25,20 +25,20 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 
 ## IntraProcedural
 
-* [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/IntraProcedural.java)
+* [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/IntraProcedural.java)
 
-* [nullness/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/IntraProceduralTest.java)
+* [nullness/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/IntraProceduralTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/IntraProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-src/nullness/IntraProcedural.java:24:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/nullness/IntraProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/IntraProcedural.java:24:	Assigning an Object to null is a code smell.  Consider refactoring.
 ```
 
 #### output analysis
@@ -61,19 +61,19 @@ src/nullness/IntraProcedural.java:24:	Assigning an Object to null is a code smel
 
 ## InterProcedural
 
-* [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InterProcedural.java)
+* [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InterProcedural.java)
 
-* [nullness/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InterProceduralTest.java)
+* [nullness/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InterProceduralTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/InterProcedural.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/InterProcedural.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/InterProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/InterProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -95,19 +95,19 @@ src/nullness/InterProcedural.java:8:	Found non-transient, non-static member. Ple
 
 ## ReflectConstructor
 
-* [nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectConstructor.java)
+* [nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectConstructor.java)
 
-* [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectConstructorTest.java)
+* [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectConstructorTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/ReflectConstructor.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/ReflectConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/ReflectConstructor.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/ReflectConstructor.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -129,19 +129,19 @@ src/nullness/ReflectConstructor.java:10:	Found non-transient, non-static member.
 
 ## ReflectMethod
 
-* [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethod.java)
+* [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectMethod.java)
 
-* [nullness/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectMethodTest.java)
+* [nullness/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectMethodTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/ReflectMethod.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/ReflectMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/ReflectMethod.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/ReflectMethod.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -163,19 +163,19 @@ src/nullness/ReflectMethod.java:10:	Found non-transient, non-static member. Plea
 
 ## ReflectField
 
-* [nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectField.java)
+* [nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectField.java)
 
-* [nullness/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectFieldTest.java)
+* [nullness/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectFieldTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/ReflectField.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/ReflectField.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/ReflectField.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/ReflectField.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -197,19 +197,19 @@ src/nullness/ReflectField.java:8:	Found non-transient, non-static member. Please
 
 ## MethodHandleConstructor
 
-* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleConstructor.java)
+* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleConstructor.java)
 
-* [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleConstructorTest.java)
+* [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleConstructorTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/MethodHandleConstructor.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/MethodHandleConstructor.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/MethodHandleConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/MethodHandleConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -231,19 +231,19 @@ src/nullness/MethodHandleConstructor.java:12:	Found non-transient, non-static me
 
 ## MethodHandleMethod
 
-* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleMethod.java)
+* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleMethod.java)
 
-* [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleMethodTest.java)
+* [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleMethodTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/MethodHandleMethod.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/MethodHandleMethod.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/MethodHandleMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/MethodHandleMethod.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -265,19 +265,19 @@ src/nullness/MethodHandleMethod.java:12:	Found non-transient, non-static member.
 
 ## MethodHandleField
 
-* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleField.java)
+* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleField.java)
 
-* [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleFieldTest.java)
+* [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleFieldTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/MethodHandleField.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/MethodHandleField.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/MethodHandleField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/MethodHandleField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis
@@ -299,14 +299,14 @@ src/nullness/MethodHandleField.java:11:	Found non-transient, non-static member. 
 
 ## InvokeDynamic
 
-* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamic.java)
+* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InvokeDynamic.java)
 
-* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicTest.java)
+* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InvokeDynamicTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/InvokeDynamic.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/InvokeDynamic.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
@@ -333,20 +333,20 @@ No reported issues.
 
 ## DynamicProxy
 
-* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/DynamicProxy.java)
+* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/DynamicProxy.java)
 
-* [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/DynamicProxyTest.java)
+* [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/DynamicProxyTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/DynamicProxy.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/DynamicProxy.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/DynamicProxy.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-src/nullness/DynamicProxy.java:33:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
+src/main/java/nullness/DynamicProxy.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/DynamicProxy.java:33:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
 ```
 
 #### output analysis
@@ -369,19 +369,19 @@ src/nullness/DynamicProxy.java:33:	In J2EE, getClassLoader() might not work as e
 
 ## UnsafeField
 
-* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/UnsafeField.java)
+* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/UnsafeField.java)
 
-* [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeFieldTest.java)
+* [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeFieldTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/UnsafeField.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/UnsafeField.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/UnsafeField.java:3:	Avoid importing anything from the sun.* packages
+src/main/java/nullness/UnsafeField.java:3:	Avoid importing anything from the sun.* packages
 ```
 
 #### output analysis
@@ -403,20 +403,20 @@ src/nullness/UnsafeField.java:3:	Avoid importing anything from the sun.* package
 
 ## UnsafeInitialisation
 
-* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/UnsafeInitialisation.java)
+* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/UnsafeInitialisation.java)
 
-* [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeInitialisationTest.java)
+* [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeInitialisationTest.java)
 
 #### checker command
 
 ```shell script
-$PMD_HOME/bin/run.sh pmd -d src/nullness/UnsafeInitialisation.java -f text -R category/java/errorprone.xml
+$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/UnsafeInitialisation.java -f text -R category/java/errorprone.xml
 ```
 
 #### checker output
 ```
-src/nullness/UnsafeInitialisation.java:3:	Avoid importing anything from the sun.* packages
-src/nullness/UnsafeInitialisation.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/UnsafeInitialisation.java:3:	Avoid importing anything from the sun.* packages
+src/main/java/nullness/UnsafeInitialisation.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
 ```
 
 #### output analysis

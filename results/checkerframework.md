@@ -25,23 +25,23 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 
 ## IntraProcedural
 
-* [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/IntraProcedural.java)
+* [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/IntraProcedural.java)
 
-* [nullness/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/IntraProceduralTest.java)
+* [nullness/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/IntraProceduralTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/IntraProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessIntraProcedural.java
 ```
 
 #### checker output
 
 ```
-src/nullness/IntraProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullnessIntraProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class IntraProcedural {
        ^
-src/nullness/IntraProcedural.java:25: error: [assignment.type.incompatible] incompatible types in assignment.
+src/main/java/nullnessIntraProcedural.java:25: error: [assignment.type.incompatible] incompatible types in assignment.
         i.foo = null;
                 ^
   found   : null
@@ -69,23 +69,23 @@ src/nullness/IntraProcedural.java:25: error: [assignment.type.incompatible] inco
 
 ## InterProcedural
 
-* [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InterProcedural.java)
+* [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InterProcedural.java)
 
-* [nullness/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InterProceduralTest.java)
+* [nullness/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InterProceduralTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/InterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessInterProcedural.java
 ```
 
 #### checker output
 
 ```
-src/nullness/InterProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullnessInterProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class InterProcedural {
        ^
-src/nullness/InterProcedural.java:29: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullnessInterProcedural.java:29: error: [argument.type.incompatible] incompatible types in argument.
         i.foo = i.getObject(null);
                             ^
   found   : null
@@ -113,20 +113,20 @@ src/nullness/InterProcedural.java:29: error: [argument.type.incompatible] incomp
 
 ## ReflectConstructor
 
-* [nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectConstructor.java)
+* [nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectConstructor.java)
 
-* [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectConstructorTest.java)
+* [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectConstructorTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/ReflectConstructor.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessReflectConstructor.java
 ```
 
 #### checker output
 
 ```
-src/nullness/ReflectConstructor.java:33: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullnessReflectConstructor.java:33: error: [argument.type.incompatible] incompatible types in argument.
         ((ReflectConstructor) constructor.newInstance((Object) null)).foo.toString();
                                                       ^
   found   : @FBCBottom @Nullable Object
@@ -153,33 +153,33 @@ src/nullness/ReflectConstructor.java:33: error: [argument.type.incompatible] inc
 
 ## ReflectMethod
 
-* [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethod.java)
+* [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectMethod.java)
 
-* [nullness/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectMethodTest.java)
+* [nullness/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectMethodTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/ReflectMethod.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessReflectMethod.java
 ```
 
 #### checker output
 
 ```
-src/nullness/ReflectMethod.java:8: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullnessReflectMethod.java:8: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class ReflectMethod {
        ^
-src/nullness/ReflectMethod.java:23: error: [assignment.type.incompatible] incompatible types in assignment.
+src/main/java/nullnessReflectMethod.java:23: error: [assignment.type.incompatible] incompatible types in assignment.
         i.foo = getObjectMethod.invoke(i, new Object());
                                       ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
-src/nullness/ReflectMethod.java:34: error: [assignment.type.incompatible] incompatible types in assignment.
+src/main/java/nullnessReflectMethod.java:34: error: [assignment.type.incompatible] incompatible types in assignment.
         i.foo = getObjectMethod.invoke(i, (Object) null);
                                       ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
-src/nullness/ReflectMethod.java:34: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullnessReflectMethod.java:34: error: [argument.type.incompatible] incompatible types in argument.
         i.foo = getObjectMethod.invoke(i, (Object) null);
                                           ^
   found   : @FBCBottom @Nullable Object
@@ -208,20 +208,20 @@ src/nullness/ReflectMethod.java:34: error: [argument.type.incompatible] incompat
 
 ## ReflectField
 
-* [nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectField.java)
+* [nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectField.java)
 
-* [nullness/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectFieldTest.java)
+* [nullness/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectFieldTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/ReflectField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessReflectField.java
 ```
 
 #### checker output
 
 ````
-src/nullness/ReflectField.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullnessReflectField.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class ReflectField {
        ^
 1 error
@@ -246,14 +246,14 @@ public class ReflectField {
 
 ## MethodHandleConstructor
 
-* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleConstructor.java)
+* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleConstructor.java)
 
-* [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleConstructorTest.java)
+* [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleConstructorTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/MethodHandleConstructor.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessMethodHandleConstructor.java
 ```
 
 #### checker output
@@ -281,23 +281,23 @@ No reported issues.
 
 ## MethodHandleMethod
 
-* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleMethod.java)
+* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleMethod.java)
 
-* [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleMethodTest.java)
+* [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleMethodTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/MethodHandleMethod.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessMethodHandleMethod.java
 ```
 
 #### checker output
 
 ```
-src/nullness/MethodHandleMethod.java:9: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullnessMethodHandleMethod.java:9: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class MethodHandleMethod {
        ^
-src/nullness/MethodHandleMethod.java:38: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullnessMethodHandleMethod.java:38: error: [argument.type.incompatible] incompatible types in argument.
         i.getSetFooMethodHandle().invoke(i, (Object) null);
                                             ^
   found   : @FBCBottom @Nullable Object
@@ -325,14 +325,14 @@ src/nullness/MethodHandleMethod.java:38: error: [argument.type.incompatible] inc
 
 ## MethodHandleField
 
-* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleField.java)
+* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleField.java)
 
-* [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleFieldTest.java)
+* [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleFieldTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/MethodHandleField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessMethodHandleField.java
 ```
 
 #### checker output
@@ -360,23 +360,23 @@ No reported issues.
 
 ## InvokeDynamic
 
-* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamic.java)
+* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InvokeDynamic.java)
 
-* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicTest.java)
+* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InvokeDynamicTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/InvokeDynamic.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessInvokeDynamic.java
 ```
 
 #### checker output
 
 ```
-src/nullness/InvokeDynamic.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullnessInvokeDynamic.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class InvokeDynamic {
        ^
-src/nullness/InvokeDynamic.java:30: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullnessInvokeDynamic.java:30: error: [argument.type.incompatible] incompatible types in argument.
         java.util.function.Consumer<Object> c = foo -> i.setFoo(null);
                                                                 ^
   found   : null
@@ -404,33 +404,33 @@ src/nullness/InvokeDynamic.java:30: error: [argument.type.incompatible] incompat
 
 ## DynamicProxy
 
-* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/DynamicProxy.java)
+* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/DynamicProxy.java)
 
-* [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/DynamicProxyTest.java)
+* [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/DynamicProxyTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/DynamicProxy.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessDynamicProxy.java
 ```
 
 #### checker output
 
 ```
-src/nullness/DynamicProxy.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullnessDynamicProxy.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class DynamicProxy {
        ^
-src/nullness/DynamicProxy.java:27: error: [return.type.incompatible] incompatible types in return.
+src/main/java/nullnessDynamicProxy.java:27: error: [return.type.incompatible] incompatible types in return.
             return method.invoke(new MyClass(), methodArgs);
                                 ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
-src/nullness/DynamicProxy.java:33: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullnessDynamicProxy.java:33: error: [argument.type.incompatible] incompatible types in argument.
                 MyInterface.class.getClassLoader(),
                                                 ^
   found   : @Initialized @Nullable ClassLoader
   required: @Initialized @NonNull ClassLoader
-src/nullness/DynamicProxy.java:53: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullnessDynamicProxy.java:53: error: [argument.type.incompatible] incompatible types in argument.
         i.foo = i.getProxyInstance().getObject(null);
                                                ^
   found   : null
@@ -460,28 +460,28 @@ src/nullness/DynamicProxy.java:53: error: [argument.type.incompatible] incompati
 
 ## UnsafeField
 
-* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/UnsafeField.java)
+* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/UnsafeField.java)
 
-* [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeFieldTest.java)
+* [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeFieldTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/UnsafeField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessUnsafeField.java
 ```
 
 #### checker output
 
 ```
-src/nullness/UnsafeField.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullnessUnsafeField.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class UnsafeField {
        ^
-src/nullness/UnsafeField.java:17: error: [return.type.incompatible] incompatible types in return.
+src/main/java/nullnessUnsafeField.java:17: error: [return.type.incompatible] incompatible types in return.
         return (Unsafe) f.get(null);
                ^
   found   : @Initialized @Nullable Unsafe
   required: @Initialized @NonNull Unsafe
-src/nullness/UnsafeField.java:38: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullnessUnsafeField.java:38: error: [argument.type.incompatible] incompatible types in argument.
                         UnsafeField.class.getDeclaredField("foo")), null);
                                                                     ^
   found   : null
@@ -510,23 +510,23 @@ src/nullness/UnsafeField.java:38: error: [argument.type.incompatible] incompatib
 
 ## UnsafeInitialisation
 
-* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/UnsafeInitialisation.java)
+* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/UnsafeInitialisation.java)
 
-* [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeInitialisationTest.java)
+* [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeInitialisationTest.java)
 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/nullness/UnsafeInitialisation.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessUnsafeInitialisation.java
 ```
 
 #### checker output
 
 ```
-src/nullness/UnsafeInitialisation.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullnessUnsafeInitialisation.java:10: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class UnsafeInitialisation {
        ^
-src/nullness/UnsafeInitialisation.java:17: error: [return.type.incompatible] incompatible types in return.
+src/main/java/nullnessUnsafeInitialisation.java:17: error: [return.type.incompatible] incompatible types in return.
         return (Unsafe) f.get(null);
                ^
   found   : @Initialized @Nullable Unsafe

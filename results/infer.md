@@ -25,14 +25,14 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 
 ## IntraProcedural
 
-* [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/IntraProcedural.java)
+* [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/IntraProcedural.java)
 
-* [nullness/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/IntraProceduralTest.java)
+* [nullness/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/IntraProceduralTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/IntraProcedural.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/IntraProcedural.java
 ```
 
 #### checker output
@@ -40,7 +40,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/nullness/IntraProcedural.
 ```
 Found 3 issues
 
-src/nullness/IntraProcedural.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
+src/main/java/nullness/IntraProcedural.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
   Field `IntraProcedural.foo` is not initialized in the constructor and is not declared `@Nullable`
   4.    * Check nullness of field set via direct value assignment.
   5.    */
@@ -48,7 +48,7 @@ src/nullness/IntraProcedural.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
   7.   
   8.       Object foo;
 
-src/nullness/IntraProcedural.java:25: error: ERADICATE_FIELD_NOT_NULLABLE
+src/main/java/nullness/IntraProcedural.java:25: error: ERADICATE_FIELD_NOT_NULLABLE
   Field `IntraProcedural.foo` can be null but is not declared `@Nullable`. (Origin: null constant at line 25)
   23.       public static void setFooToNull() {
   24.           IntraProcedural i = new IntraProcedural();
@@ -56,7 +56,7 @@ src/nullness/IntraProcedural.java:25: error: ERADICATE_FIELD_NOT_NULLABLE
   26.           i.foo.toString();
   27.       }
 
-src/nullness/IntraProcedural.java:26: error: ERADICATE_NULL_METHOD_CALL
+src/main/java/nullness/IntraProcedural.java:26: error: ERADICATE_NULL_METHOD_CALL
   The value of `i.foo` in the call to `toString()` could be null. (Origin: null constant at line 25)
   24.           IntraProcedural i = new IntraProcedural();
   25.           i.foo = null;
@@ -85,14 +85,14 @@ src/nullness/IntraProcedural.java:26: error: ERADICATE_NULL_METHOD_CALL
 
 ## InterProcedural
 
-* [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InterProcedural.java)
+* [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InterProcedural.java)
 
-* [nullness/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InterProceduralTest.java)
+* [nullness/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InterProceduralTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/InterProcedural.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/InterProcedural.java
 ```
 
 #### checker output
@@ -100,7 +100,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/nullness/InterProcedural.
 ```
 Found 2 issues
 
-src/nullness/InterProcedural.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
+src/main/java/nullness/InterProcedural.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
   Field `InterProcedural.foo` is not initialized in the constructor and is not declared `@Nullable`
   4.    * Check nullness of field set via inter-procedural return.
   5.    */
@@ -108,7 +108,7 @@ src/nullness/InterProcedural.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
   7.   
   8.       Object foo;
 
-src/nullness/InterProcedural.java:29: error: ERADICATE_PARAMETER_NOT_NULLABLE
+src/main/java/nullness/InterProcedural.java:29: error: ERADICATE_PARAMETER_NOT_NULLABLE
   `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 29)
   27.       public static void setFooToNull() {
   28.           InterProcedural i = new InterProcedural();
@@ -137,14 +137,14 @@ src/nullness/InterProcedural.java:29: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 ## ReflectConstructor
 
-* [nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectConstructor.java)
+* [nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectConstructor.java)
 
-* [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectConstructorTest.java)
+* [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectConstructorTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectConstructor.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/ReflectConstructor.java
 ```
 
 ### checker output
@@ -172,14 +172,14 @@ No reported issues.
 
 ## ReflectMethod
 
-* [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectMethod.java)
+* [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectMethod.java)
 
-* [nullness/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectMethodTest.java)
+* [nullness/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectMethodTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectMethod.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/ReflectMethod.java
 ```
 
 #### checker output
@@ -187,7 +187,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectMethod.ja
 ```
 Found 1 issue
 
-src/nullness/ReflectMethod.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
+src/main/java/nullness/ReflectMethod.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
   Field `ReflectMethod.foo` is not initialized in the constructor and is not declared `@Nullable`
   6.    * Check nullness of field set via reflection method invocation.
   7.    */
@@ -215,14 +215,14 @@ src/nullness/ReflectMethod.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 ## ReflectField
 
-* [nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/ReflectField.java)
+* [nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectField.java)
 
-* [nullness/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/ReflectFieldTest.java)
+* [nullness/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectFieldTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectField.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/ReflectField.java
 ```
 
 #### checker output
@@ -230,7 +230,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/nullness/ReflectField.jav
 ````
 Found 1 issue
 
-src/nullness/ReflectField.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
+src/main/java/nullness/ReflectField.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
   Field `ReflectField.foo` is not initialized in the constructor and is not declared `@Nullable`
   4.    * Check nullness of field set via reflective field access.
   5.    */
@@ -260,14 +260,14 @@ src/nullness/ReflectField.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 ## MethodHandleConstructor
 
-* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleConstructor.java)
+* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleConstructor.java)
 
-* [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleConstructorTest.java)
+* [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleConstructorTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/MethodHandleConstructor.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/MethodHandleConstructor.java
 ```
 
 #### checker output
@@ -295,14 +295,14 @@ No reported issues.
 
 ## MethodHandleMethod
 
-* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleMethod.java)
+* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleMethod.java)
 
-* [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleMethodTest.java)
+* [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleMethodTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/MethodHandleMethod.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/MethodHandleMethod.java
 ```
 
 #### checker output
@@ -310,7 +310,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/nullness/MethodHandleMeth
 ```
 Found 1 issue
 
-src/nullness/MethodHandleMethod.java:9: error: ERADICATE_FIELD_NOT_INITIALIZED
+src/main/java/nullness/MethodHandleMethod.java:9: error: ERADICATE_FIELD_NOT_INITIALIZED
   Field `MethodHandleMethod.foo` is not initialized in the constructor and is not declared `@Nullable`
   7.    * Check nullness of field set by invoking virtual (non-static) method handle.
   8.    */
@@ -338,14 +338,14 @@ src/nullness/MethodHandleMethod.java:9: error: ERADICATE_FIELD_NOT_INITIALIZED
 
 ## MethodHandleField
 
-* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/MethodHandleField.java)
+* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleField.java)
 
-* [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/MethodHandleFieldTest.java)
+* [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleFieldTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/MethodHandleField.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/MethodHandleField.java
 ```
 
 #### checker output
@@ -373,14 +373,14 @@ No reported issues.
 
 ## InvokeDynamic
 
-* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/InvokeDynamic.java)
+* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InvokeDynamic.java)
 
-* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/InvokeDynamicTest.java)
+* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InvokeDynamicTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/InvokeDynamic.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/InvokeDynamic.java
 ```
 
 #### checker output
@@ -388,7 +388,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/nullness/InvokeDynamic.ja
 ```
 Found 2 issues
 
-src/nullness/InvokeDynamic.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
+src/main/java/nullness/InvokeDynamic.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
   Field `InvokeDynamic.foo` is not initialized in the constructor and is not declared `@Nullable`
   4.    * Check nullness of field set via dynamic invocation of setter method.
   5.    */
@@ -396,7 +396,7 @@ src/nullness/InvokeDynamic.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
   7.   
   8.       Object foo;
 
-src/nullness/InvokeDynamic.java:30: error: ERADICATE_PARAMETER_NOT_NULLABLE
+src/main/java/nullness/InvokeDynamic.java:30: error: ERADICATE_PARAMETER_NOT_NULLABLE
   `setFoo(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 30)
   28.       public static void setFooToNull() {
   29.           InvokeDynamic i = new InvokeDynamic();
@@ -425,14 +425,14 @@ src/nullness/InvokeDynamic.java:30: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 ## DynamicProxy
 
-* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/DynamicProxy.java)
+* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/DynamicProxy.java)
 
-* [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/DynamicProxyTest.java)
+* [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/DynamicProxyTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/DynamicProxy.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/DynamicProxy.java
 ```
 
 #### checker output
@@ -440,7 +440,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/nullness/DynamicProxy.jav
 ```
 Found 2 issues
 
-src/nullness/DynamicProxy.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
+src/main/java/nullness/DynamicProxy.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
   Field `DynamicProxy.foo` is not initialized in the constructor and is not declared `@Nullable`
   8.    * Check nullness for field set via dynamic proxy invocation.
   9.    */
@@ -448,7 +448,7 @@ src/nullness/DynamicProxy.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
   11.   
   12.       Object foo;
 
-src/nullness/DynamicProxy.java:53: error: ERADICATE_PARAMETER_NOT_NULLABLE
+src/main/java/nullness/DynamicProxy.java:53: error: ERADICATE_PARAMETER_NOT_NULLABLE
   `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 53)
   51.       public static void setFooToNull() {
   52.           DynamicProxy i = new DynamicProxy();
@@ -479,14 +479,14 @@ src/nullness/DynamicProxy.java:53: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 ## UnsafeField
 
-* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/DynamicProxy.java)
+* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/DynamicProxy.java)
 
-* [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeFieldTest.java)
+* [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeFieldTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/UnsafeField.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/UnsafeField.java
 ```
 
 #### checker output
@@ -494,7 +494,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/nullness/UnsafeField.java
 ```
 Found 1 issue
 
-src/nullness/UnsafeField.java:39: error: ERADICATE_PARAMETER_NOT_NULLABLE
+src/main/java/nullness/UnsafeField.java:39: error: ERADICATE_PARAMETER_NOT_NULLABLE
   `UnsafeField(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 39)
   37.        */
   38.       public static void setFooToNull() throws Exception {
@@ -522,14 +522,14 @@ src/nullness/UnsafeField.java:39: error: ERADICATE_PARAMETER_NOT_NULLABLE
 
 ## UnsafeInitialisation
 
-* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/nullness/UnsafeInitialisation.java)
+* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/UnsafeInitialisation.java)
 
-* [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/test/nullness/UnsafeInitialisationTest.java)
+* [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeInitialisationTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/nullness/UnsafeInitialisation.java
+infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/UnsafeInitialisation.java
 ```
 
 #### checker output
@@ -537,7 +537,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/nullness/UnsafeInitialisa
 ```
 Found 1 issue
 
-src/nullness/UnsafeInitialisation.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
+src/main/java/nullness/UnsafeInitialisation.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
   Field `UnsafeInitialisation.foo` is not initialized in the constructor and is not declared `@Nullable`
   8.    * Allocate an empty instance of a class directly on the heap via sun.misc.Unsafe.
   9.    */
