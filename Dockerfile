@@ -106,16 +106,16 @@ RUN unzip pmd-bin-6.1.0.zip && \
 ENV PMD_HOME /opt/pmd/pmd-bin-6.1.0
 
 
-# --- FINDBUGS SETUP
+# --- SPOTBUGS SETUP
 
 # create directory
-RUN mkdir -p /opt/findbugs
-WORKDIR /opt/findbugs
+RUN mkdir -p /opt/spotbugs
+WORKDIR /opt/spotbugs
 
 # copy install files
 ADD lib .
-RUN unzip findbugs-3.0.1.zip && \
-    rm findbugs-3.0.1.zip
+RUN unzip spotbugs-3.1.12.zip && \
+    rm spotbugs-3.1.12.zip
 
 # add to path
 ENV FINDBUGS_HOME /opt/findbugs/findbugs-3.0.1
