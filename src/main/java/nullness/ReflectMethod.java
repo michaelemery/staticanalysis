@@ -9,8 +9,12 @@ public class ReflectMethod {
 
     Object foo;
 
-    Object getObject(Object object) {
-        return object;
+    Object getObject() {
+        return new Object();
+    }
+
+    Object getNull() {
+        return null;
     }
 
     /**
@@ -20,7 +24,7 @@ public class ReflectMethod {
         ReflectMethod i = new ReflectMethod();
         Method getObjectMethod =
                 i.getClass().getDeclaredMethod("getObject", Object.class);
-        i.foo = getObjectMethod.invoke(i, new Object());
+        i.foo = getObjectMethod.invoke(i);
         i.foo.toString();
     }
 
@@ -30,8 +34,8 @@ public class ReflectMethod {
     public static void setFooToNull() throws Exception {
         ReflectMethod i = new ReflectMethod();
         Method getObjectMethod =
-                i.getClass().getDeclaredMethod("getObject", Object.class);
-        i.foo = getObjectMethod.invoke(i, (Object) null);
+                i.getClass().getDeclaredMethod("getNull", Object.class);
+        i.foo = getObjectMethod.invoke(i);
         i.foo.toString();
     }
 }

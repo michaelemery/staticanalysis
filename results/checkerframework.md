@@ -32,16 +32,16 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessIntraProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/IntraProcedural.java
 ```
 
 #### checker output
 
 ```
-src/main/java/nullnessIntraProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullness/IntraProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class IntraProcedural {
        ^
-src/main/java/nullnessIntraProcedural.java:25: error: [assignment.type.incompatible] incompatible types in assignment.
+src/main/java/nullness/IntraProcedural.java:25: error: [assignment.type.incompatible] incompatible types in assignment.
         i.foo = null;
                 ^
   found   : null
@@ -76,16 +76,16 @@ src/main/java/nullnessIntraProcedural.java:25: error: [assignment.type.incompati
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessInterProcedural.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/InterProcedural.java
 ```
 
 #### checker output
 
 ```
-src/main/java/nullnessInterProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullness/InterProcedural.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class InterProcedural {
        ^
-src/main/java/nullnessInterProcedural.java:29: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullness/InterProcedural.java:29: error: [argument.type.incompatible] incompatible types in argument.
         i.foo = i.getObject(null);
                             ^
   found   : null
@@ -120,34 +120,29 @@ src/main/java/nullnessInterProcedural.java:29: error: [argument.type.incompatibl
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessReflectConstructor.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/ReflectConstructor.java
 ```
 
 #### checker output
 
 ```
-src/main/java/nullnessReflectConstructor.java:33: error: [argument.type.incompatible] incompatible types in argument.
-        ((ReflectConstructor) constructor.newInstance((Object) null)).foo.toString();
-                                                      ^
-  found   : @FBCBottom @Nullable Object
-  required: @Initialized @NonNull Object
-1 error
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 33 | TP |
+| - | - |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
-> accurate
+> unsound
 
 <br>
 
@@ -160,31 +155,51 @@ src/main/java/nullnessReflectConstructor.java:33: error: [argument.type.incompat
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessReflectMethod.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/ReflectMethod.java
 ```
 
 #### checker output
 
 ```
-src/main/java/nullnessReflectMethod.java:8: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullness/ReflectMethod.java:8: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class ReflectMethod {
        ^
-src/main/java/nullnessReflectMethod.java:23: error: [assignment.type.incompatible] incompatible types in assignment.
+src/main/java/nullness/ReflectMethod.java:23: error: [assignment.type.incompatible] incompatible types in assignment.
         i.foo = getObjectMethod.invoke(i, new Object());
                                       ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
-src/main/java/nullnessReflectMethod.java:34: error: [assignment.type.incompatible] incompatible types in assignment.
+src/main/java/nullness/ReflectMethod.java:34: error: [assignment.type.incompatible] incompatible types in assignment.
         i.foo = getObjectMethod.invoke(i, (Object) null);
                                       ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
-src/main/java/nullnessReflectMethod.java:34: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullness/ReflectMethod.java:34: error: [argument.type.incompatible] incompatible types in argument.
         i.foo = getObjectMethod.invoke(i, (Object) null);
                                           ^
   found   : @FBCBottom @Nullable Object
   required: @Initialized @NonNull Object
 4 errors
+```
+
+#### checker command (using -AresolveReflection)
+
+```shell script
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/ReflectMethod.java
+```
+
+#### checker output
+
+```
+src/main/java/nullness/ReflectMethod.java:8: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+public class ReflectMethod {
+       ^
+src/main/java/nullness/ReflectMethod.java:34: error: [argument.type.incompatible] incompatible types in argument.
+        i.foo = getObjectMethod.invoke(i, (Object) null);
+                                          ^
+  found   : @FBCBottom @Nullable Object
+  required: @Initialized @NonNull Object
+2 errors
 ```
 
 #### output analysis
@@ -215,13 +230,13 @@ src/main/java/nullnessReflectMethod.java:34: error: [argument.type.incompatible]
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessReflectField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/ReflectField.java
 ```
 
 #### checker output
 
 ````
-src/main/java/nullnessReflectField.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
+src/main/java/nullness/ReflectField.java:6: error: [initialization.fields.uninitialized] the constructor does not initialize fields: foo
 public class ReflectField {
        ^
 1 error
@@ -253,7 +268,7 @@ public class ReflectField {
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessMethodHandleConstructor.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/MethodHandleConstructor.java
 ```
 
 #### checker output
@@ -288,7 +303,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessMethodHandleMethod.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/MethodHandleMethod.java
 ```
 
 #### checker output
@@ -332,7 +347,7 @@ src/main/java/nullnessMethodHandleMethod.java:38: error: [argument.type.incompat
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessMethodHandleField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/MethodHandleField.java
 ```
 
 #### checker output
@@ -367,7 +382,7 @@ No reported issues.
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessInvokeDynamic.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/InvokeDynamic.java
 ```
 
 #### checker output
@@ -411,7 +426,7 @@ src/main/java/nullnessInvokeDynamic.java:30: error: [argument.type.incompatible]
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessDynamicProxy.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/DynamicProxy.java
 ```
 
 #### checker output
@@ -467,7 +482,7 @@ src/main/java/nullnessDynamicProxy.java:53: error: [argument.type.incompatible] 
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessUnsafeField.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/UnsafeField.java
 ```
 
 #### checker output
@@ -517,7 +532,7 @@ src/main/java/nullnessUnsafeField.java:38: error: [argument.type.incompatible] i
 #### checker command
 
 ```shell script
-javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullnessUnsafeInitialisation.java
+javac -processor org.checkerframework.checker.nullness.NullnessChecker -d out/ src/main/java/nullness/UnsafeInitialisation.java
 ```
 
 #### checker output
