@@ -21,11 +21,11 @@ public class ReflectMethod {
      * Field set to non-null never throws NullPointerException.
      */
     public static void setFooToNonNull() throws Exception {
+
         ReflectMethod i = new ReflectMethod();
         Method getObjectMethod =
                 i.getClass().getDeclaredMethod("getObject", Object.class);
-        i.foo = getObjectMethod.invoke(i);
-        i.foo.toString();
+        getObjectMethod.invoke(i).toString();
     }
 
     /**
@@ -35,7 +35,6 @@ public class ReflectMethod {
         ReflectMethod i = new ReflectMethod();
         Method getObjectMethod =
                 i.getClass().getDeclaredMethod("getNull", Object.class);
-        i.foo = getObjectMethod.invoke(i);
-        i.foo.toString();
+        getObjectMethod.invoke(i).toString();
     }
 }
