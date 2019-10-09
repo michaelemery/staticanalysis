@@ -1,5 +1,7 @@
 package nullness;
 
+import org.checkerframework.checker.nullness.qual.NonNull;
+
 import java.lang.reflect.Method;
 
 /**
@@ -21,11 +23,12 @@ public class ReflectMethod {
      * Field set to non-null never throws NullPointerException.
      */
     public static void setFooToNonNull() throws Exception {
-
         ReflectMethod i = new ReflectMethod();
         Method getObjectMethod =
-                i.getClass().getDeclaredMethod("getObject", Object.class);
-        getObjectMethod.invoke(i).toString();
+                i.getClass().getDeclaredMethod("getObject");
+        @NonNull Object foo = new Object();
+        foo = getObjectMethod.invoke(i);
+        foo.toString();
     }
 
     /**
@@ -34,7 +37,9 @@ public class ReflectMethod {
     public static void setFooToNull() throws Exception {
         ReflectMethod i = new ReflectMethod();
         Method getObjectMethod =
-                i.getClass().getDeclaredMethod("getNull", Object.class);
-        getObjectMethod.invoke(i).toString();
+                i.getClass().getDeclaredMethod("getNull");
+        @NonNull Object foo = new Object();
+        foo = getObjectMethod.invoke(i);
+        foo.toString();
     }
 }
