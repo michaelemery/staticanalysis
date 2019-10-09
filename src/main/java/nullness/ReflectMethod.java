@@ -9,8 +9,6 @@ import java.lang.reflect.Method;
  */
 public class ReflectMethod {
 
-    Object foo;
-
     Object getObject() {
         return new Object();
     }
