@@ -27,12 +27,6 @@ of each tool are compared in order to assess overall and relative effectiveness.
 | type | description |
 | --- | --- |
 | nullness |  Dereferenced expressions are a common cause a null pointer exceptions. |
-<!---
-| [alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | Errors may occur when an object is referenced without consideration for mutations caused by an alias to the same object. |
-| [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | Objects accessed at runtime prior to being fully initialised will cause an error. |
-| [signedness](https://github.com/michaelemery/staticanalysis/blob/master/results/signedness/README.md) |Signed and unsigned values are incorrectly mixed together in a computation, and meaningless operations occur such as division on an unsigned value. |
-| [taint](https://github.com/michaelemery/staticanalysis/blob/master/results/taint/README.md) | Certain parts of an application, using a tainted value can compromise the application’s integrity, causing it to crash, corrupt data, leak private data, etc. |
---->
 
 ### dynamic language features
 
