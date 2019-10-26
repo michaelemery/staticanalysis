@@ -273,8 +273,8 @@ spotbugs -effort:max out/nullness/MethodHandleMethod.class
 #### checker output
 
 ```
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleMethod.java:[line 29]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleMethod.java:[line 39]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleMethod.java:[line 27]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleMethod.java:[line 37]
 Warnings generated: 2
 ```
 
@@ -282,7 +282,7 @@ Warnings generated: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 29, 39 | NA |
+| 27, 37 | NA |
 
 #### expected / actual errors
 
@@ -350,7 +350,7 @@ spotbugs -effort:max out/nullness/InvokeDynamic.class
 
 ```
 M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamic.java:[line 21]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamic.java:[line 32]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamic.java:[line 33]
 Warnings generated: 2
 ```
 
@@ -358,7 +358,7 @@ Warnings generated: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 21, 32 | NA |
+| 21, 33 | NA |
 
 #### expected / actual errors
 
@@ -387,8 +387,8 @@ spotbugs -effort:max out/nullness/DynamicProxy.class nullness.DynamicProxy$MyInv
 #### checker output
 
 ```
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 44]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 54]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 46]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 56]
 The following classes needed for analysis were missing:
   nullness.DynamicProxy$MyInvocationHandler
   nullness.DynamicProxy$MyInterface
@@ -401,7 +401,7 @@ Missing classes: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 44, 54 | NA |
+| 46, 56 | NA |
 | Missing classes | NA |
 
 #### expected / actual errors
@@ -467,8 +467,8 @@ spotbugs -effort:max out/nullness/UnsafeInitialisation.class
 #### checker output
 
 ```
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At UnsafeInitialisation.java:[line 26]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At UnsafeInitialisation.java:[line 36]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At UnsafeInitialisation.java:[line 28]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At UnsafeInitialisation.java:[line 39]
 Warnings generated: 2
 ```
 
@@ -476,7 +476,7 @@ Warnings generated: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 26, 36 | NA |
+| 28, 39 | NA |
 
 #### expected / actual errors
 

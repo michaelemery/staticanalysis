@@ -29,31 +29,25 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 
 * [nullness/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/IntraProceduralTest.java)
 
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/IntraProcedural.java -f text -R category/java/errorprone.xml
-```
-
 #### checker output
 ```
-src/main/java/nullness/IntraProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-src/main/java/nullness/IntraProcedural.java:25:	Assigning an Object to null is a code smell.  Consider refactoring.
+src/main/java/nullness/IntraProcedural.java:25: warning: [NullAway] assigning @Nullable expression to @NonNull field
+        i.foo = null;
+              ^
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | NA |
 | 25 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
-| - | 1 | 1 |
+| + | 1 | 0 |
+| - | 0 | 1 |
 
 > accurate
 
@@ -65,31 +59,27 @@ src/main/java/nullness/IntraProcedural.java:25:	Assigning an Object to null is a
 
 * [nullness/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InterProceduralTest.java)
 
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/InterProcedural.java -f text -R category/java/errorprone.xml
-```
-
 #### checker output
 ```
-src/main/java/nullness/InterProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+src/main/java/nullness/InterProcedural.java:29: warning: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
+        i.foo = i.getObject(null);
+                            ^
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | NA |
+| 29 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
-| - | 1 | 1 |
+| + | 1 | 0 |
+| - | 0 | 1 |
 
-> unsound
+> accurate
 
 <br>
 
@@ -99,22 +89,16 @@ src/main/java/nullness/InterProcedural.java:8:	Found non-transient, non-static m
 
 * [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectConstructorTest.java)
 
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/ReflectConstructor.java -f text -R category/java/errorprone.xml
-```
-
 #### checker output
 ```
-src/main/java/nullness/ReflectConstructor.java:10:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 10 | NA |
+| - | - |
 
 #### expected / actual errors
 
@@ -132,12 +116,6 @@ src/main/java/nullness/ReflectConstructor.java:10:	Found non-transient, non-stat
 * [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectMethod.java)
 
 * [nullness/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectMethodTest.java)
-
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/ReflectMethod.java -f text -R category/java/errorprone.xml
-```
 
 #### checker output
 ```
@@ -167,22 +145,16 @@ No reported issues.
 
 * [nullness/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectFieldTest.java)
 
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/ReflectField.java -f text -R category/java/errorprone.xml
-```
-
 #### checker output
 ```
-src/main/java/nullness/ReflectField.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | NA |
+| - | - |
 
 #### expected / actual errors
 
@@ -201,22 +173,16 @@ src/main/java/nullness/ReflectField.java:8:	Found non-transient, non-static memb
 
 * [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleConstructorTest.java)
 
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/MethodHandleConstructor.java -f text -R category/java/errorprone.xml
-```
-
 #### checker output
 ```
-src/main/java/nullness/MethodHandleConstructor.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 12 | NA |
+| - | - |
 
 #### expected / actual errors
 
@@ -234,12 +200,6 @@ src/main/java/nullness/MethodHandleConstructor.java:12:	Found non-transient, non
 * [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleMethod.java)
 
 * [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleMethodTest.java)
-
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/MethodHandleMethod.java -f text -R category/java/errorprone.xml
-```
 
 #### checker output
 ```
@@ -269,46 +229,6 @@ No reported issues.
 
 * [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleFieldTest.java)
 
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/MethodHandleField.java -f text -R category/java/errorprone.xml
-```
-
-#### checker output
-```
-src/main/java/nullness/MethodHandleField.java:11:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-```
-
-#### output analysis
-
-| line(s) | event |
-| :---: | :---: |
-| 11 | NA |
-
-#### expected / actual errors
-
-|  | + | - |
-| :---: | :---: | :---: |
-| + | 0 | 0 |
-| - | 1 | 1 |
-
-> unsound
-
-<br>
-
-## InvokeDynamic
-
-* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InvokeDynamic.java)
-
-* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InvokeDynamicTest.java)
-
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/InvokeDynamic.java -f text -R category/java/errorprone.xml
-```
-
 #### checker output
 ```
 No reported issues.
@@ -331,39 +251,64 @@ No reported issues.
 
 <br>
 
-## DynamicProxy
+## InvokeDynamic
 
-* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/DynamicProxy.java)
+* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InvokeDynamic.java)
 
-* [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/DynamicProxyTest.java)
-
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/DynamicProxy.java -f text -R category/java/errorprone.xml
-```
+* [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InvokeDynamicTest.java)
 
 #### checker output
 ```
-src/main/java/nullness/DynamicProxy.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-src/main/java/nullness/DynamicProxy.java:35:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
+src/main/java/nullness/InvokeDynamic.java:31: warning: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
+        java.util.function.Consumer<Object> c = foo -> i.setFoo(null);
+                                                                ^
+
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 12 | NA |
-| 35 | MA |
+| 31 | TP |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 1 |
-| - | 1 | 1 |
+| + | 1 | 0 |
+| - | 0 | 1 |
 
-> unsound
+> accurate
+
+<br>
+
+## DynamicProxy
+
+* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/DynamicProxy.java)
+
+* [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/DynamicProxyTest.java)
+
+#### checker output
+```
+src/main/java/nullness/DynamicProxy.java:55: warning: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
+        i.foo = i.getProxyInstance().getObject(null);
+                                               ^
+```
+
+#### output analysis
+
+| line(s) | event |
+| :---: | :---: |
+| 55 | TP |
+
+#### expected / actual errors
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 1 | 0 |
+| - | 0 | 1 |
+
+> accurate
 
 <br>
 
@@ -373,22 +318,18 @@ src/main/java/nullness/DynamicProxy.java:35:	In J2EE, getClassLoader() might not
 
 * [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeFieldTest.java)
 
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/UnsafeField.java -f text -R category/java/errorprone.xml
-```
-
 #### checker output
 ```
-src/main/java/nullness/UnsafeField.java:3:	Avoid importing anything from the sun.* packages
+src/main/java/nullness/UnsafeField.java:12: warning: [NullAway] @NonNull field foo not initialized
+    Object foo;
+           ^
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 3 | NA |
+| 12 | NA |
 
 #### expected / actual errors
 
@@ -407,23 +348,16 @@ src/main/java/nullness/UnsafeField.java:3:	Avoid importing anything from the sun
 
 * [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeInitialisationTest.java)
 
-#### checker command
-
-```shell script
-$PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/UnsafeInitialisation.java -f text -R category/java/errorprone.xml
-```
-
 #### checker output
 ```
-src/main/java/nullness/UnsafeInitialisation.java:3:	Avoid importing anything from the sun.* packages
-src/main/java/nullness/UnsafeInitialisation.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 3, 12 | NA |
+| - | - |
 
 #### expected / actual errors
 

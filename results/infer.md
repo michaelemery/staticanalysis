@@ -38,15 +38,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/IntraP
 #### checker output
 
 ```
-Found 3 issues
-
-src/main/java/nullness/IntraProcedural.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `IntraProcedural.foo` is not initialized in the constructor and is not declared `@Nullable`
-  4.    * Check nullness of field set via direct value assignment.
-  5.    */
-  6. > public class IntraProcedural {
-  7.   
-  8.       Object foo;
+Found 2 issues
 
 src/main/java/nullness/IntraProcedural.java:25: error: ERADICATE_FIELD_NOT_NULLABLE
   Field `IntraProcedural.foo` can be null but is not declared `@Nullable`. (Origin: null constant at line 25)
@@ -69,7 +61,6 @@ src/main/java/nullness/IntraProcedural.java:26: error: ERADICATE_NULL_METHOD_CAL
 
 | line(s) | event |
 | :---: | :---: |
-| 6 | NA |
 | 25, 26 | TP |
 
 #### expected / actual errors
@@ -98,15 +89,7 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/InterP
 #### checker output
 
 ```
-Found 2 issues
-
-src/main/java/nullness/InterProcedural.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `InterProcedural.foo` is not initialized in the constructor and is not declared `@Nullable`
-  4.    * Check nullness of field set via inter-procedural return.
-  5.    */
-  6. > public class InterProcedural {
-  7.   
-  8.       Object foo;
+Found 1 issue
 
 src/main/java/nullness/InterProcedural.java:29: error: ERADICATE_PARAMETER_NOT_NULLABLE
   `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 29)
@@ -121,7 +104,6 @@ src/main/java/nullness/InterProcedural.java:29: error: ERADICATE_PARAMETER_NOT_N
 
 | line(s) | event |
 | :---: | :---: |
-| 6 | NA |
 | 29 | TP |
 
 #### expected / actual errors
@@ -185,22 +167,14 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/Reflec
 #### checker output
 
 ```
-Found 1 issue
-
-src/main/java/nullness/ReflectMethod.java:8: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `ReflectMethod.foo` is not initialized in the constructor and is not declared `@Nullable`
-  6.    * Check nullness of field set via reflection method invocation.
-  7.    */
-  8. > public class ReflectMethod {
-  9.   
-  10.       Object foo;
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | NA |
+| - | - |
 
 #### expected / actual errors
 
@@ -228,22 +202,14 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/Reflec
 #### checker output
 
 ````
-Found 1 issue
-
-src/main/java/nullness/ReflectField.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `ReflectField.foo` is not initialized in the constructor and is not declared `@Nullable`
-  4.    * Check nullness of field set via reflective field access.
-  5.    */
-  6. > public class ReflectField {
-  7.   
-  8.       Object foo;
+No reported issues.
 ````
 
 #### output analysis
  
  | line(s) | event |
  | :---: | :---: |
- | 6 | NA |
+ | - | - |
  
 #### expected / actual errors
  
@@ -253,8 +219,6 @@ src/main/java/nullness/ReflectField.java:6: error: ERADICATE_FIELD_NOT_INITIALIZ
  | - | 1 | 1 |
  
  > unsound
->
-> * line 6 error occurs with or without setFooToNull() and is therefore FP
  
  <br>
 
@@ -308,22 +272,14 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/Method
 #### checker output
 
 ```
-Found 1 issue
-
-src/main/java/nullness/MethodHandleMethod.java:9: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `MethodHandleMethod.foo` is not initialized in the constructor and is not declared `@Nullable`
-  7.    * Check nullness of field set by invoking virtual (non-static) method handle.
-  8.    */
-  9. > public class MethodHandleMethod {
-  10.   
-  11.       Object foo;
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 9 | NA |
+| - | - |
 
 #### expected / actual errors
 
@@ -386,31 +342,22 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/Invoke
 #### checker output
 
 ```
-Found 2 issues
+Found 1 issue
 
-src/main/java/nullness/InvokeDynamic.java:6: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `InvokeDynamic.foo` is not initialized in the constructor and is not declared `@Nullable`
-  4.    * Check nullness of field set via dynamic invocation of setter method.
-  5.    */
-  6. > public class InvokeDynamic {
-  7.   
-  8.       Object foo;
-
-src/main/java/nullness/InvokeDynamic.java:30: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `setFoo(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 30)
-  28.       public static void setFooToNull() {
-  29.           InvokeDynamic i = new InvokeDynamic();
-  30. >         java.util.function.Consumer<Object> c = foo -> i.setFoo(null);
-  31.           c.accept(new Object());
-  32.           i.foo.toString();
+src/main/java/nullness/InvokeDynamic.java:31: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `setFoo(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 31)
+  29.       public static void setFooToNull() {
+  30.           InvokeDynamic i = new InvokeDynamic();
+  31. >         java.util.function.Consumer<Object> c = foo -> i.setFoo(null);
+  32.           c.accept(new Object());
+  33.           i.foo.toString();
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 6 | NA |
-| 30 | TP |
+| 31 | TP |
 
 #### expected / actual errors
 
@@ -438,31 +385,22 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/Dynami
 #### checker output
 
 ```
-Found 2 issues
+Found 1 issue
 
-src/main/java/nullness/DynamicProxy.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `DynamicProxy.foo` is not initialized in the constructor and is not declared `@Nullable`
-  8.    * Check nullness for field set via dynamic proxy invocation.
-  9.    */
-  10. > public class DynamicProxy {
-  11.   
-  12.       Object foo;
-
-src/main/java/nullness/DynamicProxy.java:53: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 53)
-  51.       public static void setFooToNull() {
-  52.           DynamicProxy i = new DynamicProxy();
-  53. >         i.foo = i.getProxyInstance().getObject(null);
-  54.           i.foo.toString();
-  55.       }
+src/main/java/nullness/DynamicProxy.java:55: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 55)
+  53.       public static void setFooToNull() {
+  54.           DynamicProxy i = new DynamicProxy();
+  55. >         i.foo = i.getProxyInstance().getObject(null);
+  56.           i.foo.toString();
+  57.       }
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 10 | NA |
-| 44 | TP |
+| 55 | TP |
 
 #### expected / actual errors
 
@@ -472,8 +410,6 @@ src/main/java/nullness/DynamicProxy.java:53: error: ERADICATE_PARAMETER_NOT_NULL
 | - | 0 | 1 |
 
 > accurate
->
-> * line 8 error occurs with or without setFooToNull() and is therefore FP
 
 <br>
 
@@ -494,20 +430,20 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/Unsafe
 ```
 Found 1 issue
 
-src/main/java/nullness/UnsafeField.java:39: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `UnsafeField(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 39)
-  37.        */
-  38.       public static void setFooToNull() throws Exception {
-  39. >         UnsafeField i = new UnsafeField(null);
-  40.           getUnsafe().putObject(
-  41.                   i, getUnsafe().objectFieldOffset(
+src/main/java/nullness/UnsafeField.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
+  Field `UnsafeField.foo` is not initialized in the constructor and is not declared `@Nullable`
+  8.    * Check nullness of field set via sun.misc.Unsafe.
+  9.    */
+  10. > public class UnsafeField {
+  11.   
+  12.       Object foo;
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 39 | NA |
+| 10 | NA |
 
 #### expected / actual errors
 
@@ -535,22 +471,14 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/Unsafe
 #### checker output
 
 ```
-Found 1 issue
-
-src/main/java/nullness/UnsafeInitialisation.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `UnsafeInitialisation.foo` is not initialized in the constructor and is not declared `@Nullable`
-  8.    * Allocate an empty instance of a class directly on the heap via sun.misc.Unsafe.
-  9.    */
-  10. > public class UnsafeInitialisation {
-  11.   
-  12.       Object foo;
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 10 | NA |
+| - | - |
 
 #### expected / actual errors
 
