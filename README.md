@@ -26,7 +26,7 @@ of each tool are compared in order to assess overall and relative effectiveness.
 
 | type | description |
 | --- | --- |
-| [nullness](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/README.md)|  Dereferenced expressions are a common cause a null pointer exceptions. |
+| nullness |  Dereferenced expressions are a common cause a null pointer exceptions. |
 <!---
 | [alias](https://github.com/michaelemery/staticanalysis/blob/master/results/alias/README.md) | Errors may occur when an object is referenced without consideration for mutations caused by an alias to the same object. |
 | [init](https://github.com/michaelemery/staticanalysis/blob/master/results/init/README.md) | Objects accessed at runtime prior to being fully initialised will cause an error. |
