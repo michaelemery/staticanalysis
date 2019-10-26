@@ -1,6 +1,8 @@
 # static analysis
 
-[results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
+[click here to see results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
+
+<br>
 
 This repository is in support of the authors Masters Thesis on the effectiveness of Static Analysis tools, techniques, and frameworks.
 
