@@ -4,20 +4,18 @@ import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 
 /**
- * Check nullness of field set by invoking virtual (non-static) method handle.
+ * Check nullness of local object set by invoking virtual (non-static) method handle.
  */
 public class MethodHandleMethod {
 
-    Object foo;
-
-    void setFoo(Object object) {
-        this.foo = object;
+    Object getObject(Object object) {
+        return object;
     }
 
-    java.lang.invoke.MethodHandle getSetFooMethodHandle() throws Exception {
+    java.lang.invoke.MethodHandle getMethodHandle(String methodName) throws Exception {
         MethodHandles.Lookup lookup = MethodHandles.lookup();
-        MethodType type = MethodType.methodType(void.class, Object.class);
-        return lookup.findVirtual(MethodHandleMethod.class, "setFoo", type);
+        MethodType type = MethodType.methodType(Object.class, Object.class);
+        return lookup.findVirtual(MethodHandleMethod.class, methodName, type);
     }
 
     /**
@@ -25,8 +23,8 @@ public class MethodHandleMethod {
      */
     public static void setFooToNonNull() throws Throwable {
         MethodHandleMethod i = new MethodHandleMethod();
-        i.getSetFooMethodHandle().invoke(i, new Object());
-        i.foo.toString();
+        Object foo = i.getMethodHandle("getObject").invoke(i, new Object());
+        foo.toString();
     }
 
     /**
@@ -35,7 +33,7 @@ public class MethodHandleMethod {
      */
     public static void setFooToNull() throws Throwable {
         MethodHandleMethod i = new MethodHandleMethod();
-        i.getSetFooMethodHandle().invoke(i, (Object) null);
-        i.foo.toString();
+        Object foo = i.getMethodHandle("getObject").invoke(i, (Object) null);
+        foo.toString();
     }
 }

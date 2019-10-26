@@ -5,7 +5,7 @@ package nullness;
  */
 public class InvokeDynamic {
 
-    Object foo;
+    Object foo = new Object();
 
     void setFoo(Object foo) {
         this.foo = foo;

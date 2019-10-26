@@ -5,7 +5,7 @@ package nullness;
  */
 public class ReflectField {
 
-    Object foo;
+    Object foo = new Object();
 
     /**
      * Field set to non-null never throws NullPointerException.

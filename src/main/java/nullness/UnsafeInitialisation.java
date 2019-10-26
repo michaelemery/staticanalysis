@@ -11,6 +11,10 @@ public class UnsafeInitialisation {
 
     Object foo;
 
+    UnsafeInitialisation() {
+        this.foo = new Object();
+    }
+
     private static Unsafe getUnsafe() throws Exception {
         Field f = Unsafe.class.getDeclaredField("theUnsafe");
         f.setAccessible(true);
@@ -20,10 +24,8 @@ public class UnsafeInitialisation {
     /**
      * False Positive (FP) if checker reports null warning.
      */
-    public static void setFooToNonNull() throws Exception {
-        UnsafeInitialisation i = (UnsafeInitialisation) getUnsafe().
-                allocateInstance(UnsafeInitialisation.class);
-        i.foo.toString();
+    public static void setFooToNonNull() {
+        new UnsafeInitialisation().foo.toString();
     }
 
     /**

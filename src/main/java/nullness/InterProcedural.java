@@ -5,7 +5,7 @@ package nullness;
  */
 public class InterProcedural {
 
-    Object foo;
+    Object foo = new Object();
 
     Object getObject(Object object) {
         return object;

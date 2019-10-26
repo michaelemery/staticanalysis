@@ -5,7 +5,7 @@ package nullness;
  */
 public class IntraProcedural {
 
-    Object foo;
+    Object foo = new Object();
 
     /**
      * False Positive (FP) if checker reports null warning.

@@ -9,19 +9,21 @@ import java.lang.reflect.Proxy;
  */
 public class DynamicProxy {
 
-    Object foo;
+    Object foo = new Object();
 
     interface MyInterface {
         Object getObject(Object object);
     }
 
-    public class MyClass implements MyInterface {
+    static class MyClass implements MyInterface {
+        @Override
         public Object getObject(Object object) {
             return object;
         }
     }
 
-    public class MyInvocationHandler implements InvocationHandler {
+    static class MyInvocationHandler implements InvocationHandler {
+        @Override
         public Object invoke(Object object, Method method, Object[] methodArgs)
                 throws Throwable {
             return method.invoke(new MyClass(), methodArgs);

@@ -11,9 +11,9 @@ class UnsafeInitialisationTest {
 
     @Test
     void setFooToNonNull() {
-//        assertDoesNotThrow(() -> {
-//            UnsafeInitialisation.setFooToNonNull();
-//        });
+        assertDoesNotThrow(() -> {
+            UnsafeInitialisation.setFooToNonNull();
+        });
     }
 
     @Test
