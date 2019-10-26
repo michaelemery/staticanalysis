@@ -262,7 +262,6 @@ No reported issues.
 src/main/java/nullness/InvokeDynamic.java:31: warning: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
         java.util.function.Consumer<Object> c = foo -> i.setFoo(null);
                                                                 ^
-
 ```
 
 #### output analysis
