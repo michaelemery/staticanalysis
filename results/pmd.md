@@ -37,16 +37,14 @@ $PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/IntraProcedural.java -f text 
 
 #### checker output
 ```
-src/main/java/nullness/IntraProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-src/main/java/nullness/IntraProcedural.java:25:	Assigning an Object to null is a code smell.  Consider refactoring.
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | NA |
-| 25 | TP |
+| - | - |
 
 #### expected / actual errors
 
@@ -55,7 +53,7 @@ src/main/java/nullness/IntraProcedural.java:25:	Assigning an Object to null is a
 | + | 0 | 0 |
 | - | 1 | 1 |
 
-> accurate
+> unsound
 
 <br>
 
@@ -73,21 +71,21 @@ $PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/InterProcedural.java -f text 
 
 #### checker output
 ```
-src/main/java/nullness/InterProcedural.java:8:	Found non-transient, non-static member. Please mark as transient or provide accessors.
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 8 | NA |
+| - | - |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
 | + | 0 | 0 |
-| - | 1 | 1 |
+| - | 0 | 1 |
 
 > unsound
 
@@ -345,16 +343,14 @@ $PMD_HOME/bin/run.sh pmd -d src/main/java/nullness/DynamicProxy.java -f text -R 
 
 #### checker output
 ```
-src/main/java/nullness/DynamicProxy.java:12:	Found non-transient, non-static member. Please mark as transient or provide accessors.
-src/main/java/nullness/DynamicProxy.java:35:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
+src/main/java/nullness/DynamicProxy.java:33:	In J2EE, getClassLoader() might not work as expected.  Use Thread.currentThread().getContextClassLoader() instead.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 12 | NA |
-| 35 | MA |
+| 33 | NA |
 
 #### expected / actual errors
 

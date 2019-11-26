@@ -31,16 +31,16 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 
 #### checker output
 ```
-src/main/java/nullness/IntraProcedural.java:25: warning: [NullAway] assigning @Nullable expression to @NonNull field
-        i.foo = null;
-              ^
+src/main/java/nullness/IntraProcedural.java:22: warning: [NullAway] dereferenced expression foo is @Nullable
+        foo.toString();
+           ^
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 25 | TP |
+| 22 | TP |
 
 #### expected / actual errors
 
@@ -61,16 +61,16 @@ src/main/java/nullness/IntraProcedural.java:25: warning: [NullAway] assigning @N
 
 #### checker output
 ```
-src/main/java/nullness/InterProcedural.java:29: warning: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
-        i.foo = i.getObject(null);
-                            ^
+src/main/java/nullness/InterProcedural.java:21: warning: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
+        Object foo = getObject(null);
+                               ^
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 29 | TP |
+| 21 | TP |
 
 #### expected / actual errors
 
@@ -289,16 +289,16 @@ src/main/java/nullness/InvokeDynamic.java:31: warning: [NullAway] passing @Nulla
 
 #### checker output
 ```
-src/main/java/nullness/DynamicProxy.java:55: warning: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
-        i.foo = i.getProxyInstance().getObject(null);
-                                               ^
+src/main/java/nullness/DynamicProxy.java:53: warning: [NullAway] passing @Nullable parameter 'null' where @NonNull is required
+        Object foo = i.getProxyInstance().getObject(null);
+                                                    ^
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 55 | TP |
+| 53 | TP |
 
 #### expected / actual errors
 

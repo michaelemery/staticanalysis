@@ -91,20 +91,20 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/InterP
 ```
 Found 1 issue
 
-src/main/java/nullness/InterProcedural.java:29: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 29)
-  27.       public static void setFooToNull() {
-  28.           InterProcedural i = new InterProcedural();
-  29. >         i.foo = i.getObject(null);
-  30.           i.foo.toString();
-  31.       }
+src/main/java/nullness/InterProcedural.java:21: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 21)
+  19.        */
+  20.       public static void setFooToNull() {
+  21. >         Object foo = getObject(null);
+  22.           foo.toString();
+  23.       }
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 29 | TP |
+| 21 | TP |
 
 #### expected / actual errors
 
@@ -387,20 +387,20 @@ infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/Dynami
 ```
 Found 1 issue
 
-src/main/java/nullness/DynamicProxy.java:55: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 55)
-  53.       public static void setFooToNull() {
-  54.           DynamicProxy i = new DynamicProxy();
-  55. >         i.foo = i.getProxyInstance().getObject(null);
-  56.           i.foo.toString();
-  57.       }
+src/main/java/nullness/DynamicProxy.java:53: error: ERADICATE_PARAMETER_NOT_NULLABLE
+  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 53)
+  51.       public static void setFooToNull() {
+  52.           DynamicProxy i = new DynamicProxy();
+  53. >         Object foo = i.getProxyInstance().getObject(null);
+  54.           foo.toString();
+  55.       }
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 55 | TP |
+| 53 | TP |
 
 #### expected / actual errors
 

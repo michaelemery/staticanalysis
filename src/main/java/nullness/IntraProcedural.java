@@ -5,15 +5,12 @@ package nullness;
  */
 public class IntraProcedural {
 
-    Object foo = new Object();
-
     /**
      * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() {
-        IntraProcedural i = new IntraProcedural();
-        i.foo = new Object();
-        i.foo.toString();
+        Object foo = new Object();
+        foo.toString();
     }
 
     /**
@@ -21,8 +18,7 @@ public class IntraProcedural {
      * @throws NullPointerException
      */
     public static void setFooToNull() {
-        IntraProcedural i = new IntraProcedural();
-        i.foo = null;
-        i.foo.toString();
+        Object foo = null;
+        foo.toString();
     }
 }

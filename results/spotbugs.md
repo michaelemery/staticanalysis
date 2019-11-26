@@ -39,20 +39,18 @@ spotbugs -effort:max out/nullness/IntraProcedural.class
 #### checker output
 
 ```
-H C NP: Null pointer dereference of IntraProcedural.foo in nullness.IntraProcedural.setFooToNull()  Dereferenced at IntraProcedural.java:[line 26]
-M D UC: Useless object stored in variable var$0 of method nullness.IntraProcedural.setFooToNonNull()  At IntraProcedural.java:[line 14]
-M D UC: Useless object stored in variable var$0 of method nullness.IntraProcedural.setFooToNull()  At IntraProcedural.java:[line 24]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 16]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 26]
-Warnings generated: 5
+H C NP: Null pointer dereference of ? in nullness.IntraProcedural.setFooToNull()  Dereferenced at IntraProcedural.java:[line 22]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 13]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 22]
+Warnings generated: 3
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 26i | TP |
-| 14, 24, 16, 26ii | NA |
+| 22i | TP |
+| 13, 22ii | NA |
 
 #### expected / actual errors
 
@@ -81,18 +79,16 @@ spotbugs -effort:max out/nullness/InterProcedural.class
 #### checker output
 
 ```
-M D UC: Useless object stored in variable var$0 of method nullness.InterProcedural.setFooToNull()  At InterProcedural.java:[line 28]
-M D UC: Useless object stored in variable var$0 of method nullness.InterProcedural.setFooToNonNull()  At InterProcedural.java:[line 18]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 20]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 30]
-Warnings generated: 4
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 13]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 22]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 28, 18, 20, 30 | NA |
+| 13, 22 | NA |
 
 #### expected / actual errors
 
@@ -387,8 +383,8 @@ spotbugs -effort:max out/nullness/DynamicProxy.class nullness.DynamicProxy$MyInv
 #### checker output
 
 ```
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 46]
-M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 56]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 44]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 54]
 The following classes needed for analysis were missing:
   nullness.DynamicProxy$MyInvocationHandler
   nullness.DynamicProxy$MyInterface
@@ -401,7 +397,7 @@ Missing classes: 2
 
 | line(s) | event |
 | :---: | :---: |
-| 46, 56 | NA |
+| 44, 54 | NA |
 | Missing classes | NA |
 
 #### expected / actual errors

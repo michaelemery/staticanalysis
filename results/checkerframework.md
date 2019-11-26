@@ -38,11 +38,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -Aresolve
 #### checker output
 
 ```
-src/main/java/nullness/IntraProcedural.java:25: error: [assignment.type.incompatible] incompatible types in assignment.
-        i.foo = null;
-                ^
-  found   : null
-  required: @Initialized @NonNull Object
+src/main/java/nullness/IntraProcedural.java:22: error: [dereference.of.nullable] dereference of possibly-null reference foo
+        foo.toString();
+        ^
 1 error
 ```
 
@@ -50,7 +48,7 @@ src/main/java/nullness/IntraProcedural.java:25: error: [assignment.type.incompat
 
 | line(s) | event |
 | :---: | :---: |
-| 25 | TP |
+| 22 | TP |
 
 #### expected / actual errors
 
@@ -78,9 +76,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -Aresolve
 #### checker output
 
 ```
-src/main/java/nullness/InterProcedural.java:29: error: [argument.type.incompatible] incompatible types in argument.
-        i.foo = i.getObject(null);
-                            ^
+src/main/java/nullness/InterProcedural.java:21: error: [argument.type.incompatible] incompatible types in argument.
+        Object foo = getObject(null);
+                               ^
   found   : null
   required: @Initialized @NonNull Object
 1 error
@@ -90,7 +88,7 @@ src/main/java/nullness/InterProcedural.java:29: error: [argument.type.incompatib
 
 | line(s) | event |
 | :---: | :---: |
-| 29 | TP |
+| 21 | TP |
 
 #### expected / actual errors
 
@@ -380,19 +378,19 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -Aresolve
 #### checker output
 
 ```
-src/main/java/nullness/DynamicProxy.java:29: error: [return.type.incompatible] incompatible types in return.
+src/main/java/nullness/DynamicProxy.java:27: error: [return.type.incompatible] incompatible types in return.
             return method.invoke(new MyClass(), methodArgs);
                                 ^
   found   : @Initialized @Nullable Object
   required: @Initialized @NonNull Object
-src/main/java/nullness/DynamicProxy.java:35: error: [argument.type.incompatible] incompatible types in argument.
+src/main/java/nullness/DynamicProxy.java:33: error: [argument.type.incompatible] incompatible types in argument.
                 MyInterface.class.getClassLoader(),
                                                 ^
   found   : @Initialized @Nullable ClassLoader
   required: @Initialized @NonNull ClassLoader
-src/main/java/nullness/DynamicProxy.java:55: error: [argument.type.incompatible] incompatible types in argument.
-        i.foo = i.getProxyInstance().getObject(null);
-                                               ^
+src/main/java/nullness/DynamicProxy.java:53: error: [argument.type.incompatible] incompatible types in argument.
+        Object foo = i.getProxyInstance().getObject(null);
+                                                    ^
   found   : null
   required: @Initialized @NonNull Object
 3 errors
@@ -402,9 +400,9 @@ src/main/java/nullness/DynamicProxy.java:55: error: [argument.type.incompatible]
 
 | line(s) | event |
 | :---: | :---: |
-| 29 | FP |
-| 35 | FP |
-| 55 | TP |
+| 27 | FP |
+| 33 | FP |
+| 53 | TP |
 
 #### expected / actual errors
 

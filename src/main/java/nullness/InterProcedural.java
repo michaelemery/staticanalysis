@@ -5,19 +5,12 @@ package nullness;
  */
 public class InterProcedural {
 
-    Object foo = new Object();
-
-    Object getObject(Object object) {
-        return object;
-    }
-
     /**
      * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() {
-        InterProcedural i = new InterProcedural();
-        i.foo = i.getObject(new Object());
-        i.foo.toString();
+        Object foo = getObject(new Object());
+        foo.toString();
     }
 
     /**
@@ -25,8 +18,11 @@ public class InterProcedural {
      * @throws NullPointerException
      */
     public static void setFooToNull() {
-        InterProcedural i = new InterProcedural();
-        i.foo = i.getObject(null);
-        i.foo.toString();
+        Object foo = getObject(null);
+        foo.toString();
+    }
+
+    static Object getObject(Object object) {
+        return object;
     }
 }

@@ -9,8 +9,6 @@ import java.lang.reflect.Proxy;
  */
 public class DynamicProxy {
 
-    Object foo = new Object();
-
     interface MyInterface {
         Object getObject(Object object);
     }
@@ -42,8 +40,8 @@ public class DynamicProxy {
      */
     public static void setFooToNonNull() {
         DynamicProxy i = new DynamicProxy();
-        i.foo = i.getProxyInstance().getObject(new Object());
-        i.foo.toString();
+        Object foo = i.getProxyInstance().getObject(new Object());
+        foo.toString();
     }
 
     /**
@@ -52,7 +50,7 @@ public class DynamicProxy {
      */
     public static void setFooToNull() {
         DynamicProxy i = new DynamicProxy();
-        i.foo = i.getProxyInstance().getObject(null);
-        i.foo.toString();
+        Object foo = i.getProxyInstance().getObject(null);
+        foo.toString();
     }
 }
