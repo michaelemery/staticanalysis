@@ -25,7 +25,7 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 
 ## IntraProcedural
 
-* [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/IntraProcedural.java)
+* [nullnessCheckerFramework/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/IntraProcedural.java)
 
 * [nullness/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/IntraProceduralTest.java)
 
@@ -63,7 +63,7 @@ src/main/java/nullnessCheckerFramework/IntraProcedural.java:24: error: [derefere
 
 ## InterProcedural
 
-* [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/InterProcedural.java)
+* [nullnessCheckerFramework/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/InterProcedural.java)
 
 * [nullness/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InterProceduralTest.java)
 
@@ -103,7 +103,7 @@ src/main/java/nullnessCheckerFramework/InterProcedural.java:23: error: [argument
 
 ## ReflectConstructor
 
-* [nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/ReflectConstructor.java)
+* [nullnessCheckerFramework/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/ReflectConstructor.java)
 
 * [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectConstructorTest.java)
 
@@ -145,7 +145,7 @@ src/main/java/nullnessCheckerFramework/ReflectConstructor.java:33: error: [deref
 
 ## ReflectMethod
 
-* [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/ReflectMethod.java)
+* [nullnessCheckerFramework/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/ReflectMethod.java)
 
 * [nullness/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectMethodTest.java)
 
@@ -192,7 +192,7 @@ src/main/java/nullnessCheckerFramework/ReflectMethod.java:33: error: [dereferenc
 
 ## ReflectField
 
-* [nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/ReflectField.java)
+* [nullnessCheckerFramework/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/ReflectField.java)
 
 * [nullness/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectFieldTest.java)
 
@@ -234,7 +234,7 @@ src/main/java/nullnessCheckerFramework/ReflectField.java:26: error: [dereference
 
 ## MethodHandleConstructor
 
-* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/MethodHandleConstructor.java)
+* [nullnessCheckerFramework/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/MethodHandleConstructor.java)
 
 * [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleConstructorTest.java)
 
@@ -270,7 +270,7 @@ error: ClassValAnnotatedTypeFactory.getClassname: did not expect VOID; invoke th
 
 ## MethodHandleMethod
 
-* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/MethodHandleMethod.java)
+* [nullnessCheckerFramework/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/MethodHandleMethod.java)
 
 * [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleMethodTest.java)
 
@@ -311,7 +311,7 @@ src/main/java/nullnessCheckerFramework/MethodHandleMethod.java:36: error: [argum
 
 ## MethodHandleField
 
-* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/MethodHandleField.java)
+* [nullnessCheckerFramework/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/MethodHandleField.java)
 
 * [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleFieldTest.java)
 
@@ -346,7 +346,7 @@ No reported issues.
 
 ## InvokeDynamic
 
-* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/InvokeDynamic.java)
+* [nullnessCheckerFramework/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/InvokeDynamic.java)
 
 * [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InvokeDynamicTest.java)
 
@@ -397,7 +397,7 @@ src/main/java/nullnessCheckerFramework/InvokeDynamic.java:31: error: [argument.t
 
 ## DynamicProxy
 
-* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/DynamicProxy.java)
+* [nullnessCheckerFramework/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/DynamicProxy.java)
 
 * [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/DynamicProxyTest.java)
 
@@ -456,7 +456,7 @@ src/main/java/nullnessCheckerFramework/DynamicProxy.java:56: error: [dereference
 
 ## UnsafeField
 
-* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/UnsafeField.java)
+* [nullnessCheckerFramework/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/UnsafeField.java)
 
 * [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeFieldTest.java)
 
@@ -503,7 +503,7 @@ src/main/java/nullnessCheckerFramework/UnsafeField.java:39: error: [argument.typ
 
 ## UnsafeInitialisation
 
-* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessAnnotationCheckerFramework/UnsafeInitialisation.java)
+* [nullnessCheckerFramework/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessCheckerFramework/UnsafeInitialisation.java)
 
 * [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeInitialisationTest.java)
 
