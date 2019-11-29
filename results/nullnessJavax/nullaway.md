@@ -298,7 +298,7 @@ No reported issues.
 
 | line(s) | event |
 | :---: | :---: |
-| 31 | TP |
+| - | - |
 
 #### expected / actual errors
 
