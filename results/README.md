@@ -2,7 +2,7 @@
 
 [home](https://github.com/michaelemery/staticanalysis)
 
-#### no annotation
+### no annotation
 
 | dynamic language feature | checkerfwk | infer | nullaway | pmd |  spotbugs |
 | --- | :---: | :---: | :---: | :---: | :---: |
@@ -21,7 +21,7 @@
 
 > Select test result for detail.
 
-#### annotation
+### with annotation
 
 | dynamic language feature | checkerfwk | nullaway |
 | --- | :---: | :---: |
