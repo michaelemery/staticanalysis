@@ -24,7 +24,7 @@
 #### annotation
 
 | dynamic language feature | checkerfwk | nullaway |
-| --- | :---: | :---: | :---: | :---: | :---: |
+| --- | :---: | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullnessCheckerFramework/checkerframework.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullnessJavax/nullaway.md#IntraProcedural) |
 | InterProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullnessCheckerFramework/checkerframework.md#InterProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullnessJavax/nullaway.md#InterProcedural) | |
 | ReflectConstructor | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullnessCheckerFramework/checkerframework.md#ReflectConstructor) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullnessJavax/nullaway.md#ReflectConstructor) |
