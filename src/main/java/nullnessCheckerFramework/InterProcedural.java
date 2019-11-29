@@ -1,6 +1,4 @@
-package nullnessAnnotationCheckerFramework;
-
-import org.checkerframework.checker.nullness.qual.NonNull;
+package nullnessCheckerFramework;
 
 /**
  * Check nullness of field set via inter-procedural return.
@@ -11,7 +9,8 @@ public class InterProcedural {
      * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() {
-        @NonNull Object foo = getObject(new Object());
+        @org.checkerframework.checker.nullness.qual.Nullable
+        Object foo = getObject(new Object());
         foo.toString();
     }
 
@@ -20,7 +19,8 @@ public class InterProcedural {
      * @throws NullPointerException
      */
     public static void setFooToNull() {
-        @NonNull Object foo = getObject(null);
+        @org.checkerframework.checker.nullness.qual.Nullable
+        Object foo = getObject(null);
         foo.toString();
     }
 

@@ -1,4 +1,4 @@
-package nullnessAnnotationJavax;
+package nullnessCheckerFramework;
 
 import java.lang.reflect.Constructor;
 
@@ -7,8 +7,7 @@ import java.lang.reflect.Constructor;
  */
 public class ReflectConstructor {
 
-    @javax.annotation.Nullable
-    Object foo;
+    @org.checkerframework.checker.nullness.qual.Nullable Object foo;
 
     ReflectConstructor(Object object) {
         this.foo = object;

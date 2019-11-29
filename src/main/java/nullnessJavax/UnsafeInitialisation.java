@@ -1,4 +1,4 @@
-package nullnessAnnotationCheckerFramework;
+package nullnessJavax;
 
 import sun.misc.Unsafe;
 
@@ -8,7 +8,8 @@ import java.lang.reflect.Field;
  * Allocate an empty instance of a class directly on the heap via sun.misc.Unsafe.
  */
 public class UnsafeInitialisation {
-    @org.checkerframework.checker.nullness.qual.Nullable
+
+    @javax.annotation.Nullable
     Object foo;
 
     UnsafeInitialisation() {

@@ -1,4 +1,4 @@
-package nullnessAnnotationCheckerFramework;
+package nullnessCheckerFramework;
 
 /**
  * Check nullness of field set via dynamic invocation of setter method.
@@ -15,10 +15,9 @@ public class InvokeDynamic {
      */
     public static void setFooToNonNull() {
         InvokeDynamic i = new InvokeDynamic();
-        java.util.function.Function<Object,Object> c = foo -> i.getFoo(foo);
-        Object foo=c.apply(new Object());
+        java.util.function.Function<Object, Object> c = foo -> i.getFoo(foo);
+        Object foo = c.apply(new Object());
         foo.toString();
-
     }
 
     /**
@@ -28,8 +27,8 @@ public class InvokeDynamic {
      */
     public static void setFooToNull() {
         InvokeDynamic i = new InvokeDynamic();
-        java.util.function.Function<Object,Object> c = foo -> i.getFoo(foo);
-        Object foo=c.apply(null);
+        java.util.function.Function<Object, Object> c = foo -> i.getFoo(foo);
+        Object foo = c.apply(null);
         foo.toString();
     }
 }

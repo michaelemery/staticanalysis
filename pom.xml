@@ -128,7 +128,8 @@
                     </annotationProcessorPaths>
                     <compilerArgs>
                         <arg>-Xep:NullAway:WARN</arg>
-                        <arg>-XepOpt:NullAway:AnnotatedPackages=nullness</arg>
+                        <arg>-XepOpt:NullAway:AnnotatedPackages=nullness,nullnessJavax
+                        </arg>
                     </compilerArgs>
                 </configuration>
                 <dependencies>

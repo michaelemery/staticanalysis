@@ -1,4 +1,4 @@
-package nullnessAnnotationJavax;
+package nullnessCheckerFramework;
 
 import java.lang.reflect.Method;
 
@@ -6,7 +6,7 @@ import java.lang.reflect.Method;
  * Check nullness of local object set via reflection method invocation.
  */
 public class ReflectMethod {
-    @javax.annotation.Nullable
+    @org.checkerframework.checker.nullness.qual.Nullable
     Object getObject(Object object) {
         return object;
     }

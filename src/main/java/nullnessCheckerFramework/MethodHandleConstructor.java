@@ -1,4 +1,4 @@
-package nullnessAnnotationJavax;
+package nullnessCheckerFramework;
 
 import java.lang.invoke.MethodHandle;
 import java.lang.invoke.MethodHandles;
@@ -8,7 +8,7 @@ import java.lang.invoke.MethodType;
  * Check nullness of field set by invoking constructor method handle.
  */
 public class MethodHandleConstructor {
-    @javax.annotation.Nullable
+    @org.checkerframework.checker.nullness.qual.Nullable
     Object foo;
 
     MethodHandleConstructor(Object object) {

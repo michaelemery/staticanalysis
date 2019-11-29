@@ -1,4 +1,4 @@
-package nullnessAnnotationCheckerFramework;
+package nullnessJavax;
 
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
@@ -7,7 +7,8 @@ import java.lang.invoke.MethodType;
  * Check nullness of local object set by invoking virtual (non-static) method handle.
  */
 public class MethodHandleMethod {
-    @org.checkerframework.checker.nullness.qual.Nullable
+
+    @javax.annotation.Nullable
     Object getObject(Object object) {
         return object;
     }

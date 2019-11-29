@@ -1,4 +1,4 @@
-package nullnessAnnotationJavax;
+package nullnessJavax;
 
 import sun.misc.Unsafe;
 
@@ -8,6 +8,7 @@ import java.lang.reflect.Field;
  * Check nullness of field set via sun.misc.Unsafe.
  */
 public class UnsafeField {
+
     @javax.annotation.Nullable
     Object foo;
 

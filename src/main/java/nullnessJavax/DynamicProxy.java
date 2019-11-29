@@ -1,7 +1,6 @@
-package nullnessAnnotationCheckerFramework;
+package nullnessJavax;
 
 import java.lang.reflect.InvocationHandler;
-
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
@@ -11,7 +10,7 @@ import java.lang.reflect.Proxy;
 public class DynamicProxy {
 
     interface MyInterface {
-        @org.checkerframework.checker.nullness.qual.Nullable
+        @javax.annotation.Nullable
         Object getObject(Object object);
     }
 

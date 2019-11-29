@@ -1,4 +1,4 @@
-package nullnessAnnotationJavax;
+package nullnessJavax;
 
 /**
  * Check nullness of field set via dynamic invocation of setter method.

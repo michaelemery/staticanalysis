@@ -338,9 +338,9 @@ javac -processor org.checkerframework.checker.nullness.NullnessChecker -Aresolve
 #### checker output
 
 ```
-src/main/java/nullness/InvokeDynamic.java:31: error: [argument.type.incompatible] incompatible types in argument.
-        java.util.function.Consumer<Object> c = foo -> i.setFoo(null);
-                                                                ^
+src/main/java/nullness/InvokeDynamic.java:30: error: [argument.type.incompatible] incompatible types in argument.
+        Object foo=c.apply(null);
+                           ^
   found   : null
   required: @Initialized @NonNull Object
 1 error
@@ -350,7 +350,7 @@ src/main/java/nullness/InvokeDynamic.java:31: error: [argument.type.incompatible
 
 | line(s) | event |
 | :---: | :---: |
-| 31 | TP |
+| 30 | TP |
 
 #### expected / actual errors
 

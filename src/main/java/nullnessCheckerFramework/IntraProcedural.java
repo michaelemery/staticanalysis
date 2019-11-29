@@ -1,6 +1,4 @@
-package nullnessAnnotationCheckerFramework;
-
-import org.checkerframework.checker.nullness.qual.*;
+package nullnessCheckerFramework;
 
 /**
  * Check nullness of field set via direct value assignment.
@@ -11,7 +9,8 @@ public class IntraProcedural {
      * False Positive (FP) if checker reports null warning.
      */
     public static void setFooToNonNull() {
-        @Nullable Object foo = new Object();
+        @org.checkerframework.checker.nullness.qual.Nullable
+        Object foo = new Object();
         foo.toString();
     }
 
@@ -20,7 +19,8 @@ public class IntraProcedural {
      * @throws NullPointerException
      */
     public static void setFooToNull() {
-        @Nullable Object foo = null;
+        @org.checkerframework.checker.nullness.qual.Nullable
+        Object foo = null;
         foo.toString();
     }
 }

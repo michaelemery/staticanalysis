@@ -1,11 +1,11 @@
-package nullnessAnnotationCheckerFramework;
+package nullnessJavax;
 
 /**
  * Check nullness of field set via reflective field access.
  */
 public class ReflectField {
 
-    @org.checkerframework.checker.nullness.qual.Nullable
+    @javax.annotation.Nullable
     Object foo;
 
     /**

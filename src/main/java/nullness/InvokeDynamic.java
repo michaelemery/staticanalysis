@@ -5,10 +5,8 @@ package nullness;
  */
 public class InvokeDynamic {
 
-    Object foo = new Object();
-
-    void setFoo(Object foo) {
-        this.foo = foo;
+    Object getFoo(Object foo) {
+        return foo;
     }
 
     /**
@@ -16,9 +14,9 @@ public class InvokeDynamic {
      */
     public static void setFooToNonNull() {
         InvokeDynamic i = new InvokeDynamic();
-        java.util.function.Consumer<Object> c = foo -> i.setFoo(new Object());
-        c.accept(new Object());
-        i.foo.toString();
+        java.util.function.Function<Object, Object> c = foo -> i.getFoo(foo);
+        Object foo = c.apply(new Object());
+        foo.toString();
     }
 
     /**
@@ -28,8 +26,8 @@ public class InvokeDynamic {
      */
     public static void setFooToNull() {
         InvokeDynamic i = new InvokeDynamic();
-        java.util.function.Consumer<Object> c = foo -> i.setFoo(null);
-        c.accept(new Object());
-        i.foo.toString();
+        java.util.function.Function<Object, Object> c = foo -> i.getFoo(foo);
+        Object foo = c.apply(null);
+        foo.toString();
     }
 }

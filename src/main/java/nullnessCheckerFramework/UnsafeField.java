@@ -1,4 +1,4 @@
-package nullnessAnnotationCheckerFramework;
+package nullnessCheckerFramework;
 
 import sun.misc.Unsafe;
 
