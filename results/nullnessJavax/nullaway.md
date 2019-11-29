@@ -25,7 +25,7 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 
 ## IntraProcedural
 
-* [nullness/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/IntraProcedural.java)
+* [nullnessJavax/IntraProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/IntraProcedural.java)
 
 * [nullness/IntraProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/IntraProceduralTest.java)
 
@@ -55,7 +55,7 @@ src/main/java/nullnessJavax/IntraProcedural.java:24: warning: [NullAway] derefer
 
 ## InterProcedural
 
-* [nullness/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InterProcedural.java)
+* [nullnessJavax/InterProcedural.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/InterProcedural.java)
 
 * [nullness/InterProceduralTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InterProceduralTest.java)
 
@@ -92,7 +92,7 @@ src/main/java/nullnessJavax/InterProcedural.java:22: warning: [NullAway] derefer
 
 ## ReflectConstructor
 
-* [nullness/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectConstructor.java)
+* [nullnessJavax/ReflectConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/ReflectConstructor.java)
 
 * [nullness/ReflectConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectConstructorTest.java)
 
@@ -126,7 +126,7 @@ src/main/java/nullnessJavax/ReflectConstructor.java:34: warning: [NullAway] dere
 
 ## ReflectMethod
 
-* [nullness/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectMethod.java)
+* [nullnessJavax/ReflectMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/ReflectMethod.java)
 
 * [nullness/ReflectMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectMethodTest.java)
 
@@ -154,7 +154,7 @@ No reported issues.
 
 ## ReflectField
 
-* [nullness/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/ReflectField.java)
+* [nullnessJavax/ReflectField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/ReflectField.java)
 
 * [nullness/ReflectFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/ReflectFieldTest.java)
 
@@ -188,7 +188,7 @@ src/main/java/nullnessJavax/ReflectField.java:26: warning: [NullAway] dereferenc
 
 ## MethodHandleConstructor
 
-* [nullness/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleConstructor.java)
+* [nullnessJavax/MethodHandleConstructor.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/MethodHandleConstructor.java)
 
 * [nullness/MethodHandleConstructorTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleConstructorTest.java)
 
@@ -222,7 +222,7 @@ src/main/java/nullnessJavax/MethodHandleConstructor.java:41: warning: [NullAway]
 
 ## MethodHandleMethod
 
-* [nullness/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleMethod.java)
+* [nullnessJavax/MethodHandleMethod.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/MethodHandleMethod.java)
 
 * [nullness/MethodHandleMethodTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleMethodTest.java)
 
@@ -250,7 +250,7 @@ No reported issues.
 
 ## MethodHandleField
 
-* [nullness/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/MethodHandleField.java)
+* [nullnessJavax/MethodHandleField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/MethodHandleField.java)
 
 * [nullness/MethodHandleFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/MethodHandleFieldTest.java)
 
@@ -285,7 +285,7 @@ src/main/java/nullnessJavax/MethodHandleField.java:39: warning: [NullAway] deref
 
 ## InvokeDynamic
 
-* [nullness/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/InvokeDynamic.java)
+* [nullnessJavax/InvokeDynamic.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/InvokeDynamic.java)
 
 * [nullness/InvokeDynamicTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/InvokeDynamicTest.java)
 
@@ -313,7 +313,7 @@ No reported issues.
 
 ## DynamicProxy
 
-* [nullness/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/DynamicProxy.java)
+* [nullnessJavax/DynamicProxy.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/DynamicProxy.java)
 
 * [nullness/DynamicProxyTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/DynamicProxyTest.java)
 
@@ -350,7 +350,7 @@ src/main/java/nullnessJavax/DynamicProxy.java:55: warning: [NullAway] dereferenc
 
 ## UnsafeField
 
-* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/UnsafeField.java)
+* [nullnessJavax/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/UnsafeField.java)
 
 * [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeFieldTest.java)
 
@@ -378,7 +378,7 @@ No reported issues.
 
 ## UnsafeInitialisation
 
-* [nullness/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/UnsafeInitialisation.java)
+* [nullnessJavax/UnsafeInitialisation.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullnessJavax/UnsafeInitialisation.java)
 
 * [nullness/UnsafeInitialisationTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeInitialisationTest.java)
 
