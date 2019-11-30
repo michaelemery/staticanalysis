@@ -2,8 +2,6 @@
 
 [home](https://github.com/michaelemery/staticanalysis)
 
-### no annotation
-
 | dynamic language feature | checkerfwk | infer | nullaway | pmd | spotbugs |
 | --- | :---: | :---: | :---: | :---: | :---: |
 | IntraProcedural | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/checkerframework.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/infer.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/nullaway.md#IntraProcedural) | [unsound](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/pmd.md#IntraProcedural) | [accurate](https://github.com/michaelemery/staticanalysis/blob/master/results/nullness/spotbugs.md#IntraProcedural) |
