@@ -1,10 +1,10 @@
-# infer results (nullness)
+# spotbugs results (nullness)
 
 [results](https://github.com/michaelemery/staticanalysis/blob/master/results/README.md)
 
 <br>
 
-Version: infer-0.13.1
+Version: spotbugs-3.1.12
 
 Results can be replicated using an interactive terminal from the [michaelemery/staticanalysis](https://cloud.docker.com/u/michaelemery/repository/docker/michaelemery/staticanalysis) Docker repository. Copy the docker command(s) provided with each test result, and paste them into your interactive Docker session. 
 
@@ -32,36 +32,25 @@ sh test.sh [ [ <package-name> ] | [ <package-name> <class-name> ] ]
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/IntraProcedural.java
+javac -d out/ src/main/java/nullness/IntraProcedural.java
+spotbugs -effort:max out/nullness/IntraProcedural.class
 ```
 
 #### checker output
 
 ```
-Found 2 issues
-
-src/main/java/nullness/IntraProcedural.java:25: error: ERADICATE_FIELD_NOT_NULLABLE
-  Field `IntraProcedural.foo` can be null but is not declared `@Nullable`. (Origin: null constant at line 25)
-  23.       public static void setFooToNull() {
-  24.           IntraProcedural i = new IntraProcedural();
-  25. >         i.foo = null;
-  26.           i.foo.toString();
-  27.       }
-
-src/main/java/nullness/IntraProcedural.java:26: error: ERADICATE_NULL_METHOD_CALL
-  The value of `i.foo` in the call to `toString()` could be null. (Origin: null constant at line 25)
-  24.           IntraProcedural i = new IntraProcedural();
-  25.           i.foo = null;
-  26. >         i.foo.toString();
-  27.       }
-  28.   }
+H C NP: Null pointer dereference of ? in nullness.IntraProcedural.setFooToNull()  Dereferenced at IntraProcedural.java:[line 22]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 13]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At IntraProcedural.java:[line 22]
+Warnings generated: 3
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 25, 26 | TP |
+| 22i | TP |
+| 13, 22ii | NA |
 
 #### expected / actual errors
 
@@ -83,37 +72,32 @@ src/main/java/nullness/IntraProcedural.java:26: error: ERADICATE_NULL_METHOD_CAL
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/InterProcedural.java
+javac -d out/ src/main/java/nullness/InterProcedural.java
+spotbugs -effort:max out/nullness/InterProcedural.class
 ```
 
 #### checker output
 
 ```
-Found 1 issue
-
-src/main/java/nullness/InterProcedural.java:21: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 21)
-  19.        */
-  20.       public static void setFooToNull() {
-  21. >         Object foo = getObject(null);
-  22.           foo.toString();
-  23.       }
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 13]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InterProcedural.java:[line 22]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 21 | TP |
+| 13, 22 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
-> accurate
+> unsound
 
 <br>
 
@@ -126,20 +110,23 @@ src/main/java/nullness/InterProcedural.java:21: error: ERADICATE_PARAMETER_NOT_N
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/ReflectConstructor.java
+javac -d out/ src/main/java/nullness/ReflectConstructor.java
+spotbugs -effort:max out/nullness/ReflectConstructor.class
 ```
 
-### checker output
+#### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectConstructor.java:[line 25]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectConstructor.java:[line 33]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 25, 33 | NA |
 
 #### expected / actual errors
 
@@ -161,20 +148,23 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/ReflectMethod.java
+javac -d out/ src/main/java/nullness/ReflectMethod.java
+spotbugs -effort:max out/nullness/ReflectMethod.class
 ```
 
 #### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectMethod.java:[line 24]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectMethod.java:[line 35]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 24, 35 | NA |
 
 #### expected / actual errors
 
@@ -196,31 +186,34 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/ReflectField.java
+javac -d out/ src/main/java/nullness/ReflectField.java
+spotbugs -effort:max out/nullness/ReflectField.class
 ```
 
 #### checker output
 
-````
-No reported issues.
-````
+```
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectField.java:[line 16]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At ReflectField.java:[line 25]
+Warnings generated: 2
+```
 
 #### output analysis
- 
- | line(s) | event |
- | :---: | :---: |
- | - | - |
- 
+
+| line(s) | event |
+| :---: | :---: |
+| 16, 25 | NA |
+
 #### expected / actual errors
- 
- |  | + | - |
- | :---: | :---: | :---: |
- | + | 0 | 0 |
- | - | 1 | 1 |
- 
- > unsound
- 
- <br>
+
+|  | + | - |
+| :---: | :---: | :---: |
+| + | 0 | 0 |
+| - | 1 | 1 |
+
+> unsound
+
+<br>
 
 ## MethodHandleConstructor
 
@@ -231,20 +224,23 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/MethodHandleConstructor.java
+javac -d out/ src/main/java/nullness/MethodHandleConstructor.java
+spotbugs -effort:max out/nullness/MethodHandleConstructor.class
 ```
 
 #### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleConstructor.java:[line 30]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleConstructor.java:[line 40]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 30, 40 | NA |
 
 #### expected / actual errors
 
@@ -266,20 +262,23 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/MethodHandleMethod.java
+javac -d out/ src/main/java/nullness/MethodHandleMethod.java
+spotbugs -effort:max out/nullness/MethodHandleMethod.class
 ```
 
 #### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleMethod.java:[line 27]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleMethod.java:[line 37]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 27, 37 | NA |
 
 #### expected / actual errors
 
@@ -301,20 +300,23 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/MethodHandleField.java
+javac -d out/ src/main/java/nullness/MethodHandleField.java
+spotbugs -effort:max out/nullness/MethodHandleField.class
 ```
 
 #### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleField.java:[line 28]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At MethodHandleField.java:[line 38]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 28, 38 | NA |
 
 #### expected / actual errors
 
@@ -336,37 +338,32 @@ No reported issues.
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/InvokeDynamic.java
+javac -d out/ src/main/java/nullness/InvokeDynamic.java
+spotbugs -effort:max out/nullness/InvokeDynamic.class
 ```
 
 #### checker output
 
 ```
-Found 1 issue
-
-src/main/java/nullness/InvokeDynamic.java:31: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `setFoo(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 31)
-  29.       public static void setFooToNull() {
-  30.           InvokeDynamic i = new InvokeDynamic();
-  31. >         java.util.function.Consumer<Object> c = foo -> i.setFoo(null);
-  32.           c.accept(new Object());
-  33.           i.foo.toString();
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamic.java:[line 21]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At InvokeDynamic.java:[line 33]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 31 | TP |
+| 21, 33 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
-> accurate
+> unsound
 
 <br>
 
@@ -379,71 +376,65 @@ src/main/java/nullness/InvokeDynamic.java:31: error: ERADICATE_PARAMETER_NOT_NUL
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/DynamicProxy.java
+javac -d out/ src/main/java/nullness/DynamicProxy.java
+spotbugs -effort:max out/nullness/DynamicProxy.class nullness.DynamicProxy$MyInvocationHandler
 ```
 
 #### checker output
 
 ```
-Found 1 issue
-
-src/main/java/nullness/DynamicProxy.java:53: error: ERADICATE_PARAMETER_NOT_NULLABLE
-  `getObject(...)` needs a non-null value in parameter 1 but argument `null` can be null. (Origin: null constant at line 53)
-  51.       public static void setFooToNull() {
-  52.           DynamicProxy i = new DynamicProxy();
-  53. >         Object foo = i.getProxyInstance().getObject(null);
-  54.           foo.toString();
-  55.       }
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 44]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At DynamicProxy.java:[line 54]
+The following classes needed for analysis were missing:
+  nullness.DynamicProxy$MyInvocationHandler
+  nullness.DynamicProxy$MyInterface
+  nullness.DynamicProxy$MyClass
+Warnings generated: 2
+Missing classes: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 53 | TP |
+| 44, 54 | NA |
+| Missing classes | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
-> accurate
+> unsound
 
 <br>
 
 ## UnsafeField
 
-* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/DynamicProxy.java)
+* [nullness/UnsafeField.java](https://github.com/michaelemery/staticanalysis/blob/master/src/main/java/nullness/UnsafeField.java)
 
 * [nullness/UnsafeFieldTest.java](https://github.com/michaelemery/staticanalysis/blob/master/src/test/java/nullness/UnsafeFieldTest.java)
 
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/UnsafeField.java
+javac -d out/ src/main/java/nullness/UnsafeField.java
+spotbugs -effort:max out/nullness/UnsafeField.class
 ```
 
 #### checker output
 
 ```
-Found 1 issue
-
-src/main/java/nullness/UnsafeField.java:10: error: ERADICATE_FIELD_NOT_INITIALIZED
-  Field `UnsafeField.foo` is not initialized in the constructor and is not declared `@Nullable`
-  8.    * Check nullness of field set via sun.misc.Unsafe.
-  9.    */
-  10. > public class UnsafeField {
-  11.   
-  12.       Object foo;
+No reported issues.
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| 10 | NA |
+| - | - |
 
 #### expected / actual errors
 
@@ -465,20 +456,23 @@ src/main/java/nullness/UnsafeField.java:10: error: ERADICATE_FIELD_NOT_INITIALIZ
 #### checker command
 
 ```shell script
-infer run -a checkers --eradicate -- javac -d out/ src/main/java/nullness/UnsafeInitialisation.java
+javac -d out/ src/main/java/nullness/UnsafeInitialisation.java
+spotbugs -effort:max out/nullness/UnsafeInitialisation.class
 ```
 
 #### checker output
 
 ```
-No reported issues.
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At UnsafeInitialisation.java:[line 28]
+M D RV: Return value of Object.toString() ignored, but method has no side effect  At UnsafeInitialisation.java:[line 39]
+Warnings generated: 2
 ```
 
 #### output analysis
 
 | line(s) | event |
 | :---: | :---: |
-| - | - |
+| 28, 39 | NA |
 
 #### expected / actual errors
 

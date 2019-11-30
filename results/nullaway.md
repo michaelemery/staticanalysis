@@ -77,7 +77,8 @@ src/main/java/nullnessJavax/InterProcedural.java:22: warning: [NullAway] derefer
 | line(s) | event |
 | :---: | :---: |
 | 13 | FP |
-| 21, 22 | TP |
+| 21 | NA |
+| 22 | TP |
 
 #### expected / actual errors
 
@@ -179,10 +180,10 @@ src/main/java/nullnessJavax/ReflectField.java:26: warning: [NullAway] dereferenc
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 0 | 0 |
-| - | 1 | 1 |
+| + | 1 | 1 |
+| - | 0 | 0 |
 
-> unsound
+> imprecise
 
 <br>
 
@@ -213,8 +214,8 @@ src/main/java/nullnessJavax/MethodHandleConstructor.java:41: warning: [NullAway]
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 1 | 1 |
+| - | 0 | 0 |
 
 > imprecise
 
@@ -276,8 +277,8 @@ src/main/java/nullnessJavax/MethodHandleField.java:39: warning: [NullAway] deref
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 1 | 1 |
+| - | 0 | 0 |
 
 > imprecise
 
@@ -335,7 +336,8 @@ src/main/java/nullnessJavax/DynamicProxy.java:55: warning: [NullAway] dereferenc
 | line(s) | event |
 | :---: | :---: |
 | 45 | FP |
-| 54, 55 | TP |
+| 54 | NA |
+| 55 | TP |
 
 #### expected / actual errors
 
@@ -403,7 +405,7 @@ src/main/java/nullnessJavax/UnsafeInitialisation.java:40: warning: [NullAway] de
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 1 | 1 |
+| - | 0 | 0 |
 
 > imprecise

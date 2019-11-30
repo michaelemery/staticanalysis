@@ -88,16 +88,16 @@ src/main/java/nullnessCheckerFramework/InterProcedural.java:23: error: [argument
 
 | line(s) | event |
 | :---: | :---: |
-| 23 | TP |
+| 23 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
-> accurate
+> unsound
 
 <br>
 
@@ -177,7 +177,8 @@ src/main/java/nullnessCheckerFramework/ReflectMethod.java:33: error: [dereferenc
 | line(s) | event |
 | :---: | :---: |
 | 22 | FP |
-| 32, 33 | TP |
+| 32 | NA |
+| 33 | TP |
 
 #### expected / actual errors
 
@@ -296,16 +297,16 @@ src/main/java/nullnessCheckerFramework/MethodHandleMethod.java:36: error: [argum
 
 | line(s) | event |
 | :---: | :---: |
-| 36 | TP |
+| 36 | NA |
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
-> accurate
+> unsound
 
 <br>
 
@@ -441,7 +442,8 @@ src/main/java/nullnessCheckerFramework/DynamicProxy.java:56: error: [dereference
 | 29 | FP |
 | 35 | FP |
 | 46 | FP |
-| 55, 56 | TP |
+| 55 | NA |
+| 56 | TP |
 
 #### expected / actual errors
 
@@ -487,15 +489,15 @@ src/main/java/nullnessCheckerFramework/UnsafeField.java:39: error: [argument.typ
 | line(s) | event |
 | :---: | :---: |
 | 10, 17 | NA |
-| 39 | TP |
+| 39 | FP |
 
 
 #### expected / actual errors
 
 |  | + | - |
 | :---: | :---: | :---: |
-| + | 1 | 0 |
-| - | 0 | 1 |
+| + | 0 | 0 |
+| - | 1 | 1 |
 
 > accurate
 
@@ -534,7 +536,7 @@ src/main/java/nullnessCheckerFramework/UnsafeInitialisation.java:39: error: [der
 
 | line(s) | event |
 | :---: | :---: |
-| 21, 29 | TP |
+| 21, 39 | TP |
 | 28 | FP |
 
 #### expected / actual errors
